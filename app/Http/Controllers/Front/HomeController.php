@@ -20,18 +20,7 @@ class HomeController extends AppBaseController
 
     public function index()
     {
-        $menuCategorias = [];
-
-        foreach($this->categorias()->get() as $cat) {
-            $secciones = $cat->secciones->pluck('nombre','id');
-            $menuCategorias[] = [
-                'id' => $cat->id,
-                'nombre' => $cat->nombre,
-                'secciones' => $secciones
-            ];
-        }
-
-        $contenido = $this->contenido();
+        return "hola";
         return view('front.home', compact(['menuCategorias','contenido']));
     }
 
