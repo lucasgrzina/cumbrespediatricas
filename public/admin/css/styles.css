@@ -1,0 +1,50 @@
+/*********BACKEND***************/
+.main-header .logo img{
+	max-width: 100px;
+}
+
+.main-header .navbar .nav>li>a{
+	height: 50px;
+}
+
+/********************************/
+.thumb-wrap {
+	width: 100px;
+	position: relative;
+	/*height: 50px;*/
+}
+.thumb-wrap .btn-remove-list {
+    position: absolute;
+    z-index: 9;
+    top: -10px;
+    right: -10px;
+}
+.thumb-wrap .thumbnail {
+	margin-bottom: 0;
+}
+
+.thumb-wrap img{
+	max-width: 100%;
+}
+
+.sidebar-menu>li>a>.far, .sidebar-menu>li>a>.fas{
+    width: 20px;
+}
+
+.sidebar-menu .treeview-menu>li>a>.far, .sidebar-menu .treeview-menu>li>a>.fas{
+    width: 20px;
+}
+
+
+/*LIST*/
+.input-group.select-group .form-control{
+    width:50%!important;
+}
+
+.btn-app .progress {
+    margin-top: 0!important;
+    background-color: #999!important;	
+}
+.file-uploads .progress-bar {
+
+}

@@ -1,0 +1,10 @@
+/storage/clockwork
+/.vscode/settings.json
+/.vscode/eira.code-workspace
+/app/Centum
+/.env.testing
+/.env
+/backup-script.sh
+/delete-daily-S3-tmp-files.sh
+/public/stage
+/vendor
