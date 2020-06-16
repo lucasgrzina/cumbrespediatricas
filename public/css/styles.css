@@ -42,6 +42,13 @@ body,html {
   max-width: 1300px;
 }
 
+body {
+  background-image: url('../img/fondo.jpg');
+  background-repeat: no-repeat;
+  background-color: #001737;
+  background-position: center;  
+}
+
 @media(min-width:1024px) {
   body {
     overflow-y: hidden;
