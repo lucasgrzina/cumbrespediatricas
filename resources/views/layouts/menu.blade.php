@@ -20,16 +20,3 @@
   </ul>
 </li>
 @endif
-@if (\App\Helpers\AdminHelper::mostrarMenu(['categorias']))
-<li class="{{ Request::is('admin/categorias*') ? 'active' : '' }}">
-  <a href="{!! route('categorias.index') !!}"><i class="fa fa-ellipsis-v"></i><span>Categorias</span></a>
-</li>
-@endif
-<li class="{{ Request::is('secciones*') ? 'active' : '' }}">
-    <a href="{!! route('secciones.index') !!}"><i class="fa fa-ellipsis-v"></i><span>Secciones</span></a>
-</li>
-
-<li class="{{ Request::is('productos*') ? 'active' : '' }}">
-    <a href="{!! route('productos.index') !!}"><i class="fa fa-ellipsis-v"></i><span>Productos</span></a>
-</li>
-

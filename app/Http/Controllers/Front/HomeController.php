@@ -20,29 +20,6 @@ class HomeController extends AppBaseController
 
     public function index()
     {
-        return "";
-    }
-
-    protected function categorias() {
-        return Categoria::with(['secciones' => function($q) {
-            $q->orderBy('orden');
-        }])->whereHas('secciones', function ($q) {
-            $q->whereHas('productos',function($q) {
-                $q->whereEnabled(true);
-            })->whereEnabled(true);
-        })->whereEnabled(true)->orderBy('orden');
-    }
-
-    protected function contenido() {
-        $data = $this->categorias()->with([
-            'secciones' => function($q) {
-                $q->orderBy('orden')->whereEnabled(true);
-            },
-            'secciones.productos' => function($q) {
-                $q->orderBy('orden')->whereEnabled(true);
-            }
-        ])->get();
-
-        return $data;
+        return view('front.home');
     }
 }

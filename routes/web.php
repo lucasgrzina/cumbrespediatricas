@@ -57,18 +57,7 @@ Route::prefix('/admin')->group(function () {
         Route::post('roles/filter', 'Admin\RoleController@filter')->name('roles.filter');
         Route::resource('roles', 'Admin\RoleController');
 
-        Route::post('categorias/filter', 'Admin\CategoriaController@filter')->name('categorias.filter');
-        Route::resource('categorias', 'Admin\CategoriaController');
-
-        Route::get('secciones/edit/{id}/{lang}', 'Admin\SeccionController@editLang')->name('secciones.edit-lang');            
-        Route::post('secciones/change-enabled', 'Admin\SeccionController@changeEnabled')->name('secciones.change-enabled');
-        Route::post('secciones/filter', 'Admin\SeccionController@filter')->name('secciones.filter');
-        Route::resource('secciones', 'Admin\SeccionController');
-
-        Route::get('productos/edit/{id}/{lang}', 'Admin\ProductoController@editLang')->name('productos.edit-lang');            
-        Route::post('productos/change-enabled', 'Admin\ProductoController@changeEnabled')->name('productos.change-enabled');
-        Route::post('productos/filter', 'Admin\ProductoController@filter')->name('productos.filter');
-        Route::resource('productos', 'Admin\ProductoController');
+        
 
         Route::get('clear-cache', function () {
             $exitCode = Artisan::call('cache:clear');
