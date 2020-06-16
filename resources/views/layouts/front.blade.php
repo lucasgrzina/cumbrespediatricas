@@ -18,7 +18,8 @@
   <body>
     <div class="container-fluid h-100">
         @include('../front/includes/header')
-        @yield('content')                   
+        @yield('content')        
+        a           
         <!--a class="" href="#" title="Back to top" aria-hidden="true" id="myBtnScroll">
           <i class="fa fa-chevron-up"></i>
         </a-->           
