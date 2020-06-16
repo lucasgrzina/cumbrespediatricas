@@ -20,8 +20,7 @@ class HomeController extends AppBaseController
 
     public function index()
     {
-        return "hola";
-        return view('front.home', compact(['menuCategorias','contenido']));
+        return "";
     }
 
     protected function categorias() {
