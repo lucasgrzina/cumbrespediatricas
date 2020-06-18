@@ -99,7 +99,7 @@
                     nombre: null,
                     apellido: null,
                     especialidad: null,
-                    pais: null,
+                    pais: 'Argentina',
                     email: null
                 },
                 guardando: false,

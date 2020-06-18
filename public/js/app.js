@@ -45448,7 +45448,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 nombre: null,
                 apellido: null,
                 especialidad: null,
-                pais: null,
+                pais: 'Argentina',
                 email: null
             },
             guardando: false,
