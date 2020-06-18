@@ -57,7 +57,9 @@ Route::prefix('/admin')->group(function () {
         Route::post('roles/filter', 'Admin\RoleController@filter')->name('roles.filter');
         Route::resource('roles', 'Admin\RoleController');
 
-        
+        Route::post('registrados/filter', 'Admin\RegistradosController@filter')->name('registrados.filter');
+        Route::get('registrados/exportar/{type}', 'Admin\RegistradosController@export')->name('registrados.export');        
+        Route::resource('registrados', 'Admin\RegistradosController');
 
         Route::get('clear-cache', function () {
             $exitCode = Artisan::call('cache:clear');
@@ -81,4 +83,3 @@ Route::group(['prefix' => 'v2'], function() {
         Route::get('/vivo', 'Front\HomeController@vivo')->name('vivo');
     });
 });
-

@@ -20,3 +20,9 @@
   </ul>
 </li>
 @endif
+@if (\App\Helpers\AdminHelper::mostrarMenu(['registrados']))    
+
+<li class="{{ Request::is('registrados*') ? 'active' : '' }}">
+    <a href="{!! route('registrados.index') !!}"><i class="fa fa-edit"></i><span>Registrados</span></a>
+</li>
+@endif
