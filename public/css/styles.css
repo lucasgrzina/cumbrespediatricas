@@ -271,7 +271,7 @@ footer .logo-center:after {
     line-height: 21px;
   }
 
-  .content-big-title .line {
+  .content-big-title .line,.content-title .line {
     display: none;
   }
 }
