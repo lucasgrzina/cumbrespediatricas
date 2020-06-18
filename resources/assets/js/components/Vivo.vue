@@ -3,8 +3,8 @@
             <div class="row content-title">
                 <div class="col-md-12 text-center">
                     <!--div class="line line--left"></div-->
-                    <button type="button" class="btn btn-primary" @click="verVideo('ingles')">Ver ingles</button>
-                    <button type="button" class="btn btn-primary" @click="verVideo('esp')">Ver esp</button>                    
+                    <button type="button" class="btn btn-primary" @click="verVideo('ingles')">Audio Original Ingles</button>
+                    <button type="button" class="btn btn-primary" @click="verVideo('esp')">Audio Español</button>                    
 
                     <!--div class="line line--right"></div-->
                 </div>

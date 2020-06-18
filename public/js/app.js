@@ -46029,7 +46029,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("Ver ingles")]
+          [_vm._v("Audio Original Ingles")]
         ),
         _vm._v(" "),
         _c(
@@ -46043,7 +46043,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("Ver esp")]
+          [_vm._v("Audio Español")]
         )
       ])
     ]),
