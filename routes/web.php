@@ -73,3 +73,12 @@ Route::prefix('/admin')->group(function () {
     });
 });
 Route::get('/', 'Front\HomeController@index');
+Route::group(['prefix' => 'v2'], function() {
+    Route::get('/', 'Front\HomeController@indexVue')->name('registro');
+    Route::post('/registrar', 'Front\HomeController@registrar')->name('registrar');
+
+    Route::group(['middleware' => 'registrado'], function() {
+        Route::get('/vivo', 'Front\HomeController@vivo')->name('vivo');
+    });
+});
+
