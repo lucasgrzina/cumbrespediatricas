@@ -4,6 +4,10 @@
             <tr>
                 <th @click="orderBy('id')" class="td-id" :class="cssOrderBy('id')">ID</th>
                 <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Especialidad</th>
+                <th>Pais</th>
+                <th>Email</th>
                 <th class="td-actions">{{ trans('admin.table.actions') }}</th>
             </tr>
         </thead>
