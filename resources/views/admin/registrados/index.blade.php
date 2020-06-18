@@ -19,7 +19,7 @@
 @endsection
 
 @section('content-header')
-{!! AdminHelper::contentHeader('Registrados',trans('admin.list'),'new','create()') !!}
+{!! AdminHelper::contentHeader('Registrados',trans('admin.list')) !!}
 @endsection
 
 @section('content')
