@@ -20,7 +20,9 @@ class RegistradosRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'nombre'
+        'nombre' => 'like',
+        'apellido' => 'like',
+        'email' => 'like'
     ];
 
     /**
