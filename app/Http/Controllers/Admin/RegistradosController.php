@@ -100,7 +100,10 @@ class RegistradosController extends CrudAdminController
         $header = [
             'id' => 'ID',
             'nombre' => 'Nombre',
+            'apellido' => 'Apellido',
+            'especialidad' => 'Especialidad',
             'pais' => 'Pais',
+            'email' => 'Email',
         ];
         $format = [
         ];

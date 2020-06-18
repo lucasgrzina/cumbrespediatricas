@@ -9,12 +9,28 @@
 </tr>
 
 <tr>
-	<td>{!! Form::label('created_at', 'Created At') !!}</td>
-	<td>(% selectedItem.created_at %)</td>    
+	<td>{!! Form::label('apellido', 'Apellido') !!}</td>
+	<td>(% selectedItem.apellido %)</td>    
 </tr>
 
 <tr>
-	<td>{!! Form::label('updated_at', 'Updated At') !!}</td>
-	<td>(% selectedItem.updated_at %)</td>    
+	<td>{!! Form::label('especialidad', 'Especialidad') !!}</td>
+	<td>(% selectedItem.especialidad %)</td>    
 </tr>
 
+<tr>
+	<td>{!! Form::label('pais', 'Pais') !!}</td>
+	<td>(% selectedItem.pais %)</td>    
+</tr>
+
+<tr>
+	<td>{!! Form::label('email', 'Email') !!}</td>
+	<td>(% selectedItem.email %)</td>    
+</tr>
+
+
+
+<tr>
+	<td>{!! Form::label('created_at', 'Alta') !!}</td>
+	<td>(% selectedItem.created_at %)</td>    
+</tr>
