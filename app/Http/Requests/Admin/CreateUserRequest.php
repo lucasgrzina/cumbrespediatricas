@@ -31,8 +31,6 @@ class CreateUserRequest extends FormRequest
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6',
             'role_id' => 'required',
-            'pais_id' => 'required|integer',
-            'fecha_nac' => 'required'
         ];
     }
 }
