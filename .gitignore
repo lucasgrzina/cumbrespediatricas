@@ -8,3 +8,5 @@
 /delete-daily-S3-tmp-files.sh
 /public/stage
 /vendor
+/materiales
+/node_modules
