@@ -46170,7 +46170,7 @@ var render = function() {
                       height: "100%"
                     },
                     attrs: {
-                      src: "https://vimeo.com/event/115163/embed/587eace862",
+                      src: "https://player.vimeo.com/video/430745761",
                       frameborder: "0",
                       allow: "autoplay; fullscreen",
                       allowfullscreen: ""
@@ -46211,7 +46211,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "contenedor_vimeo vimeo_chat" }, [
       _c("iframe", {
         attrs: {
-          src: "https://vimeo.com/event/115163/chat/587eace862",
+          src: "https://vimeo.com/live-chat/430745761/1995d3f56a",
           width: "400",
           height: "600",
           frameborder: "0"
