@@ -4,11 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Admin</title>
-    <link rel="icon" href="{{asset('img/cropped-favicon-32x32.png')}}" sizes="32x32" />
-    <link rel="icon" href="{{asset('img/cropped-favicon-192x192.png')}}" sizes="192x192" />
-    <link rel="apple-touch-icon-precomposed" href="{{asset('img/cropped-favicon-180x180.png')}}" />
-    <meta name="msapplication-TileImage" content="{{asset('img/cropped-favicon-270x270.png')}}" />    
-
+    <link rel="shortcut icon" href="{{asset('admin/img/favicon-32x32.png')}}" />
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -34,23 +30,41 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+        .login-page {
+            background:#f4f4f4!important;
+        }
+        .login-box .login-logo img {
+            max-width: 200px;
+        }
+        .login-box-body {
+            border: 1px solid #d2d6de;
+            background: rgba(255, 255, 255, 0.50);
+            border-radius: 5px;          
+        }
+        .btn-login {
+            background-color: #f4f4f4;
+            color: #ae6a82;
+            border: 1px solid #d2d6de;
+        }
+
+    </style>
 </head>
-<body class="hold-transition login-page" style="background:#0fd7e2!important;">
+<body class="hold-transition login-page">
 <div class="login-box">
+    <div class="login-logo">
+        <a href="{{ url('/home') }}">
+            <img src="{{asset('admin/img/logo.png')}}">
+        </a>
+    </div>
 
     <!-- /.login-logo -->
-    <div class="login-box-body" style="
-        border: 1px solid #d2d6de;
-        background: #d2d6de;
-        border-radius: 10px;
-    ">
-        <h4 style="
-        text-align: center;
-        margin-bottom: 20px;
-        ">Administrador</h4>
+    <div class="login-box-body">
+        <p class="login-box-msg"></p>
 
         <form method="post" action="{{ route('admin.login.submit') }}">
             {!! csrf_field() !!}
+
             <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error' : '' }}">
                 <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -81,7 +95,7 @@
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4  col-md-6">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
+                    <button type="submit" class="btn btn-login btn-block btn-flat">Ingresar</button>
                 </div>
                 <!-- /.col -->
             </div>

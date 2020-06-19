@@ -3,10 +3,35 @@
         <div class="row content-big-title" v-if="paso === 1">
             <div class="col-md-12">
                 <div class="line line--left"></div>
-                <a class="btn btn-primary" @click="mostrarForm()">Registrarse para<br> ingresar al evento</a>
+                <a class="btn btn-primary" @click="mostrarDisc()">Registrarse para<br> ingresar al evento</a>
                 <div class="line line--right"></div>
             </div>
         </div>  
+        <template  v-else-if="paso === 2">
+            <div class="row content-title" style="margin-bottom: 10px;">
+                <div class="col-md-12">
+                    <div class="line line--left"></div>
+                    <h1>Registro</h1>
+                    <div class="line line--right"></div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-12">
+                        <div class="modal-disc">
+                            <p class="modal-disc-texto">
+                                En cumplimiento de las políticas corporativas de Abbott, le informamos que este evento es exclusivo para profesionales de la salud. En caso de que esta invitación no esté acorde con su área de especialización/conocimiento y/o desarrollo profesional o, en caso de que usted sea un empleado del gobierno y su participación contravenga alguna ley, reglamento o norma interna de su institución y no cuente con las respectivas autorizaciones, le solicitamos nos informe a la brevedad posible.
+                                <br><br>
+                                La información y/o datos brindados para el registro al evento serán utilizados únicamente durante su participación en el evento y envío de información relacionada al evento. Todos los datos serán manejados de acuerdo a nuestros procedimientos de manejo de datos y no podrán ser compartidos y/o utilizados para fines diferentes a su participación en este evento.                        
+                            </p>
+                            <a class="modal-disc-btn" @click="mostrarForm()" @blur="mostrarBlur(false)" @focus="mostrarBlur(true)">
+                                <i class="fa fa-circle lnk-visible-blur"></i><i class="fa fa-dot-circle lnk-visible-noblur"></i> ACEPTO PROCEDER CON EL REGISTRO
+                            </a>
+                        </div>
+                    </div>
+
+            </div>
+
+        </template>
         <template v-else>      
             <div class="row content-title">
                 <div class="col-md-12">
@@ -95,11 +120,12 @@
         data () {
             return {
                 paso: 1,
+                lnk_blur: false,
                 form: {
                     nombre: null,
                     apellido: null,
                     especialidad: null,
-                    pais: 'Argentina',
+                    pais: null,
                     email: null
                 },
                 guardando: false,
@@ -110,8 +136,15 @@
             console.debug('Registro mounted');
         },
         methods: {
-            mostrarForm () {
+            mostrarBlur: function (val) {
+                console.debug('mostrar blur');
+                this.lnk_blur = val;
+            },
+            mostrarDisc () {
                 this.paso = 2;
+            },            
+            mostrarForm () {
+                this.paso = 3;
             },
             checkForm: function (e) {
 
