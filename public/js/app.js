@@ -46088,7 +46088,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -46099,6 +46099,14 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -46233,7 +46241,15 @@ var render = function() {
       _vm.videoSeleccionado
         ? _c("div", { staticClass: "col-sm-3" }, [_vm._m(0)])
         : _vm._e()
-    ])
+    ]),
+    _vm._v(" "),
+    _vm.videoSeleccionado
+      ? _c("div", { staticClass: "row content-vimeo-chat" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _vm._m(2)
+        ])
+      : _vm._e()
   ])
 }
 var staticRenderFns = [
@@ -46250,6 +46266,33 @@ var staticRenderFns = [
           frameborder: "0"
         }
       })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-sm-9 form-container" }, [
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          type: "text",
+          id: "name",
+          placeholder: "Escriba su pregunta aquí"
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-sm-3 text-center" }, [
+      _c(
+        "button",
+        { staticClass: "btn btn-sm btn-primary", attrs: { type: "button" } },
+        [_vm._v("Enviar")]
+      )
     ])
   }
 ]

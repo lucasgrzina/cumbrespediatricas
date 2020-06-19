@@ -313,7 +313,22 @@ footer .logo-center:after {
 .modal-disc .modal-disc-btn:hover .lnk-visible-noblur{
   display: inline;
 }
+.content-vimeo-chat {
+  margin-top: 10px;
+}
+.content-vimeo-chat .btn-primary {
+  background: rgb(217, 145, 54);
+  border-color: #8a5c27;
+}
+
+.content-vimeo-chat .form-container input{
+  font-size: 20px;
+    padding: 20px 18px;
+}
 @media (max-width:576px) {
+  .content-vimeo-chat .btn-primary {
+    margin-top: 10px;
+  }
   .contenedor_vimeo.vimeo_chat {
     height: 600px;
     margin-top: 10px;
