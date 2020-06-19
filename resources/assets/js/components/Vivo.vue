@@ -15,7 +15,7 @@
                         <iframe src="https://player.vimeo.com/video/430745761" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                     </div>                    
                     <div class="contenedor_vimeo" v-else>
-                        <iframe src="https://player.vimeo.com/video/260952455" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                        <iframe src="https://player.vimeo.com/video/430757476" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                     </div>                    
                 </div>
                 <div class="col-sm-3" v-if="videoSeleccionado">
