@@ -24,6 +24,14 @@
                     </div>
                 </div>
             </div>
+            <div class="row content-vimeo-chat" v-if="videoSeleccionado">
+                <div class="col-sm-9 form-container">
+                    <input type="text" class="form-control" id="name" placeholder="Escriba su pregunta aquí">
+                </div>
+                <div class="col-sm-3 text-center">
+                    <button type="button" class="btn btn-sm btn-primary">Enviar</button>
+                </div>
+            </div>
                 
     </div>
 </template>
