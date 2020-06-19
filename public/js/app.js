@@ -44884,7 +44884,7 @@ exports = module.exports = __webpack_require__(42)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45433,6 +45433,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
@@ -45444,11 +45469,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             paso: 1,
+            lnk_blur: false,
             form: {
                 nombre: null,
                 apellido: null,
                 especialidad: null,
-                pais: 'Argentina',
+                pais: null,
                 email: null
             },
             guardando: false,
@@ -45460,8 +45486,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
-        mostrarForm: function mostrarForm() {
+        mostrarBlur: function mostrarBlur(val) {
+            console.debug('mostrar blur');
+            this.lnk_blur = val;
+        },
+        mostrarDisc: function mostrarDisc() {
             this.paso = 2;
+        },
+        mostrarForm: function mostrarForm() {
+            this.paso = 3;
         },
 
         checkForm: function checkForm(e) {
@@ -45524,7 +45557,7 @@ var render = function() {
                   staticClass: "btn btn-primary",
                   on: {
                     click: function($event) {
-                      return _vm.mostrarForm()
+                      return _vm.mostrarDisc()
                     }
                   }
                 },
@@ -45538,12 +45571,51 @@ var render = function() {
               _c("div", { staticClass: "line line--right" })
             ])
           ])
-        : [
+        : _vm.paso === 2
+        ? [
             _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c("div", { staticClass: "modal-disc" }, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "modal-disc-btn",
+                      on: {
+                        click: function($event) {
+                          return _vm.mostrarForm()
+                        },
+                        blur: function($event) {
+                          return _vm.mostrarBlur(false)
+                        },
+                        focus: function($event) {
+                          return _vm.mostrarBlur(true)
+                        }
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "fa fa-circle lnk-visible-blur" }),
+                      _c("i", {
+                        staticClass: "fa fa-dot-circle lnk-visible-noblur"
+                      }),
+                      _vm._v(
+                        " ACEPTO PROCEDER CON EL REGISTRO\n                        "
+                      )
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ]
+        : [
+            _vm._m(2),
             _vm._v(" "),
             _c("form", { staticClass: "form-container" }, [
               _c("div", { staticClass: "form-group row" }, [
-                _vm._m(1),
+                _vm._m(3),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-md-7" }, [
                   _c("input", {
@@ -45574,11 +45646,11 @@ var render = function() {
                   })
                 ]),
                 _vm._v(" "),
-                _vm._m(2)
+                _vm._m(4)
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form-group row" }, [
-                _vm._m(3),
+                _vm._m(5),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-md-7" }, [
                   _c("input", {
@@ -45609,11 +45681,11 @@ var render = function() {
                   })
                 ]),
                 _vm._v(" "),
-                _vm._m(4)
+                _vm._m(6)
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form-group row" }, [
-                _vm._m(5),
+                _vm._m(7),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-md-7" }, [
                   _c("input", {
@@ -45644,11 +45716,11 @@ var render = function() {
                   })
                 ]),
                 _vm._v(" "),
-                _vm._m(6)
+                _vm._m(8)
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form-group row" }, [
-                _vm._m(7),
+                _vm._m(9),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-md-7" }, [
                   _c("input", {
@@ -45679,11 +45751,11 @@ var render = function() {
                   })
                 ]),
                 _vm._v(" "),
-                _vm._m(8)
+                _vm._m(10)
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form-group row" }, [
-                _vm._m(9),
+                _vm._m(11),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-md-7" }, [
                   _c("input", {
@@ -45714,7 +45786,7 @@ var render = function() {
                   })
                 ]),
                 _vm._v(" "),
-                _vm._m(10)
+                _vm._m(12)
               ]),
               _vm._v(" "),
               _c(
@@ -45737,6 +45809,42 @@ var render = function() {
   )
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "row content-title",
+        staticStyle: { "margin-bottom": "10px" }
+      },
+      [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "line line--left" }),
+          _vm._v(" "),
+          _c("h1", [_vm._v("Registro")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "line line--right" })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "modal-disc-texto" }, [
+      _vm._v(
+        "\n                            En cumplimiento de las políticas corporativas de Abbott, le informamos que este evento es exclusivo para profesionales de la salud. En caso de que esta invitación no esté acorde con su área de especialización/conocimiento y/o desarrollo profesional o, en caso de que usted sea un empleado del gobierno y su participación contravenga alguna ley, reglamento o norma interna de su institución y no cuente con las respectivas autorizaciones, le solicitamos nos informe a la brevedad posible.\n                            "
+      ),
+      _c("br"),
+      _c("br"),
+      _vm._v(
+        "\n                            La información y/o datos brindados para el registro al evento serán utilizados únicamente durante su participación en el evento y envío de información relacionada al evento. Todos los datos serán manejados de acuerdo a nuestros procedimientos de manejo de datos y no podrán ser compartidos y/o utilizados para fines diferentes a su participación en este evento.                        \n                        "
+      )
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

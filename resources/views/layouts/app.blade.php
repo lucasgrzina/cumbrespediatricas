@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <title>Admin</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <link rel="icon" href="{{asset('img/android-chrome-32x32.png')}}" sizes="32x32" />
-    <link rel="icon" href="{{asset('img/android-chrome-192x192.png')}}" sizes="192x192" />
-    <link rel="apple-touch-icon-precomposed" href="{{asset('img/android-chrome-180x180.png')}}" />
-    <meta name="msapplication-TileImage" content="{{asset('img/android-chrome-270x270.png')}}" />    
-    <link rel="manifest" href="{{asset('admin/img/site.webmanifest')}}">
+    <link rel="shortcut icon" href="{{asset('admin/img/favicon-32x32.png')}}" />
 
 
     @if (Auth::check('admin'))

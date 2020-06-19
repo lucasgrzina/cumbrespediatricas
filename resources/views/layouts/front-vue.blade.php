@@ -9,6 +9,7 @@
         <title>Cumbre Pediátrica</title>
 
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.css') }}">
         <link href="{{ url(mix('/css/all.css')) }}" rel="stylesheet" type="text/css">
 
         <script>

@@ -161,7 +161,7 @@ label:focus,
   margin-top: -132px;
   align-items: center;
   display: flex;
-  height: 500px;
+  min-height: 500px;
 }
 
 .content-big-title .btn-primary {
@@ -281,6 +281,37 @@ footer .logo-center:after {
   .content-big-title .line,.content-title .line {
     display: none;
   }
+}
+.modal-disc {
+  border: 1px solid #e7a249;
+  border-radius: 30px;
+  padding: 20px;
+  background: #e7a249;
+}
+.modal-disc .modal-disc-texto{
+  font-size: 14px;
+  color: #0b305d;
+  font-weight: 500;
+  font-family: tahoma;
+}
+.modal-disc .modal-disc-btn{
+  font-size: 17px;
+  display: block;
+  text-align: center;
+  color: #0d2951;
+  cursor: pointer;
+}
+.lnk-visible-noblur {
+  display: none;
+}
+.lnk-visible-blur {
+  display: inline;
+}
+.modal-disc .modal-disc-btn:hover .lnk-visible-blur{
+  display: none;
+}
+.modal-disc .modal-disc-btn:hover .lnk-visible-noblur{
+  display: inline;
 }
 @media (max-width:576px) {
   .contenedor_vimeo.vimeo_chat iframe {
