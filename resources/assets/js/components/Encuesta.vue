@@ -29,13 +29,14 @@
                 </div>
 
                 <div class="text-right">
-                <button type="button" 
-                        class="btn btn-primary" 
-                        @click="enviar()">
-                    <i v-if="enviando" class="fa fa-spinner fa-spin fa-fw"></i> 
-                    <span> {{ enviando ? 'ENVIANDO' : 'ENVIAR' }} </span>
-                </button>
+                    <button type="button" 
+                            class="btn btn-primary" 
+                            @click="enviar()">
+                        <i v-if="enviando" class="fa fa-spinner fa-spin fa-fw"></i> 
+                        <span> {{ enviando ? 'ENVIANDO' : 'ENVIAR' }} </span>
+                    </button>
                 </div>
+                <i class="fa fa-spinner fa-spin fa-fw" style="opacity:0;"></i>
             </div>      
  
     </div>

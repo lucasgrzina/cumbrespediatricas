@@ -45,7 +45,7 @@
                 </div>
 
             </div>
-                
+            <i class="fa fa-spinner fa-spin fa-fw" style="opacity:0;"></i>
     </div>
 </template>
 
