@@ -1,4 +1,4 @@
 <?php
 return [
-    'encuesta' => false
+    'encuesta' => true
 ];
