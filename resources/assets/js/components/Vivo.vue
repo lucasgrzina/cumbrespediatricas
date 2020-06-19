@@ -12,7 +12,7 @@
             <div class="row content-vimeo">
                 <div class="col-sm-9" v-if="videoSeleccionado">
                     <div class="contenedor_vimeo" v-if="videoSeleccionado === 'ingles'">
-                        <iframe src="https://vimeo.com/event/115163/embed/587eace862" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                        <iframe src="https://player.vimeo.com/video/430745761" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                     </div>                    
                     <div class="contenedor_vimeo" v-else>
                         <iframe src="https://player.vimeo.com/video/260952455" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-sm-3" v-if="videoSeleccionado">
                     <div class="contenedor_vimeo vimeo_chat">
-                        <iframe src="https://vimeo.com/event/115163/chat/587eace862" width="400" height="600" frameborder="0"></iframe>
+                        <iframe src="https://vimeo.com/live-chat/430745761/1995d3f56a" width="400" height="600" frameborder="0"></iframe>
                     </div>
                 </div>
             </div>
