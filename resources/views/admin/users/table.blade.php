@@ -27,11 +27,11 @@
                 </td>
                 <td class="td-actions">
                     @if(auth()->user()->hasRole('Superadmin') || auth()->user()->can('ver-'.$data['action_perms']))
-                        <button-type type="show-list" @click="show(item)"></button-type>
+                        <!--button-type type="show-list" @click="show(item)"></button-type-->
                     @endif
                     @if(auth()->user()->hasRole('Superadmin') || auth()->user()->can('editar-'.$data['action_perms']))
                         <button-type type="edit-list" @click="edit(item)"></button-type>
-                        <button-type type="perm-list" @click="editarPermisos(item)"></button-type>
+                        <!--button-type type="perm-list" @click="editarPermisos(item)"></button-type-->
                         <button-type type="remove-list" @click="destroy(item)"></button-type>
                     @endif
                 </td>            

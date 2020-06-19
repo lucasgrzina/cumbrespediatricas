@@ -1,7 +1,7 @@
 @if (\App\Helpers\AdminHelper::mostrarMenu(['usuarios','roles-y-permisos']))    
 <li class=" treeview menu-open {{ Request::is('users*') || Request::is('roles*') ? 'active' : '' }}">
   <a href="#">
-    <i class="fa fa-users"></i> <span>Administración</span>
+    <i class="fa fa-user-shield"></i> <span>Administración</span>
     <span class="pull-right-container">
       <i class="fa fa-angle-left pull-right"></i>
     </span>
@@ -23,6 +23,14 @@
 @if (\App\Helpers\AdminHelper::mostrarMenu(['registrados']))    
 
 <li class="{{ Request::is('registrados*') ? 'active' : '' }}">
-    <a href="{!! route('registrados.index') !!}"><i class="fa fa-edit"></i><span>Registrados</span></a>
+    <a href="{!! route('registrados.index') !!}"><i class="fa fa-users"></i><span>Registrados</span></a>
 </li>
 @endif
+<li class="{{ Request::is('preguntas*') ? 'active' : '' }}">
+    <a href="{!! route('preguntas.index') !!}"><i class="fa fa-edit"></i><span>Preguntas</span></a>
+</li>
+
+<li class="{{ Request::is('encuestas*') ? 'active' : '' }}">
+    <a href="{!! route('encuestas.index') !!}"><i class="fa fa-edit"></i><span>Encuestas</span></a>
+</li>
+
