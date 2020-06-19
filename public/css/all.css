@@ -97,7 +97,7 @@ header {
   margin-bottom: 0.3rem;
 }
 
-textarea:hover,
+/*textarea:hover,
 input:hover,
 textarea:active,
 input:active,
@@ -112,7 +112,7 @@ label:focus,
   outline: 0px !important;
   -webkit-appearance: none;
   box-shadow: none !important;
-}
+}*/
 
 .form-container label {
   color: #013565;
@@ -323,11 +323,52 @@ footer .logo-center:after {
 
 .content-vimeo-chat .form-container input{
   font-size: 20px;
-    padding: 20px 18px;
+  padding: 20px 18px;
+}
+
+.container-encuesta {
+  background: #e7a249;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.container-encuesta h5{
+  color: #0d2951;
+  font-family: montserrat;
+}
+.container-encuesta p{
+  color: #0d2951;
+  font-family: montserrat;
+}
+
+.container-encuesta .row {
+  margin-bottom: 20px;
+}
+
+.container-encuesta .form-check-inline, .container-encuesta textarea {
+  padding: 9px 10px;
+  font-size: 13px;
+  border-width: 2px;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #fff;
+  background: rgba(0, 0, 0, 0.36);
+  margin-bottom: 10px;
+  color: #fff;
+  cursor: pointer;  
+}
+.encuesta .content-title .line--right {
+  left: 721px;
+}
+
+.logo-cumbre {
+  max-width: 160px;
 }
 @media (max-width:576px) {
   .content-vimeo-chat .btn-primary {
     margin-top: 10px;
+    text-align: center;
+    vertical-align: middle;
   }
   .contenedor_vimeo.vimeo_chat {
     height: 600px;

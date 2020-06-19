@@ -37,8 +37,8 @@
                             <a><img src="{{asset('img/logo_3.png')}}"></a>
                         </div>
         
-                        <div class="col-4">
-                            <a><img src="{{asset('img/logo_2.png')}}"></a>
+                        <div class="col-4 text-center">
+                            <a><img class="logo-cumbre" src="{{asset('img/cumbres_logo.png')}}"></a>
                         </div>
         
                         <div class="col-4">

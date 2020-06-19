@@ -7,16 +7,18 @@ class PermissionSeeder extends Seeder
 {
     public function run()
     {
+		\DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         \DB::table('model_has_permissions')->truncate();
         \DB::table('role_has_permissions')->truncate();    	
-        \DB::table('permissions')->truncate();
+		\DB::table('permissions')->truncate();
+		\DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         $items = [
 			[1,'Usuarios',10],
 			[2,'Roles y Permisos',20],
-			[3,'Categorias',30],
-			[4,'Secciones',40],
-			[5,'Productos',50],
+			[3,'Registrados',30],
+			[4,'Preguntas',40],
+			[5,'Encuestas',50],
         ];
 
         foreach ($items as $value) 

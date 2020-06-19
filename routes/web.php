@@ -61,6 +61,14 @@ Route::prefix('/admin')->group(function () {
         Route::get('registrados/exportar/{type}', 'Admin\RegistradosController@export')->name('registrados.export');        
         Route::resource('registrados', 'Admin\RegistradosController');
 
+        Route::post('preguntas/filter', 'Admin\PreguntasController@filter')->name('preguntas.filter');
+        Route::get('preguntas/exportar/{type}', 'Admin\PreguntasController@export')->name('preguntas.export');        
+        Route::resource('preguntas', 'Admin\PreguntasController');
+
+        Route::post('encuestas/filter', 'Admin\EncuestasController@filter')->name('encuestas.filter');
+        Route::get('encuestas/exportar/{type}', 'Admin\EncuestasController@export')->name('encuestas.export');        
+        Route::resource('encuestas', 'Admin\EncuestasController');
+
         Route::get('clear-cache', function () {
             $exitCode = Artisan::call('cache:clear');
             echo 'done';// return what you want
@@ -81,5 +89,9 @@ Route::group(['prefix' => 'v2'], function() {
 
     Route::group(['middleware' => 'registrado'], function() {
         Route::get('/vivo', 'Front\HomeController@vivo')->name('vivo');
+        Route::post('/enviar-pregunta', 'Front\HomeController@enviarPregunta')->name('enviar-pregunta');
+        Route::get('/encuesta', 'Front\HomeController@encuesta')->name('encuesta');        
+        Route::get('/encuesta-disponible', 'Front\HomeController@encuestaDisponible')->name('encuesta-disponible');        
+        Route::post('/enviar-encuesta', 'Front\HomeController@enviarEncuesta')->name('enviar-encuesta');
     });
 });

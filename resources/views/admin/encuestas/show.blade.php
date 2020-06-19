@@ -14,7 +14,7 @@
 @endsection
 
 @section('content-header')
-{!! AdminHelper::contentHeader('Registrados', 'Ver') !!}
+{!! AdminHelper::contentHeader('Encuestas', 'Ver') !!}
 @endsection
 
 @section('content')
@@ -24,12 +24,13 @@
                 <div class="table-responsive">
                         <table class="table table-view-info  table-condensed">
                             <tbody>
-                                @include('admin.registrados.show_fields')
+                                @include('admin.encuestas.show_fields')
                             </tbody>
                         </table>
                 </div>                
             </div>
             <div class="box-footer text-right">
+
                 <button-type type="back" @click="goTo(url_index)"></button-type>
             </div>        
         </div>

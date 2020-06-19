@@ -14,7 +14,7 @@
 @endsection
 
 @section('content-header')
-{!! AdminHelper::contentHeader('Registrados', 'Ver') !!}
+{!! AdminHelper::contentHeader('Preguntas', 'Ver') !!}
 @endsection
 
 @section('content')
@@ -24,7 +24,7 @@
                 <div class="table-responsive">
                         <table class="table table-view-info  table-condensed">
                             <tbody>
-                                @include('admin.registrados.show_fields')
+                                @include('admin.preguntas.show_fields')
                             </tbody>
                         </table>
                 </div>                
