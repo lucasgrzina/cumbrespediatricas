@@ -93,9 +93,13 @@ class HomeController extends AppBaseController
             $registradoGuid = \Cookie::get('registrado',null);
             $data = $request->all();
             if ($registradoGuid) {
-                $registrado = Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
+                try {
+                    $registrado = Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
                 
-                $data['registrado_id'] = $registrado->id;
+                    $data['registrado_id'] = $registrado->id;
+    
+                } catch (\Exception $e) {}
+                
             }
             $data = Preguntas::create($data);
             
@@ -109,9 +113,12 @@ class HomeController extends AppBaseController
             $registradoGuid = \Cookie::get('registrado',null);
             $data = $request->all();
             if ($registradoGuid) {
-                $registrado = Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
+                try {
+                    $registrado = Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
                 
-                $data['registrado_id'] = $registrado->id;
+                    $data['registrado_id'] = $registrado->id;
+    
+                } catch (\Exception $e) {}
             }
 
             $data = Encuestas::create($data);
