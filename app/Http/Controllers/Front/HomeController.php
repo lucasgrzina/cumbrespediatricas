@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Front;
 use App\Encuestas;
 use App\Preguntas;
 use App\Registrado;
+use App\Configuraciones;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\Front\RegistrarRequest;
@@ -42,7 +43,7 @@ class HomeController extends AppBaseController
     } 
 
     public function vivo () {
-        $encuestaDispo = config('constantes.encuesta', false);
+        $encuestaDispo = (int)$this->config('encuesta');
         if ($encuestaDispo) {
             return redirect()->route('encuesta');
         }
@@ -57,7 +58,7 @@ class HomeController extends AppBaseController
     }
     
     public function encuesta () {
-        $encuestaDispo = config('constantes.encuesta', false);
+        $encuestaDispo = (int)$this->config('encuesta');
         if (!$encuestaDispo) {
             return redirect()->route('vivo');
         }        
@@ -70,7 +71,7 @@ class HomeController extends AppBaseController
     } 
     
     public function encuestaDisponible () {
-        $encuestaDispo = config('constantes.encuesta', false);
+        $encuestaDispo = (int)$this->config('encuesta');
         if ($encuestaDispo) {
             return $this->sendResponse([],'La operación finañizó con éxito');                
         } else {
@@ -127,5 +128,9 @@ class HomeController extends AppBaseController
         } catch (\Exception $e) {
             return $this->sendError($e->getMessage(),$e->getCode());
         }
-    }        
+    }
+    
+    protected function config($clave) {
+        return Configuraciones::whereClave($clave)->first()->valor;
+    }
 }
