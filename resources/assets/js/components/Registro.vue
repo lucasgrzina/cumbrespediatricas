@@ -41,7 +41,7 @@
                 </div>
             </div>
             
-            <form class="form-container">
+            <form class="form-container" id="frm-registro">
                 <div class="form-group row">
                     <div class="col-md-5">
                         <label for="name">Nombre</label>
@@ -103,7 +103,12 @@
                 </div>
     
 
-                <button type="button" class="btn btn-primary" @click="registrar()">ENVIAR</button>
+                <button type="button" 
+                        class="btn btn-primary" 
+                        @click="registrar()">
+                    <i v-if="guardando" class="fa fa-spinner fa-spin fa-fw"></i> 
+                    <span> {{ guardando ? 'ENVIANDO' : 'ENVIAR' }} </span>
+                </button>
             </form>      
         </template>  
     </div>
@@ -165,24 +170,32 @@
                 
             },            
             registrar () {
+
                 let vm = this
                 if (this.guardando) {
                     return false;
                 }
                 if (this.checkForm()) {
-                    console.debug(this.form);
                     this.guardando = true;
-                    axios.post(vm.urlRegistrar, vm.form)
-                        .then(response => {
-                            console.debug(response);
-                            vm.guardando = false;
-                            location.reload();
-                        }, error => {
-                            vm.guardando = false;
-                            alert(error.message);
+
+                    grecaptcha.ready(function() {
+                        grecaptcha.execute('6Leb2qYZAAAAALa7WyEDFhvJUYlYQH4Z_CJ-U-ie', {action: 'submit'}).then(function(token) {
+                            // Add your logic to submit to your backend server here.
+                            if (token) {
+                                axios.post(vm.urlRegistrar, vm.form)
+                                    .then(response => {
+                                        console.debug(response);
+                                        vm.guardando = false;
+                                        location.reload();
+                                    }, error => {
+                                        vm.guardando = false;
+                                        alert(error.message);
+                                    });
+
+                            }
+
                         });
-                    
-                    
+                    });
                 }
                 
             }

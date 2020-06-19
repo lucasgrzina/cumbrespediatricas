@@ -17,6 +17,8 @@
             ]) !!};
         </script>   
         <link rel="shortcut icon" href="#" />
+        @yield('head')
+      
     </head>
     <body>
         <div id="app" v-cloak>
