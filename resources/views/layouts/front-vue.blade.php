@@ -15,7 +15,7 @@
             window.App = {!! json_encode([
             ]) !!};
         </script>   
-             
+        <link rel="shortcut icon" href="#" />
     </head>
     <body>
         <div id="app" v-cloak>
