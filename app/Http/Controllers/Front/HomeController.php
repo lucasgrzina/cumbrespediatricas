@@ -30,6 +30,7 @@ class HomeController extends AppBaseController
 
     public function indexVue()
     {
+        return redirect()->route('home');
         if (\Cookie::get('registrado',null) !== null) {
             return redirect()->route('vivo');
         }
@@ -43,6 +44,7 @@ class HomeController extends AppBaseController
     } 
 
     public function vivo () {
+        return redirect()->route('home');
         $encuestaDispo = (int)$this->config('encuesta');
         if ($encuestaDispo) {
             return redirect()->route('encuesta');
@@ -58,6 +60,7 @@ class HomeController extends AppBaseController
     }
     
     public function encuesta () {
+        return redirect()->route('home');
         $encuestaDispo = (int)$this->config('encuesta');
         if (!$encuestaDispo) {
             return redirect()->route('vivo');
