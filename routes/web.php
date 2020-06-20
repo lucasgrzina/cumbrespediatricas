@@ -83,16 +83,17 @@ Route::prefix('/admin')->group(function () {
         Route::post('/dashboard/save', 'Admin\DashboardController@guardar')->name('admin.home.guardar');
     });
 });
-//Route::get('/', 'Front\HomeController@index');
+
 Route::group(['prefix' => '/'], function() {
-    Route::get('/', 'Front\HomeController@indexVue')->name('registro');
+    Route::get('/registro', 'Front\HomeController@indexVue')->name('registro');
     Route::post('/registrar', 'Front\HomeController@registrar')->name('registrar');
 
-    Route::group(['middleware' => 'registrado'], function() {
+    //Route::group(['middleware' => 'registrado'], function() {
         Route::get('/vivo', 'Front\HomeController@vivo')->name('vivo');
         Route::post('/enviar-pregunta', 'Front\HomeController@enviarPregunta')->name('enviar-pregunta');
         Route::get('/encuesta', 'Front\HomeController@encuesta')->name('encuesta');        
         Route::get('/encuesta-disponible', 'Front\HomeController@encuestaDisponible')->name('encuesta-disponible');        
         Route::post('/enviar-encuesta', 'Front\HomeController@enviarEncuesta')->name('enviar-encuesta');
-    });
+    //});
+    Route::get('/', 'Front\HomeController@index')->name('home');
 });
