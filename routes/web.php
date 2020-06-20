@@ -83,8 +83,8 @@ Route::prefix('/admin')->group(function () {
         Route::post('/dashboard/save', 'Admin\DashboardController@guardar')->name('admin.home.guardar');
     });
 });
-Route::get('/', 'Front\HomeController@index');
-Route::group(['prefix' => 'v2'], function() {
+//Route::get('/', 'Front\HomeController@index');
+Route::group(['prefix' => '/'], function() {
     Route::get('/', 'Front\HomeController@indexVue')->name('registro');
     Route::post('/registrar', 'Front\HomeController@registrar')->name('registrar');
 
