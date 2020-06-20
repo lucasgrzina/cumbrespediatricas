@@ -12,16 +12,16 @@
             <div class="row content-vimeo">
                 <div class="col-12" v-if="videoSeleccionado">
                     <div class="contenedor_vimeo" v-if="videoSeleccionado === 'ingles'">
-                        <iframe src="https://player.vimeo.com/video/430745761" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                        <iframe src="https://player.vimeo.com/video/430982834" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                     </div>                    
                     <div class="contenedor_vimeo" v-else>
-                        <iframe src="https://player.vimeo.com/video/430757476" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                        <iframe src="https://player.vimeo.com/video/430983248" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                     </div>                    
                 </div>
             </div>
             <div class="row content-vimeo-chat" v-if="videoSeleccionado">
                 <div class="col-sm-9 form-container">
-                    <input type="text" class="form-control" id="name" placeholder="Escriba su pregunta aquí" v-model="form.pregunta">
+                    <input type="text" class="form-control" id="pregunta" name="pregunta" placeholder="Escriba su pregunta aquí" v-model="form.pregunta">
                 </div>
                 <div class="col-sm-3 text-center">
                     <button type="button" 
