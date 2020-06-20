@@ -64,12 +64,33 @@ class Encuestas extends Model
      *
      * @var array
      */
-    //protected $appends = ['the_file_url'];
+    protected $appends = ['valor_resp_1','valor_resp_2','valor_resp_3'];
 
-    /*public function getTheFileUrlAttribute($value) 
+    public function getValorResp1Attribute($value) 
     {
-        return \FUHelper::fullUrl($this->targetDir,$this->the_file);
-    }*/   
+        return $this->valorResp($this->attributes['resp_1']);
+    }  
+    public function getValorResp2Attribute($value) 
+    {
+        return $this->valorResp($this->attributes['resp_2']);
+    }  
+    public function getValorResp3Attribute($value) 
+    {
+        return $this->valorResp($this->attributes['resp_3']);
+    }  
+            
+    
+    protected function valorResp($value) {
+        $valores = [
+            '1' => 'Muy malo',
+            '2' => 'Malo',
+            '3' => 'Regular',
+            '4' => 'Bueno',
+            '5' => 'Excelente'
+        ];
+
+        return $valores[$value];
+    }
 
 
     
