@@ -14,9 +14,9 @@
         <tbody>
             <tr v-for="item in list" v-if="paging.total > 0">
                 <td>(% item.id %)</td>
-                <td>(% item.resp_1 %)</td>
-                <td>(% item.resp_2 %)</td>
-                <td>(% item.resp_3 %)</td>
+                <td>(% item.valor_resp_1 %)</td>
+                <td>(% item.valor_resp_2 %)</td>
+                <td>(% item.valor_resp_3 %)</td>
                 <td>(% item.resp_4 %)</td>
                 <!--td>(% item.registrado_id %)</td-->
                 <td class="td-actions">

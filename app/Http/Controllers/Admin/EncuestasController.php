@@ -99,9 +99,9 @@ class EncuestasController extends CrudAdminController
         $name = 'Encuestas';
         $header = [
             'id' => 'ID',
-            'resp_1' => 'Pregunta 1',
-            'resp_2' => 'Pregunta 2',
-            'resp_3' => 'Pregunta 3',
+            'valor_resp_1' => 'Pregunta 1',
+            'valor_resp_2' => 'Pregunta 2',
+            'valor_resp_3' => 'Pregunta 3',
             'resp_4' => 'Pregunta 4',
         ];
         $format = [
