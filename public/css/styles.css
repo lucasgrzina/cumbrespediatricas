@@ -151,10 +151,10 @@ label:focus,
 }
 
 .content-big-title {
-  margin-top: -132px;
+  /*margin-top: -132px;*/
   align-items: center;
   display: flex;
-  min-height: 500px;
+  min-height: 400px;
 }
 
 .content-big-title .btn-primary {
@@ -316,7 +316,7 @@ footer .logo-center:after {
 
 .content-vimeo-chat .form-container input{
   font-size: 20px;
-  padding: 20px 18px;
+  padding: 0px 18px;
 }
 
 .container-encuesta {
@@ -327,11 +327,11 @@ footer .logo-center:after {
 
 .container-encuesta h5{
   color: #0d2951;
-  font-family: montserrat;
+  font-family: "montserrat";
 }
 .container-encuesta p{
   color: #0d2951;
-  font-family: montserrat;
+  font-family: "montserrat";
 }
 
 .container-encuesta .row {
