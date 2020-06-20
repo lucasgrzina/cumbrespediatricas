@@ -80,6 +80,7 @@ Route::prefix('/admin')->group(function () {
         Route::get('/exportar', 'Admin\DashboardController@exportar')->name('admin.exportar');
         Route::get('/previsualizar', 'Admin\DashboardController@previsualizar')->name('admin.previsualizar');
         Route::get('/dashboard', 'Admin\DashboardController@index')->name('admin.home');
+        Route::post('/dashboard/save', 'Admin\DashboardController@guardar')->name('admin.home.guardar');
     });
 });
 Route::get('/', 'Front\HomeController@index');
