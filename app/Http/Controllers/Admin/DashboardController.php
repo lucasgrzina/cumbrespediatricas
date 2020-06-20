@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Categoria;
 use Carbon\Carbon;
+use App\Configuraciones;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\AppBaseController;
 
-class DashboardController extends Controller
+class DashboardController extends AppBaseController
 {
     /**
      * Create a new controller instance.
@@ -27,8 +29,23 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        $encuestaDispo = (int)$this->config('encuesta');
+        $data = [
+            'encuesta' => $encuestaDispo,
+            'url_save' => route('admin.home.guardar')
+        ];
+        return view('admin.dashboard',['data' => $data]);
     }
+
+    public function guardar(Request $request) {
+        Configuraciones::where('clave','encuesta')->update(['valor' => $request->encuesta]);
+        return $this->sendResponse($request->all(),trans('admin.success'));        
+    }
+
+    protected function config($clave) {
+        return Configuraciones::whereClave($clave)->first()->valor;
+    }
+
 
     public function exportar() {
         
