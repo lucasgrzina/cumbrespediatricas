@@ -1408,7 +1408,6 @@ window.Vue = __webpack_require__(38);
 //Vue.component('contenedor', require('./components/Contenedor.vue'));
 Vue.component('registro', __webpack_require__(42));
 Vue.component('vivo', __webpack_require__(48));
-Vue.component('encuesta', __webpack_require__(53));
 
 var app = new Vue({
   el: '#app'
@@ -45304,7 +45303,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45464,6 +45463,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
@@ -45476,6 +45479,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             paso: 1,
             lnk_blur: false,
+            info: {
+                countries: ['Argentina', 'Brasil']
+            },
             form: {
                 nombre: null,
                 apellido: null,
@@ -45744,32 +45750,54 @@ var render = function() {
                   _vm._m(9),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-7" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.pais,
-                          expression: "form.pais"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "text",
-                        id: "name",
-                        "aria-describedby": "nameHelp",
-                        placeholder: ""
-                      },
-                      domProps: { value: _vm.form.pais },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.pais,
+                            expression: "form.pais"
                           }
-                          _vm.$set(_vm.form, "pais", $event.target.value)
+                        ],
+                        staticClass: "form-control",
+                        attrs: { id: "country", name: "country" },
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              _vm.form,
+                              "pais",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          }
                         }
-                      }
-                    })
+                      },
+                      [
+                        _c("option", { domProps: { value: null } }, [
+                          _vm._v("Seleccione")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.info.countries, function(item, index) {
+                          return _c(
+                            "option",
+                            { key: index, domProps: { value: item } },
+                            [_vm._v(_vm._s(item))]
+                          )
+                        })
+                      ],
+                      2
+                    )
                   ]),
                   _vm._v(" "),
                   _vm._m(10)
@@ -46089,7 +46117,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.modal-mask[data-v-4d4fa763] {\r\n  position: fixed;\r\n  z-index: 9998;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: rgba(0, 0, 0, 0.5);\r\n  display: table;\r\n  transition: opacity 0.3s ease;\n}\n.modal-wrapper[data-v-4d4fa763] {\r\n  display: table-cell;\r\n  vertical-align: middle;\n}\n.modal-container[data-v-4d4fa763] {\r\n    width: 90%;\r\n    max-width: 630px;\r\n    margin: 0px auto;\r\n    padding: 10px;\r\n    background-color: #061422;\r\n    border-radius: 2px;\r\n    box-shadow: 0 2px 8px #e7a249;\r\n    transition: all 0.3s ease;\r\n    border: 1px solid #9E9E9E;\n}\n.modal-header h3[data-v-4d4fa763] {\r\n  margin-top: 0;\r\n  color: #42b983;\n}\n.modal-body[data-v-4d4fa763] {\r\n  margin: 0;\r\n  padding: 0;\r\n  max-height: 500px;\r\n  overflow-y: auto;\n}\n.modal-default-button[data-v-4d4fa763] {\r\n  float: right;\n}\r\n\r\n/*\r\n * The following styles are auto-applied to elements with\r\n * transition=\"modal\" when their visibility is toggled\r\n * by Vue.js.\r\n *\r\n * You can easily play with the modal transition by editing\r\n * these styles.\r\n */\n.modal-enter[data-v-4d4fa763] {\r\n  opacity: 0;\n}\n.modal-leave-active[data-v-4d4fa763] {\r\n  opacity: 0;\n}\n.modal-enter .modal-container[data-v-4d4fa763],\r\n.modal-leave-active .modal-container[data-v-4d4fa763] {\r\n  -webkit-transform: scale(1.1);\r\n  transform: scale(1.1);\n}\n.modal-footer[data-v-4d4fa763] {\r\n    justify-content: center;\r\n    padding: 0;\r\n    background: #061422;\r\n    border-top-color: #061422;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -46151,10 +46179,74 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
         urlEnviar: {
+            type: String,
+            required: true
+        },
+        urlEnviarEncuesta: {
             type: String,
             required: true
         },
@@ -46174,6 +46266,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             form: {
                 pregunta: null
             },
+            encuesta: {
+                preguntas: [{ key: 1, tit: 'Mensaje (s): Contenido y claridad', preg: 'El mensaje fue claro y en términos que los puedo entender y aplicar', tipo: 'C' }, { key: 2, tit: 'Abbott en la Nutrición', preg: 'Puedo utilizar el conocimiento compartido utilizando  los productos de Abbott.', tipo: 'C' }, { key: 3, tit: 'Evaluación del evento', preg: '¿Qué le pareció la logística y experiencia de este webinar?', tipo: 'C' }, { key: 4, tit: '¿Qué otros temas serían de su interés?', preg: '', tipo: 'T' }],
+                opciones: [{ key: 5, texto: 'Excelente' }, { key: 4, texto: 'Bueno' }, { key: 3, texto: 'Regular' }, { key: 2, texto: 'Malo' }, { key: 1, texto: 'Muy malo' }],
+                form: {
+                    resp_1: null,
+                    resp_2: null,
+                    resp_3: null,
+                    resp_4: null
+                },
+                enviando: false,
+                errors: []
+            },
+            showModal: false,
             enviando: false,
             enviandoEncuesta: false
         };
@@ -46200,18 +46305,50 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 });
             }
         },
-        encuesta: function encuesta() {
+        encuestaDisponible: function encuestaDisponible() {
             var vm = this;
             if (!vm.enviandoEncuesta) {
                 vm.enviandoEncuesta = true;
                 axios.get(vm.urlEncuestaDisponible).then(function (response) {
-                    //vm.enviandoEncuesta = false;
-                    document.location = vm.urlEncuesta;
+                    vm.enviandoEncuesta = false;
+                    //document.location = vm.urlEncuesta;
+                    vm.mostrarModal(true);
                 }, function (error) {
                     vm.enviandoEncuesta = false;
                     alert('La encuesta no se encuentra disponible por el momento.');
                 });
             }
+        },
+        enviarEncuesta: function enviarEncuesta() {
+            var vm = this;
+
+            if (!vm.encuesta.form.resp_1 || !vm.encuesta.form.resp_2 || !vm.encuesta.form.resp_3 || !vm.encuesta.form.resp_4) {
+                alert('Debe responder todas las preguntas');
+                return false;
+            }
+
+            if (!vm.encuesta.enviando) {
+                vm.encuesta.enviando = true;
+                axios.post(vm.urlEnviarEncuesta, vm.encuesta.form).then(function (response) {
+                    vm.encuesta.enviando = false;
+                    vm.encuesta.form = {
+                        resp_1: null,
+                        resp_2: null,
+                        resp_3: null,
+                        resp_4: null
+                    };
+                    alert('Gracias por responder la encuesta');
+                    vm.mostrarModal(false);
+                    // vm.form.pregunta = null;
+                }, function (error) {
+                    vm.encuesta.enviando = false;
+
+                    alert(error.message);
+                });
+            }
+        },
+        mostrarModal: function mostrarModal(valor) {
+            this.showModal = valor;
         }
     }
 });
@@ -46364,7 +46501,7 @@ var render = function() {
                 attrs: { type: "button" },
                 on: {
                   click: function($event) {
-                    return _vm.encuesta()
+                    return _vm.encuestaDisponible()
                   }
                 }
               },
@@ -46377,7 +46514,230 @@ var render = function() {
     _c("i", {
       staticClass: "fa fa-spinner fa-spin fa-fw",
       staticStyle: { opacity: "0" }
-    })
+    }),
+    _vm._v(" "),
+    _vm.showModal
+      ? _c(
+          "div",
+          [
+            _c("transition", { attrs: { name: "modal" } }, [
+              _c("div", { staticClass: "modal-mask" }, [
+                _c("div", { staticClass: "modal-wrapper" }, [
+                  _c("div", { staticClass: "modal-container" }, [
+                    _c("div", { staticClass: "modal-body" }, [
+                      _c(
+                        "div",
+                        { staticClass: "container-encuesta" },
+                        [
+                          _vm._l(_vm.encuesta.preguntas, function(item, index) {
+                            return _c(
+                              "div",
+                              { key: index, staticClass: "row" },
+                              [
+                                _c("div", { staticClass: "col-12" }, [
+                                  _c("h5", [
+                                    _vm._v(
+                                      _vm._s(item.key) + ") " + _vm._s(item.tit)
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("p", [_vm._v(_vm._s(item.preg))])
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-12" },
+                                  [
+                                    item.tipo === "C"
+                                      ? _vm._l(_vm.encuesta.opciones, function(
+                                          subitem
+                                        ) {
+                                          return _c(
+                                            "div",
+                                            {
+                                              key: subitem.key,
+                                              staticClass: "form-check-inline"
+                                            },
+                                            [
+                                              _c(
+                                                "label",
+                                                {
+                                                  staticClass:
+                                                    "form-check-label"
+                                                },
+                                                [
+                                                  _c("input", {
+                                                    directives: [
+                                                      {
+                                                        name: "model",
+                                                        rawName: "v-model",
+                                                        value:
+                                                          _vm.encuesta.form[
+                                                            "resp_" + item.key
+                                                          ],
+                                                        expression:
+                                                          "encuesta.form['resp_' + item.key]"
+                                                      }
+                                                    ],
+                                                    staticClass:
+                                                      "form-check-input",
+                                                    attrs: {
+                                                      type: "radio",
+                                                      name:
+                                                        "p_" +
+                                                        item.key +
+                                                        "_r_" +
+                                                        subitem.key
+                                                    },
+                                                    domProps: {
+                                                      value: subitem.key,
+                                                      checked: _vm._q(
+                                                        _vm.encuesta.form[
+                                                          "resp_" + item.key
+                                                        ],
+                                                        subitem.key
+                                                      )
+                                                    },
+                                                    on: {
+                                                      change: function($event) {
+                                                        return _vm.$set(
+                                                          _vm.encuesta.form,
+                                                          "resp_" + item.key,
+                                                          subitem.key
+                                                        )
+                                                      }
+                                                    }
+                                                  }),
+                                                  _vm._v(
+                                                    " " +
+                                                      _vm._s(subitem.texto) +
+                                                      "\n                                            "
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        })
+                                      : [
+                                          _c("textarea", {
+                                            directives: [
+                                              {
+                                                name: "model",
+                                                rawName: "v-model",
+                                                value:
+                                                  _vm.encuesta.form[
+                                                    "resp_" + item.key
+                                                  ],
+                                                expression:
+                                                  "encuesta.form['resp_' + item.key]"
+                                              }
+                                            ],
+                                            staticClass: "form-control",
+                                            attrs: { name: "p_" + item.key },
+                                            domProps: {
+                                              value:
+                                                _vm.encuesta.form[
+                                                  "resp_" + item.key
+                                                ]
+                                            },
+                                            on: {
+                                              input: function($event) {
+                                                if ($event.target.composing) {
+                                                  return
+                                                }
+                                                _vm.$set(
+                                                  _vm.encuesta.form,
+                                                  "resp_" + item.key,
+                                                  $event.target.value
+                                                )
+                                              }
+                                            }
+                                          })
+                                        ]
+                                  ],
+                                  2
+                                )
+                              ]
+                            )
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "text-right" }),
+                          _vm._v(" "),
+                          _c("i", {
+                            staticClass: "fa fa-spinner fa-spin fa-fw",
+                            staticStyle: { opacity: "0" }
+                          })
+                        ],
+                        2
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "modal-footer" },
+                      [
+                        _vm._t("footer", [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-primary",
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.enviarEncuesta()
+                                }
+                              }
+                            },
+                            [
+                              _vm.encuesta.enviando
+                                ? _c("i", {
+                                    staticClass: "fa fa-spinner fa-spin fa-fw"
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _c("span", [
+                                _vm._v(
+                                  " " +
+                                    _vm._s(
+                                      _vm.encuesta.enviando
+                                        ? "Enviando"
+                                        : "Enviar"
+                                    ) +
+                                    " "
+                                )
+                              ])
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-primary",
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.mostrarModal(false)
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                            Cerrar\n                        "
+                              )
+                            ]
+                          )
+                        ])
+                      ],
+                      2
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ],
+          1
+        )
+      : _vm._e()
   ])
 }
 var staticRenderFns = []
@@ -46387,369 +46747,6 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-4d4fa763", module.exports)
-  }
-}
-
-/***/ }),
-/* 53 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(54)
-}
-var normalizeComponent = __webpack_require__(5)
-/* script */
-var __vue_script__ = __webpack_require__(56)
-/* template */
-var __vue_template__ = __webpack_require__(57)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-997d39a6"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/Encuesta.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-997d39a6", Component.options)
-  } else {
-    hotAPI.reload("data-v-997d39a6", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 54 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(55);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(4)("a0516460", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-997d39a6\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Encuesta.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-997d39a6\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Encuesta.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 55 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(3)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 56 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: {
-        urlEnviar: {
-            type: String,
-            required: true
-        }
-    },
-    data: function data() {
-        return {
-            preguntas: [{ key: 1, tit: 'Mensaje (s): Contenido y claridad', preg: 'El mensaje fue claro y en términos que los puedo entender y aplicar', tipo: 'C' }, { key: 2, tit: 'Abbott en la Nutrición', preg: 'Puedo utilizar el conocimiento compartido utilizando  los productos de Abbott.', tipo: 'C' }, { key: 3, tit: 'Evaluación del evento', preg: '¿Qué le pareció la logística y experiencia de este webinar?', tipo: 'C' }, { key: 4, tit: '¿Qué otros temas serían de su interés?', preg: '', tipo: 'T' }],
-            opciones: [{ key: 5, texto: 'Excelente' }, { key: 4, texto: 'Bueno' }, { key: 3, texto: 'Regular' }, { key: 2, texto: 'Malo' }, { key: 1, texto: 'Muy malo' }],
-            form: {
-                resp_1: null,
-                resp_2: null,
-                resp_3: null,
-                resp_4: null
-            },
-            enviando: false,
-            errors: []
-        };
-    },
-    mounted: function mounted() {
-        console.debug('Encuesta mounted');
-    },
-
-    methods: {
-        enviar: function enviar() {
-            var vm = this;
-
-            if (!vm.form.resp_1 || !vm.form.resp_2 || !vm.form.resp_3 || !vm.form.resp_4) {
-                alert('Debe responder todas las preguntas');
-                return false;
-            }
-
-            if (!vm.enviando) {
-                vm.enviando = true;
-                axios.post(vm.urlEnviar, vm.form).then(function (response) {
-                    vm.enviando = false;
-                    vm.form = {
-                        resp_1: null,
-                        resp_2: null,
-                        resp_3: null,
-                        resp_4: null
-                    };
-                    alert('Gracias por responder la encuesta');
-                    // vm.form.pregunta = null;
-                }, function (error) {
-                    vm.enviando = false;
-
-                    alert(error.message);
-                });
-            }
-        }
-    }
-});
-
-/***/ }),
-/* 57 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "container-encuesta" },
-      [
-        _vm._l(_vm.preguntas, function(item, index) {
-          return _c("div", { key: index, staticClass: "row" }, [
-            _c("div", { staticClass: "col-12" }, [
-              _c("h5", [_vm._v(_vm._s(item.key) + ") " + _vm._s(item.tit))]),
-              _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(item.preg))])
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-12" },
-              [
-                item.tipo === "C"
-                  ? _vm._l(_vm.opciones, function(subitem) {
-                      return _c(
-                        "div",
-                        { key: subitem.key, staticClass: "form-check-inline" },
-                        [
-                          _c("label", { staticClass: "form-check-label" }, [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.form["resp_" + item.key],
-                                  expression: "form['resp_' + item.key]"
-                                }
-                              ],
-                              staticClass: "form-check-input",
-                              attrs: {
-                                type: "radio",
-                                name: "p_" + item.key + "_r_" + subitem.key
-                              },
-                              domProps: {
-                                value: subitem.key,
-                                checked: _vm._q(
-                                  _vm.form["resp_" + item.key],
-                                  subitem.key
-                                )
-                              },
-                              on: {
-                                change: function($event) {
-                                  return _vm.$set(
-                                    _vm.form,
-                                    "resp_" + item.key,
-                                    subitem.key
-                                  )
-                                }
-                              }
-                            }),
-                            _vm._v(
-                              " " +
-                                _vm._s(subitem.texto) +
-                                "\n                            "
-                            )
-                          ])
-                        ]
-                      )
-                    })
-                  : [
-                      _c("textarea", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.form["resp_" + item.key],
-                            expression: "form['resp_' + item.key]"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: { name: "p_" + item.key },
-                        domProps: { value: _vm.form["resp_" + item.key] },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.form,
-                              "resp_" + item.key,
-                              $event.target.value
-                            )
-                          }
-                        }
-                      })
-                    ]
-              ],
-              2
-            )
-          ])
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "text-right" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-primary",
-              attrs: { type: "button" },
-              on: {
-                click: function($event) {
-                  return _vm.enviar()
-                }
-              }
-            },
-            [
-              _vm.enviando
-                ? _c("i", { staticClass: "fa fa-spinner fa-spin fa-fw" })
-                : _vm._e(),
-              _vm._v(" "),
-              _c("span", [
-                _vm._v(" " + _vm._s(_vm.enviando ? "ENVIANDO" : "ENVIAR") + " ")
-              ])
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("i", {
-          staticClass: "fa fa-spinner fa-spin fa-fw",
-          staticStyle: { opacity: "0" }
-        })
-      ],
-      2
-    )
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row content-title" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "line line--left" }),
-        _vm._v(" "),
-        _c("h1", [_vm._v("Encuesta de satisfacción")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "line line--right" })
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-997d39a6", module.exports)
   }
 }
 

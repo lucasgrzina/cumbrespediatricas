@@ -29,5 +29,13 @@ class FrontHelper {
             return ucwords(\Date::parse($date)->format($format_other));
         }
     }
+
+    public static function getCookieRegistrado() {
+        return \Cookie::get(config('constantes.cookieRegistrado'),null);
+    }
+
+    public static function setCookieRegistrado($valor) {
+        return \Cookie::queue(\Cookie::make(config('constantes.cookieRegistrado'), md5($valor), 518400));
+    }
  
 }
