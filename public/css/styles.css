@@ -123,7 +123,7 @@ label:focus,
   background: linear-gradient(135deg, #e8a34d 0%, #fdecbb 7%, #e8a34d 35%, #e5a347 62%, #fdecbb 89%, #e2a341 100%);
 }
 
-.form-container input {
+.form-container input,.form-container select {
   font-size: 25px;
   border-radius: 30px;
   border-width: 4px;
@@ -136,7 +136,9 @@ label:focus,
 }
 
 .form-container input:focus,
-.form-container input:active {
+.form-container input:active,
+.form-container select:focus,
+.form-container select:active {
   outline: none;
   background: rgba(0, 0, 0, 0.5);
 }
@@ -322,7 +324,7 @@ footer .logo-center:after {
 .container-encuesta {
   background: #e7a249;
   padding: 20px;
-  border-radius: 20px;
+  /*border-radius: 20px;*/
 }
 
 .container-encuesta h5{

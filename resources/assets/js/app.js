@@ -18,7 +18,6 @@ window.Vue = require('vue');
 //Vue.component('contenedor', require('./components/Contenedor.vue'));
 Vue.component('registro', require('./components/Registro.vue'));
 Vue.component('vivo', require('./components/Vivo.vue'));
-Vue.component('encuesta', require('./components/Encuesta.vue'));
 
 const app = new Vue({
     el: '#app',

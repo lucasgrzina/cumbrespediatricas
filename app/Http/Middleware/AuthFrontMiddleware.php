@@ -9,10 +9,10 @@ class AuthFrontMiddleware
 {
     public function handle($request, Closure $next)
     {
-        if (\Cookie::get('registrado',null) !== null)
+        if (\FrontHelper::getCookieRegistrado() !== null)
         {
             return $next($request);
         }
-        return redirect()->route('registro');
+        return redirect()->route('home');
     }
 }

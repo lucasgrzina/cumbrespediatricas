@@ -13,6 +13,7 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="#" />
+    @yield('head')
   </head>
   <body>
     <div class="container-fluid h-100">

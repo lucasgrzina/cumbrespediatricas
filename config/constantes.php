@@ -1,4 +1,4 @@
 <?php
 return [
-    'encuesta' => false
+    'cookieRegistrado' => 'registrado_v2'
 ];

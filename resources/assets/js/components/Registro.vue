@@ -83,7 +83,11 @@
                         <label for="name">Pais</label>
                     </div>
                     <div class="col-md-7">
-                        <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="" v-model="form.pais">
+                        <select id="country" name="country" v-model="form.pais" class="form-control">
+                            <option :value="null">Seleccione</option>
+                            <option v-for="(item,index) in info.countries" :value="item" :key="index">{{item}}</option>
+                        </select>
+                        <!--input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="" v-model="form.pais"-->
                     </div>
                     <div class="col-md-12">
                         <small id="nameHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -126,6 +130,9 @@
             return {
                 paso: 1,
                 lnk_blur: false,
+                info: {
+                    countries: ['Argentina','Brasil']
+                },
                 form: {
                     nombre: null,
                     apellido: null,
