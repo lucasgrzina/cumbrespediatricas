@@ -145,6 +145,12 @@ label:focus,
 .form-container select {
   padding: 5px 15px;
 }
+
+.form-container select option {
+  font-size: 15px;
+  padding: 15px;
+}
+
 .form-container input:focus,
 .form-container input:active,
 .form-container select:focus,
