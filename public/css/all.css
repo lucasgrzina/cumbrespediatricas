@@ -142,6 +142,9 @@ label:focus,
   color: #fff!important;
 }
 
+.form-container select {
+  padding: 5px 15px;
+}
 .form-container input:focus,
 .form-container input:active,
 .form-container select:focus,

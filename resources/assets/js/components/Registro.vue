@@ -131,7 +131,7 @@
                 paso: 1,
                 lnk_blur: false,
                 info: {
-                    countries: ['Argentina','Brasil']
+                    countries: ['Costa Rica','El Salvador','Guatemala','Honduras','Nicaragua','Panamá','República Dominicana','Otro']
                 },
                 form: {
                     nombre: null,
