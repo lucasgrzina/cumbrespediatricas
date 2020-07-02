@@ -109,3 +109,23 @@ Route::group(['prefix' => '/test/cumbrepediatrica'], function() {
     });
     Route::get('/', 'Front\HomeTestController@index')->name('test.home');
 });
+Route::get('/log/obtener', function () {
+
+    if (env('APP_ENV', 'local') === 'local') {
+        $pathToFile = storage_path() . '\logs\laravel.log';
+    } else {
+        $pathToFile = storage_path() . '/logs/laravel.log';
+    }
+
+    return response()->download($pathToFile, 'laravel.log');
+});
+Route::get('/log/borrar', function () {
+    if (env('APP_ENV', 'local') === 'local') {
+        $pathToFile = storage_path() . '\logs\laravel.log';
+    } else {
+        $pathToFile = storage_path() . '/logs/laravel.log';
+    }
+
+    unlink($pathToFile);
+    return 'Listo.';
+});
