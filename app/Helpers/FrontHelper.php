@@ -30,12 +30,12 @@ class FrontHelper {
         }
     }
 
-    public static function getCookieRegistrado() {
-        return \Cookie::get(config('constantes.cookieRegistrado'),null);
+    public static function getCookieRegistrado($prefijo = '') {
+        return \Cookie::get($prefijo.config('constantes.cookieRegistrado'),null);
     }
 
-    public static function setCookieRegistrado($valor) {
-        return \Cookie::queue(\Cookie::make(config('constantes.cookieRegistrado'), md5($valor), 518400));
+    public static function setCookieRegistrado($valor,$prefijo = '') {
+        return \Cookie::queue(\Cookie::make($prefijo.config('constantes.cookieRegistrado'), md5($valor), 518400));
     }
  
 }
