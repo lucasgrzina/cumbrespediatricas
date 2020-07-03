@@ -46238,6 +46238,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -46394,9 +46395,29 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
+    _vm.videoSeleccionado
+      ? _c("div", { staticClass: "row content-encuesta" }, [
+          _c("div", { staticClass: "col-12 text-center" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.encuestaDisponible()
+                  }
+                }
+              },
+              [_c("span", [_vm._v("Encuesta")])]
+            )
+          ])
+        ])
+      : _vm._e(),
+    _vm._v(" "),
     _c("div", { staticClass: "row content-vimeo" }, [
       _vm.videoSeleccionado
-        ? _c("div", { staticClass: "col-12" }, [
+        ? _c("div", { staticClass: "col-md-12" }, [
             _vm.videoSeleccionado === "ingles"
               ? _c("div", { staticClass: "contenedor_vimeo" }, [
                   _c("iframe", {
@@ -46486,26 +46507,6 @@ var render = function() {
                 _vm._v(" "),
                 !_vm.enviando ? _c("span", [_vm._v("ENVIAR")]) : _vm._e()
               ]
-            )
-          ])
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _vm.videoSeleccionado
-      ? _c("div", { staticClass: "row content-encuesta" }, [
-          _c("div", { staticClass: "col-12 text-center" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary",
-                attrs: { type: "button" },
-                on: {
-                  click: function($event) {
-                    return _vm.encuestaDisponible()
-                  }
-                }
-              },
-              [_c("span", [_vm._v("Encuesta")])]
             )
           ])
         ])

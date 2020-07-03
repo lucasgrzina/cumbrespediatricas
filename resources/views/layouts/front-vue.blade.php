@@ -36,15 +36,15 @@
                 <div class="container">
                     <div class="row logos">
                         <div class="col-4">
-                            <a><img src="{{asset('img/logo_3.png')}}"></a>
+                            <a><img src="{{asset('img/logo_3.png')}}" style="height: auto; max-width: 180px;"></a>
                         </div>
         
                         <div class="col-4 text-center">
-                            <a><img class="logo-cumbre" src="{{asset('img/cumbres_logo.png')}}"></a>
+                            <img class="logo-cumbre" style="height: auto; max-width: 180px;" src="{{asset('img/cumbres_logo.png')}}">
                         </div>
         
                         <div class="col-4">
-                            <a><img src="{{asset('img/logo_1.png')}}"></a>
+                            <a><img src="{{asset('img/logo_1.png')}}" style="height: auto; max-width: 180px;"></a>
                         </div>
                     </div>
                 </div>
