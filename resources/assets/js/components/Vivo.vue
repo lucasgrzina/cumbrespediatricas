@@ -9,8 +9,19 @@
                     <!--div class="line line--right"></div-->
                 </div>
             </div>
+            <div class="row content-encuesta" v-if="videoSeleccionado">
+                <div class="col-12 text-center">
+                    <button type="button" 
+                            class="btn btn-primary" 
+                            @click="encuestaDisponible()"
+                    >
+                        <span>Encuesta</span>
+                    </button>                    
+                </div>
+
+            </div>
             <div class="row content-vimeo">
-                <div class="col-12" v-if="videoSeleccionado">
+                <div class="col-md-12" v-if="videoSeleccionado">
                     <div class="contenedor_vimeo" v-if="videoSeleccionado === 'ingles'">
                         <iframe src="https://player.vimeo.com/video/430982834" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                     </div>                    
@@ -34,17 +45,7 @@
                     </button>                    
                 </div>
             </div>
-            <div class="row content-encuesta" v-if="videoSeleccionado">
-                <div class="col-12 text-center">
-                    <button type="button" 
-                            class="btn btn-primary" 
-                            @click="encuestaDisponible()"
-                    >
-                        <span>Encuesta</span>
-                    </button>                    
-                </div>
 
-            </div>
             <i class="fa fa-spinner fa-spin fa-fw" style="opacity:0;"></i>
             
             <div v-if="showModal">
