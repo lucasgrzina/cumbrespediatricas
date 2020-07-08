@@ -46239,6 +46239,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -46418,6 +46419,8 @@ var render = function() {
     _c("div", { staticClass: "row content-vimeo" }, [
       _vm.videoSeleccionado
         ? _c("div", { staticClass: "col-md-12" }, [
+            _vm._m(0),
+            _vm._v(" "),
             _vm.videoSeleccionado === "ingles"
               ? _c("div", { staticClass: "contenedor_vimeo" }, [
                   _c("iframe", {
@@ -46429,7 +46432,7 @@ var render = function() {
                       height: "100%"
                     },
                     attrs: {
-                      src: "https://player.vimeo.com/video/430982834",
+                      src: "https://player.vimeo.com/video/436507223",
                       frameborder: "0",
                       allow: "autoplay; fullscreen",
                       allowfullscreen: ""
@@ -46446,7 +46449,7 @@ var render = function() {
                       height: "100%"
                     },
                     attrs: {
-                      src: "https://player.vimeo.com/video/430983248",
+                      src: "https://player.vimeo.com/video/436508397",
                       frameborder: "0",
                       allow: "autoplay; fullscreen",
                       allowfullscreen: ""
@@ -46741,7 +46744,32 @@ var render = function() {
       : _vm._e()
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "span",
+      {
+        staticStyle: {
+          color: "#fff",
+          "text-align": "center",
+          width: "100%",
+          "margin-top": "20px",
+          display: "block"
+        }
+      },
+      [
+        _c("i", {
+          staticClass: "fa fa-volume-up",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v("Por favor, activar el sonido del reproductor")
+      ]
+    )
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
