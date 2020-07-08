@@ -4,11 +4,11 @@
     <script type="text/javascript">
 		var _data = {!! json_encode($data) !!};
 		
-		_methods.habilitarEncuesta = function () {
-			console.debug(this.encuesta);
+		_methods.guardarConfig = function () {
+			console.debug(this.config);
 			var _this = this;
 			var _ajaxMethod =  _this.ajaxPost ;
-			return _ajaxMethod(_this.url_save,{encuesta: _this.encuesta},true,_this.errors).then(function(data){
+			return _ajaxMethod(_this.url_save,{config:_this.config},true,_this.errors).then(function(data){
 				console.debug(data);
 			});                            
 		};
@@ -23,10 +23,29 @@
     	</div>
 	</div>
     <div class="row">
-    	<div class="col-xs-12">
-    		<h2>Configuraciones</h2>
-    		<p>
-				<input type="checkbox" name="encuesta" id="encuesta" value="1" v-model="encuesta" @change="habilitarEncuesta"> Habilitar encuesta
+    	<div class="col-xs-6">
+			<h2>Configuraciones</h2>
+			<p>
+				<div class="form-group">
+					<label for="lst-etapas">Etapa</label>
+					<select id="lst-etapas" name="lst-etapas" class="form-control" v-model="config.etapa">
+						<option :value="'I'">Inicio (JPG)</option>
+						<option :value="'R'">Registro/Vivo</option>
+						<option :value="'F'">Fin (Placa)</option>
+					</select>
+				</div>
+
+			</p>
+    		<p v-if="config.etapa === 'R'">
+				<label style="margin-right: 10px;">Habilitar encuesta:</label>
+				<input type="radio" id="encuesta_si" value="1" v-model="config.encuesta">
+				<label for="encuesta_si" style="margin-right: 10px;">SI</label>
+				
+				<input type="radio" id="encuesta_no" value="0" v-model="config.encuesta">
+				<label for="encuesta_no">NO</label>				
+			</p>
+			<p>
+				<button class="btn btn-primary" @click="guardarConfig" type="button">Guardar</button>
 			</p>	
     	</div>
 	</div>	

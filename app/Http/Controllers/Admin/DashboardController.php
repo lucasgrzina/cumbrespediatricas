@@ -29,21 +29,34 @@ class DashboardController extends AppBaseController
      */
     public function index()
     {
-        $encuestaDispo = (int)$this->config('encuesta');
+        $config = $this->config('*');
         $data = [
-            'encuesta' => $encuestaDispo,
+            'config' => $config,
             'url_save' => route('admin.home.guardar')
         ];
         return view('admin.dashboard',['data' => $data]);
     }
 
     public function guardar(Request $request) {
-        Configuraciones::where('clave','encuesta')->update(['valor' => $request->encuesta]);
+
+        foreach ($request->config as $key => $value) {
+            \Log::info($key);
+            if ($key == 'encuesta') {
+                $value = $value ? true : false;
+            }
+            Configuraciones::where('clave',$key)->update(['valor' => $value]);
+        }
+
+        //Configuraciones::where('clave','encuesta')->update(['valor' => $request->encuesta]);
         return $this->sendResponse($request->all(),trans('admin.success'));        
     }
 
-    protected function config($clave) {
-        return Configuraciones::whereClave($clave)->first()->valor;
+    protected function config($clave='*') {
+        if ($clave === '*') {
+            return Configuraciones::pluck('valor','clave');
+        } else {
+            return Configuraciones::whereClave($clave)->first()->valor;    
+        }
     }
 
 
