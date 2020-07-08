@@ -136,6 +136,5 @@ class HomeController extends AppBaseController
         } else {
             return Configuraciones::whereClave($clave)->first()->valor;    
         }
-        
     }
 }
