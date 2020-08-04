@@ -98,11 +98,11 @@ class Encuestas extends Model
     
     protected function valorResp($value) {
         $valores = [
-            '1' => 'Muy malo',
-            '2' => 'Malo',
-            '3' => 'Regular',
-            '4' => 'Bueno',
-            '5' => 'Excelente'
+            '1' => 'Totalmente en desacuerdo',
+            '2' => 'En desacuerdo',
+            '3' => 'Ni en desacuerdo ni de acuerdo',
+            '4' => 'En desacuerdo',
+            '5' => 'Totalmente en desacuerdo'
         ];
 
         return $valores[$value];
