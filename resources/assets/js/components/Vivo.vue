@@ -106,7 +106,20 @@
                     </div>
                     </div>
                 </transition>
-            </div>            
+            </div>   
+
+            <div class="row content-certificado" v-if="videoSeleccionado && registrado && registrado.certificado">
+                <div class="col-12 text-center">
+                    <button type="button" 
+                            class="btn btn-primary" 
+                            @click="certificadoDisponible()"
+                    >
+                        <span>Certificado</span>
+                    </button>                    
+                </div>
+
+            </div>
+
     </div>
 </template>
 
@@ -130,6 +143,10 @@
                 type: String,
                 required:true
             },
+            registrado: {
+                type: Object,
+                required: true
+            }
 
         },
         data () {
@@ -233,7 +250,22 @@
             },
             mostrarModal: function(valor) {
                 this.showModal = valor;
-            }
+            },
+            certificadoDisponible: function() {
+                let vm = this
+                if (!vm.enviandoEncuesta) {
+                    vm.enviandoEncuesta = true;
+                    axios.get(vm.urlEncuestaDisponible)
+                        .then(response => {
+                            vm.enviandoEncuesta = false;
+                            document.location = vm.registrado.certificado;
+                            //vm.mostrarModal(true);
+                        }, error => {
+                            vm.enviandoEncuesta = false;
+                            alert('El certificado no se encuentra disponible por el momento.');
+                        });                    
+                }
+            },
         }
     }
 </script>

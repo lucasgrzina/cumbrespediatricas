@@ -88,14 +88,20 @@ Route::group(['prefix' => '/cumbrepediatrica'], function() {
     //Route::get('/registro', 'Front\HomeController@indexVue')->name('registro');
     Route::post('/registrar', 'Front\HomeController@registrar')->name('registrar');
 
+    Route::get('/vivo', 'Front\HomeController@vivo')->name('vivo');
     Route::group(['middleware' => 'registrado'], function() {
-        Route::get('/vivo', 'Front\HomeController@vivo')->name('vivo');
+        
         Route::post('/enviar-pregunta', 'Front\HomeController@enviarPregunta')->name('enviar-pregunta');
         //Route::get('/encuesta', 'Front\HomeController@encuesta')->name('encuesta');        
         Route::get('/encuesta-disponible', 'Front\HomeController@encuestaDisponible')->name('encuesta-disponible');        
         Route::post('/enviar-encuesta', 'Front\HomeController@enviarEncuesta')->name('enviar-encuesta');
     });
+    
+    Route::prefix('ws')->group(function () {
+        Route::get('/evento-disponible', 'Front\HomeController@eventoDisponible');
+    });    
     Route::get('/', 'Front\HomeController@index')->name('home');
+
 });
 Route::group(['prefix' => '/test/cumbrepediatrica'], function() {
     Route::post('/registrar', 'Front\HomeTestController@registrar')->name('test.registrar');
