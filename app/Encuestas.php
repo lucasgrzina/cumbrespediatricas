@@ -31,6 +31,10 @@ class Encuestas extends Model
         'resp_2',
         'resp_3',
         'resp_4',
+        'resp_5',
+        'resp_6',
+        'resp_7',
+        'resp_8',
         'registrado_id',
         //'enabled'
     ];
@@ -45,6 +49,10 @@ class Encuestas extends Model
         'resp_2' => 'string',
         'resp_3' => 'string',
         'resp_4' => 'string',
+        'resp_5' => 'string',
+        'resp_6' => 'string',
+        'resp_7' => 'string',
+        'resp_8' => 'string',
         'registrado_id' => 'integer',
         //'enabled' => 'boolean'
     ];
@@ -64,7 +72,7 @@ class Encuestas extends Model
      *
      * @var array
      */
-    protected $appends = ['valor_resp_1','valor_resp_2','valor_resp_3'];
+    protected $appends = ['valor_resp_1','valor_resp_2','valor_resp_3','valor_resp_4','valor_resp_5'];
 
     public function getValorResp1Attribute($value) 
     {
@@ -78,6 +86,14 @@ class Encuestas extends Model
     {
         return $this->valorResp($this->attributes['resp_3']);
     }  
+    public function getValorResp4Attribute($value) 
+    {
+        return $this->valorResp($this->attributes['resp_4']);
+    }  
+    public function getValorResp5Attribute($value) 
+    {
+        return $this->valorResp($this->attributes['resp_5']);
+    }          
             
     
     protected function valorResp($value) {
