@@ -39,6 +39,7 @@ class HomeController extends AppBaseController
 
     public function indexVue()
     {
+        
         //return redirect()->route('home');
         if (FrontHelper::getCookieRegistrado()) {
             //return redirect()->route('vivo');

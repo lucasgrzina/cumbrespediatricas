@@ -100,7 +100,7 @@ Route::group(['prefix' => '/cumbrepediatrica'], function() {
     Route::prefix('ws')->group(function () {
         Route::get('/evento-disponible', 'Front\HomeController@eventoDisponible');
     });    
-    Route::get('/', 'Front\HomeController@index')->name('home');
+    //Route::get('/', 'Front\HomeController@index')->name('home');
 
 });
 Route::group(['prefix' => '/test/cumbrepediatrica'], function() {
