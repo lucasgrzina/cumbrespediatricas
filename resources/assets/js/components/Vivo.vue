@@ -70,11 +70,15 @@
                                     </div>
                                     <div class="col-12">
                                         <template v-if="item.tipo === 'C'">
-                                            <div class="form-check-inline" v-for="subitem in encuesta.opciones" :key="subitem.key">
+                                            <template v-for="subitem in encuesta.opciones">
+                                            <div class="form-check-inline" :key="subitem.key">
                                                 <label class="form-check-label">
                                                     <input type="radio" class="form-check-input" :name="'p_'+item.key+'_r_'+subitem.key" :value="subitem.key" v-model="encuesta.form['resp_' + item.key]"> {{subitem.texto}}
                                                 </label>
                                             </div>
+                                            <br :key="subitem.key">
+                                            </template>
+                                            
                                         </template>
                                         <template v-else>
                                             <textarea class="form-control" :name="'p_'+item.key" v-model="encuesta.form['resp_' + item.key]"></textarea>
@@ -167,11 +171,11 @@
                         {key: 8,tit: '¿Alguna sugerencia para hacer este webinar más efectivo?', preg: '', tipo: 'T'},
                     ],
                     opciones: [
-                        {key: 5, texto: 'Excelente'},
-                        {key: 4, texto: 'Bueno'},
-                        {key: 3, texto: 'Regular'},
-                        {key: 2, texto: 'Malo'},
-                        {key: 1, texto: 'Muy malo'},
+                        {key: 5, texto: 'Totalmente de acuerdo'},
+                        {key: 4, texto: 'De acuerdo'},
+                        {key: 3, texto: 'Ni en desacuerdo ni de acuerdo'},
+                        {key: 2, texto: 'En desacuerdo'},
+                        {key: 1, texto: 'Totalmente en desacuerdo'},
                     ],
                     form: {
                         resp_1: null,

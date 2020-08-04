@@ -46253,6 +46253,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -46287,7 +46291,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             },
             encuesta: {
                 preguntas: [{ key: 1, tit: 'El contenido del programa es relevante para mi consultorio', preg: '', tipo: 'C' }, { key: 2, tit: 'Los oradores y contenido son interesantes', preg: '', tipo: 'C' }, { key: 3, tit: 'Logística y experiencia del evento: calidad audiovisual y de la transmisión son buenas y sin interrupciones', preg: '', tipo: 'C' }, { key: 4, tit: 'Probablemente participaré en las ofertas visuales futuras de Abbott Nutrición', preg: '', tipo: 'C' }, { key: 5, tit: 'Probablemente recomendaré este webinario a mis colegas', preg: '', tipo: 'C' }, { key: 6, tit: '¿Qué temas son de mayor interés para usted relacionados con la nutrición?', preg: '', tipo: 'T' }, { key: 7, tit: '¿Cuál es el aprendizaje más importante en este programa que pudiera traducirse a su consultorio clínico?', preg: '', tipo: 'T' }, { key: 8, tit: '¿Alguna sugerencia para hacer este webinar más efectivo?', preg: '', tipo: 'T' }],
-                opciones: [{ key: 5, texto: 'Excelente' }, { key: 4, texto: 'Bueno' }, { key: 3, texto: 'Regular' }, { key: 2, texto: 'Malo' }, { key: 1, texto: 'Muy malo' }],
+                opciones: [{ key: 5, texto: 'Totalmente de acuerdo' }, { key: 4, texto: 'De acuerdo' }, { key: 3, texto: 'Ni en desacuerdo ni de acuerdo' }, { key: 2, texto: 'En desacuerdo' }, { key: 1, texto: 'Totalmente en desacuerdo' }],
                 form: {
                     resp_1: null,
                     resp_2: null,
@@ -46608,75 +46612,93 @@ var render = function() {
                                   { staticClass: "col-12" },
                                   [
                                     item.tipo === "C"
-                                      ? _vm._l(_vm.encuesta.opciones, function(
-                                          subitem
-                                        ) {
-                                          return _c(
-                                            "div",
-                                            {
-                                              key: subitem.key,
-                                              staticClass: "form-check-inline"
-                                            },
-                                            [
-                                              _c(
-                                                "label",
-                                                {
-                                                  staticClass:
-                                                    "form-check-label"
-                                                },
-                                                [
-                                                  _c("input", {
-                                                    directives: [
-                                                      {
-                                                        name: "model",
-                                                        rawName: "v-model",
-                                                        value:
-                                                          _vm.encuesta.form[
-                                                            "resp_" + item.key
-                                                          ],
-                                                        expression:
-                                                          "encuesta.form['resp_' + item.key]"
-                                                      }
-                                                    ],
+                                      ? [
+                                          _vm._l(
+                                            _vm.encuesta.opciones,
+                                            function(subitem) {
+                                              return [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    key: subitem.key,
                                                     staticClass:
-                                                      "form-check-input",
-                                                    attrs: {
-                                                      type: "radio",
-                                                      name:
-                                                        "p_" +
-                                                        item.key +
-                                                        "_r_" +
-                                                        subitem.key
-                                                    },
-                                                    domProps: {
-                                                      value: subitem.key,
-                                                      checked: _vm._q(
-                                                        _vm.encuesta.form[
-                                                          "resp_" + item.key
-                                                        ],
-                                                        subitem.key
-                                                      )
-                                                    },
-                                                    on: {
-                                                      change: function($event) {
-                                                        return _vm.$set(
-                                                          _vm.encuesta.form,
-                                                          "resp_" + item.key,
-                                                          subitem.key
+                                                      "form-check-inline"
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "label",
+                                                      {
+                                                        staticClass:
+                                                          "form-check-label"
+                                                      },
+                                                      [
+                                                        _c("input", {
+                                                          directives: [
+                                                            {
+                                                              name: "model",
+                                                              rawName:
+                                                                "v-model",
+                                                              value:
+                                                                _vm.encuesta
+                                                                  .form[
+                                                                  "resp_" +
+                                                                    item.key
+                                                                ],
+                                                              expression:
+                                                                "encuesta.form['resp_' + item.key]"
+                                                            }
+                                                          ],
+                                                          staticClass:
+                                                            "form-check-input",
+                                                          attrs: {
+                                                            type: "radio",
+                                                            name:
+                                                              "p_" +
+                                                              item.key +
+                                                              "_r_" +
+                                                              subitem.key
+                                                          },
+                                                          domProps: {
+                                                            value: subitem.key,
+                                                            checked: _vm._q(
+                                                              _vm.encuesta.form[
+                                                                "resp_" +
+                                                                  item.key
+                                                              ],
+                                                              subitem.key
+                                                            )
+                                                          },
+                                                          on: {
+                                                            change: function(
+                                                              $event
+                                                            ) {
+                                                              return _vm.$set(
+                                                                _vm.encuesta
+                                                                  .form,
+                                                                "resp_" +
+                                                                  item.key,
+                                                                subitem.key
+                                                              )
+                                                            }
+                                                          }
+                                                        }),
+                                                        _vm._v(
+                                                          " " +
+                                                            _vm._s(
+                                                              subitem.texto
+                                                            ) +
+                                                            "\n                                            "
                                                         )
-                                                      }
-                                                    }
-                                                  }),
-                                                  _vm._v(
-                                                    " " +
-                                                      _vm._s(subitem.texto) +
-                                                      "\n                                            "
-                                                  )
-                                                ]
-                                              )
-                                            ]
+                                                      ]
+                                                    )
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c("br", { key: subitem.key })
+                                              ]
+                                            }
                                           )
-                                        })
+                                        ]
                                       : [
                                           _c("textarea", {
                                             directives: [
