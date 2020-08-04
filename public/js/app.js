@@ -46286,13 +46286,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 pregunta: null
             },
             encuesta: {
-                preguntas: [{ key: 1, tit: 'Mensaje (s): Contenido y claridad', preg: 'El mensaje fue claro y en términos que los puedo entender y aplicar', tipo: 'C' }, { key: 2, tit: 'Abbott en la Nutrición', preg: 'Puedo utilizar el conocimiento compartido utilizando  los productos de Abbott.', tipo: 'C' }, { key: 3, tit: 'Evaluación del evento', preg: '¿Qué le pareció la logística y experiencia de este webinar?', tipo: 'C' }, { key: 4, tit: '¿Qué otros temas serían de su interés?', preg: '', tipo: 'T' }],
+                preguntas: [{ key: 1, tit: 'El contenido del programa es relevante para mi consultorio', preg: '', tipo: 'C' }, { key: 2, tit: 'Los oradores y contenido son interesantes', preg: '', tipo: 'C' }, { key: 3, tit: 'Logística y experiencia del evento: calidad audiovisual y de la transmisión son buenas y sin interrupciones', preg: '', tipo: 'C' }, { key: 4, tit: 'Probablemente participaré en las ofertas visuales futuras de Abbott Nutrición', preg: '', tipo: 'C' }, { key: 5, tit: 'Probablemente recomendaré este webinario a mis colegas', preg: '', tipo: 'C' }, { key: 6, tit: '¿Qué temas son de mayor interés para usted relacionados con la nutrición?', preg: '', tipo: 'T' }, { key: 7, tit: '¿Cuál es el aprendizaje más importante en este programa que pudiera traducirse a su consultorio clínico?', preg: '', tipo: 'T' }, { key: 8, tit: '¿Alguna sugerencia para hacer este webinar más efectivo?', preg: '', tipo: 'T' }],
                 opciones: [{ key: 5, texto: 'Excelente' }, { key: 4, texto: 'Bueno' }, { key: 3, texto: 'Regular' }, { key: 2, texto: 'Malo' }, { key: 1, texto: 'Muy malo' }],
                 form: {
                     resp_1: null,
                     resp_2: null,
                     resp_3: null,
-                    resp_4: null
+                    resp_4: null,
+                    resp_5: null,
+                    resp_6: null,
+                    resp_7: null,
+                    resp_8: null
                 },
                 enviando: false,
                 errors: []
@@ -46341,7 +46345,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         enviarEncuesta: function enviarEncuesta() {
             var vm = this;
 
-            if (!vm.encuesta.form.resp_1 || !vm.encuesta.form.resp_2 || !vm.encuesta.form.resp_3 || !vm.encuesta.form.resp_4) {
+            if (!vm.encuesta.form.resp_1 || !vm.encuesta.form.resp_2 || !vm.encuesta.form.resp_3 || !vm.encuesta.form.resp_4 || !vm.encuesta.form.resp_5 || !vm.encuesta.form.resp_6 || !vm.encuesta.form.resp_7 || !vm.encuesta.form.resp_8) {
                 alert('Debe responder todas las preguntas');
                 return false;
             }
@@ -46354,7 +46358,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         resp_1: null,
                         resp_2: null,
                         resp_3: null,
-                        resp_4: null
+                        resp_4: null,
+                        resp_5: null,
+                        resp_6: null,
+                        resp_7: null,
+                        resp_8: null
                     };
                     alert('Gracias por responder la encuesta');
                     vm.mostrarModal(false);
@@ -46559,6 +46567,22 @@ var render = function() {
               _c("div", { staticClass: "modal-mask" }, [
                 _c("div", { staticClass: "modal-wrapper" }, [
                   _c("div", { staticClass: "modal-container" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "modal-header",
+                        staticStyle: { color: "#fff", padding: "0px 0px 10px" }
+                      },
+                      [
+                        _vm._t("header", [
+                          _vm._v(
+                            "\n                        Encuesta de satisfacción\n                        "
+                          )
+                        ])
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
                     _c("div", { staticClass: "modal-body" }, [
                       _c(
                         "div",
