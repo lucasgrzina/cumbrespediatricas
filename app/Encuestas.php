@@ -101,8 +101,8 @@ class Encuestas extends Model
             '1' => 'Totalmente en desacuerdo',
             '2' => 'En desacuerdo',
             '3' => 'Ni en desacuerdo ni de acuerdo',
-            '4' => 'En desacuerdo',
-            '5' => 'Totalmente en desacuerdo'
+            '4' => 'De acuerdo',
+            '5' => 'Totalmente de acuerdo'
         ];
 
         return $valores[$value];
