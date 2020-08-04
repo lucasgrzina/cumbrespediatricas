@@ -41,7 +41,7 @@ class HomeController extends AppBaseController
     {
         //return redirect()->route('home');
         if (FrontHelper::getCookieRegistrado()) {
-            return redirect()->route('vivo');
+            //return redirect()->route('vivo');
         }
 
         $data = [
@@ -52,17 +52,41 @@ class HomeController extends AppBaseController
         return view('front.home-vue', $data);
     } 
 
-    public function vivo () {
-        $conf = $this->config('*');
-        if ($conf['etapa'] !== 'R') {
-            return redirect()->route('home');
+    public function vivo (Request $request) {
+        $registrado = null;
+        try {
+            
+            if (!$request->id || !$request->token) {
+                throw new \Exception("No estas habilitado para ingresar a esta sección", 1);
+            }
+            
+            $conf = $this->config('*');
+            if ($conf['etapa'] !== 'R') {
+                return redirect()->route('home');
+            }
+
+        
+            $registradoGuid = FrontHelper::getCookieRegistrado();
+            if (!$registradoGuid) {
+                $registrado = $this->obtenerRegistradoExterno($request);
+                FrontHelper::setCookieRegistrado($registrado->id);
+            } else {
+                $registrado = Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
+            }        
+
+        } catch(\Exception $e) {
+            throw new \Exception("No estas habilitado para ingresar a esta sección", 1);
+            
         }
+        
+
         $data = [
             'props' => [
                 'urlEnviar' => route('enviar-pregunta'),
                 'urlEncuesta' => '',
                 'urlEncuestaDisponible' => route('encuesta-disponible'),
-                'urlEnviarEncuesta' => route('enviar-encuesta')
+                'urlEnviarEncuesta' => route('enviar-encuesta'),
+                'registrado' => $registrado
             ]
         ];
         return view('front.vivo', $data);
@@ -136,5 +160,36 @@ class HomeController extends AppBaseController
         } else {
             return Configuraciones::whereClave($clave)->first()->valor;    
         }
+    }
+
+    protected function obtenerRegistradoExterno(Request $request) {
+        $json = file_get_contents(env('URL_WS_REGISTRADO').'?id='.$request->id.'&token='.$request->token);
+        $obj = json_decode($json);
+
+        $dbRegistrado = Registrado::whereIdExterno($obj->id)->first();
+        if (!$dbRegistrado) {
+            $dbRegistrado = Registrado::create([
+                'id_externo' => $obj->id,
+                'nombre' => $obj->nombre,
+                'apellido' => $obj->apellido,
+                'email' => $obj->correo,
+                'especialidad' => $obj->especialidad,
+                'pais' => $obj->pais,
+                'certificado' => $obj->certificado,
+                'token' => $request->token
+            ]);
+        }
+
+        return $dbRegistrado;
+    }
+
+    public function eventoDisponible() {
+        $config = $this->config('*');
+        $vivoDispo = $config['etapa'] === 'R' && !(bool)$config['encuesta'];
+        if ($vivoDispo) {
+            return $this->sendResponse([],'La operación finañizó con éxito');                
+        } else {
+            return $this->sendError('La evento no se encuentra disponible por el momento.',505);
+        }        
     }
 }

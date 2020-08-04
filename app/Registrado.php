@@ -16,7 +16,9 @@ class Registrado extends Model
         'especialidad',
         'pais',
         'email',
-        //'enabled'
+        'id_externo',
+        'token',
+        'certificado'
     ];
 
     /**
