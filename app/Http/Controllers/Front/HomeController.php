@@ -87,6 +87,7 @@ class HomeController extends AppBaseController
                 'urlEncuesta' => '',
                 'urlEncuestaDisponible' => route('encuesta-disponible'),
                 'urlEnviarEncuesta' => route('enviar-encuesta'),
+                'urlSitioPpal' => env('URL_SITIO_PPAL','#'),
                 'registrado' => $registrado
             ]
         ];
