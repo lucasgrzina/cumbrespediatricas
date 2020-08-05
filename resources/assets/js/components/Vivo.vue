@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="row content-encuesta" v-if="videoSeleccionado">
-                <div class="col-12 text-center">
+                <div class="col-sm-12 text-center">
                     <button type="button" 
                             class="btn btn-primary" 
                             @click="encuestaDisponible()"
@@ -112,14 +112,22 @@
                 </transition>
             </div>   
 
-            <div class="row content-certificado" v-if="videoSeleccionado && registrado && registrado.certificado">
+            <div class="row content-certificado" v-if="videoSeleccionado">
                 <div class="col-12 text-center">
-                    <button type="button" 
+                    <button 
+                            v-if="registrado && registrado.certificado"
+                            type="button" 
                             class="btn btn-primary" 
                             @click="certificadoDisponible()"
                     >
                         <span>Certificado</span>
                     </button>                    
+                    <a :href="urlSitioPpal" 
+                            class="btn btn-primary" 
+                    >
+                        <span>Volver</span>
+                    </a>                    
+
                 </div>
 
             </div>
@@ -150,7 +158,11 @@
             registrado: {
                 type: Object,
                 required: true
-            }
+            },
+            urlSitioPpal: {
+                type: String,
+                required:true
+            },            
 
         },
         data () {

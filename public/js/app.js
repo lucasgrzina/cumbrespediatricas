@@ -46257,6 +46257,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -46279,6 +46287,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         registrado: {
             type: Object,
+            required: true
+        },
+        urlSitioPpal: {
+            type: String,
             required: true
         }
 
@@ -46441,7 +46453,7 @@ var render = function() {
     _vm._v(" "),
     _vm.videoSeleccionado
       ? _c("div", { staticClass: "row content-encuesta" }, [
-          _c("div", { staticClass: "col-12 text-center" }, [
+          _c("div", { staticClass: "col-sm-12 text-center" }, [
             _c(
               "button",
               {
@@ -46820,21 +46832,32 @@ var render = function() {
         )
       : _vm._e(),
     _vm._v(" "),
-    _vm.videoSeleccionado && _vm.registrado && _vm.registrado.certificado
+    _vm.videoSeleccionado
       ? _c("div", { staticClass: "row content-certificado" }, [
           _c("div", { staticClass: "col-12 text-center" }, [
+            _vm.registrado && _vm.registrado.certificado
+              ? _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary",
+                    attrs: { type: "button" },
+                    on: {
+                      click: function($event) {
+                        return _vm.certificadoDisponible()
+                      }
+                    }
+                  },
+                  [_c("span", [_vm._v("Certificado")])]
+                )
+              : _vm._e(),
+            _vm._v(" "),
             _c(
-              "button",
+              "a",
               {
                 staticClass: "btn btn-primary",
-                attrs: { type: "button" },
-                on: {
-                  click: function($event) {
-                    return _vm.certificadoDisponible()
-                  }
-                }
+                attrs: { href: _vm.urlSitioPpal }
               },
-              [_c("span", [_vm._v("Certificado")])]
+              [_c("span", [_vm._v("Volver")])]
             )
           ])
         ])
