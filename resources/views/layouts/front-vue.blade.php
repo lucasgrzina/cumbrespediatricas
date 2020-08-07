@@ -18,7 +18,7 @@
             window.App = {!! json_encode([
             ]) !!};
         </script>   
-        <link rel="shortcut icon" href="#" />
+        <!--link rel="shortcut icon" href="#" /-->
         @yield('head')
       
     </head>

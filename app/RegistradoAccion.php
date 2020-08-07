@@ -5,20 +5,16 @@ namespace App;
 use Eloquent as Model;
 
 
-class Registrado extends Model
+class RegistradoAccion extends Model
 {
-    public $table = 'registrados';
+    public $table = 'registrados_acciones';
 
     
     public $fillable = [
-        'nombre',
-        'apellido',
-        'especialidad',
-        'pais',
-        'email',
-        'id_externo',
-        'token',
-        'certificado'
+        'registrado_id',
+        'accion',
+        'desde',
+        'hasta'
     ];
 
     /**
@@ -27,16 +23,13 @@ class Registrado extends Model
      * @var array
      */
     public static $rules = [
-        'nombre' => 'required',
-        'apellido' => 'required',
-        'especialidad' => 'required',
-        'pais' => 'required',
-        'email' => 'required|email'
+        'registrado_id' => 'required',
+        'accione' => 'required',
     ];
 
-    public function acciones()
+    public function registrado()
     {
-        return $this->hasMany('App\RegistradoAccion', 'registrado_id');
+        return $this->belongsTo('App\Registrado', 'registrado_id');
     }
 
     /**

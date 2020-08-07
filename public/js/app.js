@@ -46292,6 +46292,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         urlSitioPpal: {
             type: String,
             required: true
+        },
+        urlEnviarSalidaUsuario: {
+            type: String,
+            required: true
         }
 
     },
@@ -46323,7 +46327,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     mounted: function mounted() {
+        var vm = this;
         console.debug('Vivo mounted');
+        window.addEventListener('beforeunload', function (e) {
+            vm.enviarSalidaUsuario().then(function (response) {
+                console.debug(response);
+                e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
+                e.returnValue = '';
+            }, function (error) {
+                e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            });
+        });
     },
 
     methods: {
@@ -46406,6 +46422,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     alert('El certificado no se encuentra disponible por el momento.');
                 });
             }
+        },
+        enviarSalidaUsuario: function enviarSalidaUsuario() {
+            var vm = this;
+            return axios.post(vm.urlEnviarSalidaUsuario.replace('_ID_', vm.registrado.id), {});
         }
     }
 });

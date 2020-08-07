@@ -162,7 +162,11 @@
             urlSitioPpal: {
                 type: String,
                 required:true
-            },            
+            },   
+            urlEnviarSalidaUsuario: {
+                type: String,
+                required:true
+            }         
 
         },
         data () {
@@ -208,7 +212,20 @@
             }
         },
         mounted () {
+            var vm = this;
             console.debug('Vivo mounted');
+            window.addEventListener('beforeunload', function (e) {
+                    vm.enviarSalidaUsuario().then(response => {
+                        console.debug(response);
+                        e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
+                        e.returnValue = '';
+                    }, error => {
+                        e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
+                        // Chrome requires returnValue to be set
+                        e.returnValue = '';
+                    });                    
+            });            
+        
         },
         methods: {
             verVideo (video) {
@@ -294,6 +311,10 @@
                         });                    
                 }
             },
+            enviarSalidaUsuario: function() {
+                let vm = this
+                return axios.post(vm.urlEnviarSalidaUsuario.replace('_ID_',vm.registrado.id),{});
+            }
         }
     }
 </script>

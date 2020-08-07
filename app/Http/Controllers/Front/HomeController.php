@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Encuestas;
 use App\Preguntas;
+use Carbon\Carbon;
 use App\Registrado;
 use App\Configuraciones;
 use App\Helpers\FrontHelper;
@@ -54,6 +55,7 @@ class HomeController extends AppBaseController
     } 
 
     public function vivo (Request $request) {
+        \Log::info('entra en vivo');
         $registrado = null;
         try {
             
@@ -67,13 +69,23 @@ class HomeController extends AppBaseController
             }
 
         
-            $registradoGuid = FrontHelper::getCookieRegistrado();
-            if (!$registradoGuid) {
-                $registrado = $this->obtenerRegistradoExterno($request);
-                FrontHelper::setCookieRegistrado($registrado->id);
-            } else {
-                $registrado = Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
-            }        
+            $registrado = $this->obtenerRegistradoExterno($request);
+            FrontHelper::setCookieRegistrado($registrado->id);
+
+            try {
+
+                /*$registrado->acciones()->whereNull('hasta')->update([
+                    'hasta' => Carbon::now()->format('Y-m-d H:i:s')
+                ]);*/
+                   
+                $registrado->acciones()->create([
+                    'accion' => 'evento',
+                    'desde' => Carbon::now()
+                ]);
+    
+            } catch(\Exception $e) {
+                \Log::info($e->getMessage());
+            }
 
         } catch(\Exception $e) {
             throw new \Exception("No estas habilitado para ingresar a esta sección", 1);
@@ -88,6 +100,7 @@ class HomeController extends AppBaseController
                 'urlEncuestaDisponible' => route('encuesta-disponible'),
                 'urlEnviarEncuesta' => route('enviar-encuesta'),
                 'urlSitioPpal' => env('URL_SITIO_PPAL','#'),
+                'urlEnviarSalidaUsuario' => route('enviar-salida-usuario',['_ID_']),
                 'registrado' => $registrado
             ]
         ];
@@ -96,6 +109,7 @@ class HomeController extends AppBaseController
     
     
     public function encuestaDisponible () {
+        \Log::info('encuestrasasa');
         $config = $this->config('*');
         $encuestaDispo = $config['etapa'] === 'R' && (bool)$config['encuesta'];
         if ($encuestaDispo) {
@@ -156,6 +170,29 @@ class HomeController extends AppBaseController
         }
     }
     
+    public function enviarSalidaUsuario($id,Request $request) {
+        try {
+
+            $registradoGuid = FrontHelper::getCookieRegistrado();
+            
+            if ($registradoGuid) {
+                try {
+                    $registrado = Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
+                    
+                    $registrado->acciones()->whereNull('hasta')->orderBy('id','asc')->first()->update([
+                        'hasta' => Carbon::now()->format('Y-m-d H:i:s')
+                    ]);
+    
+                } catch (\Exception $e) {}
+                
+            }
+            
+            return $this->sendResponse([],'La operación finañizó con éxito');                
+        } catch (\Exception $e) {
+            return $this->sendError($e->getMessage(),$e->getCode());
+        }
+    }
+
     protected function config($clave='*') {
         if ($clave === '*') {
             return Configuraciones::pluck('valor','clave');
