@@ -30,6 +30,18 @@
                         <iframe src="https://player.vimeo.com/video/445697593" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                     </div>                    
                 </div>
+                <div class="col-md-12" v-else>
+                    <span style="color: rgb(16, 33, 63);
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    display: block;
+    padding: 20px;
+    background: #e09b3f;
+    border: 2px solid #fff;">
+                        <i class="fa fa-arrow-up" aria-hidden="true"></i> 
+                        Para ver el evento, seleccione en los botones de arriba la opción de audio</span>
+                </div>                
             </div>
             <div class="row content-vimeo-chat" v-if="videoSeleccionado">
                 <div class="col-sm-9 form-container">
