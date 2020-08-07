@@ -46265,6 +46265,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -46532,7 +46544,7 @@ var render = function() {
                   })
                 ])
           ])
-        : _vm._e()
+        : _c("div", { staticClass: "col-md-12" }, [_vm._m(1)])
     ]),
     _vm._v(" "),
     _vm.videoSeleccionado
@@ -46906,6 +46918,35 @@ var staticRenderFns = [
           attrs: { "aria-hidden": "true" }
         }),
         _vm._v("Por favor, activar el sonido del reproductor")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "span",
+      {
+        staticStyle: {
+          color: "rgb(16, 33, 63)",
+          "text-align": "center",
+          width: "100%",
+          "margin-top": "20px",
+          display: "block",
+          padding: "20px",
+          background: "#e09b3f",
+          border: "2px solid #fff"
+        }
+      },
+      [
+        _c("i", {
+          staticClass: "fa fa-arrow-up",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(
+          " \n                    Para ver el evento, seleccione en los botones de arriba la opción de audio"
+        )
       ]
     )
   }
