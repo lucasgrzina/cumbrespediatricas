@@ -62,7 +62,7 @@ class EstadisticasController extends AppBaseController
 
         $cantDespMinuto5 = DB::select($sqlCantDespMinuto5);
         $cantFinal = DB::select($sqlCantFinal);
-        \Log::info($sqlCantFinal);
+        \Log::info($sqlCantDespMinuto5);
         
 
         //\Log::info([$inicioVivo,$minuto5Vivo,$finVivo]);
