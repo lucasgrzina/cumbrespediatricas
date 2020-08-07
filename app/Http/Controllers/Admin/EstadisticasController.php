@@ -35,27 +35,38 @@ class EstadisticasController extends AppBaseController
 
         $inicioVivo = $config['inicio_vivo'];
         $minuto5Vivo = Carbon::createFromFormat('Y-m-d H:i:s',$inicioVivo)->addMinutes(5)->format('Y-m-d H:i:s');
-        $finVivo = $config['fin_vivo'] ? $config['fin_vivo'] : Carbon::now()->addYears(1)->format('Y-m-d H:i:s');
+        $finVivo = $config['fin_vivo']; 
         
+        if ($finVivo) {
+            $noTermino = false;
+            $desdeNulo = $finVivo; 
+        } else {
+            $noTermino = true;
+            $desdeNulo = Carbon::now()->addYears(1)->addDays(-1)->format('Y-m-d H:i:s');
+            $finVivo = Carbon::now()->addYears(1)->format('Y-m-d H:i:s');
+
+        }
+
+
         $sqlCantDespMinuto5 = "SELECT COUNT(*) total
         FROM registrados r
         INNER JOIN (
-        SELECT registrado_id,MIN(desde) desde,MAX(IFNULL(hasta,'{$finVivo}')) hasta,SUM(IF(hasta IS NULL,1,0)) hasta_null
+        SELECT registrado_id,MIN(desde) desde,MAX(IFNULL(hasta,'{$desdeNulo}')) hasta,SUM(IF(hasta IS NULL,1,0)) hasta_null
         FROM registrados_acciones 
         GROUP BY registrado_id 
         ) aux ON r.id = aux.registrado_id
-        WHERE hasta > '{$minuto5Vivo}' AND hasta < '{$finVivo}' and hasta_null = 0
+        WHERE desde <= '{$inicioVivo}' and hasta > '{$minuto5Vivo}' 
         ORDER BY desde";
 
         $sqlCantFinal = "SELECT COUNT(*) total, SUM(IF(e.id IS NULL,1,0)) sin_enc, SUM(IF(e.id IS NULL,0,1)) con_enc
         FROM registrados r
         INNER JOIN (
-        SELECT registrado_id,MIN(desde) desde,MAX(IFNULL(hasta,'{$finVivo}')) hasta,SUM(IF(hasta IS NULL,1,0)) hasta_null
+        SELECT registrado_id,MIN(desde) desde,MAX(IFNULL(hasta,'{$desdeNulo}')) hasta,SUM(IF(hasta IS NULL,1,0)) hasta_null
         FROM registrados_acciones 
         GROUP BY registrado_id 
         ) aux ON r.id = aux.registrado_id
         LEFT JOIN encuestas e ON r.id = e.registrado_id
-        WHERE hasta >= '{$finVivo}' or hasta_null = 1
+        WHERE desde <= '{$inicioVivo}' and hasta >= '{$finVivo}'
         ORDER BY desde";
 
 
@@ -63,6 +74,7 @@ class EstadisticasController extends AppBaseController
         $cantDespMinuto5 = DB::select($sqlCantDespMinuto5);
         $cantFinal = DB::select($sqlCantFinal);
         \Log::info($sqlCantDespMinuto5);
+        \Log::info($sqlCantFinal);
         
 
         //\Log::info([$inicioVivo,$minuto5Vivo,$finVivo]);
