@@ -9,8 +9,6 @@ class AuthFrontMiddleware
 {
     public function handle($request, Closure $next, $redirectTo = 'home')
     {
-        \Log::info($redirectTo);
-        
         if (\FrontHelper::getCookieRegistrado($redirectTo === 'home' ? '' : 'test_') !== null)
         {
             return $next($request);

@@ -80,6 +80,7 @@ Route::prefix('/admin')->group(function () {
         Route::get('/exportar', 'Admin\DashboardController@exportar')->name('admin.exportar');
         Route::get('/previsualizar', 'Admin\DashboardController@previsualizar')->name('admin.previsualizar');
         Route::get('/dashboard', 'Admin\DashboardController@index')->name('admin.home');
+        Route::get('/estadisticas', 'Admin\EstadisticasController@index')->name('admin.estadisticas');
         Route::post('/dashboard/save', 'Admin\DashboardController@guardar')->name('admin.home.guardar');
     });
 });
@@ -95,15 +96,17 @@ Route::group(['prefix' => '/cumbrepediatrica'], function() {
         //Route::get('/encuesta', 'Front\HomeController@encuesta')->name('encuesta');        
         Route::get('/encuesta-disponible', 'Front\HomeController@encuestaDisponible')->name('encuesta-disponible');        
         Route::post('/enviar-encuesta', 'Front\HomeController@enviarEncuesta')->name('enviar-encuesta');
+        Route::post('/enviar-salida-usuario/{id}', 'Front\HomeController@enviarSalidaUsuario')->name('enviar-salida-usuario');
     });
     
     Route::prefix('ws')->group(function () {
         Route::get('/evento-disponible', 'Front\HomeController@eventoDisponible');
     });    
-    //Route::get('/', 'Front\HomeController@index')->name('home');
+    Route::get('/', 'Front\HomeController@index')->name('home');
 
 });
-Route::group(['prefix' => '/test/cumbrepediatrica'], function() {
+
+/*Route::group(['prefix' => '/test/cumbrepediatrica'], function() {
     Route::post('/registrar', 'Front\HomeTestController@registrar')->name('test.registrar');
 
     Route::group(['middleware' => 'registrado:test.home'], function() {
@@ -114,9 +117,9 @@ Route::group(['prefix' => '/test/cumbrepediatrica'], function() {
         Route::post('/enviar-encuesta', 'Front\HomeTestController@enviarEncuesta')->name('test.enviar-encuesta');
     });
     Route::get('/', 'Front\HomeTestController@index')->name('test.home');
-});
+}); */
 Route::get('/log/obtener', function () {
-
+    \Log::info('log/obtener');
     if (env('APP_ENV', 'local') === 'local') {
         $pathToFile = storage_path() . '\logs\laravel.log';
     } else {

@@ -1,3 +1,6 @@
+<li class="{{ Request::is('dashboard*') ? 'active' : '' }}">
+  <a href="{!! route('admin.home') !!}"><i class="fa fa-chevron-right"></i><span>Dashboard</span></a>
+</li>
 @if (\App\Helpers\AdminHelper::mostrarMenu(['usuarios','roles-y-permisos']))    
 <li class=" treeview menu-open {{ Request::is('users*') || Request::is('roles*') ? 'active' : '' }}">
   <a href="#">
@@ -27,10 +30,13 @@
 </li>
 @endif
 <li class="{{ Request::is('preguntas*') ? 'active' : '' }}">
-    <a href="{!! route('preguntas.index') !!}"><i class="fa fa-edit"></i><span>Preguntas</span></a>
+    <a href="{!! route('preguntas.index') !!}"><i class="fa fa-chevron-right"></i><span>Preguntas</span></a>
 </li>
 
 <li class="{{ Request::is('encuestas*') ? 'active' : '' }}">
-    <a href="{!! route('encuestas.index') !!}"><i class="fa fa-edit"></i><span>Encuestas</span></a>
+    <a href="{!! route('encuestas.index') !!}"><i class="fa fa-chevron-right"></i><span>Encuestas</span></a>
 </li>
 
+<li class="{{ Request::is('estadisticas*') ? 'active' : '' }}">
+  <a href="{!! route('admin.estadisticas') !!}"><i class="fa fa-chevron-right"></i><span>Estadisticas</span></a>
+</li>
