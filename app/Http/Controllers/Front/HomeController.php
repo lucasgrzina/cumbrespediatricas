@@ -168,15 +168,12 @@ class HomeController extends AppBaseController
         try {
 
             $registradoGuid = FrontHelper::getCookieRegistrado();
-            \Log::info($registradoGuid);
+            
             if ($registradoGuid) {
                 try {
                     $registrado = Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
-                    \Log::info($registrado);
                     $accion = $registrado->acciones()->whereNull('hasta')->orderBy('id','asc')->first();
-                    \Log::info($accion);
                     $accion->hasta = Carbon::now()->format('Y-m-d H:i:s');
-                    \Log::info($accion);
                     $accion->save();
                     /*$registrado->acciones()->whereNull('hasta')->orderBy('id','asc')->first()->update([
                         'hasta' => Carbon::now()->format('Y-m-d H:i:s')
