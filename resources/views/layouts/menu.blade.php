@@ -37,6 +37,6 @@
     <a href="{!! route('encuestas.index') !!}"><i class="fa fa-chevron-right"></i><span>Encuestas</span></a>
 </li>
 
-<li class="{{ Request::is('estadisticas*') ? 'active' : '' }}">
+<!--li class="{{ Request::is('estadisticas*') ? 'active' : '' }}">
   <a href="{!! route('admin.estadisticas') !!}"><i class="fa fa-chevron-right"></i><span>Estadisticas</span></a>
-</li>
+</li-->
