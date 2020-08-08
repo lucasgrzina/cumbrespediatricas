@@ -70,7 +70,7 @@ class HomeController extends AppBaseController
             }
 
             $registrado = $this->obtenerRegistradoExterno($request);
-            FrontHelper::setCookieRegistrado($registrado->id);
+            
 
             try {
                 $registrado->acciones()->create([
@@ -104,7 +104,6 @@ class HomeController extends AppBaseController
     
     
     public function encuestaDisponible () {
-        \Log::info('encuestrasasa');
         $config = $this->config('*');
         $encuestaDispo = $config['etapa'] === 'R' && (bool)$config['encuesta'];
         if ($encuestaDispo) {
@@ -169,16 +168,18 @@ class HomeController extends AppBaseController
         try {
 
             $registradoGuid = FrontHelper::getCookieRegistrado();
-            
+            \Log::info($registradoGuid);
             if ($registradoGuid) {
                 try {
                     $registrado = Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
-                    
+                    \Log::info($registrado);
                     $registrado->acciones()->whereNull('hasta')->orderBy('id','asc')->first()->update([
                         'hasta' => Carbon::now()->format('Y-m-d H:i:s')
                     ]);
     
-                } catch (\Exception $e) {}
+                } catch (\Exception $e) {
+                    \Log::info($e->getMessage());
+                }
                 
             }
             
@@ -214,6 +215,7 @@ class HomeController extends AppBaseController
                 'token' => $request->token
             ]);
         }
+        FrontHelper::setCookieRegistrado($dbRegistrado->id);
 
         return $dbRegistrado;
     }
