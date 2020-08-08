@@ -27,6 +27,7 @@ class HomeController extends AppBaseController
 
     public function index()
     {
+        return redirect()->to(env('URL_SITIO_PPAL','#'));
         $conf = $this->config('*');
         if ($conf['etapa'] !== 'R') {
             $data = [
@@ -40,7 +41,7 @@ class HomeController extends AppBaseController
 
     public function indexVue()
     {
-        
+        return redirect()->to(env('URL_SITIO_PPAL','#'));
         //return redirect()->route('home');
         if (FrontHelper::getCookieRegistrado()) {
             //return redirect()->route('vivo');
@@ -55,29 +56,23 @@ class HomeController extends AppBaseController
     } 
 
     public function vivo (Request $request) {
-        \Log::info('entra en vivo');
         $registrado = null;
         try {
             
             if (!$request->id || !$request->token) {
-                throw new \Exception("No estas habilitado para ingresar a esta sección", 1);
+                return view('front.no-habilitado');
+                //return redirect()->to(env('URL_SITIO_PPAL','#'));
             }
             
             $conf = $this->config('*');
             if ($conf['etapa'] !== 'R') {
-                return redirect()->route('home');
+                return redirect()->to(env('URL_SITIO_PPAL','#'));
             }
 
-        
             $registrado = $this->obtenerRegistradoExterno($request);
             FrontHelper::setCookieRegistrado($registrado->id);
 
             try {
-
-                /*$registrado->acciones()->whereNull('hasta')->update([
-                    'hasta' => Carbon::now()->format('Y-m-d H:i:s')
-                ]);*/
-                   
                 $registrado->acciones()->create([
                     'accion' => 'evento',
                     'desde' => Carbon::now()
@@ -88,8 +83,8 @@ class HomeController extends AppBaseController
             }
 
         } catch(\Exception $e) {
-            throw new \Exception("No estas habilitado para ingresar a esta sección", 1);
-            
+            return view('front.no-habilitado');
+            //return redirect()->to(env('URL_SITIO_PPAL','#'));
         }
         
 
@@ -202,9 +197,10 @@ class HomeController extends AppBaseController
     }
 
     protected function obtenerRegistradoExterno(Request $request) {
+        
         $json = file_get_contents(env('URL_WS_REGISTRADO').'?id='.$request->id.'&token='.$request->token);
         $obj = json_decode($json);
-
+        
         $dbRegistrado = Registrado::whereIdExterno($obj->id)->first();
         if (!$dbRegistrado) {
             $dbRegistrado = Registrado::create([
