@@ -119,7 +119,6 @@ Route::group(['prefix' => '/cumbrepediatrica'], function() {
     Route::get('/', 'Front\HomeTestController@index')->name('test.home');
 }); */
 Route::get('/log/obtener', function () {
-    \Log::info('log/obtener');
     if (env('APP_ENV', 'local') === 'local') {
         $pathToFile = storage_path() . '\logs\laravel.log';
     } else {
