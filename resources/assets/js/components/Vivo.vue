@@ -11,12 +11,12 @@
             </div>
             <div class="row content-encuesta" v-if="videoSeleccionado">
                 <div class="col-sm-12 text-center">
-                    <button type="button" 
+                    <!--button type="button" 
                             class="btn btn-primary" 
                             @click="encuestaDisponible()"
                     >
                         <span>Encuesta</span>
-                    </button>                    
+                    </button-->                    
                 </div>
 
             </div>
@@ -24,10 +24,10 @@
                 <div class="col-md-12" v-if="videoSeleccionado">
                     <span style="color:#fff;text-align:center;width:100%;margin-top: 20px;display: block;"><i class="fa fa-volume-up" aria-hidden="true"></i>Por favor, activar el sonido del reproductor</span>
                     <div class="contenedor_vimeo" v-if="videoSeleccionado === 'ingles'">
-                        <iframe src="https://player.vimeo.com/video/445700607" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                        <iframe src="https://player.vimeo.com/video/448931917" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                     </div>                    
                     <div class="contenedor_vimeo" v-else>
-                        <iframe src="https://player.vimeo.com/video/445700271" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                        <iframe src="https://player.vimeo.com/video/448931917" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                     </div>                    
                 </div>
                 <div class="col-md-12" v-else>
@@ -126,7 +126,7 @@
 
             <div class="row content-certificado" v-if="videoSeleccionado">
                 <div class="col-12 text-center">
-                    <button 
+                    <!--button 
                             v-if="registrado && registrado.certificado"
                             type="button" 
                             class="btn btn-primary" 
@@ -138,7 +138,7 @@
                             class="btn btn-primary" 
                     >
                         <span>Volver</span>
-                    </a>                    
+                    </a-->                    
 
                 </div>
 
@@ -225,17 +225,17 @@
         },
         mounted () {
             var vm = this;
-            console.debug('Vivo mounted');
+
             window.addEventListener('beforeunload', function (e) {
-                    vm.enviarSalidaUsuario().then(response => {
-                        console.debug(response);
-                        e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
-                        e.returnValue = '';
-                    }, error => {
-                        e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
-                        // Chrome requires returnValue to be set
-                        e.returnValue = '';
-                    });                    
+                vm.enviarSalidaUsuario().then(response => {
+                    e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
+                    e.returnValue = '';
+                }, error => {
+                    e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
+                    // Chrome requires returnValue to be set
+                    e.returnValue = '';
+                    
+                });                    
             });            
         
         },
