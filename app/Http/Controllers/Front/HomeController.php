@@ -60,7 +60,7 @@ class HomeController extends AppBaseController
         try {
             
             if (!$request->id || !$request->token) {
-                return view('front.no-habilitado');
+                //return view('front.no-habilitado');
                 //return redirect()->to(env('URL_SITIO_PPAL','#'));
             }
             
@@ -69,14 +69,14 @@ class HomeController extends AppBaseController
                 return redirect()->to(env('URL_SITIO_PPAL','#'));
             }
 
-            $registrado = $this->obtenerRegistradoExterno($request);
+            //$registrado = $this->obtenerRegistradoExterno($request);
             
 
             try {
-                $registrado->acciones()->create([
+                /*$registrado->acciones()->create([
                     'accion' => 'evento',
                     'desde' => Carbon::now()
-                ]);
+                ]);*/
     
             } catch(\Exception $e) {
                 \Log::info($e->getMessage());

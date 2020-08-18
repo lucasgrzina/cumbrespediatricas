@@ -81,11 +81,12 @@ Route::prefix('/admin')->group(function () {
         Route::get('/previsualizar', 'Admin\DashboardController@previsualizar')->name('admin.previsualizar');
         Route::get('/dashboard', 'Admin\DashboardController@index')->name('admin.home');
         Route::get('/estadisticas', 'Admin\EstadisticasController@index')->name('admin.estadisticas');
+        Route::get('/estadisticas/analizar', 'Admin\EstadisticasController@analizar')->name('admin.estadisticas.analizar');
         Route::post('/dashboard/save', 'Admin\DashboardController@guardar')->name('admin.home.guardar');
     });
 });
 
-Route::group(['prefix' => '/cumbrepediatrica'], function() {
+Route::group(['prefix' => '/danoneday'], function() {
     //Route::get('/registro', 'Front\HomeController@indexVue')->name('registro');
     Route::post('/registrar', 'Front\HomeController@registrar')->name('registrar');
 

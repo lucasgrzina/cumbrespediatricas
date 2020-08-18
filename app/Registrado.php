@@ -39,6 +39,11 @@ class Registrado extends Model
         return $this->hasMany('App\RegistradoAccion', 'registrado_id');
     }
 
+    public function encuestas()
+    {
+        return $this->hasMany('App\Encuestas', 'registrado_id');
+    }    
+
     /**
      * Appends Attributes
      *

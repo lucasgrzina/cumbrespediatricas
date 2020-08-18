@@ -37,11 +37,12 @@
 }
 body {
   font-family: "Gotham", sans-serif;
-  background-image: url(../img/background.jpg);
+  /*background-image: url(../img/background.jpg);*/
   background-size: cover;
   overflow-x: hidden;
   background-repeat: no-repeat;
-  background-color: #102041;
+  /*background-color: #102041;*/
+  background-color: #fff;
   background-position: top center;
 }
 

@@ -46340,10 +46340,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     mounted: function mounted() {
         var vm = this;
-        console.debug('Vivo mounted');
+
         window.addEventListener('beforeunload', function (e) {
             vm.enviarSalidaUsuario().then(function (response) {
-                console.debug(response);
                 e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
                 e.returnValue = '';
             }, function (error) {
@@ -46485,21 +46484,7 @@ var render = function() {
     _vm._v(" "),
     _vm.videoSeleccionado
       ? _c("div", { staticClass: "row content-encuesta" }, [
-          _c("div", { staticClass: "col-sm-12 text-center" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary",
-                attrs: { type: "button" },
-                on: {
-                  click: function($event) {
-                    return _vm.encuestaDisponible()
-                  }
-                }
-              },
-              [_c("span", [_vm._v("Encuesta")])]
-            )
-          ])
+          _c("div", { staticClass: "col-sm-12 text-center" })
         ])
       : _vm._e(),
     _vm._v(" "),
@@ -46519,7 +46504,7 @@ var render = function() {
                       height: "100%"
                     },
                     attrs: {
-                      src: "https://player.vimeo.com/video/445700607",
+                      src: "https://player.vimeo.com/video/448931917",
                       frameborder: "0",
                       allow: "autoplay; fullscreen",
                       allowfullscreen: ""
@@ -46536,7 +46521,7 @@ var render = function() {
                       height: "100%"
                     },
                     attrs: {
-                      src: "https://player.vimeo.com/video/445700271",
+                      src: "https://player.vimeo.com/video/448931917",
                       frameborder: "0",
                       allow: "autoplay; fullscreen",
                       allowfullscreen: ""
@@ -46866,32 +46851,7 @@ var render = function() {
     _vm._v(" "),
     _vm.videoSeleccionado
       ? _c("div", { staticClass: "row content-certificado" }, [
-          _c("div", { staticClass: "col-12 text-center" }, [
-            _vm.registrado && _vm.registrado.certificado
-              ? _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary",
-                    attrs: { type: "button" },
-                    on: {
-                      click: function($event) {
-                        return _vm.certificadoDisponible()
-                      }
-                    }
-                  },
-                  [_c("span", [_vm._v("Certificado")])]
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "btn btn-primary",
-                attrs: { href: _vm.urlSitioPpal }
-              },
-              [_c("span", [_vm._v("Volver")])]
-            )
-          ])
+          _c("div", { staticClass: "col-12 text-center" })
         ])
       : _vm._e()
   ])
