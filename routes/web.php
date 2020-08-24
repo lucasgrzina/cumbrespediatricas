@@ -119,6 +119,20 @@ Route::group(['prefix' => '/danoneday'], function() {
     });
     Route::get('/', 'Front\HomeTestController@index')->name('test.home');
 }); */
+
+Route::group(['prefix' => 'similacmama'], function() {
+    Route::post('/registrar', 'Front\HomeSimilaCMamaController@registrar')->name('similacmama.registrar');
+
+    Route::group(['middleware' => 'registrado'], function() {
+        Route::get('/vivo', 'Front\HomeSimilaCMamaController@vivo')->name('similacmama.vivo');
+        Route::post('/enviar-pregunta', 'Front\HomeSimilaCMamaController@enviarPregunta')->name('similacmama.enviar-pregunta');
+        //Route::get('/encuesta', 'Front\HomeController@encuesta')->name('encuesta');        
+        Route::get('/encuesta-disponible', 'Front\HomeSimilaCMamaController@encuestaDisponible')->name('similacmama.encuesta-disponible');        
+        Route::post('/enviar-encuesta', 'Front\HomeSimilaCMamaController@enviarEncuesta')->name('similacmama.enviar-encuesta');
+    });
+    Route::get('/', 'Front\HomeSimilaCMamaController@index')->name('similacmama.home');
+}); 
+
 Route::get('/log/obtener', function () {
     if (env('APP_ENV', 'local') === 'local') {
         $pathToFile = storage_path() . '\logs\laravel.log';
