@@ -28,7 +28,8 @@ class HomeSimilaCMamaController extends AppBaseController
     public function index()
     {
         $conf = $this->config('*');
-        if ($conf['etapa'] !== 'R') {
+        
+        if ($conf['etapa_similacmama'] !== 'R') {
             $data = [
                 'config' => $conf
             ];
