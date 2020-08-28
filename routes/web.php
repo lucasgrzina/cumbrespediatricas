@@ -123,12 +123,12 @@ Route::group(['prefix' => '/danoneday'], function() {
 Route::group(['prefix' => 'similacmama'], function() {
     Route::post('/registrar', 'Front\HomeSimilaCMamaController@registrar')->name('similacmama.registrar');
 
-    Route::group(['middleware' => 'registrado'], function() {
+    Route::group(['middleware' => 'registrado:similacmama'], function() {
         Route::get('/vivo', 'Front\HomeSimilaCMamaController@vivo')->name('similacmama.vivo');
         Route::post('/enviar-pregunta', 'Front\HomeSimilaCMamaController@enviarPregunta')->name('similacmama.enviar-pregunta');
-        //Route::get('/encuesta', 'Front\HomeController@encuesta')->name('encuesta');        
         Route::get('/encuesta-disponible', 'Front\HomeSimilaCMamaController@encuestaDisponible')->name('similacmama.encuesta-disponible');        
         Route::post('/enviar-encuesta', 'Front\HomeSimilaCMamaController@enviarEncuesta')->name('similacmama.enviar-encuesta');
+        Route::post('/enviar-salida-usuario', 'Front\HomeSimilaCMamaController@enviarSalidaUsuario')->name('similacmama.enviar-salida-usuario');
     });
     Route::get('/', 'Front\HomeSimilaCMamaController@index')->name('similacmama.home');
 }); 

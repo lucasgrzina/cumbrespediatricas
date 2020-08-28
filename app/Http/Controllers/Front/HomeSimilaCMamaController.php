@@ -20,6 +20,7 @@ class HomeSimilaCMamaController extends AppBaseController
      *
      * @return void
      */
+    private $evento = 'similacmama';
     public function __construct()
     {
         //$this->middleware('auth:admin');
@@ -29,11 +30,11 @@ class HomeSimilaCMamaController extends AppBaseController
     {
         $conf = $this->config('*');
         
-        if ($conf['etapa_similacmama'] !== 'R') {
+        if ($conf['etapa'] !== 'R') {
             $data = [
                 'config' => $conf
             ];
-            return view('front.home-similacmama',['data' => $data]);
+            return view('front.'.$this->evento.'.home',['data' => $data]);
         }
         return $this->indexVue();
         
@@ -41,36 +42,28 @@ class HomeSimilaCMamaController extends AppBaseController
 
     public function indexVue()
     {
-        return redirect()->to(env('URL_SITIO_PPAL','#'));
         //return redirect()->route('home');
-        if (FrontHelper::getCookieRegistrado()) {
-            //return redirect()->route('vivo');
+        if (FrontHelper::getCookieRegistrado($this->evento)) {
+            return redirect()->route($this->evento.'.vivo');
         }
 
         $data = [
             'props' => [
-                'urlRegistrar' => route('registrar')
+                'urlRegistrar' => route($this->evento.'.registrar')
             ]
         ];
-        return view('front.home-vue', $data);
+        return view('front.'.$this->evento.'.home-vue', $data);
     } 
 
     public function vivo (Request $request) {
         $registrado = null;
         try {
             
-            if (!$request->id || !$request->token) {
-                //return view('front.no-habilitado');
-                //return redirect()->to(env('URL_SITIO_PPAL','#'));
-            }
-            
             $conf = $this->config('*');
-            if ($conf['etapa'] !== 'R') {
-                return redirect()->to(env('URL_SITIO_PPAL','#'));
-            }
-
-            //$registrado = $this->obtenerRegistradoExterno($request);
             
+            if ($conf['etapa'] !== 'R') {
+                return redirect()->to($this->evento.'.home');
+            }
 
             try {
                 /*$registrado->acciones()->create([
@@ -83,23 +76,21 @@ class HomeSimilaCMamaController extends AppBaseController
             }
 
         } catch(\Exception $e) {
-            return view('front.no-habilitado');
+            return view('front.'.$this->evento.'.no-habilitado');
             //return redirect()->to(env('URL_SITIO_PPAL','#'));
         }
         
 
         $data = [
             'props' => [
-                'urlEnviar' => route('enviar-pregunta'),
+                'urlEnviar' => route($this->evento.'.enviar-pregunta'),
                 'urlEncuesta' => '',
-                'urlEncuestaDisponible' => route('encuesta-disponible'),
-                'urlEnviarEncuesta' => route('enviar-encuesta'),
-                'urlSitioPpal' => env('URL_SITIO_PPAL','#'),
-                'urlEnviarSalidaUsuario' => route('enviar-salida-usuario',['_ID_']),
-                'registrado' => $registrado
+                'urlEncuestaDisponible' => route($this->evento.'.encuesta-disponible'),
+                'urlEnviarEncuesta' => route($this->evento.'.enviar-encuesta'),
+                'urlEnviarSalidaUsuario' => route($this->evento.'.enviar-salida-usuario'),
             ]
         ];
-        return view('front.vivo', $data);
+        return view('front.'.$this->evento.'.vivo', $data);
     }
     
     
@@ -115,8 +106,10 @@ class HomeSimilaCMamaController extends AppBaseController
 
     public function registrar(RegistrarRequest $request) {
         try {
-            $data = Registrado::create($request->all());
-            FrontHelper::setCookieRegistrado($data->id);
+            $input = $request->all();
+            $input['evento'] = $this->evento;
+            $data = Registrado::create($input);
+            FrontHelper::setCookieRegistrado($data->id,$this->evento);
             return $this->sendResponse($data,'La operación finañizó con éxito');                
         } catch (\Exception $e) {
             return $this->sendError($e->getMessage(),$e->getCode());
@@ -125,13 +118,14 @@ class HomeSimilaCMamaController extends AppBaseController
 
     public function enviarPregunta(Request $request) {
         try {
-            $registradoGuid = FrontHelper::getCookieRegistrado();
+            $registradoGuid = FrontHelper::getCookieRegistrado($this->evento);
             $data = $request->all();
             if ($registradoGuid) {
                 try {
                     $registrado = Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
                 
                     $data['registrado_id'] = $registrado->id;
+                    $data['evento'] = $this->evento;
     
                 } catch (\Exception $e) {}
                 
@@ -145,13 +139,14 @@ class HomeSimilaCMamaController extends AppBaseController
     }
     public function enviarEncuesta(Request $request) {
         try {
-            $registradoGuid = FrontHelper::getCookieRegistrado();
+            $registradoGuid = FrontHelper::getCookieRegistrado($this->evento);
             $data = $request->all();
             if ($registradoGuid) {
                 try {
                     $registrado = Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
                 
                     $data['registrado_id'] = $registrado->id;
+                    $data['evento'] = $this->evento;
     
                 } catch (\Exception $e) {}
             }
@@ -164,10 +159,28 @@ class HomeSimilaCMamaController extends AppBaseController
         }
     }
     
-    public function enviarSalidaUsuario($id,Request $request) {
+    protected function config($clave='*') {
+        if ($clave === '*') {
+            return Configuraciones::whereEvento($this->evento)->pluck('valor','clave');
+        } else {
+            return Configuraciones::whereClave($clave)->whereEvento($this->evento)->first()->valor;    
+        }
+    }
+
+    public function eventoDisponible() {
+        $config = $this->config('*');
+        $vivoDispo = $config['etapa_similacmama'] === 'R' && !(bool)$config['encuesta'];
+        if ($vivoDispo) {
+            return $this->sendResponse([],'La operación finañizó con éxito');                
+        } else {
+            return $this->sendError('La evento no se encuentra disponible por el momento.',505);
+        }        
+    }
+    
+    public function enviarSalidaUsuario(Request $request) {
         try {
 
-            $registradoGuid = FrontHelper::getCookieRegistrado();
+            $registradoGuid = FrontHelper::getCookieRegistrado($this->evento);
             
             if ($registradoGuid) {
                 try {
@@ -175,10 +188,6 @@ class HomeSimilaCMamaController extends AppBaseController
                     $accion = $registrado->acciones()->whereNull('hasta')->orderBy('id','asc')->first();
                     $accion->hasta = Carbon::now()->format('Y-m-d H:i:s');
                     $accion->save();
-                    /*$registrado->acciones()->whereNull('hasta')->orderBy('id','asc')->first()->update([
-                        'hasta' => Carbon::now()->format('Y-m-d H:i:s')
-                    ]);*/
-    
                 } catch (\Exception $e) {
                     \Log::info($e->getMessage());
                 }
@@ -189,46 +198,5 @@ class HomeSimilaCMamaController extends AppBaseController
         } catch (\Exception $e) {
             return $this->sendError($e->getMessage(),$e->getCode());
         }
-    }
-
-    protected function config($clave='*') {
-        if ($clave === '*') {
-            return Configuraciones::pluck('valor','clave');
-        } else {
-            return Configuraciones::whereClave($clave)->first()->valor;    
-        }
-    }
-
-    protected function obtenerRegistradoExterno(Request $request) {
-        
-        $json = file_get_contents(env('URL_WS_REGISTRADO').'?id='.$request->id.'&token='.$request->token);
-        $obj = json_decode($json);
-        
-        $dbRegistrado = Registrado::whereIdExterno($obj->id)->first();
-        if (!$dbRegistrado) {
-            $dbRegistrado = Registrado::create([
-                'id_externo' => $obj->id,
-                'nombre' => $obj->nombre,
-                'apellido' => $obj->apellido,
-                'email' => $obj->correo,
-                'especialidad' => $obj->especialidad,
-                'pais' => $obj->pais,
-                'certificado' => $obj->certificado,
-                'token' => $request->token
-            ]);
-        }
-        FrontHelper::setCookieRegistrado($dbRegistrado->id);
-
-        return $dbRegistrado;
-    }
-
-    public function eventoDisponible() {
-        $config = $this->config('*');
-        $vivoDispo = $config['etapa'] === 'R' && !(bool)$config['encuesta'];
-        if ($vivoDispo) {
-            return $this->sendResponse([],'La operación finañizó con éxito');                
-        } else {
-            return $this->sendError('La evento no se encuentra disponible por el momento.',505);
-        }        
-    }
+    }    
 }

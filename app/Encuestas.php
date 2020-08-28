@@ -36,6 +36,7 @@ class Encuestas extends Model
         'resp_7',
         'resp_8',
         'registrado_id',
+        'evento'
         //'enabled'
     ];
 
@@ -54,6 +55,7 @@ class Encuestas extends Model
         'resp_7' => 'string',
         'resp_8' => 'string',
         'registrado_id' => 'integer',
+        
         //'enabled' => 'boolean'
     ];
 

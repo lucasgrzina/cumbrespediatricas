@@ -1,4 +1,6 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/all.css": "/css/all.css"
+    "/js/similacmama.js": "/js/similacmama.js",
+    "/js/cumbre.js": "/js/cumbre.js",
+    "/css/cumbre.css": "/css/cumbre.css",
+    "/css/similacmama.css": "/css/similacmama.css"
 }
