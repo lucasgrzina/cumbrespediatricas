@@ -18,7 +18,8 @@ class Registrado extends Model
         'email',
         'id_externo',
         'token',
-        'certificado'
+        'certificado',
+        'evento'
     ];
 
     /**

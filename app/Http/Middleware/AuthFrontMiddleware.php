@@ -7,13 +7,13 @@ use Closure;
 
 class AuthFrontMiddleware
 {
-    public function handle($request, Closure $next, $redirectTo = 'home')
+    public function handle($request, Closure $next, $evento = '')
     {
-        if (\FrontHelper::getCookieRegistrado($redirectTo === 'home' ? '' : 'test_') !== null)
+        if (\FrontHelper::getCookieRegistrado($evento) !== null)
         {
             return $next($request);
         }
         
-        return redirect()->route($redirectTo);
+        return redirect()->route($evento ? $evento.'.home' : 'home');
     }
 }

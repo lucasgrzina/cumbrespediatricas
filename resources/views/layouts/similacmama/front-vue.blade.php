@@ -6,11 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Cumbre Pediátrica</title>
+        <title>Simila</title>
 
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
-        <link href="{{ url(mix('/css/all.css')) }}" rel="stylesheet" type="text/css">
+        <link href="{{ url(mix('/css/similacmama.css')) }}" rel="stylesheet" type="text/css">
         <!-- Minified version of `es6-promise-auto` below. -->
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
@@ -33,7 +33,7 @@
                 
             </section>
             <footer class="">
-                <div class="container">
+                <!--div class="container">
                     <div class="row logos">
                         <div class="col-4" style="padding-top: 10px;text-align:center;">
                             <a><img src="{{asset('img/logo_3.png')}}" style="height: auto; max-width: 160px;"></a>
@@ -47,9 +47,9 @@
                             <a><img src="{{asset('img/logo_1.png')}}" style="height: auto; max-width: 180px;"></a>
                         </div>
                     </div>
-                </div>
+                </div-->
             </footer>            
         </div>
-        <script src="{{ url(mix('/js/app.js')) }}"></script>
+        <script src="{{ url(mix('/js/similacmama.js')) }}"></script>
     </body>
 </html>

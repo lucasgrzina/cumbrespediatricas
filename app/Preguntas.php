@@ -51,6 +51,7 @@ class Preguntas extends Model
     public $fillable = [
         'pregunta',
         'registrado_id',
+        'evento'
         //'enabled'
     ];
 

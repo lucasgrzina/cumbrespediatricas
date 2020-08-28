@@ -1,4 +1,4 @@
 <?php
 return [
-    'cookieRegistrado' => 'registrado_v3'
+    'cookieRegistrado' => 'registrado_v4'
 ];

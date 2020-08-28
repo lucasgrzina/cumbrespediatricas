@@ -11,12 +11,19 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
+mix.js('resources/assets/js/cumbre.js', 'public/js')
    .styles([
       'public/css/bootstrap.min.css',
       'public/css/styles.css',
       'public/css/utils.css',
-   ], 'public/css/all.css');
+   ], 'public/css/cumbre.css');
+
+   mix.js('resources/assets/js/similacmama.js', 'public/js')
+   .styles([
+      'public/css/bootstrap.min.css',
+      'public/css/styles_similacmama.css',
+      'public/css/utils.css',
+   ], 'public/css/similacmama.css');   
 
 if (mix.inProduction()) {
    mix.version();
