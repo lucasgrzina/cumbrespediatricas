@@ -30,6 +30,12 @@
                 <div class="form-inline">
                     @include('admin.includes.crud.index-filters-input')
                     <!-- cualquier otro campo -->
+                    <div class="form-group">
+                        <select v-model="filters.evento" class="form-control input-sm" name="evento">
+                            <option v-for="item in info.eventos" :value="item.id">(% item.name %)</option>
+                            <!--option :value="null">Roles (todos)</option-->
+                        </select>
+                    </div>                    
                     @include('admin.includes.crud.index-filters-btn')
                 </div>
             </div>

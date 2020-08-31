@@ -7,23 +7,24 @@ use App\Encuestas;
 use App\Preguntas;
 use Carbon\Carbon;
 use App\Registrado;
-use App\Configuraciones;
+
 use App\Helpers\FrontHelper;
 use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController;
-use App\Http\Requests\Front\RegistrarRequest;
 
-class HomeSimilaCMamaController extends AppBaseController
+use App\Http\Requests\Front\RegistrarRequest;
+use App\Http\Front\Controllers\EventoBaseController;
+
+class HomeSimilaCMamaController extends EventoBaseController
 {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    private $evento = 'similacmama';
+    
     public function __construct()
     {
-        //$this->middleware('auth:admin');
+        parent::__construct();
     }
 
     public function index()
@@ -34,7 +35,7 @@ class HomeSimilaCMamaController extends AppBaseController
             $data = [
                 'config' => $conf
             ];
-            return view('front.'.$this->evento.'.home',['data' => $data]);
+            return view('front.'.$this->evento['view'].'.home',['data' => $data]);
         }
         return $this->indexVue();
         
@@ -43,16 +44,16 @@ class HomeSimilaCMamaController extends AppBaseController
     public function indexVue()
     {
         //return redirect()->route('home');
-        if (FrontHelper::getCookieRegistrado($this->evento)) {
-            return redirect()->route($this->evento.'.vivo');
+        if (FrontHelper::getCookieRegistrado($this->evento['cookie'])) {
+            return redirect()->route($this->key.'.vivo');
         }
 
         $data = [
             'props' => [
-                'urlRegistrar' => route($this->evento.'.registrar')
+                'urlRegistrar' => route($this->key.'.registrar')
             ]
         ];
-        return view('front.'.$this->evento.'.home-vue', $data);
+        return view('front.'.$this->evento['view'].'.home-vue', $data);
     } 
 
     public function vivo (Request $request) {
@@ -62,7 +63,7 @@ class HomeSimilaCMamaController extends AppBaseController
             $conf = $this->config('*');
             
             if ($conf['etapa'] !== 'R') {
-                return redirect()->to($this->evento.'.home');
+                return redirect()->route($this->key.'.home');
             }
 
             try {
@@ -76,40 +77,29 @@ class HomeSimilaCMamaController extends AppBaseController
             }
 
         } catch(\Exception $e) {
-            return view('front.'.$this->evento.'.no-habilitado');
+            return view('front.'.$this->evento['view'].'.no-habilitado');
             //return redirect()->to(env('URL_SITIO_PPAL','#'));
         }
         
 
         $data = [
             'props' => [
-                'urlEnviar' => route($this->evento.'.enviar-pregunta'),
+                'urlEnviar' => route($this->key.'.enviar-pregunta'),
                 'urlEncuesta' => '',
-                'urlEncuestaDisponible' => route($this->evento.'.encuesta-disponible'),
-                'urlEnviarEncuesta' => route($this->evento.'.enviar-encuesta'),
-                'urlEnviarSalidaUsuario' => route($this->evento.'.enviar-salida-usuario'),
+                'urlEncuestaDisponible' => route($this->key.'.encuesta-disponible'),
+                'urlEnviarEncuesta' => route($this->key.'.enviar-encuesta'),
+                'urlEnviarSalidaUsuario' => route($this->key.'.enviar-salida-usuario'),
             ]
         ];
-        return view('front.'.$this->evento.'.vivo', $data);
+        return view('front.'.$this->evento['view'].'.vivo', $data);
     }
     
-    
-    public function encuestaDisponible () {
-        $config = $this->config('*');
-        $encuestaDispo = $config['etapa'] === 'R' && (bool)$config['encuesta'];
-        if ($encuestaDispo) {
-            return $this->sendResponse([],'La operación finañizó con éxito');                
-        } else {
-            return $this->sendError('La encuesta no se encuentra disponible por el momento.',505);
-        }
-    } 
-
     public function registrar(RegistrarRequest $request) {
         try {
             $input = $request->all();
-            $input['evento'] = $this->evento;
+            $input['evento'] = $this->key;
             $data = Registrado::create($input);
-            FrontHelper::setCookieRegistrado($data->id,$this->evento);
+            FrontHelper::setCookieRegistrado($data->id,$this->evento['cookie']);
             return $this->sendResponse($data,'La operación finañizó con éxito');                
         } catch (\Exception $e) {
             return $this->sendError($e->getMessage(),$e->getCode());
@@ -118,14 +108,14 @@ class HomeSimilaCMamaController extends AppBaseController
 
     public function enviarPregunta(Request $request) {
         try {
-            $registradoGuid = FrontHelper::getCookieRegistrado($this->evento);
+            $registradoGuid = FrontHelper::getCookieRegistrado($this->evento['cookie']);
             $data = $request->all();
             if ($registradoGuid) {
                 try {
                     $registrado = Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
                 
                     $data['registrado_id'] = $registrado->id;
-                    $data['evento'] = $this->evento;
+                    $data['evento'] = $this->key;
     
                 } catch (\Exception $e) {}
                 
@@ -139,14 +129,14 @@ class HomeSimilaCMamaController extends AppBaseController
     }
     public function enviarEncuesta(Request $request) {
         try {
-            $registradoGuid = FrontHelper::getCookieRegistrado($this->evento);
+            $registradoGuid = FrontHelper::getCookieRegistrado($this->evento['cookie']);
             $data = $request->all();
             if ($registradoGuid) {
                 try {
                     $registrado = Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
                 
                     $data['registrado_id'] = $registrado->id;
-                    $data['evento'] = $this->evento;
+                    $data['evento'] = $this->key;
     
                 } catch (\Exception $e) {}
             }
@@ -159,28 +149,11 @@ class HomeSimilaCMamaController extends AppBaseController
         }
     }
     
-    protected function config($clave='*') {
-        if ($clave === '*') {
-            return Configuraciones::whereEvento($this->evento)->pluck('valor','clave');
-        } else {
-            return Configuraciones::whereClave($clave)->whereEvento($this->evento)->first()->valor;    
-        }
-    }
-
-    public function eventoDisponible() {
-        $config = $this->config('*');
-        $vivoDispo = $config['etapa_similacmama'] === 'R' && !(bool)$config['encuesta'];
-        if ($vivoDispo) {
-            return $this->sendResponse([],'La operación finañizó con éxito');                
-        } else {
-            return $this->sendError('La evento no se encuentra disponible por el momento.',505);
-        }        
-    }
     
     public function enviarSalidaUsuario(Request $request) {
         try {
 
-            $registradoGuid = FrontHelper::getCookieRegistrado($this->evento);
+            $registradoGuid = FrontHelper::getCookieRegistrado($this->evento['cookie']);
             
             if ($registradoGuid) {
                 try {

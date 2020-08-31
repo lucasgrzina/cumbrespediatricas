@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Admin\CrudAdminController;
-use App\Http\Requests\Admin\CUPreguntasRequest;
-use App\Repositories\PreguntasRepository;
-use Illuminate\Http\Request;
-use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use Illuminate\Http\Request;
+use App\Helpers\EventosHelper;
+use App\Repositories\PreguntasRepository;
+use App\Repositories\Criteria\EventoCriteria;
+use App\Http\Requests\Admin\CUPreguntasRequest;
+use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Controllers\Admin\CrudAdminController;
 
 class PreguntasController extends CrudAdminController
 {
@@ -26,7 +28,8 @@ class PreguntasController extends CrudAdminController
     public function index()
     {
         parent::index();
-
+        $this->data['info']['eventos'] = EventosHelper::pluck();
+        $this->data['filters']['evento'] = $this->data['info']['eventos'][0]['id'];
         return view($this->viewPrefix.'index')->with('data',$this->data);
     }
 
@@ -35,6 +38,7 @@ class PreguntasController extends CrudAdminController
         try
         {
             $this->repository->pushCriteria(new RequestCriteria($request));
+            $this->repository->pushCriteria(new EventoCriteria($request));
             $collection = $this->repository->paginate($request->get('per_page'))->toArray();        
 
             $this->data = [
@@ -94,7 +98,7 @@ class PreguntasController extends CrudAdminController
     public function exportXls(Request $request)
     {
         $this->repository->pushCriteria(new RequestCriteria($request));
-        
+        $this->repository->pushCriteria(new EventoCriteria($request));        
         $data = $this->repository->all()->toArray();        
         $name = 'Preguntas';
         $header = [

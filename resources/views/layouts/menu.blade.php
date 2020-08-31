@@ -23,16 +23,13 @@
   </ul>
 </li>
 @endif
-@if (\App\Helpers\AdminHelper::mostrarMenu(['registrados']))    
 
 <li class="{{ Request::is('registrados*') ? 'active' : '' }}">
     <a href="{!! route('registrados.index') !!}"><i class="fa fa-users"></i><span>Registrados</span></a>
 </li>
-@endif
 <li class="{{ Request::is('preguntas*') ? 'active' : '' }}">
     <a href="{!! route('preguntas.index') !!}"><i class="fa fa-chevron-right"></i><span>Preguntas</span></a>
 </li>
-
 <li class="{{ Request::is('encuestas*') ? 'active' : '' }}">
     <a href="{!! route('encuestas.index') !!}"><i class="fa fa-chevron-right"></i><span>Encuestas</span></a>
 </li>

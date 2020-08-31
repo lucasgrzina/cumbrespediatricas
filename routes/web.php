@@ -86,26 +86,6 @@ Route::prefix('/admin')->group(function () {
     });
 });
 
-Route::group(['prefix' => '/danoneday'], function() {
-    //Route::get('/registro', 'Front\HomeController@indexVue')->name('registro');
-    Route::post('/registrar', 'Front\HomeController@registrar')->name('registrar');
-
-    Route::get('/vivo', 'Front\HomeController@vivo')->name('vivo');
-    Route::group(['middleware' => 'registrado'], function() {
-        
-        Route::post('/enviar-pregunta', 'Front\HomeController@enviarPregunta')->name('enviar-pregunta');
-        //Route::get('/encuesta', 'Front\HomeController@encuesta')->name('encuesta');        
-        Route::get('/encuesta-disponible', 'Front\HomeController@encuestaDisponible')->name('encuesta-disponible');        
-        Route::post('/enviar-encuesta', 'Front\HomeController@enviarEncuesta')->name('enviar-encuesta');
-        Route::post('/enviar-salida-usuario/{id}', 'Front\HomeController@enviarSalidaUsuario')->name('enviar-salida-usuario');
-    });
-    
-    Route::prefix('ws')->group(function () {
-        Route::get('/evento-disponible', 'Front\HomeController@eventoDisponible');
-    });    
-    Route::get('/', 'Front\HomeController@index')->name('home');
-
-});
 
 /*Route::group(['prefix' => '/test/cumbrepediatrica'], function() {
     Route::post('/registrar', 'Front\HomeTestController@registrar')->name('test.registrar');
@@ -119,19 +99,24 @@ Route::group(['prefix' => '/danoneday'], function() {
     });
     Route::get('/', 'Front\HomeTestController@index')->name('test.home');
 }); */
-
-Route::group(['prefix' => 'similacmama'], function() {
-    Route::post('/registrar', 'Front\HomeSimilaCMamaController@registrar')->name('similacmama.registrar');
-
-    Route::group(['middleware' => 'registrado:similacmama'], function() {
-        Route::get('/vivo', 'Front\HomeSimilaCMamaController@vivo')->name('similacmama.vivo');
-        Route::post('/enviar-pregunta', 'Front\HomeSimilaCMamaController@enviarPregunta')->name('similacmama.enviar-pregunta');
-        Route::get('/encuesta-disponible', 'Front\HomeSimilaCMamaController@encuestaDisponible')->name('similacmama.encuesta-disponible');        
-        Route::post('/enviar-encuesta', 'Front\HomeSimilaCMamaController@enviarEncuesta')->name('similacmama.enviar-encuesta');
-        Route::post('/enviar-salida-usuario', 'Front\HomeSimilaCMamaController@enviarSalidaUsuario')->name('similacmama.enviar-salida-usuario');
-    });
-    Route::get('/', 'Front\HomeSimilaCMamaController@index')->name('similacmama.home');
-}); 
+$eventos = config('constantes.eventos',[]);
+foreach ($eventos as $key => $data) {
+    if ($data['activo']) {
+        Route::namespace('Front')->name($key.'.')->prefix($data['prefix'])->group(function() use($data){
+            Route::post('/registrar', $data['controller'].'@registrar')->name('registrar');
+        
+            Route::group(['middleware' => 'registrado:'.$data['cookie']], function() use($data){
+                Route::get('/vivo', $data['controller'].'@vivo')->name('vivo');
+                Route::post('/enviar-pregunta', $data['controller'].'@enviarPregunta')->name('enviar-pregunta');
+                Route::get('/encuesta-disponible', $data['controller'].'@encuestaDisponible')->name('encuesta-disponible');        
+                Route::post('/enviar-encuesta', $data['controller'].'@enviarEncuesta')->name('enviar-encuesta');
+                Route::post('/enviar-salida-usuario', $data['controller'].'@enviarSalidaUsuario')->name('enviar-salida-usuario');
+            });
+            Route::get('/', $data['controller'].'@index')->name('home');
+        }); 
+    
+    }
+}
 
 Route::get('/log/obtener', function () {
     if (env('APP_ENV', 'local') === 'local') {
