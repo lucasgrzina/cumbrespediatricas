@@ -16,7 +16,7 @@ return [
             'controller' => 'HomeSimilaCMamaController',
             'view' => 'similacmama',
             'cookie' => 'similacmama',
-            'activo' => false
+            'activo' => true
         ],
         'danoneday' => [
             'nombre' => 'Danone Day',
@@ -25,14 +25,6 @@ return [
             'view' => 'danoneday',
             'cookie' => 'danoneday',
             'activo' => false
-        ],
-        'similacmama2' => [
-            'nombre' => 'Similac Mama Dia 2',
-            'prefix' => 'similacmama',
-            'controller' => 'HomeSimilaCMamaController',
-            'view' => 'similacmama',
-            'cookie' => 'similacmama2',
-            'activo' => true
-        ],              
+        ]             
     ]
 ];
