@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use InfyOm\Generator\Utils\ResponseUtil;
 use Response;
+use App\Configuraciones;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use InfyOm\Generator\Utils\ResponseUtil;
+use App\Http\Requests\Front\RegistrarRequest;
 
 /**
  * @SWG\Swagger(
@@ -20,6 +24,7 @@ class AppBaseController extends Controller
 {
     protected $data = [];
     
+
     public function sendResponse($result, $message)
     {
         return Response::json(ResponseUtil::makeResponse($message, $result));
@@ -29,4 +34,5 @@ class AppBaseController extends Controller
     {
         return Response::json(ResponseUtil::makeError($error), $code);
     }
+
 }

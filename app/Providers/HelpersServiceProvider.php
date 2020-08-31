@@ -27,5 +27,6 @@ class HelpersServiceProvider extends ServiceProvider
         require_once app_path() . '/Helpers/FileUpload.php';
         require_once app_path() . '/Helpers/AdminHelper.php';
         require_once app_path() . '/Helpers/FrontHelper.php';
+        require_once app_path() . '/Helpers/EventosHelper.php';
     }
 }
