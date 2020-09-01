@@ -1,6 +1,6 @@
 @extends('layouts.similacmama.front-vue')
 @section('head')
-<script src="https://www.google.com/recaptcha/api.js?render=6Leb2qYZAAAAALa7WyEDFhvJUYlYQH4Z_CJ-U-ie"></script>
+<script src="https://www.google.com/recaptcha/api.js?render={{config('constantes.recaptcha.key','')}}"></script>
 @endsection
 @section('content')
 <!--div class="container-fluid"-->            

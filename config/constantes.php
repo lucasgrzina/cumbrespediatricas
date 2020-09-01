@@ -34,5 +34,9 @@ return [
             'cookie' => 'similacmamatest',
             'activo' => true
         ],                     
+    ],
+    'recaptcha' => [
+        'key' => '6LcNPcYZAAAAAI5sgO4CAlZxlGHgADMXtUCbARnh',
+        'secret' => '6LcNPcYZAAAAADlvzKcu1uIRHw7HVprluNr1WxTf'
     ]
 ];

@@ -50,6 +50,7 @@ class HomeSimilaCMamaController extends EventoBaseController
 
         $data = [
             'props' => [
+                'recaptcha' => config('constantes.recaptcha',[]),
                 'urlRegistrar' => route($this->key.'.registrar')
             ]
         ];

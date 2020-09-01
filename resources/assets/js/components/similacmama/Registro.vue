@@ -88,6 +88,10 @@
             urlRegistrar: {
                 type: String,
                 required:true
+            },
+            recaptcha: {
+                type: Object,
+                default: null
             }
         },
         data () {
@@ -150,12 +154,11 @@
                     this.guardando = true;
 
                     grecaptcha.ready(function() {
-                        grecaptcha.execute('6Leb2qYZAAAAALa7WyEDFhvJUYlYQH4Z_CJ-U-ie', {action: 'submit'}).then(function(token) {
+                        grecaptcha.execute(vm.recaptcha.key, {action: 'submit'}).then(function(token) {
                             // Add your logic to submit to your backend server here.
                             if (token) {
                                 axios.post(vm.urlRegistrar, vm.form)
                                     .then(response => {
-                                        console.debug(response);
                                         vm.guardando = false;
                                         location.reload();
                                     }, error => {
