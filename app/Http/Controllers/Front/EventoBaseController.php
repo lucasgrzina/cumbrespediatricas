@@ -3,9 +3,11 @@
 namespace App\Http\Front\Controllers;
 
 
+use App\Registrado;
 use App\Configuraciones;
-use Illuminate\Http\Request;
 
+use App\Helpers\FrontHelper;
+use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\Front\RegistrarRequest;
 
@@ -85,6 +87,20 @@ class EventoBaseController extends AppBaseController
         } else {
             return $this->sendError('La evento no se encuentra disponible por el momento.',505);
         }        
+    }
+
+    protected function obtenerRegistrado() {
+        $registrado = null;
+        try {
+
+            $registradoGuid = FrontHelper::getCookieRegistrado($this->evento['cookie']);
+            
+            if ($registradoGuid) {
+                $registrado = Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
+            }
+            
+        } catch (\Exception $e) {}
+        return $registrado;
     }
 
 }

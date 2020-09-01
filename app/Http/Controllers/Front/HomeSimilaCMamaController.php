@@ -84,6 +84,7 @@ class HomeSimilaCMamaController extends EventoBaseController
 
         $data = [
             'props' => [
+                'registrado' => $this->obtenerRegistrado(),
                 'urlEnviar' => route($this->key.'.enviar-pregunta'),
                 'urlEncuesta' => '',
                 'urlEncuestaDisponible' => route($this->key.'.encuesta-disponible'),

@@ -13,6 +13,7 @@ class Configuraciones extends Model
     public $fillable = [
         'clave',
         'valor',
+        'evento'
     ];
 
     /**

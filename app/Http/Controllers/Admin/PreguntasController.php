@@ -21,15 +21,15 @@ class PreguntasController extends CrudAdminController
     {
         $this->repository = $repo;
 
-        $this->middleware('permission:ver-'.$this->actionPerms, ['only' => ['index','filter','show']]);        
-        $this->middleware('permission:editar-'.$this->actionPerms, ['only' => ['create','store','edit','update','destroy']]);          
+        //$this->middleware('permission:ver-'.$this->actionPerms, ['only' => ['index','filter','show']]);        
+        //$this->middleware('permission:editar-'.$this->actionPerms, ['only' => ['create','store','edit','update','destroy']]);          
     }
 
     public function index()
     {
         parent::index();
-        $this->data['info']['eventos'] = EventosHelper::pluck();
-        $this->data['filters']['evento'] = $this->data['info']['eventos'][0]['id'];
+        $this->data['info']['eventos'] = EventosHelper::combo();
+        $this->data['filters']['evento'] = count($this->data['info']['eventos']) > 0 ? $this->data['info']['eventos'][0]['id'] : null;
         return view($this->viewPrefix.'index')->with('data',$this->data);
     }
 

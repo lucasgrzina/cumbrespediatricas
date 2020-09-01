@@ -69,6 +69,10 @@ Route::prefix('/admin')->group(function () {
         Route::get('encuestas/exportar/{type}', 'Admin\EncuestasController@export')->name('encuestas.export');        
         Route::resource('encuestas', 'Admin\EncuestasController');
 
+        Route::post('configuraciones/filter', 'Admin\ConfiguracionesController@filter')->name('configuraciones.filter');
+        Route::get('configuraciones/exportar/{type}', 'Admin\ConfiguracionesController@export')->name('configuraciones.export');        
+        Route::resource('configuraciones', 'Admin\ConfiguracionesController');
+
         Route::get('clear-cache', function () {
             $exitCode = Artisan::call('cache:clear');
             echo 'done';// return what you want

@@ -4,7 +4,7 @@ namespace App\Helpers;
  
 class EventosHelper {
 
-    public static function pluck() 
+    public static function combo() 
     {
         $options = [];
         $eventos = config('constantes.eventos',[]);

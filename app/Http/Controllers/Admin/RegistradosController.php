@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Admin\CrudAdminController;
-use App\Http\Requests\Admin\CURegistradosRequest;
-use App\Repositories\RegistradosRepository;
-use Illuminate\Http\Request;
-use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use Illuminate\Http\Request;
+use App\Helpers\EventosHelper;
+use App\Repositories\RegistradosRepository;
+use App\Repositories\Criteria\EventoCriteria;
+use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Requests\Admin\CURegistradosRequest;
+use App\Http\Controllers\Admin\CrudAdminController;
 
 class RegistradosController extends CrudAdminController
 {
@@ -19,13 +21,15 @@ class RegistradosController extends CrudAdminController
     {
         $this->repository = $repo;
 
-        $this->middleware('permission:ver-'.$this->actionPerms, ['only' => ['index','filter','show']]);        
-        $this->middleware('permission:editar-'.$this->actionPerms, ['only' => ['create','store','edit','update','destroy']]);          
+        //$this->middleware('permission:ver-'.$this->actionPerms, ['only' => ['index','filter','show']]);        
+        //$this->middleware('permission:editar-'.$this->actionPerms, ['only' => ['create','store','edit','update','destroy']]);          
     }
 
     public function index()
     {
         parent::index();
+        $this->data['info']['eventos'] = EventosHelper::combo();
+        $this->data['filters']['evento'] = count($this->data['info']['eventos']) > 0 ? $this->data['info']['eventos'][0]['id'] : null;
 
         return view($this->viewPrefix.'index')->with('data',$this->data);
     }
@@ -35,6 +39,7 @@ class RegistradosController extends CrudAdminController
         try
         {
             $this->repository->pushCriteria(new RequestCriteria($request));
+            $this->repository->pushCriteria(new EventoCriteria($request));
             $collection = $this->repository->paginate($request->get('per_page'))->toArray();        
 
             $this->data = [
@@ -94,7 +99,7 @@ class RegistradosController extends CrudAdminController
     public function exportXls(Request $request)
     {
         $this->repository->pushCriteria(new RequestCriteria($request));
-        
+        $this->repository->pushCriteria(new EventoCriteria($request));
         $data = $this->repository->all()->toArray();        
         $name = 'Registrados';
         $header = [

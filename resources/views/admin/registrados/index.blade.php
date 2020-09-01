@@ -30,6 +30,7 @@
                 <div class="form-inline">
                     @include('admin.includes.crud.index-filters-input')
                     <!-- cualquier otro campo -->
+                    @include('admin.includes.crud.index-filters-evento')
                     @include('admin.includes.crud.index-filters-btn')
                 </div>
             </div>

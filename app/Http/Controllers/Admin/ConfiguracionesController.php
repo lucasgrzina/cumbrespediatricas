@@ -5,19 +5,19 @@ namespace App\Http\Controllers\Admin;
 use Response;
 use Illuminate\Http\Request;
 use App\Helpers\EventosHelper;
-use App\Repositories\EncuestasRepository;
+use App\Repositories\ConfiguracionesRepository;
 use App\Repositories\Criteria\EventoCriteria;
-use App\Http\Requests\Admin\CUEncuestasRequest;
+use App\Http\Requests\Admin\CUConfiguracionesRequest;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\Http\Controllers\Admin\CrudAdminController;
 
-class EncuestasController extends CrudAdminController
+class ConfiguracionesController extends CrudAdminController
 {
-    protected $routePrefix = 'encuestas';
-    protected $viewPrefix  = 'admin.encuestas.';
-    protected $actionPerms = 'encuestas';
+    protected $routePrefix = 'configuraciones';
+    protected $viewPrefix  = 'admin.configuraciones.';
+    protected $actionPerms = 'configuraciones';
 
-    public function __construct(EncuestasRepository $repo)
+    public function __construct(ConfiguracionesRepository $repo)
     {
         $this->repository = $repo;
 
@@ -28,9 +28,11 @@ class EncuestasController extends CrudAdminController
     public function index()
     {
         parent::index();
+        $this->data['url_save'] = route($this->routePrefix.'.store');
+        $this->data['filters']['export_xls'] = false;
+        $this->data['filters']['sortedBy'] = 'asc';
         $this->data['info']['eventos'] = EventosHelper::combo();
         $this->data['filters']['evento'] = count($this->data['info']['eventos']) > 0 ? $this->data['info']['eventos'][0]['id'] : null;
-
         return view($this->viewPrefix.'index')->with('data',$this->data);
     }
 
@@ -76,7 +78,7 @@ class EncuestasController extends CrudAdminController
         return view($this->viewPrefix.'cu')->with('data',$this->data);
     }
 
-    public function store(CUEncuestasRequest $request)
+    public function store(CUConfiguracionesRequest $request)
     {
         $model = $this->_store($request);
         return $this->sendResponse($model,trans('admin.success'));        
@@ -89,7 +91,7 @@ class EncuestasController extends CrudAdminController
         return view($this->viewPrefix.'cu')->with('data',$this->data);
     }
 
-    public function update($id, CUEncuestasRequest $request)
+    public function update($id, CUConfiguracionesRequest $request)
     {
         $model = $this->_update($id, $request);
 
@@ -99,16 +101,12 @@ class EncuestasController extends CrudAdminController
     public function exportXls(Request $request)
     {
         $this->repository->pushCriteria(new RequestCriteria($request));
-        $this->repository->pushCriteria(new EventoCriteria($request));
-        
+        $this->repository->pushCriteria(new EventoCriteria($request));        
         $data = $this->repository->all()->toArray();        
-        $name = 'Encuestas';
+        $name = 'Configuraciones';
         $header = [
             'id' => 'ID',
-            'valor_resp_1' => 'Pregunta 1',
-            'valor_resp_2' => 'Pregunta 2',
-            'valor_resp_3' => 'Pregunta 3',
-            'resp_4' => 'Pregunta 4',
+            'pregunta' => 'Pregunta',
         ];
         $format = [
         ];

@@ -96,7 +96,12 @@ _components['button-type'] = {
                 this.text = this.getText(this.type);
                 this.title = 'Cancelar';
                 break;                
-            case 'add-list':
+            case 'save-list':
+                this.theClass = 'btn btn-xs bg-green';
+                this.icon += 'save';
+                this.title = 'Guardar';
+                break;
+                case 'add-list':
                 this.theClass = 'btn btn-xs bg-green';
                 this.icon += 'plus';
                 this.title = 'Agregar';
