@@ -25,6 +25,14 @@ return [
             'view' => 'danoneday',
             'cookie' => 'danoneday',
             'activo' => false
-        ]             
+        ],
+        'similacmamatest' => [
+            'nombre' => 'Similac Mama (Test)',
+            'prefix' => 'similacmamatest',
+            'controller' => 'HomeSimilaCMamaController',
+            'view' => 'similacmama',
+            'cookie' => 'similacmamatest',
+            'activo' => true
+        ],                     
     ]
 ];
