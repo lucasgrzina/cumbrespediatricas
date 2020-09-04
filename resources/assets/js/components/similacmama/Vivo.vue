@@ -194,9 +194,21 @@
         },
         mounted () {
             var vm = this;
-
+            console.debug($('[name=csrf-token]').attr('content'));
+            
             window.addEventListener('beforeunload', function (e) {
-                vm.enviarSalidaUsuario().then(response => {
+                $.ajax({
+                    url: vm.urlEnviarSalidaUsuario, 
+                    type: "post",
+                    data: {
+                        "_token": $('[name=csrf-token]').attr('content')
+                    }, 
+                    async:true
+                });
+                e.preventDefault();
+                e.returnValue = 'a';
+
+                /**vm.enviarSalidaUsuario().then(response => {
                     e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
                     e.returnValue = '';
                 }, error => {
@@ -204,7 +216,7 @@
                     // Chrome requires returnValue to be set
                     e.returnValue = '';
                     
-                });                    
+                });*/                   
             });            
         
         },

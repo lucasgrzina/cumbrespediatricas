@@ -94,7 +94,8 @@ class ConfiguracionesController extends CrudAdminController
     public function update($id, CUConfiguracionesRequest $request)
     {
         $model = $this->_update($id, $request);
-
+        \Log::info('Borrar cache: '.'configuraciones_'.$request->evento);
+        \Cache::forget('configuraciones_'.$request->evento);
         return $this->sendResponse($model,trans('admin.success'));
     }
 

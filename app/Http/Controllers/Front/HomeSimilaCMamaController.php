@@ -68,10 +68,11 @@ class HomeSimilaCMamaController extends EventoBaseController
             }
 
             try {
-                /*$registrado->acciones()->create([
+                $registrado = $this->obtenerRegistrado();
+                $registrado->acciones()->create([
                     'accion' => 'evento',
                     'desde' => Carbon::now()
-                ]);*/
+                ]);
     
             } catch(\Exception $e) {
                 \Log::info($e->getMessage());
@@ -154,12 +155,13 @@ class HomeSimilaCMamaController extends EventoBaseController
     
     public function enviarSalidaUsuario(Request $request) {
         try {
-
+            \Log::info('enviarSalidaUsuario');
             $registradoGuid = FrontHelper::getCookieRegistrado($this->evento['cookie']);
-            
+            \Log::info('$registradoGuid: '.$registradoGuid);
             if ($registradoGuid) {
                 try {
                     $registrado = Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
+                    \Log::info($registrado);
                     $accion = $registrado->acciones()->whereNull('hasta')->orderBy('id','asc')->first();
                     $accion->hasta = Carbon::now()->format('Y-m-d H:i:s');
                     $accion->save();

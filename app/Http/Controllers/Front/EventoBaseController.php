@@ -26,6 +26,7 @@ class EventoBaseController extends AppBaseController
 {
     protected $evento = null;
     protected $key = null;
+    protected $segundosCache = 60 * 10;
     
     public function __construct()
     {
@@ -69,7 +70,10 @@ class EventoBaseController extends AppBaseController
 
     protected function config($clave='*') {
         if ($clave === '*') {
-            return Configuraciones::whereEvento($this->key)->pluck('valor','clave');
+            \Log::info('configuraciones_'.$this->key);
+            return  \Cache::remember('configuraciones_'.$this->key, $this->segundosCache, function (){
+                return Configuraciones::whereEvento($this->key)->pluck('valor','clave');
+            });
         } else {
             return Configuraciones::whereClave($clave)->whereEvento($this->key)->first()->valor;    
         }
@@ -96,7 +100,9 @@ class EventoBaseController extends AppBaseController
             $registradoGuid = FrontHelper::getCookieRegistrado($this->evento['cookie']);
             
             if ($registradoGuid) {
-                $registrado = Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
+                $registrado = \Cache::remember('registrado_'.$registradoGuid, $this->segundosCache, function () use($registradoGuid){
+                    return Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
+                });                
             }
             
         } catch (\Exception $e) {}

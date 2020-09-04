@@ -46141,16 +46141,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     mounted: function mounted() {
         var vm = this;
+        console.debug($('[name=csrf-token]').attr('content'));
 
         window.addEventListener('beforeunload', function (e) {
-            vm.enviarSalidaUsuario().then(function (response) {
+            $.ajax({
+                url: vm.urlEnviarSalidaUsuario,
+                type: "post",
+                data: {
+                    "_token": $('[name=csrf-token]').attr('content')
+                },
+                async: true
+            });
+            e.preventDefault();
+            e.returnValue = 'a';
+
+            /**vm.enviarSalidaUsuario().then(response => {
                 e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
                 e.returnValue = '';
-            }, function (error) {
+            }, error => {
                 e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
                 // Chrome requires returnValue to be set
                 e.returnValue = '';
-            });
+                
+            });*/
         });
     },
 
