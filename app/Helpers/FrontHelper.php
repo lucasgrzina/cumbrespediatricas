@@ -37,5 +37,9 @@ class FrontHelper {
     public static function setCookieRegistrado($valor,$prefijo = '') {
         return \Cookie::queue(\Cookie::make($prefijo.config('constantes.cookieRegistrado'), md5($valor), 518400));
     }
+
+    public static function removeCookieRegistrado($valor,$prefijo = '') {
+        return \Cookie::forget($prefijo.config('constantes.cookieRegistrado'));
+    }    
  
 }

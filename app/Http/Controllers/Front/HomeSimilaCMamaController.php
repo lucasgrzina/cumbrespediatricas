@@ -69,10 +69,15 @@ class HomeSimilaCMamaController extends EventoBaseController
 
             try {
                 $registrado = $this->obtenerRegistrado();
-                $registrado->acciones()->create([
-                    'accion' => 'evento',
-                    'desde' => Carbon::now()
-                ]);
+                if ($registrado) {
+                    $registrado->acciones()->create([
+                        'accion' => 'evento',
+                        'desde' => Carbon::now()
+                    ]);
+                } else {
+                    FrontHelper::removeCookieRegistrado($this->evento['cookie']);
+                    return redirect()->route($this->key.'.home');
+                }
     
             } catch(\Exception $e) {
                 \Log::info($e->getMessage());
