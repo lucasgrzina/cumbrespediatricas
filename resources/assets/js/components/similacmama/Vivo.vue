@@ -198,7 +198,7 @@
             var isOnIOS = navigator.userAgent.match(/iPad/i)|| navigator.userAgent.match(/iPhone/i);
             var eventName = isOnIOS ? "pagehide" : "beforeunload";    
             console.debug(isOnIOS,eventName);
-            alert(eventName);        
+                    
             window.addEventListener(eventName, function (e) {
                 window.event.cancelBubble = true;
                 $.ajax({
@@ -207,7 +207,7 @@
                     data: {
                         "_token": $('[name=csrf-token]').attr('content')
                     }, 
-                    async:true
+                    async:false
                 });
                 e.preventDefault();
                 e.returnValue = '';
