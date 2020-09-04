@@ -195,8 +195,12 @@
         mounted () {
             var vm = this;
             console.debug($('[name=csrf-token]').attr('content'));
-            
-            window.addEventListener('beforeunload', function (e) {
+            var isOnIOS = navigator.userAgent.match(/iPad/i)|| navigator.userAgent.match(/iPhone/i);
+            var eventName = isOnIOS ? "pagehide" : "beforeunload";    
+            console.debug(isOnIOS,eventName);
+            alert(eventName);        
+            window.addEventListener(eventName, function (e) {
+                window.event.cancelBubble = true;
                 $.ajax({
                     url: vm.urlEnviarSalidaUsuario, 
                     type: "post",
