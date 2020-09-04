@@ -46147,14 +46147,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         console.debug(isOnIOS, eventName);
 
         window.addEventListener(eventName, function (e) {
-            window.event.cancelBubble = true;
+            //window.event.cancelBubble = true;
             $.ajax({
                 url: vm.urlEnviarSalidaUsuario,
                 type: "post",
                 data: {
                     "_token": $('[name=csrf-token]').attr('content')
                 },
-                async: false
+                async: true
             });
             e.preventDefault();
             e.returnValue = '';
