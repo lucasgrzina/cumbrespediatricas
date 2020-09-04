@@ -206,7 +206,7 @@
                     async:true
                 });
                 e.preventDefault();
-                e.returnValue = 'a';
+                e.returnValue = '';
 
                 /**vm.enviarSalidaUsuario().then(response => {
                     e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
