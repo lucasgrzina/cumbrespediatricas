@@ -194,12 +194,40 @@
         },
         mounted () {
             var vm = this;
-            console.debug($('[name=csrf-token]').attr('content'));
+            var csrfToken = $('[name=csrf-token]').attr('content');
             var isOnIOS = navigator.userAgent.match(/iPad/i)|| navigator.userAgent.match(/iPhone/i);
             var eventName = isOnIOS ? "pagehide" : "beforeunload";    
-            console.debug(isOnIOS,eventName);
+            var usarSendBeacon = "sendBeacon" in navigator;
+            var urlSalidaUsuario = vm.urlEnviarSalidaUsuario;
+            
+            console.debug(isOnIOS,eventName,usarSendBeacon,urlSalidaUsuario);
+                   
+            window.addEventListener(eventName, function(e){
+                var data = new FormData();
+                data.append('_token', csrfToken);                
+
+                if(usarSendBeacon)
+                {
+                    navigator.sendBeacon(urlSalidaUsuario, data);
+                }
+                else
+                {
+                    var request = new XMLHttpRequest();
                     
-            window.addEventListener(eventName, function (e) {
+                    request.open('post', urlSalidaUsuario, false);
+                    request.send(data);
+
+                    if (request.status === 200) {
+                        // your request has been sent
+                        alert('termino');
+                    
+                    }
+
+                }                
+                
+            }, false);                   
+
+            /*window.addEventListener(eventName, function (e) {
                 //window.event.cancelBubble = true;
                 $.ajax({
                     url: vm.urlEnviarSalidaUsuario, 
@@ -210,18 +238,10 @@
                     async:true
                 });
                 e.preventDefault();
-                e.returnValue = '';
+                e.returnValue = 'a';
 
-                /**vm.enviarSalidaUsuario().then(response => {
-                    e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
-                    e.returnValue = '';
-                }, error => {
-                    e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
-                    // Chrome requires returnValue to be set
-                    e.returnValue = '';
-                    
-                });*/                   
-            });            
+                 
+            });         */   
         
         },
         methods: {
