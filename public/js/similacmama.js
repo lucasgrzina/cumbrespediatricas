@@ -46219,7 +46219,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     window.open('https://forms.gle/CG16pRgLH7uRThg97');
                 }, function (error) {
                     vm.enviandoEncuesta = false;
-                    alert('La encuesta no se encuentra disponible por el momento.');
+                    alert('El acceso no se encuentra disponible por el momento.');
                 });
             }
         },

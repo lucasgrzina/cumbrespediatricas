@@ -279,7 +279,7 @@
                             window.open('https://forms.gle/CG16pRgLH7uRThg97');
                         }, error => {
                             vm.enviandoEncuesta = false;
-                            alert('La encuesta no se encuentra disponible por el momento.');
+                            alert('El acceso no se encuentra disponible por el momento.');
                         });                    
                 }
             },
