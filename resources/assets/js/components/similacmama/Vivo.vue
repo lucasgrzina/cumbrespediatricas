@@ -322,9 +322,9 @@
     max-width: 630px;
     margin: 0px auto;
     padding: 10px;
-    background-color: #061422;
+    background-color: #4e2149;
     border-radius: 2px;
-    box-shadow: 0 2px 8px #e7a249;
+    box-shadow: 0 2px 8px #7c666c;
     transition: all 0.3s ease;
     border: 1px solid #9E9E9E;
 }
@@ -370,8 +370,8 @@
 .modal-footer {
     justify-content: center;
     padding: 0;
-    background: #061422;
-    border-top-color: #061422;    
+    background: #4e2149;
+    border-top-color: #4e2149;    
 }
 
 </style>
