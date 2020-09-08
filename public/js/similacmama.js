@@ -46083,9 +46083,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -46114,7 +46111,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
-            videoSeleccionado: null,
+            videoSeleccionado: 'ingles',
             form: {
                 pregunta: null
             },
@@ -46162,26 +46159,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 request.send(data);
 
                 if (request.status === 200) {
-                    // your request has been sent
-                    alert('termino');
+                    console.debug('termino');
                 }
             }
         }, false);
-
-        /*window.addEventListener(eventName, function (e) {
-            //window.event.cancelBubble = true;
-            $.ajax({
-                url: vm.urlEnviarSalidaUsuario, 
-                type: "post",
-                data: {
-                    "_token": $('[name=csrf-token]').attr('content')
-                }, 
-                async:true
-            });
-            e.preventDefault();
-            e.returnValue = 'a';
-              
-        });         */
     },
 
     methods: {
@@ -46267,38 +46248,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "row content-title" }, [
-      _c("div", { staticClass: "col-md-12 text-center" }, [
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-primary violeta",
-            attrs: { type: "button" },
-            on: {
-              click: function($event) {
-                return _vm.verVideo("ingles")
-              }
-            }
-          },
-          [_vm._v("Audio Original Ingles")]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-primary violeta",
-            attrs: { type: "button" },
-            on: {
-              click: function($event) {
-                return _vm.verVideo("esp")
-              }
-            }
-          },
-          [_vm._v("Audio Español")]
-        )
-      ])
-    ]),
-    _vm._v(" "),
     _vm.videoSeleccionado
       ? _c("div", { staticClass: "row content-encuesta" }, [
           _c("div", { staticClass: "col-sm-12 text-center" }, [
@@ -46337,7 +46286,7 @@ var render = function() {
                       height: "100%"
                     },
                     attrs: {
-                      src: "https://player.vimeo.com/video/448931917",
+                      src: "https://player.vimeo.com/video/455802173",
                       frameborder: "0",
                       allow: "autoplay; fullscreen",
                       allowfullscreen: ""
@@ -46354,7 +46303,7 @@ var render = function() {
                       height: "100%"
                     },
                     attrs: {
-                      src: "https://player.vimeo.com/video/448931917",
+                      src: "https://player.vimeo.com/video/455802173",
                       frameborder: "0",
                       allow: "autoplay; fullscreen",
                       allowfullscreen: ""

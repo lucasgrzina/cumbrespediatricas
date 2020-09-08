@@ -1,14 +1,11 @@
 <template>
     <div>
-            <div class="row content-title">
+            <!--div class="row content-title">
                 <div class="col-md-12 text-center">
-                    <!--div class="line line--left"></div-->
                     <button type="button" class="btn btn-primary violeta" @click="verVideo('ingles')">Audio Original Ingles</button>
                     <button type="button" class="btn btn-primary violeta" @click="verVideo('esp')">Audio Español</button>                    
-
-                    <!--div class="line line--right"></div-->
                 </div>
-            </div>
+            </div-->
             <div class="row content-encuesta" v-if="videoSeleccionado">
                 <div class="col-sm-12 text-center">
                     <button type="button" 
@@ -26,10 +23,10 @@
                     <!--div class="wraper_video"-->
                         <div class="embed-container" v-if="videoSeleccionado === 'ingles'">
                             <div class="overlay"></div>
-                            <iframe src="https://player.vimeo.com/video/448931917" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                            <iframe src="https://player.vimeo.com/video/455802173" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                         </div>                    
                         <div class="embed-container" v-else>
-                            <iframe src="https://player.vimeo.com/video/448931917" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                            <iframe src="https://player.vimeo.com/video/455802173" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                         </div>                    
                     <!--/div-->
                 </div>
@@ -152,7 +149,7 @@
         },
         data () {
             return {
-                videoSeleccionado: null,
+                videoSeleccionado: 'ingles',
                 form: {
                     pregunta: null
                 },
@@ -218,30 +215,12 @@
                     request.send(data);
 
                     if (request.status === 200) {
-                        // your request has been sent
-                        alert('termino');
-                    
+                        console.debug('termino');
                     }
 
                 }                
                 
             }, false);                   
-
-            /*window.addEventListener(eventName, function (e) {
-                //window.event.cancelBubble = true;
-                $.ajax({
-                    url: vm.urlEnviarSalidaUsuario, 
-                    type: "post",
-                    data: {
-                        "_token": $('[name=csrf-token]').attr('content')
-                    }, 
-                    async:true
-                });
-                e.preventDefault();
-                e.returnValue = 'a';
-
-                 
-            });         */   
         
         },
         methods: {
