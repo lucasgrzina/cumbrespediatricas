@@ -3,9 +3,12 @@
 namespace App\Http\Front\Controllers;
 
 
+use App\Encuestas;
+use App\Preguntas;
+
+use Carbon\Carbon;
 use App\Registrado;
 use App\Configuraciones;
-
 use App\Helpers\FrontHelper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
@@ -26,7 +29,7 @@ class EventoBaseController extends AppBaseController
 {
     protected $evento = null;
     protected $key = null;
-    protected $segundosCache = 60 * 10;
+    protected $segundosCache = 60 * 5;
     
     public function __construct()
     {
@@ -61,16 +64,58 @@ class EventoBaseController extends AppBaseController
     }
 
     public function enviarPregunta(Request $request) {
+        try {
+            $data = $request->all();
+            $data['evento'] = $this->key;
+            try {
+                $registrado = $this->obtenerRegistrado();
+                $data['registrado_id'] = $registrado->id;
+
+            } catch (\Exception $e) {}
+
+            $data = Preguntas::create($data);
+            
+            return $this->sendResponse($data,'La operación finañizó con éxito');                
+        } catch (\Exception $e) {
+            return $this->sendError($e->getMessage(),$e->getCode());
+        }
     }
     public function enviarEncuesta(Request $request) {
+        try {
+            $data = $request->all();
+            $data['evento'] = $this->key;
+            
+            try {
+                $registrado = $this->obtenerRegistrado();
+                $data['registrado_id'] = $registrado->id;
+
+            } catch (\Exception $e) {}
+
+            $data = Encuestas::create($data);
+            return $this->sendResponse($data,'La operación finañizó con éxito');                
+        } catch (\Exception $e) {
+            return $this->sendError($e->getMessage(),$e->getCode());
+        }
     }
     
     public function enviarSalidaUsuario(Request $request) {
-    }
+        try {
+            $registrado = $this->obtenerRegistrado();
+            if ($registrado) {
+                $accion = $registrado->acciones()->whereNull('hasta')->orderBy('id','asc')->first();
+                $accion->hasta = Carbon::now()->format('Y-m-d H:i:s');
+                $accion->save();
+            } else {
+                \Log::info($e->getMessage());
+            }                
+            return $this->sendResponse([],'La operación finañizó con éxito');                
+        } catch (\Exception $e) {
+            return $this->sendError($e->getMessage(),$e->getCode());
+        }
+    }  
 
     protected function config($clave='*') {
         if ($clave === '*') {
-            \Log::info('configuraciones_'.$this->key);
             return  \Cache::remember('configuraciones_'.$this->key, $this->segundosCache, function (){
                 return Configuraciones::whereEvento($this->key)->pluck('valor','clave');
             });
@@ -100,7 +145,7 @@ class EventoBaseController extends AppBaseController
             $registradoGuid = FrontHelper::getCookieRegistrado($this->evento['cookie']);
             
             if ($registradoGuid) {
-                $registrado = \Cache::remember('registrado_'.$registradoGuid, $this->segundosCache, function () use($registradoGuid){
+                $registrado = \Cache::remember('registrado_'.$registradoGuid, Carbon::now()->addMinutes($this->segundosCache / 60), function () use($registradoGuid){
                     return Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
                 });                
             }

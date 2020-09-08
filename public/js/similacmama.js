@@ -46083,6 +46083,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -46105,6 +46114,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         urlEnviarSalidaUsuario: {
             type: String,
+            required: true
+        },
+        registrado: {
+            type: Object,
             required: true
         }
 
@@ -46197,6 +46210,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 });
             }
         },
+        linkGuatemalaDisponible: function linkGuatemalaDisponible() {
+            var vm = this;
+            if (!vm.enviandoEncuesta) {
+                vm.enviandoEncuesta = true;
+                axios.get(vm.urlEncuestaDisponible).then(function (response) {
+                    vm.enviandoEncuesta = false;
+                    window.open('https://forms.gle/CG16pRgLH7uRThg97');
+                }, function (error) {
+                    vm.enviandoEncuesta = false;
+                    alert('La encuesta no se encuentra disponible por el momento.');
+                });
+            }
+        },
         enviarEncuesta: function enviarEncuesta() {
             var vm = this;
 
@@ -46264,6 +46290,30 @@ var render = function() {
               },
               [_c("span", [_vm._v("Encuesta")])]
             )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-12 text-center" }, [
+            _vm.registrado && _vm.registrado.pais === "Guatemala"
+              ? _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary violeta",
+                    attrs: { type: "button" },
+                    on: {
+                      click: function($event) {
+                        return _vm.linkGuatemalaDisponible()
+                      }
+                    }
+                  },
+                  [
+                    _c("span", [
+                      _vm._v(
+                        "Si es Médico de Guatemala, esta actividad cuenta con horas crédito, haga click aquí."
+                      )
+                    ])
+                  ]
+                )
+              : _vm._e()
           ])
         ])
       : _vm._e(),

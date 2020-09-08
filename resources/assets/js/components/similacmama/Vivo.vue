@@ -15,6 +15,15 @@
                         <span>Encuesta</span>
                     </button>                    
                 </div>
+                <div class="col-sm-12 text-center">
+                    <button type="button" 
+                            class="btn btn-primary violeta" 
+                            @click="linkGuatemalaDisponible()"
+                            v-if="registrado && registrado.pais === 'Guatemala'"
+                    >
+                        <span>Si es Médico de Guatemala, esta actividad cuenta con horas crédito, haga click aquí.</span>
+                    </button>                    
+                </div>
 
             </div>
             <div class="row content-vimeo">
@@ -144,6 +153,10 @@
             urlEnviarSalidaUsuario: {
                 type: String,
                 required:true
+            },
+            registrado : {
+                type: Object,
+                required: true
             }         
 
         },
@@ -250,6 +263,20 @@
                             vm.enviandoEncuesta = false;
                             //document.location = vm.urlEncuesta;
                             vm.mostrarModal(true);
+                        }, error => {
+                            vm.enviandoEncuesta = false;
+                            alert('La encuesta no se encuentra disponible por el momento.');
+                        });                    
+                }
+            },
+            linkGuatemalaDisponible: function() {
+                let vm = this
+                if (!vm.enviandoEncuesta) {
+                    vm.enviandoEncuesta = true;
+                    axios.get(vm.urlEncuestaDisponible)
+                        .then(response => {
+                            vm.enviandoEncuesta = false;
+                            window.open('https://forms.gle/CG16pRgLH7uRThg97');
                         }, error => {
                             vm.enviandoEncuesta = false;
                             alert('La encuesta no se encuentra disponible por el momento.');
