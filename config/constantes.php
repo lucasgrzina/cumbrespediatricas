@@ -11,7 +11,7 @@ return [
             'activo' => false
         ],
         'similacmama' => [
-            'nombre' => 'Similac Mama',
+            'nombre' => 'Similac Mama - 9/9',
             'prefix' => 'similacmama',
             'controller' => 'HomeSimilaCMamaController',
             'view' => 'similacmama',
