@@ -64,6 +64,9 @@
         <div class="box box-default box-page-list">
             <div class="box-body box-filter">
                 <div class="form-inline">
+                    <div class="form-group pull-left">
+                        <strong>Hora servidor:</strong> (% info.horaServidor %)
+                    </div>
                     @include('admin.includes.crud.index-filters-evento')
                     @include('admin.includes.crud.index-filters-btn')
                 </div>

@@ -116,7 +116,7 @@ class EventoBaseController extends AppBaseController
 
     protected function config($clave='*') {
         if ($clave === '*') {
-            return  \Cache::remember('configuraciones_'.$this->key, $this->segundosCache, function (){
+            return  \Cache::remember('configuraciones_'.$this->key, Carbon::now()->addMinutes($this->segundosCache / 60), function (){
                 return Configuraciones::whereEvento($this->key)->pluck('valor','clave');
             });
         } else {
@@ -130,12 +130,13 @@ class EventoBaseController extends AppBaseController
 
     public function eventoDisponible() {
         $config = $this->config('*');
-        $vivoDispo = $config['etapa'] === 'R' && !(bool)$config['encuesta'];
-        if ($vivoDispo) {
-            return $this->sendResponse([],'La operación finañizó con éxito');                
+        $finVivo = $config['fin_vivo'] ? Carbon::parse($config['fin_vivo']) : false;
+        if ($config['etapa'] === 'R' && (!$finVivo || Carbon::now()->lt($finVivo))) {
+            return $this->sendResponse([],'El evento se encuentra disponible');                
         } else {
-            return $this->sendError('La evento no se encuentra disponible por el momento.',505);
-        }        
+            return $this->sendError('El evento no se encuentra disponible',505);
+        }
+        
     }
 
     protected function obtenerRegistrado() {

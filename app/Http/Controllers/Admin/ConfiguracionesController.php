@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use Response;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Helpers\EventosHelper;
-use App\Repositories\ConfiguracionesRepository;
 use App\Repositories\Criteria\EventoCriteria;
-use App\Http\Requests\Admin\CUConfiguracionesRequest;
+use App\Repositories\ConfiguracionesRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\Http\Controllers\Admin\CrudAdminController;
+use App\Http\Requests\Admin\CUConfiguracionesRequest;
 
 class ConfiguracionesController extends CrudAdminController
 {
@@ -28,10 +29,12 @@ class ConfiguracionesController extends CrudAdminController
     public function index()
     {
         parent::index();
+
         $this->data['url_save'] = route($this->routePrefix.'.store');
         $this->data['filters']['export_xls'] = false;
         $this->data['filters']['sortedBy'] = 'asc';
         $this->data['info']['eventos'] = EventosHelper::combo();
+        $this->data['info']['horaServidor'] = Carbon::now()->format('Y-m-d H:i:s');
         $this->data['filters']['evento'] = count($this->data['info']['eventos']) > 0 ? $this->data['info']['eventos'][0]['id'] : null;
         return view($this->viewPrefix.'index')->with('data',$this->data);
     }
@@ -94,7 +97,6 @@ class ConfiguracionesController extends CrudAdminController
     public function update($id, CUConfiguracionesRequest $request)
     {
         $model = $this->_update($id, $request);
-        \Log::info('Borrar cache: '.'configuraciones_'.$request->evento);
         \Cache::forget('configuraciones_'.$request->evento);
         return $this->sendResponse($model,trans('admin.success'));
     }

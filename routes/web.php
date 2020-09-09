@@ -114,6 +114,7 @@ foreach ($eventos as $key => $data) {
                 Route::post('/enviar-pregunta', $data['controller'].'@enviarPregunta')->name('enviar-pregunta');
                 Route::get('/encuesta-disponible', $data['controller'].'@encuestaDisponible')->name('encuesta-disponible');        
                 Route::post('/enviar-encuesta', $data['controller'].'@enviarEncuesta')->name('enviar-encuesta');
+                Route::get('/evento-disponible', $data['controller'].'@eventoDisponible')->name('evento-disponible');        
                 Route::post('/enviar-salida-usuario', $data['controller'].'@enviarSalidaUsuario')->name('enviar-salida-usuario');
             });
             Route::get('/', $data['controller'].'@index')->name('home');
