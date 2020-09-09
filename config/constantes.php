@@ -8,7 +8,7 @@ return [
             'controller' => 'HomeController',
             'view' => 'cumbre',
             'cookie' => 'cumbre',
-            'activo' => true
+            'activo' => false
         ],
         'similacmama' => [
             'nombre' => 'Similac Mama',
