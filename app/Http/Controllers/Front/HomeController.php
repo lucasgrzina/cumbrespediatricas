@@ -3,17 +3,13 @@
 namespace App\Http\Controllers\Front;
 
 
-use App\Encuestas;
-use App\Preguntas;
 use Carbon\Carbon;
 use App\Registrado;
-use App\Configuraciones;
 use App\Helpers\FrontHelper;
 use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController;
-use App\Http\Requests\Front\RegistrarRequest;
+use App\Http\Front\Controllers\EventoBaseController;
 
-class HomeController extends AppBaseController
+class HomeController extends EventoBaseController
 {
     /**
      * Create a new controller instance.
@@ -22,18 +18,18 @@ class HomeController extends AppBaseController
      */
     public function __construct()
     {
-        //$this->middleware('auth:admin');
+        parent::__construct();
     }
 
     public function index()
     {
-        return redirect()->to(env('URL_SITIO_PPAL','#'));
         $conf = $this->config('*');
+        
         if ($conf['etapa'] !== 'R') {
             $data = [
                 'config' => $conf
             ];
-            return view('front.home',['data' => $data]);
+            return view('front.'.$this->evento['view'].'.home',['data' => $data]);
         }
         return $this->indexVue();
         
@@ -41,7 +37,7 @@ class HomeController extends AppBaseController
 
     public function indexVue()
     {
-        return redirect()->to(env('URL_SITIO_PPAL','#'));
+        //return redirect()->to(env('URL_SITIO_PPAL','#'));
         //return redirect()->route('home');
         if (FrontHelper::getCookieRegistrado()) {
             //return redirect()->route('vivo');
@@ -49,10 +45,10 @@ class HomeController extends AppBaseController
 
         $data = [
             'props' => [
-                'urlRegistrar' => route('registrar')
+                //'urlRegistrar' => route('registrar')
             ]
         ];
-        return view('front.home-vue', $data);
+        return view('front.cumbre.home-vue', $data);
     } 
 
     public function vivo (Request $request) {
@@ -95,7 +91,7 @@ class HomeController extends AppBaseController
                 'urlEncuestaDisponible' => route('encuesta-disponible'),
                 'urlEnviarEncuesta' => route('enviar-encuesta'),
                 'urlSitioPpal' => env('URL_SITIO_PPAL','#'),
-                'urlEnviarSalidaUsuario' => route('enviar-salida-usuario',['_ID_']),
+                'urlEnviarSalidaUsuario' => route('enviar-salida-usuario'),
                 'registrado' => $registrado
             ]
         ];
@@ -103,101 +99,6 @@ class HomeController extends AppBaseController
     }
     
     
-    public function encuestaDisponible () {
-        $config = $this->config('*');
-        $encuestaDispo = $config['etapa'] === 'R' && (bool)$config['encuesta'];
-        if ($encuestaDispo) {
-            return $this->sendResponse([],'La operación finañizó con éxito');                
-        } else {
-            return $this->sendError('La encuesta no se encuentra disponible por el momento.',505);
-        }
-    } 
-
-    public function registrar(RegistrarRequest $request) {
-        try {
-            $data = Registrado::create($request->all());
-            FrontHelper::setCookieRegistrado($data->id);
-            return $this->sendResponse($data,'La operación finañizó con éxito');                
-        } catch (\Exception $e) {
-            return $this->sendError($e->getMessage(),$e->getCode());
-        }
-    }
-
-    public function enviarPregunta(Request $request) {
-        try {
-            $registradoGuid = FrontHelper::getCookieRegistrado();
-            $data = $request->all();
-            if ($registradoGuid) {
-                try {
-                    $registrado = Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
-                
-                    $data['registrado_id'] = $registrado->id;
-    
-                } catch (\Exception $e) {}
-                
-            }
-            $data = Preguntas::create($data);
-            
-            return $this->sendResponse($data,'La operación finañizó con éxito');                
-        } catch (\Exception $e) {
-            return $this->sendError($e->getMessage(),$e->getCode());
-        }
-    }
-    public function enviarEncuesta(Request $request) {
-        try {
-            $registradoGuid = FrontHelper::getCookieRegistrado();
-            $data = $request->all();
-            if ($registradoGuid) {
-                try {
-                    $registrado = Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
-                
-                    $data['registrado_id'] = $registrado->id;
-    
-                } catch (\Exception $e) {}
-            }
-
-            $data = Encuestas::create($data);
-            //\Log::info($data);
-            return $this->sendResponse($data,'La operación finañizó con éxito');                
-        } catch (\Exception $e) {
-            return $this->sendError($e->getMessage(),$e->getCode());
-        }
-    }
-    
-    public function enviarSalidaUsuario($id,Request $request) {
-        try {
-
-            $registradoGuid = FrontHelper::getCookieRegistrado();
-            
-            if ($registradoGuid) {
-                try {
-                    $registrado = Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();
-                    $accion = $registrado->acciones()->whereNull('hasta')->orderBy('id','asc')->first();
-                    $accion->hasta = Carbon::now()->format('Y-m-d H:i:s');
-                    $accion->save();
-                    /*$registrado->acciones()->whereNull('hasta')->orderBy('id','asc')->first()->update([
-                        'hasta' => Carbon::now()->format('Y-m-d H:i:s')
-                    ]);*/
-    
-                } catch (\Exception $e) {
-                    \Log::info($e->getMessage());
-                }
-                
-            }
-            
-            return $this->sendResponse([],'La operación finañizó con éxito');                
-        } catch (\Exception $e) {
-            return $this->sendError($e->getMessage(),$e->getCode());
-        }
-    }
-
-    protected function config($clave='*') {
-        if ($clave === '*') {
-            return Configuraciones::pluck('valor','clave');
-        } else {
-            return Configuraciones::whereClave($clave)->first()->valor;    
-        }
-    }
 
     protected function obtenerRegistradoExterno(Request $request) {
         
@@ -222,13 +123,4 @@ class HomeController extends AppBaseController
         return $dbRegistrado;
     }
 
-    public function eventoDisponible() {
-        $config = $this->config('*');
-        $vivoDispo = $config['etapa'] === 'R' && !(bool)$config['encuesta'];
-        if ($vivoDispo) {
-            return $this->sendResponse([],'La operación finañizó con éxito');                
-        } else {
-            return $this->sendError('La evento no se encuentra disponible por el momento.',505);
-        }        
-    }
 }

@@ -7,8 +7,8 @@ return [
             'prefix' => 'cumbrepediatrica',
             'controller' => 'HomeController',
             'view' => 'cumbre',
-            'cookie' => 'cumbre',
-            'activo' => false
+            'cookie' => 'cumbre3',
+            'activo' => true
         ],
         'similacmama' => [
             'nombre' => 'Similac Mama - 9/9',

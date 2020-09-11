@@ -155,4 +155,6 @@ class EventoBaseController extends AppBaseController
         return $registrado;
     }
 
+    
+
 }

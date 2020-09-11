@@ -20,7 +20,6 @@
             ]) !!};
         </script>   
         <!--link rel="shortcut icon" href="#" /-->
-        @include('front.includes.ga')
         @yield('head')
       
     </head>

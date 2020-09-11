@@ -1,4 +1,4 @@
-@extends('layouts.front')
+@extends('layouts.cumbre.front')
 @section('head')
     @parent
 	<script type="text/javascript">
@@ -12,7 +12,7 @@
 		@if($data['config']['etapa'] === 'F')
 			<img src="{{ asset('img/muchas graciasjpg-01.jpg') }}" style="width:100%;max-width:1024px;"/>				
 		@else
-		<img src="{{ asset('img/std.jpg') }}" style="width:100%;max-width:1024px;"/>				
+		<img src="{{ asset('img/std_v2.jpg') }}" style="width:100%;max-width:1024px;"/>				
 		@endif
 	</div>	
 </div>

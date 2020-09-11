@@ -1,4 +1,4 @@
-@extends('layouts.front-vue')
+@extends('layouts.cumbre.front-vue')
 @section('head')
 <script src="https://www.google.com/recaptcha/api.js?render=6Leb2qYZAAAAALa7WyEDFhvJUYlYQH4Z_CJ-U-ie"></script>
 @endsection
