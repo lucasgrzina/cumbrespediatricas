@@ -16,7 +16,7 @@ return [
             'controller' => 'HomeSimilaCMamaController',
             'view' => 'similacmama',
             'cookie' => 'similacmama1',
-            'activo' => true
+            'activo' => false
         ],
         'danoneday' => [
             'nombre' => 'Danone Day',
@@ -33,7 +33,15 @@ return [
             'view' => 'similacmama',
             'cookie' => 'similacmamatest',
             'activo' => true
-        ],                     
+        ],  
+        'similacmama169' => [
+            'nombre' => 'Similac Mama - 16/9',
+            'prefix' => 'similacmama',
+            'controller' => 'HomeSimilaCMamaController',
+            'view' => 'similacmama',
+            'cookie' => 'similacmama_16_9',
+            'activo' => true
+        ],                           
     ],
     'recaptcha' => [
         'key' => '6LcNPcYZAAAAAI5sgO4CAlZxlGHgADMXtUCbARnh',
