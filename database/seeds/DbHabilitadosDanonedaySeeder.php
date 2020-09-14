@@ -1437,8 +1437,8 @@ class DbHabilitadosDanonedaySeeder extends Seeder
             1421 => array('Apellido' => 'Cirila', 'Nombre' => 'Calderaro', 'Mail' => 'Cirila.calderaro@danone.com'),
             1422 => array('Apellido' => 'Maria Eugenia', 'Nombre' => 'Sanchez', 'Mail' => 'maria-eugenia.sanchez@danone.com'),
             1423 => array('Apellido' => 'Simon', 'Nombre' => 'Salas Seeber', 'Mail' => 'simon.salas-seeber@danone.com'),
-            1424 => array('Apellido' => 'Lucas', 'Nombre' => 'Grzina', 'Mail' => 'lucasgrzina@gmail.com'),
-            1425 => array('Apellido' => 'Ivan', 'Nombre' => 'Schwindt', 'Mail' => 'ivan@quimicaeventos.com'),
+            1424 => array('Apellido' => 'Grzina', 'Nombre' => 'Lucas', 'Mail' => 'lucasgrzina@gmail.com'),
+            1425 => array('Apellido' => 'Schwindt', 'Nombre' => 'Ivan', 'Mail' => 'ivan@quimicaeventos.com'),
             1426 => array('Apellido' => 'Cliente', 'Nombre' => 'Cliente', 'Mail' => 'cliente@danone.com'),
         );
 

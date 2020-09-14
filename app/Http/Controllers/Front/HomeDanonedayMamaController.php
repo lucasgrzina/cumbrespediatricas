@@ -105,12 +105,12 @@ class HomeDanonedayMamaController extends EventoBaseController
     public function registrar(RegistrarRequest $request) {
         try {
 
-            \DB::enableQueryLog();
+            
             $existe = \DB::select('select * from db_habilitados_danoneday where apellido = LOWER(?) and email = LOWER(?)',[
                 $request->apellido,
                 $request->email
             ]);
-            \Log::info(\DB::getQueryLog());
+            
             
             if (count($existe) < 1) {
                 return $this->sendError("No estas habilitado para ingresar al evento.",500);
