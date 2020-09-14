@@ -56,7 +56,15 @@ return [
             'registroExterno' => true,
             'urlWebServiceRegistrado' => 'http://3i.com.ar/shape/abbot/app/webservice.php',
             'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbrepediatrica'
-        ],                                   
+        ],   
+        'similacmama229' => [
+            'nombre' => 'Similac Mama - 22/9',
+            'prefix' => 'similacmama22',
+            'controller' => 'HomeSimilaCMamaController',
+            'view' => 'similacmama22',
+            'cookie' => 'similacmama_22_9',
+            'activo' => true
+        ],                                        
     ],
     'recaptcha' => [
         'key' => '6LcNPcYZAAAAAI5sgO4CAlZxlGHgADMXtUCbARnh',
