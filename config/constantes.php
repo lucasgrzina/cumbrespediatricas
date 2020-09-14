@@ -64,7 +64,15 @@ return [
             'view' => 'similacmama22',
             'cookie' => 'similacmama_22_9',
             'activo' => true
-        ],                                        
+        ],  
+        'danonedaytest' => [
+            'nombre' => 'Danone Day (test)',
+            'prefix' => 'danonedaytest',
+            'controller' => 'HomeDanonedayMamaController',
+            'view' => 'danoneday',
+            'cookie' => 'danonedaytest',
+            'activo' => true 
+        ],                                              
     ],
     'recaptcha' => [
         'key' => '6LcNPcYZAAAAAI5sgO4CAlZxlGHgADMXtUCbARnh',
