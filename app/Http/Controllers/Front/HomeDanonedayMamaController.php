@@ -105,7 +105,7 @@ class HomeDanonedayMamaController extends EventoBaseController
     public function registrar(RegistrarRequest $request) {
         try {
 
-            $existe = \DB::select('select * from db_habilitados_danoneday where apellido = (?) and email = LOWER(?)',[
+            $existe = \DB::select('select * from db_habilitados_danoneday where apellido = LOWER(?) and email = LOWER(?)',[
                 $request->apellido,
                 $request->email
             ]);
