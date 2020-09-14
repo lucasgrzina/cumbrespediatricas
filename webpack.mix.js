@@ -23,7 +23,14 @@ mix.js('resources/assets/js/cumbre.js', 'public/js')
       'public/css/bootstrap.min.css',
       'public/css/styles_similacmama.css',
       'public/css/utils.css',
-   ], 'public/css/similacmama.css');   
+   ], 'public/css/similacmama.css');  
+   
+   mix.js('resources/assets/js/danoneday.js', 'public/js')
+   .styles([
+      'public/css/bootstrap.min.css',
+      'public/css/styles_danoneday.css',
+      'public/css/utils.css',
+   ], 'public/css/danoneday.css');     
 
 if (mix.inProduction()) {
    mix.version();

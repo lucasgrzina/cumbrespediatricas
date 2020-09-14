@@ -69,6 +69,7 @@ Route::prefix('/admin')->group(function () {
         Route::get('encuestas/exportar/{type}', 'Admin\EncuestasController@export')->name('encuestas.export');        
         Route::resource('encuestas', 'Admin\EncuestasController');
 
+        Route::get('configuraciones/agregar-item/{evento}/{clave}/{valor}', 'Admin\ConfiguracionesController@agregarItem')->name('configuraciones.export');        
         Route::post('configuraciones/filter', 'Admin\ConfiguracionesController@filter')->name('configuraciones.filter');
         Route::get('configuraciones/exportar/{type}', 'Admin\ConfiguracionesController@export')->name('configuraciones.export');        
         Route::resource('configuraciones', 'Admin\ConfiguracionesController');
@@ -103,19 +104,38 @@ Route::prefix('/admin')->group(function () {
     });
     Route::get('/', 'Front\HomeTestController@index')->name('test.home');
 }); */
+
+$key = 'danoneday';
+Route::namespace('Front')->name($key.'.')->domain('danoneday.com.ar')->group(function() use($key){
+    
+    $data = config('constantes.eventos.danoneday',[]); 
+    Route::post('/registrar', $data['controller'].'@registrar')->name('registrar');
+
+    Route::group(['middleware' => 'registrado:'.$key], function() use($data){
+        Route::get('/vivo', $data['controller'].'@vivo')->name('vivo');
+        Route::post('/enviar-pregunta', $data['controller'].'@enviarPregunta')->name('enviar-pregunta');
+        Route::get('/encuesta-disponible', $data['controller'].'@encuestaDisponible')->name('encuesta-disponible');        
+        Route::post('/enviar-encuesta', $data['controller'].'@enviarEncuesta')->name('enviar-encuesta');
+        Route::get('/evento-disponible', $data['controller'].'@eventoDisponible')->name('evento-disponible');        
+        Route::any('/enviar-salida-usuario', $data['controller'].'@enviarSalidaUsuario')->name('enviar-salida-usuario');
+    });
+    Route::get('/', $data['controller'].'@index')->name('home');
+}); 
+
+
 $eventos = config('constantes.eventos',[]);
 foreach ($eventos as $key => $data) {
-    if ($data['activo']) {
-        Route::namespace('Front')->name($key.'.')->prefix($data['prefix'])->group(function() use($data){
+    if ($data['activo'] && !config('constantes.eventos.'.$key.'.evitarRoute',false)) {
+        Route::namespace('Front')->name($key.'.')->prefix($data['prefix'])->group(function() use($key,$data){
             Route::post('/registrar', $data['controller'].'@registrar')->name('registrar');
         
-            Route::group(['middleware' => 'registrado:'.$data['cookie']], function() use($data){
+            Route::group(['middleware' => 'registrado:'.$key], function() use($data){
                 Route::get('/vivo', $data['controller'].'@vivo')->name('vivo');
                 Route::post('/enviar-pregunta', $data['controller'].'@enviarPregunta')->name('enviar-pregunta');
                 Route::get('/encuesta-disponible', $data['controller'].'@encuestaDisponible')->name('encuesta-disponible');        
                 Route::post('/enviar-encuesta', $data['controller'].'@enviarEncuesta')->name('enviar-encuesta');
                 Route::get('/evento-disponible', $data['controller'].'@eventoDisponible')->name('evento-disponible');        
-                Route::post('/enviar-salida-usuario', $data['controller'].'@enviarSalidaUsuario')->name('enviar-salida-usuario');
+                Route::any('/enviar-salida-usuario', $data['controller'].'@enviarSalidaUsuario')->name('enviar-salida-usuario');
             });
             Route::get('/', $data['controller'].'@index')->name('home');
         }); 

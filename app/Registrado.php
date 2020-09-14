@@ -30,8 +30,8 @@ class Registrado extends Model
     public static $rules = [
         'nombre' => 'required',
         'apellido' => 'required',
-        'especialidad' => 'required',
-        'pais' => 'required',
+        //'especialidad' => 'required',
+        //'pais' => 'required',
         'email' => 'required|email'
     ];
 

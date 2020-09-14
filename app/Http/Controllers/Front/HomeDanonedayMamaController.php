@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Front\RegistrarRequest;
 use App\Http\Front\Controllers\EventoBaseController;
 
-class HomeSimilaCMamaController extends EventoBaseController
+class HomeDanonedayMamaController extends EventoBaseController
 {
     /**
      * Create a new controller instance.
@@ -62,12 +62,11 @@ class HomeSimilaCMamaController extends EventoBaseController
         try {
             
             $conf = $this->config('*');
-            \Log::info('1');
+
             if ($conf['etapa'] !== 'R') {
-                \Log::info('2');
                 return redirect()->route($this->key.'.home');
             }
-        \Log::info('3');
+ 
             try {
                 $registrado = $this->obtenerRegistrado();
                 if ($registrado) {
@@ -105,6 +104,16 @@ class HomeSimilaCMamaController extends EventoBaseController
     
     public function registrar(RegistrarRequest $request) {
         try {
+
+            $existe = \DB::select('select * from db_habilitados_danoneday where apellido = (?) and email = LOWER(?)',[
+                $request->apellido,
+                $request->email
+            ]);
+            
+            if (count($existe) < 1) {
+                return $this->sendError("No estas habilitado para ingresar al evento.",500);
+            }
+                
             $input = $request->all();
             $input['evento'] = $this->key;
             $data = Registrado::create($input);
@@ -114,4 +123,28 @@ class HomeSimilaCMamaController extends EventoBaseController
             return $this->sendError($e->getMessage(),$e->getCode());
         }
     }  
+
+    public function enviarPregunta(Request $request) {
+        try {
+            $conf = $this->config('*');
+
+            if (!$conf['respuestas']) {
+                return $this->sendError('Las respuestas no se encuentras habilitadas',500);
+            }
+
+            $data = $request->all();
+            $data['evento'] = $this->key;
+            try {
+                $registrado = $this->obtenerRegistrado();
+                $data['registrado_id'] = $registrado->id;
+
+            } catch (\Exception $e) {}
+
+            $data = Preguntas::create($data);
+            
+            return $this->sendResponse($data,'La operación finañizó con éxito');                
+        } catch (\Exception $e) {
+            return $this->sendError($e->getMessage(),$e->getCode());
+        }
+    }    
 }

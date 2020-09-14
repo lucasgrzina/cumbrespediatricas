@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers\Front;
 
-
-use App\Encuestas;
-use App\Preguntas;
 use Carbon\Carbon;
 use App\Registrado;
 
 use App\Helpers\FrontHelper;
 use Illuminate\Http\Request;
 
+use App\Exceptions\NoHabilitadoException;
 use App\Http\Requests\Front\RegistrarRequest;
 use App\Http\Front\Controllers\EventoBaseController;
 
-class HomeSimilaCMamaController extends EventoBaseController
+class HomeCumbrePediatricaController extends EventoBaseController
 {
     /**
      * Create a new controller instance.
@@ -37,39 +35,32 @@ class HomeSimilaCMamaController extends EventoBaseController
             ];
             return view('front.'.$this->evento['view'].'.home',['data' => $data]);
         }
-        return $this->indexVue();
+        //return $this->indexVue();
         
     }
 
     public function indexVue()
     {
-        //return redirect()->route('home');
-        if (FrontHelper::getCookieRegistrado($this->evento['cookie'])) {
-            return redirect()->route($this->key.'.vivo');
-        }
-
-        $data = [
-            'props' => [
-                'recaptcha' => config('constantes.recaptcha',[]),
-                'urlRegistrar' => route($this->key.'.registrar')
-            ]
-        ];
-        return view('front.'.$this->evento['view'].'.home-vue', $data);
     } 
 
     public function vivo (Request $request) {
+        
         $registrado = null;
         try {
-            
+
             $conf = $this->config('*');
-            \Log::info('1');
+            
             if ($conf['etapa'] !== 'R') {
-                \Log::info('2');
                 return redirect()->route($this->key.'.home');
             }
-        \Log::info('3');
+
             try {
-                $registrado = $this->obtenerRegistrado();
+                if (!$request->id || !$request->token) {
+                    throw new NoHabilitadoException("Vino sin request", 1);                    
+                }            
+
+                $registrado = $this->obtenerRegistradoExterno($request);
+
                 if ($registrado) {
                     $registrado->acciones()->create([
                         'accion' => 'evento',
@@ -80,7 +71,12 @@ class HomeSimilaCMamaController extends EventoBaseController
                     return redirect()->route($this->key.'.home');
                 }
     
-            } catch(\Exception $e) {
+            } 
+            catch(NoHabilitadoException $e) {
+                FrontHelper::removeCookieRegistrado($this->evento['cookie']);
+                return view('front.'.$this->evento['view'].'.no-habilitado');
+            }
+            catch(\Exception $e) {
                 \Log::info($e->getMessage());
             }
 
@@ -92,12 +88,13 @@ class HomeSimilaCMamaController extends EventoBaseController
 
         $data = [
             'props' => [
-                'registrado' => $this->obtenerRegistrado(),
+                'registrado' => $registrado,
                 'urlEnviar' => route($this->key.'.enviar-pregunta'),
                 'urlEncuesta' => '',
                 'urlEncuestaDisponible' => route($this->key.'.encuesta-disponible'),
                 'urlEnviarEncuesta' => route($this->key.'.enviar-encuesta'),
                 'urlEnviarSalidaUsuario' => route($this->key.'.enviar-salida-usuario'),
+                'urlSitioPpal' => $this->evento['urlSitioPrincipal'],
             ]
         ];
         return view('front.'.$this->evento['view'].'.vivo', $data);
@@ -113,5 +110,48 @@ class HomeSimilaCMamaController extends EventoBaseController
         } catch (\Exception $e) {
             return $this->sendError($e->getMessage(),$e->getCode());
         }
-    }  
+    } 
+
+    protected function obtenerRegistradoExterno(Request $request) {
+        
+        $keyCacheRegistrado = 'registrado_ext_'.$this->key.'_'.$request->token;
+
+        $dbRegistrado = \Cache::remember($keyCacheRegistrado, Carbon::now()->addMinutes($this->segundosCache / 60), function () use($request){
+            //Puede estar el mismo registrado externo pero para distinto evento
+            return Registrado::whereIdExterno($request->id)->whereEvento($this->key)->first();
+        }); 
+
+        if (!$dbRegistrado) {
+            
+            try {
+                $json = file_get_contents($this->evento['urlWebServiceRegistrado'].'?id='.$request->id.'&token='.$request->token);
+                $obj = json_decode($json);
+                if (!$obj) {
+                    throw new NoHabilitadoException('No retorna ws', 1);    
+                }
+            } catch (\Exception $e) {
+                throw new NoHabilitadoException($e->getMessage(), 1);                
+            }
+    
+            $dbRegistrado = Registrado::create([
+                'id_externo' => $obj->id,
+                'nombre' => $obj->nombre,
+                'apellido' => $obj->apellido,
+                'email' => isset($obj->correo) ? $obj->correo : $obj->email,
+                'especialidad' => $obj->especialidad,
+                'pais' => $obj->pais,
+                'certificado' => isset($obj->certificado) ? $obj->certificado : 'aaa',
+                'token' => $request->token,
+                'evento' => $this->key
+            ]);
+            
+            \Cache::put($keyCacheRegistrado, $dbRegistrado, Carbon::now()->addMinutes($this->segundosCache / 60));
+        }
+
+        FrontHelper::setCookieRegistrado($dbRegistrado->id,$this->evento['cookie']);
+
+        return $dbRegistrado;
+    }
+
+    
 }

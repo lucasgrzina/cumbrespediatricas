@@ -21,7 +21,7 @@
                         </select>
                         <span class="label label-info" v-else>(% descEtapa(item) %)</span>    
                     </template>
-                    <template v-else-if="item.clave === 'encuesta'">
+                    <template v-else-if="['encuesta','respuestas'].indexOf(item.clave) > -1">
                         <select class="form-control" v-model="selectedItem.valor" v-if="item.modo_edicion">
                             <option :value="1">SI</option>
                             <option :value="0">NO</option>

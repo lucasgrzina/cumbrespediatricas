@@ -5,10 +5,13 @@ return [
         'cumbre' => [
             'nombre' => 'Abbott Cumbre pediatrica - 3/5',
             'prefix' => 'cumbrepediatrica',
-            'controller' => 'HomeController',
+            'controller' => 'HomeCumbrePediatricaController',
             'view' => 'cumbre',
             'cookie' => 'cumbre3',
-            'activo' => true
+            'activo' => true,
+            'registroExterno' => true,
+            'urlWebServiceRegistrado' => 'https://www.quimicavirtualevents.com/cumbrepediatrica/app/webservice.php',
+            'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbrepediatrica'
         ],
         'similacmama' => [
             'nombre' => 'Similac Mama - 9/9',
@@ -21,10 +24,11 @@ return [
         'danoneday' => [
             'nombre' => 'Danone Day',
             'prefix' => 'danoneday',
-            'controller' => 'HomeSimilaCMamaController',
+            'controller' => 'HomeDanonedayMamaController',
             'view' => 'danoneday',
             'cookie' => 'danoneday',
-            'activo' => false
+            'activo' => true,
+            'evitarRoute' => true 
         ],
         'similacmamatest' => [
             'nombre' => 'Similac Mama (Test)',
@@ -41,7 +45,18 @@ return [
             'view' => 'similacmama',
             'cookie' => 'similacmama_16_9',
             'activo' => true
-        ],                           
+        ],
+        'cumbretest' => [
+            'nombre' => 'Abbott Cumbre pediatrica - 3/5 (Test)',
+            'prefix' => 'cumbrepediatricatest',
+            'controller' => 'HomeCumbrePediatricaController',
+            'view' => 'cumbre',
+            'cookie' => 'cumbre3test',
+            'activo' => true,
+            'registroExterno' => true,
+            'urlWebServiceRegistrado' => 'http://3i.com.ar/shape/abbot/app/webservice.php',
+            'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbrepediatrica'
+        ],                                   
     ],
     'recaptcha' => [
         'key' => '6LcNPcYZAAAAAI5sgO4CAlZxlGHgADMXtUCbARnh',

@@ -1,133 +1,47 @@
 <template>
     <div>
-            <!--div class="row content-title">
-                <div class="col-md-12 text-center">
-                    <button type="button" class="btn btn-primary violeta" @click="verVideo('ingles')">Audio Original Ingles</button>
-                    <button type="button" class="btn btn-primary violeta" @click="verVideo('esp')">Audio Español</button>                    
-                </div>
-            </div-->
-            <div class="row content-encuesta" v-if="videoSeleccionado">
-                <div class="col-sm-12 text-center">
-                    <button type="button" 
-                            class="btn btn-primary violeta" 
-                            @click="encuestaDisponible()"
-                    >
-                        <span>Encuesta</span>
-                    </button>                    
-                </div>
-                <div class="col-sm-12 text-center">
-                    <button type="button" 
-                            class="btn btn-primary violeta" 
-                            @click="linkGuatemalaDisponible()"
-                            v-if="registrado && registrado.pais === 'Guatemala'"
-                    >
-                        <span>Si es Médico de Guatemala, esta actividad cuenta con horas crédito, haga click aquí.</span>
-                    </button>                    
-                </div>
+<section class="text-center">
+	  	<div class="container h-auto">
+		    <div class="row">
+		    	<div class="col-12">
+		    		<div class=" view-03">
+				  		<div class="row">
+					    	<div class="col-12">
+								<div class="video-content" v-if="videoSeleccionado === 'ingles'">
+									<!--div class="overlay"></div-->
+									<iframe src="https://player.vimeo.com/video/457472926?transparent=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+								</div>
+					    	</div>
+				    	</div>
+				  		
+				  	</div>
+		    	</div>
+		    </div>
+	    </div>        
+	    <div class="container container-extended h-auto">
+	    	<div class="row">
+		    	<div class="col-12 mb-0">
+		    		<div class="row">
+		    			<div class="col-lg-7 bg-form-video pt-4 pb-2">
+				    		<form class="d-flex align-items-center">
+			    				<div class="form-group mb-0 mt-2 mt-md-2">
+								    <input type="text" class="form-control" placeholder="Escribí tu respuesta acá..." name="pregunta" v-model="form.pregunta">
+								</div>
+							  	<button type="button" class="btn btn-secondary" @click="enviarPregunta()" :disabled="enviando"><img src="img/danoneday/arrow.png"></button>
+							</form>
+						</div>
+						<div class="col-lg-5 text-right pr-0">
+							<img src="img/danoneday/logo-2.png">
+						</div>
+					</div>
 
-            </div>
-            <div class="row content-vimeo">
-                <div class="col-md-12" v-if="videoSeleccionado">
-                    <span style="color:#b26fa7;text-align:center;width:100%;margin-top: 20px;display: block;"><i class="fa fa-volume-up" aria-hidden="true"></i>Por favor, activar el sonido del reproductor</span>
-                    <!--div class="wraper_video"-->
-                        <div class="embed-container" v-if="videoSeleccionado === 'ingles'">
-                            <div class="overlay"></div>
-                            <iframe src="https://player.vimeo.com/video/455802173" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                        </div>                    
-                        <div class="embed-container" v-else>
-                            <iframe src="https://player.vimeo.com/video/455802173" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                        </div>                    
-                    <!--/div-->
-                </div>
-                <div class="col-md-12" v-else>
-                    <span class="disc-video">
-                        <i class="fa fa-arrow-up" aria-hidden="true"></i> 
-                        Para ver el evento, seleccione en los botones de arriba la opción de audio
-                    </span>
-                </div>                
-            </div>
-            <div class="row content-vimeo-chat" v-if="videoSeleccionado">
-                <div class="col-sm-9 form-container">
-                    <input type="text" class="form-control input-pregunta" id="pregunta" name="pregunta" placeholder="Escriba su pregunta aquí" v-model="form.pregunta">
-                </div>
-                <div class="col-sm-3 text-center">
-                    <button type="button" 
-                            class="btn btn-primary dorado" 
-                            @click="enviarPregunta()"
-                            :disabled="!form.pregunta"
-                    >
-                        <i v-if="enviando" class="fa fa-spinner fa-spin fa-fw"></i> 
-                        <span v-if="!enviando">ENVIAR</span>
-                    </button>                    
-                </div>
-            </div>
-
-            <i class="fa fa-spinner fa-spin fa-fw" style="opacity:0;"></i>
-            
-            <div v-if="showModal">
-                <transition name="modal">
-                    <div class="modal-mask">
-                    <div class="modal-wrapper">
-                        <div class="modal-container">
-
-                        <div class="modal-header" style="color: #fff;padding: 0px 0px 10px;">
-                            <slot name="header">
-                            Encuesta de satisfacción
-                            </slot>
-                        </div>
-
-                        <div class="modal-body">
-                            <div class="container-encuesta">
-                                <div class="row" v-for="(item,index) in encuesta.preguntas" :key="index">
-                                    <div class="col-12">
-                                        <h5>{{item.key}}) {{item.tit}}</h5>
-                                        <p>{{item.preg}}</p>
-                                    </div>
-                                    <div class="col-12">
-                                        <template v-if="item.tipo === 'C'">
-                                            <template v-for="subitem in encuesta.opciones">
-                                            <div class="form-check-inline" :key="subitem.key">
-                                                <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" :name="'p_'+item.key+'_r_'+subitem.key" :value="subitem.key" v-model="encuesta.form['resp_' + item.key]"> {{subitem.texto}}
-                                                </label>
-                                            </div>
-                                            <br :key="subitem.key">
-                                            </template>
-                                            
-                                        </template>
-                                        <template v-else>
-                                            <textarea class="form-control" :name="'p_'+item.key" v-model="encuesta.form['resp_' + item.key]"></textarea>
-                                        </template>
-                                    </div>
-                                </div>
-
-                                <div class="text-right">
-
-                                </div>
-                                <i class="fa fa-spinner fa-spin fa-fw" style="opacity:0;"></i>
-                            </div>
-                        </div>
-
-                        <div class="modal-footer">
-                            <slot name="footer">
-                            <button type="button" 
-                                    class="btn btn-primary" 
-                                    @click="enviarEncuesta()">
-                                <i v-if="encuesta.enviando" class="fa fa-spinner fa-spin fa-fw"></i> 
-                                <span> {{ encuesta.enviando ? 'Enviando' : 'Enviar' }} </span>
-                            </button>                            
-                            <button type="button" class="btn btn-primary" @click="mostrarModal(false)">
-                                Cerrar
-                            </button>
-                            </slot>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </transition>
-            </div>   
-
-
+		    	</div>
+	    	</div>
+	    </div>
+	    
+	    
+	    
+	  </section>
     </div>
 </template>
 
@@ -204,6 +118,7 @@
             }
         },
         mounted () {
+            $('#body').removeClass("home").addClass("video");
             var vm = this;
             var csrfToken = $('[name=csrf-token]').attr('content');
             var isOnIOS = navigator.userAgent.match(/iPad/i)|| navigator.userAgent.match(/iPhone/i);
@@ -251,7 +166,7 @@
                             vm.form.pregunta = null;
                         }, error => {
                             vm.enviando = false;
-                            alert(error.message);
+                            alert(error.response.data.message);
                         });                    
                 }
             },

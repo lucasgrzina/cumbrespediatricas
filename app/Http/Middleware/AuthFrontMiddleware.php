@@ -7,13 +7,19 @@ use Closure;
 
 class AuthFrontMiddleware
 {
-    public function handle($request, Closure $next, $evento = '')
+    public function handle($request, Closure $next, $keyEvento = '')
     {
-        if (\FrontHelper::getCookieRegistrado($evento) !== null)
+        $evento = config('constantes.eventos.'.$keyEvento,false);
+        $registroExterno = isset($evento['registroExterno']) ? $evento['registroExterno'] : false;
+        if ($evento && \FrontHelper::getCookieRegistrado($evento['cookie']) !== null)
+        {
+            return $next($request);
+        } 
+        else if ($registroExterno) 
         {
             return $next($request);
         }
         
-        return redirect()->route($evento ? $evento.'.home' : 'home');
+        return redirect()->route($keyEvento ? $keyEvento.'.home' : 'home');
     }
 }

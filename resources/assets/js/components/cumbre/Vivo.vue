@@ -32,15 +32,17 @@
                 </div>
                 <div class="col-md-12" v-else>
                     <span style="color: rgb(16, 33, 63);
-    text-align: center;
-    width: 100%;
-    margin-top: 20px;
-    display: block;
-    padding: 20px;
-    background: #e09b3f;
-    border: 2px solid #fff;">
+                        text-align: center;
+                        width: 100%;
+                        margin-top: 20px;
+                        display: block;
+                        padding: 20px;
+                        background: #e09b3f;
+                        border: 2px solid #fff;"
+                    >
                         <i class="fa fa-arrow-up" aria-hidden="true"></i> 
-                        Para ver el evento, seleccione en los botones de arriba la opción de audio</span>
+                        Para ver el evento, seleccione en los botones de arriba la opción de audio
+                    </span>
                 </div>                
             </div>
             <div class="row content-vimeo-chat" v-if="videoSeleccionado">
@@ -225,20 +227,40 @@
         },
         mounted () {
             var vm = this;
+            var csrfToken = $('[name=csrf-token]').attr('content');
+            var isOnIOS = navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPhone/i);
+            var eventName = isOnIOS ? "pagehide" : "beforeunload";    
+            var usarSendBeacon = "sendBeacon" in navigator;
+            var urlSalidaUsuario = vm.urlEnviarSalidaUsuario;
+            
+            console.debug(vm.registrado);
+            console.debug(isOnIOS,eventName,usarSendBeacon,urlSalidaUsuario);
+                   
+            window.addEventListener(eventName, function(e){
+                var data = new FormData();
+                data.append('_token', csrfToken);                
 
-            window.addEventListener('beforeunload', function (e) {
-                vm.enviarSalidaUsuario().then(response => {
-                    e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
-                    e.returnValue = '';
-                }, error => {
-                    e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
-                    // Chrome requires returnValue to be set
-                    e.returnValue = '';
+                if(usarSendBeacon)
+                {
+                    navigator.sendBeacon(urlSalidaUsuario, data);
+                }
+                else
+                {
+                    var request = new XMLHttpRequest();
                     
-                });                    
-            });            
+                    request.open('post', urlSalidaUsuario, false);
+                    request.send(data);
+
+                    if (request.status === 200) {
+                        console.debug('termino');
+                    }
+
+                }                
+                
+            }, false);                   
         
         },
+
         methods: {
             verVideo (video) {
                 this.videoSeleccionado = video;
@@ -325,8 +347,8 @@
             },
             enviarSalidaUsuario: function() {
                 let vm = this
-                return axios.post(vm.urlEnviarSalidaUsuario.replace('_ID_',vm.registrado.id),{});
-            }
+                return axios.post(vm.urlEnviarSalidaUsuario,{});
+            }   
         }
     }
 </script>

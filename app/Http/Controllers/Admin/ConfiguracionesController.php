@@ -114,5 +114,16 @@ class ConfiguracionesController extends CrudAdminController
         $format = [
         ];
         return $this->_exportXls($data,$header,$format,$name);
-    }     
+    }  
+    
+    public function agregarItem($evento,$clave,$valor) {
+        $data = [
+            'evento' => $evento,
+            'clave' => $clave,
+            'valor' => $valor
+        ];
+        
+        $model = $this->repository->create($data);        
+        return $this->sendResponse($model, trans('admin.success'));
+    }
 }

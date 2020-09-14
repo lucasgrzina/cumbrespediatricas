@@ -46092,6 +46092,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -46717,7 +46718,7 @@ var staticRenderFns = [
         attrs: { "aria-hidden": "true" }
       }),
       _vm._v(
-        " \n                    Para ver el evento, seleccione en los botones de arriba la opción de audio"
+        " \n                    Para ver el evento, seleccione en los botones de arriba la opción de audio\n                "
       )
     ])
   }

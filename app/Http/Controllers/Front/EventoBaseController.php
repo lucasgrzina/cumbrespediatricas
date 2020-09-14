@@ -36,6 +36,8 @@ class EventoBaseController extends AppBaseController
         
         $this->key = explode('.',\Route::currentRouteName())[0];
         $this->evento = config('constantes.eventos.'.$this->key);
+        //\Log::info([$this->key, $this->evento]);
+        
     }
 
     public function index()
@@ -99,8 +101,10 @@ class EventoBaseController extends AppBaseController
     }
     
     public function enviarSalidaUsuario(Request $request) {
+        
         try {
             $registrado = $this->obtenerRegistrado();
+            
             if ($registrado) {
                 $accion = $registrado->acciones()->whereNull('hasta')->orderBy('id','asc')->first();
                 $accion->hasta = Carbon::now()->format('Y-m-d H:i:s');
@@ -142,9 +146,7 @@ class EventoBaseController extends AppBaseController
     protected function obtenerRegistrado() {
         $registrado = null;
         try {
-
             $registradoGuid = FrontHelper::getCookieRegistrado($this->evento['cookie']);
-            
             if ($registradoGuid) {
                 $registrado = \Cache::remember('registrado_'.$registradoGuid, Carbon::now()->addMinutes($this->segundosCache / 60), function () use($registradoGuid){
                     return Registrado::where(\DB::raw('md5(id)'),$registradoGuid)->first();

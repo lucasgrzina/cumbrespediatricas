@@ -1,4 +1,4 @@
-@extends('layouts.front-vue')
+@extends('layouts.cumbre.front-vue')
 @section('content')
 <div class="container vivo">            
     <vivo v-bind="{{json_encode($props)}}"></vivo>
