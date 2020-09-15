@@ -45848,6 +45848,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -46039,7 +46040,7 @@ var render = function() {
       _c("div", { staticClass: "container h-auto" }, [
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-12" }, [
-            _c("div", { staticClass: " view-03" }, [
+            _c("div", { staticClass: "view-03" }, [
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col-12" }, [
                   _vm.videoSeleccionado === "ingles"

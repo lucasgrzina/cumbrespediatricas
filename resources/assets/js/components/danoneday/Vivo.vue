@@ -4,7 +4,7 @@
 	  	<div class="container h-auto">
 		    <div class="row">
 		    	<div class="col-12">
-		    		<div class=" view-03">
+		    		<div class="view-03">
 				  		<div class="row">
 					    	<div class="col-12">
 								<div class="video-content" v-if="videoSeleccionado === 'ingles'">
@@ -17,7 +17,8 @@
 				  	</div>
 		    	</div>
 		    </div>
-	    </div>        
+	    </div>   
+             
 	    <div class="container container-extended h-auto">
 	    	<div class="row">
 		    	<div class="col-12 mb-0">

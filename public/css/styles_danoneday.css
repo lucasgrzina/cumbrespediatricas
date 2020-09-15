@@ -191,59 +191,64 @@ border-width: 5px;
 }
 
 .video-content{
-background: #000;
-height: 500px;
-width: 100%;
-margin-bottom: 17px;
+  background: #000;
+  height: 500px;
+  width: 100%;
+  margin-bottom: 17px;
+  position: relative;
 }
 
 .container-extended .form-group{
-min-width: 83%;
+  min-width: 83%;
   margin-right: 19px;
 }
-@media (max-width: 991px){
-.btn-primary:not(.btn-enviar) .text{
-  font-size: 30px;
-}
-.btn-primary:not(.btn-enviar) .brush{
-    width: 314px;
-    height: 111px;
-    top: 7px;
-    left: 40px;
-}
 
-.bg-form-video{
-  height: 150px;
+@media (min-width: 1400px) {
+  .video section {
+    padding-top: 6%;
+  }
 }
+@media (max-width: 991px) {
+  .btn-primary:not(.btn-enviar) .text{
+    font-size: 30px;
+  }
+  .btn-primary:not(.btn-enviar) .brush{
+      width: 314px;
+      height: 111px;
+      top: 7px;
+      left: 40px;
+  }
 
-.lines-bg{
-  width: 100px;
-  height: 120px;
-}
+  .bg-form-video{
+    height: 150px;
+  }
+
+  .lines-bg{
+    width: 100px;
+    height: 120px;
+  }
 }
 
 
 @media (max-width: 768px){
-.view-01 .logo{
-  max-width: 350px;
-  left: auto;
-}
-.view-01 .btn-registrarse{
-  position: relative;
-  top: -50px;
-  left: 5%;
-}
+  .view-01 .logo{
+    max-width: 350px;
+    left: auto;
+  }
 
-
-
+  .view-01 .btn-registrarse{
+    position: relative;
+    top: -50px;
+    left: 5%;
+  }
 }
 
 @media (max-width: 650px){
-.view-01 .btn-registrarse {
-    position: relative;
-    top: -17px;
-    left: 5%;
-     max-width: 200px; 
-    left: -74px;
-}
+  .view-01 .btn-registrarse {
+      position: relative;
+      top: -17px;
+      left: 5%;
+      max-width: 200px; 
+      left: -74px;
+  }
 }
