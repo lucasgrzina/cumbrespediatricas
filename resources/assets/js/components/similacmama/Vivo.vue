@@ -32,7 +32,9 @@
                     <!--div class="wraper_video"-->
                         <div class="embed-container" v-if="videoSeleccionado === 'ingles'">
                             <div class="overlay"></div>
-                            <iframe src="https://player.vimeo.com/video/455802173" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                            <iframe v-if="evento.key === 'similacmamatest'" src="https://player.vimeo.com/video/457475164" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                            <iframe v-if="evento.key === 'similacmama169'" src="https://player.vimeo.com/video/457475164" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                            <iframe v-if="evento.key === 'similacmama179'" src="https://player.vimeo.com/video/457475561" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                         </div>                    
                         <div class="embed-container" v-else>
                             <iframe src="https://player.vimeo.com/video/455802173" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
@@ -158,7 +160,11 @@
             registrado : {
                 type: Object,
                 required: true
-            }         
+            },
+            evento : {
+                type: Object,
+                required: true
+            }          
 
         },
         data () {
@@ -205,6 +211,7 @@
         },
         mounted () {
             var vm = this;
+            console.debug(vm.evento);
             var csrfToken = $('[name=csrf-token]').attr('content');
             var isOnIOS = navigator.userAgent.match(/iPad/i)|| navigator.userAgent.match(/iPhone/i);
             var eventName = isOnIOS ? "pagehide" : "beforeunload";    

@@ -46,6 +46,14 @@ return [
             'cookie' => 'similacmama_16_9',
             'activo' => true
         ],
+        'similacmama179' => [
+            'nombre' => 'Similac Mama - 17/9',
+            'prefix' => 'similacmama',
+            'controller' => 'HomeSimilaCMamaController',
+            'view' => 'similacmama',
+            'cookie' => 'similacmama_17_9',
+            'activo' => false
+        ],        
         'cumbretest' => [
             'nombre' => 'Abbott Cumbre pediatrica - 3/5 (Test)',
             'prefix' => 'cumbrepediatricatest',

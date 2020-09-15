@@ -46093,6 +46093,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -46118,6 +46120,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             required: true
         },
         registrado: {
+            type: Object,
+            required: true
+        },
+        evento: {
             type: Object,
             required: true
         }
@@ -46152,6 +46158,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     mounted: function mounted() {
         var vm = this;
+        console.debug(vm.evento);
         var csrfToken = $('[name=csrf-token]').attr('content');
         var isOnIOS = navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPhone/i);
         var eventName = isOnIOS ? "pagehide" : "beforeunload";
@@ -46328,21 +46335,59 @@ var render = function() {
               ? _c("div", { staticClass: "embed-container" }, [
                   _c("div", { staticClass: "overlay" }),
                   _vm._v(" "),
-                  _c("iframe", {
-                    staticStyle: {
-                      position: "absolute",
-                      top: "0",
-                      left: "0",
-                      width: "100%",
-                      height: "100%"
-                    },
-                    attrs: {
-                      src: "https://player.vimeo.com/video/455802173",
-                      frameborder: "0",
-                      allow: "autoplay; fullscreen",
-                      allowfullscreen: ""
-                    }
-                  })
+                  _vm.evento.key === "similacmamatest"
+                    ? _c("iframe", {
+                        staticStyle: {
+                          position: "absolute",
+                          top: "0",
+                          left: "0",
+                          width: "100%",
+                          height: "100%"
+                        },
+                        attrs: {
+                          src: "https://player.vimeo.com/video/457475164",
+                          frameborder: "0",
+                          allow: "autoplay; fullscreen",
+                          allowfullscreen: ""
+                        }
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.evento.key === "similacmama169"
+                    ? _c("iframe", {
+                        staticStyle: {
+                          position: "absolute",
+                          top: "0",
+                          left: "0",
+                          width: "100%",
+                          height: "100%"
+                        },
+                        attrs: {
+                          src: "https://player.vimeo.com/video/457475164",
+                          frameborder: "0",
+                          allow: "autoplay; fullscreen",
+                          allowfullscreen: ""
+                        }
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.evento.key === "similacmama179"
+                    ? _c("iframe", {
+                        staticStyle: {
+                          position: "absolute",
+                          top: "0",
+                          left: "0",
+                          width: "100%",
+                          height: "100%"
+                        },
+                        attrs: {
+                          src: "https://player.vimeo.com/video/457475561",
+                          frameborder: "0",
+                          allow: "autoplay; fullscreen",
+                          allowfullscreen: ""
+                        }
+                      })
+                    : _vm._e()
                 ])
               : _c("div", { staticClass: "embed-container" }, [
                   _c("iframe", {

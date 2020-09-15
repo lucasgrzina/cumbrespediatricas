@@ -62,12 +62,11 @@ class HomeSimilaCMamaController extends EventoBaseController
         try {
             
             $conf = $this->config('*');
-            \Log::info('1');
+
             if ($conf['etapa'] !== 'R') {
-                \Log::info('2');
                 return redirect()->route($this->key.'.home');
             }
-        \Log::info('3');
+
             try {
                 $registrado = $this->obtenerRegistrado();
                 if ($registrado) {
@@ -92,6 +91,7 @@ class HomeSimilaCMamaController extends EventoBaseController
 
         $data = [
             'props' => [
+                'evento' => $this->evento,
                 'registrado' => $this->obtenerRegistrado(),
                 'urlEnviar' => route($this->key.'.enviar-pregunta'),
                 'urlEncuesta' => '',
