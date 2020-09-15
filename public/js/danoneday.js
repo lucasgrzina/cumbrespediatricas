@@ -45875,6 +45875,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         registrado: {
             type: Object,
             required: true
+        },
+        evento: {
+            type: Object,
+            required: true
         }
 
     },
@@ -46040,22 +46044,39 @@ var render = function() {
                 _c("div", { staticClass: "col-12" }, [
                   _vm.videoSeleccionado === "ingles"
                     ? _c("div", { staticClass: "video-content" }, [
-                        _c("iframe", {
-                          staticStyle: {
-                            position: "absolute",
-                            top: "0",
-                            left: "0",
-                            width: "100%",
-                            height: "100%"
-                          },
-                          attrs: {
-                            src:
-                              "https://player.vimeo.com/video/457472926?transparent=0",
-                            frameborder: "0",
-                            allow: "autoplay; fullscreen",
-                            allowfullscreen: ""
-                          }
-                        })
+                        _vm.evento.key === "danonedaytest"
+                          ? _c("iframe", {
+                              staticStyle: {
+                                position: "absolute",
+                                top: "0",
+                                left: "0",
+                                width: "100%",
+                                height: "100%"
+                              },
+                              attrs: {
+                                src:
+                                  "https://player.vimeo.com/video/457472926?transparent=0",
+                                frameborder: "0",
+                                allow: "autoplay; fullscreen",
+                                allowfullscreen: ""
+                              }
+                            })
+                          : _c("iframe", {
+                              staticStyle: {
+                                position: "absolute",
+                                top: "0",
+                                left: "0",
+                                width: "100%",
+                                height: "100%"
+                              },
+                              attrs: {
+                                src:
+                                  "https://player.vimeo.com/video/457473449?transparent=0",
+                                frameborder: "0",
+                                allow: "autoplay; fullscreen",
+                                allowfullscreen: ""
+                              }
+                            })
                       ])
                     : _vm._e()
                 ])
@@ -46110,12 +46131,30 @@ var render = function() {
                         }
                       }
                     },
-                    [_c("img", { attrs: { src: "img/danoneday/arrow.png" } })]
+                    [
+                      _c("img", {
+                        attrs: {
+                          src:
+                            _vm.evento.key === "danonedaytest"
+                              ? "../img/danoneday/arrow.png"
+                              : "img/danoneday/arrow.png"
+                        }
+                      })
+                    ]
                   )
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(0)
+              _c("div", { staticClass: "col-lg-5 text-right pr-0" }, [
+                _c("img", {
+                  attrs: {
+                    src:
+                      _vm.evento.key === "danonedaytest"
+                        ? "../img/danoneday/logo-2.png"
+                        : "img/danoneday/logo-2.png"
+                  }
+                })
+              ])
             ])
           ])
         ])
@@ -46123,16 +46162,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-5 text-right pr-0" }, [
-      _c("img", { attrs: { src: "img/danoneday/logo-2.png" } })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

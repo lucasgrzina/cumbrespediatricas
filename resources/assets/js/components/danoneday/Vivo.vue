@@ -8,8 +8,8 @@
 				  		<div class="row">
 					    	<div class="col-12">
 								<div class="video-content" v-if="videoSeleccionado === 'ingles'">
-									<!--div class="overlay"></div-->
-									<iframe src="https://player.vimeo.com/video/457472926?transparent=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+									<iframe v-if="evento.key === 'danonedaytest'" src="https://player.vimeo.com/video/457472926?transparent=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                                    <iframe v-else src="https://player.vimeo.com/video/457473449?transparent=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
 								</div>
 					    	</div>
 				    	</div>
@@ -27,11 +27,11 @@
 			    				<div class="form-group mb-0 mt-2 mt-md-2">
 								    <input type="text" class="form-control" placeholder="Escribí tu respuesta acá..." name="pregunta" v-model="form.pregunta">
 								</div>
-							  	<button type="button" class="btn btn-secondary" @click="enviarPregunta()" :disabled="enviando"><img src="img/danoneday/arrow.png"></button>
+							  	<button type="button" class="btn btn-secondary" @click="enviarPregunta()" :disabled="enviando"><img :src="evento.key === 'danonedaytest' ? '../img/danoneday/arrow.png' : 'img/danoneday/arrow.png'"></button>
 							</form>
 						</div>
 						<div class="col-lg-5 text-right pr-0">
-							<img src="img/danoneday/logo-2.png">
+							<img :src="evento.key === 'danonedaytest' ? '../img/danoneday/logo-2.png' : 'img/danoneday/logo-2.png'">
 						</div>
 					</div>
 
@@ -72,7 +72,11 @@
             registrado : {
                 type: Object,
                 required: true
-            }         
+            },
+            evento : {
+                type: Object,
+                required: true
+            }          
 
         },
         data () {

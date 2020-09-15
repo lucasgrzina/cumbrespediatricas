@@ -36,6 +36,7 @@ class EventoBaseController extends AppBaseController
         
         $this->key = explode('.',\Route::currentRouteName())[0];
         $this->evento = config('constantes.eventos.'.$this->key);
+        $this->evento['key'] = $this->key;
         //\Log::info([$this->key, $this->evento]);
         
     }

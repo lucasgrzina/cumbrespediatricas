@@ -91,6 +91,7 @@ class HomeDanonedayMamaController extends EventoBaseController
 
         $data = [
             'props' => [
+                'evento' => $this->evento,
                 'registrado' => $this->obtenerRegistrado(),
                 'urlEnviar' => route($this->key.'.enviar-pregunta'),
                 'urlEncuesta' => '',
