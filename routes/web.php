@@ -106,8 +106,7 @@ Route::prefix('/admin')->group(function () {
 }); */
 
 $key = 'danoneday';
-Route::namespace('Front')->name($key.'.')->domain('danoneday.com.ar')->group(function() use($key){
-    
+$appRoutes = function() use ($key){
     $data = config('constantes.eventos.danoneday',[]); 
     Route::post('/registrar', $data['controller'].'@registrar')->name('registrar');
 
@@ -120,7 +119,10 @@ Route::namespace('Front')->name($key.'.')->domain('danoneday.com.ar')->group(fun
         Route::any('/enviar-salida-usuario', $data['controller'].'@enviarSalidaUsuario')->name('enviar-salida-usuario');
     });
     Route::get('/', $data['controller'].'@index')->name('home');
-}); 
+};
+Route::namespace('Front')->name($key.'.')->domain('danoneday.com.ar')->group($appRoutes);
+Route::namespace('Front')->name($key.'.')->domain('www.danoneday.com.ar')->group($appRoutes);
+
 
 
 $eventos = config('constantes.eventos',[]);
