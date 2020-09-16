@@ -46310,8 +46310,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         urlEnviarSalidaUsuario: {
             type: String,
             required: true
+        },
+        evento: {
+            type: Object,
+            required: true
         }
-
     },
     data: function data() {
         return {
@@ -46348,7 +46351,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var usarSendBeacon = "sendBeacon" in navigator;
         var urlSalidaUsuario = vm.urlEnviarSalidaUsuario;
 
-        console.debug(vm.registrado);
+        console.debug(vm.evento);
         console.debug(isOnIOS, eventName, usarSendBeacon, urlSalidaUsuario);
 
         window.addEventListener(eventName, function (e) {
@@ -46444,7 +46447,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 vm.enviandoEncuesta = true;
                 axios.get(vm.urlEncuestaDisponible).then(function (response) {
                     vm.enviandoEncuesta = false;
-                    document.location = vm.registrado.certificado;
+                    document.location = vm.evento.urlCertificado.replace('_ID_', vm.registrado.id_externo).replace('_TOKEN_', vm.registrado.token);
                     //vm.mostrarModal(true);
                 }, function (error) {
                     vm.enviandoEncuesta = false;

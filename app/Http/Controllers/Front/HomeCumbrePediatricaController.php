@@ -88,6 +88,7 @@ class HomeCumbrePediatricaController extends EventoBaseController
 
         $data = [
             'props' => [
+                'evento' => $this->evento,
                 'registrado' => $registrado,
                 'urlEnviar' => route($this->key.'.enviar-pregunta'),
                 'urlEncuesta' => '',

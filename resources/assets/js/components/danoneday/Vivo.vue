@@ -7,7 +7,9 @@
 		    		<div class="view-03">
 				  		<div class="row">
 					    	<div class="col-12">
+                                    <span style="color:#fff;text-align:center;width:100%;margin-top: 0px;display: block;"><i class="fa fa-volume-up" aria-hidden="true"></i>Por favor, activar el sonido del reproductor</span>
 								<div class="video-content" v-if="videoSeleccionado === 'ingles'">
+
 									<iframe v-if="evento.key === 'danonedaytest'" src="https://player.vimeo.com/video/457472926?transparent=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                                     <iframe v-else src="https://player.vimeo.com/video/457473449?transparent=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
 								</div>
@@ -131,6 +133,7 @@
             var usarSendBeacon = "sendBeacon" in navigator;
             var urlSalidaUsuario = vm.urlEnviarSalidaUsuario;
             
+            console.debug(vm.evento);
             console.debug(isOnIOS,eventName,usarSendBeacon,urlSalidaUsuario);
                    
             window.addEventListener(eventName, function(e){

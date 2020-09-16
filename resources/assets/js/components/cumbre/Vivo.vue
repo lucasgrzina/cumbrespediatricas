@@ -180,8 +180,11 @@
             urlEnviarSalidaUsuario: {
                 type: String,
                 required:true
-            }         
-
+            },         
+            evento: {
+                type: Object,
+                required: true
+            },
         },
         data () {
             return {
@@ -233,7 +236,7 @@
             var usarSendBeacon = "sendBeacon" in navigator;
             var urlSalidaUsuario = vm.urlEnviarSalidaUsuario;
             
-            console.debug(vm.registrado);
+            console.debug(vm.evento);
             console.debug(isOnIOS,eventName,usarSendBeacon,urlSalidaUsuario);
                    
             window.addEventListener(eventName, function(e){
@@ -337,7 +340,7 @@
                     axios.get(vm.urlEncuestaDisponible)
                         .then(response => {
                             vm.enviandoEncuesta = false;
-                            document.location = vm.registrado.certificado;
+                            document.location = vm.evento.urlCertificado.replace('_ID_',vm.registrado.id_externo).replace('_TOKEN_',vm.registrado.token);
                             //vm.mostrarModal(true);
                         }, error => {
                             vm.enviandoEncuesta = false;

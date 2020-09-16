@@ -11,7 +11,8 @@ return [
             'activo' => true,
             'registroExterno' => true,
             'urlWebServiceRegistrado' => 'https://www.quimicavirtualevents.com/cumbrepediatrica/app/webservice.php',
-            'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbrepediatrica'
+            'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbrepediatrica',
+            'urlCertificado' => 'https://quimicavirtualevents.com/cumbrepediatrica/app/certificado.php?id=_ID_&token=_TOKEN_'
         ],
         'similacmama' => [
             'nombre' => 'Similac Mama - 9/9',
@@ -62,8 +63,9 @@ return [
             'cookie' => 'cumbre3test',
             'activo' => true,
             'registroExterno' => true,
-            'urlWebServiceRegistrado' => 'http://3i.com.ar/shape/abbot/app/webservice.php',
-            'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbrepediatrica'
+            'urlWebServiceRegistrado' => 'https://www.quimicavirtualevents.com/cumbrepediatrica/app/webservice.php',
+            'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbrepediatrica',
+            'urlCertificado' => 'https://quimicavirtualevents.com/cumbrepediatrica/app/certificado.php?id=_ID_&token=_TOKEN_'
         ],   
         'similacmama229' => [
             'nombre' => 'Similac Mama - 22/9',

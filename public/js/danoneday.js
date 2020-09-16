@@ -45849,6 +45849,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -45919,6 +45921,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var usarSendBeacon = "sendBeacon" in navigator;
         var urlSalidaUsuario = vm.urlEnviarSalidaUsuario;
 
+        console.debug(vm.evento);
         console.debug(isOnIOS, eventName, usarSendBeacon, urlSalidaUsuario);
 
         window.addEventListener(eventName, function (e) {
@@ -46043,6 +46046,8 @@ var render = function() {
             _c("div", { staticClass: "view-03" }, [
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col-12" }, [
+                  _vm._m(0),
+                  _vm._v(" "),
                   _vm.videoSeleccionado === "ingles"
                     ? _c("div", { staticClass: "video-content" }, [
                         _vm.evento.key === "danonedaytest"
@@ -46163,7 +46168,32 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "span",
+      {
+        staticStyle: {
+          color: "#fff",
+          "text-align": "center",
+          width: "100%",
+          "margin-top": "0px",
+          display: "block"
+        }
+      },
+      [
+        _c("i", {
+          staticClass: "fa fa-volume-up",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v("Por favor, activar el sonido del reproductor")
+      ]
+    )
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
