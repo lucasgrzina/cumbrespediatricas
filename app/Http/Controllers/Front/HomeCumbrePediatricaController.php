@@ -51,7 +51,7 @@ class HomeCumbrePediatricaController extends EventoBaseController
             $conf = $this->config('*');
             
             if ($conf['etapa'] !== 'R') {
-                return redirect()->route($this->key.'.home');
+                return view('front.'.$this->evento['view'].'.no-habilitado');
             }
 
             try {
