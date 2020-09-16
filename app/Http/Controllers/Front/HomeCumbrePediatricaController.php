@@ -27,20 +27,12 @@ class HomeCumbrePediatricaController extends EventoBaseController
 
     public function index()
     {
-        $conf = $this->config('*');
-        
-        if ($conf['etapa'] !== 'R') {
-            $data = [
-                'config' => $conf
-            ];
-            return view('front.'.$this->evento['view'].'.home',['data' => $data]);
-        }
-        //return $this->indexVue();
-        
+        return view('front.'.$this->evento['view'].'.no-habilitado');        
     }
 
     public function indexVue()
     {
+        return view('front.'.$this->evento['view'].'.no-habilitado');
     } 
 
     public function vivo (Request $request) {
@@ -51,7 +43,7 @@ class HomeCumbrePediatricaController extends EventoBaseController
             $conf = $this->config('*');
             
             if ($conf['etapa'] !== 'R') {
-                return view('front.'.$this->evento['view'].'.no-habilitado');
+                return redirect()->route($this->key.'.home');
             }
 
             try {
