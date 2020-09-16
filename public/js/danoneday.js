@@ -45360,7 +45360,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.view-ie[data-v-c0c3c81c] {\r\n    cursor: pointer;\n}\r\n", ""]);
 
 // exports
 
@@ -45371,6 +45371,12 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -45441,6 +45447,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
+            esIE: false,
             paso: 1,
             lnk_blur: false,
             info: {
@@ -45457,6 +45464,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     mounted: function mounted() {
         console.debug('Registro mounted');
+        var ua = window.navigator.userAgent;
+        var msie = ua.indexOf("MSIE ");
+        this.esIE = msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./);
+        if (this.esIE) {
+            $('.view-01').css('background-image', 'none');
+        }
+        $(document).ready(function () {
+            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+                //$('.view-ie').css('display', 'block');		
+                //$('body').css('background-image', 'none');		
+                //$('.no-view-ie').css('display', 'none');		
+                //$('.view-01').css('background-image', 'none');			
+            }
+        });
     },
 
     methods: {
@@ -45530,30 +45551,52 @@ var render = function() {
       ? _c("section", { staticClass: "text-center" }, [
           _c("div", { staticClass: "container view-01" }, [
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-12" }, [
-                _c("img", {
-                  staticClass: "logo",
-                  attrs: { src: "img/danoneday/logo.png" }
-                }),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn btn-primary btn-lg btn-registrarse",
-                    on: {
-                      click: function($event) {
-                        return _vm.mostrarForm()
-                      }
-                    }
-                  },
-                  [
-                    _c("span", { staticClass: "text" }, [
-                      _vm._v("Registrarse")
-                    ]),
-                    _c("span", { staticClass: "brush" })
-                  ]
-                )
-              ])
+              _vm.esIE
+                ? _c("div", { staticClass: "view-ie" }, [
+                    _c(
+                      "a",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.mostrarForm()
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src: "img/danoneday/img-ie.png",
+                            width: "100%"
+                          }
+                        })
+                      ]
+                    )
+                  ])
+                : _c("div", { staticClass: "col-12 no-view-ie" }, [
+                    _c("img", {
+                      staticClass: "logo",
+                      attrs: { src: "img/danoneday/logo.png" }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn btn-primary btn-lg btn-registrarse",
+                        on: {
+                          click: function($event) {
+                            return _vm.mostrarForm()
+                          }
+                        }
+                      },
+                      [
+                        _c("span", { staticClass: "text" }, [
+                          _vm._v("Registrarse")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "brush" })
+                      ]
+                    )
+                  ])
             ])
           ])
         ])

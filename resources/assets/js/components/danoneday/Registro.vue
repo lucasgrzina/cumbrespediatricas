@@ -3,9 +3,15 @@
         <section class="text-center" v-if="paso === 1">
             <div class="container view-01">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="view-ie" v-if="esIE">
+                        <a  @click="mostrarForm()"><img src="img/danoneday/img-ie.png" width="100%"></a>
+                    </div>                    
+                    <div class="col-12 no-view-ie" v-else>
                         <img class="logo" src="img/danoneday/logo.png" />
-                        <a class="btn btn-primary btn-lg btn-registrarse" @click="mostrarForm()"><span class="text">Registrarse</span><span class="brush"></span></a>
+                        <a class="btn btn-primary btn-lg btn-registrarse" @click="mostrarForm()">
+                            <span class="text">Registrarse</span>
+                            <span class="brush"></span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -68,6 +74,7 @@
         },
         data () {
             return {
+                esIE: false,
                 paso: 1,
                 lnk_blur: false,
                 info: {
@@ -84,6 +91,20 @@
         },
         mounted () {
             console.debug('Registro mounted');
+			var ua = window.navigator.userAgent;	
+            var msie = ua.indexOf("MSIE ");
+            this.esIE = msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./);
+            if (this.esIE) {
+                $('.view-01').css('background-image', 'none');
+            }
+			$(document).ready(function(){
+					if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)){
+						//$('.view-ie').css('display', 'block');		
+						//$('body').css('background-image', 'none');		
+						//$('.no-view-ie').css('display', 'none');		
+						//$('.view-01').css('background-image', 'none');			
+					}	
+			});            
         },
         methods: {
             mostrarBlur: function (val) {
@@ -148,4 +169,7 @@
     }
 </script>
 <style scoped>
+.view-ie {
+    cursor: pointer;
+}
 </style>
