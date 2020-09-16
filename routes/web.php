@@ -106,7 +106,7 @@ Route::prefix('/admin')->group(function () {
 }); */
 
 $key = 'danoneday';
-Route::namespace('Front')->name($key.'.')->domain(['danoneday.com.ar','www.danoneday.com.ar'])->group(function() use($key){
+Route::namespace('Front')->name($key.'.')->domain('danoneday.com.ar')->group(function() use($key){
     
     $data = config('constantes.eventos.danoneday',[]); 
     Route::post('/registrar', $data['controller'].'@registrar')->name('registrar');
