@@ -46328,9 +46328,7 @@ var render = function() {
                           allowfullscreen: ""
                         }
                       })
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.evento.key === "similacmama179"
+                    : _vm.evento.key === "similacmama179"
                     ? _c("iframe", {
                         staticStyle: {
                           position: "absolute",
@@ -46346,9 +46344,7 @@ var render = function() {
                           allowfullscreen: ""
                         }
                       })
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.evento.key === "similacmama229"
+                    : _vm.evento.key === "similacmama229"
                     ? _c("iframe", {
                         staticStyle: {
                           position: "absolute",
