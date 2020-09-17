@@ -45,7 +45,7 @@ return [
             'controller' => 'HomeSimilaCMamaController',
             'view' => 'similacmama',
             'cookie' => 'similacmama_16_9',
-            'activo' => true
+            'activo' => false
         ],
         'similacmama179' => [
             'nombre' => 'Similac Mama - 17/9',
@@ -53,7 +53,7 @@ return [
             'controller' => 'HomeSimilaCMamaController',
             'view' => 'similacmama',
             'cookie' => 'similacmama_17_9',
-            'activo' => false
+            'activo' => true
         ],        
         'cumbretest' => [
             'nombre' => 'Abbott Cumbre pediatrica - 3/5 (Test)',
