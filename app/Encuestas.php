@@ -107,7 +107,12 @@ class Encuestas extends Model
             '5' => 'Totalmente de acuerdo'
         ];
 
-        return $valores[$value];
+        if (isset($valores[$value])) {
+            return $valores[$value];
+        } else {
+            return $value;
+        }
+        
     }
 
 

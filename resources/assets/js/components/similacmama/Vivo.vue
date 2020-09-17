@@ -88,13 +88,13 @@
                                     </div>
                                     <div class="col-12">
                                         <template v-if="item.tipo === 'C'">
-                                            <template v-for="subitem in encuesta.opciones">
-                                            <div class="form-check-inline" :key="subitem.key">
+                                            <template v-for="(subitem, indexOpt) in encuesta.opciones[index].valores">
+                                            <div class="form-check-inline" :key="'opt_' + indexOpt">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" :name="'p_'+item.key+'_r_'+subitem.key" :value="subitem.key" v-model="encuesta.form['resp_' + item.key]"> {{subitem.texto}}
+                                                    <input type="radio" class="form-check-input" :name="'p_'+item.key+'_r_'+ indexOpt" :value="subitem" v-model="encuesta.form['resp_' + item.key]"> {{subitem}}
                                                 </label>
                                             </div>
-                                            <br :key="subitem.key">
+                                            <br :key="indexOpt">
                                             </template>
                                             
                                         </template>
@@ -176,21 +176,38 @@
                 },
                 encuesta: {
                     preguntas: [
-                        {key: 1,tit: 'El contenido del programa es relevante para mi consultorio', preg: '', tipo: 'C'},
-                        {key: 2,tit: 'Los oradores y contenido son interesantes', preg: '', tipo: 'C'},
-                        {key: 3,tit: 'Logística y experiencia del evento: calidad audiovisual y de la transmisión son buenas y sin interrupciones', preg: '', tipo: 'C'},
-                        {key: 4,tit: 'Probablemente participaré en las ofertas visuales futuras de Abbott Nutrición', preg: '', tipo: 'C'},
-                        {key: 5,tit: 'Probablemente recomendaré este webinario a mis colegas', preg: '', tipo: 'C'},
-                        {key: 6,tit: '¿Qué temas son de mayor interés para usted relacionados con la nutrición?', preg: '', tipo: 'T'},
-                        {key: 7,tit: '¿Cuál es el aprendizaje más importante en este programa que pudiera traducirse a su consultorio clínico?', preg: '', tipo: 'T'},
-                        {key: 8,tit: '¿Alguna sugerencia para hacer este webinar más efectivo?', preg: '', tipo: 'T'},
+                        {key: 1,tit: '¿Cómo te pareció el contenido y claridad del mensaje de la conferencia?', preg: '', tipo: 'C'},
+                        {key: 2,tit: '¿Considerarías la compra de un complemento alimenticio como Similac Mamá?', preg: '', tipo: 'C'},
+                        {key: 3,tit: '¿Qué tal te pareció la logística y experiencia de este evento?', preg: '', tipo: 'C'},
+                        {key: 4,tit: '¿El evento cumplió con tus expectativas?', preg: '', tipo: 'C'},
+                        {key: 5,tit: '¿Cómo te enteraste del evento?', preg: '', tipo: 'C'},
                     ],
                     opciones: [
-                        {key: 5, texto: 'Totalmente de acuerdo'},
-                        {key: 4, texto: 'De acuerdo'},
-                        {key: 3, texto: 'Ni en desacuerdo ni de acuerdo'},
-                        {key: 2, texto: 'En desacuerdo'},
-                        {key: 1, texto: 'Totalmente en desacuerdo'},
+                        {key: 1, 
+                            valores: [
+                                'Malo', 'Regular', 'Bueno', 'Excelente'
+                            ] 
+                        },
+                        {key: 2, 
+                            valores: [
+                                'Si', 'No', 'Talvez'
+                            ]
+                        },                        
+                        {key: 3, 
+                            valores: [
+                                'Malo', 'Regular', 'Bueno', 'Excelente'
+                            ]
+                        },
+                        {key: 4, 
+                            valores: [
+                                'Si', 'No', 'Talvez'
+                            ]
+                        },      
+                        {key: 5, 
+                            valores: [
+                                'Internet', 'Invitación en Instagram', 'Por alguna amiga o conocida', 'Por recomendación de mi médico'
+                            ]
+                        },                                            
                     ],
                     form: {
                         resp_1: null,
@@ -294,8 +311,13 @@
             },
             enviarEncuesta: function () {
                 let vm = this
-
-                if (!vm.encuesta.form.resp_1 || !vm.encuesta.form.resp_2 || !vm.encuesta.form.resp_3 || !vm.encuesta.form.resp_4 || !vm.encuesta.form.resp_5 || !vm.encuesta.form.resp_6 || !vm.encuesta.form.resp_7 || !vm.encuesta.form.resp_8) {
+                let _incompleto = false;
+                _.forEach(vm.encuesta.preguntas, function (item) {
+                    if (!vm.encuesta.form['resp_' + item.key]) {
+                        _incompleto = true;
+                    }
+                });
+                if (_incompleto) {
                     alert('Debe responder todas las preguntas');
                     return false;
                 }
