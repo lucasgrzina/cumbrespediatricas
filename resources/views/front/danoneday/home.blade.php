@@ -27,7 +27,7 @@
 		@if($data['config']['etapa'] === 'F')
 			<!--img src="{{ asset('img/muchas graciasjpg-01.jpg') }}" style="width:100%;max-width:1024px;"/-->				
 		@else
-		<img src="{{ asset('img/std_danoneday.jpg') }}" class="img-std"/>				
+		<img src="{{ asset('img/std_danoneday_2.jpg') }}" class="img-std"/>				
 		@endif
 	</div>	
 </div>
