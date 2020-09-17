@@ -15,7 +15,7 @@
                         <span>Encuesta</span>
                     </button>                    
                 </div>
-                <div class="col-sm-12 text-center">
+                <!--div class="col-sm-12 text-center">
                     <button type="button" 
                             class="btn btn-primary violeta" 
                             @click="linkGuatemalaDisponible()"
@@ -23,7 +23,7 @@
                     >
                         <span>Si es Médico de Guatemala, esta actividad cuenta con horas crédito, haga click aquí.</span>
                     </button>                    
-                </div>
+                </div-->
 
             </div>
             <div class="row content-vimeo">

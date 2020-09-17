@@ -46299,30 +46299,6 @@ var render = function() {
               },
               [_c("span", [_vm._v("Encuesta")])]
             )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-12 text-center" }, [
-            _vm.registrado && _vm.registrado.pais === "Guatemala"
-              ? _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary violeta",
-                    attrs: { type: "button" },
-                    on: {
-                      click: function($event) {
-                        return _vm.linkGuatemalaDisponible()
-                      }
-                    }
-                  },
-                  [
-                    _c("span", [
-                      _vm._v(
-                        "Si es Médico de Guatemala, esta actividad cuenta con horas crédito, haga click aquí."
-                      )
-                    ])
-                  ]
-                )
-              : _vm._e()
           ])
         ])
       : _vm._e(),
