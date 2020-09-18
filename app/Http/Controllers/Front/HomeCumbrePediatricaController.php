@@ -36,7 +36,7 @@ class HomeCumbrePediatricaController extends EventoBaseController
     } 
 
     public function vivo (Request $request) {
-        
+        \Log::info($request->all());
         $registrado = null;
         try {
 
