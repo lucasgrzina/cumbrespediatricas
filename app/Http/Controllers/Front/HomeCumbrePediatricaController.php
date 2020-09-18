@@ -119,6 +119,7 @@ class HomeCumbrePediatricaController extends EventoBaseController
         if (!$dbRegistrado) {
             
             try {
+                \Log::info($this->evento['urlWebServiceRegistrado'].'?id='.$request->id.'&token='.$request->token);
                 $json = file_get_contents($this->evento['urlWebServiceRegistrado'].'?id='.$request->id.'&token='.$request->token);
                 $obj = json_decode($json);
                 \Log::info('resp ws');
