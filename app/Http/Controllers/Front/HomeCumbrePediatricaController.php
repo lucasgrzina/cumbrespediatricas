@@ -25,7 +25,7 @@ class HomeCumbrePediatricaController extends EventoBaseController
         parent::__construct();
     }
 
-    public function index()
+    public function index(Request $request)
     {
         //return view('front.'.$this->evento['view'].'.no-habilitado');        
         return $this->vivo($request);
