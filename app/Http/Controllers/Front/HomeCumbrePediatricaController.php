@@ -36,7 +36,6 @@ class HomeCumbrePediatricaController extends EventoBaseController
     } 
 
     public function vivo (Request $request) {
-        \Log::info($request->all());
         $registrado = null;
         try {
 
@@ -114,16 +113,12 @@ class HomeCumbrePediatricaController extends EventoBaseController
             //Puede estar el mismo registrado externo pero para distinto evento
             return Registrado::whereIdExterno($request->id)->whereEvento($this->key)->first();
         }); 
-        \Log::info('me llego '.$request->token . ', id: '.$request->id);
-        \Log::info($dbRegistrado);
+
         if (!$dbRegistrado) {
             
             try {
-                \Log::info($this->evento['urlWebServiceRegistrado'].'?id='.$request->id.'&token='.$request->token);
                 $json = file_get_contents($this->evento['urlWebServiceRegistrado'].'?id='.$request->id.'&token='.$request->token);
                 $obj = json_decode($json);
-                \Log::info('resp ws');
-                \Log::info($obj);
                 if (!$obj) {
                     throw new NoHabilitadoException('No retorna ws', 1);    
                 }
