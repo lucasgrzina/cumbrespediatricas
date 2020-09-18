@@ -24,10 +24,10 @@
                 <div class="col-md-12" v-if="videoSeleccionado">
                     <span style="color:#fff;text-align:center;width:100%;margin-top: 20px;display: block;"><i class="fa fa-volume-up" aria-hidden="true"></i>Por favor, activar el sonido del reproductor</span>
                     <div class="contenedor_vimeo" v-if="videoSeleccionado === 'ingles'">
-                        <iframe src="https://player.vimeo.com/video/448931917" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                        <iframe src="https://player.vimeo.com/video/459426916" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                     </div>                    
                     <div class="contenedor_vimeo" v-else>
-                        <iframe src="https://player.vimeo.com/video/448931917" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                        <iframe src="https://player.vimeo.com/video/459428450" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                     </div>                    
                 </div>
                 <div class="col-md-12" v-else>
