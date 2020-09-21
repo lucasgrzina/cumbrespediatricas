@@ -95,7 +95,19 @@ class Encuestas extends Model
     public function getValorResp5Attribute($value) 
     {
         return $this->valorResp($this->attributes['resp_5']);
-    }          
+    } 
+    public function getValorResp65Attribute($value) 
+    {
+        return $this->valorResp($this->attributes['resp_6']);
+    } 
+    public function getValorResp7Attribute($value) 
+    {
+        return $this->valorResp($this->attributes['resp_7']);
+    } 
+    public function getValorResp8Attribute($value) 
+    {
+        return $this->valorResp($this->attributes['resp_8']);
+    }                      
             
     
     protected function valorResp($value) {
