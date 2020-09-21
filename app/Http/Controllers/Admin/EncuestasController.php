@@ -112,6 +112,7 @@ class EncuestasController extends CrudAdminController
             'valor_resp_5' => 'Pregunta 5',
             'valor_resp_6' => 'Pregunta 6',
             'valor_resp_7' => 'Pregunta 7',
+            'valor_resp_8' => 'Pregunta 8',
         ];
         $format = [
         ];
