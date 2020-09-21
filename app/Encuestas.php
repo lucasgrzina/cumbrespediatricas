@@ -96,7 +96,7 @@ class Encuestas extends Model
     {
         return $this->valorResp($this->attributes['resp_5']);
     } 
-    public function getValorResp65Attribute($value) 
+    public function getValorResp6Attribute($value) 
     {
         return $this->valorResp($this->attributes['resp_6']);
     } 
