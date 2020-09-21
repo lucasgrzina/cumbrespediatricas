@@ -74,7 +74,7 @@ class Encuestas extends Model
      *
      * @var array
      */
-    protected $appends = ['valor_resp_1','valor_resp_2','valor_resp_3','valor_resp_4','valor_resp_5'];
+    protected $appends = ['valor_resp_1','valor_resp_2','valor_resp_3','valor_resp_4','valor_resp_5','valor_resp_6','valor_resp_7','valor_resp_8'];
 
     public function getValorResp1Attribute($value) 
     {
