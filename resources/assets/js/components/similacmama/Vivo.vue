@@ -34,7 +34,7 @@
                             <div class="overlay"></div>
                             <iframe v-if="evento.key === 'similacmama169'" src="https://player.vimeo.com/video/457475164" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                             <iframe v-else-if="evento.key === 'similacmama179'" src="https://player.vimeo.com/video/457475561" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                            <iframe v-else-if="evento.key === 'similacmama229'" src="https://player.vimeo.com/video/457475561" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                            <iframe v-else-if="evento.key === 'similacmama229'" src="https://player.vimeo.com/video/460540053" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                             <iframe v-else src="https://player.vimeo.com/video/457475164" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>                            
                         </div>                    
                         <div class="embed-container" v-else>
@@ -176,36 +176,40 @@
                 },
                 encuesta: {
                     preguntas: [
-                        {key: 1,tit: '¿Cómo te pareció el contenido y claridad del mensaje de la conferencia?', preg: '', tipo: 'C'},
-                        {key: 2,tit: '¿Considerarías la compra de un complemento alimenticio como Similac Mamá?', preg: '', tipo: 'C'},
-                        {key: 3,tit: '¿Qué tal te pareció la logística y experiencia de este evento?', preg: '', tipo: 'C'},
-                        {key: 4,tit: '¿El evento cumplió con tus expectativas?', preg: '', tipo: 'C'},
-                        {key: 5,tit: '¿Cómo te enteraste del evento?', preg: '', tipo: 'C'},
+                        {key: 1,tit: 'El contenido del programa es relevante para mi consultorio', preg: '', tipo: 'C'},
+                        {key: 2,tit: 'Los oradores y contenido son interesantes', preg: '', tipo: 'C'},
+                        {key: 3,tit: 'Logística y experiencia del evento: calidad audiovisual y de la transmisión son buenas y sin interrupciones', preg: '', tipo: 'C'},
+                        {key: 4,tit: 'Probablemente participaré en las ofertas visuales futuras de Abbott Nutrición', preg: '', tipo: 'C'},
+                        {key: 5,tit: 'Probablemente recomendaré este webinario a mis colegas', preg: '', tipo: 'C'},
+                        {key: 6,tit: '¿Qué temas son de mayor interés para usted relacionados con la nutrición?', preg: '', tipo: 'T'},
+                        {key: 7,tit: '¿Cuál es el aprendizaje más importante en este programa que pudiera traducirse a su consultorio clínico?', preg: '', tipo: 'T'},
+                        {key: 8,tit: '¿Alguna sugerencia para hacer este webinar más efectivo?', preg: '', tipo: 'T'},
+
                     ],
                     opciones: [
                         {key: 1, 
                             valores: [
-                                'Malo', 'Regular', 'Bueno', 'Excelente'
+                                'Totalmente de acuerdo', 'De acuerdo', 'Ni en desacuerdo ni de acuerdo', 'En desacuerdo','Totalmente en desacuerdo'
                             ] 
                         },
                         {key: 2, 
                             valores: [
-                                'Si', 'No', 'Talvez'
+                                'Totalmente de acuerdo', 'De acuerdo', 'Ni en desacuerdo ni de acuerdo', 'En desacuerdo','Totalmente en desacuerdo'
                             ]
                         },                        
                         {key: 3, 
                             valores: [
-                                'Malo', 'Regular', 'Bueno', 'Excelente'
+                                'Totalmente de acuerdo', 'De acuerdo', 'Ni en desacuerdo ni de acuerdo', 'En desacuerdo','Totalmente en desacuerdo'
                             ]
                         },
                         {key: 4, 
                             valores: [
-                                'Si', 'No', 'Talvez'
+                                'Totalmente de acuerdo', 'De acuerdo', 'Ni en desacuerdo ni de acuerdo', 'En desacuerdo','Totalmente en desacuerdo'
                             ]
                         },      
                         {key: 5, 
                             valores: [
-                                'Internet', 'Invitación en Instagram', 'Por alguna amiga o conocida', 'Por recomendación de mi médico'
+                                'Totalmente de acuerdo', 'De acuerdo', 'Ni en desacuerdo ni de acuerdo', 'En desacuerdo','Totalmente en desacuerdo'
                             ]
                         },                                            
                     ],
