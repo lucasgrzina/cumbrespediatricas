@@ -124,6 +124,15 @@ Route::namespace('Front')->name($key.'.')->domain('danoneday.com.ar')->group($ap
 Route::namespace('Front')->name($key.'.')->domain('www.danoneday.com.ar')->group($appRoutes);
 
 
+$keyForoSas = 'forosas';
+$appRoutesForoSas = function() use ($keyForoSas){
+    Route::get('/', function() {
+        return "";
+    });
+};
+Route::namespace('Front')->name($keyForoSas.'.')->domain('dev.foro-sas.com.ar')->group($appRoutesForoSas);
+Route::namespace('Front')->name($keyForoSas.'.')->domain('www.foro-sas.com.ar')->group($appRoutesForoSas);
+
 
 $eventos = config('constantes.eventos',[]);
 foreach ($eventos as $key => $data) {

@@ -8,7 +8,7 @@ return [
             'controller' => 'HomeCumbrePediatricaController',
             'view' => 'cumbre',
             'cookie' => 'cumbre3',
-            'activo' => true,
+            'activo' => false,
             'registroExterno' => true,
             'urlWebServiceRegistrado' => 'https://www.quimicavirtualevents.com/recorrido/app/webservice.php',
             'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbrepediatrica',
@@ -28,7 +28,7 @@ return [
             'controller' => 'HomeDanonedayMamaController',
             'view' => 'danoneday',
             'cookie' => 'danoneday',
-            'activo' => true,
+            'activo' => false,
             'evitarRoute' => true 
         ],
         'similacmamatest' => [
@@ -53,7 +53,7 @@ return [
             'controller' => 'HomeSimilaCMamaController',
             'view' => 'similacmama',
             'cookie' => 'similacmama_17_9',
-            'activo' => true
+            'activo' => false
         ],        
         'cumbretest' => [
             'nombre' => 'Abbott Cumbre pediatrica - 3/5 (Test)',
@@ -73,7 +73,7 @@ return [
             'controller' => 'HomeSimilaCMamaController',
             'view' => 'similacmama22',
             'cookie' => 'similacmama_22_9',
-            'activo' => true
+            'activo' => false
         ],  
         'danonedaytest' => [
             'nombre' => 'Danone Day (test)',
@@ -81,8 +81,18 @@ return [
             'controller' => 'HomeDanonedayMamaController',
             'view' => 'danoneday',
             'cookie' => 'danonedaytest',
-            'activo' => true 
-        ],                                              
+            'activo' => false 
+        ],     
+        
+        'forosas' => [
+            'nombre' => 'Foro Sas',
+            'prefix' => 'forosas',
+            'controller' => 'HomeDanonedayMamaController',
+            'view' => 'danoneday',
+            'cookie' => 'danoneday',
+            'activo' => false,
+            'evitarRoute' => true 
+        ],        
     ],
     'recaptcha' => [
         'key' => '6LcNPcYZAAAAAI5sgO4CAlZxlGHgADMXtUCbARnh',
