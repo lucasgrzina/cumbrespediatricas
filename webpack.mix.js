@@ -32,6 +32,13 @@ mix.js('resources/assets/js/cumbre.js', 'public/js')
       'public/css/utils.css',
    ], 'public/css/danoneday.css');     
 
+   mix.js('resources/assets/js/forosas.js', 'public/js')
+   .styles([
+      'public/css/bootstrap.min.css',
+      'public/css/styles_forosas.css',
+      'public/css/utils.css',
+   ], 'public/css/forosas.css');        
+
 if (mix.inProduction()) {
    mix.version();
 }   

@@ -87,10 +87,10 @@ return [
         'forosas' => [
             'nombre' => 'Foro Sas',
             'prefix' => 'forosas',
-            'controller' => 'HomeDanonedayMamaController',
-            'view' => 'danoneday',
-            'cookie' => 'danoneday',
-            'activo' => false,
+            'controller' => 'HomeForoSasController',
+            'view' => 'forosas',
+            'cookie' => 'forosas',
+            'activo' => true,
             'evitarRoute' => true 
         ],        
     ],

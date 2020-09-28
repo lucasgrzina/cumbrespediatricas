@@ -1,0 +1,152 @@
+@font-face {
+    font-family: 'bariolbold';
+    src: url('../fonts/bariol_bold-webfont.woff2') format('woff2'),
+         url('../fonts/bariol_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'gotham';
+    src: url('../fonts/gotham-bolditalic-webfont.woff2') format('woff2'),
+         url('../fonts/gotham-bolditalic-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'gotham';
+    src: url('../fonts/gotham-medium-webfont.woff2') format('woff2'),
+         url('../fonts/gotham-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gotham';
+    src: url('../fonts/gotham-mediumitalic-webfont.woff2') format('woff2'),
+         url('../fonts/gotham-mediumitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+.bg-blue {
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../img/forosas/bg-blue.jpg);
+    background-color: #000;
+	overflow: hidden;
+	background-attachment: fixed;
+	background-position: center;
+}
+
+.counter{
+	position: fixed;
+	right: -80px;
+	top: 30px;
+	background-image: url(../img/forosas/bg-count.png);
+	background-repeat: no-repeat;
+    background-size: contain;
+    width: 400px;
+    height: 300px;
+    padding: 15px 100px 20px 40px;
+}
+.counter p{
+	 font-family: 'gotham';
+	 color: #fff;
+	 font-size: 18px;
+	 line-height: 20px;
+	 font-weight: bold;
+	 font-style: italic;
+	 text-align: center;
+	 margin-bottom: 5px;
+}
+.counter .timer{
+	color: #fff;
+    padding: 0 40px;
+}
+
+.counter .timer .block-time{
+    padding: 0 5px !important;
+}
+
+.counter .timer .block-time span{
+	position: relative;
+	float: left;
+	text-align: center;
+	width: 100%;
+	font-family: 'gotham';
+
+}
+
+.counter .timer .block-time span.num{
+	font-weight: bold;
+	font-style: italic;
+	font-size: 25px;
+	line-height: 25px;
+}
+.counter .timer .block-time span.text{
+	font-weight: normal;
+    font-style: italic;
+    font-size: 12px;
+}
+
+.content-logo{
+	height: 100vh;
+    align-items: center;
+    display: flex;
+}
+
+.content-logo a{
+	height: 200px;
+    display: block;
+    float: none;
+    margin: 0 auto;
+}
+.content-logo a img{
+	height: 100%;
+}
+
+.content-date{
+	position: fixed;
+	top: calc(100vh - 100px);
+	left:calc(50% - 250px);
+	width: 90%;
+	max-width: 500px;
+	z-index: 2;
+}
+
+.content-date img{
+	width: 100%;
+}
+@media (max-width: 991px){
+	
+}
+
+
+@media (max-width: 768px){
+	.bg-blue {
+		background-image: url(../img/forosas/bg-blue-mb.jpg);
+		background-attachment: fixed;
+	}
+
+	.content-logo a{
+		height: 120px;
+	}
+
+	
+}
+
+@media (max-width: 650px){
+	body{
+		overflow: hidden;
+	}
+	.content-date{
+		position: fixed;
+		top: calc(100vh - 140px);
+		left:calc(50% - 150px);
+		max-width: 300px;
+		z-index: 2;
+	}
+}
