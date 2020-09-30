@@ -1,5 +1,14 @@
 Options -MultiViews -Indexes
 RewriteEngine On
+RewriteCond %{HTTP_HOST} ^danoneday.com.ar [NC]
+RewriteRule ^(.*)$ https://www.danoneday.com.ar/$1 [L,R=301]
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^foro-sas.com.ar [NC]
+RewriteRule ^(.*)$ https://www.foro-sas.com.ar/$1 [L,R=301]
+
+
+RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
 RewriteEngine On
@@ -23,3 +32,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !^/public/
 RewriteRule ^(css|js|images|img|admin|bootstrap|fonts|uploads|vendor)/(.*)$ public/$1/$2 [L,NC]
+
+# Hide a specific file
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>
