@@ -35,6 +35,28 @@ class Encuestas extends Model
         'resp_6',
         'resp_7',
         'resp_8',
+        'resp_9',
+        'resp_10',
+        'resp_11',
+        'resp_12',
+        'resp_13',
+        'resp_14',
+        'resp_15',
+        'resp_16',
+        'resp_17',
+        'resp_18',
+        'resp_19',
+        'resp_20',
+        'resp_21',
+        'resp_22',
+        'resp_23',
+        'resp_24',
+        'resp_25',
+        'resp_26',
+        'resp_27',
+        'resp_28',
+        'resp_29',
+        'resp_30',
         'registrado_id',
         'evento'
         //'enabled'
@@ -46,17 +68,7 @@ class Encuestas extends Model
      * @var array
      */
     protected $casts = [
-        'resp_1' => 'string',
-        'resp_2' => 'string',
-        'resp_3' => 'string',
-        'resp_4' => 'string',
-        'resp_5' => 'string',
-        'resp_6' => 'string',
-        'resp_7' => 'string',
-        'resp_8' => 'string',
         'registrado_id' => 'integer',
-        
-        //'enabled' => 'boolean'
     ];
 
     /**

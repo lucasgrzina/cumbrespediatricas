@@ -76,7 +76,7 @@
                         </div>
 
                         <div class="modal-body">
-                            <div class="container-encuesta">
+                            <!--div class="container-encuesta">
                                 <div class="row" v-for="(item,index) in encuesta.preguntas" :key="index">
                                     <div class="col-12">
                                         <h5>{{item.key}}) {{item.tit}}</h5>
@@ -104,7 +104,36 @@
 
                                 </div>
                                 <i class="fa fa-spinner fa-spin fa-fw" style="opacity:0;"></i>
-                            </div>
+                            </div-->
+                            <div class="container-encuesta">
+                                <div class="row" v-for="(item,index) in encuesta.preguntas" :key="index">
+                                    <div class="col-12">
+                                        <h5>{{item.key}}) {{item.tit}}</h5>
+                                        <p>{{item.preg}}</p>
+                                    </div>
+                                    <div class="col-12">
+                                        <template v-if="item.tipo === 'C'">
+                                            <template v-for="(subitem, indexOpt) in obtenerOpcionesPorKey(item.key_respuesta)">
+                                            <div class="form-check-inline" :key="'opt_' + indexOpt">
+                                                <label class="form-check-label">
+                                                    <input type="radio" class="form-check-input" :name="'p_'+item.key+'_r_'+ indexOpt" :value="subitem" v-model="encuesta.form['resp_' + item.key]"> {{subitem}}
+                                                </label>
+                                            </div>
+                                            <br :key="indexOpt">
+                                            </template>
+                                            
+                                        </template>
+                                        <template v-else>
+                                            <textarea class="form-control" :name="'p_'+item.key" v-model="encuesta.form['resp_' + item.key]"></textarea>
+                                        </template>
+                                    </div>
+                                </div>
+
+                                <div class="text-right">
+
+                                </div>
+                                <i class="fa fa-spinner fa-spin fa-fw" style="opacity:0;"></i>
+                            </div>                        
                         </div>
 
                         <div class="modal-footer">
@@ -192,7 +221,7 @@
                 form: {
                     pregunta: null
                 },
-                encuesta: {
+                /*encuesta: {
                     preguntas: [
                         {key: 1,tit: 'El contenido del programa es relevante para mi consultorio', preg: '', tipo: 'C'},
                         {key: 2,tit: 'Los oradores y contenido son interesantes', preg: '', tipo: 'C'},
@@ -222,7 +251,75 @@
                     },
                     enviando: false,
                     errors: [],
-                },
+                },*/
+                
+                encuesta: {
+                    preguntas: [
+                        {key: 1,tit: 'El contenido del webinar es relevante para mi práctica', preg: '', tipo: 'C', key_respuesta: 1},
+                        {key: 2,tit: 'Los expositores y el contenido son interesantes', preg: '', tipo: 'C', key_respuesta: 1},
+                        {key: 3,tit: 'La transmisión audiovisual es fluida y de alta calidad', preg: '', tipo: 'C', key_respuesta: 1},
+                        {key: 4,tit: 'Es probable que participe en futuros eventos virtuales de Abbott Nutrición', preg: '', tipo: 'C', key_respuesta: 1},
+                        {key: 5,tit: 'Es probable que recomiende este evento virtual a mis colegas', preg: '', tipo: 'C', key_respuesta: 1},
+
+                        {key: 6,tit: 'HMB es un ingrediente comprobado que se enfoca en la recuperar, preservar y aumentar la masa muscular', preg: '', tipo: 'C', key_respuesta: 2},
+                        {key: 7,tit: 'La pérdida de masa muscular debería abordarse temprano para impactar de manera positiva los resultados clínicos', preg: '', tipo: 'C', key_respuesta: 2},
+                        {key: 8,tit: 'Los suplementos nutricionales orales han demostrado que contribuyen a prevenir la pérdida de masa muscular y mejoran los resultados clínicos', preg: '', tipo: 'C', key_respuesta: 2},
+                        {key: 9,tit: 'Minimizar la pérdida de masa muscular es importante en el manejo de pacientes con COVID-19 para mantener el estado funcional', preg: '', tipo: 'C', key_respuesta: 2},
+                        {key: 10,tit: 'La evidencia reciente en las guías ESPEN COVID-19 indica un posible impacto positivo de la actividad física en conjunto con suplementación con aminoácidos o sus metabolitos como el HMB', preg: '', tipo: 'C', key_respuesta: 2},
+
+                        {key: 11,tit: 'Las fórmulas nutricionales específicas para diabéticos, utilizadas como sustituto de comidas, han demostrado reducir significativamente la respuesta de glucosa en sangre postprandial ', preg: '', tipo: 'C', key_respuesta: 2},
+                        {key: 12,tit: 'Se ha demostrado que las fórmulas nutricionales específicas para diabéticos, como parte de un plan de intervención de estilo de vida, reducen significativamente la A1C', preg: '', tipo: 'C', key_respuesta: 2},
+                        {key: 13,tit: 'Se ha demostrado que las Fórmulas de nutrición específicas para diabéticos compuestas de carbohidratos de digestión lenta, fibras dietéticas y MUFA estimulan la secreción de GLP-1.', preg: '', tipo: 'C', key_respuesta: 2},
+                        {key: 14,tit: 'Se ha demostrado que las fórmulas de nutrición específicas para diabéticos pueden ayudar a complementar el objetivo de los medicamentos para la diabetes para ayudar a controlar los niveles de glucosa en sangre', preg: '', tipo: 'C', key_respuesta: 2},
+                        {key: 15,tit: 'Las fórmulas nutricionales específicas para diabéticos, como parte de una intervención integral de estilo de vida, mejoran múltiples resultados de salud (por ejemplo, control glucémico, peso corporal, presión arterial)', preg: '', tipo: 'C', key_respuesta: 2},
+                        {key: 16,tit: 'La terapia de nutrición médica se ha asociado con una mejor calidad de vida', preg: '', tipo: 'C', key_respuesta: 2},
+
+
+                        {key: 17,tit: '¿Qué temas son de mayor interés para usted, relacionados con la nutrición y el impacto de COVID-19?', preg: '', tipo: 'T'},
+                        {key: 18,tit: 'A medida que las restricciones relacionadas con COVID-19 comienzan a disminuir, ¿le interesaría algún tema adicional sobre el manejo nutricional de pacientes diabéticos?', preg: '', tipo: 'T'},
+                        {key: 19,tit: 'Comparta con nosotros sus conocimientos sobre el tratamiento de pacientes diabéticos durante COVID-19.', preg: '', tipo: 'T'},
+                        {key: 20,tit: '¿Cuál es el aprendizaje más importante en este evento que podría traducirse en su práctica clínica?', preg: '', tipo: 'T'},
+                        {key: 21,tit: '¿Alguna sugerencia para que el webinar sea más efectivo? ', preg: '', tipo: 'T'},
+
+                    ],
+                    opciones: [
+                        {key: 1, 
+                            valores: [
+                                'Totalmente en desacuerdo', 'En desacuerdo', 'Ni en desacuerdo ni de acuerdo', 'De acuerdo','Totalmente de acuerdo'
+                            ] 
+                        },
+                        {key: 2, 
+                            valores: [
+                                'Igual que antes', 'Ligeramente más que antes', 'Moderadamente más que antes', 'Mucho más que antes','Significativamente más que antes'
+                            ]
+                        }
+                    ],
+                    form: {
+                        resp_1: null,
+                        resp_2: null,
+                        resp_3: null,
+                        resp_4: null,
+                        resp_5: null,
+                        resp_6: null,
+                        resp_7: null,
+                        resp_8: null,
+                        resp_9: null,
+                        resp_10: null,
+                        resp_11: null,
+                        resp_12: null,
+                        resp_13: null,
+                        resp_14: null,
+                        resp_15: null,
+                        resp_16: null,
+                        resp_17: null,
+                        resp_18: null,
+                        resp_19: null,
+                        resp_20: null,
+                        resp_21: null,
+                    },
+                    enviando: false,
+                    errors: [],
+                },                
                 showModal: false,
                 enviando: false,
                 enviandoEncuesta: false
@@ -351,7 +448,12 @@
             enviarSalidaUsuario: function() {
                 let vm = this
                 return axios.post(vm.urlEnviarSalidaUsuario,{});
-            }   
+            },
+            obtenerOpcionesPorKey: function (key) {
+                let vm = this
+                let opciones = _.find(vm.encuesta.opciones,{key:key})
+                return opciones.valores
+            }
         }
     }
 </script>

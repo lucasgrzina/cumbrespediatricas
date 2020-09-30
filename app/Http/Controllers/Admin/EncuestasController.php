@@ -105,15 +105,12 @@ class EncuestasController extends CrudAdminController
         $name = 'Encuestas';
         $header = [
             'id' => 'ID',
-            'valor_resp_1' => 'Pregunta 1',
-            'valor_resp_2' => 'Pregunta 2',
-            'valor_resp_3' => 'Pregunta 3',
-            'valor_resp_4' => 'Pregunta 4',
-            'valor_resp_5' => 'Pregunta 5',
-            'valor_resp_6' => 'Pregunta 6',
-            'valor_resp_7' => 'Pregunta 7',
-            'valor_resp_8' => 'Pregunta 8',
         ];
+        
+        for($i=1;$i<=30;$i++) {
+            $header['resp_'.$i] = 'Preg. '.$i;
+        }
+
         $format = [
         ];
         return $this->_exportXls($data,$header,$format,$name);

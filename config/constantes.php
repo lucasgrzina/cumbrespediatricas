@@ -92,7 +92,19 @@ return [
             'cookie' => 'forosas',
             'activo' => true,
             'evitarRoute' => true 
-        ],        
+        ],     
+        'nasa' => [
+            'nombre' => 'Abbott Cumbre Nasa',
+            'prefix' => 'cumbrenasa',
+            'controller' => 'HomeCumbreNasaController',
+            'view' => 'nasa',
+            'cookie' => 'cumbrenasa',
+            'activo' => true,
+            'registroExterno' => true,
+            'urlWebServiceRegistrado' => 'https://www.quimicavirtualevents.com/recorrido/app/webservice.php',
+            'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbrepediatrica',
+            'urlCertificado' => 'https://www.quimicavirtualevents.com/recorrido/app/certificado.php?id=_ID_&token=_TOKEN_'
+        ],           
     ],
     'recaptcha' => [
         'key' => '6LcNPcYZAAAAAI5sgO4CAlZxlGHgADMXtUCbARnh',
