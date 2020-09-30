@@ -2,6 +2,9 @@
     <div>
 	  <section>
 	  	<div class="container">
+            <div class="circle-container" v-for="index in 200" :key="index">
+                <div class="circle"></div>
+            </div>
 	  		<div class="counter">
 	  				<p>PRÓXIMO VIVO</p>
 	  				<span id="countdown" class="row timer">

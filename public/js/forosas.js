@@ -45371,7 +45371,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45382,6 +45382,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -45483,59 +45486,78 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("section", [
+      _c(
+        "div",
+        { staticClass: "container" },
+        [
+          _vm._l(200, function(index) {
+            return _c("div", { key: index, staticClass: "circle-container" }, [
+              _c("div", { staticClass: "circle" })
+            ])
+          }),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
+          _vm._m(2)
+        ],
+        2
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("section", [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "counter" }, [
-            _c("p", [_vm._v("PRÓXIMO VIVO")]),
-            _vm._v(" "),
-            _c(
-              "span",
-              { staticClass: "row timer", attrs: { id: "countdown" } },
-              [
-                _c("div", { staticClass: "col block-time days" }, [
-                  _c("span", { staticClass: "num" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "text" }, [_vm._v("Días")])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col block-time hours" }, [
-                  _c("span", { staticClass: "num" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "text" }, [_vm._v("Horas")])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col block-time minutes" }, [
-                  _c("span", { staticClass: "num" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "text" }, [_vm._v("Min.")])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col block-time seconds" }, [
-                  _c("span", { staticClass: "num" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "text" }, [_vm._v("Seg.")])
-                ])
-              ]
-            )
-          ]),
+    return _c("div", { staticClass: "counter" }, [
+      _c("p", [_vm._v("PRÓXIMO VIVO")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "row timer", attrs: { id: "countdown" } }, [
+        _c("div", { staticClass: "col block-time days" }, [
+          _c("span", { staticClass: "num" }),
           _vm._v(" "),
-          _c("div", { staticClass: "row content-logo" }, [
-            _c("a", [_c("img", { attrs: { src: "img/forosas/logo.png" } })])
-          ]),
+          _c("span", { staticClass: "text" }, [_vm._v("Días")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col block-time hours" }, [
+          _c("span", { staticClass: "num" }),
           _vm._v(" "),
-          _c("div", { staticClass: "content-date" }, [
-            _c("img", { attrs: { src: "img/forosas/date.png" } })
-          ])
+          _c("span", { staticClass: "text" }, [_vm._v("Horas")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col block-time minutes" }, [
+          _c("span", { staticClass: "num" }),
+          _vm._v(" "),
+          _c("span", { staticClass: "text" }, [_vm._v("Min.")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col block-time seconds" }, [
+          _c("span", { staticClass: "num" }),
+          _vm._v(" "),
+          _c("span", { staticClass: "text" }, [_vm._v("Seg.")])
         ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row content-logo" }, [
+      _c("a", [_c("img", { attrs: { src: "img/forosas/logo.png" } })])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "content-date" }, [
+      _c("img", { attrs: { src: "img/forosas/date.png" } })
     ])
   }
 ]
