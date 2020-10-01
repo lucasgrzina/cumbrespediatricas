@@ -17,7 +17,8 @@
 
 @font-face {
     font-family: 'gotham';
-    src: url('../fonts/gotham-medium-webfont.woff2') format('woff2'),
+	src: url('../fonts/gotham-medium-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/gotham-medium-webfont.woff2') format('woff2'),
          url('../fonts/gotham-medium-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -31,28 +32,47 @@
     font-style: italic;
 }
 
+
 .bg-blue {
 	background-repeat: no-repeat;
     background-size: cover;
     background-image: url(../img/forosas/bg-blue.jpg);
     background-color: #000;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	background-attachment: fixed;
 	background-position: center;
 }
-
-.counter{
-	position: fixed;
-	right: -80px;
-	top: 30px;
+.bg-blue.animado {
+	background-image: url(../img/forosas/bg-blue.gif);
+}
+.solapa.fondo {
 	background-image: url(../img/forosas/bg-count.png);
 	background-repeat: no-repeat;
     background-size: contain;
-    width: 400px;
-    height: 300px;
+    height: 100px;
     padding: 15px 100px 20px 40px;
+
 }
-.counter p{
+.solapa {
+	position: fixed;
+	right: -80px;
+    width: 400px;
+
+}
+.solapa.counter{
+	top: 30px;
+}
+
+.solapa.solapa2 {
+	top: 125px;
+	padding-top: 10px;
+	cursor: pointer;
+}
+.solapa.solapa3 {
+	top: 220px;
+	cursor: pointer;
+}
+.solapa p{
 	 font-family: 'gotham';
 	 color: #fff;
 	 font-size: 18px;
@@ -61,7 +81,20 @@
 	 font-style: italic;
 	 text-align: center;
 	 margin-bottom: 5px;
+	 text-transform: uppercase;
 }
+.solapa2 p {
+	font-size: 20px;
+    line-height: 25px;
+    padding-top: 15px;
+}
+.solapa3 p {
+	font-size: 25px;
+	line-height: 25px;
+	padding-top: 20px;
+}
+
+
 .counter .timer{
 	color: #fff;
     padding: 0 40px;
@@ -97,14 +130,27 @@
     align-items: center;
     display: flex;
 }
-
+.content-logo-login{
+	height: 40vh;
+    align-items: center;
+    display: flex;
+}
 .content-logo a{
 	height: 200px;
     display: block;
     float: none;
     margin: 0 auto;
 }
-.content-logo a img{
+
+.content-logo-login a {
+	height: 120px;
+    display: block;
+    float: none;
+    margin: 0 auto;
+	
+}
+
+.content-logo a img, .content-logo-login a img{
 	height: 100%;
 }
 
@@ -126,6 +172,131 @@
 	overflow: hidden;
 	position: relative;
   }
+
+.content-form form {
+	max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+	padding: 20px 20px 40px;
+	background-image: url(../img/forosas/fondo-form-login.png);
+	background-repeat: repeat-x;
+	border-radius: 20px;
+	position: relative;
+	-webkit-box-shadow: -10px 10px 10px -5px rgba(0,0,0,0.75);
+	-moz-box-shadow: -10px 10px 10px -5px rgba(0,0,0,0.75);
+	box-shadow: -10px 10px 10px -5px rgba(0,0,0,0.75);	
+	margin-bottom: 30px;
+}
+.content-form {
+	position: relative;
+	min-height: 200px;
+}
+.content-form .form-control {
+	background-color: #082268;
+    border: 0;
+	height: 50px;
+	line-height: 0;
+    padding: 20px;
+    color: #ffffff;
+    border-radius: 10px;
+}
+.content-form .btn-ingresar {
+	position: absolute;
+	max-width: 200px;
+	right: 0;
+}
+.content-form .btn-ingresar img {
+	max-width: 100%;
+}
+
+
+.content-form ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: #ffffff;
+  }
+  .content-form ::-moz-placeholder { /* Firefox 19+ */
+	color: #ffffff;
+  }
+  .content-form :-ms-input-placeholder { /* IE 10+ */
+	color: #ffffff;
+  }
+  .content-form :-moz-placeholder { /* Firefox 18- */
+	color: #ffffff;
+  }
+
+.lnk-registrate {
+	color: #fff!important;
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+	font-family: 'gotham';
+	font-style: italic;
+	font-size: 17px;
+}
+.modal-backdrop
+{
+    opacity:0.5 !important;
+}
+
+#modal-solapas .modal-content {
+	background-color: transparent;
+	border: 0;
+
+}
+#modal-solapas .modal-header {
+	border-bottom: 0;
+	padding: 0;
+}
+#modal-solapas .modal-body {
+    background-image: url(../img/forosas/fondo-modal.jpg);
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-color: #fff;
+    opacity: 1;
+    padding: 0;
+}
+#modal-solapas .modal-body img {
+	max-width: 100%;
+}
+#modal-solapas .modal-body h2 {
+    background-image: url(../img/forosas/fondo-barra_modal.png);
+    background-repeat: repeat-x;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 10px;
+    font-style: italic;
+
+}
+#modal-solapas .modal-body p {
+	padding-left: 100px;
+    padding-right: 10px;
+    font-size: 13px;
+	line-height: 15px;
+	text-align: justify;
+}
+#modal-solapas .modal-body p::before {
+	content:"• ";
+	color: #27a1d2;
+}
+#modal-solapas .close {
+	margin-bottom: -10px;
+    opacity: 1;	
+}
+#modal-solapas .close img{
+	width: 17px;
+}
+.con-padding {
+	padding-right: 30px;
+	padding-left: 30px;
+}
+.control-audio {
+	position: fixed;
+    right: 10px;
+    bottom: 0;
+}
+.control-audio button img {
+	max-width: 30px;
+}
 @media (max-width: 991px){
 	
 }
@@ -136,11 +307,17 @@
 		background-image: url(../img/forosas/bg-blue-mb.jpg);
 		background-attachment: fixed;
 	}
-
-	.content-logo a{
+	.bg-blue.animado {
+		background-image: url(../img/forosas/bg-blue-mb.gif);
+	}
+	.content-logo a, .content-logo-login a{
 		height: 120px;
 	}
 
+	#modal-solapas .modal-body p {
+		padding-left: 0px;
+		padding-right: 0px;
+	}	
 	
 }
 

@@ -17,6 +17,7 @@ window.Vue = require('vue');
 
 //Vue.component('contenedor', require('./components/Contenedor.vue'));
 Vue.component('home', require('./components/forosas/Home.vue'));
+Vue.component('registro', require('./components/forosas/Registro.vue'));
 
 const app = new Vue({
     el: '#app',

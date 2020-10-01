@@ -128,10 +128,15 @@ $keyForoSas = 'forosas';
 $appRoutesForoSas = function() use ($keyForoSas){
     $data = config('constantes.eventos.forosas',[]); 
     Route::get('/', $data['controller'].'@index')->name('home');
+    Route::get('/registro', $data['controller'].'@registro')->name('registro');
+    Route::post('/registrar', $data['controller'].'@registrar')->name('registrar');
+    Route::post('/login', $data['controller'].'@login')->name('login');
 };
-Route::namespace('Front')->name($keyForoSas.'.')->domain('dev.foro-sas.com.ar')->group($appRoutesForoSas);
-Route::namespace('Front')->name($keyForoSas.'.')->domain('www.foro-sas.com.ar')->group($appRoutesForoSas);
-
+if (env('APP_ENV','production') === 'local') {
+    Route::namespace('Front')->name($keyForoSas.'.')->domain('dev.foro-sas.com.ar')->group($appRoutesForoSas);
+} else {
+    Route::namespace('Front')->name($keyForoSas.'.')->domain('www.foro-sas.com.ar')->group($appRoutesForoSas);
+}
 
 $eventos = config('constantes.eventos',[]);
 foreach ($eventos as $key => $data) {

@@ -3,13 +3,13 @@
 namespace App;
 
 use Eloquent as Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-
-class Registrado extends Model
+class Registrado extends Authenticatable
 {
     public $table = 'registrados';
 
-    
+    protected $guard = 'web';
     public $fillable = [
         'nombre',
         'apellido',

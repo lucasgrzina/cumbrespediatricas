@@ -45280,6 +45280,7 @@ window.Vue = __webpack_require__(36);
 
 //Vue.component('contenedor', require('./components/Contenedor.vue'));
 Vue.component('home', __webpack_require__(79));
+Vue.component('registro', __webpack_require__(84));
 
 var app = new Vue({
   el: '#app'
@@ -45371,7 +45372,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45382,6 +45383,112 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -45439,16 +45546,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
+            solapa: null,
             seconds: this.segundosRestantes,
             countdownTimer: null,
             info: {},
-            errors: []
+            errors: [],
+            audio: {
+                muted: false,
+                element: null
+            }
         };
     },
     mounted: function mounted() {
-        console.debug('Home mounted', this.ahora, this.segundosRestantes);
+        var imgFondoDesk = new Image();
+        imgFondoDesk.onload = function () {
+            console.debug('cargoooo');
+            setTimeout(function () {
+                console.debug('agregooo');
+                $('body').addClass('animado');
+            }, 1);
+        };
+        imgFondoDesk.src = 'public/img/forosas/bg-blue.gif';
 
         this.countdownTimer = setInterval(this.timer, 1000);
+
+        this.audio.element = document.getElementById("audio");
+
+        this.$nextTick(function () {
+            if (this.audio.element.paused) {
+                this.audio.element.play();
+                this.audio.element.muted = false;
+            }
+            this.audio.muted = this.audio.element.paused;
+        });
     },
 
     methods: {
@@ -45474,6 +45604,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             } else {
                 this.seconds--;
             }
+        },
+        mostrarSolapa: function mostrarSolapa(solapa) {
+            console.debug(solapa);
+            this.solapa = solapa;
+            this.$nextTick(function () {
+                $('#modal-solapas').modal('show');
+            });
+        },
+        cambiarEstadoAudio: function cambiarEstadoAudio() {
+            if (this.audio.muted) {
+                this.audio.element.play();
+            } else {
+                this.audio.element.pause();
+            }
+
+            this.$nextTick(function () {
+                this.audio.muted = this.audio.element.paused;
+            });
         }
     }
 });
@@ -45490,19 +45638,119 @@ var render = function() {
     _c("section", [
       _c(
         "div",
+        {
+          staticClass: "modal",
+          attrs: {
+            id: "modal-solapas",
+            tabindex: "-1",
+            role: "dialog",
+            "aria-labelledby": "exampleModalCenterTitle",
+            "aria-hidden": "true"
+          }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "modal-dialog", attrs: { role: "document" } },
+            [
+              _c("div", { staticClass: "modal-content" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _vm.solapa === 2
+                  ? _c("div", { staticClass: "modal-body" }, [
+                      _c("h2", [_vm._v("SPEAKERS NACIONALES")]),
+                      _vm._v(" "),
+                      _vm._m(1),
+                      _vm._v(" "),
+                      _c("h2", [_vm._v("SPEAKERS INTERNACIONALES")]),
+                      _vm._v(" "),
+                      _vm._m(2)
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.solapa === 3
+                  ? _c("div", { staticClass: "modal-body" }, [
+                      _c("h2", [_vm._v("CONDUCCIÓN")]),
+                      _vm._v(" "),
+                      _vm._m(3)
+                    ])
+                  : _vm._e()
+              ])
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
         { staticClass: "container" },
         [
+          _c("div", { staticClass: "control-audio" }, [
+            _c("img", {
+              attrs: { src: "img/forosas/logo_ABBVIE.png", width: "100" }
+            }),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn",
+                on: {
+                  click: function($event) {
+                    return _vm.cambiarEstadoAudio()
+                  }
+                }
+              },
+              [
+                _vm.audio.muted
+                  ? _c("img", {
+                      attrs: { src: "img/forosas/volume-mute-solid.png" }
+                    })
+                  : _c("img", {
+                      attrs: { src: "img/forosas/volume-up-solid.png" }
+                    })
+              ]
+            )
+          ]),
+          _vm._v(" "),
           _vm._l(200, function(index) {
             return _c("div", { key: index, staticClass: "circle-container" }, [
               _c("div", { staticClass: "circle" })
             ])
           }),
           _vm._v(" "),
-          _vm._m(0),
+          _vm._m(4),
           _vm._v(" "),
-          _vm._m(1),
+          _c(
+            "div",
+            {
+              staticClass: "solapa fondo solapa2",
+              on: {
+                click: function($event) {
+                  return _vm.mostrarSolapa(2)
+                }
+              }
+            },
+            [_c("p", [_vm._v("Speakers nacionales & internacionales")])]
+          ),
           _vm._v(" "),
-          _vm._m(2)
+          _c(
+            "div",
+            {
+              staticClass: "solapa fondo solapa3",
+              on: {
+                click: function($event) {
+                  return _vm.mostrarSolapa(3)
+                }
+              }
+            },
+            [_c("p", [_vm._v("Conducción")])]
+          ),
+          _vm._v(" "),
+          _vm._m(5),
+          _vm._v(" "),
+          _vm._m(6),
+          _vm._v(" "),
+          _vm._m(7)
         ],
         2
       )
@@ -45514,7 +45762,278 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "counter" }, [
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("img", { attrs: { src: "img/forosas/modal-cerrar.png" } })]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12 con-padding" }, [
+        _c("img", { attrs: { src: "img/forosas/speaker-gabriel.png" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-12 con-padding" }, [
+        _c("p", [
+          _vm._v(
+            "En el año 1984 fundó la revista Apertura junto a su socio Gabriel Griffa, se retiro de ella 10 años mas tarde vendiendo su participación."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Condujo importantes programas radiales en prestigiosas emisoras como FM del Plata, Radio Feeling, Radio América."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "En televisión condujo varios programas de noticias, en Canal 9, en horario central, también condujo “Fuego Cruzado”, en el mismo canal y luego en CVN, así como también “Punto Limite”, en América 24. Además, condujo el programa “Longobardi en vivo”, que se emitió los días martes, a las 22 horas, por el canal de cable C5N, hasta fines del año 2012."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Actualmente conduce el programa “Cada mañana”, en Radio Mitre, de lunes a viernes de 6 a 10 horas, siendo el programa de mayor audiencia radial nacional desde el año 2001."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Desde junio del año 2013, se encuentra en la web el nuevo sitio de opinión www.marcelolongobardi.com."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Se destacó en importantes entrevistas especiales realizadas a políticos internacionales como Berlusconi, Aznar, Felipe González, entre otros destacados."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "En el año 2019 el programa que conduce en CNN fue reconocido con el premio PRODU Awards 2019 en la categoría “Mejor programa informativo”"
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            'En el año 2020 fue nominado a los Premios Emmy. Competirá en el rubro "Reportaje sobresaliente en español" por una entrevista que hizo para su ciclo de televisión que se emite por CNN, “En diálogo con Longobardi”.'
+          ),
+          _c("br"),
+          _vm._v(
+            "Este importante premio es otorgado por National Academy of Television, Arts & Sciences."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Actualmente conduce el programa “En diálogo con Longobardi” en CNN en español, los días domingos a las 22 horas, para toda la comunidad de habla hispana”."
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-12 con-padding" }, [
+        _c("img", { attrs: { src: "img/forosas/speaker-luciana.png" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-12 con-padding" }, [
+        _c("p", [
+          _vm._v(
+            "Presidenta y fundadora de Fundación Más Vida (FMV) de Crohn & Colitis Ulcerosa (FMV)"
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Miembro fundador de la Federación Argentina de Enfermedades Poco Frecuentes (FADEPOF) organización en la que actualmente ocupa la Dirección Ejecutiva y de la que fue Presidente (2014/ 2016) y Secretaria de Comisión Directiva (2012/ 2014)."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Ha sido asesora y posteriormente planta de gabinete de la Presidencia de la Comisión para la Plena Participación e Inclusión de las Personas con Discapacidad (COPIDIS) del Gobierno de CABA."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "A través de las instituciones que lidera, es miembro de la Federación Europea de Asociaciones de Crohn y Colitis (EFCCA), la Alianza Internacional de Organizaciones de Pacientes (IAPO), la Alianza Iberoamericana de Enfermedades Raras (ALIBER) y Rare Diseases International (RDI)."
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12 con-padding" }, [
+        _c("img", { attrs: { src: "img/forosas/speaker-vicente.png" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-12 con-padding" }, [
+        _c("p", [
+          _vm._v(
+            "Catedrático emérito y ex-decano de la Facultad de Ciencias Económicas y Empresariales de la Universidad Pompeu Fabra de Barcelona (UPF)."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Fundador e investigador principal del Centro de Investigación en Economía y Salud (CRES-UPF)."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Miembro del Consejo Rector del Parque de Salud Mar, y delegado de la UPF en TecnoCampus (Empresa, Ingeniería y Salud)."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [_vm._v("MBA ESADE, Master of Science de Purdue University.")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Licenciado y Doctor en Economía por la Universitat de Barcelona. Estudios de doctorado en Salud Pública en la Universidad Johns Hopkins y Visiting Scholar en el Departamento de Economía del Massachusetts Institute of Technology (MIT)."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Ex presidente de la Sociedad Española de Salud Pública y Administración Sanitaria (SESPAS), ex presidente de la Asociación de Economía de la Salud (AES), ex secretario de la Asociación Europea de Salud Pública (EUPHA) y miembro meritorio de CAMFiC."
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-12 con-padding" }, [
+        _c("img", { attrs: { src: "img/forosas/speaker-andre.png" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-12 con-padding" }, [
+        _c("p", [
+          _vm._v(
+            "Fue hasta hace unos meses Economista Senior en Salud del Banco Mundial (Washington DC)."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Participó del movimiento de construcción del Sistema Único de Salud de Brasil."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Actuó como consultor en organismos multilaterales (BID y luego Banco Mundial)."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Cuenta con más de diez libros y 200 trabajos publicados en diversos idiomas y campos del conocimiento."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Graduado en Administración en la fundación Getulio Vargas (FGV), con maestría en economía en la Universidad Estadual de Campinas (UNICAMP)."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Doctorado en Historia Económica en la Universidad de San Pablo (USP) y cursos de especialización en Seguridad Social en la Universidad Harvard (USA)."
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12 con-padding" }, [
+        _c("img", { attrs: { src: "img/forosas/longobardi.png" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-12 con-padding" }, [
+        _c("p", [
+          _vm._v(
+            "En el año 1984 fundó la revista Apertura junto a su socio Gabriel Griffa, se retiro de ella 10 años mas tarde vendiendo su participación."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Condujo importantes programas radiales en prestigiosas emisoras como FM del Plata, Radio Feeling, Radio América."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "En televisión condujo varios programas de noticias, en Canal 9, en horario central, también condujo “Fuego Cruzado”, en el mismo canal y luego en CVN, así como también “Punto Limite”, en América 24. Además, condujo el programa “Longobardi en vivo”, que se emitió los días martes, a las 22 horas, por el canal de cable C5N, hasta fines del año 2012."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Actualmente conduce el programa “Cada mañana”, en Radio Mitre, de lunes a viernes de 6 a 10 horas, siendo el programa de mayor audiencia radial nacional desde el año 2001."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Desde junio del año 2013, se encuentra en la web el nuevo sitio de opinión www.marcelolongobardi.com."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Se destacó en importantes entrevistas especiales realizadas a políticos internacionales como Berlusconi, Aznar, Felipe González, entre otros destacados."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "En el año 2019 el programa que conduce en CNN fue reconocido con el premio PRODU Awards 2019 en la categoría “Mejor programa informativo”"
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            'En el año 2020 fue nominado a los Premios Emmy. Competirá en el rubro "Reportaje sobresaliente en español" por una entrevista que hizo para su ciclo de televisión que se emite por CNN, “En diálogo con Longobardi”. Este importante premio es otorgado por National Academy of Television, Arts & Sciences.'
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Actualmente conduce el programa “En diálogo con Longobardi” en CNN en español, los días domingos a las 22 horas, para toda la comunidad de habla hispana”."
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "solapa fondo counter" }, [
       _c("p", [_vm._v("PRÓXIMO VIVO")]),
       _vm._v(" "),
       _c("span", { staticClass: "row timer", attrs: { id: "countdown" } }, [
@@ -45559,6 +46078,32 @@ var staticRenderFns = [
     return _c("div", { staticClass: "content-date" }, [
       _c("img", { attrs: { src: "img/forosas/date.png" } })
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "audio",
+      {
+        attrs: {
+          autoplay: "",
+          preload: "auto",
+          id: "audio",
+          muted: "",
+          loop: ""
+        }
+      },
+      [
+        _c("source", {
+          attrs: { src: "public/audio/foro-sas.ogg", type: "audio/ogg" }
+        }),
+        _vm._v(" "),
+        _c("source", {
+          attrs: { src: "public/audio/foro-sas.mp3", type: "audio/mpeg" }
+        })
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -45567,6 +46112,578 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-6c342c74", module.exports)
+  }
+}
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(85)
+}
+var normalizeComponent = __webpack_require__(11)
+/* script */
+var __vue_script__ = __webpack_require__(87)
+/* template */
+var __vue_template__ = __webpack_require__(88)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-5b1848cc"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/forosas/Registro.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5b1848cc", Component.options)
+  } else {
+    hotAPI.reload("data-v-5b1848cc", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(86);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(10)("a9cd2d7c", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5b1848cc\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Registro.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5b1848cc\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Registro.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(9)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 87 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        keyRecaptcha: {
+            type: String
+        },
+        urlLogin: {
+            type: String,
+            required: true
+        },
+        urlRegistrar: {
+            type: String,
+            required: true
+        },
+        urlHome: {
+            type: String,
+            required: true
+        }
+    },
+    data: function data() {
+        return {
+            vista: 'login',
+            registro: {
+                form: {
+                    nombre: null,
+                    apellido: null,
+                    email: null,
+                    codigo: null
+                },
+                enviado: false,
+                enviando: false
+            },
+            login: {
+                form: {
+                    email: null
+                },
+                enviado: false,
+                enviando: false
+            },
+            info: {},
+            errors: []
+        };
+    },
+    mounted: function mounted() {
+        console.debug('Login mounted');
+
+        this.countdownTimer = setInterval(this.timer, 1000);
+    },
+
+    methods: {
+        mostrarVista: function mostrarVista(vista) {
+            var vm = this;
+            if (vista === 'login') {
+                vm.login.form = _.assign({
+                    nombre: null,
+                    apellido: null,
+                    email: null,
+                    codigo: null
+                });
+                vm.login.enviando = false;
+                vm.login.enviado = false;
+            } else {
+                vm.registro.form = _.assign({
+                    nombre: null,
+                    apellido: null,
+                    email: null,
+                    codigo: null
+                });
+                vm.registro.enviando = false;
+                vm.registro.enviado = false;
+            }
+            vm.vista = vista;
+        },
+
+        checkForm: function checkForm(e) {
+            var vm = this;
+            var form = vm.vista === 'login' ? vm.login.form : vm.registro.form;
+            this.errors = [];
+
+            if (vm.vista === 'login') {
+                if (!form.email) {
+                    alert('Todos los campos son obligatorios');
+                    return false;
+                }
+            } else {
+                if (!form.nombre || !form.apellido || !form.email || !form.codigo) {
+                    alert('Todos los campos son obligatorios');
+                    return false;
+                }
+            }
+
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+            if (!re.test(form.email)) {
+                alert('El formato del email es incorrecto.');
+                return false;
+            }
+            return true;
+        },
+        registrar: function registrar(e) {
+            e.preventDefault();
+            var vm = this;
+            var form = this.registro.form;
+            if (form.enviando) {
+                return false;
+            }
+            if (this.checkForm()) {
+                form.enviando = true;
+                grecaptcha.ready(function () {
+                    grecaptcha.execute(vm.keyRecaptcha, { action: 'submit' }).then(function (token) {
+                        // Add your logic to submit to your backend server here.
+                        if (token) {
+                            axios.post(vm.urlRegistrar, form).then(function (response) {
+                                console.debug(response);
+                                form.enviando = false;
+                                document.location = vm.urlHome;
+                            }, function (error) {
+                                form.enviando = false;
+                                console.debug(error.response.data.message);
+                                alert(error.response.data.message);
+                            });
+                        }
+                    });
+                });
+            }
+        },
+        loguear: function loguear(e) {
+            e.preventDefault();
+            var vm = this;
+            var form = this.login.form;
+            if (form.enviando) {
+                return false;
+            }
+            if (this.checkForm()) {
+                form.enviando = true;
+                axios.post(vm.urlLogin, form).then(function (response) {
+                    console.debug(response);
+                    form.enviando = false;
+                    document.location = vm.urlHome;
+                }, function (error) {
+                    form.enviando = false;
+                    console.debug(error.response.data.message);
+                    alert(error.response.data.message);
+                });
+            }
+        }
+    }
+});
+
+/***/ }),
+/* 88 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("section", [
+      _c("div", { staticClass: "container" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "content-form text-center" },
+          [
+            _vm.vista === "login"
+              ? [
+                  _c(
+                    "form",
+                    {
+                      attrs: {
+                        "data-vv-scope": "frm-login",
+                        autocomplete: "off"
+                      },
+                      on: { submit: _vm.loguear }
+                    },
+                    [
+                      _c("div", { staticClass: "form-group row" }, [
+                        _c("div", { staticClass: "col-12" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.login.form.email,
+                                expression: "login.form.email"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              type: "email",
+                              autocomplete: "off",
+                              id: "login-email",
+                              placeholder: "Email"
+                            },
+                            domProps: { value: _vm.login.form.email },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.login.form,
+                                  "email",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(1)
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "lnk-registrate",
+                      on: {
+                        click: function($event) {
+                          return _vm.mostrarVista("registro")
+                        }
+                      }
+                    },
+                    [
+                      _vm._v("Si aún no te registraste, "),
+                      _c("strong", [_vm._v("haz clic aquí.")])
+                    ]
+                  )
+                ]
+              : [
+                  _c(
+                    "form",
+                    {
+                      attrs: {
+                        "data-vv-scope": "frm-registro",
+                        autocomplete: "off"
+                      },
+                      on: { submit: _vm.registrar }
+                    },
+                    [
+                      _c("div", { staticClass: "form-group row" }, [
+                        _c("div", { staticClass: "col-12" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.registro.form.nombre,
+                                expression: "registro.form.nombre"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: { type: "text", placeholder: "Nombre" },
+                            domProps: { value: _vm.registro.form.nombre },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.registro.form,
+                                  "nombre",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group row" }, [
+                        _c("div", { staticClass: "col-12" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.registro.form.apellido,
+                                expression: "registro.form.apellido"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: { type: "text", placeholder: "Apellido" },
+                            domProps: { value: _vm.registro.form.apellido },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.registro.form,
+                                  "apellido",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group row" }, [
+                        _c("div", { staticClass: "col-12" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.registro.form.email,
+                                expression: "registro.form.email"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: { type: "email", placeholder: "Email" },
+                            domProps: { value: _vm.registro.form.email },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.registro.form,
+                                  "email",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group row" }, [
+                        _c("div", { staticClass: "col-12" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.registro.form.codigo,
+                                expression: "registro.form.codigo"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: { type: "text", placeholder: "Clave" },
+                            domProps: { value: _vm.registro.form.codigo },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.registro.form,
+                                  "codigo",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(2)
+                    ]
+                  )
+                ]
+          ],
+          2
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row content-logo-login" }, [
+      _c("a", [_c("img", { attrs: { src: "img/forosas/logo.png" } })])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "btn btn-ingresar", attrs: { type: "submit" } },
+      [_c("img", { attrs: { src: "img/forosas/btn-ingresar.png" } })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "btn btn-ingresar", attrs: { type: "submit" } },
+      [_c("img", { attrs: { src: "img/forosas/btn-ingresar.png" } })]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-5b1848cc", module.exports)
   }
 }
 
