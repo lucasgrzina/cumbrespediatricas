@@ -101,9 +101,9 @@ return [
             'cookie' => 'cumbrenasa',
             'activo' => true,
             'registroExterno' => true,
-            'urlWebServiceRegistrado' => 'https://www.quimicavirtualevents.com/recorrido/app/webservice.php',
-            'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbrepediatrica',
-            'urlCertificado' => 'https://www.quimicavirtualevents.com/recorrido/app/certificado.php?id=_ID_&token=_TOKEN_'
+            'urlWebServiceRegistrado' => 'https://quimicavirtualevents.com/cumbrenasa/app/webservice.php',
+            'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbrenasa',
+            'urlCertificado' => 'https://quimicavirtualevents.com/cumbrenasa/app/certificado.php?id=_ID_&token=_TOKEN_'
         ],           
     ],
     'recaptcha' => [
