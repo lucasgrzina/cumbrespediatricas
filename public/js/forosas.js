@@ -45372,7 +45372,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45383,11 +45383,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
 //
 //
 //
@@ -45687,7 +45682,7 @@ var render = function() {
         [
           _c("div", { staticClass: "control-audio" }, [
             _c("img", {
-              attrs: { src: "img/forosas/logo_ABBVIE.png", width: "100" }
+              attrs: { src: "img/forosas/logo_ABBVIE.png", width: "180" }
             }),
             _vm._v(" "),
             _c(
@@ -45789,59 +45784,25 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-12 con-padding" }, [
         _c("p", [
           _vm._v(
-            "En el año 1984 fundó la revista Apertura junto a su socio Gabriel Griffa, se retiro de ella 10 años mas tarde vendiendo su participación."
+            "Gerente Médico de la Obra Social de los Empleados de Comercio y Actividades Civiles."
           )
         ]),
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "Condujo importantes programas radiales en prestigiosas emisoras como FM del Plata, Radio Feeling, Radio América."
+            "Master en Gestión de Calidad de Servicios Socio Sanitarios de la Universidad de Murcia."
           )
         ]),
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "En televisión condujo varios programas de noticias, en Canal 9, en horario central, también condujo “Fuego Cruzado”, en el mismo canal y luego en CVN, así como también “Punto Limite”, en América 24. Además, condujo el programa “Longobardi en vivo”, que se emitió los días martes, a las 22 horas, por el canal de cable C5N, hasta fines del año 2012."
+            "Presidente del Instituto de Investigación Sanitaria de la Seguridad Social."
           )
         ]),
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "Actualmente conduce el programa “Cada mañana”, en Radio Mitre, de lunes a viernes de 6 a 10 horas, siendo el programa de mayor audiencia radial nacional desde el año 2001."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Desde junio del año 2013, se encuentra en la web el nuevo sitio de opinión www.marcelolongobardi.com."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Se destacó en importantes entrevistas especiales realizadas a políticos internacionales como Berlusconi, Aznar, Felipe González, entre otros destacados."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "En el año 2019 el programa que conduce en CNN fue reconocido con el premio PRODU Awards 2019 en la categoría “Mejor programa informativo”"
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            'En el año 2020 fue nominado a los Premios Emmy. Competirá en el rubro "Reportaje sobresaliente en español" por una entrevista que hizo para su ciclo de televisión que se emite por CNN, “En diálogo con Longobardi”.'
-          ),
-          _c("br"),
-          _vm._v(
-            "Este importante premio es otorgado por National Academy of Television, Arts & Sciences."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Actualmente conduce el programa “En diálogo con Longobardi” en CNN en español, los días domingos a las 22 horas, para toda la comunidad de habla hispana”."
+            "Miembro de CETSA, Centro de evaluación de tecnologías sanitarias de la Universidad ISALUD."
           )
         ])
       ]),
@@ -46659,8 +46620,8 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "control-audio" }, [
       _c("img", {
-        staticStyle: { right: "70px", bottom: "10px", position: "absolute" },
-        attrs: { src: "img/forosas/logo_ABBVIE.png", width: "100" }
+        staticStyle: { right: "70px", bottom: "30px", position: "absolute" },
+        attrs: { src: "img/forosas/logo_ABBVIE.png", width: "180" }
       })
     ])
   },

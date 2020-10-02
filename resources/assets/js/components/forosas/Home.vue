@@ -16,15 +16,10 @@
                                     <img src="img/forosas/speaker-gabriel.png">
                                 </div>
                                 <div class="col-12 con-padding">
-                                    <p>En el año 1984 fundó la revista Apertura junto a su socio Gabriel Griffa, se retiro de ella 10 años mas tarde vendiendo su participación.</p>
-                                    <p>Condujo importantes programas radiales en prestigiosas emisoras como FM del Plata, Radio Feeling, Radio América.</p>
-                                    <p>En televisión condujo varios programas de noticias, en Canal 9, en horario central, también condujo “Fuego Cruzado”, en el mismo canal y luego en CVN, así como también “Punto Limite”, en América 24. Además, condujo el programa “Longobardi en vivo”, que se emitió los días martes, a las 22 horas, por el canal de cable C5N, hasta fines del año 2012.</p>
-                                    <p>Actualmente conduce el programa “Cada mañana”, en Radio Mitre, de lunes a viernes de 6 a 10 horas, siendo el programa de mayor audiencia radial nacional desde el año 2001.</p>
-                                    <p>Desde junio del año 2013, se encuentra en la web el nuevo sitio de opinión www.marcelolongobardi.com.</p>
-                                    <p>Se destacó en importantes entrevistas especiales realizadas a políticos internacionales como Berlusconi, Aznar, Felipe González, entre otros destacados.</p>
-                                    <p>En el año 2019 el programa que conduce en CNN fue reconocido con el premio PRODU Awards 2019 en la categoría “Mejor programa informativo”</p>
-                                    <p>En el año 2020 fue nominado a los Premios Emmy. Competirá en el rubro "Reportaje sobresaliente en español" por una entrevista que hizo para su ciclo de televisión que se emite por CNN, “En diálogo con Longobardi”.<br>Este importante premio es otorgado por National Academy of Television, Arts & Sciences.</p>
-                                    <p>Actualmente conduce el programa “En diálogo con Longobardi” en CNN en español, los días domingos a las 22 horas, para toda la comunidad de habla hispana”.</p>
+                                    <p>Gerente Médico de la Obra Social de los Empleados de Comercio y Actividades Civiles.</p>
+                                    <p>Master en Gestión de Calidad de Servicios Socio Sanitarios de la Universidad de Murcia.</p>
+                                    <p>Presidente del Instituto de Investigación Sanitaria de la Seguridad Social.</p>
+                                    <p>Miembro de CETSA, Centro de evaluación de tecnologías sanitarias de la Universidad ISALUD.</p>
                                 </div>
                                 <div class="col-12 con-padding">
                                     <img src="img/forosas/speaker-luciana.png">
@@ -89,7 +84,7 @@
 
 	  	<div class="container">
             <div class="control-audio">
-                <img src="img/forosas/logo_ABBVIE.png" width="100">
+                <img src="img/forosas/logo_ABBVIE.png" width="180">
                 <button class="btn" @click="cambiarEstadoAudio()">
                     <img v-if="audio.muted" src="img/forosas/volume-mute-solid.png">
                     <img v-else src="img/forosas/volume-up-solid.png">

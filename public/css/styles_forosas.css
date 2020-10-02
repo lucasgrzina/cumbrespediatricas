@@ -32,6 +32,9 @@
     font-style: italic;
 }
 
+input::-webkit-input-placeholder {
+	line-height:normal!important;
+}
 
 .bg-blue {
 	background-repeat: no-repeat;
@@ -292,10 +295,15 @@
 .control-audio {
 	position: fixed;
     right: 10px;
-    bottom: 0;
+    bottom: 30px;
 }
 .control-audio button img {
 	max-width: 30px;
+}
+@media (min-width: 769px) {
+	#modal-solapas .modal-dialog {
+		max-width: 650px!important;
+	}
 }
 @media (max-width: 991px){
 	
@@ -318,7 +326,46 @@
 		padding-left: 0px;
 		padding-right: 0px;
 	}	
+
+	.control-audio {
+		bottom: 10px;
+	}	
+
+	.solapa {
+		width: 350px;
+	}
+
+	.solapa.fondo {
+		height: 80px;
+		padding: 15px 80px 20px 20px;		
+	}
 	
+	.solapa.counter{
+		top: 10px;
+	}
+	
+	.solapa.solapa2 {
+		top: 90px;
+	}
+	.solapa2 p, .solapa3 p {
+		font-size: 15px;
+		line-height: 20px;
+		padding-top: 11px;
+	}	
+	.solapa.solapa3 {
+		top: 171px;
+		height: 70px;
+		right: -85px;
+	}	
+
+	.solapa p {
+		font-size: 15px;
+		line-height: 15px;		
+	}
+	.counter .timer .block-time span.num {
+		font-size: 22px;
+		line-height: 22px;
+	}	
 }
 
 @media (max-width: 650px){

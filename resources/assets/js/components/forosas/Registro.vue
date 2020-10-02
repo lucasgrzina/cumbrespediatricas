@@ -3,7 +3,7 @@
 	  <section>
 	  	<div class="container">
             <div class="control-audio">
-                <img src="img/forosas/logo_ABBVIE.png" width="100" style="right: 70px;bottom: 10px; position: absolute;">
+                <img src="img/forosas/logo_ABBVIE.png" width="180" style="right: 70px;bottom: 30px; position: absolute;">
             </div>
 	  		<div class="row content-logo-login">
 	  			<a><img src="img/forosas/logo.png"></a>
