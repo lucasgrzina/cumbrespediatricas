@@ -387,6 +387,44 @@ input::-webkit-input-placeholder {
 		z-index: 2;
 	}
 }
+
+@media (max-width: 400px){
+	.solapa {
+		width: 300px;
+	}
+
+	.solapa.fondo {
+		height: 65px;
+		padding: 10px 75px 20px 10px;
+	}
+	
+	.solapa.counter{
+		top: 10px;
+	}
+	
+	.solapa.solapa2 {
+		top: 75px;
+	}
+	.solapa2 p, .solapa3 p {
+		font-size: 15px;
+		line-height: 20px;
+		padding-top: 11px;
+	}	
+	.solapa.solapa3 {
+		top: 140px;
+		height: 56px;
+		right: -85px;
+	}	
+
+	.solapa p {
+		font-size: 13px;
+		line-height: 13px;	
+	}
+	.counter .timer .block-time span.num {
+		font-size: 16px;
+		line-height: 16px;
+	}	
+}
 .circle-container {
 	position: absolute;
 	transform: translateY(-10vh);
