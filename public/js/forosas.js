@@ -45372,7 +45372,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45383,6 +45383,16 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -45778,6 +45788,34 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-12 con-padding" }, [
+        _c("img", { attrs: { src: "img/forosas/speaker-flavio.png" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-12 con-padding" }, [
+        _c("p", [_vm._v("Gerente General de AbbVie Región Sur desde 2015.")]),
+        _vm._v(" "),
+        _c("p", [_vm._v("Master en Administración de Empresas en IDEA.")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Realizó estudios de postgrado en IAE Business School de Universidad Austral y en la escuela de negocios de Harvard."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "En abril 2019 fue reelecto como presidente de la Cámara Argentina de Especialidades Medicinales (CAEME)."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Previamente a su rol en AbbVie, Flavio Devoto se ha desempeñado durante 8 años como gerente general de Novo Nordisk, y cuenta con más de 20 años de trayectoria en la industria farmacéutica."
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-12 con-padding" }, [
         _c("img", { attrs: { src: "img/forosas/speaker-gabriel.png" } })
       ]),
       _vm._v(" "),
@@ -45936,19 +45974,19 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-12 con-padding" }, [
         _c("p", [
           _vm._v(
-            "En el año 1984 fundó la revista Apertura junto a su socio Gabriel Griffa, se retiro de ella 10 años mas tarde vendiendo su participación."
+            "En el año 1984 fundó la revista Apertura junto a su socio Gabriel Griffa vendiendo su participación 10 años más tarde."
           )
         ]),
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "Condujo importantes programas radiales en prestigiosas emisoras como FM del Plata, Radio Feeling, Radio América."
+            "Condujo importantes programas radiales en emisoras como FM del Plata, Radio Feeling, Radio América."
           )
         ]),
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "En televisión condujo varios programas de noticias, en Canal 9, en horario central, también condujo “Fuego Cruzado”, en el mismo canal y luego en CVN, así como también “Punto Limite”, en América 24. Además, condujo el programa “Longobardi en vivo”, que se emitió los días martes, a las 22 horas, por el canal de cable C5N, hasta fines del año 2012."
+            "En televisión condujo varios programas de noticias, “Fuego Cruzado”, “Punto Límite”, “Longobardi en vivo”, entre otros."
           )
         ]),
         _vm._v(" "),

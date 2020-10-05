@@ -7,7 +7,11 @@
         <!--meta http-equiv="x-ua-compatible" content="IE=9" -->
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <link rel="icon" type="image/png" href="public/img/forosas/favicon-16x16.png" sizes="16x16">
 
+        <link rel="icon" type="image/png" href="public/img/forosas/favicon-32x32.png" sizes="32x32">
+        
+        <link rel="icon" type="image/vnd.microsoft.icon" href="public/img/forosas/favicon.ico">
         <title>Foro Sas</title>
 
         <link href="{{ url(mix('/css/forosas.css')) }}" rel="stylesheet" type="text/css">

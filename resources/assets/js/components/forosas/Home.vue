@@ -13,6 +13,16 @@
                             <h2>SPEAKERS NACIONALES</h2>
                             <div class="row">
                                 <div class="col-12 con-padding">
+                                    <img src="img/forosas/speaker-flavio.png">
+                                </div>
+                                <div class="col-12 con-padding">
+                                    <p>Gerente General de AbbVie Región Sur desde 2015.</p>
+                                    <p>Master en Administración de Empresas en IDEA.</p>
+                                    <p>Realizó estudios de postgrado en IAE Business School de Universidad Austral y en la escuela de negocios de Harvard.</p>
+                                    <p>En abril 2019 fue reelecto como presidente de la Cámara Argentina de Especialidades Medicinales (CAEME).</p>
+                                    <p>Previamente a su rol en AbbVie, Flavio Devoto se ha desempeñado durante 8 años como gerente general de Novo Nordisk, y cuenta con más de 20 años de trayectoria en la industria farmacéutica.</p>
+                                </div>
+                                <div class="col-12 con-padding">
                                     <img src="img/forosas/speaker-gabriel.png">
                                 </div>
                                 <div class="col-12 con-padding">
@@ -65,9 +75,9 @@
                                     <img src="img/forosas/longobardi.png">
                                 </div>
                                 <div class="col-12 con-padding">
-                                    <p>En el año 1984 fundó la revista Apertura junto a su socio Gabriel Griffa, se retiro de ella 10 años mas tarde vendiendo su participación.</p>
-                                    <p>Condujo importantes programas radiales en prestigiosas emisoras como FM del Plata, Radio Feeling, Radio América.</p>
-                                    <p>En televisión condujo varios programas de noticias, en Canal 9, en horario central, también condujo “Fuego Cruzado”, en el mismo canal y luego en CVN, así como también “Punto Limite”, en América 24. Además, condujo el programa “Longobardi en vivo”, que se emitió los días martes, a las 22 horas, por el canal de cable C5N, hasta fines del año 2012.</p>
+                                    <p>En el año 1984 fundó la revista Apertura junto a su socio Gabriel Griffa vendiendo su participación 10 años más tarde.</p>
+                                    <p>Condujo importantes programas radiales en emisoras como FM del Plata, Radio Feeling, Radio América.</p>
+                                    <p>En televisión condujo varios programas de noticias, “Fuego Cruzado”, “Punto Límite”, “Longobardi en vivo”, entre otros.</p>
                                     <p>Actualmente conduce el programa “Cada mañana”, en Radio Mitre, de lunes a viernes de 6 a 10 horas, siendo el programa de mayor audiencia radial nacional desde el año 2001.</p>
                                     <p>Desde junio del año 2013, se encuentra en la web el nuevo sitio de opinión www.marcelolongobardi.com.</p>
                                     <p>Se destacó en importantes entrevistas especiales realizadas a políticos internacionales como Berlusconi, Aznar, Felipe González, entre otros destacados.</p>
