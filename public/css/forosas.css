@@ -425,6 +425,7 @@ input::-webkit-input-placeholder {
 		line-height: 16px;
 	}	
 }
+
 .circle-container {
 	position: absolute;
 	transform: translateY(-10vh);
