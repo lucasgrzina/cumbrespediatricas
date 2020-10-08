@@ -37,7 +37,7 @@ return [
             'controller' => 'HomeSimilaCMamaController',
             'view' => 'similacmama',
             'cookie' => 'similacmamatest',
-            'activo' => true
+            'activo' => false
         ],  
         'similacmama169' => [
             'nombre' => 'Similac Mama - 16/9',
@@ -61,7 +61,7 @@ return [
             'controller' => 'HomeCumbrePediatricaController',
             'view' => 'cumbre',
             'cookie' => 'cumbre3test',
-            'activo' => true,
+            'activo' => false,
             'registroExterno' => true,
             'urlWebServiceRegistrado' => 'https://www.quimicavirtualevents.com/recorrido/app/webservice.php',
             'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbrepediatrica',
@@ -82,8 +82,7 @@ return [
             'view' => 'danoneday',
             'cookie' => 'danonedaytest',
             'activo' => false 
-        ],     
-        
+        ],             
         'forosas' => [
             'nombre' => 'Foro Sas',
             'prefix' => 'forosas',
@@ -99,12 +98,24 @@ return [
             'controller' => 'HomeCumbreNasaController',
             'view' => 'nasa',
             'cookie' => 'cumbrenasa',
-            'activo' => true,
+            'activo' => false,
             'registroExterno' => true,
             'urlWebServiceRegistrado' => 'https://quimicavirtualevents.com/cumbrenasa/app/webservice.php',
             'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbrenasa',
             'urlCertificado' => 'https://quimicavirtualevents.com/cumbrenasa/app/certificado.php?id=_ID_&token=_TOKEN_'
-        ],           
+        ],  
+        'cumbre4' => [
+            'nombre' => 'Abbott Cumbre pediatrica - 4/5',
+            'prefix' => 'cumbrepediatrica',
+            'controller' => 'HomeCumbrePediatricaController',
+            'view' => 'cumbre',
+            'cookie' => 'cumbre4',
+            'activo' => true,
+            'registroExterno' => true,
+            'urlWebServiceRegistrado' => 'https://www.quimicavirtualevents.com/recorrido/app/webservice.php',
+            'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbrepediatrica',
+            'urlCertificado' => 'https://www.quimicavirtualevents.com/recorrido/app/certificado.php?id=_ID_&token=_TOKEN_'
+        ],                 
     ],
     'recaptcha' => [
         'key' => '6LcNPcYZAAAAAI5sgO4CAlZxlGHgADMXtUCbARnh',
