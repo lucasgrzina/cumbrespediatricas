@@ -14,7 +14,7 @@
         <link rel="icon" type="image/vnd.microsoft.icon" href="public/img/forosas/favicon.ico">
         <title>Foro Sas</title>
 
-        <link href="{{ url(mix('/css/forosas.css')) }}" rel="stylesheet" type="text/css">
+        <link href="{{ url(mix('/css/forosas.css')) }}?v=1" rel="stylesheet" type="text/css">
         <!-- Minified version of `es6-promise-auto` below. -->
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
