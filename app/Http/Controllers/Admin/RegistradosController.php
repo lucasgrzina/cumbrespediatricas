@@ -109,6 +109,7 @@ class RegistradosController extends CrudAdminController
             'especialidad' => 'Especialidad',
             'pais' => 'Pais',
             'email' => 'Email',
+            'created_at' => 'Fecha Insc.'
         ];
         $format = [
         ];
