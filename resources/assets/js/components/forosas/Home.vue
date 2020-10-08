@@ -1,96 +1,97 @@
 <template>
     <div>
 	  <section>
-            <div class="modal" id="modal-solapas" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <img src="img/forosas/modal-cerrar.png">
-                            </button>
-                        </div>
-                        <div class="modal-body" v-if="solapa === 2">
-                            <h2>SPEAKERS NACIONALES</h2>
-                            <div class="row">
-                                <div class="col-12 con-padding">
-                                    <img src="img/forosas/speaker-flavio.png">
-                                </div>
-                                <div class="col-12 con-padding">
-                                    <p>Gerente General de AbbVie Región Sur desde 2015.</p>
-                                    <p>Master en Administración de Empresas en IDEA.</p>
-                                    <p>Realizó estudios de postgrado en IAE Business School de Universidad Austral y en la escuela de negocios de Harvard.</p>
-                                    <p>En abril 2019 fue reelecto como presidente de la Cámara Argentina de Especialidades Medicinales (CAEME).</p>
-                                    <p>Previamente a su rol en AbbVie, Flavio Devoto se ha desempeñado durante 8 años como gerente general de Novo Nordisk, y cuenta con más de 20 años de trayectoria en la industria farmacéutica.</p>
-                                </div>
-                                <div class="col-12 con-padding">
-                                    <img src="img/forosas/speaker-gabriel.png">
-                                </div>
-                                <div class="col-12 con-padding">
-                                    <p>Gerente Médico de la Obra Social de los Empleados de Comercio y Actividades Civiles.</p>
-                                    <p>Master en Gestión de Calidad de Servicios Socio Sanitarios de la Universidad de Murcia.</p>
-                                    <p>Presidente del Instituto de Investigación Sanitaria de la Seguridad Social.</p>
-                                    <p>Miembro de CETSA, Centro de evaluación de tecnologías sanitarias de la Universidad ISALUD.</p>
-                                </div>
-                                <div class="col-12 con-padding">
-                                    <img src="img/forosas/speaker-luciana.png">
-                                </div>
-                                <div class="col-12 con-padding">
-                                    <p>Presidenta y fundadora de Fundación Más Vida (FMV) de Crohn & Colitis Ulcerosa (FMV)</p>
-                                    <p>Miembro fundador de la Federación Argentina de Enfermedades Poco Frecuentes (FADEPOF) organización en la que actualmente ocupa la Dirección Ejecutiva y de la que fue Presidente (2014/ 2016) y Secretaria de Comisión Directiva (2012/ 2014).</p>
-                                    <p>Ha sido asesora y posteriormente planta de gabinete de la Presidencia de la Comisión para la Plena Participación e Inclusión de las Personas con Discapacidad (COPIDIS) del Gobierno de CABA.</p>
-                                    <p>A través de las instituciones que lidera, es miembro de la Federación Europea de Asociaciones de Crohn y Colitis (EFCCA), la Alianza Internacional de Organizaciones de Pacientes (IAPO), la Alianza Iberoamericana de Enfermedades Raras (ALIBER) y Rare Diseases International (RDI).</p>
-                                </div>
-                            </div>
-                            <h2>SPEAKERS INTERNACIONALES</h2>
-                            <div class="row">
-                                <div class="col-12 con-padding">
-                                    <img src="img/forosas/speaker-vicente.png">
-                                </div>
-                                <div class="col-12 con-padding">
-                                    <p>Catedrático emérito y ex-decano de la Facultad de Ciencias Económicas y Empresariales de la Universidad Pompeu Fabra de Barcelona (UPF).</p>
-                                    <p>Fundador e investigador principal del Centro de Investigación en Economía y Salud (CRES-UPF).</p>
-                                    <p>Miembro del Consejo Rector del Parque de Salud Mar, y delegado de la UPF en TecnoCampus (Empresa, Ingeniería y Salud).</p>
-                                    <p>MBA ESADE, Master of Science de Purdue University.</p>
-                                    <p>Licenciado y Doctor en Economía por la Universitat de Barcelona. Estudios de doctorado en Salud Pública en la Universidad Johns Hopkins y Visiting Scholar en el Departamento de Economía del Massachusetts Institute of Technology (MIT).</p>
-                                    <p>Ex presidente de la Sociedad Española de Salud Pública y Administración Sanitaria (SESPAS), ex presidente de la Asociación de Economía de la Salud (AES), ex secretario de la Asociación Europea de Salud Pública (EUPHA) y miembro meritorio de CAMFiC.</p>
-                                </div>
-                                <div class="col-12 con-padding">
-                                    <img src="img/forosas/speaker-andre.png">
-                                </div>
-                                <div class="col-12 con-padding">
-                                    <p>Fue hasta hace unos meses Economista Senior en Salud del Banco Mundial (Washington DC).</p> 
-                                    <p>Participó del movimiento de construcción del Sistema Único de Salud de Brasil.</p>
-                                    <p>Actuó como consultor en organismos multilaterales (BID y luego Banco Mundial).</p> 
-                                    <p>Cuenta con más de diez libros y 200 trabajos publicados en diversos idiomas y campos del conocimiento.</p>
-                                    <p>Graduado en Administración en la fundación Getulio Vargas (FGV), con maestría en economía en la Universidad Estadual de Campinas (UNICAMP).</p>
-                                    <p>Doctorado en Historia Económica en la Universidad de San Pablo (USP) y cursos de especialización en Seguridad Social en la Universidad Harvard (USA).</p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="modal-body" v-if="solapa === 3">
-                            <h2>CONDUCCIÓN</h2>
-                            <div class="row">
-                                <div class="col-12 con-padding">
-                                    <img src="img/forosas/longobardi.png">
-                                </div>
-                                <div class="col-12 con-padding">
-                                    <p>En el año 1984 fundó la revista Apertura junto a su socio Gabriel Griffa vendiendo su participación 10 años más tarde.</p>
-                                    <p>Condujo importantes programas radiales en emisoras como FM del Plata, Radio Feeling, Radio América.</p>
-                                    <p>En televisión condujo varios programas de noticias, “Fuego Cruzado”, “Punto Límite”, “Longobardi en vivo”, entre otros.</p>
-                                    <p>Actualmente conduce el programa “Cada mañana”, en Radio Mitre, de lunes a viernes de 6 a 10 horas, siendo el programa de mayor audiencia radial nacional desde el año 2001.</p>
-                                    <p>Desde junio del año 2013, se encuentra en la web el nuevo sitio de opinión www.marcelolongobardi.com.</p>
-                                    <p>Se destacó en importantes entrevistas especiales realizadas a políticos internacionales como Berlusconi, Aznar, Felipe González, entre otros destacados.</p>
-                                    <p>En el año 2019 el programa que conduce en CNN fue reconocido con el premio PRODU Awards 2019 en la categoría “Mejor programa informativo”</p>
-                                    <p>En el año 2020 fue nominado a los Premios Emmy. Competirá en el rubro &quot;Reportaje sobresaliente en español&quot; por una entrevista que hizo para su ciclo de televisión que se emite por CNN, “En diálogo con Longobardi”. Este importante premio es otorgado por National Academy of Television, Arts &amp; Sciences.</p>
-                                    <p>Actualmente conduce el programa “En diálogo con Longobardi” en CNN en español, los días domingos a las 22 horas, para toda la comunidad de habla hispana”.</p>
-                                </div>
-                            </div>
-                            
-                        </div>                        
+        <div class="modal" id="modal-solapas" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <img src="img/forosas/modal-cerrar.png">
+                        </button>
                     </div>
+                    <div class="modal-body" v-if="solapa === 2">
+                        <h2>SPEAKERS NACIONALES</h2>
+                        <div class="row">
+                            <div class="col-12 con-padding">
+                                <img src="img/forosas/speaker-flavio.png">
+                            </div>
+                            <div class="col-12 con-padding">
+                                <p>Gerente General de AbbVie Región Sur desde 2015.</p>
+                                <p>Médico graduado en la Universidad de Buenos Aires especialista en Farmacología Clínica.</p>
+                                <p>Master en Administración de Empresas en IDEA.</p>
+                                <p>Realizó estudios de postgrado en IAE Business School de Universidad Austral y en la escuela de negocios de Harvard.</p>
+                                <p>En abril 2019 fue reelecto como presidente de la Cámara Argentina de Especialidades Medicinales (CAEME).</p>
+                                <p>Previamente a su rol en AbbVie, Flavio Devoto se ha desempeñado durante 8 años como gerente general de Novo Nordisk, y cuenta con más de 20 años de trayectoria en la industria farmacéutica.</p>
+                            </div>
+                            <div class="col-12 con-padding">
+                                <img src="img/forosas/speaker-gabriel.png">
+                            </div>
+                            <div class="col-12 con-padding">
+                                <p>Gerente Médico de la Obra Social de los Empleados de Comercio y Actividades Civiles.</p>
+                                <p>Master en Gestión de Calidad de Servicios Socio Sanitarios de la Universidad de Murcia.</p>
+                                <p>Presidente del Instituto de Investigación Sanitaria de la Seguridad Social.</p>
+                                <p>Miembro de CETSA, Centro de evaluación de tecnologías sanitarias de la Universidad ISALUD.</p>
+                            </div>
+                            <div class="col-12 con-padding">
+                                <img src="img/forosas/speaker-luciana.png">
+                            </div>
+                            <div class="col-12 con-padding">
+                                <p>Presidenta y fundadora de Fundación Más Vida (FMV) de Crohn & Colitis Ulcerosa (FMV)</p>
+                                <p>Miembro fundador de la Federación Argentina de Enfermedades Poco Frecuentes (FADEPOF) organización en la que actualmente ocupa la Dirección Ejecutiva y de la que fue Presidente (2014/ 2016) y Secretaria de Comisión Directiva (2012/ 2014).</p>
+                                <p>Ha sido asesora y posteriormente planta de gabinete de la Presidencia de la Comisión para la Plena Participación e Inclusión de las Personas con Discapacidad (COPIDIS) del Gobierno de CABA.</p>
+                                <p>A través de las instituciones que lidera, es miembro de la Federación Europea de Asociaciones de Crohn y Colitis (EFCCA), la Alianza Internacional de Organizaciones de Pacientes (IAPO), la Alianza Iberoamericana de Enfermedades Raras (ALIBER) y Rare Diseases International (RDI).</p>
+                            </div>
+                        </div>
+                        <h2>SPEAKERS INTERNACIONALES</h2>
+                        <div class="row">
+                            <div class="col-12 con-padding">
+                                <img src="img/forosas/speaker-vicente.png">
+                            </div>
+                            <div class="col-12 con-padding">
+                                <p>Catedrático emérito y ex-decano de la Facultad de Ciencias Económicas y Empresariales de la Universidad Pompeu Fabra de Barcelona (UPF).</p>
+                                <p>Fundador e investigador principal del Centro de Investigación en Economía y Salud (CRES-UPF).</p>
+                                <p>Miembro del Consejo Rector del Parque de Salud Mar, y delegado de la UPF en TecnoCampus (Empresa, Ingeniería y Salud).</p>
+                                <p>MBA ESADE, Master of Science de Purdue University.</p>
+                                <p>Licenciado y Doctor en Economía por la Universitat de Barcelona. Estudios de doctorado en Salud Pública en la Universidad Johns Hopkins y Visiting Scholar en el Departamento de Economía del Massachusetts Institute of Technology (MIT).</p>
+                                <p>Ex presidente de la Sociedad Española de Salud Pública y Administración Sanitaria (SESPAS), ex presidente de la Asociación de Economía de la Salud (AES), ex secretario de la Asociación Europea de Salud Pública (EUPHA) y miembro meritorio de CAMFiC.</p>
+                            </div>
+                            <div class="col-12 con-padding">
+                                <img src="img/forosas/speaker-andre.png">
+                            </div>
+                            <div class="col-12 con-padding">
+                                <p>Fue hasta hace unos meses Economista Senior en Salud del Banco Mundial (Washington DC).</p> 
+                                <p>Participó del movimiento de construcción del Sistema Único de Salud de Brasil.</p>
+                                <p>Actuó como consultor en organismos multilaterales (BID y luego Banco Mundial).</p> 
+                                <p>Cuenta con más de diez libros y 200 trabajos publicados en diversos idiomas y campos del conocimiento.</p>
+                                <p>Graduado en Administración en la fundación Getulio Vargas (FGV), con maestría en economía en la Universidad Estadual de Campinas (UNICAMP).</p>
+                                <p>Doctorado en Historia Económica en la Universidad de San Pablo (USP) y cursos de especialización en Seguridad Social en la Universidad Harvard (USA).</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="modal-body" v-if="solapa === 3">
+                        <h2>CONDUCCIÓN</h2>
+                        <div class="row">
+                            <div class="col-12 con-padding">
+                                <img src="img/forosas/longobardi.png">
+                            </div>
+                            <div class="col-12 con-padding">
+                                <p>En el año 1984 fundó la revista Apertura junto a su socio Gabriel Griffa vendiendo su participación 10 años más tarde.</p>
+                                <p>Condujo importantes programas radiales en emisoras como FM del Plata, Radio Feeling, Radio América.</p>
+                                <p>En televisión condujo varios programas de noticias, “Fuego Cruzado”, “Punto Límite”, “Longobardi en vivo”, entre otros.</p>
+                                <p>Actualmente conduce el programa “Cada mañana”, en Radio Mitre, de lunes a viernes de 6 a 10 horas, siendo el programa de mayor audiencia radial nacional desde el año 2001.</p>
+                                <p>Desde junio del año 2013, se encuentra en la web el nuevo sitio de opinión www.marcelolongobardi.com.</p>
+                                <p>Se destacó en importantes entrevistas especiales realizadas a políticos internacionales como Berlusconi, Aznar, Felipe González, entre otros destacados.</p>
+                                <p>En el año 2019 el programa que conduce en CNN fue reconocido con el premio PRODU Awards 2019 en la categoría “Mejor programa informativo”</p>
+                                <p>En el año 2020 fue nominado a los Premios Emmy. Competirá en el rubro &quot;Reportaje sobresaliente en español&quot; por una entrevista que hizo para su ciclo de televisión que se emite por CNN, “En diálogo con Longobardi”. Este importante premio es otorgado por National Academy of Television, Arts &amp; Sciences.</p>
+                                <p>Actualmente conduce el programa “En diálogo con Longobardi” en CNN en español, los días domingos a las 22 horas, para toda la comunidad de habla hispana”.</p>
+                            </div>
+                        </div>
+                        
+                    </div>                        
                 </div>
-            </div> 
+            </div>
+        </div> 
 
 	  	<div class="container">
             <div class="control-audio">

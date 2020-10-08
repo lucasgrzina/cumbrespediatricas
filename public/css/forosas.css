@@ -373,6 +373,13 @@ input::-webkit-input-placeholder {
 		font-size: 22px;
 		line-height: 22px;
 	}	
+	.content-date{
+		position: fixed;
+		top: calc(100vh - 140px);
+		left:calc(50% - 150px);
+		max-width: 300px;
+		z-index: 2;
+	}	
 }
 
 @media (max-width: 650px){
