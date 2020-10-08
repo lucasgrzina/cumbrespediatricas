@@ -372,7 +372,7 @@ input::-webkit-input-placeholder {
 	}	
 	.content-date{
 		position: fixed;
-		top: calc(100vh - 140px);
+		top: calc(100vh - 170px);
 		left:calc(50% - 150px);
 		max-width: 300px;
 		z-index: 2;
