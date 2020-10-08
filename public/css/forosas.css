@@ -302,15 +302,19 @@ input::-webkit-input-placeholder {
 .control-audio {
 	position: fixed;
     right: 10px;
-    bottom: 30px;
 }
 .control-audio button img {
 	max-width: 30px;
 }
+
 @media (min-width: 769px) {
 	#modal-solapas .modal-dialog {
 		max-width: 650px!important;
 	}
+	.control-audio {
+		bottom: 30px;
+	}
+	
 }
 @media (max-width: 991px){
 	
@@ -335,7 +339,7 @@ input::-webkit-input-placeholder {
 	}	
 
 	.control-audio {
-		bottom: 10px;
+		/*bottom: 10px;*/
 	}	
 
 	.solapa {
