@@ -167,7 +167,7 @@ input::-webkit-input-placeholder {
 }
 
 .content-date img{
-	width: 100%;
+	/*width: 100%;*/
 }
 .container {
 	width: 100%;
@@ -379,13 +379,7 @@ input::-webkit-input-placeholder {
 	body{
 		overflow: hidden;
 	}
-	.content-date{
-		position: fixed;
-		top: calc(100vh - 140px);
-		left:calc(50% - 150px);
-		max-width: 300px;
-		z-index: 2;
-	}
+
 }
 
 @media (max-width: 400px){

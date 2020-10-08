@@ -94,13 +94,7 @@
         </div> 
 
 	  	<div class="container">
-            <div class="control-audio">
-                <img src="img/forosas/logo_ABBVIE.png" width="180">
-                <button class="btn" @click="cambiarEstadoAudio()">
-                    <img v-if="audio.muted" src="img/forosas/volume-mute-solid.png">
-                    <img v-else src="img/forosas/volume-up-solid.png">
-                </button>
-            </div>
+
 
             <div class="circle-container" v-for="index in 200" :key="index">
                 <div class="circle"></div>
@@ -139,7 +133,14 @@
 
 	  		
             <div class="content-date">
-                <img src="img/forosas/date.png">
+                <img src="img/forosas/date.png" style="width:100%;">
+                <div class="control-audio">
+                    <img src="img/forosas/logo_ABBVIE.png" width="180">
+                    <button class="btn" @click="cambiarEstadoAudio()">
+                        <img v-if="audio.muted" src="img/forosas/volume-mute-solid.png">
+                        <img v-else src="img/forosas/volume-up-solid.png">
+                    </button>
+                </div>
             </div>
 
             <audio autoplay preload="auto" id="audio" muted loop>

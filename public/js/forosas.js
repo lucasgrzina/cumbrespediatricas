@@ -45372,7 +45372,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45383,6 +45383,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -45691,33 +45692,6 @@ var render = function() {
         "div",
         { staticClass: "container" },
         [
-          _c("div", { staticClass: "control-audio" }, [
-            _c("img", {
-              attrs: { src: "img/forosas/logo_ABBVIE.png", width: "180" }
-            }),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn",
-                on: {
-                  click: function($event) {
-                    return _vm.cambiarEstadoAudio()
-                  }
-                }
-              },
-              [
-                _vm.audio.muted
-                  ? _c("img", {
-                      attrs: { src: "img/forosas/volume-mute-solid.png" }
-                    })
-                  : _c("img", {
-                      attrs: { src: "img/forosas/volume-up-solid.png" }
-                    })
-              ]
-            )
-          ]),
-          _vm._v(" "),
           _vm._l(200, function(index) {
             return _c("div", { key: index, staticClass: "circle-container" }, [
               _c("div", { staticClass: "circle" })
@@ -45754,9 +45728,41 @@ var render = function() {
           _vm._v(" "),
           _vm._m(5),
           _vm._v(" "),
-          _vm._m(6),
+          _c("div", { staticClass: "content-date" }, [
+            _c("img", {
+              staticStyle: { width: "100%" },
+              attrs: { src: "img/forosas/date.png" }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "control-audio" }, [
+              _c("img", {
+                attrs: { src: "img/forosas/logo_ABBVIE.png", width: "180" }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn",
+                  on: {
+                    click: function($event) {
+                      return _vm.cambiarEstadoAudio()
+                    }
+                  }
+                },
+                [
+                  _vm.audio.muted
+                    ? _c("img", {
+                        attrs: { src: "img/forosas/volume-mute-solid.png" }
+                      })
+                    : _c("img", {
+                        attrs: { src: "img/forosas/volume-up-solid.png" }
+                      })
+                ]
+              )
+            ])
+          ]),
           _vm._v(" "),
-          _vm._m(7)
+          _vm._m(6)
         ],
         2
       )
@@ -46075,14 +46081,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row content-logo" }, [
       _c("a", [_c("img", { attrs: { src: "img/forosas/logo.png" } })])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content-date" }, [
-      _c("img", { attrs: { src: "img/forosas/date.png" } })
     ])
   },
   function() {
