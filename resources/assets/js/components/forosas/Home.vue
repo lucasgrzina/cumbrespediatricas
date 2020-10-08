@@ -88,11 +88,57 @@
                             </div>
                         </div>
                         
-                    </div>                        
+                    </div>  
+                    <div class="modal-body" v-if="solapa === 4">
+                        <h2>NUESTRA HISTORIA</h2>
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="p-sin-estilo">Como cada año, AbbVie organiza el Foro de Salud Sustentable (SaS), un evento dirigido principalmente a los financiadores y tomadores de decisión del sistema de salud argentino en donde se tratan las temáticas sanitarias más relevantes de interés actual.</p>
+                                <p class="p-sin-estilo">El Foro SaS nació en 2014 como un proyecto educativo cuya misión se orientaba a fomentar el trabajo conjunto entre los referentes de patologías crónicas y los tomadores de decisión con el fin de optimizar el tratamiento del paciente teniendo un manejo adecuado de los recursos disponibles.</p>
+                                <p class="p-sin-estilo">Motivado por la posibilidad de un sistema de salud sustentable que promueva prácticas de prevención, el diagnóstico temprano, el tratamiento óptimo de enfermedades y el acceso a verdadera innovación que sea sostenible y financieramente viable, el Foro se ha convertido en un reconocido espacio de actualización y reunión de los principales sanitaristas del país.</p>
+                                <p class="p-sin-estilo">En esta 7ma edición, además de abordar las dificultades habituales que presenta el sistema sanitario argentino, el Foro brindará especial atención al impacto provocado por la pandemia a nivel nacional e internacional.</p>
+                                <p class="p-sin-estilo">Es en este desafiante contexto que AbbVie llevará a cabo el Foro SaS en la modalidad virtual el 27 y 29 de octubre buscando reinventar el espacio históricamente presencial.</p>
+                                
+                            </div>
+                            <div class="col-12">
+                                <div class="embed-container">
+                                    <iframe src="https://player.vimeo.com/video/466148940" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>                                            
                 </div>
             </div>
         </div> 
+        <nav class="navbar navbar-expand-lg navbar-dark menu-mobile px-0">
+                <button class="navbar-toggler" type="button" @click="mostrarMenu()">
+                    <img src="img/forosas/bars-solid.png" style="max-width: 25px;" width="25px">
+                </button>
+                <div class="navbar-collapse hidden" id="navbarNav">
+                    
 
+                    <ul class="navbar-nav navbar-nav-menu px-3 py-2" :style="{'height':alto+'px'}">
+                        <li class="nav-item">
+                            <img src="img/forosas/logo_ABBVIE.png" style="max-width:150px;">
+                            <button type="button" class="close btn-close-menu" aria-label="Close" @click="cerrarMenu()">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </li>
+                        <li class="nav-item py-3"></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(2)">Speakers nacionales & internacionales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(3)">Conducción</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(4)">Historia</a>
+                        </li>                        
+                    </ul>
+                </div>
+
+        </nav>
 	  	<div class="container">
 
 
@@ -126,6 +172,9 @@
             <div class="solapa fondo solapa3" @click="mostrarSolapa(3)">
                 <p>Conducción</p>
             </div>
+            <div class="solapa fondo solapa2 solapa4" @click="mostrarSolapa(4)">
+                <p>Historia</p>
+            </div>            
 
 	  		<div class="row content-logo">
 	  			<a><img src="img/forosas/logo.png"></a>
@@ -168,6 +217,7 @@
         },
         data () {
             return {
+                alto: 100,
                 solapa: null,
                 seconds: this.segundosRestantes,
                 countdownTimer: null,
@@ -182,6 +232,9 @@
         },
         mounted () {
             var imgFondoDesk = new Image();
+            this.alto = $( document ).height(); 
+            console.debug(this.alto);
+            //$('.navbar-nav-menu').style(this.alto);
             imgFondoDesk.onload = function(){
                 console.debug('cargoooo');
                 setTimeout(function () {
@@ -248,6 +301,12 @@
                     this.audio.muted = this.audio.element.paused;
                 });
                 
+            },
+            mostrarMenu () {
+                $('.navbar-nav-menu').addClass('opened');
+            },
+            cerrarMenu() {
+                $('.navbar-nav-menu').removeClass('opened');
             }            
         }
     }

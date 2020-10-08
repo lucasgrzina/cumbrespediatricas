@@ -45372,7 +45372,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45383,6 +45383,55 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -45553,6 +45602,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
+            alto: 100,
             solapa: null,
             seconds: this.segundosRestantes,
             countdownTimer: null,
@@ -45566,6 +45616,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     mounted: function mounted() {
         var imgFondoDesk = new Image();
+        this.alto = $(document).height();
+        console.debug(this.alto);
+        //$('.navbar-nav-menu').style(this.alto);
         imgFondoDesk.onload = function () {
             console.debug('cargoooo');
             setTimeout(function () {
@@ -45629,6 +45682,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$nextTick(function () {
                 this.audio.muted = this.audio.element.paused;
             });
+        },
+        mostrarMenu: function mostrarMenu() {
+            $('.navbar-nav-menu').addClass('opened');
+        },
+        cerrarMenu: function cerrarMenu() {
+            $('.navbar-nav-menu').removeClass('opened');
         }
     }
 });
@@ -45681,8 +45740,134 @@ var render = function() {
                       _vm._v(" "),
                       _vm._m(3)
                     ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.solapa === 4
+                  ? _c("div", { staticClass: "modal-body" }, [
+                      _c("h2", [_vm._v("NUESTRA HISTORIA")]),
+                      _vm._v(" "),
+                      _vm._m(4)
+                    ])
                   : _vm._e()
               ])
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "nav",
+        { staticClass: "navbar navbar-expand-lg navbar-dark menu-mobile px-0" },
+        [
+          _c(
+            "button",
+            {
+              staticClass: "navbar-toggler",
+              attrs: { type: "button" },
+              on: {
+                click: function($event) {
+                  return _vm.mostrarMenu()
+                }
+              }
+            },
+            [
+              _c("img", {
+                staticStyle: { "max-width": "25px" },
+                attrs: { src: "img/forosas/bars-solid.png", width: "25px" }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "navbar-collapse hidden",
+              attrs: { id: "navbarNav" }
+            },
+            [
+              _c(
+                "ul",
+                {
+                  staticClass: "navbar-nav navbar-nav-menu px-3 py-2",
+                  style: { height: _vm.alto + "px" }
+                },
+                [
+                  _c("li", { staticClass: "nav-item" }, [
+                    _c("img", {
+                      staticStyle: { "max-width": "150px" },
+                      attrs: { src: "img/forosas/logo_ABBVIE.png" }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "close btn-close-menu",
+                        attrs: { type: "button", "aria-label": "Close" },
+                        on: {
+                          click: function($event) {
+                            return _vm.cerrarMenu()
+                          }
+                        }
+                      },
+                      [
+                        _c("span", { attrs: { "aria-hidden": "true" } }, [
+                          _vm._v("×")
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "nav-item py-3" }),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "nav-item" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link",
+                        attrs: { href: "javascript:void(0);" },
+                        on: {
+                          click: function($event) {
+                            return _vm.mostrarSolapa(2)
+                          }
+                        }
+                      },
+                      [_vm._v("Speakers nacionales & internacionales")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "nav-item" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link",
+                        attrs: { href: "javascript:void(0);" },
+                        on: {
+                          click: function($event) {
+                            return _vm.mostrarSolapa(3)
+                          }
+                        }
+                      },
+                      [_vm._v("Conducción")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "nav-item" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link",
+                        attrs: { href: "javascript:void(0);" },
+                        on: {
+                          click: function($event) {
+                            return _vm.mostrarSolapa(4)
+                          }
+                        }
+                      },
+                      [_vm._v("Historia")]
+                    )
+                  ])
+                ]
+              )
             ]
           )
         ]
@@ -45698,7 +45883,7 @@ var render = function() {
             ])
           }),
           _vm._v(" "),
-          _vm._m(4),
+          _vm._m(5),
           _vm._v(" "),
           _c(
             "div",
@@ -45726,7 +45911,20 @@ var render = function() {
             [_c("p", [_vm._v("Conducción")])]
           ),
           _vm._v(" "),
-          _vm._m(5),
+          _c(
+            "div",
+            {
+              staticClass: "solapa fondo solapa2 solapa4",
+              on: {
+                click: function($event) {
+                  return _vm.mostrarSolapa(4)
+                }
+              }
+            },
+            [_c("p", [_vm._v("Historia")])]
+          ),
+          _vm._v(" "),
+          _vm._m(6),
           _vm._v(" "),
           _c("div", { staticClass: "content-date" }, [
             _c("img", {
@@ -45762,7 +45960,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _vm._m(6)
+          _vm._m(7)
         ],
         2
       )
@@ -46037,6 +46235,64 @@ var staticRenderFns = [
           _vm._v(
             "Actualmente conduce el programa “En diálogo con Longobardi” en CNN en español, los días domingos a las 22 horas, para toda la comunidad de habla hispana”."
           )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("p", { staticClass: "p-sin-estilo" }, [
+          _vm._v(
+            "Como cada año, AbbVie organiza el Foro de Salud Sustentable (SaS), un evento dirigido principalmente a los financiadores y tomadores de decisión del sistema de salud argentino en donde se tratan las temáticas sanitarias más relevantes de interés actual."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-sin-estilo" }, [
+          _vm._v(
+            "El Foro SaS nació en 2014 como un proyecto educativo cuya misión se orientaba a fomentar el trabajo conjunto entre los referentes de patologías crónicas y los tomadores de decisión con el fin de optimizar el tratamiento del paciente teniendo un manejo adecuado de los recursos disponibles."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-sin-estilo" }, [
+          _vm._v(
+            "Motivado por la posibilidad de un sistema de salud sustentable que promueva prácticas de prevención, el diagnóstico temprano, el tratamiento óptimo de enfermedades y el acceso a verdadera innovación que sea sostenible y financieramente viable, el Foro se ha convertido en un reconocido espacio de actualización y reunión de los principales sanitaristas del país."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-sin-estilo" }, [
+          _vm._v(
+            "En esta 7ma edición, además de abordar las dificultades habituales que presenta el sistema sanitario argentino, el Foro brindará especial atención al impacto provocado por la pandemia a nivel nacional e internacional."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-sin-estilo" }, [
+          _vm._v(
+            "Es en este desafiante contexto que AbbVie llevará a cabo el Foro SaS en la modalidad virtual el 27 y 29 de octubre buscando reinventar el espacio históricamente presencial."
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-12" }, [
+        _c("div", { staticClass: "embed-container" }, [
+          _c("iframe", {
+            staticStyle: {
+              position: "absolute",
+              top: "0",
+              left: "0",
+              width: "100%",
+              height: "100%"
+            },
+            attrs: {
+              src: "https://player.vimeo.com/video/466148940",
+              frameborder: "0",
+              allow: "autoplay; fullscreen",
+              allowfullscreen: ""
+            }
+          })
         ])
       ])
     ])
