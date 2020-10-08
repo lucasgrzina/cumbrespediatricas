@@ -102,7 +102,7 @@
                             </div>
                             <div class="col-12">
                                 <div class="embed-container">
-                                    <iframe src="https://player.vimeo.com/video/466148940" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                                    <iframe id="video-historia" src="https://player.vimeo.com/video/466148940" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                                 </div>
                             </div>
                         </div>
@@ -233,7 +233,7 @@
         mounted () {
             var imgFondoDesk = new Image();
             this.alto = $( document ).height(); 
-            console.debug(this.alto);
+            
             //$('.navbar-nav-menu').style(this.alto);
             imgFondoDesk.onload = function(){
                 console.debug('cargoooo');
@@ -256,7 +256,8 @@
                     this.audio.element.muted = false;
                 }
                 this.audio.muted = this.audio.element.paused;
-            });        
+            });
+            $("#modal-solapas").on("hidden.bs.modal", this.alCerrarModal);                    
         },
         methods: {
             timer () {
@@ -283,10 +284,14 @@
                 }
             },
             mostrarSolapa (solapa) {
-                console.debug(solapa);
+                
                 this.solapa = solapa;
                 this.$nextTick(function () {
                     $('#modal-solapas').modal('show');
+                    if (solapa === 4) {
+                        this.setearEstadoAudio('muted');
+                    }
+                    
                 });
                 
             },
@@ -307,6 +312,25 @@
             },
             cerrarMenu() {
                 $('.navbar-nav-menu').removeClass('opened');
+            },
+            alCerrarModal () {
+                var url = $('#video-historia').attr('src');
+                $('#video-historia').attr('src', '');
+                $('#video-historia').attr('src', url);
+                this.setearEstadoAudio('play');
+
+            },
+            setearEstadoAudio (estado) {
+                if (estado === 'muted') {
+                    this.audio.element.pause();
+                } else {
+                    this.audio.element.play();
+                }
+
+                this.$nextTick(function() {
+                    this.audio.muted = this.audio.element.paused;
+                });
+                
             }            
         }
     }

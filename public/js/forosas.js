@@ -45372,7 +45372,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45617,7 +45617,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var imgFondoDesk = new Image();
         this.alto = $(document).height();
-        console.debug(this.alto);
+
         //$('.navbar-nav-menu').style(this.alto);
         imgFondoDesk.onload = function () {
             console.debug('cargoooo');
@@ -45639,6 +45639,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
             this.audio.muted = this.audio.element.paused;
         });
+        $("#modal-solapas").on("hidden.bs.modal", this.alCerrarModal);
     },
 
     methods: {
@@ -45666,10 +45667,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         },
         mostrarSolapa: function mostrarSolapa(solapa) {
-            console.debug(solapa);
+
             this.solapa = solapa;
             this.$nextTick(function () {
                 $('#modal-solapas').modal('show');
+                if (solapa === 4) {
+                    this.setearEstadoAudio('muted');
+                }
             });
         },
         cambiarEstadoAudio: function cambiarEstadoAudio() {
@@ -45688,6 +45692,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         cerrarMenu: function cerrarMenu() {
             $('.navbar-nav-menu').removeClass('opened');
+        },
+        alCerrarModal: function alCerrarModal() {
+            var url = $('#video-historia').attr('src');
+            $('#video-historia').attr('src', '');
+            $('#video-historia').attr('src', url);
+            this.setearEstadoAudio('play');
+        },
+        setearEstadoAudio: function setearEstadoAudio(estado) {
+            if (estado === 'muted') {
+                this.audio.element.pause();
+            } else {
+                this.audio.element.play();
+            }
+
+            this.$nextTick(function () {
+                this.audio.muted = this.audio.element.paused;
+            });
         }
     }
 });
@@ -46287,6 +46308,7 @@ var staticRenderFns = [
               height: "100%"
             },
             attrs: {
+              id: "video-historia",
               src: "https://player.vimeo.com/video/466148940",
               frameborder: "0",
               allow: "autoplay; fullscreen",

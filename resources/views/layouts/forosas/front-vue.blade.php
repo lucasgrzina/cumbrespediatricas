@@ -18,6 +18,7 @@
         <!-- Minified version of `es6-promise-auto` below. -->
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+        <script src="https://player.vimeo.com/api/player.js"></script>
         <script>
             window.App = {!! json_encode([
             ]) !!};
