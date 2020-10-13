@@ -381,6 +381,7 @@
                 $('#video-historia').attr('src', '');
                 $('#video-historia').attr('src', url);
                 this.setearEstadoAudio('play');
+                this.form.enviado = false;
 
             },
             enviarPregunta: function () {
