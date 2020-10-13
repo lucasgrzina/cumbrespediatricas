@@ -131,6 +131,7 @@ $appRoutesForoSas = function() use ($keyForoSas){
     Route::get('/registro', $data['controller'].'@registro')->name('registro');
     Route::post('/registrar', $data['controller'].'@registrar')->name('registrar');
     Route::post('/login', $data['controller'].'@login')->name('login');
+    Route::post('/enviar-pregunta', $data['controller'].'@enviarPregunta')->name('enviar-pregunta');
 };
 if (env('APP_ENV','production') === 'local') {
     Route::namespace('Front')->name($keyForoSas.'.')->domain('dev.foro-sas.com.ar')->group($appRoutesForoSas);

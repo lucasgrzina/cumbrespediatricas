@@ -90,14 +90,14 @@
                         
                     </div>  
                     <div class="modal-body" v-if="solapa === 4">
-                        <h2>NUESTRA HISTORIA</h2>
+                        <h2>HISTORIA DEL FORO DE SALUD SUSTENTABLE (SaS)</h2>
                         <div class="row">
                             <div class="col-12">
                                 <p class="p-sin-estilo">Como cada año, AbbVie organiza el Foro de Salud Sustentable (SaS), un evento dirigido principalmente a los financiadores y tomadores de decisión del sistema de salud argentino en donde se tratan las temáticas sanitarias más relevantes de interés actual.</p>
                                 <p class="p-sin-estilo">El Foro SaS nació en 2014 como un proyecto educativo cuya misión se orientaba a fomentar el trabajo conjunto entre los referentes de patologías crónicas y los tomadores de decisión con el fin de optimizar el tratamiento del paciente teniendo un manejo adecuado de los recursos disponibles.</p>
                                 <p class="p-sin-estilo">Motivado por la posibilidad de un sistema de salud sustentable que promueva prácticas de prevención, el diagnóstico temprano, el tratamiento óptimo de enfermedades y el acceso a verdadera innovación que sea sostenible y financieramente viable, el Foro se ha convertido en un reconocido espacio de actualización y reunión de los principales sanitaristas del país.</p>
                                 <p class="p-sin-estilo">En esta 7ma edición, además de abordar las dificultades habituales que presenta el sistema sanitario argentino, el Foro brindará especial atención al impacto provocado por la pandemia a nivel nacional e internacional.</p>
-                                <p class="p-sin-estilo">Es en este desafiante contexto que AbbVie llevará a cabo el Foro SaS en la modalidad virtual el 27 y 29 de octubre buscando reinventar el espacio históricamente presencial.</p>
+                                <p class="p-sin-estilo">Es en este desafiante contexto que AbbVie llevará a cabo el <strong>Foro SaS en la modalidad virtual el 27 y 29 de octubre</strong> buscando reinventar el espacio históricamente presencial.</p>
                                 
                             </div>
                             <div class="col-12">
@@ -107,7 +107,53 @@
                             </div>
                         </div>
                         
-                    </div>                                            
+                    </div>   
+                    <div class="modal-body" v-if="solapa === 5">
+                        <h2>PREGUNTAS A SPEAKERS</h2>
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="p-sin-estilo">Hágale una pregunta al speaker que desee y la tendremos en cuenta durante el vivo del 7mo Foro SaS.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8 col-md-8 mx-auto">
+                                <div class="form-group">
+                                    <label for="speaker">Speaker</label>
+                                    <select class="form-control" id="speaker" name="speaker" v-model="form.speaker">
+                                        <option :value="null">Seleccione</option>
+                                        <option value="Dr. Flavio Devoto">Dr. Flavio Devoto</option>
+                                        <option value="Dr. Gabriel Lebersztein">Dr. Gabriel Lebersztein</option>
+                                        <option value="Luciana Escati Peñaloza">Luciana Escati Peñaloza</option>
+                                        <option value="Vicente Ortún Rubio">Vicente Ortún Rubio</option>
+                                        <option value="André Medici">André Medici</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="pregunta">Pregunta</label>
+                                    <textarea class="form-control" id="pregunta" name="pregunta" placeholder="Escriba su pregunta aquí" v-model="form.pregunta"></textarea>
+                                </div>
+                                <div class="form-group text-center">
+                                    <button type="button" 
+                                            class="btn btn-primary btn-enviar-pregunta" 
+                                            @click="enviarPregunta()"
+                                            
+                                    >
+                                        
+                                        <span v-if="!form.enviando">ENVIAR</span>
+                                        <span v-else>ENVIANDO...</span>
+                                    </button>                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="row" v-if="form.enviado">
+                            <div class="col-12">
+                                <p class="p-sin-estilo text-center"><strong>Su pregunta ya fue enviada. Muchas Gracias!</strong></p>    
+                            </div>    
+                        </div>   
+                        
+                    </div>                                                                
                 </div>
             </div>
         </div> 
@@ -120,21 +166,25 @@
 
                     <ul class="navbar-nav navbar-nav-menu px-3 py-2" :style="{'height':alto+'px'}">
                         <li class="nav-item">
-                            <img src="img/forosas/logo_ABBVIE.png" style="max-width:150px;">
+                            <img src="img/forosas/logo.png" style="max-width:150px;">
                             <button type="button" class="close btn-close-menu" aria-label="Close" @click="cerrarMenu()">
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </li>
                         <li class="nav-item py-3"></li>
                         <li class="nav-item">
-                            <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(2)">Speakers nacionales & internacionales</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(3)">Conducción</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(2)">Speakers nacionales & internacionales</a>                            
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(4)">Historia</a>
+                        </li>   
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(5)">Preguntas a Speakers</a>
                         </li>                        
+                        
                     </ul>
                 </div>
 
@@ -174,7 +224,10 @@
             </div>
             <div class="solapa fondo solapa2 solapa4" @click="mostrarSolapa(4)">
                 <p>Historia</p>
-            </div>            
+            </div>
+            <div class="solapa fondo solapa5" @click="mostrarSolapa(5)">
+                <p>Preguntas a Speakers</p>
+            </div>                        
 
 	  		<div class="row content-logo">
 	  			<a><img src="img/forosas/logo.png"></a>
@@ -213,6 +266,10 @@
             },
             ahora: {
                 type: String
+            },
+            urlEnviarPregunta: {
+                type: String,
+                required: true
             }
         },
         data () {
@@ -227,6 +284,12 @@
                 audio: {
                     muted: false,
                     element: null
+                },
+                form: {
+                    speaker: null,
+                    pregunta: null,
+                    enviando: false,
+                    enviado: false
                 }
             }
         },
@@ -320,6 +383,29 @@
                 this.setearEstadoAudio('play');
 
             },
+            enviarPregunta: function () {
+                let vm = this
+                if (!vm.form.pregunta || !vm.form.speaker) {
+                    alert('Debe seleccionar al speaker e ingresar la pregunta');
+                    return false;
+                }
+                if (vm.form.pregunta && vm.form.speaker && !vm.form.enviando) {
+                    vm.form.enviando = true;
+                    vm.form.enviado = false;
+                    axios.post(vm.urlEnviarPregunta, vm.form)
+                        .then(response => {
+                            vm.form.enviando = false;
+                            vm.form.enviado = true;
+                            vm.form.pregunta = null;
+                            vm.form.speaker = null;
+                        }, error => {
+                            vm.form.enviando = false;
+                            
+                            alert(error.message);
+                        });                    
+                }
+            },
+
             setearEstadoAudio (estado) {
                 if (estado === 'muted') {
                     this.audio.element.pause();

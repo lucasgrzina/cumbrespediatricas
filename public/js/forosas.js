@@ -45372,7 +45372,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45589,6 +45589,59 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
@@ -45598,6 +45651,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         ahora: {
             type: String
+        },
+        urlEnviarPregunta: {
+            type: String,
+            required: true
         }
     },
     data: function data() {
@@ -45611,6 +45668,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             audio: {
                 muted: false,
                 element: null
+            },
+            form: {
+                speaker: null,
+                pregunta: null,
+                enviando: false,
+                enviado: false
             }
         };
     },
@@ -45699,6 +45762,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             $('#video-historia').attr('src', url);
             this.setearEstadoAudio('play');
         },
+
+        enviarPregunta: function enviarPregunta() {
+            var vm = this;
+            if (!vm.form.pregunta || !vm.form.speaker) {
+                alert('Debe seleccionar al speaker e ingresar la pregunta');
+                return false;
+            }
+            if (vm.form.pregunta && vm.form.speaker && !vm.form.enviando) {
+                vm.form.enviando = true;
+                vm.form.enviado = false;
+                axios.post(vm.urlEnviarPregunta, vm.form).then(function (response) {
+                    vm.form.enviando = false;
+                    vm.form.enviado = true;
+                    vm.form.pregunta = null;
+                    vm.form.speaker = null;
+                }, function (error) {
+                    vm.form.enviando = false;
+
+                    alert(error.message);
+                });
+            }
+        },
+
         setearEstadoAudio: function setearEstadoAudio(estado) {
             if (estado === 'muted') {
                 this.audio.element.pause();
@@ -45765,9 +45851,179 @@ var render = function() {
                 _vm._v(" "),
                 _vm.solapa === 4
                   ? _c("div", { staticClass: "modal-body" }, [
-                      _c("h2", [_vm._v("NUESTRA HISTORIA")]),
+                      _c("h2", [
+                        _vm._v("HISTORIA DEL FORO DE SALUD SUSTENTABLE (SaS)")
+                      ]),
                       _vm._v(" "),
                       _vm._m(4)
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.solapa === 5
+                  ? _c("div", { staticClass: "modal-body" }, [
+                      _c("h2", [_vm._v("PREGUNTAS A SPEAKERS")]),
+                      _vm._v(" "),
+                      _vm._m(5),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c(
+                          "div",
+                          { staticClass: "col-sm-8 col-md-8 mx-auto" },
+                          [
+                            _c("div", { staticClass: "form-group" }, [
+                              _c("label", { attrs: { for: "speaker" } }, [
+                                _vm._v("Speaker")
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "select",
+                                {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.form.speaker,
+                                      expression: "form.speaker"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: { id: "speaker", name: "speaker" },
+                                  on: {
+                                    change: function($event) {
+                                      var $$selectedVal = Array.prototype.filter
+                                        .call($event.target.options, function(
+                                          o
+                                        ) {
+                                          return o.selected
+                                        })
+                                        .map(function(o) {
+                                          var val =
+                                            "_value" in o ? o._value : o.value
+                                          return val
+                                        })
+                                      _vm.$set(
+                                        _vm.form,
+                                        "speaker",
+                                        $event.target.multiple
+                                          ? $$selectedVal
+                                          : $$selectedVal[0]
+                                      )
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("option", { domProps: { value: null } }, [
+                                    _vm._v("Seleccione")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    { attrs: { value: "Dr. Flavio Devoto" } },
+                                    [_vm._v("Dr. Flavio Devoto")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    {
+                                      attrs: {
+                                        value: "Dr. Gabriel Lebersztein"
+                                      }
+                                    },
+                                    [_vm._v("Dr. Gabriel Lebersztein")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    {
+                                      attrs: {
+                                        value: "Luciana Escati Peñaloza"
+                                      }
+                                    },
+                                    [_vm._v("Luciana Escati Peñaloza")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    { attrs: { value: "Vicente Ortún Rubio" } },
+                                    [_vm._v("Vicente Ortún Rubio")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    { attrs: { value: "André Medici" } },
+                                    [_vm._v("André Medici")]
+                                  )
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "form-group" }, [
+                              _c("label", { attrs: { for: "pregunta" } }, [
+                                _vm._v("Pregunta")
+                              ]),
+                              _vm._v(" "),
+                              _c("textarea", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.form.pregunta,
+                                    expression: "form.pregunta"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  id: "pregunta",
+                                  name: "pregunta",
+                                  placeholder: "Escriba su pregunta aquí"
+                                },
+                                domProps: { value: _vm.form.pregunta },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.form,
+                                      "pregunta",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "form-group text-center" },
+                              [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass:
+                                      "btn btn-primary btn-enviar-pregunta",
+                                    attrs: { type: "button" },
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.enviarPregunta()
+                                      }
+                                    }
+                                  },
+                                  [
+                                    !_vm.form.enviando
+                                      ? _c("span", [_vm._v("ENVIAR")])
+                                      : _c("span", [_vm._v("ENVIANDO...")])
+                                  ]
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _vm.form.enviado
+                        ? _c("div", { staticClass: "row" }, [_vm._m(6)])
+                        : _vm._e()
                     ])
                   : _vm._e()
               ])
@@ -45816,7 +46072,7 @@ var render = function() {
                   _c("li", { staticClass: "nav-item" }, [
                     _c("img", {
                       staticStyle: { "max-width": "150px" },
-                      attrs: { src: "img/forosas/logo_ABBVIE.png" }
+                      attrs: { src: "img/forosas/logo.png" }
                     }),
                     _vm._v(" "),
                     _c(
@@ -45848,22 +46104,6 @@ var render = function() {
                         attrs: { href: "javascript:void(0);" },
                         on: {
                           click: function($event) {
-                            return _vm.mostrarSolapa(2)
-                          }
-                        }
-                      },
-                      [_vm._v("Speakers nacionales & internacionales")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { href: "javascript:void(0);" },
-                        on: {
-                          click: function($event) {
                             return _vm.mostrarSolapa(3)
                           }
                         }
@@ -45880,11 +46120,43 @@ var render = function() {
                         attrs: { href: "javascript:void(0);" },
                         on: {
                           click: function($event) {
+                            return _vm.mostrarSolapa(2)
+                          }
+                        }
+                      },
+                      [_vm._v("Speakers nacionales & internacionales")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "nav-item" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link",
+                        attrs: { href: "javascript:void(0);" },
+                        on: {
+                          click: function($event) {
                             return _vm.mostrarSolapa(4)
                           }
                         }
                       },
                       [_vm._v("Historia")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "nav-item" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link",
+                        attrs: { href: "javascript:void(0);" },
+                        on: {
+                          click: function($event) {
+                            return _vm.mostrarSolapa(5)
+                          }
+                        }
+                      },
+                      [_vm._v("Preguntas a Speakers")]
                     )
                   ])
                 ]
@@ -45904,7 +46176,7 @@ var render = function() {
             ])
           }),
           _vm._v(" "),
-          _vm._m(5),
+          _vm._m(7),
           _vm._v(" "),
           _c(
             "div",
@@ -45945,7 +46217,20 @@ var render = function() {
             [_c("p", [_vm._v("Historia")])]
           ),
           _vm._v(" "),
-          _vm._m(6),
+          _c(
+            "div",
+            {
+              staticClass: "solapa fondo solapa5",
+              on: {
+                click: function($event) {
+                  return _vm.mostrarSolapa(5)
+                }
+              }
+            },
+            [_c("p", [_vm._v("Preguntas a Speakers")])]
+          ),
+          _vm._v(" "),
+          _vm._m(8),
           _vm._v(" "),
           _c("div", { staticClass: "content-date" }, [
             _c("img", {
@@ -45981,7 +46266,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _vm._m(7)
+          _vm._m(9)
         ],
         2
       )
@@ -46292,8 +46577,12 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", { staticClass: "p-sin-estilo" }, [
           _vm._v(
-            "Es en este desafiante contexto que AbbVie llevará a cabo el Foro SaS en la modalidad virtual el 27 y 29 de octubre buscando reinventar el espacio históricamente presencial."
-          )
+            "Es en este desafiante contexto que AbbVie llevará a cabo el "
+          ),
+          _c("strong", [
+            _vm._v("Foro SaS en la modalidad virtual el 27 y 29 de octubre")
+          ]),
+          _vm._v(" buscando reinventar el espacio históricamente presencial.")
         ])
       ]),
       _vm._v(" "),
@@ -46316,6 +46605,30 @@ var staticRenderFns = [
             }
           })
         ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("p", { staticClass: "p-sin-estilo" }, [
+          _vm._v(
+            "Hágale una pregunta al speaker que desee y la tendremos en cuenta durante el vivo del 7mo Foro SaS."
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-12" }, [
+      _c("p", { staticClass: "p-sin-estilo text-center" }, [
+        _c("strong", [_vm._v("Su pregunta ya fue enviada. Muchas Gracias!")])
       ])
     ])
   },

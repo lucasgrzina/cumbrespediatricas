@@ -67,12 +67,13 @@ input::-webkit-input-placeholder {
 }
 
 .solapa.solapa2 {
-	top: 125px;
+	top: 220px;
 	padding-top: 10px;
 	cursor: pointer;
 }
 .solapa.solapa3 {
-	top: 220px;
+	top: 125px;
+	
 	cursor: pointer;
 }
 .solapa.solapa4 {
@@ -80,6 +81,10 @@ input::-webkit-input-placeholder {
     right: initial;
     left: -75px;
     height: 85px;
+}
+.solapa.solapa5 {
+	top: 315px;
+	cursor: pointer;
 }
 .solapa p{
 	 font-family: 'gotham';
@@ -97,13 +102,26 @@ input::-webkit-input-placeholder {
     line-height: 25px;
     padding-top: 15px;
 }
-.solapa3 p,.solapa4 p {
+.solapa3 p,.solapa4 p{
 	font-size: 25px;
 	line-height: 25px;
 	padding-top: 20px;
 }
-
-
+.solapa5 p {
+	font-size: 20px;
+    line-height: 25px;
+    padding-top: 10px;
+}
+	
+.btn-enviar-pregunta {
+	font-family: 'gotham';
+	color: #fff;
+	font-size: 18px;
+	line-height: 20px;
+	font-weight: bold;
+	font-style: italic;
+	padding: 10px 15px;	
+}
 .counter .timer{
 	color: #fff;
     padding: 0 40px;
@@ -288,8 +306,8 @@ input::-webkit-input-placeholder {
 	color: #27a1d2;
 }
 #modal-solapas .modal-body p.p-sin-estilo {
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 #modal-solapas .modal-body p.p-sin-estilo::before {
 	content:"";
@@ -321,6 +339,18 @@ input::-webkit-input-placeholder {
 .menu-mobile {
 	display: none;
 }
+.menu-mobile .navbar-nav-menu .nav-link {
+		font-family: 'gotham';
+		color: #fff;
+		font-size: 18px;
+		line-height: 20px;
+		font-weight: bold;
+		font-style: italic;
+		text-align: letf;
+		margin-bottom: 5px;
+		text-transform: uppercase;
+   
+}
 .menu-mobile .navbar-collapse.collapse.in {
 	display: block;
 }
@@ -334,7 +364,7 @@ input::-webkit-input-placeholder {
 .menu-mobile .navbar-nav-menu {
 	position: absolute;
     z-index: 9;
-    background-color: #030344;
+    background-color: #238bc8;
     top: 0;
     left: -1000px;
 }
@@ -430,14 +460,18 @@ input::-webkit-input-placeholder {
 		height: 70px;
 		right: -85px;
 		display: none;
-	}	
+	}
+
 
 	.solapa.solapa2 {
 		top: 90px;
 		display: none;
 	}	
 
-	
+	.solapa.solapa5 { 
+		display: none;
+	}
+
 
 
 	.solapa p {

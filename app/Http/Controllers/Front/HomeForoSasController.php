@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Front;
 
 
+use App\Preguntas;
 use Carbon\Carbon;
-use App\Registrado;
 
+use App\Registrado;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\Front\RegistrarRequest;
@@ -33,7 +34,8 @@ class HomeForoSasController extends EventoBaseController
         $data = [
             'props' => [
                 'ahora' => $ahora->format('Y-m-d H:i:s'),
-                'segundosRestantes' => Carbon::parse('2020-10-27 18:00:00')->diffInSeconds($ahora)
+                'segundosRestantes' => Carbon::parse('2020-10-27 18:00:00')->diffInSeconds($ahora),
+                'urlEnviarPregunta' => route($this->key.'.enviar-pregunta'),
             ]
         ];
         return view('front.'.$this->evento['view'].'.home-vue', $data);
@@ -99,6 +101,25 @@ class HomeForoSasController extends EventoBaseController
         } catch (\Exception $e) {
             return $this->sendError($e->getMessage(),$e->getCode());
         }
-    }      
+    } 
+    
+    public function enviarPregunta(Request $request) {
+        try {
+            $data = $request->all();
+            $data['evento'] = $this->key;
+            try {
+                $registrado = \Auth::user();
+                $data['registrado_id'] = $registrado->id;
+
+            } catch (\Exception $e) {}
+            $data['destinatario'] = $data['speaker'];
+            $data = Preguntas::create($data);
+            
+            
+            return $this->sendResponse($data,'La operación finañizó con éxito');                
+        } catch (\Exception $e) {
+            return $this->sendError($e->getMessage(),$e->getCode());
+        }
+    }    
 
 }
