@@ -104,6 +104,7 @@ class PreguntasController extends CrudAdminController
         $header = [
             'id' => 'ID',
             'pregunta' => 'Pregunta',
+            'destinatario' => 'Destinatario',
         ];
         $format = [
         ];

@@ -7,7 +7,10 @@
 	<td>{!! Form::label('pregunta', 'Pregunta') !!}</td>
 	<td>(% selectedItem.pregunta %)</td>    
 </tr>
-
+<tr>
+	<td>{!! Form::label('destinatario', 'Destinatario') !!}</td>
+	<td>(% selectedItem.destinatario %)</td>    
+</tr>
 <tr>
 	<td>{!! Form::label('registrado_id', 'Registrado Id') !!}</td>
 	<td>(% selectedItem.registrado_id %)</td>    
