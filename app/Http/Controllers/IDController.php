@@ -29,13 +29,12 @@ class IDController extends Controller
     public function sendEmail() {
         try
         {
-            Mail::raw('This is the content of mail body', function($message)
-            {
-                $message->from('test@test.com', 'Test Email');
+            $pathToFile = asset('img/forosas/Confirmacion.jpg');
+            $contenidoEmail = "Hola Lucas<br>".
+            "Muchas gracias por registrarse al 7mo Foro de Salud Sustentable (SaS).<br>".
+            "Ya puede darle un vistazo a la información del evento ingresando al sitio web www.foro-sas.com.ar";
+            Mail::queue(new \App\Mail\RawMailable('lucasgrzina@gmail.com', 'Foro-Sas: Registro', $contenidoEmail));                    
 
-                $message->to('lucasgrzina@gmail.com');
-
-            });
             
         }
         catch(\Exception $ex)

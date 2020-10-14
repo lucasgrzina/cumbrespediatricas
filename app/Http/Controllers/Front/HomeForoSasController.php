@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use App\Registrado;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\Front\RegistrarRequest;
 use App\Http\Front\Controllers\EventoBaseController;
 
@@ -74,6 +75,21 @@ class HomeForoSasController extends EventoBaseController
             
             DB::beginTransaction();
             $data = Registrado::create($input);
+            try
+            {
+                
+                
+                    $pathToFile = asset('img/forosas/Confirmacion.jpg');
+                    $contenidoEmail = "Hola {$request->nombre}<br>".
+                    "Muchas gracias por registrarse al 7mo Foro de Salud Sustentable (SaS).<br>".
+                    "Ya puede darle un vistazo a la información del evento ingresando al sitio web www.foro-sas.com.ar";
+                    Mail::queue(new \App\Mail\RawMailable($request->email, 'Foro-Sas: Registro', $contenidoEmail));                    
+                
+            }
+            catch(\Exception $ex)
+            {
+                \Log::error($ex->getMessage());
+            }               
             \Auth::login($data);
             //\Auth::login($data);
             DB::commit();

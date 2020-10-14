@@ -27,39 +27,21 @@ class TestController extends AppBaseController
             \Log::info($ex->getMessage());
         }
     }
-    public function rolLogin(ApiRolService $rolService) {
+    public function sendEmail() {
         try
         {
+            Mail::raw('This is the content of mail body', function($message)
+            {
+                $message->from('test@test.com', 'Test Email');
+
+                $message->to('lucasgrzina@gmail.com');
+
+            });
             
-            $respuesta = $rolService->login();
-            return $this->sendResponse($respuesta, trans('admin.success'));
-            
         }
         catch(\Exception $ex)
         {
-            \Log::info($ex->getMessage());
-        }
-    }
-    public function rolConsultarInforme(ApiRolService $rolService) {
-        try
-        {
-            $respuesta = $rolService->consultarInforme('23300075169');
-            return $this->sendResponse($respuesta, trans('admin.success'));            
-        }
-        catch(\Exception $ex)
-        {
-            \Log::info($ex->getMessage());
-        }
-    }    
-    public function rolSolicitarInforme(ApiRolService $rolService) {
-        try
-        {
-            $respuesta = $rolService->solicitarInforme('23300075169');
-            return $this->sendResponse($respuesta, trans('admin.success'));            
-        }
-        catch(\Exception $ex)
-        {
-            \Log::info($ex->getMessage());
-        }
-    }     
+            return $ex->getMessage();
+        }        
+    }   
 }
