@@ -40,7 +40,7 @@ class RawMailable extends Mailable
         $this->view('emails.raw',['contents' => $this->content]);
         $pathToFile = asset('img/forosas/Confirmacion.jpg');
         $this->subject($this->mailSubject)
-        ->from('no-reply@foro-sas.com.ar', 'Foro-Sas: Registro')
+        //->from('no-reply@foro-sas.com.ar', 'Foro-Sas: Registro')
         ->attach($pathToFile)
         ->to($this->mailTo);
     }
