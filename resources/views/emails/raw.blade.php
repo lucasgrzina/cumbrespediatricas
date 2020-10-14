@@ -1,1 +1,4 @@
-{!! $content !!};
+@php
+    \Log::info($content);
+@endphp
+{!! $content !!}
