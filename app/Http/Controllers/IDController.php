@@ -27,8 +27,7 @@ class IDController extends Controller
     }
 
     public function sendEmail() {
-        try
-        {
+
             $pathToFile = asset('img/forosas/Confirmacion.jpg');
             $contenidoEmail = "Hola Lucas<br>".
             "Muchas gracias por registrarse al 7mo Foro de Salud Sustentable (SaS).<br>".
@@ -36,11 +35,7 @@ class IDController extends Controller
             Mail::queue(new \App\Mail\RawMailable('lucasgrzina@gmail.com', 'Foro-Sas: Registro', $contenidoEmail));                    
 
             
-        }
-        catch(\Exception $ex)
-        {
-            return $ex->getMessage();
-        }        
+           
     }
     
 }
