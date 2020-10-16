@@ -103,6 +103,11 @@ input::-webkit-input-placeholder {
 	top: 315px;
 	cursor: pointer;
 }
+.solapa.solapa6 {
+	top: 410px;
+	
+	cursor: pointer;
+}
 .solapa p{
 	 font-family: 'gotham';
 	 color: #fff;
@@ -119,7 +124,7 @@ input::-webkit-input-placeholder {
     line-height: 25px;
     padding-top: 15px;
 }
-.solapa3 p,.solapa4 p{
+.solapa3 p,.solapa4 p,.solapa6 p{
 	font-size: 25px;
 	line-height: 25px;
 	padding-top: 20px;
@@ -411,6 +416,40 @@ input::-webkit-input-placeholder {
 	position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
   }
 
+  .agenda-separador {
+	  padding: 30px;
+  }
+
+  .agenda-separador>.row {
+	  padding-bottom: 10px;
+  }
+  .agenda-separador>.row>.col-sm-4,.agenda-separador>.row>.col-sm-8{
+	  border-bottom: 1px solid #2765d1;
+  }
+  #modal-solapas .modal-body .agenda-separador p.p-sin-estilo {
+	 padding-left: 0;
+	 padding-right: 0;
+ } 
+.agenda-texto-azul {
+	color: #2765d1;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 600;	
+}
+.agenda-texto-negro {
+	color: #000046;
+    font-size: 15px;
+    line-height: 17px;
+}
+.agenda-texto-hora {
+	display: block;
+	text-align: center;
+	color: #000046;
+    font-size: 16px;
+	line-height: 18px;
+	font-weight: 700;	
+}
+
 @media (min-width: 769px) {
 	#modal-solapas .modal-dialog {
 		max-width: 650px!important;
@@ -426,6 +465,9 @@ input::-webkit-input-placeholder {
 
 
 @media (max-width: 768px){
+	.agenda-separador>.row>.col-sm-4 {
+		border-bottom: none;
+	}
 	.menu-mobile {
 		display: block;
 	}
@@ -467,7 +509,7 @@ input::-webkit-input-placeholder {
 		top: 90px;
 		display: none;
 	}
-	.solapa2 p, .solapa3 p {
+	.solapa2 p, .solapa3 p, .solapa6 {
 		font-size: 15px;
 		line-height: 20px;
 		padding-top: 11px;
@@ -478,7 +520,9 @@ input::-webkit-input-placeholder {
 		right: -85px;
 		display: none;
 	}
-
+	.solapa.solapa6 {
+		display: none;
+	}
 
 	.solapa.solapa2 {
 		top: 90px;

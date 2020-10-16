@@ -45372,7 +45372,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45383,6 +45383,141 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -46042,6 +46177,18 @@ var render = function() {
                         ? _c("div", { staticClass: "row" }, [_vm._m(6)])
                         : _vm._e()
                     ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.solapa === 6
+                  ? _c("div", { staticClass: "modal-body" }, [
+                      _vm._m(7),
+                      _vm._v(" "),
+                      _vm._m(8),
+                      _vm._v(" "),
+                      _vm._m(9),
+                      _vm._v(" "),
+                      _vm._m(10)
+                    ])
                   : _vm._e()
               ])
             ]
@@ -46175,6 +46322,22 @@ var render = function() {
                       },
                       [_vm._v("Historia")]
                     )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "nav-item" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link",
+                        attrs: { href: "javascript:void(0);" },
+                        on: {
+                          click: function($event) {
+                            return _vm.mostrarSolapa(6)
+                          }
+                        }
+                      },
+                      [_vm._v("Agenda")]
+                    )
                   ])
                 ]
               )
@@ -46193,7 +46356,7 @@ var render = function() {
             ])
           }),
           _vm._v(" "),
-          _vm._m(7),
+          _vm._m(11),
           _vm._v(" "),
           _c(
             "div",
@@ -46247,7 +46410,20 @@ var render = function() {
             [_c("p", [_vm._v("Preguntas a Speakers")])]
           ),
           _vm._v(" "),
-          _vm._m(8),
+          _c(
+            "div",
+            {
+              staticClass: "solapa fondo solapa6",
+              on: {
+                click: function($event) {
+                  return _vm.mostrarSolapa(6)
+                }
+              }
+            },
+            [_c("p", [_vm._v("Agenda")])]
+          ),
+          _vm._v(" "),
+          _vm._m(12),
           _vm._v(" "),
           _c("div", { staticClass: "content-date" }, [
             _c("img", {
@@ -46283,7 +46459,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _vm._m(9)
+          _vm._m(13)
         ],
         2
       )
@@ -46676,6 +46852,265 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-12" }, [
       _c("p", { staticClass: "p-sin-estilo text-center" }, [
         _c("strong", [_vm._v("Su pregunta ya fue enviada. Muchas Gracias!")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h2", [
+      _vm._v("AGENDA "),
+      _c("strong", [_vm._v("27 DE OCTUBRE | NACIONAL")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "agenda-separador" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-sm-4" }, [
+          _c("p", { staticClass: "p-sin-estilo" }, [
+            _c("span", { staticClass: "agenda-texto-hora" }, [
+              _vm._v("18:00 a 18:10 hs.")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-8" }, [
+          _c("p", { staticClass: "p-sin-estilo" }, [
+            _c("span", { staticClass: "agenda-texto-azul d-block" }, [
+              _vm._v(
+                "Apertura y Bienvenida al 7º Foro de Salud Sustentable (SaS)"
+              )
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
+              _c("strong", [_vm._v("Marcelo Longobardi | Dr. Flavio Devoto")])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-sm-4" }, [
+          _c("p", { staticClass: "p-sin-estilo" }, [
+            _c("span", { staticClass: "agenda-texto-hora" }, [
+              _vm._v("18:10 a 18:40 hs.")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-8" }, [
+          _c("p", { staticClass: "p-sin-estilo" }, [
+            _c("span", { staticClass: "agenda-texto-azul d-block" }, [
+              _vm._v("Editorial: Análisis político, económico y sanitario.")
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
+              _c("strong", [_vm._v("Marcelo Longobardi")])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-sm-4" }, [
+          _c("p", { staticClass: "p-sin-estilo" }, [
+            _c("span", { staticClass: "agenda-texto-hora" }, [
+              _vm._v("18:40 a 19:25 hs.")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-8" }, [
+          _c("p", { staticClass: "p-sin-estilo" }, [
+            _c("span", { staticClass: "agenda-texto-azul d-block" }, [
+              _vm._v(
+                "¿Crisis sanitaria = Oportunidad de mejora para el sistema sanitario argentino?"
+              )
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
+              _c("strong", [_vm._v("Dr. Gabriel Lebersztein")]),
+              _vm._v(
+                " - Gerente Médico OSECAC\n                                        "
+              )
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
+              _c("strong", [_vm._v("Luciana Escati Peñalosa")]),
+              _vm._v(
+                " - Presidenta Asociación de Pacientes Fundación Más Vida\n                                        "
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-sm-4" }, [
+          _c("p", { staticClass: "p-sin-estilo" }, [
+            _c("span", { staticClass: "agenda-texto-hora" }, [
+              _vm._v("19:25 a 19:35 hs.")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-8" }, [
+          _c("p", { staticClass: "p-sin-estilo" }, [
+            _c("span", { staticClass: "agenda-texto-azul d-block" }, [
+              _vm._v("Compartiendo Buenas Prácticas de Salud Sustentable")
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
+              _c("strong", [_vm._v("Decisores en salud")])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-sm-4" }, [
+          _c("p", { staticClass: "p-sin-estilo" }, [
+            _c("span", { staticClass: "agenda-texto-hora" }, [
+              _vm._v("19:35 a 19:45 hs.")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-8" }, [
+          _c("p", { staticClass: "p-sin-estilo" }, [
+            _c("span", { staticClass: "agenda-texto-azul d-block" }, [
+              _vm._v("Cierre Día Nacional")
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
+              _c("strong", [_vm._v("Marcelo Longobardi | Dr. Flavio Devoto")])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h2", [
+      _vm._v("AGENDA "),
+      _c("strong", [_vm._v("29 DE OCTUBRE | INTERNACIONAL")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "agenda-separador" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-sm-4" }, [
+          _c("p", { staticClass: "p-sin-estilo" }, [
+            _c("span", { staticClass: "agenda-texto-hora" }, [
+              _vm._v("18:00 a 18:05 hs.")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-8" }, [
+          _c("p", { staticClass: "p-sin-estilo" }, [
+            _c("span", { staticClass: "agenda-texto-azul d-block" }, [
+              _vm._v("Apertura y Bienvenida Día Internacional")
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
+              _c("strong", [_vm._v("Marcelo Longobardi | Dr. Flavio Devoto")])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-sm-4" }, [
+          _c("p", { staticClass: "p-sin-estilo" }, [
+            _c("span", { staticClass: "agenda-texto-hora" }, [
+              _vm._v("18:05 a 18:50 hs.")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-8" }, [
+          _c("p", { staticClass: "p-sin-estilo" }, [
+            _c("span", { staticClass: "agenda-texto-azul d-block" }, [
+              _vm._v(
+                "¿Pasaron la prueba los sistemas de salud ante la pandemia? La experiencia de Estados Unidos, Brasil y Europa."
+              )
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
+              _c("strong", [_vm._v("Vicente Ortún Rubio")]),
+              _vm._v(
+                " - Fundador del Centro de Investigación en Economía y Salud (CRES) y ex decano de Universidad Pompeu Fabra.\n                                        "
+              )
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
+              _c("strong", [_vm._v("André Medici")]),
+              _vm._v(
+                " - Ex Economista de Salud del Banco Mundial\n                                        "
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-sm-4" }, [
+          _c("p", { staticClass: "p-sin-estilo" }, [
+            _c("span", { staticClass: "agenda-texto-hora" }, [
+              _vm._v("18:50 a 19:35 hs.")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-8" }, [
+          _c("p", { staticClass: "p-sin-estilo" }, [
+            _c("span", { staticClass: "agenda-texto-azul d-block" }, [
+              _vm._v(
+                "Evaluación institucional y personal sobre la gestión de la pandemia en CABA"
+              )
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
+              _c("strong", [_vm._v("Dr. Fernán Quirós")]),
+              _vm._v(
+                " - Ministro de Salud de la Ciudad de Bs. As.\n                                        "
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-sm-4" }, [
+          _c("p", { staticClass: "p-sin-estilo" }, [
+            _c("span", { staticClass: "agenda-texto-hora" }, [
+              _vm._v("19:35 a 19:45 hs.")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-8" }, [
+          _c("p", { staticClass: "p-sin-estilo" }, [
+            _c("span", { staticClass: "agenda-texto-azul d-block" }, [
+              _vm._v("Cierre del 7º Foro de Salud Sustentable (SaS)")
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
+              _c("strong", [_vm._v("Marcelo Longobardi | Daniel Diminutto")])
+            ])
+          ])
+        ])
       ])
     ])
   },

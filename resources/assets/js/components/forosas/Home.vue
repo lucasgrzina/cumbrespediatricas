@@ -163,7 +163,137 @@
                             </div>    
                         </div>   
                         
-                    </div>                                                                
+                    </div> 
+                    <div class="modal-body" v-if="solapa === 6">
+                        <h2>AGENDA <strong>27 DE OCTUBRE | NACIONAL</strong></h2>
+                        <div class="agenda-separador">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <p class="p-sin-estilo"><span class="agenda-texto-hora">18:00 a 18:10 hs.</span></p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <p class="p-sin-estilo">
+                                        <span class="agenda-texto-azul d-block">Apertura y Bienvenida al 7º Foro de Salud Sustentable (SaS)</span>
+                                        <span class="agenda-texto-negro d-block"><strong>Marcelo Longobardi | Dr. Flavio Devoto</strong></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <p class="p-sin-estilo"><span class="agenda-texto-hora">18:10 a 18:40 hs.</span></p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <p class="p-sin-estilo">
+                                        <span class="agenda-texto-azul d-block">Editorial: Análisis político, económico y sanitario.</span>
+                                        <span class="agenda-texto-negro d-block"><strong>Marcelo Longobardi</strong></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <p class="p-sin-estilo"><span class="agenda-texto-hora">18:40 a 19:25 hs.</span></p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <p class="p-sin-estilo">
+                                        <span class="agenda-texto-azul d-block">¿Crisis sanitaria = Oportunidad de mejora para el sistema sanitario argentino?</span>
+                                        <span class="agenda-texto-negro d-block">
+                                            <strong>Dr. Gabriel Lebersztein</strong> - Gerente Médico OSECAC
+                                        </span>
+                                        <span class="agenda-texto-negro d-block">
+                                            <strong>Luciana Escati Peñalosa</strong> - Presidenta Asociación de Pacientes Fundación Más Vida
+                                        </span>
+
+                                    </p>
+                                </div>
+                            </div> 
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <p class="p-sin-estilo"><span class="agenda-texto-hora">19:25 a 19:35 hs.</span></p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <p class="p-sin-estilo">
+                                        <span class="agenda-texto-azul d-block">Compartiendo Buenas Prácticas de Salud Sustentable</span>
+                                        <span class="agenda-texto-negro d-block">
+                                            <strong>Decisores en salud</strong>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>                                                    
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <p class="p-sin-estilo"><span class="agenda-texto-hora">19:35 a 19:45 hs.</span></p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <p class="p-sin-estilo">
+                                        <span class="agenda-texto-azul d-block">Cierre Día Nacional</span>
+                                        <span class="agenda-texto-negro d-block">
+                                            <strong>Marcelo Longobardi | Dr. Flavio Devoto</strong>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>                                                    
+
+                        </div>
+                        <h2>AGENDA <strong>29 DE OCTUBRE | INTERNACIONAL</strong></h2>
+                        <div class="agenda-separador">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <p class="p-sin-estilo"><span class="agenda-texto-hora">18:00 a 18:05 hs.</span></p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <p class="p-sin-estilo">
+                                        <span class="agenda-texto-azul d-block">Apertura y Bienvenida Día Internacional</span>
+                                        <span class="agenda-texto-negro d-block"><strong>Marcelo Longobardi | Dr. Flavio Devoto</strong></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <p class="p-sin-estilo"><span class="agenda-texto-hora">18:05 a 18:50 hs.</span></p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <p class="p-sin-estilo">
+                                        <span class="agenda-texto-azul d-block">¿Pasaron la prueba los sistemas de salud ante la pandemia? La experiencia de Estados Unidos, Brasil y Europa.</span>
+                                        <span class="agenda-texto-negro d-block">
+                                            <strong>Vicente Ortún Rubio</strong> - Fundador del Centro de Investigación en Economía y Salud (CRES) y ex decano de Universidad Pompeu Fabra.
+                                        </span>
+                                        <span class="agenda-texto-negro d-block">
+                                            <strong>André Medici</strong> - Ex Economista de Salud del Banco Mundial
+                                        </span>
+
+                                    </p>
+                                </div>
+                            </div>  
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <p class="p-sin-estilo"><span class="agenda-texto-hora">18:50 a 19:35 hs.</span></p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <p class="p-sin-estilo">
+                                        <span class="agenda-texto-azul d-block">Evaluación institucional y personal sobre la gestión de la pandemia en CABA</span>
+                                        <span class="agenda-texto-negro d-block">
+                                            <strong>Dr. Fernán Quirós</strong> - Ministro de Salud de la Ciudad de Bs. As.
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>                                                         
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <p class="p-sin-estilo"><span class="agenda-texto-hora">19:35 a 19:45 hs.</span></p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <p class="p-sin-estilo">
+                                        <span class="agenda-texto-azul d-block">Cierre del 7º Foro de Salud Sustentable (SaS)</span>
+                                        <span class="agenda-texto-negro d-block">
+                                            <strong>Marcelo Longobardi | Daniel Diminutto</strong>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>                                                         
+
+                        </div>                        
+                    </div>   
+                                                                                   
                 </div>
             </div>
         </div> 
@@ -193,7 +323,10 @@
                         </li>                        
                         <li class="nav-item">
                             <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(4)">Historia</a>
-                        </li>   
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(6)">Agenda</a>
+                        </li>                           
                         
                     </ul>
                 </div>
@@ -238,7 +371,9 @@
             <div class="solapa fondo solapa5" @click="mostrarSolapa(5)">
                 <p>Preguntas a Speakers</p>
             </div>                        
-
+            <div class="solapa fondo solapa6" @click="mostrarSolapa(6)">
+                <p>Agenda</p>
+            </div>
 	  		<div class="row content-logo">
 	  			<a><img src="img/forosas/logo.png"></a>
 	  		</div>
