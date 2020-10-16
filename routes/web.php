@@ -139,6 +139,21 @@ if (env('APP_ENV','production') === 'local') {
     Route::namespace('Front')->name($keyForoSas.'.')->domain('www.foro-sas.com.ar')->group($appRoutesForoSas);
 }
 
+/*$keyAbbottNight = 'abbottnight';
+$appRoutesAbbottNight = function() use ($keyAbbottNight){
+    $data = config('constantes.eventos.abbottnight',[]); 
+    Route::get('/', $data['controller'].'@index')->name('home');
+    Route::get('/registro', $data['controller'].'@registro')->name('registro');
+    Route::post('/registrar', $data['controller'].'@registrar')->name('registrar');
+    Route::post('/login', $data['controller'].'@login')->name('login');
+    Route::post('/enviar-pregunta', $data['controller'].'@enviarPregunta')->name('enviar-pregunta');
+};
+if (env('APP_ENV','production') === 'local') {
+    Route::namespace('Front')->name($keyAbbottNight.'.')->domain('dev.abbottnight.com.ar')->group($appRoutesAbbottNight);
+} else {
+    //Route::namespace('Front')->name($keyAbbottNight.'.')->domain('www.foro-sas.com.ar')->group($appRoutesForoSas);
+}*/
+
 $eventos = config('constantes.eventos',[]);
 foreach ($eventos as $key => $data) {
     if ($data['activo'] && !config('constantes.eventos.'.$key.'.evitarRoute',false)) {

@@ -1,5 +1,4 @@
 <template>
-    <div>
 	  <section>
         <div class="modal" id="modal-solapas" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -41,15 +40,6 @@
                                 <p>Ha sido asesora y posteriormente planta de gabinete de la Presidencia de la Comisión para la Plena Participación e Inclusión de las Personas con Discapacidad (COPIDIS) del Gobierno de CABA.</p>
                                 <p>A través de las instituciones que lidera, es miembro de la Federación Europea de Asociaciones de Crohn y Colitis (EFCCA), la Alianza Internacional de Organizaciones de Pacientes (IAPO), la Alianza Iberoamericana de Enfermedades Raras (ALIBER) y Rare Diseases International (RDI).</p>
                             </div>
-                            <div class="col-12 con-padding">
-                                <img src="img/forosas/speaker-fernan.png">
-                            </div>
-                            <div class="col-12 con-padding">
-                                <p>A cargo del Ministerio de Salud de la Ciudad de Buenos Aires desde el 10 de diciembre de 2019.</p>
-                                <p>Médico graduado con diploma de honor en la Universidad de Buenos Aires, especialista en medicina interna.</p>
-                                <p>Máster en Gobierno y Dirección de Sistemas de Salud de la Universidad Abierta de Cataluña.</p>
-                                <p>Se desempeñó como Vicedirector Médico de Planeamiento Estratégico del Hospital Italiano y como profesor titular y jefe del departamento de Fisiología Humana del Instituto Universitario de ese hospital.</p>
-                            </div>                            
                         </div>
                         <h2>SPEAKERS INTERNACIONALES</h2>
                         <div class="row">
@@ -101,7 +91,7 @@
                     <div class="modal-body" v-if="solapa === 4">
                         <h2>HISTORIA DEL FORO DE SALUD SUSTENTABLE (SaS)</h2>
                         <div class="row">
-                            <div class="col-12 pt-3">
+                            <div class="col-12">
                                 <p class="p-sin-estilo">Como cada año, AbbVie organiza el Foro de Salud Sustentable (SaS), un evento dirigido principalmente a los financiadores y tomadores de decisión del sistema de salud argentino en donde se tratan las temáticas sanitarias más relevantes de interés actual.</p>
                                 <p class="p-sin-estilo">El Foro SaS nació en 2014 como un proyecto educativo cuya misión se orientaba a fomentar el trabajo conjunto entre los referentes de patologías crónicas y los tomadores de decisión con el fin de optimizar el tratamiento del paciente teniendo un manejo adecuado de los recursos disponibles.</p>
                                 <p class="p-sin-estilo">Motivado por la posibilidad de un sistema de salud sustentable que promueva prácticas de prevención, el diagnóstico temprano, el tratamiento óptimo de enfermedades y el acceso a verdadera innovación que sea sostenible y financieramente viable, el Foro se ha convertido en un reconocido espacio de actualización y reunión de los principales sanitaristas del país.</p>
@@ -133,7 +123,6 @@
                                         <option value="Dr. Flavio Devoto">Dr. Flavio Devoto</option>
                                         <option value="Dr. Gabriel Lebersztein">Dr. Gabriel Lebersztein</option>
                                         <option value="Luciana Escati Peñaloza">Luciana Escati Peñaloza</option>
-                                        <option value="Dr. Fernán Quirós">Dr. Fernán Quirós</option>
                                         <option value="Vicente Ortún Rubio">Vicente Ortún Rubio</option>
                                         <option value="André Medici">André Medici</option>
                                     </select>
@@ -189,82 +178,38 @@
                             <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(2)">Speakers nacionales & internacionales</a>                            
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(5)">Preguntas a Speakers</a>
-                        </li>                        
-                        <li class="nav-item">
                             <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(4)">Historia</a>
                         </li>   
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(5)">Preguntas a Speakers</a>
+                        </li>                        
                         
                     </ul>
                 </div>
 
-        </nav>
-	  	<div class="container">
-
-
-            <div class="circle-container" v-for="index in 200" :key="index">
-                <div class="circle"></div>
+        </nav>          
+	  	<div class="container-fluid h-100">
+            <div id="video-ppal">
+                <iframe width="838" height="470" src="https://www.youtube.com/embed/OjQ5FeDxNrA?enablejsapi=1" frameborder="0"></iframe>
             </div>
-	  		<div class="solapa fondo counter">
-	  				<p><span class="bullet"></span>PRÓXIMO VIVO</p>
-	  				<span id="countdown" class="row timer">
-	  					<div class="col block-time days">
-	  						<span class="num"></span>
-	  						<span class="text">Días</span>
-	  					</div>
-	  					<div class="col block-time hours">
-	  						<span class="num"></span>
-	  						<span class="text">Horas</span>
-	  					</div>
-	  					<div class="col block-time minutes">
-	  						<span class="num"></span>
-	  						<span class="text">Min.</span>
-	  					</div>
-	  					<div class="col block-time seconds">
-	  						<span class="num"></span>
-	  						<span class="text">Seg.</span>
-	  					</div>
-	  				</span>
-  			</div>
-            <div class="solapa fondo solapa2" @click="mostrarSolapa(2)">
-                <p>Speakers nacionales & internacionales</p>
+            
+            <div class="banners-pub" id="banner-pub-1">
+                gola
             </div>
-            <div class="solapa fondo solapa3" @click="mostrarSolapa(3)">
-                <p>Conducción</p>
-            </div>
-            <div class="solapa fondo solapa2 solapa4" @click="mostrarSolapa(4)">
-                <p>Historia</p>
-            </div>
-            <div class="solapa fondo solapa5" @click="mostrarSolapa(5)">
-                <p>Preguntas a Speakers</p>
-            </div>                        
-
-	  		<div class="row content-logo">
-	  			<a><img src="img/forosas/logo.png"></a>
-	  		</div>
-
-	  		
-            <div class="content-date">
-                <img src="img/forosas/date2.png" style="width:100%;">
-                <div class="control-audio">
-                    <img src="img/forosas/logo_ABBVIE.png" width="140">
-                    <button class="btn" @click="cambiarEstadoAudio()">
-                        <img v-if="audio.muted" src="img/forosas/volume-mute-solid.png">
-                        <img v-else src="img/forosas/volume-up-solid.png">
-                    </button>
-                </div>
-            </div>
-
-            <audio autoplay preload="auto" id="audio" muted loop>
-                <source src="public/audio/foro-sas.ogg" type="audio/ogg">
-                <source src="public/audio/foro-sas.mp3" type="audio/mpeg">
-            </audio>            
-
-
+            <div class="banners-pub" id="banner-pub-2">
+                gola
+            </div>   
+            <a class="lnk-cartel" id="lnk-cartel-1" href="javascript:void();">
+            </a>         
+            <a class="lnk-cartel" id="lnk-cartel-2" href="javascript:void();">
+            </a>         
+            <a class="lnk-mostrador" id="lnk-mostrador-1" href="javascript:void();">
+            </a>         
+            <a class="lnk-mostrador" id="lnk-mostrador-2" href="javascript:void();">
+            </a>   
 	  	</div>
 	  </section>
 
-    </div>
 </template>
 
 <script>

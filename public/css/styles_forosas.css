@@ -35,7 +35,17 @@
 input::-webkit-input-placeholder {
 	line-height:normal!important;
 }
+.bullet {
+	width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: #c90305;
+    border-radius: 10px;
+	margin-right: 5px;
+	margin-bottom: 2px;
+}
 
+  
 .bg-blue {
 	background-repeat: no-repeat;
     background-size: cover;
@@ -364,7 +374,7 @@ input::-webkit-input-placeholder {
 .menu-mobile .navbar-nav-menu {
 	position: absolute;
     z-index: 9;
-    background-color: #238bc8;
+    background: linear-gradient(180deg, #2765d1,#1c51ac);
     top: 0;
     left: -1000px;
 }

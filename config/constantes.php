@@ -115,7 +115,15 @@ return [
             'urlWebServiceRegistrado' => 'https://www.quimicavirtualevents.com/recorrido/app/webservice.php',
             'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbrepediatrica',
             'urlCertificado' => 'https://www.quimicavirtualevents.com/recorrido/app/certificado.php?id=_ID_&token=_TOKEN_'
-        ],                 
+        ], 
+        'abbottnight' => [
+            'nombre' => 'Abbott Night',
+            'prefix' => 'abbottnight',
+            'controller' => 'HomeAbbottNightController',
+            'view' => 'abbottnight',
+            'cookie' => 'abbottnight',
+            'activo' => true,
+        ],                           
     ],
     'recaptcha' => [
         'key' => '6LcNPcYZAAAAAI5sgO4CAlZxlGHgADMXtUCbARnh',

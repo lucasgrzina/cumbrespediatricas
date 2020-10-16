@@ -37,7 +37,14 @@ mix.js('resources/assets/js/cumbre.js', 'public/js')
       'public/css/bootstrap.min.css',
       'public/css/styles_forosas.css',
       'public/css/utils.css',
-   ], 'public/css/forosas.css');        
+   ], 'public/css/forosas.css');       
+   
+   mix.js('resources/assets/js/abbottnight.js', 'public/js')
+   .styles([
+      'public/css/bootstrap.min.css',
+      'public/css/styles_abbottnight.css',
+      'public/css/utils.css',
+   ], 'public/css/abbottnight.css');          
 
 if (mix.inProduction()) {
    mix.version();
