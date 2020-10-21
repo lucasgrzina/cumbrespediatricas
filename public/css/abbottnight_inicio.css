@@ -55,7 +55,7 @@
   }
   body {
     font-family: "Gotham", sans-serif;
-    background-image: url(../img/abbottnight/background.jpg);
+    /*background-image: url(../img/abbottnight/background.jpg);*/
     background-size: cover;
     overflow-x: hidden;
     background-repeat: no-repeat;
