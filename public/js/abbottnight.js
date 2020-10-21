@@ -46971,7 +46971,7 @@ var render = function() {
                   _c(
                     "button",
                     {
-                      staticClass: "btn btn-primary",
+                      staticClass: "btn btn-primary mb-3",
                       on: {
                         click: function($event) {
                           return _vm.mostrarDisc()
@@ -46987,7 +46987,7 @@ var render = function() {
         : _vm._e(),
       _vm._v(" "),
       _vm.paso === 2
-        ? _c("div", { staticClass: "container" }, [
+        ? _c("div", { staticClass: "container paso-2" }, [
             _vm._m(3),
             _vm._v(" "),
             _vm._m(4),

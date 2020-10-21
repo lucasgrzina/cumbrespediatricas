@@ -47,7 +47,7 @@
                                 </div>
                             </div>
 
-                            <button class="btn btn-primary" @click="mostrarDisc()">INGRESAR</button>
+                            <button class="btn btn-primary mb-3" @click="mostrarDisc()">INGRESAR</button>
                         </div>
 
                         
@@ -58,7 +58,7 @@
             
             </div>
 
-            <div class="container" v-if="paso === 2">
+            <div class="container paso-2" v-if="paso === 2">
                 <div class="row pt-5">
                     <div class="col-md-12">
                         <div class="content-intro registro">
