@@ -41,6 +41,13 @@
                         <img src="img/abbottnight/modal-cerrar.png">
                         </button>
                     </div>
+                    <div class="modal-body" v-if="solapa === 1">
+                        <div class="row">
+                            <div class="col-12 p-0">
+                                <img src="img/abbottnight/representantes.jpg">
+                            </div>
+                        </div>
+                    </div>
                     <div class="modal-body" v-if="solapa === 2">
                         <div class="row">
                             <div class="col-12 p-0">
@@ -151,10 +158,10 @@
             </div>
             
             <div class="banners-pub" id="banner-pub-1">
-                <img src="img/abbottnight/banners/der.gif">
+                <img src="img/abbottnight/banners/der.gif" loop="infinite">
             </div>
             <div class="banners-pub" id="banner-pub-2">
-                <img src="img/abbottnight/banners/izq.gif">
+                <img src="img/abbottnight/banners/izq.gif" loop="infinite">
             </div>   
             <a class="lnk-cartel" id="lnk-cartel-1" href="javascript:void(0);" @click="mostrarSolapa(1)">
             </a>         

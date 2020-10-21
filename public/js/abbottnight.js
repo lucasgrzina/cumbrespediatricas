@@ -45384,7 +45384,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45395,6 +45395,13 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -45940,12 +45947,16 @@ var render = function() {
               _c("div", { staticClass: "modal-content" }, [
                 _vm._m(0),
                 _vm._v(" "),
-                _vm.solapa === 2
+                _vm.solapa === 1
                   ? _c("div", { staticClass: "modal-body" }, [_vm._m(1)])
                   : _vm._e(),
                 _vm._v(" "),
-                _vm.solapa === 3
+                _vm.solapa === 2
                   ? _c("div", { staticClass: "modal-body" }, [_vm._m(2)])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.solapa === 3
+                  ? _c("div", { staticClass: "modal-body" }, [_vm._m(3)])
                   : _vm._e(),
                 _vm._v(" "),
                 _vm.solapa === 4
@@ -46131,10 +46142,10 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _vm.trivia.enviado
-                          ? _c("div", { staticClass: "row" }, [_vm._m(3)])
+                          ? _c("div", { staticClass: "row" }, [_vm._m(4)])
                           : _vm._e(),
                         _vm._v(" "),
-                        _vm._m(4)
+                        _vm._m(5)
                       ],
                       2
                     )
@@ -46144,7 +46155,7 @@ var render = function() {
                   ? _c("div", { staticClass: "modal-body" }, [
                       _c("h2", [_vm._v("PREGUNTAS A SPEAKERS")]),
                       _vm._v(" "),
-                      _vm._m(5),
+                      _vm._m(6),
                       _vm._v(" "),
                       _c("div", { staticClass: "row" }, [
                         _c(
@@ -46303,7 +46314,7 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _vm.form.enviado
-                        ? _c("div", { staticClass: "row" }, [_vm._m(6)])
+                        ? _c("div", { staticClass: "row" }, [_vm._m(7)])
                         : _vm._e()
                     ])
                   : _vm._e()
@@ -46314,11 +46325,11 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("div", { staticClass: "container-fluid h-100" }, [
-        _vm._m(7),
-        _vm._v(" "),
         _vm._m(8),
         _vm._v(" "),
         _vm._m(9),
+        _vm._v(" "),
+        _vm._m(10),
         _vm._v(" "),
         _c("a", {
           staticClass: "lnk-cartel",
@@ -46381,6 +46392,16 @@ var staticRenderFns = [
         },
         [_c("img", { attrs: { src: "img/abbottnight/modal-cerrar.png" } })]
       )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12 p-0" }, [
+        _c("img", { attrs: { src: "img/abbottnight/representantes.jpg" } })
+      ])
     ])
   },
   function() {
@@ -46467,7 +46488,11 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "banners-pub", attrs: { id: "banner-pub-1" } },
-      [_c("img", { attrs: { src: "img/abbottnight/banners/der.gif" } })]
+      [
+        _c("img", {
+          attrs: { src: "img/abbottnight/banners/der.gif", loop: "infinite" }
+        })
+      ]
     )
   },
   function() {
@@ -46477,7 +46502,11 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "banners-pub", attrs: { id: "banner-pub-2" } },
-      [_c("img", { attrs: { src: "img/abbottnight/banners/izq.gif" } })]
+      [
+        _c("img", {
+          attrs: { src: "img/abbottnight/banners/izq.gif", loop: "infinite" }
+        })
+      ]
     )
   }
 ]

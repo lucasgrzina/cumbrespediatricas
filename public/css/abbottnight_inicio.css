@@ -292,12 +292,12 @@
     border-radius: 30px;
     border-width: 1px;
     border-style: solid;
-    color: #fff;
+    color: #fff!important;
     border-color: #e0a758;
     width: 100%;
     font-family: "gothamlight";
     padding: 9px 25px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5)!important;
   }
   .form-group input::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
