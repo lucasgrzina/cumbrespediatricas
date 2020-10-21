@@ -154,7 +154,7 @@
         
 	  	<div class="container-fluid h-100">
             <div id="video-ppal">
-                <iframe src="https://player.vimeo.com/video/470691210" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <iframe src="https://player.vimeo.com/video/470691210?autoplay=1&loop=1&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 <!--iframe width="838" height="470" src="https://www.youtube.com/embed/OjQ5FeDxNrA?enablejsapi=1" frameborder="0"></iframe-->
             </div>
             
