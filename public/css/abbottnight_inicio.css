@@ -62,7 +62,10 @@
     background-position: center;
     background-color: #1e1c1d;
   }
-  
+  .fondo-body {
+    background-image: url(../img/abbottnight/background.jpg);
+  }
+
   .container {
     max-width: 1040px;
     margin: 0 auto;
@@ -582,6 +585,10 @@
       background-size: auto;
       background-position: center;
     }    
+    .fondo-body {
+      background-image: url(../img/abbottnight/background-mobile.jpg);
+    }
+  
   }
 
   @media (min-width: 768px) and (max-height: 700px) {

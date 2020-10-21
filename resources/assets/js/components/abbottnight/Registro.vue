@@ -289,11 +289,21 @@
             }
         },
         mounted () {
-            console.debug('Registro mounted');
+            var imgFondoDesk = new Image();
+            
+            //$('.navbar-nav-menu').style(this.alto);
+            imgFondoDesk.onload = function(){
+                console.debug('cargoooo');
+                setTimeout(function () {
+                    $('body').addClass('fondo-body');
+                }, 1);
+                
+            };
+            imgFondoDesk.src = 'public/img/abbottnight/background.jpg';            
+
         },
         methods: {
             mostrarBlur: function (val) {
-                console.debug('mostrar blur');
                 this.lnk_blur = val;
             },
             mostrarDisc () {
