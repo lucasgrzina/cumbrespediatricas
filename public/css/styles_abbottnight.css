@@ -122,7 +122,7 @@ body, html,#app,#app main,#app main section {
     top: 371px;
     width: 46px;
     height: 110px;
-    border: 1px solid;
+    
 }
 #lnk-mostrador-1 {
     left: 561px;
@@ -368,7 +368,6 @@ body, html,#app,#app main,#app main section {
         top: 522px;
         width: 63px;
         height: 155px;
-        border: 1px solid;
     }    
 
     #lnk-mostrador-2 {
