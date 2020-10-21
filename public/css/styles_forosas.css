@@ -350,10 +350,6 @@ input::-webkit-input-placeholder {
 .menu-mobile {
 	display: none;
 }
-
-.menu-mobile {
-	display: none;
-}
 .menu-mobile .navbar-nav-menu .nav-link {
 		font-family: 'gotham';
 		color: #fff;

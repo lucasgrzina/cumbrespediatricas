@@ -1,7 +1,8 @@
 @extends('layouts.abbottnight.front-vue')
-@section('head')
-<!--script src="https://www.google.com/recaptcha/api.js?render={{config('constantes.recaptcha.key','')}}"></script-->
+@section('css')
+<link href="{{ url(mix('/css/abbottnight.css')) }}" rel="stylesheet" type="text/css">
 @endsection
 @section('content')
+
 <home v-bind="{{json_encode($props)}}"></home>
 @endsection

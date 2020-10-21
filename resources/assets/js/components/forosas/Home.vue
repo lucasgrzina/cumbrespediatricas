@@ -389,6 +389,7 @@
                     </button>
                 </div>
             </div>
+            
 
             <audio autoplay preload="auto" id="audio" muted loop>
                 <source src="public/audio/foro-sas.ogg" type="audio/ogg">
@@ -428,7 +429,8 @@
                 errors: [],
                 audio: {
                     muted: false,
-                    element: null
+                    element: null,
+                    estadoAlAbrirModal:null
                 },
                 form: {
                     speaker: null,
@@ -446,7 +448,6 @@
             imgFondoDesk.onload = function(){
                 console.debug('cargoooo');
                 setTimeout(function () {
-                    console.debug('agregooo');
                     $('body').addClass('animado');
                 }, 1);
                 
@@ -492,12 +493,15 @@
                 }
             },
             mostrarSolapa (solapa) {
-                
+                var vm = this;
                 this.solapa = solapa;
+                vm.audio.estadoAlAbrirModal = vm.audio.muted ? 'muted' : 'play'; 
                 this.$nextTick(function () {
                     $('#modal-solapas').modal('show');
                     if (solapa === 4) {
-                        this.setearEstadoAudio('muted');
+                        if (!vm.audio.muted) {
+                            this.setearEstadoAudio('muted');
+                        }
                     }
                     
                 });
@@ -525,7 +529,10 @@
                 var url = $('#video-historia').attr('src');
                 $('#video-historia').attr('src', '');
                 $('#video-historia').attr('src', url);
-                this.setearEstadoAudio('play');
+                if (this.audio.estadoAlAbrirModal !== 'muted') {
+                    this.setearEstadoAudio('play');
+                }
+                
                 this.form.enviado = false;
 
             },

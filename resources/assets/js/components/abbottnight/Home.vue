@@ -1,111 +1,99 @@
 <template>
+    <div class="h-100">
+        <nav class="navbar  navbar-dark menu-mobile px-0">
+                <button class="navbar-toggler" type="button" @click="mostrarMenu()">
+                    <img src="img/abbottnight/bars-solid.png" style="max-width: 25px;" width="25px">
+                </button>
+                <div class="navbar-collapse hidden" id="navbarNav">
+                    
+
+                    <ul class="navbar-nav navbar-nav-menu px-3 py-2" :style="{'height':alto+'px'}">
+                        <li class="nav-item">
+                            <img src="img/abbottnight/logo.png" style="max-width:150px;">
+                            <button type="button" class="close btn-close-menu" aria-label="Close" @click="cerrarMenu()">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </li>
+                        <li class="nav-item py-3"></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(1)">Representantes de cada pais</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(2)">Conocea los Speakers</a>                            
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(3)">Ver agenda</a>
+                        </li>   
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(4)">Trivia</a>
+                        </li>                        
+                        
+                    </ul>
+                </div>
+
+        </nav>          
 	  <section>
         <div class="modal" id="modal-solapas" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <img src="img/forosas/modal-cerrar.png">
+                        <img src="img/abbottnight/modal-cerrar.png">
                         </button>
                     </div>
                     <div class="modal-body" v-if="solapa === 2">
-                        <h2>SPEAKERS NACIONALES</h2>
                         <div class="row">
-                            <div class="col-12 con-padding">
-                                <img src="img/forosas/speaker-flavio.png">
-                            </div>
-                            <div class="col-12 con-padding">
-                                <p>Gerente General de AbbVie Región Sur desde 2015.</p>
-                                <p>Médico graduado en la Universidad de Buenos Aires especialista en Farmacología Clínica.</p>
-                                <p>Master en Administración de Empresas en IDEA.</p>
-                                <p>Realizó estudios de postgrado en IAE Business School de Universidad Austral y en la escuela de negocios de Harvard.</p>
-                                <p>En abril 2019 fue reelecto como presidente de la Cámara Argentina de Especialidades Medicinales (CAEME).</p>
-                                <p>Previamente a su rol en AbbVie, Flavio Devoto se ha desempeñado durante 8 años como gerente general de Novo Nordisk, y cuenta con más de 20 años de trayectoria en la industria farmacéutica.</p>
-                            </div>
-                            <div class="col-12 con-padding">
-                                <img src="img/forosas/speaker-gabriel.png">
-                            </div>
-                            <div class="col-12 con-padding">
-                                <p>Gerente Médico de la Obra Social de los Empleados de Comercio y Actividades Civiles.</p>
-                                <p>Master en Gestión de Calidad de Servicios Socio Sanitarios de la Universidad de Murcia.</p>
-                                <p>Presidente del Instituto de Investigación Sanitaria de la Seguridad Social.</p>
-                                <p>Miembro de CETSA, Centro de evaluación de tecnologías sanitarias de la Universidad ISALUD.</p>
-                            </div>
-                            <div class="col-12 con-padding">
-                                <img src="img/forosas/speaker-luciana.png">
-                            </div>
-                            <div class="col-12 con-padding">
-                                <p>Presidenta y fundadora de Fundación Más Vida (FMV) de Crohn & Colitis Ulcerosa (FMV)</p>
-                                <p>Miembro fundador de la Federación Argentina de Enfermedades Poco Frecuentes (FADEPOF) organización en la que actualmente ocupa la Dirección Ejecutiva y de la que fue Presidente (2014/ 2016) y Secretaria de Comisión Directiva (2012/ 2014).</p>
-                                <p>Ha sido asesora y posteriormente planta de gabinete de la Presidencia de la Comisión para la Plena Participación e Inclusión de las Personas con Discapacidad (COPIDIS) del Gobierno de CABA.</p>
-                                <p>A través de las instituciones que lidera, es miembro de la Federación Europea de Asociaciones de Crohn y Colitis (EFCCA), la Alianza Internacional de Organizaciones de Pacientes (IAPO), la Alianza Iberoamericana de Enfermedades Raras (ALIBER) y Rare Diseases International (RDI).</p>
+                            <div class="col-12 p-0">
+                                <img src="img/abbottnight/speakers.jpg">
                             </div>
                         </div>
-                        <h2>SPEAKERS INTERNACIONALES</h2>
-                        <div class="row">
-                            <div class="col-12 con-padding">
-                                <img src="img/forosas/speaker-vicente.png">
-                            </div>
-                            <div class="col-12 con-padding">
-                                <p>Catedrático emérito y ex-decano de la Facultad de Ciencias Económicas y Empresariales de la Universidad Pompeu Fabra de Barcelona (UPF).</p>
-                                <p>Fundador e investigador principal del Centro de Investigación en Economía y Salud (CRES-UPF).</p>
-                                <p>Miembro del Consejo Rector del Parque de Salud Mar, y delegado de la UPF en TecnoCampus (Empresa, Ingeniería y Salud).</p>
-                                <p>MBA ESADE, Master of Science de Purdue University.</p>
-                                <p>Licenciado y Doctor en Economía por la Universitat de Barcelona. Estudios de doctorado en Salud Pública en la Universidad Johns Hopkins y Visiting Scholar en el Departamento de Economía del Massachusetts Institute of Technology (MIT).</p>
-                                <p>Ex presidente de la Sociedad Española de Salud Pública y Administración Sanitaria (SESPAS), ex presidente de la Asociación de Economía de la Salud (AES), ex secretario de la Asociación Europea de Salud Pública (EUPHA) y miembro meritorio de CAMFiC.</p>
-                            </div>
-                            <div class="col-12 con-padding">
-                                <img src="img/forosas/speaker-andre.png">
-                            </div>
-                            <div class="col-12 con-padding">
-                                <p>Fue hasta hace unos meses Economista Senior en Salud del Banco Mundial (Washington DC).</p> 
-                                <p>Participó del movimiento de construcción del Sistema Único de Salud de Brasil.</p>
-                                <p>Actuó como consultor en organismos multilaterales (BID y luego Banco Mundial).</p> 
-                                <p>Cuenta con más de diez libros y 200 trabajos publicados en diversos idiomas y campos del conocimiento.</p>
-                                <p>Graduado en Administración en la fundación Getulio Vargas (FGV), con maestría en economía en la Universidad Estadual de Campinas (UNICAMP).</p>
-                                <p>Doctorado en Historia Económica en la Universidad de San Pablo (USP) y cursos de especialización en Seguridad Social en la Universidad Harvard (USA).</p>
-                            </div>
-                        </div>
-                        
                     </div>
                     <div class="modal-body" v-if="solapa === 3">
-                        <h2>CONDUCCIÓN</h2>
                         <div class="row">
-                            <div class="col-12 con-padding">
-                                <img src="img/forosas/longobardi.png">
-                            </div>
-                            <div class="col-12 con-padding">
-                                <p>En el año 1984 fundó la revista Apertura junto a su socio Gabriel Griffa vendiendo su participación 10 años más tarde.</p>
-                                <p>Condujo importantes programas radiales en emisoras como FM del Plata, Radio Feeling, Radio América.</p>
-                                <p>En televisión condujo varios programas de noticias, “Fuego Cruzado”, “Punto Límite”, “Longobardi en vivo”, entre otros.</p>
-                                <p>Actualmente conduce el programa “Cada mañana”, en Radio Mitre, de lunes a viernes de 6 a 10 horas, siendo el programa de mayor audiencia radial nacional desde el año 2001.</p>
-                                <p>Desde junio del año 2013, se encuentra en la web el nuevo sitio de opinión www.marcelolongobardi.com.</p>
-                                <p>Se destacó en importantes entrevistas especiales realizadas a políticos internacionales como Berlusconi, Aznar, Felipe González, entre otros destacados.</p>
-                                <p>En el año 2019 el programa que conduce en CNN fue reconocido con el premio PRODU Awards 2019 en la categoría “Mejor programa informativo”</p>
-                                <p>En el año 2020 fue nominado a los Premios Emmy. Competirá en el rubro &quot;Reportaje sobresaliente en español&quot; por una entrevista que hizo para su ciclo de televisión que se emite por CNN, “En diálogo con Longobardi”. Este importante premio es otorgado por National Academy of Television, Arts &amp; Sciences.</p>
-                                <p>Actualmente conduce el programa “En diálogo con Longobardi” en CNN en español, los días domingos a las 22 horas, para toda la comunidad de habla hispana”.</p>
+                            <div class="col-12 p-0">
+                                <img src="img/abbottnight/agenda.jpg">
                             </div>
                         </div>
                         
                     </div>  
                     <div class="modal-body" v-if="solapa === 4">
-                        <h2>HISTORIA DEL FORO DE SALUD SUSTENTABLE (SaS)</h2>
+                        <h2>TRIVIA</h2>
+                        <div class="row p-3 trivia-bg-logo" v-for="(item,index) in trivia.contenido" :key="index">
+                            <div class="col-12 text-center ">
+                                <img :src="item.imagen">
+                            </div>
+
+                            <div class="col-12" v-for="(subitem, indexOpt) in item.preguntas" :key="indexOpt">
+                                <h6><span class="trivia-nro-preg">{{subitem.key}}.</span>{{subitem.texto}}</h6>
+                                <template v-for="(opcion, indexOpc) in subitem.opciones">
+                                    <div class="form-check-inline" :key="'opt_' + indexOpc">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" :name="'g_'+item.key+'_p_'+subitem.key+'_r_'+ indexOpt" :value="opcion.key" v-model="subitem.keySeleccionada"> {{opcion.texto}} <span v-if="subitem.keySeleccionada === opcion.key && trivia.enviado" :class="{'badge':true,'badge-success': opcion.correcta,'badge-danger':!opcion.correcta}">{{opcion.correcta ? 'CORRECTO' : 'INCORRECTO'}}</span>
+                                        </label>
+                                    </div>
+                                    <br :key="indexOpc">
+                                </template> 
+                                <div class="trivia-separador"></div>
+                            </div>
+                        </div>  
+                        <div class="row px-3 mb-3">
+                            <div class="col-12 text-center">
+                                <button type="button" 
+                                        class="btn btn-primary" 
+                                        @click="enviarTrivia()">
+                                    <i v-if="trivia.enviando" class="fa fa-spinner fa-spin fa-fw"></i> 
+                                    <span> {{ trivia.enviando ? 'Enviando' : 'Enviar' }} </span>
+                                </button>                                
+                            </div>    
+                        </div> 
+                        <div class="row" v-if="trivia.enviado">
+                            <div class="col-12">
+                                <p class="p-sin-estilo text-center"><strong>Su trivia ya fue enviada. Muchas Gracias!</strong></p>    
+                            </div>    
+                        </div>                                                                        
                         <div class="row">
-                            <div class="col-12">
-                                <p class="p-sin-estilo">Como cada año, AbbVie organiza el Foro de Salud Sustentable (SaS), un evento dirigido principalmente a los financiadores y tomadores de decisión del sistema de salud argentino en donde se tratan las temáticas sanitarias más relevantes de interés actual.</p>
-                                <p class="p-sin-estilo">El Foro SaS nació en 2014 como un proyecto educativo cuya misión se orientaba a fomentar el trabajo conjunto entre los referentes de patologías crónicas y los tomadores de decisión con el fin de optimizar el tratamiento del paciente teniendo un manejo adecuado de los recursos disponibles.</p>
-                                <p class="p-sin-estilo">Motivado por la posibilidad de un sistema de salud sustentable que promueva prácticas de prevención, el diagnóstico temprano, el tratamiento óptimo de enfermedades y el acceso a verdadera innovación que sea sostenible y financieramente viable, el Foro se ha convertido en un reconocido espacio de actualización y reunión de los principales sanitaristas del país.</p>
-                                <p class="p-sin-estilo">En esta 7ma edición, además de abordar las dificultades habituales que presenta el sistema sanitario argentino, el Foro brindará especial atención al impacto provocado por la pandemia a nivel nacional e internacional.</p>
-                                <p class="p-sin-estilo">Es en este desafiante contexto que AbbVie llevará a cabo el <strong>Foro SaS en la modalidad virtual el 27 y 29 de octubre</strong> buscando reinventar el espacio históricamente presencial.</p>
-                                
-                            </div>
-                            <div class="col-12">
-                                <div class="embed-container">
-                                    <iframe id="video-historia" src="https://player.vimeo.com/video/466148940" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                                </div>
-                            </div>
+                            <div class="col-12 foot"></div>
                         </div>
-                        
                     </div>   
                     <div class="modal-body" v-if="solapa === 5">
                         <h2>PREGUNTAS A SPEAKERS</h2>
@@ -156,60 +144,29 @@
                 </div>
             </div>
         </div> 
-        <nav class="navbar navbar-expand-lg navbar-dark menu-mobile px-0">
-                <button class="navbar-toggler" type="button" @click="mostrarMenu()">
-                    <img src="img/forosas/bars-solid.png" style="max-width: 25px;" width="25px">
-                </button>
-                <div class="navbar-collapse hidden" id="navbarNav">
-                    
-
-                    <ul class="navbar-nav navbar-nav-menu px-3 py-2" :style="{'height':alto+'px'}">
-                        <li class="nav-item">
-                            <img src="img/forosas/logo.png" style="max-width:150px;">
-                            <button type="button" class="close btn-close-menu" aria-label="Close" @click="cerrarMenu()">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </li>
-                        <li class="nav-item py-3"></li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(3)">Conducción</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(2)">Speakers nacionales & internacionales</a>                            
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(4)">Historia</a>
-                        </li>   
-                        <li class="nav-item">
-                            <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(5)">Preguntas a Speakers</a>
-                        </li>                        
-                        
-                    </ul>
-                </div>
-
-        </nav>          
+        
 	  	<div class="container-fluid h-100">
             <div id="video-ppal">
                 <iframe width="838" height="470" src="https://www.youtube.com/embed/OjQ5FeDxNrA?enablejsapi=1" frameborder="0"></iframe>
             </div>
             
             <div class="banners-pub" id="banner-pub-1">
-                gola
+                <img src="img/abbottnight/banners/der.gif">
             </div>
             <div class="banners-pub" id="banner-pub-2">
-                gola
+                <img src="img/abbottnight/banners/izq.gif">
             </div>   
-            <a class="lnk-cartel" id="lnk-cartel-1" href="javascript:void();">
+            <a class="lnk-cartel" id="lnk-cartel-1" href="javascript:void(0);" @click="mostrarSolapa(1)">
             </a>         
-            <a class="lnk-cartel" id="lnk-cartel-2" href="javascript:void();">
+            <a class="lnk-cartel" id="lnk-cartel-2" href="javascript:void(0);" @click="mostrarSolapa(2)">
             </a>         
-            <a class="lnk-mostrador" id="lnk-mostrador-1" href="javascript:void();">
+            <a class="lnk-mostrador" id="lnk-mostrador-1" href="javascript:void(0);" @click="mostrarSolapa(3)">
             </a>         
-            <a class="lnk-mostrador" id="lnk-mostrador-2" href="javascript:void();">
+            <a class="lnk-mostrador" id="lnk-mostrador-2" href="javascript:void(0);" @click="mostrarSolapa(4)">
             </a>   
 	  	</div>
 	  </section>
-
+    </div>
 </template>
 
 <script>
@@ -222,9 +179,12 @@
             ahora: {
                 type: String
             },
-            urlEnviarPregunta: {
-                type: String,
+            evento: {
+                type: Object,
                 required: true
+            },
+            urlEnviarTrivia: {
+                type: String
             }
         },
         data () {
@@ -236,46 +196,155 @@
                 info: {
                 },
                 errors: [],
-                audio: {
-                    muted: false,
-                    element: null
-                },
-                form: {
-                    speaker: null,
-                    pregunta: null,
+                trivia: {
+                    contenido: [
+                        {
+                            key: 1,
+                            imagen: 'img/abbottnight/logo_1.png',
+                            titulo: 'SIMILAC',
+                            preguntas: [
+                                {
+                                    key: 1,
+                                    texto: '¿El HMO 2’- FL respalda el desarrollo del sistema inmune y apoya la disminución de problemas de tolerancia gastrointestinal por su efecto (s)?',
+                                    opciones: [
+                                        {key: 'a', texto:'De prevenir  la adhesión de patógenos, ayudando a reducir el riesgo de infecciones.',correcta: false},
+                                        {key: 'b', texto:'De interactuar con el sistema inmune intestinal y a nivel sistémico, modulando su respuesta y favoreciendo su adecuada maduración.',correcta: false},
+                                        {key: 'c', texto:'De promover el desarrollo de una microbiota saludable al actuar como prebiótico, reduciendo el riesgo de infecciones.',correcta: false},
+                                        {key: 'd', texto:'Todas las anteriores',correcta: true},
+                                    ],
+                                    keySeleccionada: null,
+                                }, {
+                                    key: 2,
+                                    texto: 'Todas las fórmulas parcialmente hidrolizadas del mercado comparten las mismas características de composición nutricional de macronutrientes',
+                                    opciones: [
+                                        {key: 'a', texto:'Verdadero',correcta: false},
+                                        {key: 'b', texto:'Falso',correcta: true},
+                                    ],
+                                    keySeleccionada: null,
+                                },
+                            ]
+                        },
+                        {
+                            key: 2,
+                            imagen: 'img/abbottnight/logo_2.png',
+                            titulo: 'PEDIASURE',
+                            preguntas: [
+                                {
+                                    key: 1,
+                                    texto: 'Los factores del entorno, como la nutrición juegan un rol clave que pueden impactar en el crecimiento y el desarrollo en un porcentaje cercano a',
+                                    opciones: [
+                                        {key: 'a', texto:'60%',correcta: true},
+                                        {key: 'b', texto:'40%',correcta: false},
+                                        {key: 'c', texto:'50%',correcta: false},
+                                    ],
+                                    keySeleccionada: null,
+                                }, {
+                                    key: 2,
+                                    texto: 'La intervención nutricional temprana es una estrategia que permite evitar consecuencias a largo plazo',
+                                    opciones: [
+                                        {key: 'a', texto:'Pobre desarrollo cognitivo',correcta: false},
+                                        {key: 'b', texto:'Pobre desarrollo cognitivo',correcta: false},
+                                        {key: 'c', texto:'Baja autoestima',correcta: false},
+                                        {key: 'd', texto:'Talla baja',correcta: false},
+                                        {key: 'e', texto:'Todas las anteriores',correcta: true},
+                                    ],
+                                    keySeleccionada: null,
+                                },
+                            ]
+                        },
+                        {
+                            key: 3,
+                            imagen: 'img/abbottnight/logo_5.png',
+                            titulo: 'PEDIALYTE',
+                            preguntas: [
+                                {
+                                    key: 1,
+                                    texto: 'Cuantos miliequivalentes mínimos de sodio se requieren para rehidratar en deshidratación causada por vómito o diarrea?',
+                                    opciones: [
+                                        {key: 'a', texto:'60',correcta: true},
+                                        {key: 'b', texto:'40',correcta: false},
+                                        {key: 'c', texto:'50',correcta: false},
+                                        {key: 'd', texto:'90',correcta: false},
+                                    ],
+                                    keySeleccionada: null,
+                                }, {
+                                    key: 2,
+                                    texto: 'Para rehidratación causada por sol y calor se recomiendan soluciones de:',
+                                    opciones: [
+                                        {key: 'a', texto:'60 mEq Sodio',correcta: false},
+                                        {key: 'b', texto:'40 mEq Sodio',correcta: false},
+                                        {key: 'c', texto:'30 mEq Sodio',correcta: true},
+                                        {key: 'd', texto:'90 mEq Sodio',correcta: false},
+                                    ],
+                                    keySeleccionada: null,
+                                },
+                            ]
+                        },
+                        {
+                            key: 4,
+                            imagen: 'img/abbottnight/logo_3.png',
+                            titulo: 'ENSURE ADVANCE',
+                            preguntas: [
+                                {
+                                    key: 1,
+                                    texto: 'Son los mecanismos de acción del HMB:',
+                                    opciones: [
+                                        {key: 'a', texto:'Incrementa la síntesis proteica',correcta: false},
+                                        {key: 'b', texto:'Disminuye la degradación de proteína',correcta: false},
+                                        {key: 'c', texto:'Estabiliza la membrana del músculo',correcta: false},
+                                        {key: 'd', texto:'Todas son correctas',correcta: true},
+                                    ],
+                                    keySeleccionada: null,
+                                }, {
+                                    key: 2,
+                                    texto: 'Ensure Advance aporta de HMB en una toma:',
+                                    opciones: [
+                                        {key: 'a', texto:'3 gramos',correcta: false},
+                                        {key: 'b', texto:'1,5 gramos',correcta: true},
+                                        {key: 'c', texto:'6 gramos',correcta: false},
+                                    ],
+                                    keySeleccionada: null,
+                                },
+                            ]
+                        },
+                        {
+                            key: 5,
+                            imagen: 'img/abbottnight/logo_4.png',
+                            titulo: 'GLUCERNA',
+                            preguntas: [
+                                {
+                                    key: 1,
+                                    texto: '¿La suplementación nutricional complementaria con fórmulas específica para la diabetes son parte del tratamiento Integral de la Diabetes?',
+                                    opciones: [
+                                        {key: 'a', texto:'Verdadero',correcta: true},
+                                        {key: 'b', texto:'Falso',correcta: false},
+                                    ],
+                                    keySeleccionada: null,
+                                }, {
+                                    key: 2,
+                                    texto: '¿Algunos nutrientes estimulan de manera significativa una mayor secreción natural de GLP1?',
+                                    opciones: [
+                                        {key: 'a', texto:'Verdadero',correcta: true},
+                                        {key: 'b', texto:'Falso',correcta: false},
+                                    ],
+                                    keySeleccionada: null,
+                                },
+                            ]
+                        }                                                 
+
+                    ],
                     enviando: false,
-                    enviado: false
+                    enviado: false,
+                    errors: [],
                 }
             }
         },
         mounted () {
-            var imgFondoDesk = new Image();
-            this.alto = $( document ).height(); 
+            this.alto = $( window ).height(); 
             
-            //$('.navbar-nav-menu').style(this.alto);
-            imgFondoDesk.onload = function(){
-                console.debug('cargoooo');
-                setTimeout(function () {
-                    console.debug('agregooo');
-                    $('body').addClass('animado');
-                }, 1);
-                
-            };
-            imgFondoDesk.src = 'public/img/forosas/bg-blue.gif';            
-
-
-            this.countdownTimer = setInterval(this.timer, 1000);
-
-            this.audio.element = document.getElementById("audio");
+            $("#modal-solapas").on("hidden.bs.modal", this.alCerrarModal);    
             
-            this.$nextTick(function() {
-                if (this.audio.element.paused) {
-                    this.audio.element.play();
-                    this.audio.element.muted = false;
-                }
-                this.audio.muted = this.audio.element.paused;
-            });
-            $("#modal-solapas").on("hidden.bs.modal", this.alCerrarModal);                    
+            
         },
         methods: {
             timer () {
@@ -306,22 +375,7 @@
                 this.solapa = solapa;
                 this.$nextTick(function () {
                     $('#modal-solapas').modal('show');
-                    if (solapa === 4) {
-                        this.setearEstadoAudio('muted');
-                    }
                     
-                });
-                
-            },
-            cambiarEstadoAudio () {
-                if (this.audio.muted) {
-                    this.audio.element.play();
-                } else {
-                    this.audio.element.pause();
-                }
-
-                this.$nextTick(function() {
-                    this.audio.muted = this.audio.element.paused;
                 });
                 
             },
@@ -332,12 +386,7 @@
                 $('.navbar-nav-menu').removeClass('opened');
             },
             alCerrarModal () {
-                var url = $('#video-historia').attr('src');
-                $('#video-historia').attr('src', '');
-                $('#video-historia').attr('src', url);
-                this.setearEstadoAudio('play');
-                this.form.enviado = false;
-
+                this.trivia.enviado = false;
             },
             enviarPregunta: function () {
                 let vm = this
@@ -361,19 +410,46 @@
                         });                    
                 }
             },
+            enviarTrivia: function () {
+                let vm = this
+                let incompleto = false;
 
-            setearEstadoAudio (estado) {
-                if (estado === 'muted') {
-                    this.audio.element.pause();
-                } else {
-                    this.audio.element.play();
-                }
-
-                this.$nextTick(function() {
-                    this.audio.muted = this.audio.element.paused;
+                _.forEach(vm.trivia.contenido,function (item) {
+                    _.forEach(item.preguntas, function(preg) {
+                        if(!preg.keySeleccionada) {
+                            incompleto = true;
+                        }
+                    })
                 });
+
+
+                if (incompleto) {
+                    alert('Debe responder todas las preguntas');
+                    return false;
+                }
                 
-            }            
+
+                if (!vm.trivia.enviando) {
+                    vm.trivia.enviando = true;
+                    axios.post(vm.urlEnviarTrivia, vm.trivia.contenido)
+                        .then(response => {
+                            vm.trivia.enviando = false;
+                            alert('Gracias por responder la trivia');
+                            vm.trivia.enviado = true;
+                            //vm.mostrarModal(false);
+                            // vm.form.pregunta = null;
+                        }, error => {
+                            vm.trivia.enviando = false;
+                            vm.trivia.enviado = false;
+                            alert(error.message);
+                        });                    
+                }
+            },  
+            obtenerOpcionesPorKey: function (key) {
+                let vm = this
+                let opciones = _.find(vm.trivia.opciones,{key:key})
+                return opciones.valores
+            }                      
         }
     }
 </script>

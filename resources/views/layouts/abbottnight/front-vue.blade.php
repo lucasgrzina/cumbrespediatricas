@@ -13,8 +13,8 @@
         
         <link rel="icon" type="image/vnd.microsoft.icon" href="public/img/forosas/favicon.ico"-->
         <title>Abbott Night</title>
-
-        <link href="{{ url(mix('/css/abbottnight.css')) }}" rel="stylesheet" type="text/css">
+        @yield('css')
+        
         <!-- Minified version of `es6-promise-auto` below. -->
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>

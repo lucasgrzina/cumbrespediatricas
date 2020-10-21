@@ -36,10 +36,20 @@ body {
 }
 body, html,#app,#app main,#app main section {
 	height: 100%;
-	min-height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    
+}
+#app main section {
+    overflow: auto;
+    display: block;
+    width: 100%!important;
 }
 .menu-mobile {
-	display: none;
+    display: none;
+    /*background-color: #000;*/
+	min-width: 1360px;
+	max-width: 1360px;    
 }
 .container-fluid {
 	position: relative;
@@ -72,25 +82,30 @@ body, html,#app,#app main,#app main section {
 .banners-pub {
 	position: absolute;
     width: 100px;
-    height: 297px;
-    border: 1px solid;
+    height: 300px;
+    
+    background-color: #3b0664;
+}
+.banners-pub img{
+    max-width: 100%;
+    height: 100%;
 }
 #banner-pub-1 {
 	top: 32px;
     left: 286px;
-    transform: skew(3.3deg,-1deg);
+    transform: skew(3.3deg);
+    clip-path: polygon(0 0, 100% 1%, 97% 98%, 1% 100%);
 }
 #banner-pub-2 {
 	top: 32px;
     right: 278px;
-    transform: skew(-3.5deg,1deg);
+    transform: skew(-3.3deg);
+    clip-path: polygon(3% 1.5%, 100% 0%, 100% 100%, 7% 98.5%);
 }
 .lnk-cartel {
     position: absolute;
     width: 215px;
     height: 117px;
-    border: 1px solid;
-
 }
 #lnk-cartel-1 {
     top: 168px;
@@ -116,9 +131,276 @@ body, html,#app,#app main,#app main section {
     right: 532px;
 }
 
+.modal-backdrop
+{
+    opacity:0.5 !important;
+}
+
+#modal-solapas .modal-content {
+	background-color: transparent;
+	border: 0;
+
+}
+#modal-solapas .modal-header {
+	border-bottom: 0;
+	padding: 0;
+}
+#modal-solapas .modal-body {
+    /*background-image: url(../img/abbottnight/fondo-modal.jpg);
+	background-repeat: no-repeat;
+	background-position: top center;*/
+	background-color: #fff;
+    opacity: 1;
+    padding: 0;
+}
+#modal-solapas .modal-body>.row{
+    margin-left: 0;
+    margin-right: 0;
+}
+#modal-solapas .modal-body img {
+	max-width: 100%;
+}
+#modal-solapas .modal-body h2 {
+    background-image: url(../img/abbottnight/top.png);
+    background-repeat: repeat-x;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 10px;
+    font-style: italic;
+    margin-bottom: 0;
+
+}
+#modal-solapas .modal-body .foot {
+    background-image: url(../img/abbottnight/footer.png);
+    background-repeat: repeat-x;
+    color: #fff;
+    text-align: center;
+    height: 7px;
+}
+#modal-solapas .modal-body p {
+	padding-left: 100px;
+    padding-right: 10px;
+    font-size: 13px;
+	line-height: 15px;
+	text-align: justify;
+}
+#modal-solapas .modal-body p::before {
+	content:"• ";
+	color: #27a1d2;
+}
+#modal-solapas .modal-body p.p-sin-estilo {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+#modal-solapas .modal-body p.p-sin-estilo::before {
+	content:"";
+}
+
+#modal-solapas .close {
+	margin-bottom: -10px;
+    opacity: 1;	
+}
+#modal-solapas .close img{
+	width: 17px;
+}
+.con-padding {
+	padding-right: 30px;
+	padding-left: 30px;
+}
+
+.menu-mobile {
+	display: none;
+}
+.menu-mobile .navbar-nav-menu .nav-link {
+		font-family: 'gotham';
+		color: #fff;
+		font-size: 18px;
+		line-height: 20px;
+		font-weight: bold;
+		font-style: italic;
+		text-align: letf;
+		margin-bottom: 5px;
+		text-transform: uppercase;
+   
+}
+.menu-mobile .navbar-collapse.collapse.in {
+	display: block;
+}
+.menu-mobile .navbar-collapse {
+    max-width: 80%;
+    background-color: rgb(3, 3, 67);	
+}
+.menu-mobile {
+    z-index: 9;
+    background-color: #000;
+}
+.menu-mobile .navbar-nav-menu {
+	position: absolute;
+    z-index: 9;
+    background: linear-gradient(180deg, #c38a47,#dba255);
+    top: 0;
+    left: -1000px;
+}
+.menu-mobile .navbar-nav-menu.opened {
+	left: 0;
+}
+.navbar-dark .navbar-nav .nav-link {
+	color: #fff;
+}
+.btn-close-menu {
+	color: #FFF;
+    opacity: 1;
+    text-shadow: none;	
+}
+.navbar-toggler {
+	border: none;
+}
+
+.trivia-nro-preg {
+    color: #bb894a;
+    margin-right: 20px;
+}
+.trivia-separador {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.borde-dorado {
+    border-bottom: 1px solid #bb894a;
+    display: block;
+    width: 100%;    
+}
+.btn-primary {
+    color: #000;
+    font-family: "Gotham";
+    border-width: 4px;
+    border-radius: 40px;
+    border-style: solid;
+    border-color: #e0a758;
+    background: #ba8650;
+    background: linear-gradient(90deg, #ba8650 0%, #efe4af 30%, #efe4af 70%, #ba8650 100%);
+    font-size: 16px;
+    padding: 8px 52px;
+    letter-spacing: 0px;
+    letter-spacing: 0px;
+    box-shadow: 0 2px 10px #000, 0 -1px 1px #e0a758, inset -2px -2px 12px rgba(224, 167, 88, 0.5), inset 4px -3px 13px rgba(0, 0, 0, 0.4);
+  }
+  .btn-primary:hover {
+    border-color: #e0a758;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .btn-primary:active {
+    border-color: #e0a758 !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+  }
+  .btn-primary:focus {
+    border-color: #e0a758;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .btn-primary.btn-certificado {
+    padding: 8px 30px;
+  }
+  .trivia-opcion {
+      font-size: 10px;
+      font-weight: 700;
+  }
+    .trivia-opcion.correcta {
+        color: darkolivegreen;
+    }
+    .trivia-opcion.incorrecta {
+        color: red;
+    }  
+.trivia-bg-logo {
+    background-image: url(../img/abbottnight/fondo-modal.jpg);
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-color: #fff;
+    opacity: 1;
+    padding: 0;
+}  
 @media (min-width:1367px) {
     .container-fluid {
         min-width: 1920px;
         max-width: 1920px;
     }
+
+    .banners-pub {
+        position: absolute;
+        width: 133px;
+        height: 423px;
+    }    
+
+    #banner-pub-1 {
+        top: 45px;
+        left: 406px;
+        transform: skew(3.3deg);
+        clip-path: polygon(0 0, 100% 1%, 97% 98%, 1% 100%);
+    }   
+    #banner-pub-2 {
+        top: 46px;
+        right: 396px;
+        transform: skew(-3.3deg);
+        clip-path: polygon(3% 1.5%, 100% 0%, 100% 100%, 7% 98%);
+    }
+    
+    .lnk-cartel {
+        position: absolute;
+        width: 300px;
+        height: 164px;
+    }
+
+    #lnk-cartel-1 {
+        top: 235px;
+        left: 32px;
+        transform: skew(3.3deg,-1deg) rotate(-181deg);
+    }
+
+    #lnk-cartel-2 {
+        top: 238px;
+        right: 45px;
+        transform: skew(-3.5deg,1deg);
+    }   
+    
+    .lnk-mostrador {
+        position: absolute;
+        top: 522px;
+        width: 63px;
+        height: 155px;
+        border: 1px solid;
+    }    
+
+    #lnk-mostrador-2 {
+        right: 750px;
+    }    
+    #lnk-mostrador-1 {
+        left: 792px;
+    }
+
+    #video-ppal {
+        position: absolute;
+        width: 708px;
+        height: 385px;
+        /* border: 1px solid; */
+        background-color: transparent;
+        top: 35px;
+        left: 617px;
+    }    
+}
+@media (min-width: 769px) {
+	#modal-solapas .modal-dialog {
+		max-width: 650px!important;
+	}
+	
+}
+@media (max-width: 1025px){
+
+	.menu-mobile {
+		display: block;
+    }
+	#modal-solapas .modal-body p {
+		padding-left: 0px;
+		padding-right: 0px;
+	}	    
 }

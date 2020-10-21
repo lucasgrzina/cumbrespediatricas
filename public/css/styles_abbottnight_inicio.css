@@ -1,0 +1,554 @@
+@font-face {
+    font-family: "montserrat";
+    src: url("../fonts/montserrat-medium-webfont.woff2") format("woff2"), url("../fonts/montserrat-medium-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "montserrat";
+    src: url("../fonts/montserrat-bold-webfont.woff2") format("woff2"), url("../fonts/montserrat-bold-webfont.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "montserratsemibold";
+    src: url("../fonts/montserrat-semibold-webfont.woff2") format("woff2"), url("../fonts/montserrat-semibold-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "montserratlight";
+    src: url("../fonts/montserrat-light-webfont.woff2") format("woff2"), url("../fonts/montserrat-light-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Gotham";
+    src: url("../fonts/Gotham-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Gotham-Bold.otf") format("opentype"), url("../fonts/Gotham-Bold.woff") format("woff"), url("../fonts/Gotham-Bold.ttf") format("truetype"), url("../fonts/Gotham-Bold.svg#Gotham-Bold") format("svg");
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "gothamlight";
+    src: url("../fonts/gotham-light-webfont.woff2") format("woff2"), url("../fonts/gotham-light-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "superclarendon";
+    src: url("../fonts/superclarendon_regular-webfont.woff2") format("woff2"), url("../fonts/superclarendon_regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "superclarendon-light";
+    src: url("../fonts/superclarendon_lt-webfont.woff2") format("woff2"), url("../fonts/superclarendon_lt-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  body {
+    font-family: "Gotham", sans-serif;
+    background-image: url(../img/abbottnight/background.jpg);
+    background-size: cover;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .container {
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+  
+  .content-title {
+    margin-bottom: 53px;
+  }
+  
+  h1 {
+    font-size: 45px;
+    font-weight: bold;
+    font-family: "Gotham", sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  
+  .top-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-image: url("../img/abbottnight/top.png");
+    z-index: 10;
+    height: 33px;
+    background-size: cover;
+    background-position: center bottom;
+  }
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+  }
+  
+  .gold-color {
+    color: #e0a758;
+  }
+  
+  section.center-vertical {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 0px 0 100px;
+  }
+  
+  .content-intro {
+    margin: 0 auto 0;
+  }
+  .content-intro .logo-01 {
+    margin: 0 auto;
+    display: block;
+    max-width: 541px;
+    width: 100%;
+  }
+  .content-intro .text-gold {
+    font-family: "superclarendon";
+    color: #e0a758;
+    font-size: 31px;
+    text-align: center;
+    display: block;
+    letter-spacing: 0.5px;
+    margin: 0px 0 15px;
+  }
+  .content-intro .text-white {
+    color: #fff;
+    font-family: "Gotham";
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 17px;
+    display: block;
+    margin: 0px 0 15px;
+  }
+  .content-intro .btn {
+    margin: 0 auto;
+    display: block;
+  }
+  .content-intro.registro {
+    margin: 40px auto 0;
+  }
+  .content-intro.registro .logo-01 {
+    max-width: 364px;
+  }
+  .content-intro.registro .title {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 5px;
+  }
+  
+  .calendar {
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/abbottnight/calendar.svg);
+    background-repeat: no-repeat;
+  }
+  
+  .icon-sound {
+    width: 50px;
+    height: 50px;
+    display: block;
+    background-image: url(../img/abbottnight/sound.svg);
+    background-repeat: no-repeat;
+  }
+  
+  .icon-send {
+    width: 50px;
+    height: 50px;
+    display: block;
+    background-image: url(../img/abbottnight/send.svg);
+    background-repeat: no-repeat;
+  }
+  
+  .watch {
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/abbottnight/watch.svg);
+    background-repeat: no-repeat;
+  }
+  
+  .content-info {
+    max-width: 633px;
+    margin: 0 auto 30px;
+  }
+  .content-info .first:after {
+    content: " ";
+    width: 1px;
+    height: 100%;
+    background: #e0a758;
+    position: absolute;
+    right: 20px;
+    top: 0;
+  }
+  .content-info .text-watch {
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+    font-family: "gothamlight";
+  }
+  .content-info .text-watch .hour {
+    font-family: "Gotham";
+  }
+  .content-info .icon {
+    max-width: 70px;
+  }
+  .content-info .center-vertical {
+    display: flex;
+    align-items: center;
+  }
+  .content-info .center-vertical .watch, .content-info .center-vertical .calendar {
+    margin: 0 auto;
+  }
+  .content-info .date {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .content-info .date .day {
+    font-family: "Gotham";
+    color: #fff;
+    position: relative;
+    margin-right: 4px;
+  }
+  .content-info .date .day:after {
+    content: " ";
+    position: absolute;
+    background-color: #e0a758;
+    width: 1px;
+    height: 18px;
+    right: -6px;
+    top: 3px;
+  }
+  .content-info .date .type {
+    font-family: "gothamlight";
+    color: #fff;
+  }
+  
+  header {
+    padding: 33px 0 0;
+  }
+  
+  .form-container {
+    margin: 0 auto;
+    max-width: 430px;
+  }
+  .form-container.terminos {
+    max-width: 800px;
+  }
+  
+  textarea:hover,
+  input:hover,
+  textarea:active,
+  input:active,
+  textarea:focus,
+  input:focus,
+  button:focus,
+  button:active,
+  button:hover,
+  label:focus,
+  .btn:active,
+  .btn.active {
+    outline: 0px !important;
+    -webkit-appearance: none;
+    box-shadow: none !important;
+  }
+  
+  .form-container label {
+    color: #013565;
+    border-radius: 30px;
+    border-width: 0px;
+    border-style: solid;
+    border-color: transparent;
+    font-size: 25px;
+    text-transform: uppercase;
+    text-align: center;
+    max-width: 329px;
+    width: 100%;
+    padding: 9px 10px;
+    background: #e8a34d;
+    background: linear-gradient(135deg, #e8a34d 0%, #fdecbb 7%, #e8a34d 35%, #e5a347 62%, #fdecbb 89%, #e2a341 100%);
+  }
+  
+  .form-group input,.form-group select {
+    font-size: 14px;
+    border-radius: 30px;
+    border-width: 1px;
+    border-style: solid;
+    color: #fff;
+    border-color: #e0a758;
+    width: 100%;
+    font-family: "gothamlight";
+    padding: 9px 25px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .form-group input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1;
+    /* Firefox */
+  }
+  .form-group input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #fff;
+  }
+  .form-group input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #fff;
+  }
+  
+  .form-container input:focus,
+  .form-container input:active {
+    outline: none;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .form-container .form-group small {
+    display: none;
+  }
+  
+  .form-container button {
+    margin: 50px auto 0;
+    display: table;
+  }
+  
+  .content-big-title {
+    margin-top: -132px;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+  }
+  
+  .line-divide {
+    width: 58px;
+    height: 2px;
+    background: #e0a758;
+    margin: 5px auto 30px;
+  }
+  
+  .content-big-title .line--left {
+    left: calc(-50% - 1030px);
+  }
+  
+  .content-big-title .line--right {
+    left: calc(50% + 325px);
+  }
+  
+  .btn-primary {
+    color: #000;
+    font-family: "Gotham";
+    border-width: 4px;
+    border-radius: 40px;
+    border-style: solid;
+    border-color: #e0a758;
+    background: #ba8650;
+    background: linear-gradient(90deg, #ba8650 0%, #efe4af 30%, #efe4af 70%, #ba8650 100%);
+    font-size: 20px;
+    padding: 8px 52px;
+    letter-spacing: 0px;
+    letter-spacing: 0px;
+    box-shadow: 0 2px 10px #000, 0 -1px 1px #e0a758, inset -2px -2px 12px rgba(224, 167, 88, 0.5), inset 4px -3px 13px rgba(0, 0, 0, 0.4);
+  }
+  .btn-primary:hover {
+    border-color: #e0a758;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .btn-primary:active {
+    border-color: #e0a758 !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+  }
+  .btn-primary:focus {
+    border-color: #e0a758;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .btn-primary.btn-certificado {
+    padding: 8px 30px;
+  }
+  
+  .btn-secondary {
+    background: transparent !important;
+    border: none !important;
+  }
+  
+  .terminos .btn {
+    margin: 20px auto 100px;
+  }
+  
+  .btn-registro {
+    margin: 20px auto 100px !important;
+  }
+  
+  p.text {
+    color: #fff;
+    font-family: "gothamlight";
+    font-size: 14px;
+  }
+  
+  .bg-form-video .form-group {
+    width: 80%;
+    margin: 0;
+  }
+  
+  footer {
+    margin: 0px 0 0px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background-image: url("../img/abbottnight/footer.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  footer .logos {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  footer .logos .col {
+    max-width: 20%;
+  }
+  footer .logos .col img {
+    width: 100%;
+  }
+  footer .logos a {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    padding: 7px 0 0 0;
+  }
+  footer .logos a img {
+    max-width: 140px;
+  }
+  
+  .video-content {
+    margin: 20px auto 0;
+    position: relative;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  .video-content p {
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    margin: 0 auto 10px;
+    display: inline-flex;
+  }
+  .video-content p .icon-sound {
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+  }
+  .video-content .video {
+    min-height: 400px;
+    background-color: green;
+    border-radius: 4px;
+    border-color: #e0a758;
+    border-width: 4px;
+    border-style: solid;
+    -webkit-box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
+    margin: 0 5%;
+  }
+  
+  .video-footer {
+    min-height: 60px;
+  }
+  .video-footer .logo .logo-img {
+    width: 100%;
+  }
+  
+  .mb-video {
+    margin-bottom: 100px;
+  }
+  
+  section {
+    overflow: hidden;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      max-width: 480px;
+    }
+  
+    .content-intro .text-gold {
+      font-size: 23px;
+      margin: 15px 0 30px;
+      line-height: 25px;
+    }
+    .content-intro .first {
+      margin-bottom: 20px;
+    }
+    .content-intro .first:after {
+      content: " ";
+      width: 100%;
+      height: 1px;
+      background: #e0a758;
+      position: absolute;
+      right: 0;
+      top: auto;
+      bottom: -10px;
+    }
+  
+    .video-content p {
+      align-items: center;
+      text-align: left;
+    }
+    .video-content .video {
+      max-width: 100%;
+      margin: 0;
+    }
+  
+    .video-footer {
+      min-height: 60px;
+    }
+    .video-footer .logo .logo-img {
+      max-width: 200px;
+      margin: 0 auto;
+    }
+    .video-footer .btn-certificado {
+      margin: 10px auto;
+      font-size: 15px;
+    }
+  
+    .btn-registro {
+      font-size: 15px;
+    }
+  
+    .terminos .btn {
+      margin: 20px auto 100px;
+      font-size: 15px;
+    }
+  
+    footer .logos .col-3 {
+      padding: 0;
+    }
+    footer .logos .col-3 img {
+      max-width: 85px;
+    }
+    body {
+      background-image: url(../img/abbottnight/background-mobile.jpg);
+      background-size: auto;
+      background-position: center;
+    }    
+  }
+  @media (min-width: 768px) and (max-height: 700px) {
+    .btn-primary {
+      font-size: 15px;
+    }
+  
+    .form-container button {
+      margin: 25px auto 0;
+    }
+  }
+  
+  /*# sourceMappingURL=styles.css.map */
+  

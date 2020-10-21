@@ -44,7 +44,12 @@ mix.js('resources/assets/js/cumbre.js', 'public/js')
       'public/css/bootstrap.min.css',
       'public/css/styles_abbottnight.css',
       'public/css/utils.css',
-   ], 'public/css/abbottnight.css');          
+   ], 'public/css/abbottnight.css')
+   .styles([
+      'public/css/bootstrap.min.css',
+      'public/css/styles_abbottnight_inicio.css',
+      'public/css/utils.css',
+   ], 'public/css/abbottnight_inicio.css');          
 
 if (mix.inProduction()) {
    mix.version();

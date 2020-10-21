@@ -74,6 +74,11 @@ Route::prefix('/admin')->group(function () {
         Route::get('configuraciones/exportar/{type}', 'Admin\ConfiguracionesController@export')->name('configuraciones.export');        
         Route::resource('configuraciones', 'Admin\ConfiguracionesController');
 
+        Route::get('trivias/edit/{id}/{lang}', 'Admin\TriviasController@editLang')->name('trivias.edit-lang');            
+        Route::post('trivias/change-enabled', 'Admin\TriviasController@changeEnabled')->name('trivias.change-enabled');
+        Route::post('trivias/filter', 'Admin\TriviasController@filter')->name('trivias.filter');
+        Route::resource('trivias', 'Admin\TriviasController');
+
         Route::get('clear-cache', function () {
             $exitCode = Artisan::call('cache:clear');
             echo 'done';// return what you want
@@ -167,6 +172,7 @@ foreach ($eventos as $key => $data) {
                 Route::post('/enviar-encuesta', $data['controller'].'@enviarEncuesta')->name('enviar-encuesta');
                 Route::get('/evento-disponible', $data['controller'].'@eventoDisponible')->name('evento-disponible');        
                 Route::any('/enviar-salida-usuario', $data['controller'].'@enviarSalidaUsuario')->name('enviar-salida-usuario');
+                Route::post('/enviar-trivia', $data['controller'].'@enviarTrivia')->name('enviar-trivia');
             });
             Route::get('/', $data['controller'].'@index')->name('home');
         }); 
@@ -193,3 +199,4 @@ Route::get('/log/borrar', function () {
     unlink($pathToFile);
     return 'Listo.';
 });
+

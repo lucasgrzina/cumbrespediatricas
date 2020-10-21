@@ -37,3 +37,7 @@
 <li class="{{ Request::is('configuraciones*') ? 'active' : '' }}">
   <a href="{!! route('configuraciones.index') !!}"><i class="fa fa-chevron-right"></i><span>Configuraciones</span></a>
 </li>
+<li class="{{ Request::is('trivias*') ? 'active' : '' }}">
+    <a href="{!! route('trivias.index') !!}"><i class="fa fa-edit"></i><span>Trivias</span></a>
+</li>
+

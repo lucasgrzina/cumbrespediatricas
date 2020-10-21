@@ -1,190 +1,345 @@
 <template>
     <div>
-	  <section>
-	  	<div class="container">
-            <div class="control-audio">
-                <img src="img/forosas/logo_ABBVIE.png" width="180" style="right: 70px;bottom: 30px; position: absolute;">
-            </div>
-	  		<div class="row content-logo-login">
-	  			<a><img src="img/forosas/logo.png"></a>
-	  		</div>
+        <header class="">
+            <div class="top-header"></div>
+        </header>        
+        
+        <section class="center-vertical">
 
-	  		
-            <div class="content-form text-center">
-                <template v-if="vista === 'login'">
-                    <form data-vv-scope="frm-login" autocomplete="off" @submit="loguear">
-                        <div class="form-group row">
-                            <div class="col-12">
-                                <input type="email" autocomplete="off" class="form-control" id="login-email" placeholder="Email" v-model="login.form.email">
+            <div class="container" v-if="paso === 1">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="content-intro">
+                            <img class="logo-01" src="img/abbottnight/logo.png" />
+                            <span class="text-gold">Bienvenidos a 2 días llenos de ciencia</span>
+                            <span class="text-white">EVENTO REGIONAL <span class="gold-color">|</span> MODO VIRTUAL</span>
+
+                            <div class="row content-info">
+                                <div class="col-md-6 pl-md-1 pr-md-1 first">
+                                    <div class="row">
+                                        <div class="col center-vertical icon p-1">
+                                            <div class="calendar"></div>
+                                        </div>
+                                        <div class="col  center-vertical p-1">
+                                            <div>
+                                                <div class="date">
+                                                    <span class="day">27 OCT.</span>
+                                                    <span class="type">PEDIÁTRICO</span>
+                                                </div>
+                                                <div class="date">
+                                                    <span class="day">03 NOV.</span>
+                                                    <span class="type">ADULTOS</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-md-6 pl-md-1 pr-md-1">
+                                    <div class="row">
+                                        <div class="col center-vertical icon p-1">
+                                            <div class="watch"></div>
+                                        </div>
+                                        <div class="col center-vertical p-1">
+                                            <p class="text-watch">Centro América: <span class="hour">6 pm</span><br>Panamá: <span class="hour">7 pm</span><br>Rep. Dominicana: <span class="hour">8 pm</span></p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <button type="submit" class="btn btn-ingresar">
-                            <img src="img/forosas/btn-ingresar.png">
-                        </button>
-                    </form>
-                    <a @click="mostrarVista('registro')" class="lnk-registrate">Si aún no te registraste, <strong>haz clic aquí.</strong></a>
-                </template>
-                <template v-else>
-                    <form data-vv-scope="frm-registro" autocomplete="off" @submit="registrar">
-                        <div class="form-group row">
-                            <div class="col-12">
-                                <input type="text" class="form-control" placeholder="Nombre" v-model="registro.form.nombre">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-12">
-                                <input type="text" class="form-control" placeholder="Apellido" v-model="registro.form.apellido">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-12">
-                                <input type="email" class="form-control" placeholder="Email" v-model="registro.form.email">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-12">
-                                <input type="text" class="form-control" placeholder="Clave" v-model="registro.form.codigo">
-                            </div>
+
+                            <button class="btn btn-primary" @click="mostrarDisc()">INGRESAR</button>
                         </div>
 
-                        <button type="submit" class="btn btn-ingresar">
-                            <img src="img/forosas/btn-ingresar.png">
-                        </button>
                         
-                    </form>
-                </template>
-            </div>
-	  	
-	  	</div>
-	  </section>
+                    </div>
+                </div>
+                
 
+            
+            </div>
+
+            <div class="container" v-if="paso === 2">
+                <div class="row pt-5">
+                    <div class="col-md-12">
+                        <div class="content-intro registro">
+                            <img class="logo-01" src="img/abbottnight/logo.png" />
+                            <span class="text-gold title">Registro</span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12"><div class="line-divide"></div></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="form-container terminos">
+                            <p class="text">
+                                En cumplimiento de las políticas corporativas de Abbott, le informamos que este evento es exclusivo para profesionales de la salud. En caso de que esta invitación no esté acorde con su área de especialización/conocimiento y/o desarrollo profesional o, en caso de que usted sea un empleado del gobierno y su participación contravenga alguna ley, reglamento o norma interna de su institución y no cuente con las respectivas autorizaciones, le solicitamos nos informe a la brevedad posible.
+                            </p>
+                            <p class="text">
+                                La información y/o datos brindados para el registro al evento serán utilizados únicamente durante su participación en el evento y envío de información relacionada al evento. Todos los datos serán manejados de acuerdo a nuestros procedimientos de manejo de datos y no podrán ser compartidos y/o utilizados para fines diferentes a su participación en este evento.
+                            </p>
+                            <br>
+                            <p class="text text-center">
+                                <a target="_blank" class="text-white" style="text-decoration:underline;" href="https://www.quimicavirtualevents.com/recorrido/avisodeprivacidad.html">Aviso de privacidad</a>
+                            </p>
+
+                            <button type="submit" class="btn btn-primary" @click="mostrarForm()">ACEPTO PROCEDER CON EL REGISTRO</button>
+                        </form>
+                    </div>
+                </div>
+            </div>         
+
+            <div class="container" v-if="paso === 3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="content-intro registro">
+                            <img class="logo-01" src="img/abbottnight/logo.png" />
+                            <span class="text-gold title">Ingrese su usuario</span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12"><div class="line-divide"></div></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="form-container" id="frm-registro">                                
+
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <input type="text" class="form-control" placeholder="Nombre" v-model="form.nombre">
+                                </div>                                        
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <input type="text" class="form-control" placeholder="Apellido" v-model="form.apellido">
+                                </div>                                        
+                            </div> 
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <input type="text" class="form-control" placeholder="Especialidad" v-model="form.especialidad">
+                                </div>                                        
+                            </div>                                                                                             
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <select v-model="form.pais" class="form-control">
+                                        <option :value="null">Seleccione</option>
+                                        <option v-for="(item,index) in info.countries" :value="item" :key="index">{{item}}</option>
+                                    </select>                                            
+                                </div>                                        
+                            </div>                                                                                             
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <input type="text" class="form-control" placeholder="Mail" v-model="form.email">
+                                </div>                                        
+                            </div>  
+
+                            <button type="button" class="btn btn-primary btn-registro" @click="registrar()">INGRESAR</button>
+                        </form>
+                    </div>
+                </div>
+            </div>               
+
+        </section>        
+
+        <footer >
+            <div class="container">
+                <div class="row logos">
+                    <div class="col pl-1 pr-1">
+                        <a><img src="img/abbottnight/logo_3.png"></a>
+                    </div>
+
+                    <div class="col pl-1 pr-1">
+                        <a><img src="img/abbottnight/logo_2.png"></a>
+                    </div>
+
+                    <div class="col pl-1 pr-1">
+                        <a><img src="img/abbottnight/logo_1.png"></a>
+                    </div>
+
+                    <div class="col pl-1 pr-1">
+                        <a><img src="img/abbottnight/logo_4.png"></a>
+                    </div>
+
+                    <div class="col pl-1 pr-1">
+                        <a><img src="img/abbottnight/logo_5.png"></a>
+                    </div>                    
+                </div>
+            </div>
+        </footer>        
+        
+        
+        <!--div class="container" v-if="paso === 1">
+            <div class="row content-big-title">
+                <div class="col-md-12 text-center">
+                    <img class="img-fluid logo" src="img/abbottnight/similacmama/logo.png">
+                    <a class="btn btn-inscribite" @click="mostrarDisc()">
+                        <img class="img-fluid" src="img/abbottnight/similacmama/btn-inscribite-2.png">
+                    </a>
+                </div>
+            </div>  
+        </div>
+        <template  v-else-if="paso === 2">
+            <div class="row fondo-disc">
+                    <div class="col-md-12">
+                        <div class="modal-disc text-center">
+                            <img class="img-fluid tit-registro" src="img/abbottnight/similacmama/titulo-registro.png">
+                            <div class="container">
+                                
+                                <p class="modal-disc-texto">
+                                    En cumplimiento de las políticas corporativas de Abbott, le informamos que este evento es exclusivo para profesionales de la salud. En caso de que esta invitación no esté acorde con su área de especialización/conocimiento y/o desarrollo profesional o, en caso de que usted sea un empleado del gobierno y su participación contravenga alguna ley, reglamento o norma interna de su institución y no cuente con las respectivas autorizaciones, le solicitamos nos informe a la brevedad posible.
+                                    <br><br>
+                                    La información y/o datos brindados para el registro al evento serán utilizados únicamente durante su participación en el evento y envío de información relacionada al evento. Todos los datos serán manejados de acuerdo a nuestros procedimientos de manejo de datos y no podrán ser compartidos y/o utilizados para fines diferentes a su participación en este evento.                        
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="container text-center">
+                <a class="modal-disc-btn btn" @click="mostrarForm()">
+                    <img class="img-fluid" src="img/abbottnight/similacmama/btn-acepto-legales.png">
+                </a>                
+            </div>
+        </template>
+        <template v-else>      
+            <div class="row fondo-disc">
+                    <div class="col-md-12">
+                        <div class="modal-disc text-center">
+                            <img class="img-fluid tit-registro" src="img/abbottnight/similacmama/titulo-inscribirse.png">
+                            <div class="container">
+                                <form class="form-container" id="frm-registro">                                
+                                    <div class="form-group row">
+                                        <div class="col-12">
+                                            <input type="text" class="form-control" placeholder="Nombre" v-model="form.nombre">
+                                        </div>                                        
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-12">
+                                            <input type="text" class="form-control" placeholder="Apellido" v-model="form.apellido">
+                                        </div>                                        
+                                    </div> 
+                                    <div class="form-group row">
+                                        <div class="col-12">
+                                            <input type="text" class="form-control" placeholder="Especialidad" v-model="form.especialidad">
+                                        </div>                                        
+                                    </div>                                                                                             
+                                    <div class="form-group row">
+                                        <div class="col-12">
+                                            <select v-model="form.pais" class="form-control">
+                                                <option :value="null">Seleccione</option>
+                                                <option v-for="(item,index) in info.countries" :value="item" :key="index">{{item}}</option>
+                                            </select>                                            
+                                        </div>                                        
+                                    </div>                                                                                             
+                                    <div class="form-group row">
+                                        <div class="col-12">
+                                            <input type="text" class="form-control" placeholder="Mail" v-model="form.email">
+                                        </div>                                        
+                                    </div>  
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="container text-center">
+                <a class="modal-disc-btn btn" @click="registrar()">
+                    <img class="img-fluid" src="img/abbottnight/similacmama/btn-ingresar.png">
+                </a>                
+            </div>
+ 
+        </template-->  
     </div>
 </template>
 
 <script>
     export default {
         props : {
-            keyRecaptcha: {
-                type: String
-            },
-            urlLogin: {
-                type: String,
-                required: true
-            },
             urlRegistrar: {
                 type: String,
-                required: true
+                required:true
             },
-            urlHome: {
-                type: String,
+            recaptcha: {
+                type: Object,
+                default: null
+            },
+            evento: {
+                type: Object,
                 required: true
-            }                           
+            }
         },
         data () {
             return {
-                vista: 'login',
-                registro: {
-                    form: {
-                        nombre: null,
-                        apellido: null,
-                        email: null,
-                        codigo: null
-                    },
-                    enviado: false,
-                    enviando: false
-                },
-                login : {
-                    form: {
-                        email: null,
-                    },
-                    enviado: false,
-                    enviando: false
-                },
+                paso: 1,
+                lnk_blur: false,
                 info: {
+                    countries: ['Costa Rica','El Salvador','Guatemala','Honduras','Nicaragua','Panamá','República Dominicana','Otro']
                 },
+                form: {
+                    nombre: null,
+                    apellido: null,
+                    especialidad: null,
+                    pais: null,
+                    email: null
+                },
+                guardando: false,
                 errors: [],
             }
         },
         mounted () {
-            console.debug('Login mounted');
-
-            this.countdownTimer = setInterval(this.timer, 1000);
+            console.debug('Registro mounted');
         },
         methods: {
-            mostrarVista (vista) {
-                let vm = this;
-                if (vista === 'login') {
-                    vm.login.form = _.assign({
-                        nombre: null,
-                        apellido: null,
-                        email: null,
-                        codigo: null,
-                    });
-                    vm.login.enviando = false;
-                    vm.login.enviado = false;
-
-                } else {
-                    vm.registro.form = _.assign({
-                        nombre: null,
-                        apellido: null,
-                        email: null,
-                        codigo: null,
-                    });
-                    vm.registro.enviando = false;
-                    vm.registro.enviado = false;
-                }
-                vm.vista = vista;
+            mostrarBlur: function (val) {
+                console.debug('mostrar blur');
+                this.lnk_blur = val;
+            },
+            mostrarDisc () {
+                this.paso = 2;
+            },            
+            mostrarForm () {
+                this.paso = 3;
             },
             checkForm: function (e) {
-                let vm = this;
-                let form = vm.vista === 'login' ? vm.login.form : vm.registro.form;
+
                 this.errors = [];
 
-                if (vm.vista === 'login') {
-                    if (!form.email) {
-                        alert('Todos los campos son obligatorios');
-                        return false;
-                    }
-                } else {
-                    if (!form.nombre || !form.apellido || !form.email || !form.codigo ) {
-                        alert('Todos los campos son obligatorios');
-                        return false;
-                    }
+                if (!this.form.nombre || !this.form.apellido || !this.form.especialidad || !this.form.pais || !this.form.email ) {
+                    alert('Todos los campos son obligatorios');
+                    return false;
                 }
-
 
                 var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                                 
-                if (!re.test(form.email)) {
+                if (!re.test(this.form.email)) {
                     alert('El formato del email es incorrecto.');
                     return false;
                 }
                 return true;
                 
             },            
-            registrar (e) {
-                e.preventDefault();
+            registrar () {
+
                 let vm = this
-                let form = this.registro.form;
-                if (form.enviando) {
+                if (this.guardando) {
                     return false;
                 }
                 if (this.checkForm()) {
-                    form.enviando = true;
+                    this.guardando = true;
+
                     grecaptcha.ready(function() {
-                        grecaptcha.execute(vm.keyRecaptcha, {action: 'submit'}).then(function(token) {
+                        grecaptcha.execute(vm.recaptcha.key, {action: 'submit'}).then(function(token) {
                             // Add your logic to submit to your backend server here.
                             if (token) {
-                                axios.post(vm.urlRegistrar, form)
+                                axios.post(vm.urlRegistrar, vm.form)
                                     .then(response => {
-                                        console.debug(response);
-                                        form.enviando = false;
-                                        document.location = vm.urlHome;
+                                        vm.guardando = false;
+                                        location.reload();
                                     }, error => {
-                                        form.enviando = false;
-                                        console.debug(error.response.data.message);
-                                        alert(error.response.data.message);
-
+                                        vm.guardando = false;
+                                        alert(error.message);
                                     });
 
                             }
@@ -193,27 +348,6 @@
                     });
                 }
                 
-            },
-            loguear (e) {
-                e.preventDefault();
-                let vm = this
-                let form = this.login.form;
-                if (form.enviando) {
-                    return false;
-                }
-                if (this.checkForm()) {
-                    form.enviando = true;
-                    axios.post(vm.urlLogin, form)
-                        .then(response => {
-                            console.debug(response);
-                            form.enviando = false;
-                            document.location = vm.urlHome;
-                        }, error => {
-                            form.enviando = false;
-                            console.debug(error.response.data.message);
-                            alert(error.response.data.message);
-                        });
-                }
             }
         }
     }

@@ -3,9 +3,10 @@
 namespace App\Http\Front\Controllers;
 
 
+use App\Trivias;
 use App\Encuestas;
-use App\Preguntas;
 
+use App\Preguntas;
 use Carbon\Carbon;
 use App\Registrado;
 use App\Configuraciones;
@@ -85,7 +86,6 @@ class EventoBaseController extends AppBaseController
     }
     public function enviarEncuesta(Request $request) {
         try {
-            \Log::info('Llego');
             $data = $request->all();
             $data['evento'] = $this->key;
             
@@ -96,7 +96,6 @@ class EventoBaseController extends AppBaseController
             } catch (\Exception $e) {}
             
             $data = Encuestas::create($data);
-            \Log::info($data);
             return $this->sendResponse($data,'La operación finañizó con éxito');                
         } catch (\Exception $e) {
             \Log::info($e->getMessage());
@@ -161,6 +160,26 @@ class EventoBaseController extends AppBaseController
         return $registrado;
     }
 
+    public function enviarTrivia(Request $request) {
+        try {
+            //$data = $request->all();
+            $data = ['pregunta' => 'S/P'];
+            $data['evento'] = $this->key;
+            
+            try {
+                $registrado = $this->obtenerRegistrado();
+                $data['registrado_id'] = $registrado->id;
+
+            } catch (\Exception $e) {}
+            $data['respuesta'] = $request->all();
+            \Log::info($data);
+            $data = Trivias::create($data);
+            return $this->sendResponse($data,'La operación finañizó con éxito');                
+        } catch (\Exception $e) {
+            \Log::info($e->getMessage());
+            return $this->sendError($e->getMessage(),$e->getCode());
+        }
+    }
     
 
 }
