@@ -81,10 +81,8 @@ body, html,#app,#app main,#app main section {
 }
 .banners-pub {
 	position: absolute;
-    width: 100px;
-    height: 300px;
-    
-    background-color: #3b0664;
+    width: 105px;
+    height: 298px;
 }
 .banners-pub img{
     max-width: 100%;
@@ -92,15 +90,15 @@ body, html,#app,#app main,#app main section {
 }
 #banner-pub-1 {
 	top: 32px;
-    left: 286px;
-    transform: skew(3.3deg);
-    clip-path: polygon(0 0, 100% 1%, 97% 98%, 1% 100%);
+    left: 282px;
+    /*transform: skew(3.3deg);
+    clip-path: polygon(0 0, 100% 1%, 97% 98%, 1% 100%);*/
 }
 #banner-pub-2 {
 	top: 32px;
-    right: 278px;
-    transform: skew(-3.3deg);
-    clip-path: polygon(3% 1.5%, 100% 0%, 100% 100%, 7% 98.5%);
+    right: 272px;
+    /*transform: skew(-3.3deg);
+    clip-path: polygon(3% 1.5%, 100% 0%, 100% 100%, 7% 98.5%);*/
 }
 .lnk-cartel {
     position: absolute;
@@ -328,21 +326,21 @@ body, html,#app,#app main,#app main section {
 
     .banners-pub {
         position: absolute;
-        width: 133px;
+        width: 142px;
         height: 423px;
     }    
 
     #banner-pub-1 {
         top: 45px;
-        left: 406px;
-        transform: skew(3.3deg);
-        clip-path: polygon(0 0, 100% 1%, 97% 98%, 1% 100%);
+        left: 400px;
+        /*transform: skew(3.3deg);
+        clip-path: polygon(0 0, 100% 1%, 97% 98%, 1% 100%);*/
     }   
     #banner-pub-2 {
         top: 46px;
-        right: 396px;
-        transform: skew(-3.3deg);
-        clip-path: polygon(3% 1.5%, 100% 0%, 100% 100%, 7% 98%);
+        right: 388px;
+        /*transform: skew(-3.3deg);
+        clip-path: polygon(3% 1.5%, 100% 0%, 100% 100%, 7% 98%);*/
     }
     
     .lnk-cartel {
@@ -354,13 +352,13 @@ body, html,#app,#app main,#app main section {
     #lnk-cartel-1 {
         top: 235px;
         left: 32px;
-        transform: skew(3.3deg,-1deg) rotate(-181deg);
+        /*transform: skew(3.3deg,-1deg) rotate(-181deg);*/
     }
 
     #lnk-cartel-2 {
         top: 238px;
         right: 45px;
-        transform: skew(-3.5deg,1deg);
+        /*transform: skew(-3.5deg,1deg);*/
     }   
     
     .lnk-mostrador {

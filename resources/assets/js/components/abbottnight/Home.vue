@@ -154,14 +154,15 @@
         
 	  	<div class="container-fluid h-100">
             <div id="video-ppal">
-                <iframe width="838" height="470" src="https://www.youtube.com/embed/OjQ5FeDxNrA?enablejsapi=1" frameborder="0"></iframe>
+                <iframe src="https://player.vimeo.com/video/470691210" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <!--iframe width="838" height="470" src="https://www.youtube.com/embed/OjQ5FeDxNrA?enablejsapi=1" frameborder="0"></iframe-->
             </div>
             
             <div class="banners-pub" id="banner-pub-1">
-                <img src="img/abbottnight/banners/der.gif" loop="infinite">
+                <img src="img/abbottnight/banners/izq.gif" loop="infinite">
             </div>
             <div class="banners-pub" id="banner-pub-2">
-                <img src="img/abbottnight/banners/izq.gif" loop="infinite">
+                <img src="img/abbottnight/banners/der.gif" loop="infinite">
             </div>   
             <a class="lnk-cartel" id="lnk-cartel-1" href="javascript:void(0);" @click="mostrarSolapa(1)">
             </a>         
