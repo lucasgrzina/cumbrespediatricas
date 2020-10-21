@@ -46475,7 +46475,7 @@ var staticRenderFns = [
       _c("iframe", {
         attrs: {
           src:
-            "https://player.vimeo.com/video/470691210?autoplay=1&loop=1&title=0&byline=0&portrait=0",
+            "https://player.vimeo.com/video/470691210?autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1",
           width: "640",
           height: "360",
           frameborder: "0",
