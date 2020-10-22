@@ -29,7 +29,7 @@ class IDController extends Controller
 
     public function sendEmail() {
 
-        $registrados = Registrado::whereEvento('forosas')->where('created_at','<','2020-10-14')->take(1)->pluck('nombre','email'); 
+        $registrados = Registrado::whereEvento('forosas')->where('created_at','<','2020-10-14')->pluck('nombre','email'); 
         $salida = [
             'errores' => [],
             'ok' => 0
