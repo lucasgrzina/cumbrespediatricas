@@ -29,9 +29,25 @@ class IDController extends Controller
 
     public function sendEmail() {
 
-        $registrados = Registrado::whereEvento('forosas')->where('created_at','<','2020-10-14')->pluck('nombre','email'); 
-        
-
+        $registrados = Registrado::whereEvento('forosas')->where('created_at','<','2020-10-14')->take(1)->pluck('nombre','email'); 
+        $salida = [];
+        try
+        {
+            foreach ($registrados as $email => $nombre) {
+                $contenidoEmail = "Hola {$nombre}<br>".
+                "Muchas gracias por registrarse al 7mo Foro de Salud Sustentable (SaS).<br>".
+                "Ya puede darle un vistazo a la información del evento ingresando al sitio web www.foro-sas.com.ar";
+                $salida[] = $contenidoEmail;
+                //Mail::queue(new \App\Mail\RawMailable($email, 'Foro-Sas: Registro', $contenidoEmail));                                    
+            }
+            
+            
+        }
+        catch(\Exception $ex)
+        {
+            \Log::error($ex->getMessage());
+        }               
+        return response()->json($salida);
         
         /*$pathToFile = asset('img/forosas/Confirmacion.jpg');
             $contenidoEmail = "Hola Lucas<br>".
@@ -40,7 +56,7 @@ class IDController extends Controller
             Mail::queue(new \App\Mail\RawMailable('lucasgrzina@gmail.com', 'Foro-Sas: Registro', $contenidoEmail));                    
         */
 
-        return response()->json($registrados);
+        
             
            
     }
