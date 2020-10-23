@@ -44,7 +44,7 @@
                                 <button 
                                     type="button" 
                                     class="btn btn-primary btn-certificado"
-                                    v-if="registrado && registrado.certificado"
+                                    v-if="registrado"
                                     @click="certificadoDisponible()">
                                     DESCARGA TU CERTIFICADO
                                 </button>

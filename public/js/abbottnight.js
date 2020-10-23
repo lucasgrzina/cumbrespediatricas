@@ -48082,7 +48082,7 @@ var render = function() {
                     "col col-md-4 bg-form-video d-flex align-items-center"
                 },
                 [
-                  _vm.registrado && _vm.registrado.certificado
+                  _vm.registrado
                     ? _c(
                         "button",
                         {
