@@ -18,7 +18,7 @@ window.Vue = require('vue');
 //Vue.component('contenedor', require('./components/Contenedor.vue'));
 Vue.component('home', require('./components/abbottnight/Home.vue'));
 Vue.component('registro', require('./components/abbottnight/Registro.vue'));
-
+Vue.component('vivo', require('./components/abbottnight/Vivo.vue'));
 const app = new Vue({
     el: '#app',
 });

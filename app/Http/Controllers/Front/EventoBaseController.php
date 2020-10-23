@@ -137,6 +137,7 @@ class EventoBaseController extends AppBaseController
 
     public function eventoDisponible() {
         $config = $this->config('*');
+        
         $finVivo = $config['fin_vivo'] ? Carbon::parse($config['fin_vivo']) : false;
         if ($config['etapa'] === 'R' && (!$finVivo || Carbon::now()->lt($finVivo))) {
             return $this->sendResponse([],'El evento se encuentra disponible');                

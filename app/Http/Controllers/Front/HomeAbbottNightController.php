@@ -34,12 +34,19 @@ class HomeAbbottNightController extends EventoBaseController
         } */       
         $ahora = Carbon::now();
         $registrado = $this->obtenerRegistrado();
+        $config = $this->config('*');
+        $inicioVivo = $config['inicio_vivo'] ? Carbon::parse($config['inicio_vivo']) : false;
+        $segundosRestantes = $inicioVivo && $inicioVivo->gt($ahora) ? Carbon::parse($inicioVivo)->diffInSeconds($ahora) : 0;
+        
         if ($registrado) {
             $data = [
                 'props' => [
+                    'etapa' => $config['etapa'],
                     'ahora' => $ahora->format('Y-m-d H:i:s'),
-                    'segundosRestantes' => Carbon::parse('2020-10-27 18:00:00')->diffInSeconds($ahora),
+                    'segundosRestantes' => $segundosRestantes,
                     'urlEnviarTrivia' => route($this->key.'.enviar-trivia'),
+                    'urlEventoDisponible' => route($this->key.'.evento-disponible'),
+                    'urlVivo' => route($this->key.'.vivo'),
                     'evento' => $this->evento,
                     'registrado' => $registrado,
                     
@@ -74,4 +81,63 @@ class HomeAbbottNightController extends EventoBaseController
         }      
     }    
 
+    public function eventoDisponible() {
+        $config = $this->config('*');
+        $inicioVivo = $config['inicio_vivo'] ? Carbon::parse($config['inicio_vivo']) : false;
+        $finVivo = $config['fin_vivo'] ? Carbon::parse($config['fin_vivo']) : false;
+        if ($config['etapa'] === 'R' && $inicioVivo && Carbon::now()->gt($inicioVivo) && (!$finVivo || Carbon::now()->lt($finVivo))) {
+            return $this->sendResponse([],'El evento se encuentra disponible');                
+        } else {
+            return $this->sendError('El evento no se encuentra disponible',505);
+        }
+        
+    }    
+
+    public function vivo (Request $request) {
+        $registrado = null;
+        try {
+            
+            $conf = $this->config('*');
+
+            if ($conf['etapa'] !== 'R') {
+                return redirect()->route($this->key.'.home');
+            }
+            
+            try {
+                $registrado = $this->obtenerRegistrado();
+                
+                if ($registrado) {
+                    $registrado->acciones()->create([
+                        'accion' => 'evento',
+                        'desde' => Carbon::now()
+                    ]);
+                } else {
+                    FrontHelper::removeCookieRegistrado($this->evento['cookie']);
+                    return redirect()->route($this->key.'.home');
+                }
+    
+            } catch(\Exception $e) {
+                \Log::info($e->getMessage());
+            }
+
+        } catch(\Exception $e) {
+            return view('front.'.$this->evento['view'].'.no-habilitado');
+            //return redirect()->to(env('URL_SITIO_PPAL','#'));
+        }
+        
+        
+        $data = [
+            'props' => [
+                'evento' => $this->evento,
+                'registrado' => $this->obtenerRegistrado(),
+                'urlEnviar' => route($this->key.'.enviar-pregunta'),
+                'urlEncuesta' => '',
+                'urlEncuestaDisponible' => route($this->key.'.encuesta-disponible'),
+                'urlEnviarEncuesta' => route($this->key.'.enviar-encuesta'),
+                'urlEnviarSalidaUsuario' => route($this->key.'.enviar-salida-usuario'),
+            ]
+        ];
+        
+        return view('front.'.$this->evento['view'].'.vivo', $data);
+    }
 }

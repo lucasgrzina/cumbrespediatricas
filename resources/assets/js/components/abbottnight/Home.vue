@@ -154,7 +154,39 @@
         
 	  	<div class="container-fluid h-100">
             <div id="video-ppal">
-                <iframe src="https://player.vimeo.com/video/470691210?autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <div class="counter" v-if="mostrarCountdown">
+                        <p><span class="bullet"></span>PRÓXIMO VIVO</p>
+                        <span id="countdown" class="row timer">
+                            <div class="col block-time days">
+                                <span class="num"></span>
+                                <span class="text">Días</span>
+                            </div>
+                            <div class="col block-time hours">
+                                <span class="num"></span>
+                                <span class="text">Horas</span>
+                            </div>
+                            <div class="col block-time minutes">
+                                <span class="num"></span>
+                                <span class="text">Min.</span>
+                            </div>
+                            <div class="col block-time seconds">
+                                <span class="num"></span>
+                                <span class="text">Seg.</span>
+                            </div>
+                        </span>
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <button type="button" 
+                                        class="btn btn-primary" 
+                                        @click="vivoDisponible()"
+                                        v-if="seconds < 1">
+                                    <i v-if="enviandoVivoDisponible" class="fa fa-spinner fa-spin fa-fw"></i> 
+                                    <span> {{ enviandoVivoDisponible ? 'Ingresando...' : 'Ingresar' }} </span>
+                                </button>                                
+                            </div>
+                        </div>
+                </div>                
+                <iframe v-else src="https://player.vimeo.com/video/470691210?autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 <!--iframe width="838" height="470" src="https://www.youtube.com/embed/OjQ5FeDxNrA?enablejsapi=1" frameborder="0"></iframe-->
             </div>
             
@@ -193,10 +225,21 @@
             },
             urlEnviarTrivia: {
                 type: String
-            }
+            },
+            urlEventoDisponible: {
+                type: String
+            },
+            etapa: {
+                type: String
+            },   
+            urlVivo: {
+                type: String,
+                required: true
+            }                     
         },
         data () {
             return {
+                mostrarCountdown: false,
                 alto: 100,
                 solapa: null,
                 seconds: this.segundosRestantes,
@@ -344,7 +387,8 @@
                     enviando: false,
                     enviado: false,
                     errors: [],
-                }
+                },
+                enviandoVivoDisponible: false
             }
         },
         mounted () {
@@ -352,7 +396,10 @@
             
             $("#modal-solapas").on("hidden.bs.modal", this.alCerrarModal);    
             
-            
+            if (this.etapa === 'R') {
+                this.countdownTimer = setInterval(this.timer, 1000);
+                // this.mostrarCountdown = true;
+            }
         },
         methods: {
             timer () {
@@ -457,7 +504,21 @@
                 let vm = this
                 let opciones = _.find(vm.trivia.opciones,{key:key})
                 return opciones.valores
-            }                      
+            },            
+            vivoDisponible: function() {
+                let vm = this
+                if (!vm.enviandoVivoDisponible) {
+                    vm.enviandoVivoDisponible = true;
+                    axios.get(vm.urlEventoDisponible)
+                        .then(response => {
+                            document.location = vm.urlVivo;
+                            //vm.mostrarModal(true);
+                        }, error => {
+                            vm.enviandoVivoDisponible = false;
+                            alert('No es posible ingresar al vivo en este momento.');
+                        });                    
+                }
+            },                                  
         }
     }
 </script>

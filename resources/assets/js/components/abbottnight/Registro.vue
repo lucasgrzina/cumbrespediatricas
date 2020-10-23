@@ -47,7 +47,7 @@
                                 </div>
                             </div>
 
-                            <button class="btn btn-primary mb-3" @click="mostrarDisc()">INGRESAR</button>
+                            <button type="button" class="btn btn-primary mb-3" @click="mostrarDisc()">INGRESAR</button>
                         </div>
 
                         
@@ -85,7 +85,7 @@
                                 <a target="_blank" class="text-white" style="text-decoration:underline;" href="https://www.quimicavirtualevents.com/recorrido/avisodeprivacidad.html">Aviso de privacidad</a>
                             </p>
 
-                            <button type="submit" class="btn btn-primary" @click="mostrarForm()">ACEPTO PROCEDER CON EL REGISTRO</button>
+                            <button type="button" class="btn btn-primary" @click="mostrarForm()">ACEPTO PROCEDER CON EL REGISTRO</button>
                         </form>
                     </div>
                 </div>
@@ -170,87 +170,6 @@
                 </div>
             </div>
         </footer>        
-        
-        
-        <!--div class="container" v-if="paso === 1">
-            <div class="row content-big-title">
-                <div class="col-md-12 text-center">
-                    <img class="img-fluid logo" src="img/abbottnight/similacmama/logo.png">
-                    <a class="btn btn-inscribite" @click="mostrarDisc()">
-                        <img class="img-fluid" src="img/abbottnight/similacmama/btn-inscribite-2.png">
-                    </a>
-                </div>
-            </div>  
-        </div>
-        <template  v-else-if="paso === 2">
-            <div class="row fondo-disc">
-                    <div class="col-md-12">
-                        <div class="modal-disc text-center">
-                            <img class="img-fluid tit-registro" src="img/abbottnight/similacmama/titulo-registro.png">
-                            <div class="container">
-                                
-                                <p class="modal-disc-texto">
-                                    En cumplimiento de las políticas corporativas de Abbott, le informamos que este evento es exclusivo para profesionales de la salud. En caso de que esta invitación no esté acorde con su área de especialización/conocimiento y/o desarrollo profesional o, en caso de que usted sea un empleado del gobierno y su participación contravenga alguna ley, reglamento o norma interna de su institución y no cuente con las respectivas autorizaciones, le solicitamos nos informe a la brevedad posible.
-                                    <br><br>
-                                    La información y/o datos brindados para el registro al evento serán utilizados únicamente durante su participación en el evento y envío de información relacionada al evento. Todos los datos serán manejados de acuerdo a nuestros procedimientos de manejo de datos y no podrán ser compartidos y/o utilizados para fines diferentes a su participación en este evento.                        
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="container text-center">
-                <a class="modal-disc-btn btn" @click="mostrarForm()">
-                    <img class="img-fluid" src="img/abbottnight/similacmama/btn-acepto-legales.png">
-                </a>                
-            </div>
-        </template>
-        <template v-else>      
-            <div class="row fondo-disc">
-                    <div class="col-md-12">
-                        <div class="modal-disc text-center">
-                            <img class="img-fluid tit-registro" src="img/abbottnight/similacmama/titulo-inscribirse.png">
-                            <div class="container">
-                                <form class="form-container" id="frm-registro">                                
-                                    <div class="form-group row">
-                                        <div class="col-12">
-                                            <input type="text" class="form-control" placeholder="Nombre" v-model="form.nombre">
-                                        </div>                                        
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-12">
-                                            <input type="text" class="form-control" placeholder="Apellido" v-model="form.apellido">
-                                        </div>                                        
-                                    </div> 
-                                    <div class="form-group row">
-                                        <div class="col-12">
-                                            <input type="text" class="form-control" placeholder="Especialidad" v-model="form.especialidad">
-                                        </div>                                        
-                                    </div>                                                                                             
-                                    <div class="form-group row">
-                                        <div class="col-12">
-                                            <select v-model="form.pais" class="form-control">
-                                                <option :value="null">Seleccione</option>
-                                                <option v-for="(item,index) in info.countries" :value="item" :key="index">{{item}}</option>
-                                            </select>                                            
-                                        </div>                                        
-                                    </div>                                                                                             
-                                    <div class="form-group row">
-                                        <div class="col-12">
-                                            <input type="text" class="form-control" placeholder="Mail" v-model="form.email">
-                                        </div>                                        
-                                    </div>  
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="container text-center">
-                <a class="modal-disc-btn btn" @click="registrar()">
-                    <img class="img-fluid" src="img/abbottnight/similacmama/btn-ingresar.png">
-                </a>                
-            </div>
- 
-        </template-->  
     </div>
 </template>
 

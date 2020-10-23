@@ -49,6 +49,7 @@ mix.js('resources/assets/js/cumbre.js', 'public/js')
       'public/css/bootstrap.min.css',
       'public/css/styles_abbottnight_inicio.css',
       'public/css/utils.css',
+      'node_modules/pretty-checkbox/dist/pretty-checkbox.min.css',
    ], 'public/css/abbottnight_inicio.css');          
 
 if (mix.inProduction()) {
