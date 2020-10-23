@@ -181,6 +181,8 @@ class EventoBaseController extends AppBaseController
             return $this->sendError($e->getMessage(),$e->getCode());
         }
     }
+
+    public function descargarCertificado() { }
     
 
 }

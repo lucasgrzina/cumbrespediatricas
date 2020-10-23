@@ -135,9 +135,46 @@ class HomeAbbottNightController extends EventoBaseController
                 'urlEncuestaDisponible' => route($this->key.'.encuesta-disponible'),
                 'urlEnviarEncuesta' => route($this->key.'.enviar-encuesta'),
                 'urlEnviarSalidaUsuario' => route($this->key.'.enviar-salida-usuario'),
+                'urlDescargarCertificado' => route($this->key.'.descargar-certificado'),
             ]
         ];
         
         return view('front.'.$this->evento['view'].'.vivo', $data);
+    }
+
+    public function descargarCertificado() {
+        $registrado = $this->obtenerRegistrado();
+            $text = 'Dr. '. $registrado->nombre . ' ' . $registrado->apellido;
+            $img = \Image::make(public_path('img/abbottnight/certificado/certificado1.jpg'));
+        
+            $width = $img->width();
+            $height = $img->height();
+            $center_x = $width / 2;
+            $center_y = 220;
+            $max_len = 50;
+            $font_size = 50;
+            $font_height = 45;
+        
+            $lines = explode("\n", wordwrap($text, $max_len));
+            $y = $center_y - ((count($lines) - 1) * $font_height);
+            //$img = \Image::canvas($width, $height, '#777');
+        
+            foreach ($lines as $line) {
+                $img->text($line, $center_x, $y, function ($font) use ($font_size) {
+                    $font->file(public_path('fonts/Gotham-Bold.ttf'));
+                    $font->size($font_size);
+                    $font->color('#000000');
+                    $font->align('center');
+                    $font->valign('top');
+                });
+        
+                $y += $font_height * 2;
+            }
+        
+            //$imgDedicatoria = $identificador . '_dedi.jpg';
+            //$img->save(public_path('uploads/tmp/' . $imgDedicatoria));
+        
+            return $img->response();
+        
     }
 }

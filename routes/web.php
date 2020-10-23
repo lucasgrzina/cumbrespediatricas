@@ -173,6 +173,7 @@ foreach ($eventos as $key => $data) {
                 Route::get('/evento-disponible', $data['controller'].'@eventoDisponible')->name('evento-disponible');        
                 Route::any('/enviar-salida-usuario', $data['controller'].'@enviarSalidaUsuario')->name('enviar-salida-usuario');
                 Route::post('/enviar-trivia', $data['controller'].'@enviarTrivia')->name('enviar-trivia');
+                Route::get('/descargar-certificado', $data['controller'].'@descargarCertificado')->name('descargar-certificado');        
             });
             Route::get('/', $data['controller'].'@index')->name('home');
         }); 

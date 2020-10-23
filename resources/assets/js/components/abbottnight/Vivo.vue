@@ -191,6 +191,10 @@
                 type: Object,
                 required: true
             },
+            urlDescargarCertificado : {
+                type: String,
+                required:true                
+            }
         },
         data () {
             return {
@@ -376,7 +380,7 @@
                     axios.get(vm.urlEncuestaDisponible)
                         .then(response => {
                             vm.enviandoEncuesta = false;
-                            document.location = vm.evento.urlCertificado.replace('_ID_',vm.registrado.id_externo).replace('_TOKEN_',vm.registrado.token);
+                            document.location = vm.urlDescargarCertificado;
                             //vm.mostrarModal(true);
                         }, error => {
                             vm.enviandoEncuesta = false;
