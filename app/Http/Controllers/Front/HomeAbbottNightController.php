@@ -151,7 +151,7 @@ class HomeAbbottNightController extends EventoBaseController
 
 
         if (!StorageHelper::existe($imgCertificado,'uploads')) {
-            $text = 'Dr. '. $registrado->nombre . ' ' . $registrado->apellido;
+            $text = $registrado->nombre . ' ' . $registrado->apellido;
             $img = \Image::make(public_path('img/abbottnight/certificado/certificado1.jpg'));
         
             $width = $img->width();
