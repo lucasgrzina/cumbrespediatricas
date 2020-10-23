@@ -149,6 +149,7 @@ class HomeAbbottNightController extends EventoBaseController
         
         $imgCertificado = $registrado->id . '_certificado1.jpg';
 
+
         if (!StorageHelper::existe($imgCertificado,'uploads')) {
             $text = 'Dr. '. $registrado->nombre . ' ' . $registrado->apellido;
             $img = \Image::make(public_path('img/abbottnight/certificado/certificado1.jpg'));
@@ -182,8 +183,8 @@ class HomeAbbottNightController extends EventoBaseController
     
         }
 
-        //$pdf = \PDF::loadView('respaldatorias.imagen', compact('imagenes')); 
-        return $img->response();
+        $pdf = \PDF::loadView('exports.certificado', ['imagen' => StorageHelper::path($imgCertificado,'uploads')])->setPaper('A4', 'landscape'); 
+        return $pdf->download($registrado->id.'.pdf');
         
     }
 }

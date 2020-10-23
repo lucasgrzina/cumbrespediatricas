@@ -39,7 +39,7 @@ class StorageHelper
 
     public static function path($path, $disk = 'uploads')
     {
-        return asset(\Storage::disk($disk)->path($path));
+        return \Storage::disk($disk)->path($path);
     }
 
     public static function put($path, $contenido, $options = [], $disk = 'uploads')
