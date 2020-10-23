@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use App\Registrado;
 use App\Helpers\FrontHelper;
 use Illuminate\Http\Request;
+use App\Helpers\StorageHelper;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\Front\RegistrarRequest;
@@ -144,6 +145,11 @@ class HomeAbbottNightController extends EventoBaseController
 
     public function descargarCertificado() {
         $registrado = $this->obtenerRegistrado();
+
+        
+        $imgCertificado = $registrado->id . '_certificado1.jpg';
+
+        if (!StorageHelper::existe($imgCertificado,'uploads')) {
             $text = 'Dr. '. $registrado->nombre . ' ' . $registrado->apellido;
             $img = \Image::make(public_path('img/abbottnight/certificado/certificado1.jpg'));
         
@@ -171,10 +177,13 @@ class HomeAbbottNightController extends EventoBaseController
                 $y += $font_height * 2;
             }
         
-            //$imgDedicatoria = $identificador . '_dedi.jpg';
-            //$img->save(public_path('uploads/tmp/' . $imgDedicatoria));
-        
-            return $img->response();
+            
+            $img->save(public_path('uploads/' . $imgCertificado));
+    
+        }
+
+        //$pdf = \PDF::loadView('respaldatorias.imagen', compact('imagenes')); 
+        return $img->response();
         
     }
 }
