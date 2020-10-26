@@ -82,6 +82,15 @@
                         <h2>CONDUCCIÓN</h2>
                         <div class="row">
                             <div class="col-12 con-padding">
+                                <img src="img/forosas/plager.png">
+                            </div>
+                            <div class="col-12 con-padding">
+                                <p>Es una periodista y conductora Argentina</p>
+                                <p>Actualmente, forma parte de los programas Involucrados e Intratables, por América TV.</p>
+                            </div>                             
+                        </div>
+                        <div class="row">
+                            <div class="col-12 con-padding">
                                 <img src="img/forosas/longobardi.png">
                             </div>
                             <div class="col-12 con-padding">
@@ -174,7 +183,7 @@
                                 <div class="col-sm-8">
                                     <p class="p-sin-estilo">
                                         <span class="agenda-texto-azul d-block">Apertura y Bienvenida al 7º Foro de Salud Sustentable (SaS)</span>
-                                        <span class="agenda-texto-negro d-block"><strong>Marcelo Longobardi | Dr. Flavio Devoto</strong></span>
+                                        <span class="agenda-texto-negro d-block"><strong>Débora Plager | Marcelo Longobardi | Dr. Flavio Devoto</strong></span>
                                     </p>
                                 </div>
                             </div>
@@ -227,7 +236,7 @@
                                     <p class="p-sin-estilo">
                                         <span class="agenda-texto-azul d-block">Cierre Día Nacional</span>
                                         <span class="agenda-texto-negro d-block">
-                                            <strong>Marcelo Longobardi | Dr. Flavio Devoto</strong>
+                                            <strong>Débora Plager | Marcelo Longobardi | Dr. Flavio Devoto</strong>
                                         </span>
                                     </p>
                                 </div>
@@ -243,7 +252,7 @@
                                 <div class="col-sm-8">
                                     <p class="p-sin-estilo">
                                         <span class="agenda-texto-azul d-block">Apertura y Bienvenida Día Internacional</span>
-                                        <span class="agenda-texto-negro d-block"><strong>Marcelo Longobardi | Dr. Flavio Devoto</strong></span>
+                                        <span class="agenda-texto-negro d-block"><strong>Débora Plager | Marcelo Longobardi | Dr. Flavio Devoto</strong></span>
                                     </p>
                                 </div>
                             </div>
@@ -285,7 +294,7 @@
                                     <p class="p-sin-estilo">
                                         <span class="agenda-texto-azul d-block">Cierre del 7º Foro de Salud Sustentable (SaS)</span>
                                         <span class="agenda-texto-negro d-block">
-                                            <strong>Marcelo Longobardi | Daniel Diminutto</strong>
+                                            <strong>Débora Plager | Marcelo Longobardi | Daniel Diminutto</strong>
                                         </span>
                                     </p>
                                 </div>

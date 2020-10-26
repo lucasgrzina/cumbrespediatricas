@@ -45372,7 +45372,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45383,6 +45383,15 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -45998,7 +46007,9 @@ var render = function() {
                   ? _c("div", { staticClass: "modal-body" }, [
                       _c("h2", [_vm._v("CONDUCCIÓN")]),
                       _vm._v(" "),
-                      _vm._m(3)
+                      _vm._m(3),
+                      _vm._v(" "),
+                      _vm._m(4)
                     ])
                   : _vm._e(),
                 _vm._v(" "),
@@ -46008,7 +46019,7 @@ var render = function() {
                         _vm._v("HISTORIA DEL FORO DE SALUD SUSTENTABLE (SaS)")
                       ]),
                       _vm._v(" "),
-                      _vm._m(4)
+                      _vm._m(5)
                     ])
                   : _vm._e(),
                 _vm._v(" "),
@@ -46016,7 +46027,7 @@ var render = function() {
                   ? _c("div", { staticClass: "modal-body" }, [
                       _c("h2", [_vm._v("PREGUNTAS A SPEAKERS")]),
                       _vm._v(" "),
-                      _vm._m(5),
+                      _vm._m(6),
                       _vm._v(" "),
                       _c("div", { staticClass: "row" }, [
                         _c(
@@ -46181,20 +46192,20 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _vm.form.enviado
-                        ? _c("div", { staticClass: "row" }, [_vm._m(6)])
+                        ? _c("div", { staticClass: "row" }, [_vm._m(7)])
                         : _vm._e()
                     ])
                   : _vm._e(),
                 _vm._v(" "),
                 _vm.solapa === 6
                   ? _c("div", { staticClass: "modal-body" }, [
-                      _vm._m(7),
-                      _vm._v(" "),
                       _vm._m(8),
                       _vm._v(" "),
                       _vm._m(9),
                       _vm._v(" "),
-                      _vm._m(10)
+                      _vm._m(10),
+                      _vm._v(" "),
+                      _vm._m(11)
                     ])
                   : _vm._e()
               ])
@@ -46363,7 +46374,7 @@ var render = function() {
             ])
           }),
           _vm._v(" "),
-          _vm._m(11),
+          _vm._m(12),
           _vm._v(" "),
           _c(
             "div",
@@ -46430,7 +46441,7 @@ var render = function() {
             [_c("p", [_vm._v("Agenda")])]
           ),
           _vm._v(" "),
-          _vm._m(12),
+          _vm._m(13),
           _vm._v(" "),
           _c("div", { staticClass: "content-date" }, [
             _c("img", {
@@ -46466,7 +46477,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _vm._m(13)
+          _vm._m(14)
         ],
         2
       )
@@ -46715,6 +46726,26 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-12 con-padding" }, [
+        _c("img", { attrs: { src: "img/forosas/plager.png" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-12 con-padding" }, [
+        _c("p", [_vm._v("Es una periodista y conductora Argentina")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Actualmente, forma parte de los programas Involucrados e Intratables, por América TV."
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12 con-padding" }, [
         _c("img", { attrs: { src: "img/forosas/longobardi.png" } })
       ]),
       _vm._v(" "),
@@ -46894,7 +46925,9 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("span", { staticClass: "agenda-texto-negro d-block" }, [
-              _c("strong", [_vm._v("Marcelo Longobardi | Dr. Flavio Devoto")])
+              _c("strong", [
+                _vm._v("Débora Plager | Marcelo Longobardi | Dr. Flavio Devoto")
+              ])
             ])
           ])
         ])
@@ -46994,7 +47027,9 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("span", { staticClass: "agenda-texto-negro d-block" }, [
-              _c("strong", [_vm._v("Marcelo Longobardi | Dr. Flavio Devoto")])
+              _c("strong", [
+                _vm._v("Débora Plager | Marcelo Longobardi | Dr. Flavio Devoto")
+              ])
             ])
           ])
         ])
@@ -47031,7 +47066,9 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("span", { staticClass: "agenda-texto-negro d-block" }, [
-              _c("strong", [_vm._v("Marcelo Longobardi | Dr. Flavio Devoto")])
+              _c("strong", [
+                _vm._v("Débora Plager | Marcelo Longobardi | Dr. Flavio Devoto")
+              ])
             ])
           ])
         ])
@@ -47114,7 +47151,9 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("span", { staticClass: "agenda-texto-negro d-block" }, [
-              _c("strong", [_vm._v("Marcelo Longobardi | Daniel Diminutto")])
+              _c("strong", [
+                _vm._v("Débora Plager | Marcelo Longobardi | Daniel Diminutto")
+              ])
             ])
           ])
         ])
