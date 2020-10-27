@@ -18,6 +18,9 @@
                                 <input type="email" autocomplete="off" class="form-control" id="login-email" placeholder="Email" v-model="login.form.email">
                             </div>
                         </div>
+                        <!--button type="submit" class="btn btn-ingresar btn-ingresar-evento">
+                            Ingresar al evento
+                        </button-->                        
                         <button type="submit" class="btn btn-ingresar">
                             <img src="img/forosas/btn-ingresar.png">
                         </button>

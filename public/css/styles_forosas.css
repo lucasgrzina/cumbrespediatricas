@@ -473,6 +473,23 @@ input::-webkit-input-placeholder {
     line-height: 24px;
     padding: 0 20px 20px;			
 }
+.btn-ingresar-evento {
+	left: 0;
+	background-image: url(../img/forosas/bg-count.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    font-family: 'gotham';
+    color: #fff;
+    font-size: 23px;
+    text-transform: uppercase;
+    /* width: 298px; */
+    height: 89px;
+    line-height: 24px;
+    padding: 0 20px 20px;
+}
 @media (min-width: 769px) {
 	#modal-solapas .modal-dialog {
 		max-width: 650px!important;
