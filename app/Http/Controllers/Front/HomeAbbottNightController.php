@@ -33,12 +33,19 @@ class HomeAbbottNightController extends EventoBaseController
         /*if (!\Auth::guard('web')->check()) {
             return redirect()->route($this->key.'.registro');
         } */       
+
+        
         $ahora = Carbon::now();
         $registrado = $this->obtenerRegistrado();
         $config = $this->config('*');
         $inicioVivo = $config['inicio_vivo'] ? Carbon::parse($config['inicio_vivo']) : false;
         $segundosRestantes = $inicioVivo && $inicioVivo->gt($ahora) ? Carbon::parse($inicioVivo)->diffInSeconds($ahora) : 0;
-        
+        $finVivo = $config['fin_vivo'] ? Carbon::parse($config['fin_vivo']) : false;
+
+        if ($config['etapa'] === 'R' && $inicioVivo && Carbon::now()->gt($inicioVivo->addMinutes(-5)) && (!$finVivo || Carbon::now()->lt($finVivo))) {
+            return redirect()->route($this->key.'.vivo');
+        }
+
         if ($registrado) {
             $data = [
                 'props' => [
@@ -86,7 +93,6 @@ class HomeAbbottNightController extends EventoBaseController
         $config = $this->config('*');
         $inicioVivo = $config['inicio_vivo'] ? Carbon::parse($config['inicio_vivo'])->addMinutes(-5) : false;
         $finVivo = $config['fin_vivo'] ? Carbon::parse($config['fin_vivo']) : false;
-        \Log::info($inicioVivo);
         if ($config['etapa'] === 'R' && $inicioVivo && Carbon::now()->gt($inicioVivo) && (!$finVivo || Carbon::now()->lt($finVivo))) {
             return $this->sendResponse([],'El evento se encuentra disponible');                
         } else {
