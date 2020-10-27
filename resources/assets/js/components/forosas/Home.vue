@@ -409,9 +409,9 @@
             <div class="solapa fondo solapa2 solapa7" @click="mostrarSolapa(7)">
                 <p>Buenas Prácticas de Salud Sustentable</p>
             </div>
-            <!--div class="solapa fondo solapa-evento" @click="ingresarAEvento()">
+            <div class="solapa fondo solapa-evento" @click="ingresarAEvento()">
                 <p>Ingrese al evento</p>
-            </div-->                        
+            </div>                        
 	  		<div class="row content-logo">
 	  			<a><img src="img/forosas/logo.png"></a><br>
 	  		</div>
@@ -419,7 +419,7 @@
 
 	  		
             <div class="content-date">
-                <!--button type="button" class="btn btn-ingrese-evento" @click="ingresarAEvento()">Ingrese al evento</button-->
+                <button type="button" class="btn btn-ingrese-evento" @click="ingresarAEvento()">Ingrese al evento</button>
 
                 <img src="img/forosas/date2.png" style="width:100%;">
                 <div class="control-audio">

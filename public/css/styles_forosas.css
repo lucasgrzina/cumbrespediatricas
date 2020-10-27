@@ -475,20 +475,6 @@ input::-webkit-input-placeholder {
 }
 .btn-ingresar-evento {
 	left: 0;
-	background-image: url(../img/forosas/bg-count.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    font-weight: bold;
-    font-style: italic;
-    text-align: center;
-    font-family: 'gotham';
-    color: #fff;
-    font-size: 23px;
-    text-transform: uppercase;
-    /* width: 298px; */
-    height: 89px;
-    line-height: 24px;
-    padding: 0 20px 20px;
 }
 @media (min-width: 769px) {
 	#modal-solapas .modal-dialog {
@@ -616,6 +602,9 @@ input::-webkit-input-placeholder {
 }
 
 @media (max-width: 400px){
+	.content-form .btn-ingresar {
+		max-width: 185px;
+	}	
 	.solapa-evento {
 		display: block;
 		top: 80px;
@@ -655,6 +644,12 @@ input::-webkit-input-placeholder {
 		font-size: 16px;
 		line-height: 16px;
 	}	
+}
+@media (max-width: 320px){ 
+	.content-form .btn-ingresar {
+		max-width: 160px;
+	}	
+
 }
 
 .circle-container {
