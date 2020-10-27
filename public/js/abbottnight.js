@@ -45384,7 +45384,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45395,14 +45395,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -45732,9 +45724,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         $("#modal-solapas").on("hidden.bs.modal", this.alCerrarModal);
 
+        this.countdownTimer = setInterval(this.timer, 1000);
+
         if (this.etapa === 'R') {
-            this.countdownTimer = setInterval(this.timer, 1000);
-            // this.mostrarCountdown = true;
+
+            this.mostrarCountdown = true;
         }
     },
 
@@ -45752,9 +45746,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
             var $count = $('#countdown');
             $count.find('.days .num').html(days);
-            $count.find('.hours .num').html(hours);
-            $count.find('.minutes .num').html(minutes);
-            $count.find('.seconds .num').html(remainingSeconds);
+            $count.find('.hours .num').html(pad(hours));
+            $count.find('.minutes .num').html(pad(minutes));
+            $count.find('.seconds .num').html(pad(remainingSeconds));
             //document.getElementById('countdown').innerHTML = pad(days) + ":" + pad(hours) + ":" + pad(minutes) + ":" + pad(remainingSeconds);
             if (this.seconds == 0) {
                 clearInterval(this.countdownTimer);
@@ -46391,45 +46385,45 @@ var render = function() {
         _c("div", { attrs: { id: "video-ppal" } }, [
           _vm.mostrarCountdown
             ? _c("div", { staticClass: "counter" }, [
+                _c("h2", { staticClass: "titulo-con-fondo mb-3" }, [
+                  _vm._v("El evento comenzará en ...")
+                ]),
+                _vm._v(" "),
                 _vm._m(8),
                 _vm._v(" "),
-                _vm._m(9),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "row mt-5" }, [
                   _c("div", { staticClass: "col-12 text-center" }, [
-                    _vm.seconds < 1
-                      ? _c(
-                          "button",
-                          {
-                            staticClass: "btn btn-primary",
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                return _vm.vivoDisponible()
-                              }
-                            }
-                          },
-                          [
-                            _vm.enviandoVivoDisponible
-                              ? _c("i", {
-                                  staticClass: "fa fa-spinner fa-spin fa-fw"
-                                })
-                              : _vm._e(),
-                            _vm._v(" "),
-                            _c("span", [
-                              _vm._v(
-                                " " +
-                                  _vm._s(
-                                    _vm.enviandoVivoDisponible
-                                      ? "Ingresando..."
-                                      : "Ingresar"
-                                  ) +
-                                  " "
-                              )
-                            ])
-                          ]
-                        )
-                      : _vm._e()
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            return _vm.vivoDisponible()
+                          }
+                        }
+                      },
+                      [
+                        _vm.enviandoVivoDisponible
+                          ? _c("i", {
+                              staticClass: "fa fa-spinner fa-spin fa-fw"
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            " " +
+                              _vm._s(
+                                _vm.enviandoVivoDisponible
+                                  ? "Ingresando..."
+                                  : "Ingresar"
+                              ) +
+                              " "
+                          )
+                        ])
+                      ]
+                    )
                   ])
                 ])
               ])
@@ -46446,9 +46440,9 @@ var render = function() {
               })
         ]),
         _vm._v(" "),
-        _vm._m(10),
+        _vm._m(9),
         _vm._v(" "),
-        _vm._m(11),
+        _vm._m(10),
         _vm._v(" "),
         _c("a", {
           staticClass: "lnk-cartel",
@@ -46589,31 +46583,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", [
-      _c("span", { staticClass: "bullet" }),
-      _vm._v("PRÓXIMO VIVO")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c(
       "span",
       { staticClass: "row timer", attrs: { id: "countdown" } },
       [
-        _c("div", { staticClass: "col block-time days" }, [
-          _c("span", { staticClass: "num" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "text" }, [_vm._v("Días")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col block-time hours" }, [
-          _c("span", { staticClass: "num" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "text" }, [_vm._v("Horas")])
-        ]),
-        _vm._v(" "),
         _c("div", { staticClass: "col block-time minutes" }, [
           _c("span", { staticClass: "num" }),
           _vm._v(" "),

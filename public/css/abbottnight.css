@@ -78,6 +78,9 @@ body, html,#app,#app main,#app main section {
     background-color: transparent;
     top: 27px;
     left: 434px;
+    background-image: url(../img/abbottnight/fondo-modal.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;    
 }
 #video-ppal iframe {
 	position: absolute;
@@ -165,7 +168,7 @@ body, html,#app,#app main,#app main section {
 #modal-solapas .modal-body img {
 	max-width: 100%;
 }
-#modal-solapas .modal-body h2 {
+#modal-solapas .modal-body h2,h2.titulo-con-fondo {
     background-image: url(../img/abbottnight/top.png);
     background-repeat: repeat-x;
     color: #fff;
@@ -325,6 +328,42 @@ body, html,#app,#app main,#app main section {
     opacity: 1;
     padding: 0;
 }  
+
+.counter {
+    
+}
+.counter .timer{
+    padding: 0 140px;
+}
+
+.counter .timer .block-time{
+    padding: 0 5px !important;
+}
+
+.counter .timer .block-time span{
+	position: relative;
+	float: left;
+	text-align: center;
+	width: 100%;
+	font-family: 'gotham';
+
+}
+
+.counter .timer .block-time span.num{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 70px;
+    line-height: 70px;
+    color: #221f26;
+}
+.counter .timer .block-time span.text{
+    font-weight: normal;
+    font-style: italic;
+    font-size: 18px;
+    color: #a88151;
+    text-transform: uppercase;
+}
+
 @media (min-width:1367px) {
     .container-fluid {
         min-width: 1920px;
@@ -390,6 +429,15 @@ body, html,#app,#app main,#app main section {
         background-color: transparent;
         top: 35px;
         left: 617px;
+        
+    }    
+
+    .counter .timer {
+        padding: 25px 140px;
+    }
+    .counter .timer .block-time span.num {
+        font-size: 115px;
+        line-height: 100px;
     }    
 }
 @media (min-width: 769px) {

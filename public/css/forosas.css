@@ -96,9 +96,17 @@ input::-webkit-input-placeholder {
 .solapa.solapa4 {
 	top: 125px;
     right: initial;
-    left: -75px;
+    left: -45px;
     height: 85px;
 }
+
+.solapa.solapa7 {
+	top: 210px;
+    right: initial;
+    left: -45px;
+    height: 85px;
+}
+
 .solapa.solapa5 {
 	top: 315px;
 	cursor: pointer;
@@ -134,7 +142,15 @@ input::-webkit-input-placeholder {
     line-height: 25px;
     padding-top: 10px;
 }
-	
+
+.solapa7 p {
+	font-size: 18px;
+    line-height: 25px;
+    padding-top: 10px;
+}
+.solapa-evento {
+	cursor: pointer;
+}
 .btn-enviar-pregunta {
 	font-family: 'gotham';
 	color: #fff;
@@ -445,7 +461,25 @@ input::-webkit-input-placeholder {
 	line-height: 18px;
 	font-weight: 700;	
 }
-
+.btn-ingrese-evento {
+	position: absolute;
+    top: -132px;
+	left: calc(50% - 140px);
+		background-image: url(../img/forosas/bg-count.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    font-family: 'gotham';
+    color: #fff;
+    font-size: 23px;
+    text-transform: uppercase;
+    /* width: 298px; */
+    height: 89px;
+    line-height: 24px;
+    padding: 0 20px 20px;			
+}
 @media (min-width: 769px) {
 	#modal-solapas .modal-dialog {
 		max-width: 650px!important;
@@ -454,6 +488,10 @@ input::-webkit-input-placeholder {
 		bottom: 30px;
 	}
 	
+	.solapa-evento {
+		display: none;
+		top: 180px;
+	}	
 }
 @media (max-width: 991px){
 	
@@ -461,6 +499,18 @@ input::-webkit-input-placeholder {
 
 
 @media (max-width: 768px){
+	.solapa-evento {
+		display: block;
+		top: 180px;
+	}
+	.solapa-evento p {
+		font-size: 20px;
+		line-height: 25px;
+		padding-top: 15px;
+	}	
+	.btn-ingrese-evento {
+		display: none;
+	}	
 	.agenda-separador>.row>.col-sm-4 {
 		border-bottom: none;
 	}
@@ -556,6 +606,10 @@ input::-webkit-input-placeholder {
 }
 
 @media (max-width: 400px){
+	.solapa-evento {
+		display: block;
+		top: 80px;
+	}	
 	.solapa {
 		width: 300px;
 	}

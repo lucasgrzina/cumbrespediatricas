@@ -155,16 +155,8 @@
 	  	<div class="container-fluid h-100">
             <div id="video-ppal">
                 <div class="counter" v-if="mostrarCountdown">
-                        <p><span class="bullet"></span>PRÓXIMO VIVO</p>
+                        <h2 class="titulo-con-fondo mb-3">El evento comenzará en ...</h2>
                         <span id="countdown" class="row timer">
-                            <div class="col block-time days">
-                                <span class="num"></span>
-                                <span class="text">Días</span>
-                            </div>
-                            <div class="col block-time hours">
-                                <span class="num"></span>
-                                <span class="text">Horas</span>
-                            </div>
                             <div class="col block-time minutes">
                                 <span class="num"></span>
                                 <span class="text">Min.</span>
@@ -174,12 +166,12 @@
                                 <span class="text">Seg.</span>
                             </div>
                         </span>
-                        <div class="row">
+                        <div class="row mt-5">
                             <div class="col-12 text-center">
                                 <button type="button" 
                                         class="btn btn-primary" 
                                         @click="vivoDisponible()"
-                                        v-if="seconds < 1">
+                                        >
                                     <i v-if="enviandoVivoDisponible" class="fa fa-spinner fa-spin fa-fw"></i> 
                                     <span> {{ enviandoVivoDisponible ? 'Ingresando...' : 'Ingresar' }} </span>
                                 </button>                                
@@ -396,9 +388,11 @@
             
             $("#modal-solapas").on("hidden.bs.modal", this.alCerrarModal);    
             
+            this.countdownTimer = setInterval(this.timer, 1000);
+
             if (this.etapa === 'R') {
-                this.countdownTimer = setInterval(this.timer, 1000);
-                // this.mostrarCountdown = true;
+                
+                this.mostrarCountdown = true;
             }
         },
         methods: {
@@ -415,9 +409,9 @@
                 }
                 const $count = $('#countdown');
                 $count.find('.days .num').html(days);
-                $count.find('.hours .num').html(hours);
-                $count.find('.minutes .num').html(minutes);
-                $count.find('.seconds .num').html(remainingSeconds);
+                $count.find('.hours .num').html(pad(hours));
+                $count.find('.minutes .num').html(pad(minutes));
+                $count.find('.seconds .num').html(pad(remainingSeconds));
                 //document.getElementById('countdown').innerHTML = pad(days) + ":" + pad(hours) + ":" + pad(minutes) + ":" + pad(remainingSeconds);
                 if (this.seconds == 0) {
                     clearInterval(this.countdownTimer);

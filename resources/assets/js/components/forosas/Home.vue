@@ -301,7 +301,27 @@
                             </div>                                                         
 
                         </div>                        
-                    </div>   
+                    </div>  
+                    <div class="modal-body" v-if="solapa === 7">
+                        <h2>Buenas Prácticas de Salud Sustentable</h2>
+                        <div class="row">
+                            <div class="col-12 pt-3">
+                                <p class="p-sin-estilo"><a href="https://vimeo.com/471194181/9f1128fd41" target="_blank">https://vimeo.com/471194181/9f1128fd41</a></p>
+                                <p class="p-sin-estilo"><a href="https://vimeo.com/471195135/4318c01648" target="_blank">https://vimeo.com/471195135/4318c01648</a></p>
+                                <p class="p-sin-estilo"><a href="https://vimeo.com/471196049/ce3160fe28" target="_blank">https://vimeo.com/471196049/ce3160fe28</a></p>                                
+                                <p class="p-sin-estilo"><a href="https://vimeo.com/471197183/1feffd3167" target="_blank">https://vimeo.com/471197183/1feffd3167</a></p>
+                                <p class="p-sin-estilo"><a href="https://vimeo.com/471198267/585713b236" target="_blank">https://vimeo.com/471198267/585713b236</a></p>
+                                <p class="p-sin-estilo"><a href="https://vimeo.com/471199470/9e4135c5ec" target="_blank">https://vimeo.com/471199470/9e4135c5ec</a></p>
+                                <p class="p-sin-estilo"><a href="https://vimeo.com/471200494/7e5a0ce306" target="_blank">https://vimeo.com/471200494/7e5a0ce306</a></p>
+                                <p class="p-sin-estilo"><a href="https://vimeo.com/471201435/2f8555875c" target="_blank">https://vimeo.com/471201435/2f8555875c</a></p>
+                                <p class="p-sin-estilo"><a href="https://vimeo.com/471202437/fb5992f562" target="_blank">https://vimeo.com/471202437/fb5992f562</a></p>
+                                <p class="p-sin-estilo"><a href="https://vimeo.com/471203575/e369d5c22c" target="_blank">https://vimeo.com/471203575/e369d5c22c</a></p>
+                                <p class="p-sin-estilo"><a href="https://vimeo.com/471204409/48baa77f26" target="_blank">https://vimeo.com/471204409/48baa77f26</a></p>
+                            </div>
+
+                        </div>
+                        
+                    </div>                       
                                                                                    
                 </div>
             </div>
@@ -335,7 +355,10 @@
                         </li> 
                         <li class="nav-item">
                             <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(6)">Agenda</a>
-                        </li>                           
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" @click="mostrarSolapa(7)">Buenas Prácticas de Salud Sustentable</a>
+                        </li>                                                   
                         
                     </ul>
                 </div>
@@ -383,12 +406,21 @@
             <div class="solapa fondo solapa6" @click="mostrarSolapa(6)">
                 <p>Agenda</p>
             </div>
+            <div class="solapa fondo solapa2 solapa7" @click="mostrarSolapa(7)">
+                <p>Buenas Prácticas de Salud Sustentable</p>
+            </div>
+            <div class="solapa fondo solapa-evento" @click="ingresarAEvento()">
+                <p>Ingrese al evento</p>
+            </div>                        
 	  		<div class="row content-logo">
-	  			<a><img src="img/forosas/logo.png"></a>
+	  			<a><img src="img/forosas/logo.png"></a><br>
 	  		</div>
+
 
 	  		
             <div class="content-date">
+                <button type="button" class="btn btn-ingrese-evento" @click="ingresarAEvento()">Ingrese al evento</button>
+
                 <img src="img/forosas/date2.png" style="width:100%;">
                 <div class="control-audio">
                     <img src="img/forosas/logo_ABBVIE.png" width="140">
@@ -579,6 +611,9 @@
                     this.audio.muted = this.audio.element.paused;
                 });
                 
+            },
+            ingresarAEvento () {
+                document.location = 'https://event.on24.com/wcc/r/2632755/C4DFA6DE17A7D2298FCB53891CB5D01B';
             }            
         }
     }

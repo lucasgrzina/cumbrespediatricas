@@ -45372,7 +45372,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45383,6 +45383,38 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -45957,6 +45989,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$nextTick(function () {
                 this.audio.muted = this.audio.element.paused;
             });
+        },
+        ingresarAEvento: function ingresarAEvento() {
+            document.location = 'https://event.on24.com/wcc/r/2632755/C4DFA6DE17A7D2298FCB53891CB5D01B';
         }
     }
 });
@@ -46207,6 +46242,16 @@ var render = function() {
                       _vm._v(" "),
                       _vm._m(11)
                     ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.solapa === 7
+                  ? _c("div", { staticClass: "modal-body" }, [
+                      _c("h2", [
+                        _vm._v("Buenas Prácticas de Salud Sustentable")
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(12)
+                    ])
                   : _vm._e()
               ])
             ]
@@ -46356,6 +46401,22 @@ var render = function() {
                       },
                       [_vm._v("Agenda")]
                     )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "nav-item" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link",
+                        attrs: { href: "javascript:void(0);" },
+                        on: {
+                          click: function($event) {
+                            return _vm.mostrarSolapa(7)
+                          }
+                        }
+                      },
+                      [_vm._v("Buenas Prácticas de Salud Sustentable")]
+                    )
                   ])
                 ]
               )
@@ -46374,7 +46435,7 @@ var render = function() {
             ])
           }),
           _vm._v(" "),
-          _vm._m(12),
+          _vm._m(13),
           _vm._v(" "),
           _c(
             "div",
@@ -46441,9 +46502,49 @@ var render = function() {
             [_c("p", [_vm._v("Agenda")])]
           ),
           _vm._v(" "),
-          _vm._m(13),
+          _c(
+            "div",
+            {
+              staticClass: "solapa fondo solapa2 solapa7",
+              on: {
+                click: function($event) {
+                  return _vm.mostrarSolapa(7)
+                }
+              }
+            },
+            [_c("p", [_vm._v("Buenas Prácticas de Salud Sustentable")])]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "solapa fondo solapa-evento",
+              on: {
+                click: function($event) {
+                  return _vm.ingresarAEvento()
+                }
+              }
+            },
+            [_c("p", [_vm._v("Ingrese al evento")])]
+          ),
+          _vm._v(" "),
+          _vm._m(14),
           _vm._v(" "),
           _c("div", { staticClass: "content-date" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-ingrese-evento",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.ingresarAEvento()
+                  }
+                }
+              },
+              [_vm._v("Ingrese al evento")]
+            ),
+            _vm._v(" "),
             _c("img", {
               staticStyle: { width: "100%" },
               attrs: { src: "img/forosas/date2.png" }
@@ -46477,7 +46578,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _vm._m(14)
+          _vm._m(15)
         ],
         2
       )
@@ -47164,6 +47265,157 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12 pt-3" }, [
+        _c("p", { staticClass: "p-sin-estilo" }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "https://vimeo.com/471194181/9f1128fd41",
+                target: "_blank"
+              }
+            },
+            [_vm._v("https://vimeo.com/471194181/9f1128fd41")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-sin-estilo" }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "https://vimeo.com/471195135/4318c01648",
+                target: "_blank"
+              }
+            },
+            [_vm._v("https://vimeo.com/471195135/4318c01648")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-sin-estilo" }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "https://vimeo.com/471196049/ce3160fe28",
+                target: "_blank"
+              }
+            },
+            [_vm._v("https://vimeo.com/471196049/ce3160fe28")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-sin-estilo" }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "https://vimeo.com/471197183/1feffd3167",
+                target: "_blank"
+              }
+            },
+            [_vm._v("https://vimeo.com/471197183/1feffd3167")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-sin-estilo" }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "https://vimeo.com/471198267/585713b236",
+                target: "_blank"
+              }
+            },
+            [_vm._v("https://vimeo.com/471198267/585713b236")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-sin-estilo" }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "https://vimeo.com/471199470/9e4135c5ec",
+                target: "_blank"
+              }
+            },
+            [_vm._v("https://vimeo.com/471199470/9e4135c5ec")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-sin-estilo" }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "https://vimeo.com/471200494/7e5a0ce306",
+                target: "_blank"
+              }
+            },
+            [_vm._v("https://vimeo.com/471200494/7e5a0ce306")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-sin-estilo" }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "https://vimeo.com/471201435/2f8555875c",
+                target: "_blank"
+              }
+            },
+            [_vm._v("https://vimeo.com/471201435/2f8555875c")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-sin-estilo" }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "https://vimeo.com/471202437/fb5992f562",
+                target: "_blank"
+              }
+            },
+            [_vm._v("https://vimeo.com/471202437/fb5992f562")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-sin-estilo" }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "https://vimeo.com/471203575/e369d5c22c",
+                target: "_blank"
+              }
+            },
+            [_vm._v("https://vimeo.com/471203575/e369d5c22c")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-sin-estilo" }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "https://vimeo.com/471204409/48baa77f26",
+                target: "_blank"
+              }
+            },
+            [_vm._v("https://vimeo.com/471204409/48baa77f26")]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "solapa fondo counter" }, [
       _c("p", [_c("span", { staticClass: "bullet" }), _vm._v("PRÓXIMO VIVO")]),
       _vm._v(" "),
@@ -47199,7 +47451,8 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row content-logo" }, [
-      _c("a", [_c("img", { attrs: { src: "img/forosas/logo.png" } })])
+      _c("a", [_c("img", { attrs: { src: "img/forosas/logo.png" } })]),
+      _c("br")
     ])
   },
   function() {

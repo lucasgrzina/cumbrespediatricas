@@ -84,8 +84,9 @@ class HomeAbbottNightController extends EventoBaseController
 
     public function eventoDisponible() {
         $config = $this->config('*');
-        $inicioVivo = $config['inicio_vivo'] ? Carbon::parse($config['inicio_vivo']) : false;
+        $inicioVivo = $config['inicio_vivo'] ? Carbon::parse($config['inicio_vivo'])->addMinutes(-5) : false;
         $finVivo = $config['fin_vivo'] ? Carbon::parse($config['fin_vivo']) : false;
+        \Log::info($inicioVivo);
         if ($config['etapa'] === 'R' && $inicioVivo && Carbon::now()->gt($inicioVivo) && (!$finVivo || Carbon::now()->lt($finVivo))) {
             return $this->sendResponse([],'El evento se encuentra disponible');                
         } else {
