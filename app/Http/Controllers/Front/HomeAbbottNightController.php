@@ -191,7 +191,7 @@ class HomeAbbottNightController extends EventoBaseController
         //}
 
         $pdf = \PDF::loadView('exports.certificado', ['imagen' => StorageHelper::path($imgCertificado,'uploads')])->setPaper('A4', 'landscape'); 
-        return $pdf->download($registrado->id.'.pdf');
+        return $pdf->download('Abbott Night - Certificado.pdf');
         
     }
 }
