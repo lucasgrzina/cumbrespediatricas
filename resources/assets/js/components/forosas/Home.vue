@@ -401,7 +401,7 @@
                 <p>Buenas Prácticas de Salud Sustentable</p>
             </div>
             <div class="solapa fondo solapa-evento" @click="ingresarAEvento()">
-                <p>Ingrese al evento</p>
+                <p>Ingrese al vivo</p>
             </div>                        
 	  		<div class="row content-logo">
 	  			<a><img src="img/forosas/logo.png"></a><br>

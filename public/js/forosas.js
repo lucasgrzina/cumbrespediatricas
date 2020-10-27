@@ -46547,7 +46547,7 @@ var render = function() {
                 }
               }
             },
-            [_c("p", [_vm._v("Ingrese al evento")])]
+            [_c("p", [_vm._v("Ingrese al vivo")])]
           ),
           _vm._v(" "),
           _vm._m(13),
