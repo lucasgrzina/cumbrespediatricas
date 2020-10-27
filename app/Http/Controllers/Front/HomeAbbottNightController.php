@@ -42,7 +42,7 @@ class HomeAbbottNightController extends EventoBaseController
         $segundosRestantes = $inicioVivo && $inicioVivo->gt($ahora) ? Carbon::parse($inicioVivo)->diffInSeconds($ahora) : 0;
         $finVivo = $config['fin_vivo'] ? Carbon::parse($config['fin_vivo']) : false;
 
-        if ($config['etapa'] === 'R' && $inicioVivo && Carbon::now()->gt($inicioVivo->addMinutes(-5)) && (!$finVivo || Carbon::now()->lt($finVivo))) {
+        if ($registrado && $config['etapa'] === 'R' && $inicioVivo && Carbon::now()->gt($inicioVivo->addMinutes(-5)) && (!$finVivo || Carbon::now()->lt($finVivo))) {
             return redirect()->route($this->key.'.vivo');
         }
 
