@@ -305,20 +305,11 @@
                     <div class="modal-body" v-if="solapa === 7">
                         <h2>Buenas Prácticas de Salud Sustentable</h2>
                         <div class="row">
-                            <div class="col-12 pt-3">
-                                <p class="p-sin-estilo"><a href="https://vimeo.com/471194181/9f1128fd41" target="_blank">https://vimeo.com/471194181/9f1128fd41</a></p>
-                                <p class="p-sin-estilo"><a href="https://vimeo.com/471195135/4318c01648" target="_blank">https://vimeo.com/471195135/4318c01648</a></p>
-                                <p class="p-sin-estilo"><a href="https://vimeo.com/471196049/ce3160fe28" target="_blank">https://vimeo.com/471196049/ce3160fe28</a></p>                                
-                                <p class="p-sin-estilo"><a href="https://vimeo.com/471197183/1feffd3167" target="_blank">https://vimeo.com/471197183/1feffd3167</a></p>
-                                <p class="p-sin-estilo"><a href="https://vimeo.com/471198267/585713b236" target="_blank">https://vimeo.com/471198267/585713b236</a></p>
-                                <p class="p-sin-estilo"><a href="https://vimeo.com/471199470/9e4135c5ec" target="_blank">https://vimeo.com/471199470/9e4135c5ec</a></p>
-                                <p class="p-sin-estilo"><a href="https://vimeo.com/471200494/7e5a0ce306" target="_blank">https://vimeo.com/471200494/7e5a0ce306</a></p>
-                                <p class="p-sin-estilo"><a href="https://vimeo.com/471201435/2f8555875c" target="_blank">https://vimeo.com/471201435/2f8555875c</a></p>
-                                <p class="p-sin-estilo"><a href="https://vimeo.com/471202437/fb5992f562" target="_blank">https://vimeo.com/471202437/fb5992f562</a></p>
-                                <p class="p-sin-estilo"><a href="https://vimeo.com/471203575/e369d5c22c" target="_blank">https://vimeo.com/471203575/e369d5c22c</a></p>
-                                <p class="p-sin-estilo"><a href="https://vimeo.com/471204409/48baa77f26" target="_blank">https://vimeo.com/471204409/48baa77f26</a></p>
-                            </div>
-
+                            <div class="col-12" v-for="(item,key) in videosPracticas" :key="key">
+                                <div class="embed-container">
+                                    <iframe id="video-historia" :src="item" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                                </div>
+                            </div>                            
                         </div>
                         
                     </div>                       
@@ -478,7 +469,21 @@
                     pregunta: null,
                     enviando: false,
                     enviado: false
-                }
+                },
+                videosPracticas: [
+                    'https://player.vimeo.com/video/471194181',
+                    'https://player.vimeo.com/video/471195135',
+                    'https://player.vimeo.com/video/471196049',
+                    'https://player.vimeo.com/video/471197183',
+                    'https://player.vimeo.com/video/471198267',
+                    'https://player.vimeo.com/video/471199470',
+                    'https://player.vimeo.com/video/471200494',
+                    'https://player.vimeo.com/video/471201435',
+                    'https://player.vimeo.com/video/471202437',
+                    'https://player.vimeo.com/video/471203575',
+                    'https://player.vimeo.com/video/471204409',
+
+                ]
             }
         },
         mounted () {
@@ -539,7 +544,7 @@
                 vm.audio.estadoAlAbrirModal = vm.audio.muted ? 'muted' : 'play'; 
                 this.$nextTick(function () {
                     $('#modal-solapas').modal('show');
-                    if (solapa === 4) {
+                    if (solapa === 4 || solapa === 7) {
                         if (!vm.audio.muted) {
                             this.setearEstadoAudio('muted');
                         }

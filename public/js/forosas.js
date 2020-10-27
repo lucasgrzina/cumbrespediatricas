@@ -45372,7 +45372,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45383,15 +45383,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -45862,7 +45853,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 pregunta: null,
                 enviando: false,
                 enviado: false
-            }
+            },
+            videosPracticas: ['https://player.vimeo.com/video/471194181', 'https://player.vimeo.com/video/471195135', 'https://player.vimeo.com/video/471196049', 'https://player.vimeo.com/video/471197183', 'https://player.vimeo.com/video/471198267', 'https://player.vimeo.com/video/471199470', 'https://player.vimeo.com/video/471200494', 'https://player.vimeo.com/video/471201435', 'https://player.vimeo.com/video/471202437', 'https://player.vimeo.com/video/471203575', 'https://player.vimeo.com/video/471204409']
         };
     },
     mounted: function mounted() {
@@ -45922,7 +45914,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             vm.audio.estadoAlAbrirModal = vm.audio.muted ? 'muted' : 'play';
             this.$nextTick(function () {
                 $('#modal-solapas').modal('show');
-                if (solapa === 4) {
+                if (solapa === 4 || solapa === 7) {
                     if (!vm.audio.muted) {
                         this.setearEstadoAudio('muted');
                     }
@@ -46250,7 +46242,37 @@ var render = function() {
                         _vm._v("Buenas Prácticas de Salud Sustentable")
                       ]),
                       _vm._v(" "),
-                      _vm._m(12)
+                      _c(
+                        "div",
+                        { staticClass: "row" },
+                        _vm._l(_vm.videosPracticas, function(item, key) {
+                          return _c(
+                            "div",
+                            { key: key, staticClass: "col-12" },
+                            [
+                              _c("div", { staticClass: "embed-container" }, [
+                                _c("iframe", {
+                                  staticStyle: {
+                                    position: "absolute",
+                                    top: "0",
+                                    left: "0",
+                                    width: "100%",
+                                    height: "100%"
+                                  },
+                                  attrs: {
+                                    id: "video-historia",
+                                    src: item,
+                                    frameborder: "0",
+                                    allow: "autoplay; fullscreen",
+                                    allowfullscreen: ""
+                                  }
+                                })
+                              ])
+                            ]
+                          )
+                        }),
+                        0
+                      )
                     ])
                   : _vm._e()
               ])
@@ -46435,7 +46457,7 @@ var render = function() {
             ])
           }),
           _vm._v(" "),
-          _vm._m(13),
+          _vm._m(12),
           _vm._v(" "),
           _c(
             "div",
@@ -46528,7 +46550,7 @@ var render = function() {
             [_c("p", [_vm._v("Ingrese al evento")])]
           ),
           _vm._v(" "),
-          _vm._m(14),
+          _vm._m(13),
           _vm._v(" "),
           _c("div", { staticClass: "content-date" }, [
             _c(
@@ -46578,7 +46600,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _vm._m(15)
+          _vm._m(14)
         ],
         2
       )
@@ -47257,157 +47279,6 @@ var staticRenderFns = [
               ])
             ])
           ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12 pt-3" }, [
-        _c("p", { staticClass: "p-sin-estilo" }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "https://vimeo.com/471194181/9f1128fd41",
-                target: "_blank"
-              }
-            },
-            [_vm._v("https://vimeo.com/471194181/9f1128fd41")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "p-sin-estilo" }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "https://vimeo.com/471195135/4318c01648",
-                target: "_blank"
-              }
-            },
-            [_vm._v("https://vimeo.com/471195135/4318c01648")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "p-sin-estilo" }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "https://vimeo.com/471196049/ce3160fe28",
-                target: "_blank"
-              }
-            },
-            [_vm._v("https://vimeo.com/471196049/ce3160fe28")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "p-sin-estilo" }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "https://vimeo.com/471197183/1feffd3167",
-                target: "_blank"
-              }
-            },
-            [_vm._v("https://vimeo.com/471197183/1feffd3167")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "p-sin-estilo" }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "https://vimeo.com/471198267/585713b236",
-                target: "_blank"
-              }
-            },
-            [_vm._v("https://vimeo.com/471198267/585713b236")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "p-sin-estilo" }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "https://vimeo.com/471199470/9e4135c5ec",
-                target: "_blank"
-              }
-            },
-            [_vm._v("https://vimeo.com/471199470/9e4135c5ec")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "p-sin-estilo" }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "https://vimeo.com/471200494/7e5a0ce306",
-                target: "_blank"
-              }
-            },
-            [_vm._v("https://vimeo.com/471200494/7e5a0ce306")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "p-sin-estilo" }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "https://vimeo.com/471201435/2f8555875c",
-                target: "_blank"
-              }
-            },
-            [_vm._v("https://vimeo.com/471201435/2f8555875c")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "p-sin-estilo" }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "https://vimeo.com/471202437/fb5992f562",
-                target: "_blank"
-              }
-            },
-            [_vm._v("https://vimeo.com/471202437/fb5992f562")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "p-sin-estilo" }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "https://vimeo.com/471203575/e369d5c22c",
-                target: "_blank"
-              }
-            },
-            [_vm._v("https://vimeo.com/471203575/e369d5c22c")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "p-sin-estilo" }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "https://vimeo.com/471204409/48baa77f26",
-                target: "_blank"
-              }
-            },
-            [_vm._v("https://vimeo.com/471204409/48baa77f26")]
-          )
         ])
       ])
     ])
