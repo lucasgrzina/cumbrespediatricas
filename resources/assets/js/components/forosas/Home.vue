@@ -410,7 +410,7 @@
 
 	  		
             <div class="content-date">
-                <button type="button" class="btn btn-ingrese-evento" @click="ingresarAEvento()">Ingrese al evento</button>
+                <button type="button" class="btn btn-ingrese-evento" @click="ingresarAEvento()">Ingrese al vivo</button>
 
                 <img src="img/forosas/date2.png" style="width:100%;">
                 <div class="control-audio">
