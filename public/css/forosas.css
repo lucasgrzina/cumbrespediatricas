@@ -472,7 +472,7 @@ input::-webkit-input-placeholder {
     font-style: italic;
     text-align: center;
     font-family: 'gotham';
-    color: #fff;
+    color: #fff!important;
     font-size: 23px;
     text-transform: uppercase;
     /* width: 298px; */
