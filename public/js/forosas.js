@@ -46537,36 +46537,9 @@ var render = function() {
             [_c("p", [_vm._v("Buenas Prácticas de Salud Sustentable")])]
           ),
           _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "solapa fondo solapa-evento",
-              on: {
-                click: function($event) {
-                  return _vm.ingresarAEvento()
-                }
-              }
-            },
-            [_c("p", [_vm._v("Ingrese al vivo")])]
-          ),
-          _vm._v(" "),
           _vm._m(13),
           _vm._v(" "),
           _c("div", { staticClass: "content-date" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-ingrese-evento",
-                attrs: { type: "button" },
-                on: {
-                  click: function($event) {
-                    return _vm.ingresarAEvento()
-                  }
-                }
-              },
-              [_vm._v("Ingrese al vivo")]
-            ),
-            _vm._v(" "),
             _c("img", {
               staticStyle: { width: "100%" },
               attrs: { src: "img/forosas/date2.png" }
@@ -47740,9 +47713,7 @@ var render = function() {
                         ])
                       ]),
                       _vm._v(" "),
-                      _vm._m(2),
-                      _vm._v(" "),
-                      _vm._m(3)
+                      _vm._m(2)
                     ]
                   ),
                   _vm._v(" "),
@@ -47893,7 +47864,7 @@ var render = function() {
                         ])
                       ]),
                       _vm._v(" "),
-                      _vm._m(4)
+                      _vm._m(3)
                     ]
                   )
                 ]
@@ -47923,23 +47894,6 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row content-logo-login" }, [
       _c("a", [_c("img", { attrs: { src: "img/forosas/logo.png" } })])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "btn btn-ingresar btn-ingresar-evento",
-        attrs: {
-          target: "_blank",
-          href:
-            "https://event.on24.com/wcc/r/2632755/C4DFA6DE17A7D2298FCB53891CB5D01B"
-        }
-      },
-      [_c("img", { attrs: { src: "img/forosas/btn-ingresar-EVENTO.png" } })]
-    )
   },
   function() {
     var _vm = this

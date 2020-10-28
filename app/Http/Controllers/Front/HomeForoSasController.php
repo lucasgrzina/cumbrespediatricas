@@ -32,7 +32,7 @@ class HomeForoSasController extends EventoBaseController
             return redirect()->route($this->key.'.registro');
         }        
         $ahora = Carbon::now();
-        $inicioVivo = Carbon::parse('2020-10-27 18:00:00');
+        $inicioVivo = Carbon::parse('2020-10-29 18:00:00');
         //$inicioVivo = Carbon::parse('2020-10-26 15:21:00');
         $segundosRestantes = $inicioVivo && $inicioVivo->gt($ahora) ? Carbon::parse($inicioVivo)->diffInSeconds($ahora) : 0;
 

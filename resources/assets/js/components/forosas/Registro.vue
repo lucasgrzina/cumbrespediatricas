@@ -18,9 +18,9 @@
                                 <input type="email" autocomplete="off" class="form-control" id="login-email" placeholder="Email" v-model="login.form.email">
                             </div>
                         </div>
-                        <a target="_blank" href="https://event.on24.com/wcc/r/2632755/C4DFA6DE17A7D2298FCB53891CB5D01B" class="btn btn-ingresar btn-ingresar-evento">
+                        <!--a target="_blank" href="https://event.on24.com/wcc/r/2632769/787C82066C458E0F4A85C67FFDAD910D" class="btn btn-ingresar btn-ingresar-evento">
                             <img src="img/forosas/btn-ingresar-EVENTO.png">
-                        </a>                        
+                        </a-->                        
                         <button type="submit" class="btn btn-ingresar">
                             <img src="img/forosas/btn-ingresar.png">
                         </button>
