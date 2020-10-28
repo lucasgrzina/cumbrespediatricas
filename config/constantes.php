@@ -122,8 +122,16 @@ return [
             'controller' => 'HomeAbbottNightController',
             'view' => 'abbottnight',
             'cookie' => 'abbottnight',
+            'activo' => false,
+        ], 
+        'abbottnight310' => [
+            'nombre' => 'Abbott Night - 03/10',
+            'prefix' => 'abbottnight',
+            'controller' => 'HomeAbbottNightController',
+            'view' => 'abbottnight',
+            'cookie' => 'abbottnight310',
             'activo' => true,
-        ],                           
+        ],                                   
     ],
     'recaptcha' => [
         'key' => '6LcNPcYZAAAAAI5sgO4CAlZxlGHgADMXtUCbARnh',
