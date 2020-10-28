@@ -125,7 +125,7 @@ return [
             'activo' => false,
         ], 
         'abbottnight310' => [
-            'nombre' => 'Abbott Night - 03/10',
+            'nombre' => 'Abbott Night - 03/11',
             'prefix' => 'abbottnight',
             'controller' => 'HomeAbbottNightController',
             'view' => 'abbottnight',
