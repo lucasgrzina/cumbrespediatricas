@@ -46980,10 +46980,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-            if (!re.test(this.form.email)) {
+            /*if (!re.test(this.form.email)) {
                 alert('El formato del email es incorrecto.');
                 return false;
-            }
+            }*/
             return true;
         },
         registrar: function registrar() {
@@ -48021,7 +48021,7 @@ var render = function() {
                       staticClass: "form-control",
                       attrs: {
                         type: "text",
-                        placeholder: "Escribe tu respuesta aqui",
+                        placeholder: "Escribe tu pregunta aqui",
                         name: "pregunta"
                       },
                       domProps: { value: _vm.form.pregunta },

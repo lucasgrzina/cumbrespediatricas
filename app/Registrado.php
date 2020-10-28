@@ -32,7 +32,7 @@ class Registrado extends Authenticatable
         'apellido' => 'required',
         //'especialidad' => 'required',
         //'pais' => 'required',
-        'email' => 'required|email'
+        'email' => 'required'
     ];
 
     public function acciones()

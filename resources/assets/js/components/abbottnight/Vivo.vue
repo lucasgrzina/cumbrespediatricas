@@ -27,7 +27,7 @@
                             <div class="col-md-5 bg-form-video ">
                                 <form class="d-flex align-items-center">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Escribe tu respuesta aqui" name="pregunta" v-model="form.pregunta">
+                                        <input type="text" class="form-control" placeholder="Escribe tu pregunta aqui" name="pregunta" v-model="form.pregunta">
                                     </div>
                                     <button 
                                         type="button" 
