@@ -166,15 +166,20 @@
                                 <span class="text">Seg.</span>
                             </div>
                         </span>
-                        <div class="row mt-5">
+                        <div class="row mt-4">
                             <div class="col-12 text-center">
                                 <button type="button" 
                                         class="btn btn-primary" 
                                         @click="vivoDisponible()"
+                                        :disabled="seconds >= 300"
                                         >
                                     <i v-if="enviandoVivoDisponible" class="fa fa-spinner fa-spin fa-fw"></i> 
                                     <span> {{ enviandoVivoDisponible ? 'Ingresando...' : 'Ingresar' }} </span>
                                 </button>                                
+                            </div>
+                            <div class="col-12 text-center mt-2 font-weight-bold">
+                                <span class="d-block" v-if="seconds < 300">Hacé click en el botón para ingresar.</span>
+                                <span class="d-block" v-else>Este botón estará disponible 5 minutos antes del inicio.</span>
                             </div>
                         </div>
                 </div>                
@@ -418,6 +423,7 @@
                 } else {
                     this.seconds--;
                 }
+
             },
             mostrarSolapa (solapa) {
                 

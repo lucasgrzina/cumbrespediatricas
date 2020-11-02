@@ -303,6 +303,12 @@ body, html,#app,#app main,#app main section {
   .btn-primary.btn-certificado {
     padding: 8px 30px;
   }
+
+  .btn-primary:disabled {
+    border-color: #e0a758;
+    background: rgb(234 195 142);
+    color: black;
+}
   .trivia-opcion {
       font-size: 10px;
       font-weight: 700;

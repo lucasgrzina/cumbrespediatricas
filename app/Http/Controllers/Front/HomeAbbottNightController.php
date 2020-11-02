@@ -41,9 +41,9 @@ class HomeAbbottNightController extends EventoBaseController
         $segundosRestantes = $inicioVivo && $inicioVivo->gt($ahora) ? Carbon::parse($inicioVivo)->diffInSeconds($ahora) : 0;
         $finVivo = $config['fin_vivo'] ? Carbon::parse($config['fin_vivo']) : false;
 
-        /*if ($registrado && $config['etapa'] === 'R' && $inicioVivo && Carbon::now()->gt($inicioVivo->addMinutes(-5)) && (!$finVivo || Carbon::now()->lt($finVivo))) {
+        if ($registrado && $config['etapa'] === 'R' && $inicioVivo && Carbon::now()->gt($inicioVivo->addMinutes(-5)) && (!$finVivo || Carbon::now()->lt($finVivo))) {
             return redirect()->route($this->key.'.vivo');
-        }*/
+        }
 
         if ($registrado) {
             $data = [
@@ -153,12 +153,12 @@ class HomeAbbottNightController extends EventoBaseController
         $registrado = $this->obtenerRegistrado();
 
         
-        $imgCertificado = $registrado->id . '_certificado1.jpg';
+        $imgCertificado = $registrado->id . '_certificado2.jpg';
 
 
         //if (!StorageHelper::existe($imgCertificado,'uploads')) {
             $text = $registrado->nombre . ' ' . $registrado->apellido;
-            $img = \Image::make(public_path('img/abbottnight/certificado/certificado1.jpg'));
+            $img = \Image::make(public_path('img/abbottnight/certificado/certificado2.jpg'));
         
             $width = $img->width();
             $height = $img->height();
