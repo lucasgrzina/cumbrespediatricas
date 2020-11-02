@@ -75,6 +75,11 @@ input::-webkit-input-placeholder {
 .solapa.counter{
 	top: 30px;
 }
+.solapa.solapa1{
+	top: 30px;
+	padding-top: 10px;
+	cursor: pointer;
+}
 
 .solapa.solapa2 {
 	top: 220px;
@@ -125,7 +130,7 @@ input::-webkit-input-placeholder {
     line-height: 25px;
     padding-top: 15px;
 }
-.solapa3 p,.solapa4 p,.solapa6 p{
+.solapa3 p,.solapa4 p,.solapa6 p,.solapa1 p{
 	font-size: 25px;
 	line-height: 25px;
 	padding-top: 20px;

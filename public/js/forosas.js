@@ -45372,7 +45372,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45863,7 +45863,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         //$('.navbar-nav-menu').style(this.alto);
         imgFondoDesk.onload = function () {
-            console.debug('cargoooo');
             setTimeout(function () {
                 $('body').addClass('animado');
             }, 1);
@@ -45914,7 +45913,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             vm.audio.estadoAlAbrirModal = vm.audio.muted ? 'muted' : 'play';
             this.$nextTick(function () {
                 $('#modal-solapas').modal('show');
-                if (solapa === 4 || solapa === 7) {
+                if (solapa === 4 || solapa === 7 || solapa === 1) {
                     if (!vm.audio.muted) {
                         this.setearEstadoAudio('muted');
                     }
@@ -46018,15 +46017,31 @@ var render = function() {
               _c("div", { staticClass: "modal-content" }, [
                 _vm._m(0),
                 _vm._v(" "),
+                _vm.solapa === 1
+                  ? _c("div", { staticClass: "modal-body" }, [
+                      _c("h2", { staticClass: "text-uppercase" }, [
+                        _vm._v("Día Nacional")
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(1),
+                      _vm._v(" "),
+                      _c("h2", { staticClass: "text-uppercase" }, [
+                        _vm._v("Día Internacional")
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(2)
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
                 _vm.solapa === 2
                   ? _c("div", { staticClass: "modal-body" }, [
                       _c("h2", [_vm._v("SPEAKERS NACIONALES")]),
                       _vm._v(" "),
-                      _vm._m(1),
+                      _vm._m(3),
                       _vm._v(" "),
                       _c("h2", [_vm._v("SPEAKERS INTERNACIONALES")]),
                       _vm._v(" "),
-                      _vm._m(2)
+                      _vm._m(4)
                     ])
                   : _vm._e(),
                 _vm._v(" "),
@@ -46034,9 +46049,9 @@ var render = function() {
                   ? _c("div", { staticClass: "modal-body" }, [
                       _c("h2", [_vm._v("CONDUCCIÓN")]),
                       _vm._v(" "),
-                      _vm._m(3),
+                      _vm._m(5),
                       _vm._v(" "),
-                      _vm._m(4)
+                      _vm._m(6)
                     ])
                   : _vm._e(),
                 _vm._v(" "),
@@ -46046,7 +46061,7 @@ var render = function() {
                         _vm._v("HISTORIA DEL FORO DE SALUD SUSTENTABLE (SaS)")
                       ]),
                       _vm._v(" "),
-                      _vm._m(5)
+                      _vm._m(7)
                     ])
                   : _vm._e(),
                 _vm._v(" "),
@@ -46054,7 +46069,7 @@ var render = function() {
                   ? _c("div", { staticClass: "modal-body" }, [
                       _c("h2", [_vm._v("PREGUNTAS A SPEAKERS")]),
                       _vm._v(" "),
-                      _vm._m(6),
+                      _vm._m(8),
                       _vm._v(" "),
                       _c("div", { staticClass: "row" }, [
                         _c(
@@ -46219,20 +46234,20 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _vm.form.enviado
-                        ? _c("div", { staticClass: "row" }, [_vm._m(7)])
+                        ? _c("div", { staticClass: "row" }, [_vm._m(9)])
                         : _vm._e()
                     ])
                   : _vm._e(),
                 _vm._v(" "),
                 _vm.solapa === 6
                   ? _c("div", { staticClass: "modal-body" }, [
-                      _vm._m(8),
-                      _vm._v(" "),
-                      _vm._m(9),
-                      _vm._v(" "),
                       _vm._m(10),
                       _vm._v(" "),
-                      _vm._m(11)
+                      _vm._m(11),
+                      _vm._v(" "),
+                      _vm._m(12),
+                      _vm._v(" "),
+                      _vm._m(13)
                     ])
                   : _vm._e(),
                 _vm._v(" "),
@@ -46457,7 +46472,18 @@ var render = function() {
             ])
           }),
           _vm._v(" "),
-          _vm._m(12),
+          _c(
+            "div",
+            {
+              staticClass: "solapa fondo solapa1",
+              on: {
+                click: function($event) {
+                  return _vm.mostrarSolapa(1)
+                }
+              }
+            },
+            [_c("p", [_vm._v("Reviví el evento")])]
+          ),
           _vm._v(" "),
           _c(
             "div",
@@ -46537,7 +46563,7 @@ var render = function() {
             [_c("p", [_vm._v("Buenas Prácticas de Salud Sustentable")])]
           ),
           _vm._v(" "),
-          _vm._m(13),
+          _vm._m(14),
           _vm._v(" "),
           _c("div", { staticClass: "content-date" }, [
             _c("img", {
@@ -46573,7 +46599,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _vm._m(14)
+          _vm._m(15)
         ],
         2
       )
@@ -46598,6 +46624,58 @@ var staticRenderFns = [
         },
         [_c("img", { attrs: { src: "img/forosas/modal-cerrar.png" } })]
       )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("div", { staticClass: "embed-container" }, [
+          _c("iframe", {
+            staticStyle: {
+              position: "absolute",
+              top: "0",
+              left: "0",
+              width: "100%",
+              height: "100%"
+            },
+            attrs: {
+              src: "https://player.vimeo.com/video/473988487",
+              frameborder: "0",
+              allow: "autoplay; fullscreen",
+              allowfullscreen: ""
+            }
+          })
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("div", { staticClass: "embed-container" }, [
+          _c("iframe", {
+            staticStyle: {
+              position: "absolute",
+              top: "0",
+              left: "0",
+              width: "100%",
+              height: "100%"
+            },
+            attrs: {
+              src: "https://player.vimeo.com/video/474026333",
+              frameborder: "0",
+              allow: "autoplay; fullscreen",
+              allowfullscreen: ""
+            }
+          })
+        ])
+      ])
     ])
   },
   function() {
@@ -47252,40 +47330,6 @@ var staticRenderFns = [
               ])
             ])
           ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "solapa fondo counter" }, [
-      _c("p", [_c("span", { staticClass: "bullet" }), _vm._v("PRÓXIMO VIVO")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "row timer", attrs: { id: "countdown" } }, [
-        _c("div", { staticClass: "col block-time days" }, [
-          _c("span", { staticClass: "num" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "text" }, [_vm._v("Días")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col block-time hours" }, [
-          _c("span", { staticClass: "num" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "text" }, [_vm._v("Horas")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col block-time minutes" }, [
-          _c("span", { staticClass: "num" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "text" }, [_vm._v("Min.")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col block-time seconds" }, [
-          _c("span", { staticClass: "num" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "text" }, [_vm._v("Seg.")])
         ])
       ])
     ])

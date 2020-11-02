@@ -9,6 +9,24 @@
                         <img src="img/forosas/modal-cerrar.png">
                         </button>
                     </div>
+                    <div class="modal-body" v-if="solapa === 1">
+                        <h2 class="text-uppercase">Día Nacional</h2>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="embed-container">
+                                    <iframe src="https://player.vimeo.com/video/473988487" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                                </div>
+                            </div>                            
+                        </div>
+                        <h2 class="text-uppercase">Día Internacional</h2>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="embed-container">
+                                    <iframe src="https://player.vimeo.com/video/474026333" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
                     <div class="modal-body" v-if="solapa === 2">
                         <h2>SPEAKERS NACIONALES</h2>
                         <div class="row">
@@ -361,26 +379,8 @@
             <div class="circle-container" v-for="index in 200" :key="index">
                 <div class="circle"></div>
             </div>
-	  		<div class="solapa fondo counter">
-	  				<p><span class="bullet"></span>PRÓXIMO VIVO</p>
-	  				<span id="countdown" class="row timer">
-	  					<div class="col block-time days">
-	  						<span class="num"></span>
-	  						<span class="text">Días</span>
-	  					</div>
-	  					<div class="col block-time hours">
-	  						<span class="num"></span>
-	  						<span class="text">Horas</span>
-	  					</div>
-	  					<div class="col block-time minutes">
-	  						<span class="num"></span>
-	  						<span class="text">Min.</span>
-	  					</div>
-	  					<div class="col block-time seconds">
-	  						<span class="num"></span>
-	  						<span class="text">Seg.</span>
-	  					</div>
-	  				</span>
+	  		<div class="solapa fondo solapa1" @click="mostrarSolapa(1)">
+                <p>Reviví el evento</p>
   			</div>
             <div class="solapa fondo solapa2" @click="mostrarSolapa(2)">
                 <p>Speakers nacionales & internacionales</p>
@@ -492,7 +492,6 @@
             
             //$('.navbar-nav-menu').style(this.alto);
             imgFondoDesk.onload = function(){
-                console.debug('cargoooo');
                 setTimeout(function () {
                     $('body').addClass('animado');
                 }, 1);
@@ -544,7 +543,7 @@
                 vm.audio.estadoAlAbrirModal = vm.audio.muted ? 'muted' : 'play'; 
                 this.$nextTick(function () {
                     $('#modal-solapas').modal('show');
-                    if (solapa === 4 || solapa === 7) {
+                    if (solapa === 4 || solapa === 7 || solapa === 1) {
                         if (!vm.audio.muted) {
                             this.setearEstadoAudio('muted');
                         }
