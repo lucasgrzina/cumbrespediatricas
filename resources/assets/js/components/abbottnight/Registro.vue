@@ -48,8 +48,16 @@
                             </div>
 
                             <button type="button" class="btn btn-primary mb-3" @click="mostrarDisc()">INGRESAR</button>
-                        </div>
 
+                            <div class="disc-sitio">
+                                Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac).<br>
+                                Se recomienda tener actualizado el sistema operativo a la última actualización.<br>
+                                Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor.<br><br>
+
+                                Ante cualquier duda o inconveniente escriba al 0054 9 11 5667 2177 (Whatsapp)
+                            </div>
+                        </div>
+                        
                         
                     </div>
                 </div>
@@ -80,13 +88,22 @@
                             <p class="text">
                                 La información y/o datos brindados para el registro al evento serán utilizados únicamente durante su participación en el evento y envío de información relacionada al evento. Todos los datos serán manejados de acuerdo a nuestros procedimientos de manejo de datos y no podrán ser compartidos y/o utilizados para fines diferentes a su participación en este evento.
                             </p>
-                            <br>
+                            
                             <p class="text text-center">
                                 <a target="_blank" class="text-white" style="text-decoration:underline;" href="https://www.quimicavirtualevents.com/recorrido/avisodeprivacidad.html">Aviso de privacidad</a>
                             </p>
 
                             <button type="button" class="btn btn-primary" @click="mostrarForm()">ACEPTO PROCEDER CON EL REGISTRO</button>
+                            <div class="disc-sitio">
+                                Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac).<br>
+                                Se recomienda tener actualizado el sistema operativo a la última actualización.<br>
+                                Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor.<br><br>
+
+                                Ante cualquier duda o inconveniente escriba al 0054 9 11 5667 2177 (Whatsapp)
+                                <br><br><br>
+                            </div>
                         </form>
+
                     </div>
                 </div>
             </div>         
@@ -138,7 +155,15 @@
                             </div>  
 
                             <button type="button" class="btn btn-primary btn-registro" @click="registrar()">INGRESAR</button>
+                            <div class="disc-sitio">
+                                Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac).<br>
+                                Se recomienda tener actualizado el sistema operativo a la última actualización.<br>
+                                Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor.<br><br>
+
+                                Ante cualquier duda o inconveniente escriba al 0054 9 11 5667 2177 (Whatsapp)
+                            </div>                        <br>
                         </form>
+
                     </div>
                 </div>
             </div>               

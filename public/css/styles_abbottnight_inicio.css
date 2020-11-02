@@ -384,17 +384,17 @@
   }
   
   .terminos .btn {
-    margin: 20px auto 100px;
+    margin: 20px auto 20px;
   }
   
   .btn-registro {
-    margin: 20px auto 100px !important;
+    margin: 20px auto 25px !important;
   }
   
   p.text {
     color: #fff;
     font-family: "gothamlight";
-    font-size: 14px;
+    font-size: 13px;
   }
   
   .bg-form-video .form-group {
@@ -595,6 +595,16 @@
       background-color: #795548!important;
   }
 
+  .disc-sitio {
+    font-size: 10px;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    font-family: "gothamlight";
+  }
+  .form-group {
+    margin-bottom: 10px;
+}
   @media (max-width: 768px) {
     section.center-vertical {
       display: block;
@@ -673,7 +683,7 @@
     }
   
     .terminos .btn {
-      margin: 20px auto 100px;
+      margin: 20px auto 50px;
       font-size: 15px;
     }
   

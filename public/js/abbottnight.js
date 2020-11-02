@@ -46746,7 +46746,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -46757,6 +46757,31 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -47077,7 +47102,9 @@ var render = function() {
                       }
                     },
                     [_vm._v("INGRESAR")]
-                  )
+                  ),
+                  _vm._v(" "),
+                  _vm._m(3)
                 ])
               ])
             ])
@@ -47086,9 +47113,9 @@ var render = function() {
       _vm._v(" "),
       _vm.paso === 2
         ? _c("div", { staticClass: "container paso-2" }, [
-            _vm._m(3),
-            _vm._v(" "),
             _vm._m(4),
+            _vm._v(" "),
+            _vm._m(5),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col-md-12" }, [
@@ -47105,9 +47132,7 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("br"),
-                  _vm._v(" "),
-                  _vm._m(5),
+                  _vm._m(6),
                   _vm._v(" "),
                   _c(
                     "button",
@@ -47121,7 +47146,9 @@ var render = function() {
                       }
                     },
                     [_vm._v("ACEPTO PROCEDER CON EL REGISTRO")]
-                  )
+                  ),
+                  _vm._v(" "),
+                  _vm._m(7)
                 ])
               ])
             ])
@@ -47130,9 +47157,9 @@ var render = function() {
       _vm._v(" "),
       _vm.paso === 3
         ? _c("div", { staticClass: "container" }, [
-            _vm._m(6),
+            _vm._m(8),
             _vm._v(" "),
-            _vm._m(7),
+            _vm._m(9),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col-md-12" }, [
@@ -47319,7 +47346,11 @@ var render = function() {
                         }
                       },
                       [_vm._v("INGRESAR")]
-                    )
+                    ),
+                    _vm._v(" "),
+                    _vm._m(10),
+                    _vm._v(" "),
+                    _c("br")
                   ]
                 )
               ])
@@ -47328,7 +47359,7 @@ var render = function() {
         : _vm._e()
     ]),
     _vm._v(" "),
-    _vm._m(8)
+    _vm._m(11)
   ])
 }
 var staticRenderFns = [
@@ -47403,6 +47434,29 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "disc-sitio" }, [
+      _vm._v(
+        "\n                            Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac)."
+      ),
+      _c("br"),
+      _vm._v(
+        "\n                            Se recomienda tener actualizado el sistema operativo a la última actualización."
+      ),
+      _c("br"),
+      _vm._v(
+        "\n                            Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor."
+      ),
+      _c("br"),
+      _c("br"),
+      _vm._v(
+        "\n\n                            Ante cualquier duda o inconveniente escriba al 0054 9 11 5667 2177 (Whatsapp)\n                        "
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row pt-5" }, [
       _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "content-intro registro" }, [
@@ -47450,6 +47504,32 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "disc-sitio" }, [
+      _vm._v(
+        "\n                            Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac)."
+      ),
+      _c("br"),
+      _vm._v(
+        "\n                            Se recomienda tener actualizado el sistema operativo a la última actualización."
+      ),
+      _c("br"),
+      _vm._v(
+        "\n                            Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor."
+      ),
+      _c("br"),
+      _c("br"),
+      _vm._v(
+        "\n\n                            Ante cualquier duda o inconveniente escriba al 0054 9 11 5667 2177 (Whatsapp)\n                            "
+      ),
+      _c("br"),
+      _c("br"),
+      _c("br")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "content-intro registro" }, [
@@ -47473,6 +47553,29 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-12" }, [
         _c("div", { staticClass: "line-divide" })
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "disc-sitio" }, [
+      _vm._v(
+        "\n                            Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac)."
+      ),
+      _c("br"),
+      _vm._v(
+        "\n                            Se recomienda tener actualizado el sistema operativo a la última actualización."
+      ),
+      _c("br"),
+      _vm._v(
+        "\n                            Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor."
+      ),
+      _c("br"),
+      _c("br"),
+      _vm._v(
+        "\n\n                            Ante cualquier duda o inconveniente escriba al 0054 9 11 5667 2177 (Whatsapp)\n                        "
+      )
     ])
   },
   function() {
@@ -47611,7 +47714,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -47624,6 +47727,12 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_pretty_checkbox_vue_radio__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_pretty_checkbox_vue_radio___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_pretty_checkbox_vue_radio__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -48082,7 +48191,7 @@ var render = function() {
                       staticClass: "form-control",
                       attrs: {
                         type: "text",
-                        placeholder: "Escribe tu pregunta aqui",
+                        placeholder: "Escriba su pregunta aqui",
                         name: "pregunta"
                       },
                       domProps: { value: _vm.form.pregunta },
@@ -48170,7 +48279,11 @@ var render = function() {
               ),
               _vm._v(" "),
               _vm._m(2)
-            ])
+            ]),
+            _vm._v(" "),
+            _vm._m(3),
+            _vm._v(" "),
+            _c("br")
           ])
         ])
       ]),
@@ -48401,7 +48514,7 @@ var render = function() {
         : _vm._e()
     ]),
     _vm._v(" "),
-    _vm._m(3)
+    _vm._m(4)
   ])
 }
 var staticRenderFns = [
@@ -48466,6 +48579,29 @@ var staticRenderFns = [
         staticStyle: { "max-width": "200px" },
         attrs: { src: "/img/abbottnight/logo.png" }
       })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "disc-sitio mt-2" }, [
+      _vm._v(
+        "\n                        Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac)."
+      ),
+      _c("br"),
+      _vm._v(
+        "\n                        Se recomienda tener actualizado el sistema operativo a la última actualización."
+      ),
+      _c("br"),
+      _vm._v(
+        "\n                        Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor."
+      ),
+      _c("br"),
+      _c("br"),
+      _vm._v(
+        "\n\n                        Ante cualquier duda o inconveniente escriba al 0054 9 11 5667 2177 (Whatsapp)\n                    "
+      )
     ])
   },
   function() {

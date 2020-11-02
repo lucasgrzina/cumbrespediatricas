@@ -27,7 +27,7 @@
                             <div class="col-md-5 bg-form-video ">
                                 <form class="d-flex align-items-center">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Escribe tu pregunta aqui" name="pregunta" v-model="form.pregunta">
+                                        <input type="text" class="form-control" placeholder="Escriba su pregunta aqui" name="pregunta" v-model="form.pregunta">
                                     </div>
                                     <button 
                                         type="button" 
@@ -62,7 +62,13 @@
                                 <img class="logo-img" src="/img/abbottnight/logo.png" style="max-width:200px">
                             </div>
                         </div>
+                        <div class="disc-sitio mt-2">
+                            Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac).<br>
+                            Se recomienda tener actualizado el sistema operativo a la última actualización.<br>
+                            Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor.<br><br>
 
+                            Ante cualquier duda o inconveniente escriba al 0054 9 11 5667 2177 (Whatsapp)
+                        </div>                        <br>
                     </div>
                 </div>
                 
