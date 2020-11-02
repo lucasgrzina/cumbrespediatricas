@@ -46482,7 +46482,7 @@ var render = function() {
                 }
               }
             },
-            [_c("p", [_vm._v("Reviví el evento")])]
+            [_c("p", [_vm._v("Reviví el 7° Foro")])]
           ),
           _vm._v(" "),
           _c(

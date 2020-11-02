@@ -380,7 +380,7 @@
                 <div class="circle"></div>
             </div>
 	  		<div class="solapa fondo solapa1" @click="mostrarSolapa(1)">
-                <p>Reviví el evento</p>
+                <p>Reviví el 7° Foro</p>
   			</div>
             <div class="solapa fondo solapa2" @click="mostrarSolapa(2)">
                 <p>Speakers nacionales & internacionales</p>
