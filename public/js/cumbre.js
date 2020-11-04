@@ -47088,7 +47088,7 @@ var staticRenderFns = [
           _c("br"),
           _c("br"),
           _vm._v(
-            "\n\n                    Ante cualquier duda o inconveniente escriba al 0054 9 11 5667 2177 (Whatsapp)\n                "
+            "\n\n                    Ante cualquier duda o inconveniente escriba al 0054 9 11 3300 3516 (Whatsapp)\n                "
           )
         ])
       ])
