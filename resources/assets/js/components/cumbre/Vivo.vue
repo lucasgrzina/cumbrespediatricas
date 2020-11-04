@@ -3,7 +3,7 @@
             <div class="row content-title">
                 <div class="col-md-12 text-center">
                     <!--div class="line line--left"></div-->
-                    <button type="button" class="btn btn-primary" @click="verVideo('ingles')">Audio Original Ingles</button>
+                    <button type="button" class="btn btn-primary" @click="verVideo('ingles')">Audio Original Inglés</button>
                     <button type="button" class="btn btn-primary" @click="verVideo('esp')">Audio Español</button>                    
 
                     <!--div class="line line--right"></div-->
@@ -24,10 +24,10 @@
                 <div class="col-md-12" v-if="videoSeleccionado">
                     <span style="color:#fff;text-align:center;width:100%;margin-top: 20px;display: block;"><i class="fa fa-volume-up" aria-hidden="true"></i>Por favor, activar el sonido del reproductor</span>
                     <div class="contenedor_vimeo" v-if="videoSeleccionado === 'ingles'">
-                        <iframe src="https://player.vimeo.com/video/466566248" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                        <iframe src="https://player.vimeo.com/video/475459063" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                     </div>                    
                     <div class="contenedor_vimeo" v-else>
-                        <iframe src="https://player.vimeo.com/video/466564355" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                        <iframe src="https://player.vimeo.com/video/475458120" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                     </div>                    
                 </div>
                 <div class="col-md-12" v-else>
@@ -173,6 +173,18 @@
 
                 </div>
 
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="disc-sitio mt-2">
+                        Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac).<br>
+                        Se recomienda tener actualizado el sistema operativo a la última actualización.<br>
+                        Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor.<br><br>
+
+                        Ante cualquier duda o inconveniente escriba al 0054 9 11 5667 2177 (Whatsapp)
+                    </div>
+                </div>
             </div>
 
     </div>

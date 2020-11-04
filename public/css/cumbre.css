@@ -286,7 +286,13 @@ footer .logo-center:after {
   background: white;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, white 40%, white 60%, rgba(255, 255, 255, 0) 100%);
 }
-
+.disc-sitio {
+  font-size: 11px;
+  color: #fff;
+  text-align: center;
+  font-weight: 400;
+  font-family: "Gotham", sans-serif;
+}
 @media (max-width: 768px) {
   .container {
     max-width: 480px;

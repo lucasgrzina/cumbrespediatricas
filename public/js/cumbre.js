@@ -46308,6 +46308,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -46567,7 +46579,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("Audio Original Ingles")]
+          [_vm._v("Audio Original Inglés")]
         ),
         _vm._v(" "),
         _c(
@@ -46622,7 +46634,7 @@ var render = function() {
                       height: "100%"
                     },
                     attrs: {
-                      src: "https://player.vimeo.com/video/466566248",
+                      src: "https://player.vimeo.com/video/475459063",
                       frameborder: "0",
                       allow: "autoplay; fullscreen",
                       allowfullscreen: ""
@@ -46639,7 +46651,7 @@ var render = function() {
                       height: "100%"
                     },
                     attrs: {
-                      src: "https://player.vimeo.com/video/466564355",
+                      src: "https://player.vimeo.com/video/475458120",
                       frameborder: "0",
                       allow: "autoplay; fullscreen",
                       allowfullscreen: ""
@@ -46996,7 +47008,9 @@ var render = function() {
             )
           ])
         ])
-      : _vm._e()
+      : _vm._e(),
+    _vm._v(" "),
+    _vm._m(2)
   ])
 }
 var staticRenderFns = [
@@ -47052,6 +47066,33 @@ var staticRenderFns = [
         )
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("div", { staticClass: "disc-sitio mt-2" }, [
+          _vm._v(
+            "\n                    Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac)."
+          ),
+          _c("br"),
+          _vm._v(
+            "\n                    Se recomienda tener actualizado el sistema operativo a la última actualización."
+          ),
+          _c("br"),
+          _vm._v(
+            "\n                    Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "\n\n                    Ante cualquier duda o inconveniente escriba al 0054 9 11 5667 2177 (Whatsapp)\n                "
+          )
+        ])
+      ])
+    ])
   }
 ]
 render._withStripped = true

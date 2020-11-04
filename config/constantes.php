@@ -110,7 +110,7 @@ return [
             'controller' => 'HomeCumbrePediatricaController',
             'view' => 'cumbre',
             'cookie' => 'cumbre4',
-            'activo' => true,
+            'activo' => false,
             'registroExterno' => true,
             'urlWebServiceRegistrado' => 'https://www.quimicavirtualevents.com/recorrido/app/webservice.php',
             'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbrepediatrica',
@@ -131,7 +131,27 @@ return [
             'view' => 'abbottnight',
             'cookie' => 'abbottnight310',
             'activo' => true,
-        ],                                   
+        ],   
+        'similacmama1711' => [
+            'nombre' => 'Similac Mama - 17/11',
+            'prefix' => 'similacmama',
+            'controller' => 'HomeSimilaCMamaController',
+            'view' => 'similacmama',
+            'cookie' => 'similacmama_17_11',
+            'activo' => true
+        ],      
+        'cumbre5' => [
+            'nombre' => 'Abbott Cumbre pediatrica - 5/5',
+            'prefix' => 'cumbrepediatrica',
+            'controller' => 'HomeCumbrePediatricaController',
+            'view' => 'cumbre',
+            'cookie' => 'cumbre5',
+            'activo' => true,
+            'registroExterno' => true,
+            'urlWebServiceRegistrado' => 'https://www.quimicavirtualevents.com/cumbreabbot/app/webservice.php',
+            'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbreabbot',
+            'urlCertificado' => 'https://www.quimicavirtualevents.com/cumbreabbot/app/certificado.php?id=_ID_&token=_TOKEN_'
+        ],                                            
     ],
     'recaptcha' => [
         'key' => '6LcNPcYZAAAAAI5sgO4CAlZxlGHgADMXtUCbARnh',
