@@ -418,8 +418,9 @@
                             // vm.form.pregunta = null;
                         }, error => {
                             vm.encuesta.enviando = false;
-                            
-                            alert(error.message);
+                            alert('Gracias por responder la encuesta');
+                            vm.mostrarModal(false);
+                            //alert(error.message);
                         });                    
                 }
             },

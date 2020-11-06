@@ -46523,8 +46523,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     // vm.form.pregunta = null;
                 }, function (error) {
                     vm.encuesta.enviando = false;
-
-                    alert(error.message);
+                    alert('Gracias por responder la encuesta');
+                    vm.mostrarModal(false);
+                    //alert(error.message);
                 });
             }
         },

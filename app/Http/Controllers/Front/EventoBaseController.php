@@ -94,7 +94,6 @@ class EventoBaseController extends AppBaseController
                 $data['registrado_id'] = $registrado->id;
 
             } catch (\Exception $e) {}
-            
             $data = Encuestas::create($data);
             return $this->sendResponse($data,'La operación finañizó con éxito');                
         } catch (\Exception $e) {
