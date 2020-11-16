@@ -1,31 +1,22 @@
 <?php
 
-namespace App\Http\Front\Controllers;
+namespace App\Http\Controllers\Front;
 
 
+use App\Chat;
 use App\Trivias;
 use App\Encuestas;
-
 use App\Preguntas;
 use Carbon\Carbon;
 use App\Registrado;
 use App\Configuraciones;
 use App\Helpers\FrontHelper;
 use Illuminate\Http\Request;
+use App\Events\MensajeChatEvent;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\Front\RegistrarRequest;
 
-/**
- * @SWG\Swagger(
- *   basePath="/api/v1",
- *   @SWG\Info(
- *     title="Laravel Generator APIs",
- *     version="1.0.0",
- *   )
- * )
- * This class should be parent class for other API controllers
- * Class AppBaseController
- */
+
 class EventoBaseController extends AppBaseController
 {
     protected $evento = null;
@@ -34,7 +25,6 @@ class EventoBaseController extends AppBaseController
     
     public function __construct()
     {
-        
         $this->key = explode('.',\Route::currentRouteName())[0];
         $this->evento = config('constantes.eventos.'.$this->key);
         $this->evento['key'] = $this->key;
@@ -183,5 +173,27 @@ class EventoBaseController extends AppBaseController
 
     public function descargarCertificado() { }
     
+    public function enviarMensajeChat(Request $request) {
+        try {
+            $data = $request->all();
+            $data['evento'] = $this->key;
+            try {
+                $registrado = $this->obtenerRegistrado();
+                $data['registrado_id'] = $registrado->id;
+
+            } catch (\Exception $e) {}
+            $data = Chat::create($data);
+            \Log::info($data);
+
+            try {
+                broadcast(new MensajeChatEvent($registrado, $data))->toOthers();
+            } catch (\Exception $e) {
+                \Log::info($e);
+            }
+            return $this->sendResponse($data,'La operación finañizó con éxito');                
+        } catch (\Exception $e) {
+            return $this->sendError($e->getMessage(),$e->getCode());
+        }
+    }    
 
 }

@@ -151,7 +151,19 @@ return [
             'urlWebServiceRegistrado' => 'https://www.quimicavirtualevents.com/cumbreabbot/app/webservice.php',
             'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbreabbot',
             'urlCertificado' => 'https://www.quimicavirtualevents.com/cumbreabbot/app/certificado.php?id=_ID_&token=_TOKEN_'
-        ],                                            
+        ],  
+        'dermatalks' => [
+            'nombre' => 'Novartis: DERMA TALKS',
+            'prefix' => 'dermatalks',
+            'controller' => 'HomeDermaTalksController',
+            'view' => 'dermatalks',
+            'cookie' => 'dermatalks',
+            'activo' => true,
+            'registroExterno' => true,
+            'urlWebServiceRegistrado' => 'https://www.quimicavirtualevents.com/cumbreabbot/app/webservice.php',
+            'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbreabbot',
+            'urlCertificado' => 'https://www.quimicavirtualevents.com/cumbreabbot/app/certificado.php?id=_ID_&token=_TOKEN_'
+        ],                                                    
     ],
     'recaptcha' => [
         'key' => '6LcNPcYZAAAAAI5sgO4CAlZxlGHgADMXtUCbARnh',

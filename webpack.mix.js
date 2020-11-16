@@ -52,6 +52,13 @@ mix.js('resources/assets/js/cumbre.js', 'public/js')
       'node_modules/pretty-checkbox/dist/pretty-checkbox.min.css',
    ], 'public/css/abbottnight_inicio.css');          
 
+   mix.js('resources/assets/js/dermatalks.js', 'public/js')
+   .styles([
+      'public/css/bootstrap.min.css',
+      'public/css/styles_dermatalks.css',
+      'public/css/utils.css',
+   ], 'public/css/dermatalks.css');
+
 if (mix.inProduction()) {
    mix.version();
 }   

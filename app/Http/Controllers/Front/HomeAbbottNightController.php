@@ -3,17 +3,14 @@
 namespace App\Http\Controllers\Front;
 
 
-use App\Preguntas;
 use Carbon\Carbon;
 
 use App\Registrado;
 use App\Helpers\FrontHelper;
 use Illuminate\Http\Request;
 use App\Helpers\StorageHelper;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\Front\RegistrarRequest;
-use App\Http\Front\Controllers\EventoBaseController;
+use App\Http\Controllers\Front\EventoBaseController;
 
 class HomeAbbottNightController extends EventoBaseController
 {

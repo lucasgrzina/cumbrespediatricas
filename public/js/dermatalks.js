@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 77);
+/******/ 	return __webpack_require__(__webpack_require__.s = 107);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -45251,14 +45251,44 @@ module.exports = function listToStyles (parentId, list) {
 /* 74 */,
 /* 75 */,
 /* 76 */,
-/* 77 */
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(78);
+module.exports = __webpack_require__(108);
 
 
 /***/ }),
-/* 78 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -45279,33 +45309,33 @@ window.Vue = __webpack_require__(36);
  */
 
 //Vue.component('contenedor', require('./components/Contenedor.vue'));
-Vue.component('home', __webpack_require__(79));
-Vue.component('registro', __webpack_require__(84));
+//Vue.component('registro', require('./components/cumbre/Registro.vue'));
+Vue.component('vivo', __webpack_require__(109));
 
 var app = new Vue({
   el: '#app'
 });
 
 /***/ }),
-/* 79 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(80)
+  __webpack_require__(110)
 }
 var normalizeComponent = __webpack_require__(11)
 /* script */
-var __vue_script__ = __webpack_require__(82)
+var __vue_script__ = __webpack_require__(112)
 /* template */
-var __vue_template__ = __webpack_require__(83)
+var __vue_template__ = __webpack_require__(113)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-6c342c74"
+var __vue_scopeId__ = "data-v-22f7ab1c"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -45316,7 +45346,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/forosas/Home.vue"
+Component.options.__file = "resources/assets/js/components/dermatalks/Vivo.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -45325,9 +45355,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6c342c74", Component.options)
+    hotAPI.createRecord("data-v-22f7ab1c", Component.options)
   } else {
-    hotAPI.reload("data-v-6c342c74", Component.options)
+    hotAPI.reload("data-v-22f7ab1c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -45338,23 +45368,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 80 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(81);
+var content = __webpack_require__(111);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(10)("2578fcc4", content, false, {});
+var update = __webpack_require__(10)("10079a02", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6c342c74\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6c342c74\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-22f7ab1c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Vivo.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-22f7ab1c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Vivo.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -45364,7 +45394,7 @@ if(false) {
 }
 
 /***/ }),
-/* 81 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(9)(false);
@@ -45372,13 +45402,13 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.modal-mask[data-v-22f7ab1c] {\r\n  position: fixed;\r\n  z-index: 9998;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: rgba(0, 0, 0, 0.5);\r\n  display: table;\r\n  transition: opacity 0.3s ease;\n}\n.modal-wrapper[data-v-22f7ab1c] {\r\n  display: table-cell;\r\n  vertical-align: middle;\n}\n.modal-container[data-v-22f7ab1c] {\r\n    width: 90%;\r\n    max-width: 630px;\r\n    margin: 0px auto;\r\n    padding: 10px;\r\n    background-color: #061422;\r\n    border-radius: 2px;\r\n    box-shadow: 0 2px 8px #e7a249;\r\n    transition: all 0.3s ease;\r\n    border: 1px solid #9E9E9E;\n}\n.modal-header h3[data-v-22f7ab1c] {\r\n  margin-top: 0;\r\n  color: #42b983;\n}\n.modal-body[data-v-22f7ab1c] {\r\n  margin: 0;\r\n  padding: 0;\r\n  max-height: 500px;\r\n  overflow-y: auto;\n}\n.modal-default-button[data-v-22f7ab1c] {\r\n  float: right;\n}\r\n\r\n/*\r\n * The following styles are auto-applied to elements with\r\n * transition=\"modal\" when their visibility is toggled\r\n * by Vue.js.\r\n *\r\n * You can easily play with the modal transition by editing\r\n * these styles.\r\n */\n.modal-enter[data-v-22f7ab1c] {\r\n  opacity: 0;\n}\n.modal-leave-active[data-v-22f7ab1c] {\r\n  opacity: 0;\n}\n.modal-enter .modal-container[data-v-22f7ab1c],\r\n.modal-leave-active .modal-container[data-v-22f7ab1c] {\r\n  -webkit-transform: scale(1.1);\r\n  transform: scale(1.1);\n}\n.modal-footer[data-v-22f7ab1c] {\r\n    justify-content: center;\r\n    padding: 0;\r\n    background: #061422;\r\n    border-top-color: #061422;\n}\n.emoji[data-v-22f7ab1c] {\r\n  font-size: 48px;\r\n  position: absolute;\r\n  animation-name: surfing-data-v-22f7ab1c;\r\n  animation-duration: 1s;\r\n  animation-timing-function: linear;\r\n  z-index: 9;\r\n  right: 0;\r\n  bottom: 0;\n}\n@keyframes surfing-data-v-22f7ab1c {\nfrom {  \r\n    transform: translateY(0px); opacity: 1;\n}\nto {\r\n    transform: translateY(-300px); opacity: 0;\n}\n}\r\n\r\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 82 */
+/* 112 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45575,420 +45605,292 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
-        segundosRestantes: {
-            type: Number,
-            default: 0
+        urlEnviar: {
+            type: String,
+            required: true
         },
-        ahora: {
-            type: String
+        urlEnviarEncuesta: {
+            type: String,
+            required: true
         },
-        urlEnviarPregunta: {
+        urlEncuestaDisponible: {
+            type: String,
+            required: true
+        },
+        urlEncuesta: {
+            type: String,
+            required: true
+        },
+        registrado: {
+            type: Object,
+            required: true
+        },
+        urlSitioPpal: {
+            type: String,
+            required: true
+        },
+        urlEnviarSalidaUsuario: {
+            type: String,
+            required: true
+        },
+        evento: {
+            type: Object,
+            required: true
+        },
+        urlEnviarMensajeChat: {
             type: String,
             required: true
         }
     },
     data: function data() {
         return {
-            alto: 100,
-            solapa: null,
-            seconds: this.segundosRestantes,
-            countdownTimer: null,
-            info: {},
-            errors: [],
-            audio: {
-                muted: false,
-                element: null,
-                estadoAlAbrirModal: null
-            },
+            videoSeleccionado: null,
             form: {
-                speaker: null,
-                pregunta: null,
-                enviando: false,
-                enviado: false
+                pregunta: null
             },
-            videosPracticas: ['https://player.vimeo.com/video/471194181', 'https://player.vimeo.com/video/471195135', 'https://player.vimeo.com/video/471196049', 'https://player.vimeo.com/video/471197183', 'https://player.vimeo.com/video/471198267', 'https://player.vimeo.com/video/471199470', 'https://player.vimeo.com/video/471200494', 'https://player.vimeo.com/video/471201435', 'https://player.vimeo.com/video/471202437', 'https://player.vimeo.com/video/471203575', 'https://player.vimeo.com/video/471204409']
+            chat: {
+                mensajes: [],
+                form: {
+                    mensaje: null,
+                    reaccion: false,
+                    emoticon: null
+                },
+                enviando: false
+            },
+            encuesta: {
+                preguntas: [{ key: 1, tit: 'El contenido del programa es relevante para mi consultorio', preg: '', tipo: 'C', key_respuesta: 1 }, { key: 2, tit: 'Los oradores y contenido son interesantes', preg: '', tipo: 'C', key_respuesta: 1 }, { key: 3, tit: 'Logística y experiencia del evento: calidad audiovisual y de la transmisión son buenas y sin interrupciones', preg: '', tipo: 'C', key_respuesta: 1 }, { key: 4, tit: 'Probablemente participaré en las ofertas visuales futuras de Abbott Nutrición', preg: '', tipo: 'C', key_respuesta: 1 }, { key: 5, tit: 'Probablemente recomendaré este webinario a mis colegas', preg: '', tipo: 'C', key_respuesta: 1 }, { key: 6, tit: '¿Qué temas son de mayor interés para usted relacionados con la nutrición?', preg: '', tipo: 'T' }, { key: 7, tit: '¿Cuál es el aprendizaje más importante en este programa que pudiera traducirse a su consultorio clínico?', preg: '', tipo: 'T' }, { key: 8, tit: '¿Alguna sugerencia para hacer este webinar más efectivo?', preg: '', tipo: 'T' }],
+                opciones: [{ key: 1,
+                    valores: ['Totalmente en desacuerdo', 'En desacuerdo', 'Ni en desacuerdo ni de acuerdo', 'De acuerdo', 'Totalmente de acuerdo']
+                }, { key: 2,
+                    valores: ['Igual que antes', 'Ligeramente más que antes', 'Moderadamente más que antes', 'Mucho más que antes', 'Significativamente más que antes']
+                }],
+                form: {
+                    resp_1: null,
+                    resp_2: null,
+                    resp_3: null,
+                    resp_4: null,
+                    resp_5: null,
+                    resp_6: null,
+                    resp_7: null,
+                    resp_8: null,
+                    resp_9: null,
+                    resp_10: null,
+                    resp_11: null,
+                    resp_12: null,
+                    resp_13: null,
+                    resp_14: null,
+                    resp_15: null,
+                    resp_16: null,
+                    resp_17: null,
+                    resp_18: null,
+                    resp_19: null,
+                    resp_20: null,
+                    resp_21: null
+                },
+                enviando: false,
+                errors: []
+            },
+            showModal: false,
+            enviando: false,
+            enviandoEncuesta: false,
+            enviandoMensajeChat: false
         };
     },
     mounted: function mounted() {
-        var imgFondoDesk = new Image();
-        this.alto = $(document).height();
 
-        //$('.navbar-nav-menu').style(this.alto);
-        imgFondoDesk.onload = function () {
-            setTimeout(function () {
-                $('body').addClass('animado');
-            }, 1);
-        };
-        imgFondoDesk.src = 'public/img/forosas/bg-blue.gif';
+        var vm = this;
+        var csrfToken = $('[name=csrf-token]').attr('content');
+        var isOnIOS = navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPhone/i);
+        var eventName = isOnIOS ? "pagehide" : "beforeunload";
+        var usarSendBeacon = "sendBeacon" in navigator;
+        var urlSalidaUsuario = vm.urlEnviarSalidaUsuario;
 
-        this.countdownTimer = setInterval(this.timer, 1000);
+        Pusher.logToConsole = true;
 
-        this.audio.element = document.getElementById("audio");
-
-        this.$nextTick(function () {
-            if (this.audio.element.paused) {
-                this.audio.element.play();
-                this.audio.element.muted = false;
-            }
-            this.audio.muted = this.audio.element.paused;
+        var pusher = new Pusher('7a03700500184fd155a4', {
+            cluster: 'us2'
         });
-        $("#modal-solapas").on("hidden.bs.modal", this.alCerrarModal);
-    },
 
-    methods: {
-        timer: function timer() {
+        var channel = pusher.subscribe('my-channel');
+        channel.bind('my-event', function (data) {
+            console.debug(data.message);
+            vm.chat.mensajes.push({
+                reaccion: data.message.reaccion
+            });
+        });
 
-            var days = Math.floor(this.seconds / 24 / 60 / 60);
-            var hoursLeft = Math.floor(this.seconds - days * 86400);
-            var hours = Math.floor(hoursLeft / 3600);
-            var minutesLeft = Math.floor(hoursLeft - hours * 3600);
-            var minutes = Math.floor(minutesLeft / 60);
-            var remainingSeconds = this.seconds % 60;
-            function pad(n) {
-                return n < 10 ? "0" + n : n;
-            }
-            var $count = $('#countdown');
-            $count.find('.days .num').html(days);
-            $count.find('.hours .num').html(hours);
-            $count.find('.minutes .num').html(minutes);
-            $count.find('.seconds .num').html(remainingSeconds);
-            //document.getElementById('countdown').innerHTML = pad(days) + ":" + pad(hours) + ":" + pad(minutes) + ":" + pad(remainingSeconds);
-            if (this.seconds == 0) {
-                clearInterval(this.countdownTimer);
+        window.addEventListener(eventName, function (e) {
+            var data = new FormData();
+            data.append('_token', csrfToken);
+
+            if (usarSendBeacon) {
+                navigator.sendBeacon(urlSalidaUsuario, data);
             } else {
-                this.seconds--;
+                var request = new XMLHttpRequest();
+
+                request.open('post', urlSalidaUsuario, false);
+                request.send(data);
+
+                if (request.status === 200) {
+                    console.debug('termino');
+                }
             }
-        },
-        mostrarSolapa: function mostrarSolapa(solapa) {
-            var vm = this;
-            this.solapa = solapa;
-            vm.audio.estadoAlAbrirModal = vm.audio.muted ? 'muted' : 'play';
-            this.$nextTick(function () {
-                $('#modal-solapas').modal('show');
-                if (solapa === 4 || solapa === 7 || solapa === 1) {
-                    if (!vm.audio.muted) {
-                        this.setearEstadoAudio('muted');
-                    }
+        }, false);
+
+        $(function () {
+            $(".like-btn").on({
+                mouseenter: function mouseenter() {
+                    $(".reaction-box").fadeIn(100, function () {
+                        $(".reaction-icon").each(function (i, e) {
+                            setTimeout(function () {
+                                $(e).addClass("show");
+                            }, i * 100);
+                        });
+                    });
+                },
+                mouseleave: function mouseleave() {
+                    setTimeout(function () {
+                        $(".reaction-box").fadeOut(300, function () {
+                            $(".reaction-icon").removeClass("show");
+                        });
+                    }, 500);
                 }
             });
-        },
-        cambiarEstadoAudio: function cambiarEstadoAudio() {
-            if (this.audio.muted) {
-                this.audio.element.play();
-            } else {
-                this.audio.element.pause();
-            }
+        });
+    },
 
-            this.$nextTick(function () {
-                this.audio.muted = this.audio.element.paused;
-            });
-        },
-        mostrarMenu: function mostrarMenu() {
-            $('.navbar-nav-menu').addClass('opened');
-        },
-        cerrarMenu: function cerrarMenu() {
-            $('.navbar-nav-menu').removeClass('opened');
-        },
-        alCerrarModal: function alCerrarModal() {
-            var url = $('#video-historia').attr('src');
-            $('#video-historia').attr('src', '');
-            $('#video-historia').attr('src', url);
-            if (this.audio.estadoAlAbrirModal !== 'muted') {
-                this.setearEstadoAudio('play');
-            }
 
-            this.form.enviado = false;
+    methods: {
+        verVideo: function verVideo(video) {
+            this.videoSeleccionado = video;
         },
 
         enviarPregunta: function enviarPregunta() {
             var vm = this;
-            if (!vm.form.pregunta || !vm.form.speaker) {
-                alert('Debe seleccionar al speaker e ingresar la pregunta');
-                return false;
-            }
-            if (vm.form.pregunta && vm.form.speaker && !vm.form.enviando) {
-                vm.form.enviando = true;
-                vm.form.enviado = false;
-                axios.post(vm.urlEnviarPregunta, vm.form).then(function (response) {
-                    vm.form.enviando = false;
-                    vm.form.enviado = true;
+            if (vm.form.pregunta && !vm.enviando) {
+                vm.enviando = true;
+                axios.post(vm.urlEnviar, vm.form).then(function (response) {
+                    vm.enviando = false;
                     vm.form.pregunta = null;
-                    vm.form.speaker = null;
                 }, function (error) {
-                    vm.form.enviando = false;
-
+                    vm.enviando = false;
                     alert(error.message);
                 });
             }
         },
+        enviarMensajeChat: function enviarMensajeChat() {
+            var vm = this;
+            if (vm.chat.form.mensaje && !vm.chat.enviando) {
+                vm.chat.enviando = true;
+                axios.post(vm.urlEnviarMensajeChat, vm.chat.form).then(function (response) {
+                    vm.chat.enviando = false;
+                    vm.chat.form.mensaje = null;
+                }, function (error) {
+                    vm.chat.enviando = false;
+                    alert(error.message);
+                });
+            }
+        },
+        enviarReaccion: function enviarReaccion(reaccion) {
+            var vm = this;
+            var msj = _.assign({
+                mensaje: 'a',
+                reaccion: reaccion,
+                emoticon: null
+            });
 
-        setearEstadoAudio: function setearEstadoAudio(estado) {
-            if (estado === 'muted') {
-                this.audio.element.pause();
-            } else {
-                this.audio.element.play();
+            if (!vm.chat.enviando) {
+                axios.post(vm.urlEnviarMensajeChat, msj).then(function (response) {
+                    vm.chat.enviando = false;
+                    // vm.chat.form.mensaje = null;
+                }, function (error) {
+                    vm.chat.enviando = false;
+                    //alert(error.message);
+                });
+            }
+        },
+        encuestaDisponible: function encuestaDisponible() {
+            var vm = this;
+            if (!vm.enviandoEncuesta) {
+                vm.enviandoEncuesta = true;
+                axios.get(vm.urlEncuestaDisponible).then(function (response) {
+                    vm.enviandoEncuesta = false;
+                    //document.location = vm.urlEncuesta;
+                    vm.mostrarModal(true);
+                }, function (error) {
+                    vm.enviandoEncuesta = false;
+                    alert('La encuesta no se encuentra disponible por el momento.');
+                });
+            }
+        },
+        enviarEncuesta: function enviarEncuesta() {
+            var vm = this;
+
+            if (!vm.encuesta.form.resp_1 || !vm.encuesta.form.resp_2 || !vm.encuesta.form.resp_3 || !vm.encuesta.form.resp_4 || !vm.encuesta.form.resp_5 || !vm.encuesta.form.resp_6 || !vm.encuesta.form.resp_7 || !vm.encuesta.form.resp_8) {
+                alert('Debe responder todas las preguntas');
+                return false;
             }
 
-            this.$nextTick(function () {
-                this.audio.muted = this.audio.element.paused;
-            });
+            if (!vm.encuesta.enviando) {
+                vm.encuesta.enviando = true;
+                axios.post(vm.urlEnviarEncuesta, vm.encuesta.form).then(function (response) {
+                    vm.encuesta.enviando = false;
+                    vm.encuesta.form = {
+                        resp_1: null,
+                        resp_2: null,
+                        resp_3: null,
+                        resp_4: null,
+                        resp_5: null,
+                        resp_6: null,
+                        resp_7: null,
+                        resp_8: null
+                    };
+                    alert('Gracias por responder la encuesta');
+                    vm.mostrarModal(false);
+                    // vm.form.pregunta = null;
+                }, function (error) {
+                    vm.encuesta.enviando = false;
+                    alert('Gracias por responder la encuesta');
+                    vm.mostrarModal(false);
+                    //alert(error.message);
+                });
+            }
         },
-        ingresarAEvento: function ingresarAEvento() {
-            document.location = 'https://event.on24.com/wcc/r/2632769/787C82066C458E0F4A85C67FFDAD910D';
+        mostrarModal: function mostrarModal(valor) {
+            this.showModal = valor;
+        },
+        certificadoDisponible: function certificadoDisponible() {
+            var vm = this;
+            if (!vm.enviandoEncuesta) {
+                vm.enviandoEncuesta = true;
+                axios.get(vm.urlEncuestaDisponible).then(function (response) {
+                    vm.enviandoEncuesta = false;
+                    document.location = vm.evento.urlCertificado.replace('_ID_', vm.registrado.id_externo).replace('_TOKEN_', vm.registrado.token);
+                    //vm.mostrarModal(true);
+                }, function (error) {
+                    vm.enviandoEncuesta = false;
+                    alert('El certificado no se encuentra disponible por el momento.');
+                });
+            }
+        },
+        enviarSalidaUsuario: function enviarSalidaUsuario() {
+            var vm = this;
+            return axios.post(vm.urlEnviarSalidaUsuario, {});
+        },
+        obtenerOpcionesPorKey: function obtenerOpcionesPorKey(key) {
+            var vm = this;
+            var opciones = _.find(vm.encuesta.opciones, { key: key });
+            return opciones.valores;
         }
     }
 });
 
 /***/ }),
-/* 83 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -45996,614 +45898,612 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("section", [
-      _c(
-        "div",
-        {
-          staticClass: "modal",
-          attrs: {
-            id: "modal-solapas",
-            tabindex: "-1",
-            role: "dialog",
-            "aria-labelledby": "exampleModalCenterTitle",
-            "aria-hidden": "true"
+    _c("div", { staticClass: "row content-title" }, [
+      _c("div", { staticClass: "col-md-12 text-center" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            attrs: { type: "button" },
+            on: {
+              click: function($event) {
+                return _vm.verVideo("ingles")
+              }
+            }
+          },
+          [_vm._v("Audio Original Inglés")]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            attrs: { type: "button" },
+            on: {
+              click: function($event) {
+                return _vm.verVideo("esp")
+              }
+            }
+          },
+          [_vm._v("Audio Español")]
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.videoSeleccionado,
+            expression: "videoSeleccionado"
           }
-        },
-        [
-          _c(
-            "div",
-            { staticClass: "modal-dialog", attrs: { role: "document" } },
-            [
-              _c("div", { staticClass: "modal-content" }, [
-                _vm._m(0),
-                _vm._v(" "),
-                _vm.solapa === 1
-                  ? _c("div", { staticClass: "modal-body" }, [
-                      _c("h2", { staticClass: "text-uppercase" }, [
-                        _vm._v("Día Nacional")
-                      ]),
-                      _vm._v(" "),
-                      _vm._m(1),
-                      _vm._v(" "),
-                      _c("h2", { staticClass: "text-uppercase" }, [
-                        _vm._v("Día Internacional")
-                      ]),
-                      _vm._v(" "),
-                      _vm._m(2)
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.solapa === 2
-                  ? _c("div", { staticClass: "modal-body" }, [
-                      _c("h2", [_vm._v("SPEAKERS NACIONALES")]),
-                      _vm._v(" "),
-                      _vm._m(3),
-                      _vm._v(" "),
-                      _c("h2", [_vm._v("SPEAKERS INTERNACIONALES")]),
-                      _vm._v(" "),
-                      _vm._m(4)
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.solapa === 3
-                  ? _c("div", { staticClass: "modal-body" }, [
-                      _c("h2", [_vm._v("CONDUCCIÓN")]),
-                      _vm._v(" "),
-                      _vm._m(5),
-                      _vm._v(" "),
-                      _vm._m(6)
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.solapa === 4
-                  ? _c("div", { staticClass: "modal-body" }, [
-                      _c("h2", [
-                        _vm._v("HISTORIA DEL FORO DE SALUD SUSTENTABLE (SaS)")
-                      ]),
-                      _vm._v(" "),
-                      _vm._m(7)
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.solapa === 5
-                  ? _c("div", { staticClass: "modal-body" }, [
-                      _c("h2", [_vm._v("PREGUNTAS A SPEAKERS")]),
-                      _vm._v(" "),
-                      _vm._m(8),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "row" }, [
-                        _c(
-                          "div",
-                          { staticClass: "col-sm-8 col-md-8 mx-auto" },
-                          [
-                            _c("div", { staticClass: "form-group" }, [
-                              _c("label", { attrs: { for: "speaker" } }, [
-                                _vm._v("Speaker")
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "select",
-                                {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.form.speaker,
-                                      expression: "form.speaker"
-                                    }
-                                  ],
-                                  staticClass: "form-control",
-                                  attrs: { id: "speaker", name: "speaker" },
-                                  on: {
-                                    change: function($event) {
-                                      var $$selectedVal = Array.prototype.filter
-                                        .call($event.target.options, function(
-                                          o
-                                        ) {
-                                          return o.selected
-                                        })
-                                        .map(function(o) {
-                                          var val =
-                                            "_value" in o ? o._value : o.value
-                                          return val
-                                        })
-                                      _vm.$set(
-                                        _vm.form,
-                                        "speaker",
-                                        $event.target.multiple
-                                          ? $$selectedVal
-                                          : $$selectedVal[0]
-                                      )
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("option", { domProps: { value: null } }, [
-                                    _vm._v("Seleccione")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "Dr. Flavio Devoto" } },
-                                    [_vm._v("Dr. Flavio Devoto")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    {
-                                      attrs: {
-                                        value: "Dr. Gabriel Lebersztein"
-                                      }
-                                    },
-                                    [_vm._v("Dr. Gabriel Lebersztein")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    {
-                                      attrs: {
-                                        value: "Luciana Escati Peñaloza"
-                                      }
-                                    },
-                                    [_vm._v("Luciana Escati Peñaloza")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "Dr. Fernán Quirós" } },
-                                    [_vm._v("Dr. Fernán Quirós")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "Vicente Ortún Rubio" } },
-                                    [_vm._v("Vicente Ortún Rubio")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "André Medici" } },
-                                    [_vm._v("André Medici")]
-                                  )
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "form-group" }, [
-                              _c("label", { attrs: { for: "pregunta" } }, [
-                                _vm._v("Pregunta")
-                              ]),
-                              _vm._v(" "),
-                              _c("textarea", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.form.pregunta,
-                                    expression: "form.pregunta"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                attrs: {
-                                  id: "pregunta",
-                                  name: "pregunta",
-                                  placeholder: "Escriba su pregunta aquí"
-                                },
-                                domProps: { value: _vm.form.pregunta },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
-                                    }
-                                    _vm.$set(
-                                      _vm.form,
-                                      "pregunta",
-                                      $event.target.value
-                                    )
-                                  }
-                                }
-                              })
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "form-group text-center" },
-                              [
-                                _c(
-                                  "button",
-                                  {
-                                    staticClass:
-                                      "btn btn-primary btn-enviar-pregunta",
-                                    attrs: { type: "button" },
-                                    on: {
-                                      click: function($event) {
-                                        return _vm.enviarPregunta()
-                                      }
-                                    }
-                                  },
-                                  [
-                                    !_vm.form.enviando
-                                      ? _c("span", [_vm._v("ENVIAR")])
-                                      : _c("span", [_vm._v("ENVIANDO...")])
-                                  ]
-                                )
-                              ]
-                            )
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _vm.form.enviado
-                        ? _c("div", { staticClass: "row" }, [_vm._m(9)])
-                        : _vm._e()
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.solapa === 6
-                  ? _c("div", { staticClass: "modal-body" }, [
-                      _vm._m(10),
-                      _vm._v(" "),
-                      _vm._m(11),
-                      _vm._v(" "),
-                      _vm._m(12),
-                      _vm._v(" "),
-                      _vm._m(13)
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.solapa === 7
-                  ? _c("div", { staticClass: "modal-body" }, [
-                      _c("h2", [
-                        _vm._v("Buenas Prácticas de Salud Sustentable")
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "row" },
-                        _vm._l(_vm.videosPracticas, function(item, key) {
-                          return _c(
-                            "div",
-                            { key: key, staticClass: "col-12" },
-                            [
-                              _c("div", { staticClass: "embed-container" }, [
-                                _c("iframe", {
-                                  staticStyle: {
-                                    position: "absolute",
-                                    top: "0",
-                                    left: "0",
-                                    width: "100%",
-                                    height: "100%"
-                                  },
-                                  attrs: {
-                                    id: "video-historia",
-                                    src: item,
-                                    frameborder: "0",
-                                    allow: "autoplay; fullscreen",
-                                    allowfullscreen: ""
-                                  }
-                                })
-                              ])
-                            ]
-                          )
-                        }),
-                        0
-                      )
-                    ])
-                  : _vm._e()
-              ])
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "nav",
-        { staticClass: "navbar navbar-expand-lg navbar-dark menu-mobile px-0" },
-        [
+        ],
+        staticClass: "row content-encuesta"
+      },
+      [
+        _c("div", { staticClass: "col-sm-12 text-center" }, [
           _c(
             "button",
             {
-              staticClass: "navbar-toggler",
+              staticClass: "btn btn-primary",
               attrs: { type: "button" },
               on: {
                 click: function($event) {
-                  return _vm.mostrarMenu()
+                  return _vm.encuestaDisponible()
                 }
               }
             },
-            [
-              _c("img", {
-                staticStyle: { "max-width": "25px" },
-                attrs: { src: "img/forosas/bars-solid.png", width: "25px" }
-              })
-            ]
-          ),
+            [_c("span", [_vm._v("Encuesta")])]
+          )
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "row content-vimeo" }, [
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.videoSeleccionado,
+              expression: "videoSeleccionado"
+            }
+          ],
+          staticClass: "col-md-12"
+        },
+        [
+          _vm._m(0),
           _vm._v(" "),
           _c(
             "div",
-            {
-              staticClass: "navbar-collapse hidden",
-              attrs: { id: "navbarNav" }
-            },
+            { staticClass: "contenedor_vimeo" },
             [
-              _c(
-                "ul",
-                {
-                  staticClass: "navbar-nav navbar-nav-menu px-3 py-2",
-                  style: { height: _vm.alto + "px" }
-                },
-                [
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c("img", {
-                      staticStyle: { "max-width": "150px" },
-                      attrs: { src: "img/forosas/logo.png" }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "close btn-close-menu",
-                        attrs: { type: "button", "aria-label": "Close" },
-                        on: {
-                          click: function($event) {
-                            return _vm.cerrarMenu()
-                          }
-                        }
-                      },
-                      [
-                        _c("span", { attrs: { "aria-hidden": "true" } }, [
-                          _vm._v("×")
-                        ])
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item py-3" }),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { href: "javascript:void(0);" },
-                        on: {
-                          click: function($event) {
-                            return _vm.mostrarSolapa(3)
-                          }
-                        }
-                      },
-                      [_vm._v("Conducción")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { href: "javascript:void(0);" },
-                        on: {
-                          click: function($event) {
-                            return _vm.mostrarSolapa(2)
-                          }
-                        }
-                      },
-                      [_vm._v("Speakers nacionales & internacionales")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { href: "javascript:void(0);" },
-                        on: {
-                          click: function($event) {
-                            return _vm.mostrarSolapa(5)
-                          }
-                        }
-                      },
-                      [_vm._v("Preguntas a Speakers")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { href: "javascript:void(0);" },
-                        on: {
-                          click: function($event) {
-                            return _vm.mostrarSolapa(4)
-                          }
-                        }
-                      },
-                      [_vm._v("Historia")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { href: "javascript:void(0);" },
-                        on: {
-                          click: function($event) {
-                            return _vm.mostrarSolapa(6)
-                          }
-                        }
-                      },
-                      [_vm._v("Agenda")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { href: "javascript:void(0);" },
-                        on: {
-                          click: function($event) {
-                            return _vm.mostrarSolapa(7)
-                          }
-                        }
-                      },
-                      [_vm._v("Buenas Prácticas de Salud Sustentable")]
-                    )
-                  ])
-                ]
-              )
-            ]
+              _vm._l(_vm.chat.mensajes, function(item, key) {
+                return _c("div", {
+                  key: key,
+                  class: ["reaction-icon", item.reaccion, "float-up"]
+                })
+              }),
+              _vm._v(" "),
+              _vm.videoSeleccionado === "ingles"
+                ? _c("iframe", {
+                    staticStyle: {
+                      position: "absolute",
+                      top: "0",
+                      left: "0",
+                      width: "100%",
+                      height: "100%"
+                    },
+                    attrs: {
+                      src: "https://player.vimeo.com/video/475459063",
+                      frameborder: "0",
+                      allow: "autoplay; fullscreen",
+                      allowfullscreen: ""
+                    }
+                  })
+                : _c("iframe", {
+                    staticStyle: {
+                      position: "absolute",
+                      top: "0",
+                      left: "0",
+                      width: "100%",
+                      height: "100%"
+                    },
+                    attrs: {
+                      src: "https://player.vimeo.com/video/475458120",
+                      frameborder: "0",
+                      allow: "autoplay; fullscreen",
+                      allowfullscreen: ""
+                    }
+                  }),
+              _vm._v(" "),
+              _c("div", { staticClass: "reaction-box" }, [
+                _c("div", {
+                  staticClass: "reaction-icon like",
+                  on: {
+                    click: function($event) {
+                      return _vm.enviarReaccion("like")
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", {
+                  staticClass: "reaction-icon love",
+                  on: {
+                    click: function($event) {
+                      return _vm.enviarReaccion("love")
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", {
+                  staticClass: "reaction-icon haha",
+                  on: {
+                    click: function($event) {
+                      return _vm.enviarReaccion("haha")
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", {
+                  staticClass: "reaction-icon wow",
+                  on: {
+                    click: function($event) {
+                      return _vm.enviarReaccion("wow")
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", {
+                  staticClass: "reaction-icon sad",
+                  on: {
+                    click: function($event) {
+                      return _vm.enviarReaccion("sad")
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", {
+                  staticClass: "reaction-icon angry",
+                  on: {
+                    click: function($event) {
+                      return _vm.enviarReaccion("angry")
+                    }
+                  }
+                })
+              ])
+            ],
+            2
           )
         ]
       ),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "container" },
-        [
-          _vm._l(200, function(index) {
-            return _c("div", { key: index, staticClass: "circle-container" }, [
-              _c("div", { staticClass: "circle" })
-            ])
-          }),
-          _vm._v(" "),
-          _c(
-            "div",
+        {
+          directives: [
             {
-              staticClass: "solapa fondo solapa1",
-              on: {
-                click: function($event) {
-                  return _vm.mostrarSolapa(1)
-                }
-              }
-            },
-            [_c("p", [_vm._v("Reviví el 7° Foro")])]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "solapa fondo solapa2",
-              on: {
-                click: function($event) {
-                  return _vm.mostrarSolapa(2)
-                }
-              }
-            },
-            [_c("p", [_vm._v("Speakers nacionales & internacionales")])]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "solapa fondo solapa3",
-              on: {
-                click: function($event) {
-                  return _vm.mostrarSolapa(3)
-                }
-              }
-            },
-            [_c("p", [_vm._v("Conducción")])]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "solapa fondo solapa2 solapa4",
-              on: {
-                click: function($event) {
-                  return _vm.mostrarSolapa(4)
-                }
-              }
-            },
-            [_c("p", [_vm._v("Historia")])]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "solapa fondo solapa5",
-              on: {
-                click: function($event) {
-                  return _vm.mostrarSolapa(5)
-                }
-              }
-            },
-            [_c("p", [_vm._v("Preguntas a Speakers")])]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "solapa fondo solapa6",
-              on: {
-                click: function($event) {
-                  return _vm.mostrarSolapa(6)
-                }
-              }
-            },
-            [_c("p", [_vm._v("Agenda")])]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "solapa fondo solapa2 solapa7",
-              on: {
-                click: function($event) {
-                  return _vm.mostrarSolapa(7)
-                }
-              }
-            },
-            [_c("p", [_vm._v("Buenas Prácticas de Salud Sustentable")])]
-          ),
-          _vm._v(" "),
-          _vm._m(14),
-          _vm._v(" "),
-          _c("div", { staticClass: "content-date" }, [
-            _c("img", {
-              staticStyle: { width: "100%" },
-              attrs: { src: "img/forosas/date2.png" }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "control-audio" }, [
-              _c("img", {
-                attrs: { src: "img/forosas/logo_ABBVIE.png", width: "140" }
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
+              name: "show",
+              rawName: "v-show",
+              value: !_vm.videoSeleccionado,
+              expression: "!videoSeleccionado"
+            }
+          ],
+          staticClass: "col-md-12"
+        },
+        [_vm._m(1)]
+      )
+    ]),
+    _vm._v(" "),
+    _vm.videoSeleccionado
+      ? _c("div", { staticClass: "row content-vimeo-chat" }, [
+          _c("div", { staticClass: "col-sm-9 form-container" }, [
+            _c("input", {
+              directives: [
                 {
-                  staticClass: "btn",
-                  on: {
-                    click: function($event) {
-                      return _vm.cambiarEstadoAudio()
-                    }
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.pregunta,
+                  expression: "form.pregunta"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                id: "pregunta",
+                name: "pregunta",
+                placeholder: "Escriba su pregunta aquí"
+              },
+              domProps: { value: _vm.form.pregunta },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
                   }
-                },
-                [
-                  _vm.audio.muted
-                    ? _c("img", {
-                        attrs: { src: "img/forosas/volume-mute-solid.png" }
-                      })
-                    : _c("img", {
-                        attrs: { src: "img/forosas/volume-up-solid.png" }
-                      })
-                ]
-              )
-            ])
+                  _vm.$set(_vm.form, "pregunta", $event.target.value)
+                }
+              }
+            })
           ]),
           _vm._v(" "),
-          _vm._m(15)
-        ],
-        2
-      )
-    ])
+          _c("div", { staticClass: "col-sm-3 text-center" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                attrs: { type: "button", disabled: !_vm.form.pregunta },
+                on: {
+                  click: function($event) {
+                    return _vm.enviarPregunta()
+                  }
+                }
+              },
+              [
+                _vm.enviando
+                  ? _c("i", { staticClass: "fa fa-spinner fa-spin fa-fw" })
+                  : _vm._e(),
+                _vm._v(" "),
+                !_vm.enviando ? _c("span", [_vm._v("ENVIAR")]) : _vm._e()
+              ]
+            )
+          ])
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.videoSeleccionado
+      ? _c("div", { staticClass: "row content-vimeo-chat" }, [
+          _c("div", { staticClass: "col-sm-9 form-container" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.chat.form.mensaje,
+                  expression: "chat.form.mensaje"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                id: "pregunta",
+                name: "pregunta",
+                placeholder: "Escriba su chat aquí"
+              },
+              domProps: { value: _vm.chat.form.mensaje },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.chat.form, "mensaje", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-3 text-center" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                attrs: { type: "button", disabled: !_vm.chat.form.mensaje },
+                on: {
+                  click: function($event) {
+                    return _vm.enviarMensajeChat()
+                  }
+                }
+              },
+              [
+                _vm.chat.enviando
+                  ? _c("i", { staticClass: "fa fa-spinner fa-spin fa-fw" })
+                  : _vm._e(),
+                _vm._v(" "),
+                !_vm.chat.enviando ? _c("span", [_vm._v("ENVIAR")]) : _vm._e()
+              ]
+            )
+          ])
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _c("i", {
+      staticClass: "fa fa-spinner fa-spin fa-fw",
+      staticStyle: { opacity: "0" }
+    }),
+    _vm._v(" "),
+    _vm.showModal
+      ? _c(
+          "div",
+          [
+            _c("transition", { attrs: { name: "modal" } }, [
+              _c("div", { staticClass: "modal-mask" }, [
+                _c("div", { staticClass: "modal-wrapper" }, [
+                  _c("div", { staticClass: "modal-container" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "modal-header",
+                        staticStyle: { color: "#fff", padding: "0px 0px 10px" }
+                      },
+                      [
+                        _vm._t("header", [
+                          _vm._v(
+                            "\n                        Encuesta de satisfacción\n                        "
+                          )
+                        ])
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "modal-body" }, [
+                      _c(
+                        "div",
+                        { staticClass: "container-encuesta" },
+                        [
+                          _vm._l(_vm.encuesta.preguntas, function(item, index) {
+                            return _c(
+                              "div",
+                              { key: index, staticClass: "row" },
+                              [
+                                _c("div", { staticClass: "col-12" }, [
+                                  _c("h5", [
+                                    _vm._v(
+                                      _vm._s(item.key) + ") " + _vm._s(item.tit)
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("p", [_vm._v(_vm._s(item.preg))])
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-12" },
+                                  [
+                                    item.tipo === "C"
+                                      ? [
+                                          _vm._l(
+                                            _vm.obtenerOpcionesPorKey(
+                                              item.key_respuesta
+                                            ),
+                                            function(subitem, indexOpt) {
+                                              return [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    key: "opt_" + indexOpt,
+                                                    staticClass:
+                                                      "form-check-inline"
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "label",
+                                                      {
+                                                        staticClass:
+                                                          "form-check-label"
+                                                      },
+                                                      [
+                                                        _c("input", {
+                                                          directives: [
+                                                            {
+                                                              name: "model",
+                                                              rawName:
+                                                                "v-model",
+                                                              value:
+                                                                _vm.encuesta
+                                                                  .form[
+                                                                  "resp_" +
+                                                                    item.key
+                                                                ],
+                                                              expression:
+                                                                "encuesta.form['resp_' + item.key]"
+                                                            }
+                                                          ],
+                                                          staticClass:
+                                                            "form-check-input",
+                                                          attrs: {
+                                                            type: "radio",
+                                                            name:
+                                                              "p_" +
+                                                              item.key +
+                                                              "_r_" +
+                                                              indexOpt
+                                                          },
+                                                          domProps: {
+                                                            value: subitem,
+                                                            checked: _vm._q(
+                                                              _vm.encuesta.form[
+                                                                "resp_" +
+                                                                  item.key
+                                                              ],
+                                                              subitem
+                                                            )
+                                                          },
+                                                          on: {
+                                                            change: function(
+                                                              $event
+                                                            ) {
+                                                              return _vm.$set(
+                                                                _vm.encuesta
+                                                                  .form,
+                                                                "resp_" +
+                                                                  item.key,
+                                                                subitem
+                                                              )
+                                                            }
+                                                          }
+                                                        }),
+                                                        _vm._v(
+                                                          " " +
+                                                            _vm._s(subitem) +
+                                                            "\n                                            "
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c("br", { key: indexOpt })
+                                              ]
+                                            }
+                                          )
+                                        ]
+                                      : [
+                                          _c("textarea", {
+                                            directives: [
+                                              {
+                                                name: "model",
+                                                rawName: "v-model",
+                                                value:
+                                                  _vm.encuesta.form[
+                                                    "resp_" + item.key
+                                                  ],
+                                                expression:
+                                                  "encuesta.form['resp_' + item.key]"
+                                              }
+                                            ],
+                                            staticClass: "form-control",
+                                            attrs: { name: "p_" + item.key },
+                                            domProps: {
+                                              value:
+                                                _vm.encuesta.form[
+                                                  "resp_" + item.key
+                                                ]
+                                            },
+                                            on: {
+                                              input: function($event) {
+                                                if ($event.target.composing) {
+                                                  return
+                                                }
+                                                _vm.$set(
+                                                  _vm.encuesta.form,
+                                                  "resp_" + item.key,
+                                                  $event.target.value
+                                                )
+                                              }
+                                            }
+                                          })
+                                        ]
+                                  ],
+                                  2
+                                )
+                              ]
+                            )
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "text-right" }),
+                          _vm._v(" "),
+                          _c("i", {
+                            staticClass: "fa fa-spinner fa-spin fa-fw",
+                            staticStyle: { opacity: "0" }
+                          })
+                        ],
+                        2
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "modal-footer" },
+                      [
+                        _vm._t("footer", [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-primary",
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.enviarEncuesta()
+                                }
+                              }
+                            },
+                            [
+                              _vm.encuesta.enviando
+                                ? _c("i", {
+                                    staticClass: "fa fa-spinner fa-spin fa-fw"
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _c("span", [
+                                _vm._v(
+                                  " " +
+                                    _vm._s(
+                                      _vm.encuesta.enviando
+                                        ? "Enviando"
+                                        : "Enviar"
+                                    ) +
+                                    " "
+                                )
+                              ])
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-primary",
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.mostrarModal(false)
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                            Cerrar\n                        "
+                              )
+                            ]
+                          )
+                        ])
+                      ],
+                      2
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ],
+          1
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.videoSeleccionado
+      ? _c("div", { staticClass: "row content-certificado" }, [
+          _c("div", { staticClass: "col-12 text-center" }, [
+            _vm.registrado && _vm.registrado.certificado
+              ? _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary",
+                    attrs: { type: "button" },
+                    on: {
+                      click: function($event) {
+                        return _vm.certificadoDisponible()
+                      }
+                    }
+                  },
+                  [_c("span", [_vm._v("Certificado")])]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "btn btn-primary",
+                attrs: { href: _vm.urlSitioPpal }
+              },
+              [_c("span", [_vm._v("Volver")])]
+            )
+          ])
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm._m(2)
   ])
 }
 var staticRenderFns = [
@@ -46611,1353 +46511,81 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-header" }, [
-      _c(
-        "button",
-        {
-          staticClass: "close",
-          attrs: {
-            type: "button",
-            "data-dismiss": "modal",
-            "aria-label": "Close"
-          }
-        },
-        [_c("img", { attrs: { src: "img/forosas/modal-cerrar.png" } })]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "embed-container" }, [
-          _c("iframe", {
-            staticStyle: {
-              position: "absolute",
-              top: "0",
-              left: "0",
-              width: "100%",
-              height: "100%"
-            },
-            attrs: {
-              src: "https://player.vimeo.com/video/473988487",
-              frameborder: "0",
-              allow: "autoplay; fullscreen",
-              allowfullscreen: ""
-            }
-          })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "embed-container" }, [
-          _c("iframe", {
-            staticStyle: {
-              position: "absolute",
-              top: "0",
-              left: "0",
-              width: "100%",
-              height: "100%"
-            },
-            attrs: {
-              src: "https://player.vimeo.com/video/474026333",
-              frameborder: "0",
-              allow: "autoplay; fullscreen",
-              allowfullscreen: ""
-            }
-          })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12 con-padding" }, [
-        _c("img", { attrs: { src: "img/forosas/speaker-flavio.png" } })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-12 con-padding" }, [
-        _c("p", [_vm._v("Gerente General de AbbVie Región Sur desde 2015.")]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Médico graduado en la Universidad de Buenos Aires especialista en Farmacología Clínica."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [_vm._v("Master en Administración de Empresas en IDEA.")]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Realizó estudios de postgrado en IAE Business School de Universidad Austral y en la escuela de negocios de Harvard."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "En abril 2019 fue reelecto como presidente de la Cámara Argentina de Especialidades Medicinales (CAEME)."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Previamente a su rol en AbbVie, Flavio Devoto se ha desempeñado durante 8 años como gerente general de Novo Nordisk, y cuenta con más de 20 años de trayectoria en la industria farmacéutica."
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-12 con-padding" }, [
-        _c("img", { attrs: { src: "img/forosas/speaker-gabriel.png" } })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-12 con-padding" }, [
-        _c("p", [
-          _vm._v(
-            "Gerente Médico de la Obra Social de los Empleados de Comercio y Actividades Civiles."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Master en Gestión de Calidad de Servicios Socio Sanitarios de la Universidad de Murcia."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Presidente del Instituto de Investigación Sanitaria de la Seguridad Social."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Miembro de CETSA, Centro de evaluación de tecnologías sanitarias de la Universidad ISALUD."
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-12 con-padding" }, [
-        _c("img", { attrs: { src: "img/forosas/speaker-luciana.png" } })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-12 con-padding" }, [
-        _c("p", [
-          _vm._v(
-            "Presidenta y fundadora de Fundación Más Vida (FMV) de Crohn & Colitis Ulcerosa (FMV)"
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Miembro fundador de la Federación Argentina de Enfermedades Poco Frecuentes (FADEPOF) organización en la que actualmente ocupa la Dirección Ejecutiva y de la que fue Presidente (2014/ 2016) y Secretaria de Comisión Directiva (2012/ 2014)."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Ha sido asesora y posteriormente planta de gabinete de la Presidencia de la Comisión para la Plena Participación e Inclusión de las Personas con Discapacidad (COPIDIS) del Gobierno de CABA."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "A través de las instituciones que lidera, es miembro de la Federación Europea de Asociaciones de Crohn y Colitis (EFCCA), la Alianza Internacional de Organizaciones de Pacientes (IAPO), la Alianza Iberoamericana de Enfermedades Raras (ALIBER) y Rare Diseases International (RDI)."
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-12 con-padding" }, [
-        _c("img", { attrs: { src: "img/forosas/speaker-fernan.png" } })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-12 con-padding" }, [
-        _c("p", [
-          _vm._v(
-            "A cargo del Ministerio de Salud de la Ciudad de Buenos Aires desde el 10 de diciembre de 2019."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Médico graduado con diploma de honor en la Universidad de Buenos Aires, especialista en medicina interna."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Máster en Gobierno y Dirección de Sistemas de Salud de la Universidad Abierta de Cataluña."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Se desempeñó como Vicedirector Médico de Planeamiento Estratégico del Hospital Italiano y como profesor titular y jefe del departamento de Fisiología Humana del Instituto Universitario de ese hospital."
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12 con-padding" }, [
-        _c("img", { attrs: { src: "img/forosas/speaker-vicente.png" } })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-12 con-padding" }, [
-        _c("p", [
-          _vm._v(
-            "Catedrático emérito y ex-decano de la Facultad de Ciencias Económicas y Empresariales de la Universidad Pompeu Fabra de Barcelona (UPF)."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Fundador e investigador principal del Centro de Investigación en Economía y Salud (CRES-UPF)."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Miembro del Consejo Rector del Parque de Salud Mar, y delegado de la UPF en TecnoCampus (Empresa, Ingeniería y Salud)."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [_vm._v("MBA ESADE, Master of Science de Purdue University.")]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Licenciado y Doctor en Economía por la Universitat de Barcelona. Estudios de doctorado en Salud Pública en la Universidad Johns Hopkins y Visiting Scholar en el Departamento de Economía del Massachusetts Institute of Technology (MIT)."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Ex presidente de la Sociedad Española de Salud Pública y Administración Sanitaria (SESPAS), ex presidente de la Asociación de Economía de la Salud (AES), ex secretario de la Asociación Europea de Salud Pública (EUPHA) y miembro meritorio de CAMFiC."
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-12 con-padding" }, [
-        _c("img", { attrs: { src: "img/forosas/speaker-andre.png" } })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-12 con-padding" }, [
-        _c("p", [
-          _vm._v(
-            "Fue hasta hace unos meses Economista Senior en Salud del Banco Mundial (Washington DC)."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Participó del movimiento de construcción del Sistema Único de Salud de Brasil."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Actuó como consultor en organismos multilaterales (BID y luego Banco Mundial)."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Cuenta con más de diez libros y 200 trabajos publicados en diversos idiomas y campos del conocimiento."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Graduado en Administración en la fundación Getulio Vargas (FGV), con maestría en economía en la Universidad Estadual de Campinas (UNICAMP)."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Doctorado en Historia Económica en la Universidad de San Pablo (USP) y cursos de especialización en Seguridad Social en la Universidad Harvard (USA)."
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12 con-padding" }, [
-        _c("img", { attrs: { src: "img/forosas/plager.png" } })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-12 con-padding" }, [
-        _c("p", [_vm._v("Es una periodista y conductora Argentina")]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Actualmente, forma parte de los programas Involucrados e Intratables, por América TV."
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12 con-padding" }, [
-        _c("img", { attrs: { src: "img/forosas/longobardi.png" } })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-12 con-padding" }, [
-        _c("p", [
-          _vm._v(
-            "En el año 1984 fundó la revista Apertura junto a su socio Gabriel Griffa vendiendo su participación 10 años más tarde."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Condujo importantes programas radiales en emisoras como FM del Plata, Radio Feeling, Radio América."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "En televisión condujo varios programas de noticias, “Fuego Cruzado”, “Punto Límite”, “Longobardi en vivo”, entre otros."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Actualmente conduce el programa “Cada mañana”, en Radio Mitre, de lunes a viernes de 6 a 10 horas, siendo el programa de mayor audiencia radial nacional desde el año 2001."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Desde junio del año 2013, se encuentra en la web el nuevo sitio de opinión www.marcelolongobardi.com."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Se destacó en importantes entrevistas especiales realizadas a políticos internacionales como Berlusconi, Aznar, Felipe González, entre otros destacados."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "En el año 2019 el programa que conduce en CNN fue reconocido con el premio PRODU Awards 2019 en la categoría “Mejor programa informativo”"
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            'En el año 2020 fue nominado a los Premios Emmy. Competirá en el rubro "Reportaje sobresaliente en español" por una entrevista que hizo para su ciclo de televisión que se emite por CNN, “En diálogo con Longobardi”. Este importante premio es otorgado por National Academy of Television, Arts & Sciences.'
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Actualmente conduce el programa “En diálogo con Longobardi” en CNN en español, los días domingos a las 22 horas, para toda la comunidad de habla hispana”."
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12 pt-3" }, [
-        _c("p", { staticClass: "p-sin-estilo" }, [
-          _vm._v(
-            "Como cada año, AbbVie organiza el Foro de Salud Sustentable (SaS), un evento dirigido principalmente a los financiadores y tomadores de decisión del sistema de salud argentino en donde se tratan las temáticas sanitarias más relevantes de interés actual."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "p-sin-estilo" }, [
-          _vm._v(
-            "El Foro SaS nació en 2014 como un proyecto educativo cuya misión se orientaba a fomentar el trabajo conjunto entre los referentes de patologías crónicas y los tomadores de decisión con el fin de optimizar el tratamiento del paciente teniendo un manejo adecuado de los recursos disponibles."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "p-sin-estilo" }, [
-          _vm._v(
-            "Motivado por la posibilidad de un sistema de salud sustentable que promueva prácticas de prevención, el diagnóstico temprano, el tratamiento óptimo de enfermedades y el acceso a verdadera innovación que sea sostenible y financieramente viable, el Foro se ha convertido en un reconocido espacio de actualización y reunión de los principales sanitaristas del país."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "p-sin-estilo" }, [
-          _vm._v(
-            "En esta 7ma edición, además de abordar las dificultades habituales que presenta el sistema sanitario argentino, el Foro brindará especial atención al impacto provocado por la pandemia a nivel nacional e internacional."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "p-sin-estilo" }, [
-          _vm._v(
-            "Es en este desafiante contexto que AbbVie llevará a cabo el "
-          ),
-          _c("strong", [
-            _vm._v("Foro SaS en la modalidad virtual el 27 y 29 de octubre")
-          ]),
-          _vm._v(" buscando reinventar el espacio históricamente presencial.")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "embed-container" }, [
-          _c("iframe", {
-            staticStyle: {
-              position: "absolute",
-              top: "0",
-              left: "0",
-              width: "100%",
-              height: "100%"
-            },
-            attrs: {
-              id: "video-historia",
-              src: "https://player.vimeo.com/video/466148940",
-              frameborder: "0",
-              allow: "autoplay; fullscreen",
-              allowfullscreen: ""
-            }
-          })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12" }, [
-        _c("p", { staticClass: "p-sin-estilo" }, [
-          _vm._v(
-            "Hágale una pregunta al speaker que desee y la tendremos en cuenta durante el vivo del 7mo Foro SaS."
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12" }, [
-      _c("p", { staticClass: "p-sin-estilo text-center" }, [
-        _c("strong", [_vm._v("Su pregunta ya fue enviada. Muchas Gracias!")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", [
-      _vm._v("AGENDA "),
-      _c("strong", [_vm._v("27 DE OCTUBRE | NACIONAL")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "agenda-separador" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-sm-4" }, [
-          _c("p", { staticClass: "p-sin-estilo" }, [
-            _c("span", { staticClass: "agenda-texto-hora" }, [
-              _vm._v("18:00 a 18:10 hs.")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-sm-8" }, [
-          _c("p", { staticClass: "p-sin-estilo" }, [
-            _c("span", { staticClass: "agenda-texto-azul d-block" }, [
-              _vm._v(
-                "Apertura y Bienvenida al 7º Foro de Salud Sustentable (SaS)"
-              )
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
-              _c("strong", [
-                _vm._v("Débora Plager | Marcelo Longobardi | Dr. Flavio Devoto")
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-sm-4" }, [
-          _c("p", { staticClass: "p-sin-estilo" }, [
-            _c("span", { staticClass: "agenda-texto-hora" }, [
-              _vm._v("18:10 a 18:40 hs.")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-sm-8" }, [
-          _c("p", { staticClass: "p-sin-estilo" }, [
-            _c("span", { staticClass: "agenda-texto-azul d-block" }, [
-              _vm._v("Editorial: Análisis político, económico y sanitario.")
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
-              _c("strong", [_vm._v("Marcelo Longobardi")])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-sm-4" }, [
-          _c("p", { staticClass: "p-sin-estilo" }, [
-            _c("span", { staticClass: "agenda-texto-hora" }, [
-              _vm._v("18:40 a 19:25 hs.")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-sm-8" }, [
-          _c("p", { staticClass: "p-sin-estilo" }, [
-            _c("span", { staticClass: "agenda-texto-azul d-block" }, [
-              _vm._v(
-                "¿Crisis sanitaria = Oportunidad de mejora para el sistema sanitario argentino?"
-              )
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
-              _c("strong", [_vm._v("Dr. Gabriel Lebersztein")]),
-              _vm._v(
-                " - Gerente Médico OSECAC\n                                        "
-              )
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
-              _c("strong", [_vm._v("Luciana Escati Peñalosa")]),
-              _vm._v(
-                " - Presidenta Asociación de Pacientes Fundación Más Vida\n                                        "
-              )
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-sm-4" }, [
-          _c("p", { staticClass: "p-sin-estilo" }, [
-            _c("span", { staticClass: "agenda-texto-hora" }, [
-              _vm._v("19:25 a 19:35 hs.")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-sm-8" }, [
-          _c("p", { staticClass: "p-sin-estilo" }, [
-            _c("span", { staticClass: "agenda-texto-azul d-block" }, [
-              _vm._v("Compartiendo Buenas Prácticas de Salud Sustentable")
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
-              _c("strong", [_vm._v("Decisores en salud")])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-sm-4" }, [
-          _c("p", { staticClass: "p-sin-estilo" }, [
-            _c("span", { staticClass: "agenda-texto-hora" }, [
-              _vm._v("19:35 a 19:45 hs.")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-sm-8" }, [
-          _c("p", { staticClass: "p-sin-estilo" }, [
-            _c("span", { staticClass: "agenda-texto-azul d-block" }, [
-              _vm._v("Cierre Día Nacional")
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
-              _c("strong", [
-                _vm._v("Débora Plager | Marcelo Longobardi | Dr. Flavio Devoto")
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", [
-      _vm._v("AGENDA "),
-      _c("strong", [_vm._v("29 DE OCTUBRE | INTERNACIONAL")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "agenda-separador" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-sm-4" }, [
-          _c("p", { staticClass: "p-sin-estilo" }, [
-            _c("span", { staticClass: "agenda-texto-hora" }, [
-              _vm._v("18:00 a 18:05 hs.")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-sm-8" }, [
-          _c("p", { staticClass: "p-sin-estilo" }, [
-            _c("span", { staticClass: "agenda-texto-azul d-block" }, [
-              _vm._v("Apertura y Bienvenida Día Internacional")
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
-              _c("strong", [
-                _vm._v("Débora Plager | Marcelo Longobardi | Dr. Flavio Devoto")
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-sm-4" }, [
-          _c("p", { staticClass: "p-sin-estilo" }, [
-            _c("span", { staticClass: "agenda-texto-hora" }, [
-              _vm._v("18:05 a 18:50 hs.")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-sm-8" }, [
-          _c("p", { staticClass: "p-sin-estilo" }, [
-            _c("span", { staticClass: "agenda-texto-azul d-block" }, [
-              _vm._v(
-                "¿Pasaron la prueba los sistemas de salud ante la pandemia? La experiencia de Estados Unidos, Brasil y Europa."
-              )
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
-              _c("strong", [_vm._v("Vicente Ortún Rubio")]),
-              _vm._v(
-                " - Fundador del Centro de Investigación en Economía y Salud (CRES) y ex decano de Universidad Pompeu Fabra.\n                                        "
-              )
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
-              _c("strong", [_vm._v("André Medici")]),
-              _vm._v(
-                " - Ex Economista de Salud del Banco Mundial\n                                        "
-              )
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-sm-4" }, [
-          _c("p", { staticClass: "p-sin-estilo" }, [
-            _c("span", { staticClass: "agenda-texto-hora" }, [
-              _vm._v("18:50 a 19:35 hs.")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-sm-8" }, [
-          _c("p", { staticClass: "p-sin-estilo" }, [
-            _c("span", { staticClass: "agenda-texto-azul d-block" }, [
-              _vm._v(
-                "Evaluación institucional y personal sobre la gestión de la pandemia en CABA"
-              )
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
-              _c("strong", [_vm._v("Dr. Fernán Quirós")]),
-              _vm._v(
-                " - Ministro de Salud de la Ciudad de Bs. As.\n                                        "
-              )
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-sm-4" }, [
-          _c("p", { staticClass: "p-sin-estilo" }, [
-            _c("span", { staticClass: "agenda-texto-hora" }, [
-              _vm._v("19:35 a 19:45 hs.")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-sm-8" }, [
-          _c("p", { staticClass: "p-sin-estilo" }, [
-            _c("span", { staticClass: "agenda-texto-azul d-block" }, [
-              _vm._v("Cierre del 7º Foro de Salud Sustentable (SaS)")
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "agenda-texto-negro d-block" }, [
-              _c("strong", [
-                _vm._v("Débora Plager | Marcelo Longobardi | Daniel Diminutto")
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row content-logo" }, [
-      _c("a", [_c("img", { attrs: { src: "img/forosas/logo.png" } })]),
-      _c("br")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c(
-      "audio",
+      "span",
       {
-        attrs: {
-          autoplay: "",
-          preload: "auto",
-          id: "audio",
-          muted: "",
-          loop: ""
+        staticStyle: {
+          color: "#fff",
+          "text-align": "center",
+          width: "100%",
+          "margin-top": "20px",
+          display: "block"
         }
       },
       [
-        _c("source", {
-          attrs: { src: "public/audio/foro-sas.ogg", type: "audio/ogg" }
+        _c("i", {
+          staticClass: "fa fa-volume-up",
+          attrs: { "aria-hidden": "true" }
         }),
-        _vm._v(" "),
-        _c("source", {
-          attrs: { src: "public/audio/foro-sas.mp3", type: "audio/mpeg" }
-        })
+        _vm._v("Por favor, activar el sonido del reproductor")
       ]
     )
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-6c342c74", module.exports)
-  }
-}
-
-/***/ }),
-/* 84 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(85)
-}
-var normalizeComponent = __webpack_require__(11)
-/* script */
-var __vue_script__ = __webpack_require__(87)
-/* template */
-var __vue_template__ = __webpack_require__(88)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-5b1848cc"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/forosas/Registro.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5b1848cc", Component.options)
-  } else {
-    hotAPI.reload("data-v-5b1848cc", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 85 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(86);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(10)("a9cd2d7c", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5b1848cc\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Registro.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5b1848cc\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Registro.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 86 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(9)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 87 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: {
-        keyRecaptcha: {
-            type: String
-        },
-        urlLogin: {
-            type: String,
-            required: true
-        },
-        urlRegistrar: {
-            type: String,
-            required: true
-        },
-        urlHome: {
-            type: String,
-            required: true
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "span",
+      {
+        staticStyle: {
+          color: "rgb(16, 33, 63)",
+          "text-align": "center",
+          width: "100%",
+          "margin-top": "20px",
+          display: "block",
+          padding: "20px",
+          background: "#e09b3f",
+          border: "2px solid #fff"
         }
-    },
-    data: function data() {
-        return {
-            vista: 'login',
-            registro: {
-                form: {
-                    nombre: null,
-                    apellido: null,
-                    email: null,
-                    codigo: null
-                },
-                enviado: false,
-                enviando: false
-            },
-            login: {
-                form: {
-                    email: null
-                },
-                enviado: false,
-                enviando: false
-            },
-            info: {},
-            errors: []
-        };
-    },
-    mounted: function mounted() {
-        console.debug('Login mounted');
-
-        this.countdownTimer = setInterval(this.timer, 1000);
-    },
-
-    methods: {
-        mostrarVista: function mostrarVista(vista) {
-            var vm = this;
-            if (vista === 'login') {
-                vm.login.form = _.assign({
-                    nombre: null,
-                    apellido: null,
-                    email: null,
-                    codigo: null
-                });
-                vm.login.enviando = false;
-                vm.login.enviado = false;
-            } else {
-                vm.registro.form = _.assign({
-                    nombre: null,
-                    apellido: null,
-                    email: null,
-                    codigo: null
-                });
-                vm.registro.enviando = false;
-                vm.registro.enviado = false;
-            }
-            vm.vista = vista;
-        },
-
-        checkForm: function checkForm(e) {
-            var vm = this;
-            var form = vm.vista === 'login' ? vm.login.form : vm.registro.form;
-            this.errors = [];
-
-            if (vm.vista === 'login') {
-                if (!form.email) {
-                    alert('Todos los campos son obligatorios');
-                    return false;
-                }
-            } else {
-                if (!form.nombre || !form.apellido || !form.email || !form.codigo) {
-                    alert('Todos los campos son obligatorios');
-                    return false;
-                }
-            }
-
-            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-            if (!re.test(form.email)) {
-                alert('El formato del email es incorrecto.');
-                return false;
-            }
-            return true;
-        },
-        registrar: function registrar(e) {
-            e.preventDefault();
-            var vm = this;
-            var form = this.registro.form;
-            if (form.enviando) {
-                return false;
-            }
-            if (this.checkForm()) {
-                form.enviando = true;
-                grecaptcha.ready(function () {
-                    grecaptcha.execute(vm.keyRecaptcha, { action: 'submit' }).then(function (token) {
-                        // Add your logic to submit to your backend server here.
-                        if (token) {
-                            axios.post(vm.urlRegistrar, form).then(function (response) {
-                                console.debug(response);
-                                form.enviando = false;
-                                document.location = vm.urlHome;
-                            }, function (error) {
-                                form.enviando = false;
-                                console.debug(error.response.data.message);
-                                alert(error.response.data.message);
-                            });
-                        }
-                    });
-                });
-            }
-        },
-        loguear: function loguear(e) {
-            e.preventDefault();
-            var vm = this;
-            var form = this.login.form;
-            if (form.enviando) {
-                return false;
-            }
-            if (this.checkForm()) {
-                form.enviando = true;
-                axios.post(vm.urlLogin, form).then(function (response) {
-                    console.debug(response);
-                    form.enviando = false;
-                    document.location = vm.urlHome;
-                }, function (error) {
-                    form.enviando = false;
-                    console.debug(error.response.data.message);
-                    alert(error.response.data.message);
-                });
-            }
-        }
-    }
-});
-
-/***/ }),
-/* 88 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("section", [
-      _c("div", { staticClass: "container" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _vm._m(1),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "content-form text-center" },
-          [
-            _vm.vista === "login"
-              ? [
-                  _c(
-                    "form",
-                    {
-                      attrs: {
-                        "data-vv-scope": "frm-login",
-                        autocomplete: "off"
-                      },
-                      on: { submit: _vm.loguear }
-                    },
-                    [
-                      _c("div", { staticClass: "form-group row" }, [
-                        _c("div", { staticClass: "col-12" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.login.form.email,
-                                expression: "login.form.email"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              type: "email",
-                              autocomplete: "off",
-                              id: "login-email",
-                              placeholder: "Email"
-                            },
-                            domProps: { value: _vm.login.form.email },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.login.form,
-                                  "email",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _vm._m(2)
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "lnk-registrate",
-                      on: {
-                        click: function($event) {
-                          return _vm.mostrarVista("registro")
-                        }
-                      }
-                    },
-                    [
-                      _vm._v("Si aún no te registraste, "),
-                      _c("strong", [_vm._v("haz clic aquí.")])
-                    ]
-                  )
-                ]
-              : [
-                  _c(
-                    "form",
-                    {
-                      attrs: {
-                        "data-vv-scope": "frm-registro",
-                        autocomplete: "off"
-                      },
-                      on: { submit: _vm.registrar }
-                    },
-                    [
-                      _c("div", { staticClass: "form-group row" }, [
-                        _c("div", { staticClass: "col-12" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.registro.form.nombre,
-                                expression: "registro.form.nombre"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: { type: "text", placeholder: "Nombre" },
-                            domProps: { value: _vm.registro.form.nombre },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.registro.form,
-                                  "nombre",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form-group row" }, [
-                        _c("div", { staticClass: "col-12" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.registro.form.apellido,
-                                expression: "registro.form.apellido"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: { type: "text", placeholder: "Apellido" },
-                            domProps: { value: _vm.registro.form.apellido },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.registro.form,
-                                  "apellido",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form-group row" }, [
-                        _c("div", { staticClass: "col-12" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.registro.form.email,
-                                expression: "registro.form.email"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: { type: "email", placeholder: "Email" },
-                            domProps: { value: _vm.registro.form.email },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.registro.form,
-                                  "email",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form-group row" }, [
-                        _c("div", { staticClass: "col-12" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.registro.form.codigo,
-                                expression: "registro.form.codigo"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: { type: "text", placeholder: "Clave" },
-                            domProps: { value: _vm.registro.form.codigo },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.registro.form,
-                                  "codigo",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _vm._m(3)
-                    ]
-                  )
-                ]
-          ],
-          2
+      },
+      [
+        _c("i", {
+          staticClass: "fa fa-arrow-up",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(
+          " \n                    Para ver el evento, seleccione en los botones de arriba la opción de audio\n                "
         )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("div", { staticClass: "disc-sitio mt-2" }, [
+          _vm._v(
+            "\n                    Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac)."
+          ),
+          _c("br"),
+          _vm._v(
+            "\n                    Se recomienda tener actualizado el sistema operativo a la última actualización."
+          ),
+          _c("br"),
+          _vm._v(
+            "\n                    Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "\n\n                    Ante cualquier duda o inconveniente escriba al 0054 9 11 3300 3516 (Whatsapp)\n                "
+          )
+        ])
       ])
     ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "control-audio" }, [
-      _c("img", {
-        staticStyle: { right: "70px", bottom: "30px", position: "absolute" },
-        attrs: { src: "img/forosas/logo_ABBVIE.png", width: "180" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row content-logo-login" }, [
-      _c("a", [_c("img", { attrs: { src: "img/forosas/logo.png" } })])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "btn btn-ingresar", attrs: { type: "submit" } },
-      [_c("img", { attrs: { src: "img/forosas/btn-ingresar.png" } })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "btn btn-ingresar", attrs: { type: "submit" } },
-      [_c("img", { attrs: { src: "img/forosas/btn-ingresar.png" } })]
-    )
   }
 ]
 render._withStripped = true
@@ -47965,7 +46593,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5b1848cc", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-22f7ab1c", module.exports)
   }
 }
 

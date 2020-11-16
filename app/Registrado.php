@@ -45,6 +45,11 @@ class Registrado extends Authenticatable
         return $this->hasMany('App\Encuestas', 'registrado_id');
     }    
 
+    public function mensajesChat()
+    {
+        return $this->hasMany('App\Chat','registrado_id');
+    }    
+
     /**
      * Appends Attributes
      *
