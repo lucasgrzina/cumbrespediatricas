@@ -46211,7 +46211,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     vm.form.pregunta = null;
                 }, function (error) {
                     vm.enviando = false;
-                    alert(error.message);
+                    // alert(error.message);
                 });
             }
         },
@@ -46274,8 +46274,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     // vm.form.pregunta = null;
                 }, function (error) {
                     vm.encuesta.enviando = false;
-
-                    alert(error.message);
+                    alert('Gracias por responder la encuesta');
+                    // alert(error.message);
                 });
             }
         },

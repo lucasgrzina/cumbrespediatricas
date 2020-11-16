@@ -280,7 +280,7 @@
                             vm.form.pregunta = null;
                         }, error => {
                             vm.enviando = false;
-                            alert(error.message);
+                            // alert(error.message);
                         });                    
                 }
             },
@@ -346,8 +346,8 @@
                             // vm.form.pregunta = null;
                         }, error => {
                             vm.encuesta.enviando = false;
-                            
-                            alert(error.message);
+                            alert('Gracias por responder la encuesta');
+                            // alert(error.message);
                         });                    
                 }
             },
