@@ -12,7 +12,8 @@ use App\Helpers\FrontHelper;
 use Illuminate\Http\Request;
 
 use App\Http\Requests\Front\RegistrarRequest;
-use App\Http\Front\Controllers\EventoBaseController;
+use App\Http\Controllers\Front\EventoBaseController;
+
 
 class HomeSimilaCMamaController extends EventoBaseController
 {
