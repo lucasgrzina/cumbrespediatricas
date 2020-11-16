@@ -32,10 +32,10 @@
                     <!--div class="wraper_video"-->
                         <div class="embed-container" v-if="videoSeleccionado === 'ingles'">
                             <div class="overlay"></div>
-                            <iframe v-if="evento.key === 'similacmama169'" src="https://player.vimeo.com/video/457475164" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                            <!--iframe v-if="evento.key === 'similacmama169'" src="https://player.vimeo.com/video/457475164" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                             <iframe v-else-if="evento.key === 'similacmama179'" src="https://player.vimeo.com/video/457475561" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                            <iframe v-else-if="evento.key === 'similacmama229'" src="https://player.vimeo.com/video/460540053" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                            <iframe v-else src="https://player.vimeo.com/video/457475164" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>                            
+                            <iframe v-else-if="evento.key === 'similacmama229'" src="https://player.vimeo.com/video/460540053" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe-->
+                            <iframe src="https://player.vimeo.com/video/479842544" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                         </div>                    
                         <div class="embed-container" v-else>
                             <iframe src="https://player.vimeo.com/video/455802173" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>

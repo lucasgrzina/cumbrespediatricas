@@ -45501,8 +45501,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
             if (!re.test(this.form.email)) {
-                alert('El formato del email es incorrecto.');
-                return false;
+                //alert('El formato del email es incorrecto.');
+                //return false;
             }
             return true;
         },
@@ -46327,69 +46327,21 @@ var render = function() {
               ? _c("div", { staticClass: "embed-container" }, [
                   _c("div", { staticClass: "overlay" }),
                   _vm._v(" "),
-                  _vm.evento.key === "similacmama169"
-                    ? _c("iframe", {
-                        staticStyle: {
-                          position: "absolute",
-                          top: "0",
-                          left: "0",
-                          width: "100%",
-                          height: "100%"
-                        },
-                        attrs: {
-                          src: "https://player.vimeo.com/video/457475164",
-                          frameborder: "0",
-                          allow: "autoplay; fullscreen",
-                          allowfullscreen: ""
-                        }
-                      })
-                    : _vm.evento.key === "similacmama179"
-                    ? _c("iframe", {
-                        staticStyle: {
-                          position: "absolute",
-                          top: "0",
-                          left: "0",
-                          width: "100%",
-                          height: "100%"
-                        },
-                        attrs: {
-                          src: "https://player.vimeo.com/video/457475561",
-                          frameborder: "0",
-                          allow: "autoplay; fullscreen",
-                          allowfullscreen: ""
-                        }
-                      })
-                    : _vm.evento.key === "similacmama229"
-                    ? _c("iframe", {
-                        staticStyle: {
-                          position: "absolute",
-                          top: "0",
-                          left: "0",
-                          width: "100%",
-                          height: "100%"
-                        },
-                        attrs: {
-                          src: "https://player.vimeo.com/video/460540053",
-                          frameborder: "0",
-                          allow: "autoplay; fullscreen",
-                          allowfullscreen: ""
-                        }
-                      })
-                    : _c("iframe", {
-                        staticStyle: {
-                          position: "absolute",
-                          top: "0",
-                          left: "0",
-                          width: "100%",
-                          height: "100%"
-                        },
-                        attrs: {
-                          src: "https://player.vimeo.com/video/457475164",
-                          frameborder: "0",
-                          allow: "autoplay; fullscreen",
-                          allowfullscreen: ""
-                        }
-                      })
+                  _c("iframe", {
+                    staticStyle: {
+                      position: "absolute",
+                      top: "0",
+                      left: "0",
+                      width: "100%",
+                      height: "100%"
+                    },
+                    attrs: {
+                      src: "https://player.vimeo.com/video/479842544",
+                      frameborder: "0",
+                      allow: "autoplay; fullscreen",
+                      allowfullscreen: ""
+                    }
+                  })
                 ])
               : _c("div", { staticClass: "embed-container" }, [
                   _c("iframe", {
