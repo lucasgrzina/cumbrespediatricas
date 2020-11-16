@@ -79,6 +79,17 @@
             </div>
  
         </template>  
+        <div class="row">
+            <div class="col-12">
+                <div class="disc-sitio mt-2">
+                    Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac).<br>
+                    Se recomienda tener actualizado el sistema operativo a la última actualización.<br>
+                    Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor.<br><br>
+
+                    Ante cualquier duda o inconveniente escriba al 00506 7014 6741 (Whatsapp)
+                </div>
+            </div>
+        </div>        
     </div>
 </template>
 

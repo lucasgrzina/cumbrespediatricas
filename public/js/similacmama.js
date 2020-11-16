@@ -45348,7 +45348,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45359,6 +45359,17 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -45819,7 +45830,9 @@ var render = function() {
                 ]
               )
             ])
-          ]
+          ],
+      _vm._v(" "),
+      _vm._m(1)
     ],
     2
   )
@@ -45849,6 +45862,33 @@ var staticRenderFns = [
               )
             ])
           ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("div", { staticClass: "disc-sitio mt-2" }, [
+          _vm._v(
+            "\n                Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac)."
+          ),
+          _c("br"),
+          _vm._v(
+            "\n                Se recomienda tener actualizado el sistema operativo a la última actualización."
+          ),
+          _c("br"),
+          _vm._v(
+            "\n                Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "\n\n                Ante cualquier duda o inconveniente escriba al 00506 7014 6741 (Whatsapp)\n            "
+          )
         ])
       ])
     ])
@@ -45960,6 +46000,16 @@ exports.push([module.i, "\n.modal-mask[data-v-497bf88e] {\r\n  position: fixed;\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -46678,7 +46728,9 @@ var render = function() {
           ],
           1
         )
-      : _vm._e()
+      : _vm._e(),
+    _vm._v(" "),
+    _vm._m(2)
   ])
 }
 var staticRenderFns = [
@@ -46718,6 +46770,33 @@ var staticRenderFns = [
       _vm._v(
         " \n                    Para ver el evento, seleccione en los botones de arriba la opción de audio\n                "
       )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("div", { staticClass: "disc-sitio mt-2" }, [
+          _vm._v(
+            "\n                Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac)."
+          ),
+          _c("br"),
+          _vm._v(
+            "\n                Se recomienda tener actualizado el sistema operativo a la última actualización."
+          ),
+          _c("br"),
+          _vm._v(
+            "\n                Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "\n\n                Ante cualquier duda o inconveniente escriba al 00506 7014 6741 (Whatsapp)\n            "
+          )
+        ])
+      ])
     ])
   }
 ]
