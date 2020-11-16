@@ -21,7 +21,11 @@
                                     En cumplimiento de las políticas corporativas de Abbott, le informamos que este evento es exclusivo para profesionales de la salud. En caso de que esta invitación no esté acorde con su área de especialización/conocimiento y/o desarrollo profesional o, en caso de que usted sea un empleado del gobierno y su participación contravenga alguna ley, reglamento o norma interna de su institución y no cuente con las respectivas autorizaciones, le solicitamos nos informe a la brevedad posible.
                                     <br><br>
                                     La información y/o datos brindados para el registro al evento serán utilizados únicamente durante su participación en el evento y envío de información relacionada al evento. Todos los datos serán manejados de acuerdo a nuestros procedimientos de manejo de datos y no podrán ser compartidos y/o utilizados para fines diferentes a su participación en este evento.                        
+
                                 </p>
+                                <p class="text text-center" style="margin-top:20px;">
+                                    <a target="_blank" style="text-decoration:underline;color:rgb(178, 111, 167);" href="https://www.quimicavirtualevents.com/recorrido/avisodeprivacidad.html">Aviso de Privacidad</a>
+                                </p>                                
                             </div>
                         </div>
                     </div>
