@@ -182,15 +182,21 @@ class EventoBaseController extends AppBaseController
                 $data['registrado_id'] = $registrado->id;
 
             } catch (\Exception $e) {}
-            $data = Chat::create($data);
-            \Log::info($data);
+
+            //$modelData = Chat::create($data);
+            $modelData = new Chat;
+            $modelData->fill($data);
+            $modelData->id = 1;
+            //$modelData->created_at = Carbon::now()->format('Y-m-d H:i:s');
+            //$modelData->updated_at = Carbon::now()->format('Y-m-d H:i:s');
+            \Log::info($modelData);
 
             try {
-                broadcast(new MensajeChatEvent($registrado, $data))->toOthers();
+                broadcast(new MensajeChatEvent($registrado, $modelData->toArray()))->toOthers();
             } catch (\Exception $e) {
                 \Log::info($e->getMessage());
             }
-            return $this->sendResponse($data,'La operación finañizó con éxito');                
+            return $this->sendResponse($modelData,'La operación finañizó con éxito');                
         } catch (\Exception $e) {
             return $this->sendError($e->getMessage(),$e->getCode());
         }

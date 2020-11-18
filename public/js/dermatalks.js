@@ -45644,6 +45644,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
 
             if (!vm.chat.enviando) {
+                vm.chat.enviando = true;
                 axios.post(vm.urlEnviarMensajeChat, msj).then(function (response) {
                     vm.chat.enviando = false;
                     // vm.chat.form.mensaje = null;

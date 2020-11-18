@@ -255,6 +255,7 @@
                 });
 
                 if (!vm.chat.enviando) {
+                    vm.chat.enviando = true;
                     axios.post(vm.urlEnviarMensajeChat, msj)
                         .then(response => {
                             vm.chat.enviando = false;
