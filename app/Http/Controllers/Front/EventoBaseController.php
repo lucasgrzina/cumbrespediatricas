@@ -188,7 +188,7 @@ class EventoBaseController extends AppBaseController
             try {
                 broadcast(new MensajeChatEvent($registrado, $data))->toOthers();
             } catch (\Exception $e) {
-                \Log::info($e);
+                \Log::info($e->getMessage());
             }
             return $this->sendResponse($data,'La operación finañizó con éxito');                
         } catch (\Exception $e) {

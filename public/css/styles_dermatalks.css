@@ -1,287 +1,273 @@
-@font-face {
-  font-family: "montserrat";
-  src: url("../public/fonts/montserrat-medium-webfont.woff2") format("woff2"), url("../public/fonts/montserrat-medium-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "montserrat";
-  src: url("../public/fonts/montserrat-bold-webfont.woff2") format("woff2"), url("../public/fonts/montserrat-bold-webfont.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: "montserratsemibold";
-  src: url("../public/fonts/montserrat-semibold-webfont.woff2") format("woff2"), url("../public/fonts/montserrat-semibold-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "montserratlight";
-  src: url("../public/fonts/montserrat-light-webfont.woff2") format("woff2"), url("../public/fonts/montserrat-light-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Gotham";
-  src: url("../public/fonts/Gotham-Bold.eot?#iefix") format("embedded-opentype"), url("../public/fonts/Gotham-Bold.otf") format("opentype"), url("../public/fonts/Gotham-Bold.woff") format("woff"), url("../public/fonts/Gotham-Bold.ttf") format("truetype"), url("../public/fonts/Gotham-Bold.svg#Gotham-Bold") format("svg");
-  font-weight: bold;
-  font-style: normal;
-}
-body {
-  font-family: "Gotham", sans-serif;
-  background-image: url(../img/dermatalks/background.jpg);
-  background-size: cover;
-  overflow-x: hidden;
+/* 
+	sass --watch resources/sass/styles.scss assets/css/styles.css
+*/
+i {
+  width: 30px;
+  height: 30px;
   background-repeat: no-repeat;
-  background-color: #0d060e;
-  
-  background-position: top center;
+  position: relative;
+  float: left;
+  background-size: cover;
+}
+i.icon-care {
+  background-image: url(../img/reacciones/png_64/care.png);
+}
+i.icon-haha {
+  background-image: url(../img/reacciones/png_64/haha.png);
+}
+i.icon-like {
+  background-image: url(../img/reacciones/png_64/like.png);
+}
+i.icon-love {
+  background-image: url(../img/reacciones/png_64/love.png);
+}
+i.icon-sad {
+  background-image: url(../img/reacciones/png_64/sad.png);
+}
+i.icon-wow {
+  background-image: url(../img/reacciones/png_64/wow.png);
+}
+
+.animate i {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  opacity: 1;
+  animation-duration: 4s;
+}
+
+@keyframes animate_1 {
+  0% {
+    right: 0px;
+    bottom: 0px;
+    opacity: 0.3;
+  }
+  25% {
+    right: 20px;
+    opacity: 1;
+  }
+  50% {
+    right: -20px;
+  }
+  75% {
+    right: 0px;
+    bottom: 200px;
+  }
+  100% {
+    right: 0px;
+    bottom: 200px;
+    opacity: 0;
+  }
+}
+@keyframes animate_2 {
+  0% {
+    right: 0px;
+    bottom: 0px;
+    opacity: 0.3;
+  }
+  25% {
+    right: -20px;
+    opacity: 1;
+  }
+  50% {
+    right: 20px;
+  }
+  75% {
+    right: 0px;
+    bottom: 200px;
+  }
+  100% {
+    right: 0px;
+    bottom: 200px;
+    opacity: 0;
+  }
+}
+h1, h2, h3, p {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: #471f4d;
+  background: radial-gradient(circle, #471f4d 54%, black 100%);
+}
+
+main {
+  background-image: url(../img/dermatalks/base-derma.jpg);
+  height: calc(100vh - 40px);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: calc(100vh - 80px);
+}
+main .derma-logo-1 {
+  position: absolute;
+  left: -38px;
+  width: 327px;
+  top: 360px;
+}
+main .derma-logo-2 {
+  position: absolute;
+  right: 15px;
+  width: 169px;
+  top: 480px;
 }
 
 .container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-.container.vivo {
-  max-width: 90%;
-  margin: 0 auto;
-}
-.content-title {
-  /*margin-bottom: 53px;*/
-  margin-bottom: 30px;
+  max-width: 1600px;
 }
 
-h1 {
-  /*font-size: 45px;*/
-  font-size: 35px;
-  font-weight: bold;
-  font-family: "Gotham", sans-serif;
-  color: #fff;
-  text-transform: uppercase;
-}
-
-.content-title .line {
-  content: " ";
-  height: 5px;
-  width: 200px;
-  background-color: #fff;
-  position: absolute;
-  top: 25px;
-  width: 1500px;
-  background: #e8a34d;
-  background: linear-gradient(135deg, #e8a34d 0%, #fdecbb 7%, #e8a34d 35%, #e5a347 62%, #fdecbb 89%, #e2a341 100%);
-}
-
-.content-title .line--left {
-  left: -1510px;
-}
-
-.content-title .line--right {
-  /*left: 280px;*/
-  left: 232px;
-}
-
-header {
-  padding: 33px 0 0;
-}
-
-.form-container {
-  margin-bottom: 0px;
-}
-
-.form-group {
-  margin-bottom: 0.3rem;
-}
-
-/*textarea:hover,
-input:hover,
-textarea:active,
-input:active,
-textarea:focus,
-input:focus,
-button:focus,
-button:active,
-button:hover,
-label:focus,
-.btn:active,
-.btn.active {
-  outline: 0px !important;
-  -webkit-appearance: none;
-  box-shadow: none !important;
-}*/
-
-.form-container label {
-  color: #013565;
-  border-radius: 30px;
-  border-width: 0px;
-  border-style: solid;
-  border-color: transparent;
-  /*font-size: 25px;*/
-  font-size: 20px;
-  text-transform: uppercase;
-  text-align: center;
-  max-width: 329px;
-  width: 100%;
-  /*padding: 9px 10px;*/
-  padding: 5px 10px;
-  background: #e8a34d;
-  background: linear-gradient(135deg, #e8a34d 0%, #fdecbb 7%, #e8a34d 35%, #e5a347 62%, #fdecbb 89%, #e2a341 100%);
-}
-
-.form-container input,.form-container select {
-  /*font-size: 25px;*/
-  font-size: 20px;
-  border-radius: 30px;
-  border-width: 4px;
-  border-style: solid;
-  border-color: #fff;
-  min-width: 329px;
-  /*padding: 9px 10px;*/
-  padding: 5px 18px;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff!important;
-}
-
-.form-container select {
-  padding: 5px 15px;
-}
-
-.form-container select option {
-  font-size: 15px;
-  padding: 15px;
-}
-
-.form-container input:focus,
-.form-container input:active,
-.form-container select:focus,
-.form-container select:active {
-  outline: none;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.form-container .form-group small {
-  display: none;
-}
-
-.form-container button {
-  /*margin: 50px auto 0;*/
-  margin: 30px auto 0;
-  display: table;
-}
-
-.content-big-title {
-  margin-top: 0px;
-  align-items: center;
-  display: flex;
-  min-height: 400px;
-}
-@-moz-document url-prefix() {
-  .content-big-title{
-       flex: 1;
-     }
- }
-
-.content-big-title .btn-primary {
-  margin: 0 auto;
-  text-transform: uppercase;
-  display: table;
-  width: 560px;
-  font-size: 35px;
-  border-radius: 75px;
-  line-height: 45px;
-  color: #fff;
-}
-
-.content-big-title .btn-primary:hover {
-  color: #fff;
-}
-.content-big-title .line {
-  content: " ";
-  height: 5px;
-  width: 200px;
-  background-color: #fff;
-  position: absolute;
-  top: 52px;
-  width: 1500px;
-  background: #fff;
-}
-
-.content-big-title .line--left {
-  left: calc(-50% - 1030px);
-}
-
-.content-big-title .line--right {
-  left: calc(50% + 325px);
-}
-
-.btn-primary {
-  padding: 9px 50px;
-  font-size: 18px;
-  border-width: 2px;
-  border-radius: 30px;
-  border-style: solid;
-  border-color: #fff;
-  background: rgba(0, 0, 0, 0.5);
-  margin-bottom: 10px;
-}
-
-.btn-primary:hover,.btn-primary:active,.btn-primary:focus {
-  background: rgba(0, 0, 0, 0.8);
-  border-color: #fff;
-}
-
-.content-vimeo {
-  min-height: 300px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.contenedor_vimeo {
-	position: relative;
-	padding-bottom: 56.25%; /*panorámico*/
-	padding-top: 25px;
-	height: 0;  
-}
-.contenedor_vimeo.vimeo_chat {
-	height: 100%;  
-}
-.contenedor_vimeo iframe{
-  position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-footer {
-  margin: 20px 0 20px;
+.content-video {
   position: relative;
+  max-width: 720px;
+  width: 90%;
+  margin: 30px auto;
+  z-index: 100;
+}
+.content-video .reactions {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.content-video iframe {
+  width: 100%;
+}
+.content-video .content-reactions {
+  position: relative;
+  float: left;
+  height: 40px;
+  width: 100%;
+}
+.content-video .content-reactions a {
+  position: relative;
+  float: left;
+  margin-right: 2px;
+}
+
+footer {
+  background-color: #fff;
+  position: relative;
+  height: 139px;
+  float: left;
+  width: 100%;
   bottom: 0;
+  z-index: 101;
+}
+footer .info {
+  margin-top: 16px;
+}
+footer .col-content-logo p.address {
+  margin: 8px 0 0 12px;
+  float: left;
+  font-size: 12px;
+  line-height: 14px;
+}
+footer .logo {
   width: 100%;
+  max-width: 267px;
+  float: left;
+  margin: 6px 7px 0 0;
+}
+footer .line-footer {
+  height: 3px;
+  margin: 4px 0 2px;
+  background-color: #871c61;
+  border-width: 0 0 3px 0;
+  border-style: solid;
+  border-color: #a25085;
+}
+footer p {
+  font-size: 12px;
+}
+footer .content-qr {
+  display: flex;
+  float: right;
+  align-items: flex-end;
+}
+footer .content-qr p {
+  margin: 0 0 4px 0;
+  max-width: 150px;
+  line-height: 14px;
+}
+footer .content-qr .image-qr img {
+  width: 90px;
+  height: 90px;
+}
+footer .last-line {
+  margin: 15px 0 15px 0;
 }
 
-footer .logos img {
-  width: 100%;
-  max-width: 180px;
+@media (max-width: 768px) {
+  footer {
+    height: auto;
+  }
+
+  footer .content-qr p {
+    max-width: 50%;
+  }
+
+  footer .col-content-logo p.address {
+    margin: 15px 0 0;
+  }
+}
+@media (max-width: 1024px) {
+  footer {
+    height: auto;
+  }
+
+  footer .content-qr p {
+    max-width: 100%;
+  }
+
+  footer .content-qr {
+    margin-bottom: 10px;
+  }
+  footer .content-qr .image-qr img {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  main .derma-logo-1 {
+    bottom: 12px;
+  }
+
+  main .derma-logo-2 {
+    bottom: 154px;
+  }
+}
+@media (max-width: 768px) {
+  main .derma-logo-1 {
+    bottom: 80px;
+  }
+
+  main .derma-logo-2 {
+    bottom: 230px;
+  }
+}
+@media (max-width: 640px) {
+  .content-video {
+    margin: 60px 0 0 0;
+    width: 100%;
+  }
+  .content-video iframe {
+    height: 220px;
+  }
+
+  main .derma-logo-1 {
+    width: 59%;
+    top: 370px;
+  }
+  main .derma-logo-2 {
+    width: 36%;
+    top: 454px;
+  }
 }
 
-footer .logo-center:before {
-  position: absolute;
-  content: " ";
-  height: 100%;
-  width: 4px;
-  background: white;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, white 40%, white 60%, rgba(255, 255, 255, 0) 100%);
-}
+/*# sourceMappingURL=styles.css.map */
 
-footer .logo-center:after {
-  position: absolute;
-  content: " ";
-  height: 100%;
-  width: 4px;
-  background: white;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, white 40%, white 60%, rgba(255, 255, 255, 0) 100%);
-}
 .disc-sitio {
   font-size: 11px;
   color: #fff;
@@ -289,183 +275,3 @@ footer .logo-center:after {
   font-weight: 400;
   font-family: "Gotham", sans-serif;
 }
-@media (max-width: 768px) {
-  .container {
-    max-width: 480px;
-  }
-
-  .form-container label {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .content-big-title .btn-primary {
-    width: 90%;
-    font-size: 15px;
-    border-radius: 75px;
-    line-height: 21px;
-  }
-
-  .content-big-title .line,.content-title .line {
-    display: none;
-  }
-}
-.modal-disc {
-  border: 1px solid #e7a249;
-  border-radius: 30px;
-  padding: 20px;
-  background: #e7a249;
-}
-.modal-disc .modal-disc-texto{
-  font-size: 14px;
-  color: #0b305d;
-  font-weight: 500;
-  font-family: tahoma;
-}
-.modal-disc .modal-disc-btn{
-  font-size: 17px;
-  display: block;
-  text-align: center;
-  color: #0d2951;
-  cursor: pointer;
-}
-.lnk-visible-noblur {
-  display: none;
-}
-.lnk-visible-blur {
-  display: inline;
-}
-.modal-disc .modal-disc-btn:hover .lnk-visible-blur{
-  display: none;
-}
-.modal-disc .modal-disc-btn:hover .lnk-visible-noblur{
-  display: inline;
-}
-.content-vimeo-chat {
-  margin-top: 10px;
-}
-.content-vimeo-chat .btn-primary {
-  background: rgb(217, 145, 54);
-  border-color: #8a5c27;
-}
-
-.content-vimeo-chat .form-container input{
-  font-size: 20px;
-  padding: 0px 18px;
-}
-
-.container-encuesta {
-  background: #e7a249;
-  padding: 20px;
-  /*border-radius: 20px;*/
-}
-
-.container-encuesta h5{
-  color: #0d2951;
-  font-family: "montserrat";
-}
-.container-encuesta p{
-  color: #0d2951;
-  font-family: "montserrat";
-}
-
-.container-encuesta .row {
-  margin-bottom: 20px;
-}
-
-.container-encuesta .form-check-inline, .container-encuesta textarea {
-  padding: 9px 10px;
-  font-size: 13px;
-  border-width: 2px;
-  border-radius: 30px;
-  border-style: solid;
-  border-color: #fff;
-  background: rgba(0, 0, 0, 0.36);
-  margin-bottom: 10px;
-  color: #fff;
-  cursor: pointer;  
-}
-.encuesta .content-title .line--right {
-  left: 721px;
-}
-
-.logo-cumbre {
-  max-width: 160px;
-}
-@media (max-width:576px) {
-  .content-vimeo-chat .btn-primary {
-    margin-top: 10px;
-    text-align: center;
-    vertical-align: middle;
-  }
-  .contenedor_vimeo.vimeo_chat {
-    height: 600px;
-    margin-top: 10px;
-  }
-  .contenedor_vimeo.vimeo_chat iframe {
-    height: 600px;
-  }  
-}
-
-/*# sourceMappingURL=styles.css.map */
-.reaction-box {
-  text-align: center;
-  z-index: 9;
-  position: absolute;
-  bottom: 0;
-}
-
-.reaction-icon{
-  width: 32px;
-  height: 32px;
-  background-size: contain;
-  margin-left: 2px;
-  margin-right: 2px;
-  display: inline-block;
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
-
-.reaction-icon.like{
-  background-image: url(../img/reacciones/png_64/like.png);
-}
-.reaction-icon.love{
-  background-image: url(../img/reacciones/png_64/love.png);
-}
-.reaction-icon.haha{
-  background-image: url(../img/reacciones/png_64/haha.png);
-}
-.reaction-icon.wow{
-  background-image: url(../img/reacciones/png_64/wow.png);
-}
-.reaction-icon.sad{
-  background-image: url(../img/reacciones/png_64/sad.png);
-}
-.reaction-icon.angry{
-  background-image: url(../img/reacciones/png_64/angry.png);
-}
-
-@-webkit-keyframes float-up {
-  0%   { opacity: 1; bottom: 0rem; }
-  100% { opacity: 0; bottom: 10rem; }
-}
-
-.float-up {
-  z-index: 9;
-  opacity: 0;
-  right: 0;
-  position: absolute;
-  -webkit-animation-name: float-up;
-  -webkit-animation-duration: 3s;
-  -webkit-animation-fill-mode: forwards;
-}
-
-.float-up:nth-child(1) { -webkit-animation-delay: .1s; }
-.float-up:nth-child(2) { -webkit-animation-delay: .2s; }
-.float-up:nth-child(3) { -webkit-animation-delay: .3s; }
-.float-up:nth-child(4) { -webkit-animation-delay: .4s; }
-.float-up:nth-child(5) { -webkit-animation-delay: .5s; }
-.float-up:nth-child(6) { -webkit-animation-delay: .6s; }
-.float-up:nth-child(7) { -webkit-animation-delay: .7s; }
-.float-up:nth-child(8) { -webkit-animation-delay: .8s; }
-.float-up:nth-child(9) { -webkit-animation-delay: .9s; }

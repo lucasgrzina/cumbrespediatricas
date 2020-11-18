@@ -45442,169 +45442,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -45648,6 +45485,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
+            actualAnimation: 0,
             videoSeleccionado: null,
             form: {
                 pregunta: null
@@ -45718,6 +45556,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var channel = pusher.subscribe('my-channel');
         channel.bind('my-event', function (data) {
             console.debug(data.message);
+            vm.animateIcon(data.message.reaccion);
             vm.chat.mensajes.push({
                 reaccion: data.message.reaccion
             });
@@ -45740,27 +45579,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
             }
         }, false);
-
-        $(function () {
-            $(".like-btn").on({
-                mouseenter: function mouseenter() {
-                    $(".reaction-box").fadeIn(100, function () {
-                        $(".reaction-icon").each(function (i, e) {
-                            setTimeout(function () {
-                                $(e).addClass("show");
-                            }, i * 100);
-                        });
-                    });
-                },
-                mouseleave: function mouseleave() {
-                    setTimeout(function () {
-                        $(".reaction-box").fadeOut(300, function () {
-                            $(".reaction-icon").removeClass("show");
-                        });
-                    }, 500);
-                }
-            });
-        });
     },
 
 
@@ -45885,6 +45703,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var vm = this;
             var opciones = _.find(vm.encuesta.opciones, { key: key });
             return opciones.valores;
+        },
+        animateIcon: function animateIcon(icon) {
+            var animations = ['animate_1', 'animate_2'];
+
+            var newElement = $('<div class="animate"><i class="icon-' + icon + '"  style="animation-name: ' + animations[this.actualAnimation] + ';"></i></div>');
+
+            this.actualAnimation++;
+
+            if (this.actualAnimation >= animations.length) {
+                this.actualAnimation = 0;
+            }
+
+            console.log('actualAnimation: ' + this.actualAnimation);
+
+            $('.content-video').find('.reactions').append(newElement);
+
+            setTimeout(function () {
+                newElement.remove();
+            }, 3800);
         }
     }
 });
@@ -45897,697 +45734,98 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "row content-title" }, [
-      _c("div", { staticClass: "col-md-12 text-center" }, [
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "content-video" }, [
+      _c("div", { staticClass: "reactions" }),
+      _vm._v(" "),
+      _c("iframe", {
+        attrs: {
+          src: "https://player.vimeo.com/video/70615841",
+          width: "840",
+          height: "400",
+          frameborder: "0",
+          allow: "autoplay; fullscreen",
+          allowfullscreen: ""
+        }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "content-reactions" }, [
         _c(
-          "button",
+          "a",
           {
-            staticClass: "btn btn-primary",
-            attrs: { type: "button" },
             on: {
               click: function($event) {
-                return _vm.verVideo("ingles")
+                return _vm.enviarReaccion("care")
               }
             }
           },
-          [_vm._v("Audio Original Inglés")]
+          [_c("i", { staticClass: "icon-care" })]
         ),
         _vm._v(" "),
         _c(
-          "button",
+          "a",
           {
-            staticClass: "btn btn-primary",
-            attrs: { type: "button" },
             on: {
               click: function($event) {
-                return _vm.verVideo("esp")
+                return _vm.enviarReaccion("haha")
               }
             }
           },
-          [_vm._v("Audio Español")]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
+          [_c("i", { staticClass: "icon-haha" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
           {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.videoSeleccionado,
-            expression: "videoSeleccionado"
-          }
-        ],
-        staticClass: "row content-encuesta"
-      },
-      [
-        _c("div", { staticClass: "col-sm-12 text-center" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-primary",
-              attrs: { type: "button" },
-              on: {
-                click: function($event) {
-                  return _vm.encuestaDisponible()
-                }
+            on: {
+              click: function($event) {
+                return _vm.enviarReaccion("like")
               }
-            },
-            [_c("span", [_vm._v("Encuesta")])]
-          )
-        ])
-      ]
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "row content-vimeo" }, [
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.videoSeleccionado,
-              expression: "videoSeleccionado"
             }
-          ],
-          staticClass: "col-md-12"
-        },
-        [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "contenedor_vimeo" },
-            [
-              _vm._l(_vm.chat.mensajes, function(item, key) {
-                return _c("div", {
-                  key: key,
-                  class: ["reaction-icon", item.reaccion, "float-up"]
-                })
-              }),
-              _vm._v(" "),
-              _vm.videoSeleccionado === "ingles"
-                ? _c("iframe", {
-                    staticStyle: {
-                      position: "absolute",
-                      top: "0",
-                      left: "0",
-                      width: "100%",
-                      height: "100%"
-                    },
-                    attrs: {
-                      src: "https://player.vimeo.com/video/475459063",
-                      frameborder: "0",
-                      allow: "autoplay; fullscreen",
-                      allowfullscreen: ""
-                    }
-                  })
-                : _c("iframe", {
-                    staticStyle: {
-                      position: "absolute",
-                      top: "0",
-                      left: "0",
-                      width: "100%",
-                      height: "100%"
-                    },
-                    attrs: {
-                      src: "https://player.vimeo.com/video/475458120",
-                      frameborder: "0",
-                      allow: "autoplay; fullscreen",
-                      allowfullscreen: ""
-                    }
-                  }),
-              _vm._v(" "),
-              _c("div", { staticClass: "reaction-box" }, [
-                _c("div", {
-                  staticClass: "reaction-icon like",
-                  on: {
-                    click: function($event) {
-                      return _vm.enviarReaccion("like")
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", {
-                  staticClass: "reaction-icon love",
-                  on: {
-                    click: function($event) {
-                      return _vm.enviarReaccion("love")
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", {
-                  staticClass: "reaction-icon haha",
-                  on: {
-                    click: function($event) {
-                      return _vm.enviarReaccion("haha")
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", {
-                  staticClass: "reaction-icon wow",
-                  on: {
-                    click: function($event) {
-                      return _vm.enviarReaccion("wow")
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", {
-                  staticClass: "reaction-icon sad",
-                  on: {
-                    click: function($event) {
-                      return _vm.enviarReaccion("sad")
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", {
-                  staticClass: "reaction-icon angry",
-                  on: {
-                    click: function($event) {
-                      return _vm.enviarReaccion("angry")
-                    }
-                  }
-                })
-              ])
-            ],
-            2
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: !_vm.videoSeleccionado,
-              expression: "!videoSeleccionado"
+          },
+          [_c("i", { staticClass: "icon-like" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            on: {
+              click: function($event) {
+                return _vm.enviarReaccion("love")
+              }
             }
-          ],
-          staticClass: "col-md-12"
-        },
-        [_vm._m(1)]
-      )
-    ]),
-    _vm._v(" "),
-    _vm.videoSeleccionado
-      ? _c("div", { staticClass: "row content-vimeo-chat" }, [
-          _c("div", { staticClass: "col-sm-9 form-container" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.pregunta,
-                  expression: "form.pregunta"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                id: "pregunta",
-                name: "pregunta",
-                placeholder: "Escriba su pregunta aquí"
-              },
-              domProps: { value: _vm.form.pregunta },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "pregunta", $event.target.value)
-                }
+          },
+          [_c("i", { staticClass: "icon-love" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            on: {
+              click: function($event) {
+                return _vm.enviarReaccion("sad")
               }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-3 text-center" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary",
-                attrs: { type: "button", disabled: !_vm.form.pregunta },
-                on: {
-                  click: function($event) {
-                    return _vm.enviarPregunta()
-                  }
-                }
-              },
-              [
-                _vm.enviando
-                  ? _c("i", { staticClass: "fa fa-spinner fa-spin fa-fw" })
-                  : _vm._e(),
-                _vm._v(" "),
-                !_vm.enviando ? _c("span", [_vm._v("ENVIAR")]) : _vm._e()
-              ]
-            )
-          ])
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _vm.videoSeleccionado
-      ? _c("div", { staticClass: "row content-vimeo-chat" }, [
-          _c("div", { staticClass: "col-sm-9 form-container" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.chat.form.mensaje,
-                  expression: "chat.form.mensaje"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                id: "pregunta",
-                name: "pregunta",
-                placeholder: "Escriba su chat aquí"
-              },
-              domProps: { value: _vm.chat.form.mensaje },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.chat.form, "mensaje", $event.target.value)
-                }
+            }
+          },
+          [_c("i", { staticClass: "icon-sad" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            on: {
+              click: function($event) {
+                return _vm.enviarReaccion("wow")
               }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-3 text-center" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary",
-                attrs: { type: "button", disabled: !_vm.chat.form.mensaje },
-                on: {
-                  click: function($event) {
-                    return _vm.enviarMensajeChat()
-                  }
-                }
-              },
-              [
-                _vm.chat.enviando
-                  ? _c("i", { staticClass: "fa fa-spinner fa-spin fa-fw" })
-                  : _vm._e(),
-                _vm._v(" "),
-                !_vm.chat.enviando ? _c("span", [_vm._v("ENVIAR")]) : _vm._e()
-              ]
-            )
-          ])
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _c("i", {
-      staticClass: "fa fa-spinner fa-spin fa-fw",
-      staticStyle: { opacity: "0" }
-    }),
-    _vm._v(" "),
-    _vm.showModal
-      ? _c(
-          "div",
-          [
-            _c("transition", { attrs: { name: "modal" } }, [
-              _c("div", { staticClass: "modal-mask" }, [
-                _c("div", { staticClass: "modal-wrapper" }, [
-                  _c("div", { staticClass: "modal-container" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "modal-header",
-                        staticStyle: { color: "#fff", padding: "0px 0px 10px" }
-                      },
-                      [
-                        _vm._t("header", [
-                          _vm._v(
-                            "\n                        Encuesta de satisfacción\n                        "
-                          )
-                        ])
-                      ],
-                      2
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "modal-body" }, [
-                      _c(
-                        "div",
-                        { staticClass: "container-encuesta" },
-                        [
-                          _vm._l(_vm.encuesta.preguntas, function(item, index) {
-                            return _c(
-                              "div",
-                              { key: index, staticClass: "row" },
-                              [
-                                _c("div", { staticClass: "col-12" }, [
-                                  _c("h5", [
-                                    _vm._v(
-                                      _vm._s(item.key) + ") " + _vm._s(item.tit)
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [_vm._v(_vm._s(item.preg))])
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "col-12" },
-                                  [
-                                    item.tipo === "C"
-                                      ? [
-                                          _vm._l(
-                                            _vm.obtenerOpcionesPorKey(
-                                              item.key_respuesta
-                                            ),
-                                            function(subitem, indexOpt) {
-                                              return [
-                                                _c(
-                                                  "div",
-                                                  {
-                                                    key: "opt_" + indexOpt,
-                                                    staticClass:
-                                                      "form-check-inline"
-                                                  },
-                                                  [
-                                                    _c(
-                                                      "label",
-                                                      {
-                                                        staticClass:
-                                                          "form-check-label"
-                                                      },
-                                                      [
-                                                        _c("input", {
-                                                          directives: [
-                                                            {
-                                                              name: "model",
-                                                              rawName:
-                                                                "v-model",
-                                                              value:
-                                                                _vm.encuesta
-                                                                  .form[
-                                                                  "resp_" +
-                                                                    item.key
-                                                                ],
-                                                              expression:
-                                                                "encuesta.form['resp_' + item.key]"
-                                                            }
-                                                          ],
-                                                          staticClass:
-                                                            "form-check-input",
-                                                          attrs: {
-                                                            type: "radio",
-                                                            name:
-                                                              "p_" +
-                                                              item.key +
-                                                              "_r_" +
-                                                              indexOpt
-                                                          },
-                                                          domProps: {
-                                                            value: subitem,
-                                                            checked: _vm._q(
-                                                              _vm.encuesta.form[
-                                                                "resp_" +
-                                                                  item.key
-                                                              ],
-                                                              subitem
-                                                            )
-                                                          },
-                                                          on: {
-                                                            change: function(
-                                                              $event
-                                                            ) {
-                                                              return _vm.$set(
-                                                                _vm.encuesta
-                                                                  .form,
-                                                                "resp_" +
-                                                                  item.key,
-                                                                subitem
-                                                              )
-                                                            }
-                                                          }
-                                                        }),
-                                                        _vm._v(
-                                                          " " +
-                                                            _vm._s(subitem) +
-                                                            "\n                                            "
-                                                        )
-                                                      ]
-                                                    )
-                                                  ]
-                                                ),
-                                                _vm._v(" "),
-                                                _c("br", { key: indexOpt })
-                                              ]
-                                            }
-                                          )
-                                        ]
-                                      : [
-                                          _c("textarea", {
-                                            directives: [
-                                              {
-                                                name: "model",
-                                                rawName: "v-model",
-                                                value:
-                                                  _vm.encuesta.form[
-                                                    "resp_" + item.key
-                                                  ],
-                                                expression:
-                                                  "encuesta.form['resp_' + item.key]"
-                                              }
-                                            ],
-                                            staticClass: "form-control",
-                                            attrs: { name: "p_" + item.key },
-                                            domProps: {
-                                              value:
-                                                _vm.encuesta.form[
-                                                  "resp_" + item.key
-                                                ]
-                                            },
-                                            on: {
-                                              input: function($event) {
-                                                if ($event.target.composing) {
-                                                  return
-                                                }
-                                                _vm.$set(
-                                                  _vm.encuesta.form,
-                                                  "resp_" + item.key,
-                                                  $event.target.value
-                                                )
-                                              }
-                                            }
-                                          })
-                                        ]
-                                  ],
-                                  2
-                                )
-                              ]
-                            )
-                          }),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "text-right" }),
-                          _vm._v(" "),
-                          _c("i", {
-                            staticClass: "fa fa-spinner fa-spin fa-fw",
-                            staticStyle: { opacity: "0" }
-                          })
-                        ],
-                        2
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "modal-footer" },
-                      [
-                        _vm._t("footer", [
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn btn-primary",
-                              attrs: { type: "button" },
-                              on: {
-                                click: function($event) {
-                                  return _vm.enviarEncuesta()
-                                }
-                              }
-                            },
-                            [
-                              _vm.encuesta.enviando
-                                ? _c("i", {
-                                    staticClass: "fa fa-spinner fa-spin fa-fw"
-                                  })
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _c("span", [
-                                _vm._v(
-                                  " " +
-                                    _vm._s(
-                                      _vm.encuesta.enviando
-                                        ? "Enviando"
-                                        : "Enviar"
-                                    ) +
-                                    " "
-                                )
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn btn-primary",
-                              attrs: { type: "button" },
-                              on: {
-                                click: function($event) {
-                                  return _vm.mostrarModal(false)
-                                }
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "\n                            Cerrar\n                        "
-                              )
-                            ]
-                          )
-                        ])
-                      ],
-                      2
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ],
-          1
+            }
+          },
+          [_c("i", { staticClass: "icon-wow" })]
         )
-      : _vm._e(),
-    _vm._v(" "),
-    _vm.videoSeleccionado
-      ? _c("div", { staticClass: "row content-certificado" }, [
-          _c("div", { staticClass: "col-12 text-center" }, [
-            _vm.registrado && _vm.registrado.certificado
-              ? _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary",
-                    attrs: { type: "button" },
-                    on: {
-                      click: function($event) {
-                        return _vm.certificadoDisponible()
-                      }
-                    }
-                  },
-                  [_c("span", [_vm._v("Certificado")])]
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "btn btn-primary",
-                attrs: { href: _vm.urlSitioPpal }
-              },
-              [_c("span", [_vm._v("Volver")])]
-            )
-          ])
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _vm._m(2)
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "span",
-      {
-        staticStyle: {
-          color: "#fff",
-          "text-align": "center",
-          width: "100%",
-          "margin-top": "20px",
-          display: "block"
-        }
-      },
-      [
-        _c("i", {
-          staticClass: "fa fa-volume-up",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v("Por favor, activar el sonido del reproductor")
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "span",
-      {
-        staticStyle: {
-          color: "rgb(16, 33, 63)",
-          "text-align": "center",
-          width: "100%",
-          "margin-top": "20px",
-          display: "block",
-          padding: "20px",
-          background: "#e09b3f",
-          border: "2px solid #fff"
-        }
-      },
-      [
-        _c("i", {
-          staticClass: "fa fa-arrow-up",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(
-          " \n                    Para ver el evento, seleccione en los botones de arriba la opción de audio\n                "
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "disc-sitio mt-2" }, [
-          _vm._v(
-            "\n                    Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac)."
-          ),
-          _c("br"),
-          _vm._v(
-            "\n                    Se recomienda tener actualizado el sistema operativo a la última actualización."
-          ),
-          _c("br"),
-          _vm._v(
-            "\n                    Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor."
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "\n\n                    Ante cualquier duda o inconveniente escriba al 0054 9 11 3300 3516 (Whatsapp)\n                "
-          )
-        ])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

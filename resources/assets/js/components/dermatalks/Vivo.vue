@@ -1,191 +1,28 @@
 <template>
-    <div>
-            <div class="row content-title">
-                <div class="col-md-12 text-center">
-                    <!--div class="line line--left"></div-->
-                    <button type="button" class="btn btn-primary" @click="verVideo('ingles')">Audio Original Inglés</button>
-                    <button type="button" class="btn btn-primary" @click="verVideo('esp')">Audio Español</button>                    
+    <div class="container">
 
-                    <!--div class="line line--right"></div-->
-                </div>
-            </div>
-            <div class="row content-encuesta" v-show="videoSeleccionado">
-                <div class="col-sm-12 text-center">
-                    <button type="button" 
-                            class="btn btn-primary" 
-                            @click="encuestaDisponible()"
-                    >
-                        <span>Encuesta</span>
-                    </button>                    
-                </div>
 
-            </div>
-            <div class="row content-vimeo">
-                <div class="col-md-12" v-show="videoSeleccionado">
-                    <span style="color:#fff;text-align:center;width:100%;margin-top: 20px;display: block;"><i class="fa fa-volume-up" aria-hidden="true"></i>Por favor, activar el sonido del reproductor</span>
-                    <div class="contenedor_vimeo">
-                        <div :class="['reaction-icon', item.reaccion, 'float-up']" v-for="(item,key) in chat.mensajes" :key="key"></div>
-                        <iframe v-if="videoSeleccionado === 'ingles'" src="https://player.vimeo.com/video/475459063" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                        <iframe v-else src="https://player.vimeo.com/video/475458120" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                        <div class="reaction-box">
-                            <div class="reaction-icon like" @click="enviarReaccion('like')">
-                            </div>
-                            <div class="reaction-icon love" @click="enviarReaccion('love')">
-                            </div>
-                            <div class="reaction-icon haha" @click="enviarReaccion('haha')">
-                            </div>
-                            <div class="reaction-icon wow" @click="enviarReaccion('wow')">
-                            </div>
-                            <div class="reaction-icon sad" @click="enviarReaccion('sad')">
-                            </div>
-                            <div class="reaction-icon angry" @click="enviarReaccion('angry')">
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
-                <div class="col-md-12" v-show="!videoSeleccionado">
-                    <span style="color: rgb(16, 33, 63);
-                        text-align: center;
-                        width: 100%;
-                        margin-top: 20px;
-                        display: block;
-                        padding: 20px;
-                        background: #e09b3f;
-                        border: 2px solid #fff;"
-                    >
-                        <i class="fa fa-arrow-up" aria-hidden="true"></i> 
-                        Para ver el evento, seleccione en los botones de arriba la opción de audio
-                    </span>
-                </div>                
-            </div>
-            <div class="row content-vimeo-chat" v-if="videoSeleccionado">
-                <div class="col-sm-9 form-container">
-                    <input type="text" class="form-control" id="pregunta" name="pregunta" placeholder="Escriba su pregunta aquí" v-model="form.pregunta">
-                </div>
-                <div class="col-sm-3 text-center">
-                    <button type="button" 
-                            class="btn btn-primary" 
-                            @click="enviarPregunta()"
-                            :disabled="!form.pregunta"
-                    >
-                        <i v-if="enviando" class="fa fa-spinner fa-spin fa-fw"></i> 
-                        <span v-if="!enviando">ENVIAR</span>
-                    </button>                    
-                </div>
-            </div>
-            <div class="row content-vimeo-chat" v-if="videoSeleccionado">
-                <div class="col-sm-9 form-container">
-                    <input type="text" class="form-control" id="pregunta" name="pregunta" placeholder="Escriba su chat aquí" v-model="chat.form.mensaje">
-                </div>
-                <div class="col-sm-3 text-center">
-                    <button type="button" 
-                            class="btn btn-primary" 
-                            @click="enviarMensajeChat()"
-                            :disabled="!chat.form.mensaje"
-                    >
-                        <i v-if="chat.enviando" class="fa fa-spinner fa-spin fa-fw"></i> 
-                        <span v-if="!chat.enviando">ENVIAR</span>
-                    </button>                    
-                </div>
-            </div>
-            <i class="fa fa-spinner fa-spin fa-fw" style="opacity:0;"></i>
-            
-            <div v-if="showModal">
-                <transition name="modal">
-                    <div class="modal-mask">
-                    <div class="modal-wrapper">
-                        <div class="modal-container">
+        <div class="content-video">
 
-                        <div class="modal-header" style="color: #fff;padding: 0px 0px 10px;">
-                            <slot name="header">
-                            Encuesta de satisfacción
-                            </slot>
-                        </div>
+        <div class="reactions"></div>
 
-                        <div class="modal-body">
-                            
-                            <div class="container-encuesta">
-                                <div class="row" v-for="(item,index) in encuesta.preguntas" :key="index">
-                                    <div class="col-12">
-                                        <h5>{{item.key}}) {{item.tit}}</h5>
-                                        <p>{{item.preg}}</p>
-                                    </div>
-                                    <div class="col-12">
-                                        <template v-if="item.tipo === 'C'">
-                                            <template v-for="(subitem, indexOpt) in obtenerOpcionesPorKey(item.key_respuesta)">
-                                            <div class="form-check-inline" :key="'opt_' + indexOpt">
-                                                <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" :name="'p_'+item.key+'_r_'+ indexOpt" :value="subitem" v-model="encuesta.form['resp_' + item.key]"> {{subitem}}
-                                                </label>
-                                            </div>
-                                            <br :key="indexOpt">
-                                            </template>
-                                            
-                                        </template>
-                                        <template v-else>
-                                            <textarea class="form-control" :name="'p_'+item.key" v-model="encuesta.form['resp_' + item.key]"></textarea>
-                                        </template>
-                                    </div>
-                                </div>
+        <iframe src="https://player.vimeo.com/video/70615841" width="840" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-                                <div class="text-right">
+        <div class="content-reactions">
+            <a @click="enviarReaccion('care')"><i class="icon-care"></i></a>
+            <a @click="enviarReaccion('haha')"><i class="icon-haha"></i></a>
+            <a @click="enviarReaccion('like')"><i class="icon-like"></i></a>
+            <a @click="enviarReaccion('love')"><i class="icon-love"></i></a>
+            <a @click="enviarReaccion('sad')"><i class="icon-sad"></i></a>
+            <a @click="enviarReaccion('wow')"><i class="icon-wow"></i></a>
+        </div>
 
-                                </div>
-                                <i class="fa fa-spinner fa-spin fa-fw" style="opacity:0;"></i>
-                            </div>                        
-                        </div>
+        </div>
 
-                        <div class="modal-footer">
-                            <slot name="footer">
-                            <button type="button" 
-                                    class="btn btn-primary" 
-                                    @click="enviarEncuesta()">
-                                <i v-if="encuesta.enviando" class="fa fa-spinner fa-spin fa-fw"></i> 
-                                <span> {{ encuesta.enviando ? 'Enviando' : 'Enviar' }} </span>
-                            </button>                            
-                            <button type="button" class="btn btn-primary" @click="mostrarModal(false)">
-                                Cerrar
-                            </button>
-                            </slot>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </transition>
-            </div>   
+        
 
-            <div class="row content-certificado" v-if="videoSeleccionado">
-                <div class="col-12 text-center">
-                    <button 
-                            v-if="registrado && registrado.certificado"
-                            type="button" 
-                            class="btn btn-primary" 
-                            @click="certificadoDisponible()"
-                    >
-                        <span>Certificado</span>
-                    </button>                    
-                    <a :href="urlSitioPpal" 
-                            class="btn btn-primary" 
-                    >
-                        <span>Volver</span>
-                    </a>                    
 
-                </div>
-
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="disc-sitio mt-2">
-                        Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac).<br>
-                        Se recomienda tener actualizado el sistema operativo a la última actualización.<br>
-                        Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor.<br><br>
-
-                        Ante cualquier duda o inconveniente escriba al 0054 9 11 3300 3516 (Whatsapp)
-                    </div>
-                </div>
-            </div>
 
     </div>
 </template>
@@ -233,6 +70,7 @@
         },
         data () {
             return {
+                actualAnimation: 0,
                 videoSeleccionado: null,
                 form: {
                     pregunta: null
@@ -321,6 +159,7 @@
             var channel = pusher.subscribe('my-channel');
             channel.bind('my-event', function(data) {
                 console.debug(data.message);
+                vm.animateIcon(data.message.reaccion);
                 vm.chat.mensajes.push({
                     reaccion: data.message.reaccion
                 });
@@ -350,29 +189,6 @@
                 
             }, false);                   
 
-            $(function() {
-                $(".like-btn").on({
-                    mouseenter: function () {
-                        $(".reaction-box").fadeIn(100, function() {
-                            $(".reaction-icon").each(function(i, e) {
-                            setTimeout(function(){
-                                $(e).addClass("show");
-                            }, i * 100);
-                            });
-                        });
-
-                    },
-                    mouseleave: function () {
-                        setTimeout(function(){
-                            $(".reaction-box").fadeOut(300, function(){
-                            $(".reaction-icon").removeClass("show")
-                            })
-                        }, 500);
-
-                    }
-                });                
-
-            });
 
         },
 
@@ -503,7 +319,27 @@
                 let vm = this
                 let opciones = _.find(vm.encuesta.opciones,{key:key})
                 return opciones.valores
-            }
+            },
+            animateIcon: function (icon){
+                let animations = ['animate_1', 'animate_2'];
+
+                let newElement = $('<div class="animate"><i class="icon-'+icon+'"  style="animation-name: '+animations[this.actualAnimation]+';"></i></div>');
+
+                this.actualAnimation++;
+
+                if (this.actualAnimation >= animations.length){
+                    this.actualAnimation = 0;
+                }
+
+                console.log('actualAnimation: '+this.actualAnimation);
+
+                $('.content-video').find('.reactions').append(newElement);
+
+                setTimeout(function(){ 
+                    newElement.remove();
+                }, 3800);
+
+            }            
         }
     }
 </script>
