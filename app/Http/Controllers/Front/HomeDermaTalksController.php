@@ -43,14 +43,12 @@ class HomeDermaTalksController extends EventoBaseController
             $conf = $this->config('*');
             
             if ($conf['etapa'] !== 'R') {
-                \Log::info('entra en etapa distinto de R');
                 //return redirect()->route($this->key.'.home');
                 return view('front.'.$this->evento['view'].'.no-habilitado');
             }
 
             try {
                 if (!$request->id || !$request->token) {
-                    \Log::info('entra en no hay id o token');
                     throw new NoHabilitadoException("Vino sin request", 1);                    
                 }            
 
@@ -112,29 +110,27 @@ class HomeDermaTalksController extends EventoBaseController
     protected function obtenerRegistradoExterno(Request $request) {
         
         $keyCacheRegistrado = 'registrado_ext_'.$this->key.'_'.$request->token;
-        \Log::info($keyCacheRegistrado);
+
         $dbRegistrado = \Cache::remember($keyCacheRegistrado, Carbon::now()->addMinutes($this->segundosCache / 60), function () use($request){
             //Puede estar el mismo registrado externo pero para distinto evento
-            return Registrado::whereIdExterno($request->id)->whereEvento($this->key)->first();
+            //return Registrado::whereIdExterno($request->id)->whereEvento($this->key)->first();
+            if ($request->has('test') && $request->get('test',false)) {
+                return Registrado::whereIdExterno($request->id)->first();
+            } else {
+                return Registrado::whereIdExterno($request->id)->whereEvento($this->key)->first();
+            }
+            
         }); 
-        \Log::info('dbRegistrado');
-        \Log::info($dbRegistrado);
 
         if (!$dbRegistrado) {
             
             try {
-                \Log::info($this->evento['urlWebServiceRegistrado']);
                 $json = file_get_contents($this->evento['urlWebServiceRegistrado'].'?id='.$request->id.'&token='.$request->token);
-                \Log::info('$json');
-                
-        
                 $obj = json_decode($json);
-                \Log::info($obj);
                 if (!$obj) {
                     throw new NoHabilitadoException('No retorna ws', 1);    
                 }
             } catch (\Exception $e) {
-                \Log::info($e->getMessage());
                 throw new NoHabilitadoException($e->getMessage(), 1);                
             }
     
