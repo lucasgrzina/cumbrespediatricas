@@ -27,7 +27,9 @@ i.icon-sad {
 i.icon-wow {
   background-image: url(../img/reacciones/png_64/wow.png);
 }
-
+i.icon-aplauso {
+  background-image: url(../img/reacciones/png_64/aplauso.png);
+}
 .animate i {
   position: absolute;
   right: 20px;
@@ -274,4 +276,16 @@ footer .last-line {
   text-align: center;
   font-weight: 400;
   font-family: "Gotham", sans-serif;
+}
+
+.btn-primary, .btn-primary.disabled, .btn-primary:disabled {
+  color: #fff!important;
+  background-color: #810941!important;
+  border-color: #ffffff!important;
+}
+
+.form-control-pregunta {
+  border-color: #810941;
+  border-width: 2px;
+  margin-bottom: 5px;
 }

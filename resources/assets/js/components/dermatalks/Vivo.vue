@@ -5,20 +5,38 @@
 
         <div class="content-video">
 
-        <div class="reactions"></div>
+            <div class="reactions"></div>
 
-        <iframe src="https://player.vimeo.com/video/70615841" width="840" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <iframe src="https://player.vimeo.com/video/70615841" width="840" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-        <div class="content-reactions">
-            <a @click="enviarReaccion('care')"><i class="icon-care"></i></a>
-            <a @click="enviarReaccion('haha')"><i class="icon-haha"></i></a>
-            <a @click="enviarReaccion('like')"><i class="icon-like"></i></a>
-            <a @click="enviarReaccion('love')"><i class="icon-love"></i></a>
-            <a @click="enviarReaccion('sad')"><i class="icon-sad"></i></a>
-            <a @click="enviarReaccion('wow')"><i class="icon-wow"></i></a>
+            <div class="content-reactions">
+                <a href="#" @click="enviarReaccion('care')"><i class="icon-care"></i></a>
+                <a @click="enviarReaccion('haha')"><i class="icon-haha"></i></a>
+                <a @click="enviarReaccion('like')"><i class="icon-like"></i></a>
+                <a @click="enviarReaccion('love')"><i class="icon-love"></i></a>
+                <a @click="enviarReaccion('sad')"><i class="icon-sad"></i></a>
+                <a @click="enviarReaccion('wow')"><i class="icon-wow"></i></a>
+                <a @click="enviarReaccion('aplauso')"><i class="icon-aplauso"></i></a>
+            </div>
+
+            <div class="row content-vimeo-chat" v-if="videoSeleccionado">
+                <div class="col-sm-10 form-container">
+                    <input type="text" class="form-control form-control-pregunta" id="pregunta" name="pregunta" placeholder="Escriba su pregunta aquí" v-model="form.pregunta">
+                </div>
+                <div class="col-sm-2 text-center">
+                    <button type="button" 
+                            class="btn btn-primary" 
+                            @click="enviarPregunta()"
+                            :disabled="!form.pregunta"
+                    >
+                        <i v-if="enviando" class="fa fa-spinner fa-spin fa-fw"></i> 
+                        <span v-if="!enviando">ENVIAR</span>
+                    </button>                    
+                </div>
+            </div>
+
         </div>
 
-        </div>
 
         
 
@@ -66,12 +84,16 @@
             urlEnviarMensajeChat: {
                 type: String,
                 required:true
-            },            
+            },  
+            pusherAppKey: {
+                type: String,
+                default: false
+            }          
         },
         data () {
             return {
                 actualAnimation: 0,
-                videoSeleccionado: null,
+                videoSeleccionado: true,
                 form: {
                     pregunta: null
                 },
@@ -152,8 +174,8 @@
             
             Pusher.logToConsole = true;
 
-            var pusher = new Pusher('7a03700500184fd155a4', {
-            cluster: 'us2'
+            var pusher = new Pusher(this.pusherAppKey, {
+                cluster: 'us2'
             });
 
             var channel = pusher.subscribe('my-channel');

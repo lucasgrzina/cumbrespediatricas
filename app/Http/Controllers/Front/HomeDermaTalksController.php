@@ -90,6 +90,7 @@ class HomeDermaTalksController extends EventoBaseController
                 'urlEnviarSalidaUsuario' => route($this->key.'.enviar-salida-usuario'),
                 'urlSitioPpal' => $this->evento['urlSitioPrincipal'],
                 'urlEnviarMensajeChat' => route($this->key.'.enviar-mensaje-chat'),
+                'pusherAppKey' => config('broadcasting.connections.pusher.key')
             ]
         ];
         return view('front.'.$this->evento['view'].'.vivo', $data);

@@ -45442,6 +45442,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -45481,12 +45499,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         urlEnviarMensajeChat: {
             type: String,
             required: true
+        },
+        pusherAppKey: {
+            type: String,
+            default: false
         }
     },
     data: function data() {
         return {
             actualAnimation: 0,
-            videoSeleccionado: null,
+            videoSeleccionado: true,
             form: {
                 pregunta: null
             },
@@ -45549,7 +45571,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         Pusher.logToConsole = true;
 
-        var pusher = new Pusher('7a03700500184fd155a4', {
+        var pusher = new Pusher(this.pusherAppKey, {
             cluster: 'us2'
         });
 
@@ -45753,6 +45775,7 @@ var render = function() {
         _c(
           "a",
           {
+            attrs: { href: "#" },
             on: {
               click: function($event) {
                 return _vm.enviarReaccion("care")
@@ -45820,8 +45843,75 @@ var render = function() {
             }
           },
           [_c("i", { staticClass: "icon-wow" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            on: {
+              click: function($event) {
+                return _vm.enviarReaccion("aplauso")
+              }
+            }
+          },
+          [_c("i", { staticClass: "icon-aplauso" })]
         )
-      ])
+      ]),
+      _vm._v(" "),
+      _vm.videoSeleccionado
+        ? _c("div", { staticClass: "row content-vimeo-chat" }, [
+            _c("div", { staticClass: "col-sm-10 form-container" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.pregunta,
+                    expression: "form.pregunta"
+                  }
+                ],
+                staticClass: "form-control form-control-pregunta",
+                attrs: {
+                  type: "text",
+                  id: "pregunta",
+                  name: "pregunta",
+                  placeholder: "Escriba su pregunta aquí"
+                },
+                domProps: { value: _vm.form.pregunta },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "pregunta", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-2 text-center" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { type: "button", disabled: !_vm.form.pregunta },
+                  on: {
+                    click: function($event) {
+                      return _vm.enviarPregunta()
+                    }
+                  }
+                },
+                [
+                  _vm.enviando
+                    ? _c("i", { staticClass: "fa fa-spinner fa-spin fa-fw" })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  !_vm.enviando ? _c("span", [_vm._v("ENVIAR")]) : _vm._e()
+                ]
+              )
+            ])
+          ])
+        : _vm._e()
     ])
   ])
 }
