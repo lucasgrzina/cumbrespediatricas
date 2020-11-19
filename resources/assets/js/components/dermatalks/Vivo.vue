@@ -21,7 +21,7 @@
 
             <div class="row content-vimeo-chat" v-if="videoSeleccionado">
                 <div class="col-sm-10 form-container">
-                    <input type="text" class="form-control form-control-pregunta" id="pregunta" name="pregunta" placeholder="Escriba su pregunta aquí" v-model="form.pregunta">
+                    <input type="text" class="form-control form-control-pregunta" id="pregunta" name="pregunta" placeholder="Escriba su comentario aquí" v-model="form.pregunta">
                 </div>
                 <div class="col-sm-2 text-center">
                     <button type="button" 

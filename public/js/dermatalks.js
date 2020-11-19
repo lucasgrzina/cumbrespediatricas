@@ -45876,7 +45876,7 @@ var render = function() {
                   type: "text",
                   id: "pregunta",
                   name: "pregunta",
-                  placeholder: "Escriba su pregunta aquí"
+                  placeholder: "Escriba su comentario aquí"
                 },
                 domProps: { value: _vm.form.pregunta },
                 on: {
