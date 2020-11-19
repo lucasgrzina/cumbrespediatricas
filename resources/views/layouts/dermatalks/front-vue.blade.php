@@ -54,7 +54,7 @@
                                <p class="address"><b>Novartis Argentina S.A.</b><br>Ramallo 1851 - C1429DUC Buenos Aires - Argentina<br>Tel. +54 (11) 4703-7000 / 0800-777-1111</p>
                             </div>
                             <div class="col-12">
-                               <p class="last-line">Material para uso exclusivo del profesional. Prohibida su exhibición y/o entrega a pacientes, consumidores y/o al público en general. Fecha de elaboración: Noviembre 2020</p>
+                               <p class="last-line">Material para uso exclusivo del profesional. Prohibida su exhibición y/o entrega a pacientes, consumidores y/o al público en general. Fecha de elaboración: Noviembre 2020.</p>
                             </div>
                          </div>
                       </div>
