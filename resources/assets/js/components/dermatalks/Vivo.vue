@@ -19,6 +19,11 @@
                 <a @click="enviarReaccion('aplauso')"><i class="icon-aplauso"></i></a>
             </div>
 
+
+
+        </div>
+
+        <div class="content-video">
             <div class="row content-vimeo-chat" v-if="videoSeleccionado">
                 <div class="col-sm-10 form-container">
                     <input type="text" class="form-control form-control-pregunta" id="pregunta" name="pregunta" placeholder="Haga su comentario aquí" v-model="form.pregunta">
@@ -34,11 +39,7 @@
                     </button>                    
                 </div>
             </div>
-
         </div>
-
-
-        
 
 
 

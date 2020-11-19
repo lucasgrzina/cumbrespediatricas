@@ -45460,6 +45460,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -45857,8 +45858,10 @@ var render = function() {
           },
           [_c("i", { staticClass: "icon-aplauso" })]
         )
-      ]),
-      _vm._v(" "),
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "content-video" }, [
       _vm.videoSeleccionado
         ? _c("div", { staticClass: "row content-vimeo-chat" }, [
             _c("div", { staticClass: "col-sm-10 form-container" }, [
