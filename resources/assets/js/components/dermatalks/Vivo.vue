@@ -10,7 +10,7 @@
             <iframe src="https://player.vimeo.com/video/70615841" width="840" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
             <div class="content-reactions">
-                <a href="#" @click="enviarReaccion('care')"><i class="icon-care"></i></a>
+                <a @click="enviarReaccion('care')"><i class="icon-care"></i></a>
                 <a @click="enviarReaccion('haha')"><i class="icon-haha"></i></a>
                 <a @click="enviarReaccion('like')"><i class="icon-like"></i></a>
                 <a @click="enviarReaccion('love')"><i class="icon-love"></i></a>

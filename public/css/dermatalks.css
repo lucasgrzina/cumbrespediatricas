@@ -153,7 +153,9 @@ main .derma-logo-2 {
   position: relative;
   float: left;
   margin-right: 2px;
+  cursor: pointer;
 }
+
 
 footer {
   background-color: #fff;
