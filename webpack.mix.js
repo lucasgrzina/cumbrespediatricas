@@ -59,6 +59,13 @@ mix.js('resources/assets/js/cumbre.js', 'public/js')
       'public/css/utils.css',
    ], 'public/css/dermatalks.css');
 
+   mix.js('resources/assets/js/fundacionkaleidos.js', 'public/js')
+   .styles([
+      'public/css/bootstrap.min.css',
+      'public/css/styles_fundacionkaleidos.css',
+      'public/css/utils.css',
+   ], 'public/css/fundacionkaleidos.css');     
+
 if (mix.inProduction()) {
    mix.version();
 }   

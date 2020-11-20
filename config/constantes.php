@@ -163,7 +163,15 @@ return [
             'urlWebServiceRegistrado' => 'https://www.quimicavirtualevents.com/cumbreabbot/app/webservice.php',
             'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbreabbot',
             'urlCertificado' => 'https://www.quimicavirtualevents.com/cumbreabbot/app/certificado.php?id=_ID_&token=_TOKEN_'
-        ],                                                    
+        ],   
+        'fundacionkaleidos' => [
+            'nombre' => 'Fundacion Kaleidos',
+            'prefix' => 'fundacionkaleidos',
+            'controller' => 'HomeKaleidosController',
+            'view' => 'fundacionkaleidos',
+            'cookie' => 'fundacionkaleidos',
+            'activo' => true
+        ],                                                         
     ],
     'recaptcha' => [
         'key' => '6LcNPcYZAAAAAI5sgO4CAlZxlGHgADMXtUCbARnh',
