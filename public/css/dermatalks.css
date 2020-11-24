@@ -109,18 +109,19 @@ main {
   float: left;
   width: 100%;
   height: calc(100vh - 80px);
+  min-height: 620px;
 }
 main .derma-logo-1 {
   position: absolute;
   left: -38px;
   width: 327px;
-  top: 360px;
+  bottom: -133px;
 }
 main .derma-logo-2 {
   position: absolute;
   right: 15px;
   width: 169px;
-  top: 480px;
+  bottom: 15px;
 }
 
 .container {
@@ -240,7 +241,7 @@ footer .last-line {
     height: 60px;
   }
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+/*@media (min-width: 768px) and (max-width: 1024px) {
   main .derma-logo-1 {
     bottom: 12px;
   }
@@ -257,7 +258,7 @@ footer .last-line {
   main .derma-logo-2 {
     bottom: 230px;
   }
-}
+}*/
 @media (max-width: 640px) {
   .content-video {
     margin: 60px 0 0 0;
@@ -268,15 +269,34 @@ footer .last-line {
   }
 
   main .derma-logo-1 {
+    width: 45%;
+    bottom: -116px;
+  }
+  main .derma-logo-2 {
+    width: 21%;
+    bottom: 10px;
+  }
+}
+@media (max-width: 450px) {
+  main .derma-logo-1 {
     width: 59%;
-    top: 370px;
+    bottom: -86px;
   }
   main .derma-logo-2 {
     width: 36%;
-    top: 454px;
+    bottom: 10px;
   }
 }
-
+@media (max-width: 320px) {
+  main .derma-logo-1 {
+    width: 59%;
+    bottom: -70px;
+  }
+  main .derma-logo-2 {
+    width: 36%;
+    bottom: 10px;
+  }
+}
 /*# sourceMappingURL=styles.css.map */
 
 .disc-sitio {

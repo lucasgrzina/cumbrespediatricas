@@ -41,14 +41,93 @@
             </div>
         </div>
 
+        <div class="content-video">
+            <div class="row content-encuesta">
+                <div class="col-sm-12 text-center">
+                    <button type="button" 
+                            class="btn btn-primary" 
+                            @click="encuestaDisponible()"
+                    >
+                        <span>Encuesta</span>
+                    </button>                    
+                </div>
 
+            </div>            
+        </div>
 
+        <div v-if="showModal">
+            <transition name="modal">
+                <div class="modal-mask">
+                <div class="modal-wrapper">
+                    <div class="modal-container">
+
+                    <div class="modal-header">
+                        <slot name="header">
+                        <h3>Encuesta de satisfacción</h3>
+                        </slot>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="container-encuesta">
+                            <div class="row py-3" v-for="(item,index) in encuesta.preguntas" :key="index">
+                                <div class="col-12">
+                                    <h5>{{item.key}}) {{item.tit}}</h5>
+                                    <p>{{item.preg}}</p>
+                                </div>
+                                <div class="col-12">
+                                    <template v-if="item.tipo === 'C'">
+                                        <star-rating :star-size="32" :max-rating="10" v-model="encuesta.form['resp_' + item.key]" ></star-rating>
+                                        <!--template v-for="(subitem, indexOpt) in obtenerOpcionesPorKey(item.key_respuesta)">
+                                            <star-rating v-model="rating" :key="'opt_' + indexOpt"></star-rating>
+                                        <div class="form-check-inline" :key="'opt_' + indexOpt">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" :name="'p_'+item.key+'_r_'+ indexOpt" :value="subitem" v-model="encuesta.form['resp_' + item.key]"> {{subitem}}
+                                            </label>
+                                        </div-->
+                                        <!--br :key="indexOpt">
+                                        </template-->
+                                        
+                                    </template>
+                                    <template v-else>
+                                        <textarea class="form-control" :name="'p_'+item.key" v-model="encuesta.form['resp_' + item.key]"></textarea>
+                                    </template>
+                                </div>
+                            </div>
+
+                            <div class="text-right">
+
+                            </div>
+                            <i class="fa fa-spinner fa-spin fa-fw" style="opacity:0;"></i>
+                        </div>                        
+                    </div>
+
+                    <div class="modal-footer">
+                        <slot name="footer">
+                        <button type="button" 
+                                class="btn btn-primary" 
+                                @click="enviarEncuesta()">
+                            <i v-if="encuesta.enviando" class="fa fa-spinner fa-spin fa-fw"></i> 
+                            <span> {{ encuesta.enviando ? 'Enviando' : 'Enviar' }} </span>
+                        </button>                            
+                        <button type="button" class="btn btn-primary" @click="mostrarModal(false)">
+                            Cerrar
+                        </button>
+                        </slot>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </transition>
+        </div>   
     </div>
 </template>
 
 <script>
-    
+    import StarRating from 'vue-star-rating'
     export default {
+        components: {
+            StarRating
+        },        
         props : {
             urlEnviar: {
                 type: String,
@@ -109,27 +188,14 @@
                 },
                 encuesta: {
                     preguntas: [
-                        {key: 1,tit: 'El contenido del programa es relevante para mi consultorio', preg: '', tipo: 'C', key_respuesta: 1},
-                        {key: 2,tit: 'Los oradores y contenido son interesantes', preg: '', tipo: 'C', key_respuesta: 1},
-                        {key: 3,tit: 'Logística y experiencia del evento: calidad audiovisual y de la transmisión son buenas y sin interrupciones', preg: '', tipo: 'C', key_respuesta: 1},
-                        {key: 4,tit: 'Probablemente participaré en las ofertas visuales futuras de Abbott Nutrición', preg: '', tipo: 'C', key_respuesta: 1},
-                        {key: 5,tit: 'Probablemente recomendaré este webinario a mis colegas', preg: '', tipo: 'C', key_respuesta: 1},
-                        {key: 6,tit: '¿Qué temas son de mayor interés para usted relacionados con la nutrición?', preg: '', tipo: 'T'},
-                        {key: 7,tit: '¿Cuál es el aprendizaje más importante en este programa que pudiera traducirse a su consultorio clínico?', preg: '', tipo: 'T'},
-                        {key: 8,tit: '¿Alguna sugerencia para hacer este webinar más efectivo?', preg: '', tipo: 'T'},
-
-
+                        {key: 1,tit: '¿Cuán probable es que recomiende este evento a un colega?', preg: '', tipo: 'C', key_respuesta: 1},
+                        {key: 2,tit: 'Comentarios sobre el evento', preg: '', tipo: 'T'}
                     ],
                     opciones: [
                         {key: 1, 
                             valores: [
-                                'Totalmente en desacuerdo', 'En desacuerdo', 'Ni en desacuerdo ni de acuerdo', 'De acuerdo','Totalmente de acuerdo'
+                                '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'
                             ] 
-                        },
-                        {key: 2, 
-                            valores: [
-                                'Igual que antes', 'Ligeramente más que antes', 'Moderadamente más que antes', 'Mucho más que antes','Significativamente más que antes'
-                            ]
                         }
                     ],
                     form: {
@@ -286,7 +352,7 @@
             enviarEncuesta: function () {
                 let vm = this
 
-                if (!vm.encuesta.form.resp_1 || !vm.encuesta.form.resp_2 || !vm.encuesta.form.resp_3 || !vm.encuesta.form.resp_4 || !vm.encuesta.form.resp_5 || !vm.encuesta.form.resp_6 || !vm.encuesta.form.resp_7 || !vm.encuesta.form.resp_8) {
+                if (!vm.encuesta.form.resp_1 || !vm.encuesta.form.resp_2) {
                     alert('Debe responder todas las preguntas');
                     return false;
                 }
@@ -390,23 +456,31 @@
     max-width: 630px;
     margin: 0px auto;
     padding: 10px;
-    background-color: #061422;
+    background-color: #fff;
     border-radius: 2px;
-    box-shadow: 0 2px 8px #e7a249;
+    box-shadow: 0 2px 8px #810941;
     transition: all 0.3s ease;
-    border: 1px solid #9E9E9E;
+    border: 3px solid #810941;
+}
+
+.modal-header {
+    padding: 0;
+    margin-bottom: 20px;
 }
 
 .modal-header h3 {
-  margin-top: 0;
-  color: #42b983;
+margin-top: 0;
+    color: #810941;
+    width: 100%;
+    text-align: center;
 }
 
 .modal-body {
   margin: 0;
   padding: 0;
   max-height: 500px;
-  overflow-y: auto;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .modal-default-button {
@@ -438,8 +512,8 @@
 .modal-footer {
     justify-content: center;
     padding: 0;
-    background: #061422;
-    border-top-color: #061422;    
+background: #ffffff;
+    border-top-color: #dee2e6;
 }
 
 .emoji {

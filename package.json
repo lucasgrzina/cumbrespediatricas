@@ -19,6 +19,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
-        "pretty-checkbox-vue": "^1.1.9"
+        "pretty-checkbox-vue": "^1.1.9",
+        "vue-star-rating": "^1.7.0"
     }
 }
