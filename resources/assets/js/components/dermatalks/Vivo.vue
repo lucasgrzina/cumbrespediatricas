@@ -106,7 +106,7 @@
                         <button type="button" 
                                 class="btn btn-primary" 
                                 @click="enviarEncuesta()">
-                            <i v-if="encuesta.enviando" class="fa fa-spinner fa-spin fa-fw"></i> 
+                             
                             <span> {{ encuesta.enviando ? 'Enviando' : 'Enviar' }} </span>
                         </button>                            
                         <button type="button" class="btn btn-primary" @click="mostrarModal(false)">

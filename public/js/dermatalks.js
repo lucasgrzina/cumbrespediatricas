@@ -46154,12 +46154,6 @@ var render = function() {
                               }
                             },
                             [
-                              _vm.encuesta.enviando
-                                ? _c("i", {
-                                    staticClass: "fa fa-spinner fa-spin fa-fw"
-                                  })
-                                : _vm._e(),
-                              _vm._v(" "),
                               _c("span", [
                                 _vm._v(
                                   " " +
