@@ -138,7 +138,7 @@ return [
             'controller' => 'HomeSimilaCMamaController',
             'view' => 'similacmama',
             'cookie' => 'similacmama_17_11',
-            'activo' => true
+            'activo' => false
         ],      
         'cumbre5' => [
             'nombre' => 'Abbott Cumbre pediatrica - 5/5',
@@ -146,7 +146,7 @@ return [
             'controller' => 'HomeCumbrePediatricaController',
             'view' => 'cumbre',
             'cookie' => 'cumbre5',
-            'activo' => true,
+            'activo' => false,
             'registroExterno' => true,
             'urlWebServiceRegistrado' => 'https://www.quimicavirtualevents.com/cumbreabbot/app/webservice.php',
             'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbreabbot',
@@ -171,7 +171,15 @@ return [
             'view' => 'fundacionkaleidos',
             'cookie' => 'fundacionkaleidos',
             'activo' => true
-        ],                                                         
+        ],      
+        'similacmamac' => [
+            'nombre' => 'Similac Mama - 02/12',
+            'prefix' => 'similacmama',
+            'controller' => 'HomeSimilaCMamaController',
+            'view' => 'similacmama',
+            'cookie' => 'similacmama_02_12',
+            'activo' => true
+        ],                                                            
     ],
     'recaptcha' => [
         'key' => '6LcNPcYZAAAAAI5sgO4CAlZxlGHgADMXtUCbARnh',
