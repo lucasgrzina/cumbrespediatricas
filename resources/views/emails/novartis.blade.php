@@ -236,7 +236,7 @@
 
       <!-- === PRE HEADER SECTION=== -->  
 
-      <tr>
+      <!--tr>
 
         <td align="center" valign="top"  bgcolor="#30373b">
 
@@ -256,7 +256,7 @@
 
                   </tr>
 
-                  <!--tr>
+                  <tr>
 
                     <td valign="top">
 
@@ -290,7 +290,7 @@
 
                     </td>
 
-                  </tr-->
+                  </tr>
 
                   <tr>
 
@@ -308,13 +308,13 @@
 
         </td>
 
-      </tr>
+      </tr-->
 
       <tr>
 
         <td align="center" valign="top"  bgcolor="#ffffff">
 
-          <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="em_main_table" style="table-layout:fixed;">
+          <table width="750" cellpadding="0" cellspacing="0" border="0" align="center" class="em_main_table" style="table-layout:fixed;">
 
             <tr>
 
@@ -334,7 +334,7 @@
 
                     	<a href="#" target="_blank">
 
-                            <img src="{{$imagen}}" width="333" height="303" alt="WELCOME" style="display:block; font-family:Arial, sans-serif; font-size:25px; line-height:303px; color:#c27cbb;max-width:333px;" class="em_full_img" border="0" />
+                            <img src="{{$imagen}}" width="750" height="1143" alt="Novartis" style="display:block; font-family:Arial, sans-serif; font-size:25px; line-height:303px; color:#c27cbb;max-width:750px;" class="em_full_img" border="0" />
 
                     	</a>
 

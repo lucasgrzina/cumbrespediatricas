@@ -30,8 +30,8 @@ class TestController extends AppBaseController
     public function sendEmail() {
         try
         {
-            $imagen = asset('img/dermatalks/mailing_1.jpg');
-            Mail::queue(new \App\Mail\Novartis('lucasgrzina@gmail.com', 'Foro-Sas: Registro', $imagen));                                    
+            $imagen = 'https://quimicavirtualeventss.com/img/dermatalks/mailing_1.jpg';
+            Mail::queue(new \App\Mail\Novartis('lgrzina@identidad-digital.com.ar', 'Foro-Sas: Registro', $imagen));                                    
             /*Mail::raw('This is the content of mail body', function($message)
             {
                 $message->from('test@test.com', 'Test Email');

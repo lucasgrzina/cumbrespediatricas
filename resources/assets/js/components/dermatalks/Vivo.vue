@@ -7,7 +7,8 @@
 
             <div class="reactions"></div>
 
-            <iframe src="https://player.vimeo.com/video/70615841" width="840" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <!--iframe src="https://player.vimeo.com/video/70615841" width="840" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe-->
+            <iframe src="https://player.vimeo.com/video/483671022" width="840" height="400"  frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
             <div class="content-reactions">
                 <a @click="enviarReaccion('care')"><i class="icon-care"></i></a>

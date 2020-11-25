@@ -40,7 +40,7 @@ class Novartis extends Mailable
         $this->view('emails.novartis',['imagen' => $this->imagen]);
         //$pathToFile = asset('img/forosas/Confirmacion.jpg');
         $this->subject($this->mailSubject)
-        ->from('novartis@novartis.com.ar', 'Novartis')
+        ->from('dermatalks.2020@gmail.com', 'Novartis')
         ->to($this->mailTo);
     }
 }
