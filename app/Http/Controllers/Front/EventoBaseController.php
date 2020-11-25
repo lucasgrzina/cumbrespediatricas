@@ -162,7 +162,6 @@ class EventoBaseController extends AppBaseController
 
             } catch (\Exception $e) {}
             $data['respuesta'] = $request->all();
-            \Log::info($data);
             $data = Trivias::create($data);
             return $this->sendResponse($data,'La operación finañizó con éxito');                
         } catch (\Exception $e) {
@@ -189,7 +188,6 @@ class EventoBaseController extends AppBaseController
             $modelData->id = 1;
             //$modelData->created_at = Carbon::now()->format('Y-m-d H:i:s');
             //$modelData->updated_at = Carbon::now()->format('Y-m-d H:i:s');
-            \Log::info($modelData);
 
             try {
                 broadcast(new MensajeChatEvent($registrado, $modelData->toArray()))->toOthers();

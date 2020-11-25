@@ -40,7 +40,7 @@ class DashboardController extends AppBaseController
     public function guardar(Request $request) {
 
         foreach ($request->config as $key => $value) {
-            \Log::info($key);
+            //\Log::info($key);
             if ($key == 'encuesta') {
                 $value = $value ? true : false;
             }

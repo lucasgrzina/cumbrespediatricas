@@ -46001,27 +46001,29 @@ var render = function() {
         : _vm._e()
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "content-video" }, [
-      _c("div", { staticClass: "row content-encuesta" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-sm-12 text-center" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-primary",
-              attrs: { type: "button" },
-              on: {
-                click: function($event) {
-                  return _vm.encuestaDisponible()
-                }
-              }
-            },
-            [_c("span", [_vm._v("Encuesta")])]
-          )
+    _vm.showModal
+      ? _c("div", { staticClass: "content-video" }, [
+          _c("div", { staticClass: "row content-encuesta" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-12 text-center" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.encuestaDisponible()
+                    }
+                  }
+                },
+                [_c("span", [_vm._v("Encuesta")])]
+              )
+            ])
+          ])
         ])
-      ])
-    ]),
+      : _vm._e(),
     _vm._v(" "),
     _vm.showModal
       ? _c(
