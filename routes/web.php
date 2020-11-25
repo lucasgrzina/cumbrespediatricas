@@ -16,7 +16,8 @@ Route::prefix('id')->group(function () {
 });
 
 Route::prefix('test')->group(function () {
-    //Route::get('/sms', 'TestController@sms');
+    Route::get('/sms', 'TestController@sms');
+    Route::get('/send-email', 'TestController@sendEmail');
 });
 
 Route::prefix('combos')->group(function () {
