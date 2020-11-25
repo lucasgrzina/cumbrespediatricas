@@ -109,7 +109,7 @@ main {
   float: left;
   width: 100%;
   height: calc(100vh - 80px);
-  min-height: 620px;
+  min-height: 700px;
 }
 main .derma-logo-1 {
   position: absolute;

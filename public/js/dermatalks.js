@@ -45539,6 +45539,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -45998,6 +46002,8 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "content-video" }, [
       _c("div", { staticClass: "row content-encuesta" }, [
+        _vm._m(0),
+        _vm._v(" "),
         _c("div", { staticClass: "col-sm-12 text-center" }, [
           _c(
             "button",
@@ -46199,7 +46205,20 @@ var render = function() {
       : _vm._e()
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-sm-12 text-center my-2" }, [
+      _c("span", { staticStyle: { color: "#fff", "font-size": "14px" } }, [
+        _vm._v("Te gustó el evento? Queremos saber tu opinión!"),
+        _c("br"),
+        _vm._v("Responde una breve encuesta en el siguiente link")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

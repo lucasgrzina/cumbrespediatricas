@@ -43,7 +43,11 @@
 
         <div class="content-video">
             <div class="row content-encuesta">
+                <div class="col-sm-12 text-center my-2">
+                    <span style="color:#fff;font-size:14px;">Te gustó el evento? Queremos saber tu opinión!<br>Responde una breve encuesta en el siguiente link</span>
+                </div>
                 <div class="col-sm-12 text-center">
+                    
                     <button type="button" 
                             class="btn btn-primary" 
                             @click="encuestaDisponible()"
