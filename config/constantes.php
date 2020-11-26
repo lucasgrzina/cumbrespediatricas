@@ -160,9 +160,9 @@ return [
             'cookie' => 'dermatalks',
             'activo' => true,
             'registroExterno' => true,
-            'urlWebServiceRegistrado' => 'https://www.quimicavirtualevents.com/cumbreabbot/app/webservice.php',
-            'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbreabbot',
-            'urlCertificado' => 'https://www.quimicavirtualevents.com/cumbreabbot/app/certificado.php?id=_ID_&token=_TOKEN_'
+            'urlWebServiceRegistrado' => 'https://dermatalks.com.ar/evento/app/webservice.php',
+            'urlSitioPrincipal' => 'https://dermatalks.com.ar',
+            'urlCertificado' => 'https://dermatalks.com.ar/evento/app/certificado.php?id=_ID_&token=_TOKEN_'
         ],   
         'fundacionkaleidos' => [
             'nombre' => 'Fundacion Kaleidos',

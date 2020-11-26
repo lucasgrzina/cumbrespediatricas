@@ -128,6 +128,7 @@ class HomeDermaTalksController extends EventoBaseController
             try {
                 $json = file_get_contents($this->evento['urlWebServiceRegistrado'].'?id='.$request->id.'&token='.$request->token);
                 $obj = json_decode($json);
+                dd($dbRegistrado);
                 if (!$obj) {
                     throw new NoHabilitadoException('No retorna ws', 1);    
                 }
