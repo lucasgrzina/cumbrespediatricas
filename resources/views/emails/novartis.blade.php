@@ -332,7 +332,7 @@
 
                     <td valign="middle" align="center">
 
-                    	<a href="#" target="_blank">
+                    	<a href="https://www.dermatalks.com.ar" target="_blank">
 
                             <img src="{{$imagen}}" width="750" height="1143" alt="Novartis" style="display:block; font-family:Arial, sans-serif; font-size:25px; line-height:303px; color:#c27cbb;max-width:750px;" class="em_full_img" border="0" />
 

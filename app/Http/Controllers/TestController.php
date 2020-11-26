@@ -30,8 +30,34 @@ class TestController extends AppBaseController
     public function sendEmail() {
         try
         {
+            $registrados = [
+                'lucasgrzina@gmail.com',
+                'lgrzina@identidad-digital.com.ar',
+                'guido@quimicaeventos.com'
+            ];
+
+
             $imagen = 'https://quimicavirtualeventss.com/img/dermatalks/mailing_1.jpg';
-            Mail::queue(new \App\Mail\Novartis('lgrzina@identidad-digital.com.ar', 'Foro-Sas: Registro', $imagen));                                    
+         
+            $salida = [
+                'errores' => [],
+                'ok' => 0
+            ];
+            try
+            {
+                foreach ($registrados as $email) {
+                    Mail::queue(new \App\Mail\Novartis($email, 'Dermatalks 26/11', $imagen));                                    
+                    $salida['ok'] = $salida['ok'] + 1;
+                }
+            }
+            catch(\Exception $ex)
+            {
+                $salida['errores'][] = $ex->getMessage();
+                //\Log::error($ex->getMessage());
+            }               
+            return response()->json($salida);         
+         
+         
             /*Mail::raw('This is the content of mail body', function($message)
             {
                 $message->from('test@test.com', 'Test Email');
