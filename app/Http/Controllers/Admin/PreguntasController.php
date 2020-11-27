@@ -109,7 +109,6 @@ class PreguntasController extends CrudAdminController
         ];
         $format = [
             'registrado_id' => function($col,$row) {
-                \Log::info($row);
                 return $row['registrado']['nombre'] . ' ' . $row['registrado']['apellido'];
             }
         ];
