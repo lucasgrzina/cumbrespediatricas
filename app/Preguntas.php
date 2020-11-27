@@ -88,7 +88,10 @@ class Preguntas extends Model
         return \FUHelper::fullUrl($this->targetDir,$this->the_file);
     }*/   
 
-
+    public function registrado()
+    {
+        return $this->belongsTo('App\Registrado', 'registrado_id');
+    }
     
 
     protected static function boot()

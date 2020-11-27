@@ -99,14 +99,19 @@ class PreguntasController extends CrudAdminController
     {
         $this->repository->pushCriteria(new RequestCriteria($request));
         $this->repository->pushCriteria(new EventoCriteria($request));        
-        $data = $this->repository->all()->toArray();        
+        $data = $this->repository->with('registrado')->all()->toArray();        
         $name = 'Preguntas';
         $header = [
             'id' => 'ID',
+            'registrado_id' => 'Registrado',
             'pregunta' => 'Pregunta',
             'destinatario' => 'Destinatario',
         ];
         $format = [
+            'registrado_id' => function($col,$row) {
+                \Log::info($row);
+                return $row['registrado']['nombre'] . ' ' . $row['registrado']['apellido'];
+            }
         ];
         return $this->_exportXls($data,$header,$format,$name);
     }     
