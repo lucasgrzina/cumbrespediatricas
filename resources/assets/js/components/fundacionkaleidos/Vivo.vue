@@ -1,61 +1,20 @@
 <template>
-    <div>
-            <!--div class="row content-title">
-                <div class="col-md-12 text-center">
-                    <button type="button" class="btn btn-primary violeta" @click="verVideo('ingles')">Audio Original Ingles</button>
-                    <button type="button" class="btn btn-primary violeta" @click="verVideo('esp')">Audio Español</button>                    
-                </div>
-            </div-->
-            <div class="row content-encuesta" v-if="videoSeleccionado">
-                <div class="col-sm-12 text-center">
-                    <button type="button" 
-                            class="btn btn-primary violeta" 
-                            @click="encuestaDisponible()"
-                    >
-                        <span>Encuesta</span>
-                    </button>                    
-                </div>
-                <!--div class="col-sm-12 text-center">
-                    <button type="button" 
-                            class="btn btn-primary violeta" 
-                            @click="linkGuatemalaDisponible()"
-                            v-if="registrado && registrado.pais === 'Guatemala'"
-                    >
-                        <span>Si es Médico de Guatemala, esta actividad cuenta con horas crédito, haga click aquí.</span>
-                    </button>                    
-                </div-->
+    <div class="container">
 
-            </div>
-            <div class="row content-vimeo">
-                <div class="col-md-12" v-if="videoSeleccionado">
-                    <span style="color:#b26fa7;text-align:center;width:100%;margin-top: 20px;display: block;"><i class="fa fa-volume-up" aria-hidden="true"></i>Por favor, activar el sonido del reproductor</span>
-                    <!--div class="wraper_video"-->
-                        <div class="embed-container" v-if="videoSeleccionado === 'ingles'">
-                            <div class="overlay"></div>
-                            <!--iframe v-if="evento.key === 'similacmama169'" src="https://player.vimeo.com/video/457475164" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                            <iframe v-else-if="evento.key === 'similacmama179'" src="https://player.vimeo.com/video/457475561" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                            <iframe v-else-if="evento.key === 'similacmama229'" src="https://player.vimeo.com/video/460540053" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe-->
-                            <iframe src="https://player.vimeo.com/video/479842544" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                        </div>                    
-                        <div class="embed-container" v-else>
-                            <iframe src="https://player.vimeo.com/video/455802173" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                        </div>                    
-                    <!--/div-->
-                </div>
-                <div class="col-md-12" v-else>
-                    <span class="disc-video">
-                        <i class="fa fa-arrow-up" aria-hidden="true"></i> 
-                        Para ver el evento, seleccione en los botones de arriba la opción de audio
-                    </span>
-                </div>                
-            </div>
+
+
+        <div class="content-video">
+            <iframe src="https://player.vimeo.com/video/483671022" width="840" height="400"  frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+
+        <div class="content-video">
             <div class="row content-vimeo-chat" v-if="videoSeleccionado">
-                <div class="col-sm-9 form-container">
-                    <input type="text" class="form-control input-pregunta" id="pregunta" name="pregunta" placeholder="Escriba su pregunta aquí" v-model="form.pregunta">
+                <div class="col-sm-10 form-container">
+                    <input type="text" class="form-control form-control-pregunta" id="pregunta" name="pregunta" placeholder="Haga su pregunta aquí" v-model="form.pregunta">
                 </div>
-                <div class="col-sm-3 text-center">
+                <div class="col-sm-2 text-center content-button">
                     <button type="button" 
-                            class="btn btn-primary dorado" 
+                            class="btn btn-secondary" 
                             @click="enviarPregunta()"
                             :disabled="!form.pregunta"
                     >
@@ -64,83 +23,101 @@
                     </button>                    
                 </div>
             </div>
+        </div>
 
-            <i class="fa fa-spinner fa-spin fa-fw" style="opacity:0;"></i>
-            
-            <div v-if="showModal">
-                <transition name="modal">
-                    <div class="modal-mask">
-                    <div class="modal-wrapper">
-                        <div class="modal-container">
-
-                        <div class="modal-header" style="color: #fff;padding: 0px 0px 10px;">
-                            <slot name="header">
-                            Encuesta de satisfacción
-                            </slot>
-                        </div>
-
-                        <div class="modal-body">
-                            <div class="container-encuesta">
-                                <div class="row" v-for="(item,index) in encuesta.preguntas" :key="index">
-                                    <div class="col-12">
-                                        <h5>{{item.key}}) {{item.tit}}</h5>
-                                        <p>{{item.preg}}</p>
-                                    </div>
-                                    <div class="col-12">
-                                        <template v-if="item.tipo === 'C'">
-                                            <template v-for="(subitem, indexOpt) in encuesta.opciones[index].valores">
-                                            <div class="form-check-inline" :key="'opt_' + indexOpt">
-                                                <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" :name="'p_'+item.key+'_r_'+ indexOpt" :value="subitem" v-model="encuesta.form['resp_' + item.key]"> {{subitem}}
-                                                </label>
-                                            </div>
-                                            <br :key="indexOpt">
-                                            </template>
-                                            
-                                        </template>
-                                        <template v-else>
-                                            <textarea class="form-control" :name="'p_'+item.key" v-model="encuesta.form['resp_' + item.key]"></textarea>
-                                        </template>
-                                    </div>
-                                </div>
-
-                                <div class="text-right">
-
-                                </div>
-                                <i class="fa fa-spinner fa-spin fa-fw" style="opacity:0;"></i>
-                            </div>
-                        </div>
-
-                        <div class="modal-footer">
-                            <slot name="footer">
-                            <button type="button" 
-                                    class="btn btn-primary" 
-                                    @click="enviarEncuesta()">
-                                <i v-if="encuesta.enviando" class="fa fa-spinner fa-spin fa-fw"></i> 
-                                <span> {{ encuesta.enviando ? 'Enviando' : 'Enviar' }} </span>
-                            </button>                            
-                            <button type="button" class="btn btn-primary" @click="mostrarModal(false)">
-                                Cerrar
-                            </button>
-                            </slot>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </transition>
-            </div>   
-        <div class="row">
-            <div class="col-12">
-                <div class="disc-sitio mt-2">
-                    Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac).<br>
-                    Se recomienda tener actualizado el sistema operativo a la última actualización.<br>
-                    Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor.<br><br>
-
-                    Ante cualquier duda o inconveniente escriba al 00506 7014 6741 (Whatsapp)
+        <div class="content-video">
+            <div class="row content-encuesta">
+                <div class="col-sm-12 text-center my-2">
+                    <span style="color:#fff;font-size:14px;">Te gustó el evento? Queremos saber tu opinión!<br>Responde una breve encuesta en el siguiente link</span>
                 </div>
-            </div>
-        </div> 
+                <div class="col-sm-12 text-center">
+                    
+                    <button type="button" 
+                            class="btn btn-secondary" 
+                            @click="encuestaDisponible()"
+                    >
+                        <span>Encuesta</span>
+                    </button>                    
+                </div>
 
+            </div>  
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="disc-sitio mt-2">
+                        Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac).<br>
+                        Se recomienda tener actualizado el sistema operativo a la última actualización.<br>
+                        Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor.<br><br>
+
+                        Ante cualquier duda o inconveniente escriba al (+5411) 3300 3516 (Whatsapp)
+                    </div>
+                </div>
+            </div>                       
+        </div>
+
+        
+
+        <div v-if="showModal">
+            <transition name="modal">
+                <div class="modal-mask">
+                <div class="modal-wrapper">
+                    <div class="modal-container">
+
+                    <div class="modal-header" style="color: #fff;padding: 0px 0px 10px;">
+                        <slot name="header">
+                        Encuesta de satisfacción
+                        </slot>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="container-encuesta">
+                            <div class="row mb-3" v-for="(item,index) in encuesta.preguntas" :key="index">
+                                <div class="col-12">
+                                    <h5>{{item.key}}) {{item.tit}}</h5>
+                                    <p>{{item.preg}}</p>
+                                </div>
+                                <div class="col-12">
+                                    <template v-if="item.tipo === 'C'">
+                                        <template v-for="(subitem, indexOpt) in obtenerOpcionesPorKey(item.key_respuesta)">
+                                        <div class="form-check-inline" :key="'opt_' + indexOpt">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" :name="'p_'+item.key+'_r_'+ indexOpt" :value="subitem" v-model="encuesta.form['resp_' + item.key]"> {{subitem}}
+                                            </label>
+                                        </div>
+                                        <br :key="indexOpt">
+                                        </template>
+                                        
+                                    </template>
+                                    <template v-else>
+                                        <textarea class="form-control" :name="'p_'+item.key" v-model="encuesta.form['resp_' + item.key]"></textarea>
+                                    </template>
+                                </div>
+                            </div>
+
+                            <div class="text-right">
+
+                            </div>
+                            <i class="fa fa-spinner fa-spin fa-fw" style="opacity:0;"></i>
+                        </div>                        
+                    </div>
+
+                    <div class="modal-footer">
+                        <slot name="footer">
+                        <button type="button" 
+                                class="btn btn-secondary" 
+                                @click="enviarEncuesta()">
+                            <i v-if="encuesta.enviando" class="fa fa-spinner fa-spin fa-fw"></i> 
+                            <span> {{ encuesta.enviando ? 'Enviando' : 'Enviar' }} </span>
+                        </button>                            
+                        <button type="button" class="btn btn-secondary" @click="mostrarModal(false)">
+                            Cerrar
+                        </button>
+                        </slot>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </transition>
+        </div> 
     </div>
 </template>
 
@@ -186,42 +163,46 @@
                 },
                 encuesta: {
                     preguntas: [
-                        {key: 1,tit: 'El contenido del programa es relevante para mi consultorio', preg: '', tipo: 'C'},
-                        {key: 2,tit: 'Los oradores y contenido son interesantes', preg: '', tipo: 'C'},
-                        {key: 3,tit: 'Logística y experiencia del evento: calidad audiovisual y de la transmisión son buenas y sin interrupciones', preg: '', tipo: 'C'},
-                        {key: 4,tit: 'Probablemente participaré en las ofertas visuales futuras de Abbott Nutrición', preg: '', tipo: 'C'},
-                        {key: 5,tit: 'Probablemente recomendaré este webinario a mis colegas', preg: '', tipo: 'C'},
-                        {key: 6,tit: '¿Qué temas son de mayor interés para usted relacionados con la nutrición?', preg: '', tipo: 'T'},
-                        {key: 7,tit: '¿Cuál es el aprendizaje más importante en este programa que pudiera traducirse a su consultorio clínico?', preg: '', tipo: 'T'},
-                        {key: 8,tit: '¿Alguna sugerencia para hacer este webinar más efectivo?', preg: '', tipo: 'T'},
+                        {key: 1,tit: '¿Habías escuchado hablar de Fundación Kaleidos?', preg: '', tipo: 'C', key_respuesta: 1},
+                        {key: 2,tit: '¿Cómo evaluarías el contenido del webinario?', preg: '', tipo: 'C', key_respuesta: 2},
+                        {key: 3,tit: '¿Cómo evaluarías la duración del webinario?', preg: '', tipo: 'C', key_respuesta: 2},
+                        {key: 4,tit: '¿Cómo evaluarías la dinámica del webinario?', preg: '', tipo: 'C', key_respuesta: 2},
+                        {key: 5,tit: '¿Sabías antes de comenzar el webinario que Fundación Kaleidos trabaja sobre estos temas?', preg: '', tipo: 'C', key_respuesta: 1},
+                        {key: 6,tit: '¿Cuán útil es el Manual para tu trabajo?', preg: '', tipo: 'C', key_respuesta: 3},
+                        {key: 7,tit: '¿Considerás importante que tus colegas conozcan esta problemática y les compartirías el Manual?', preg: '', tipo: 'C', key_respuesta: 1},
+                        {key: 8,tit: '¿Te serviría un Manual sobre alguno de estos temas?', preg: '', tipo: 'C', key_respuesta: 4},
+
+
+                        {key: 9,tit: 'En caso de haber seleccionado "Otro" en la pregunta anterior, ¿Sobre qué otro tema? ', preg: '', tipo: 'T'},
+                        {key: 10,tit: '¿Hay otros comentarios que nos quieras hacer llegar?', preg: '', tipo: 'T'},
+
 
                     ],
                     opciones: [
                         {key: 1, 
                             valores: [
-                                'Totalmente de acuerdo', 'De acuerdo', 'Ni en desacuerdo ni de acuerdo', 'En desacuerdo','Totalmente en desacuerdo'
+                                'Si', 'No'
                             ] 
                         },
                         {key: 2, 
                             valores: [
-                                'Totalmente de acuerdo', 'De acuerdo', 'Ni en desacuerdo ni de acuerdo', 'En desacuerdo','Totalmente en desacuerdo'
+                                'Excelente', 'Bueno', 'Muy bueno', 'Regular','Malo'
                             ]
-                        },                        
+                        },
                         {key: 3, 
                             valores: [
-                                'Totalmente de acuerdo', 'De acuerdo', 'Ni en desacuerdo ni de acuerdo', 'En desacuerdo','Totalmente en desacuerdo'
+                                'Alto', 'Medio', 'Bajo'
                             ]
                         },
                         {key: 4, 
                             valores: [
-                                'Totalmente de acuerdo', 'De acuerdo', 'Ni en desacuerdo ni de acuerdo', 'En desacuerdo','Totalmente en desacuerdo'
+                                'Derechos de niños, niñas y adolescentes', 
+                                'Derechos sexuales y (no) reproductivos', 
+                                'Violencia de género',
+                                'Educación sexual integral',
+                                'Otro'
                             ]
-                        },      
-                        {key: 5, 
-                            valores: [
-                                'Totalmente de acuerdo', 'De acuerdo', 'Ni en desacuerdo ni de acuerdo', 'En desacuerdo','Totalmente en desacuerdo'
-                            ]
-                        },                                            
+                        }                          
                     ],
                     form: {
                         resp_1: null,
@@ -232,6 +213,8 @@
                         resp_6: null,
                         resp_7: null,
                         resp_8: null,
+                        resp_9: null,
+                        resp_10: null,
                     },
                     enviando: false,
                     errors: [],
@@ -350,6 +333,8 @@
                                 resp_6: null,
                                 resp_7: null,
                                 resp_8: null,
+                                resp_9: null,
+                                resp_10: null,
                             };
                             alert('Gracias por responder la encuesta');
                             vm.mostrarModal(false);
@@ -367,11 +352,21 @@
             enviarSalidaUsuario: function() {
                 let vm = this
                 return axios.post(vm.urlEnviarSalidaUsuario,{});
-            }            
+            },
+            obtenerOpcionesPorKey: function (key) {
+                let vm = this
+                let opciones = _.find(vm.encuesta.opciones,{key:key})
+                return opciones.valores
+            }          
         }
     }
 </script>
 <style scoped>
+.form-control-pregunta {
+    font-size: 20px;
+    line-height: 20px;
+    border: 2px solid #F44336;    
+}
 .modal-mask {
   position: fixed;
   z-index: 9998;
@@ -394,7 +389,7 @@
     max-width: 630px;
     margin: 0px auto;
     padding: 10px;
-    background-color: #4e2149;
+    background-color: #F44336;
     border-radius: 2px;
     box-shadow: 0 2px 8px #7c666c;
     transition: all 0.3s ease;
@@ -411,6 +406,7 @@
   padding: 0;
   max-height: 500px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .modal-default-button {
@@ -442,8 +438,12 @@
 .modal-footer {
     justify-content: center;
     padding: 0;
-    background: #4e2149;
+    background: #F44336;
     border-top-color: #4e2149;    
+}
+.container-encuesta {
+    background: #fff;
+    padding: 10px;
 }
 
 </style>

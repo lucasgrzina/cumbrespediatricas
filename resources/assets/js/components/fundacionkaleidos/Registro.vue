@@ -1,100 +1,59 @@
 <template>
-    <div>
-        <div class="container" v-if="paso === 1">
-            <div class="row content-big-title">
-                <div class="col-md-12 text-center">
-                    <img class="img-fluid logo" src="img/similacmama/logo.png">
-                    <a class="btn btn-inscribite" @click="mostrarDisc()">
-                        <img class="img-fluid" src="img/similacmama/btn-inscribite-2.png">
-                    </a>
-                </div>
-            </div>  
-        </div>
-        <template  v-else-if="paso === 2">
-            <div class="row fondo-disc">
-                    <div class="col-md-12">
-                        <div class="modal-disc text-center">
-                            <img class="img-fluid tit-registro" src="img/similacmama/titulo-registro.png">
-                            <div class="container">
-                                
-                                <p class="modal-disc-texto">
-                                    En cumplimiento de las políticas corporativas de Abbott, le informamos que este evento es exclusivo para profesionales de la salud. En caso de que esta invitación no esté acorde con su área de especialización/conocimiento y/o desarrollo profesional o, en caso de que usted sea un empleado del gobierno y su participación contravenga alguna ley, reglamento o norma interna de su institución y no cuente con las respectivas autorizaciones, le solicitamos nos informe a la brevedad posible.
-                                    <br><br>
-                                    La información y/o datos brindados para el registro al evento serán utilizados únicamente durante su participación en el evento y envío de información relacionada al evento. Todos los datos serán manejados de acuerdo a nuestros procedimientos de manejo de datos y no podrán ser compartidos y/o utilizados para fines diferentes a su participación en este evento.                        
+        <div class="container">
 
-                                </p>
-                                <p class="text text-center" style="margin-top:20px;">
-                                    <a target="_blank" style="text-decoration:underline;color:rgb(178, 111, 167);" href="https://www.quimicavirtualevents.com/recorrido/avisodeprivacidad.html">Aviso de Privacidad</a>
-                                </p>                                
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="container text-center">
-                <a class="modal-disc-btn btn" @click="mostrarForm()">
-                    <img class="img-fluid" src="img/similacmama/btn-acepto-legales.png">
-                </a>                
-            </div>
-        </template>
-        <template v-else>      
-            <div class="row fondo-disc">
-                    <div class="col-md-12">
-                        <div class="modal-disc text-center">
-                            <img class="img-fluid tit-registro" src="img/similacmama/titulo-inscribirse.png">
-                            <div class="container">
-                                <form class="form-container" id="frm-registro">                                
-                                    <div class="form-group row">
-                                        <div class="col-12">
-                                            <input type="text" class="form-control" placeholder="Nombre" v-model="form.nombre">
-                                        </div>                                        
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-12">
-                                            <input type="text" class="form-control" placeholder="Apellido" v-model="form.apellido">
-                                        </div>                                        
-                                    </div> 
-                                    <div class="form-group row">
-                                        <div class="col-12">
-                                            <input type="text" class="form-control" placeholder="Especialidad" v-model="form.especialidad">
-                                        </div>                                        
-                                    </div>                                                                                             
-                                    <div class="form-group row">
-                                        <div class="col-12">
-                                            <select v-model="form.pais" class="form-control">
-                                                <option :value="null">Seleccione</option>
-                                                <option v-for="(item,index) in info.countries" :value="item" :key="index">{{item}}</option>
-                                            </select>                                            
-                                        </div>                                        
-                                    </div>                                                                                             
-                                    <div class="form-group row">
-                                        <div class="col-12">
-                                            <input type="text" class="form-control" placeholder="Mail" v-model="form.email">
-                                        </div>                                        
-                                    </div>  
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="container text-center">
-                <a class="modal-disc-btn btn" @click="registrar()">
-                    <img class="img-fluid" src="img/similacmama/btn-ingresar.png">
-                </a>                
-            </div>
- 
-        </template>  
-        <div class="row">
+          <div class="row">
+
             <div class="col-12">
-                <div class="disc-sitio mt-2">
-                    Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac).<br>
-                    Se recomienda tener actualizado el sistema operativo a la última actualización.<br>
-                    Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor.<br><br>
 
-                    Ante cualquier duda o inconveniente escriba al 00506 7014 6741 (Whatsapp)
-                </div>
+              <div class="form-content">
+
+                <form id="frm-registro">
+
+                  <div class="row form-group">
+                    <div class="col-sm-12 col-md  pl-0 pr-0 col-label"><label for="inputNombre">Nombre</label></div>
+                    <div class="col-sm-12 col-md  pl-0 pr-0">
+                        <input type="text" class="form-control" placeholder="" v-model="form.nombre">
+                    </div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col-md col-sm-12 pl-0 pr-0 col-label"><label for="inputApellido">Apellido</label></div>
+                    <div class="col-md col-sm-12 pl-0 pr-0">
+                        <input type="text" class="form-control" placeholder="" v-model="form.apellido">
+                    </div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col-md col-sm-12 pl-0 pr-0 col-label"><label for="inputEmail">E-Mail</label></div>
+                    <div class="col-md col-sm-12 pl-0 pr-0">
+                        <input type="text" class="form-control" placeholder="" v-model="form.email">
+                    </div>
+                  </div>
+
+                    <button type="button" class="btn btn-secondary" @click="registrar()">
+                        Ingresar
+                    </button>
+
+                </form>
+
+              </div>
+
             </div>
-        </div>        
-    </div>
+
+          </div>
+
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="disc-sitio mt-2">
+                        Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac).<br>
+                        Se recomienda tener actualizado el sistema operativo a la última actualización.<br>
+                        Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor.<br><br>
+
+                        Ante cualquier duda o inconveniente escriba al (+5411) 3300 3516 (Whatsapp)
+                    </div>
+                </div>
+            </div> 
+        </div>
 </template>
 
 <script>
@@ -119,8 +78,8 @@
                 form: {
                     nombre: null,
                     apellido: null,
-                    especialidad: null,
-                    pais: null,
+                    especialidad: 'S/E',
+                    pais: 'S/E',
                     email: null
                 },
                 guardando: false,

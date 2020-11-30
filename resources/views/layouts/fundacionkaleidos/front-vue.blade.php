@@ -19,37 +19,29 @@
             window.App = {!! json_encode([
             ]) !!};
         </script>   
+        <style>
+            .disc-sitio {
+                font-size: 11px;
+                color: #fff;
+                text-align: center;
+                font-weight: 300;
+                font-family: "gothamlight", sans-serif;
+            }            
+        </style>
         <!--link rel="shortcut icon" href="#" /-->
         @yield('head')
       
     </head>
     <body>
         <div id="app" v-cloak>
-            <header class="">
-    	
-            </header>            
-            <section>
-                
+            <header>
+                <div class="logo-float"><img src="/img/fundacionkaleidos/logo.png"></div>
+            </header>  
+            <main>         
+                <section>                
                     @yield('content')
-                
-            </section>
-            <footer class="">
-                <!--div class="container">
-                    <div class="row logos">
-                        <div class="col-4" style="padding-top: 10px;text-align:center;">
-                            <a><img src="{{asset('img/logo_3.png')}}" style="height: auto; max-width: 160px;"></a>
-                        </div>
-        
-                        <div class="col-4 text-center">
-                            <img class="logo-cumbre" style="height: auto; max-width: 180px;" src="{{asset('img/cumbres_logo.png')}}">
-                        </div>
-        
-                        <div class="col-4">
-                            <a><img src="{{asset('img/logo_1.png')}}" style="height: auto; max-width: 180px;"></a>
-                        </div>
-                    </div>
-                </div-->
-            </footer>            
+                </section>
+            </main>
         </div>
         <script src="{{ url(mix('/js/fundacionkaleidos.js')) }}"></script>
     </body>
