@@ -30,6 +30,7 @@ class TestController extends AppBaseController
     public function sendEmail() {
         try
         {
+            
             $registrados = [
                 'pablo.arlia@gmail.com',
                 'mauropolicella@gmail.com',
@@ -157,9 +158,15 @@ class TestController extends AppBaseController
                 'antobefani@hotmail.com',
                 'mergomezcarril@hotmail.com'
             ];
+            
 
+            /*$registrados = [
+                'lucasgrzina@gmail.com',
+                'guido@quimicaeventos.com',
+                'guidoblarasin@gmail.com'
+            ];*/
 
-            $imagen = 'https://quimicavirtualeventss.com/img/dermatalks/mailing_1.jpg';
+            $imagen = 'https://quimicavirtualeventss.com/img/dermatalks/mailing_2.jpg';
          
             $salida = [
                 'errores' => [],
