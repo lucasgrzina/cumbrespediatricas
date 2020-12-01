@@ -46527,7 +46527,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "content-video" }, [
       _c("iframe", {
         attrs: {
-          src: "https://player.vimeo.com/video/483671022",
+          src: "https://player.vimeo.com/video/485984730",
           width: "840",
           height: "400",
           frameborder: "0",
