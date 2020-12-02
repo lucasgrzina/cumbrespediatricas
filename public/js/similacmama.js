@@ -45575,7 +45575,7 @@ var render = function() {
                     staticClass: "btn btn-inscribite",
                     on: {
                       click: function($event) {
-                        return _vm.mostrarDisc()
+                        return _vm.mostrarForm()
                       }
                     }
                   },

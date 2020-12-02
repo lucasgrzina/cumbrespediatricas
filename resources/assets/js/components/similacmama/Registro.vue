@@ -4,7 +4,7 @@
             <div class="row content-big-title">
                 <div class="col-md-12 text-center">
                     <img class="img-fluid logo" src="img/similacmama/logo.png">
-                    <a class="btn btn-inscribite" @click="mostrarDisc()">
+                    <a class="btn btn-inscribite" @click="mostrarForm()">
                         <img class="img-fluid" src="img/similacmama/btn-inscribite-2.png">
                     </a>
                 </div>

@@ -166,7 +166,7 @@ class TestController extends AppBaseController
                 'guidoblarasin@gmail.com'
             ];*/
 
-            $imagen = 'https://quimicavirtualeventss.com/img/dermatalks/mailing_2.jpg';
+            $imagen = 'https://quimicavirtualeventss.com/img/dermatalks/mailing_3.jpg';
          
             $salida = [
                 'errores' => [],
