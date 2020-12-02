@@ -7,14 +7,14 @@
                 </div>
             </div-->
             <div class="row content-encuesta" v-if="videoSeleccionado">
-                <div class="col-sm-12 text-center">
+                <!--div class="col-sm-12 text-center">
                     <button type="button" 
                             class="btn btn-primary violeta" 
                             @click="encuestaDisponible()"
                     >
                         <span>Encuesta</span>
                     </button>                    
-                </div>
+                </div-->
                 <!--div class="col-sm-12 text-center">
                     <button type="button" 
                             class="btn btn-primary violeta" 

@@ -46378,23 +46378,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _vm.videoSeleccionado
-      ? _c("div", { staticClass: "row content-encuesta" }, [
-          _c("div", { staticClass: "col-sm-12 text-center" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary violeta",
-                attrs: { type: "button" },
-                on: {
-                  click: function($event) {
-                    return _vm.encuestaDisponible()
-                  }
-                }
-              },
-              [_c("span", [_vm._v("Encuesta")])]
-            )
-          ])
-        ])
+      ? _c("div", { staticClass: "row content-encuesta" })
       : _vm._e(),
     _vm._v(" "),
     _c("div", { staticClass: "row content-vimeo" }, [
