@@ -13,7 +13,7 @@
         <!--link rel="icon" type="image/png" href="public/img/forosas/favicon-32x32.png" sizes="32x32"-->
         
         <!--link rel="icon" type="image/vnd.microsoft.icon" href="public/img/forosas/favicon.ico"-->
-        <title>Foro Sas</title>
+        <title>Cigen</title>
 
         <link href="{{ url(mix('/css/cigen.css')) }}" rel="stylesheet" type="text/css">
         <!-- Minified version of `es6-promise-auto` below. -->
