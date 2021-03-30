@@ -66,6 +66,13 @@ mix.js('resources/assets/js/cumbre.js', 'public/js')
       'public/css/utils.css',
    ], 'public/css/fundacionkaleidos.css');     
 
+   mix.js('resources/assets/js/cigen.js', 'public/js')
+   .styles([
+      'public/css/bootstrap.4.5.3.min.css',
+      'public/css/styles_cigen.css'
+      
+   ], 'public/css/cigen.css');    
+
 if (mix.inProduction()) {
    mix.version();
 }   

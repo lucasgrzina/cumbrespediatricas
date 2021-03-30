@@ -25,7 +25,7 @@ class RegistrarRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = Registrado::$rules;
+        $rules = array_except(Registrado::$rules,['apellido']);
         //$rules['name'] = str_replace('{:id}', $this->get('id') , $rules['name']); 
         return $rules;
     }

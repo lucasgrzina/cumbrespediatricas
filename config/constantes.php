@@ -179,7 +179,16 @@ return [
             'view' => 'similacmama',
             'cookie' => 'similacmama_02_12',
             'activo' => true
-        ],                                                            
+        ],           
+        'cigen' => [
+            'nombre' => 'Cigen',
+            'prefix' => 'cigen',
+            'controller' => 'HomeCigenController',
+            'view' => 'cigen',
+            'cookie' => 'cigen',
+            'activo' => true,
+            'evitarRoute' => true 
+        ],                                                          
     ],
     'recaptcha' => [
         'key' => '6LcNPcYZAAAAAI5sgO4CAlZxlGHgADMXtUCbARnh',

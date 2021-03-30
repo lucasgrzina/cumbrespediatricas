@@ -1,5 +1,6 @@
 {
     "/js/abbottnight.js": "/js/abbottnight.js",
+    "/js/cigen.js": "/js/cigen.js",
     "/js/similacmama.js": "/js/similacmama.js",
     "/js/fundacionkaleidos.js": "/js/fundacionkaleidos.js",
     "/js/forosas.js": "/js/forosas.js",
@@ -13,5 +14,6 @@
     "/css/abbottnight.css": "/css/abbottnight.css",
     "/css/abbottnight_inicio.css": "/css/abbottnight_inicio.css",
     "/css/dermatalks.css": "/css/dermatalks.css",
-    "/css/fundacionkaleidos.css": "/css/fundacionkaleidos.css"
+    "/css/fundacionkaleidos.css": "/css/fundacionkaleidos.css",
+    "/css/cigen.css": "/css/cigen.css"
 }

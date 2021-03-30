@@ -145,6 +145,24 @@ if (env('APP_ENV','production') === 'local') {
     Route::namespace('Front')->name($keyForoSas.'.')->domain('www.foro-sas.com.ar')->group($appRoutesForoSas);
 }
 
+$keyCigen = 'cigen';
+$appRoutesCigen = function() use ($keyCigen){
+    $data = config('constantes.eventos.cigen',[]); 
+    Route::get('/', $data['controller'].'@index')->name('home');
+    Route::get('/registro', $data['controller'].'@registro')->name('registro');
+    Route::post('/registrar', $data['controller'].'@registrar')->name('registrar');
+    Route::get('/login', $data['controller'].'@login')->name('login');
+    Route::post('/login', $data['controller'].'@loggear')->name('loggear');
+    Route::post('/enviar-pregunta', $data['controller'].'@enviarPregunta')->name('enviar-pregunta');
+    Route::post('/recuperar', $data['controller'].'@recuperar')->name('recuperar');
+    Route::get('/registrado', $data['controller'].'@registrado')->name('registrado');
+};
+if (env('APP_ENV','production') === 'local') {
+    Route::namespace('Front')->name($keyCigen.'.')->domain('dev.cigen.com.ar')->group($appRoutesCigen);
+} else {
+    Route::namespace('Front')->name($keyCigen.'.')->domain('www.cigen.com.ar')->group($appRoutesCigen);
+}
+
 /*$keyAbbottNight = 'abbottnight';
 $appRoutesAbbottNight = function() use ($keyAbbottNight){
     $data = config('constantes.eventos.abbottnight',[]); 

@@ -14,7 +14,7 @@ use App\Http\Requests\Front\RegistrarRequest;
 use App\Http\Controllers\Front\EventoBaseController;
 
 
-class HomeForoSasController extends EventoBaseController
+class HomeCigenController extends EventoBaseController
 {
     /**
      * Create a new controller instance.
@@ -29,24 +29,38 @@ class HomeForoSasController extends EventoBaseController
 
     public function index()
     {
-        if (!\Auth::guard('web')->check()) {
-            return redirect()->route($this->key.'.registro');
+        if (\Auth::guard('web')->check()) {
+            return redirect()->route($this->key.'.registrado');
         }        
-        $ahora = Carbon::now();
-        $inicioVivo = Carbon::parse('2020-10-29 18:00:00');
-        //$inicioVivo = Carbon::parse('2020-10-26 15:21:00');
-        $segundosRestantes = $inicioVivo && $inicioVivo->gt($ahora) ? Carbon::parse($inicioVivo)->diffInSeconds($ahora) : 0;
-
+        
         $data = [
             'props' => [
-                'ahora' => $ahora->format('Y-m-d H:i:s'),
-                'segundosRestantes' => $segundosRestantes,
-                'urlEnviarPregunta' => route($this->key.'.enviar-pregunta'),
-            ]
+                'loggedIn' => \Auth::guard('web')->check(),
+            ],
+            'headerData' => true,
+            'title' => '¡Bienvenidos!'
         ];
         return view('front.'.$this->evento['view'].'.home-vue', $data);
         
     }
+
+    public function login()
+    {
+        if (\Auth::check()) {
+            return redirect()->route($this->key.'.home');
+        }
+        $data = [
+            'props' => [
+                'keyRecaptcha' => config('constantes.recaptcha.key',''),
+                'urlLogin' => route($this->key.'.loggear'),
+                'urlRecuperar' => route($this->key.'.recuperar'),
+                'urlHome' => route($this->key.'.home'),
+            ],
+            'title' => 'Login'            
+        ];
+        return view('front.'.$this->evento['view'].'.login', $data);
+        
+    }   
 
     public function registro()
     {
@@ -59,7 +73,8 @@ class HomeForoSasController extends EventoBaseController
                 'urlLogin' => route($this->key.'.login'),
                 'urlRegistrar' => route($this->key.'.registrar'),
                 'urlHome' => route($this->key.'.home'),
-            ]
+            ],
+            'title' => 'Registro'
         ];
         return view('front.'.$this->evento['view'].'.registro', $data);
         
@@ -74,9 +89,9 @@ class HomeForoSasController extends EventoBaseController
                 throw new \Exception('El email ingresado ya se encuentra registrado',422);
             }
 
-            if (strtoupper($request->codigo) !== strtoupper('forosas7')) {
+            /*if (strtoupper($request->codigo) !== strtoupper('forosas7')) {
                 throw new \Exception('El código ingresado es incorrecto',422);
-            }
+            }*/
             
             DB::beginTransaction();
             $data = Registrado::create($input);
@@ -84,11 +99,12 @@ class HomeForoSasController extends EventoBaseController
             {
                 
                 
-                    $pathToFile = asset('img/forosas/Confirmacion.jpg');
+                    /*$pathToFile = asset('img/forosas/Confirmacion.jpg');
                     $contenidoEmail = "Hola {$request->nombre}<br>".
                     "Muchas gracias por registrarse al 7mo Foro de Salud Sustentable (SaS).<br>".
                     "Ya puede darle un vistazo a la información del evento ingresando al sitio web www.foro-sas.com.ar";
                     Mail::queue(new \App\Mail\RawMailable($request->email, 'Foro-Sas: Registro', $contenidoEmail));                    
+                    */
                 
             }
             catch(\Exception $ex)
@@ -111,9 +127,9 @@ class HomeForoSasController extends EventoBaseController
         }        
     }    
 
-    public function login(Request $request) {
+    public function loggear(Request $request) {
         try {
-            $data = Registrado::whereEmail($request->email)->whereEvento($this->key)->first();
+            $data = Registrado::whereEmail($request->email)->wherePassword($request->password)->whereEvento($this->key)->first();
             if (!$data) {
                 throw new \Exception('El email ingresado no se encuentra registrado',404);
             }
@@ -141,6 +157,33 @@ class HomeForoSasController extends EventoBaseController
         } catch (\Exception $e) {
             return $this->sendError($e->getMessage(),$e->getCode());
         }
-    }    
+    } 
+    
+    public function registrado()
+    {
+        if (!\Auth::guard('web')->check()) {
+            return redirect()->route($this->key.'.home');
+        }        
+        
+        $data = [
+            'headerData' => false,
+            'title' => '¡Te has registrado exitosamente!'
+        ];
+        return view('front.'.$this->evento['view'].'.registrado', $data);
+        
+    } 
+    
+    public function recuperar(Request $request) {
+        try {
+            $data = Registrado::whereEmail($request->email)->whereEvento($this->key)->first();
+            if (!$data) {
+                throw new \Exception('El email ingresado no se encuentra registrado',404);
+            }
+            //Hago el envio del email
+            return $this->sendResponse($data,'La operación finañizó con éxito');                
+        } catch (\Exception $e) {
+            return $this->sendError($e->getMessage(),$e->getCode());
+        }
+    }     
 
 }

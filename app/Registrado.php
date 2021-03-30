@@ -19,7 +19,9 @@ class Registrado extends Authenticatable
         'id_externo',
         'token',
         'certificado',
-        'evento'
+        'evento',
+        'password',
+        'institucion'
     ];
 
     /**

@@ -116,7 +116,7 @@ class HomeDermaTalksController extends EventoBaseController
             //Puede estar el mismo registrado externo pero para distinto evento
             //return Registrado::whereIdExterno($request->id)->whereEvento($this->key)->first();
             if ($request->has('test') && $request->get('test',false)) {
-                return Registrado::whereIdExterno($request->id)->whereEvento($this->key)->first();
+                return Registrado::whereIdExterno(1)->whereEvento($this->key)->first();
             } else {
                 return Registrado::whereIdExterno($request->id)->whereEvento($this->key)->first();
             }
