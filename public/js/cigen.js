@@ -45622,7 +45622,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45633,6 +45633,30 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -45764,6 +45788,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 form: {
                     nombre: null,
                     institucion: null,
+                    ciudad: null,
+                    especialidad: null,
                     pais: null,
                     email: null,
                     password: null
@@ -45786,7 +45812,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var form = vm.registro.form;
             this.errors = [];
 
-            if (!form.nombre || !form.institucion || !form.email || !form.password || !form.pais) {
+            if (!form.nombre || !form.institucion || !form.email || !form.password || !form.pais || !form.ciudad) {
                 alert('Todos los campos son obligatorios');
                 return false;
             }
@@ -45949,6 +45975,78 @@ var render = function() {
                       return
                     }
                     _vm.$set(_vm.registro.form, "pais", $event.target.value)
+                  }
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group row" }, [
+            _c(
+              "label",
+              { staticClass: "col-md col-12", attrs: { for: "ciudad" } },
+              [_vm._v("ciudad")]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md col-12" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.registro.form.ciudad,
+                    expression: "registro.form.ciudad"
+                  }
+                ],
+                staticClass: "form-control-plaintext",
+                attrs: { type: "text", name: "ciudad", id: "ciudad" },
+                domProps: { value: _vm.registro.form.ciudad },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.registro.form, "ciudad", $event.target.value)
+                  }
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group row" }, [
+            _c(
+              "label",
+              { staticClass: "col-md col-12", attrs: { for: "especialidad" } },
+              [_vm._v("especialidad")]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md col-12" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.registro.form.especialidad,
+                    expression: "registro.form.especialidad"
+                  }
+                ],
+                staticClass: "form-control-plaintext",
+                attrs: {
+                  type: "text",
+                  name: "especialidad",
+                  id: "especialidad"
+                },
+                domProps: { value: _vm.registro.form.especialidad },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(
+                      _vm.registro.form,
+                      "especialidad",
+                      $event.target.value
+                    )
                   }
                 }
               })

@@ -678,4 +678,16 @@
   }
   
   /*# sourceMappingURL=styles.css.map */
-  
+  footer p.organizan {
+	max-width: 100%;
+  }
+  footer p.auspicia {
+	color: #000;
+	margin: -18px auto 4px;
+	width: 100%;
+	position: relative;
+	float: none;
+	display: table;
+	text-align: center;
+	font-weight: 500;
+  }

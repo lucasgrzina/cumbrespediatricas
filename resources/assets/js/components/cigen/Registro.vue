@@ -45,6 +45,30 @@
 
                 <div class="form-group row">
 
+                  <label for="ciudad" class="col-md col-12">ciudad</label>
+
+                  <div class="col-md col-12">
+
+                    <input type="text" name="ciudad" class="form-control-plaintext" id="ciudad" v-model="registro.form.ciudad">
+
+                  </div>
+
+                </div>
+
+                <div class="form-group row">
+
+                  <label for="especialidad" class="col-md col-12">especialidad</label>
+
+                  <div class="col-md col-12">
+
+                    <input type="text" name="especialidad" class="form-control-plaintext" id="especialidad" v-model="registro.form.especialidad">
+
+                  </div>
+
+                </div>
+
+                <div class="form-group row">
+
                   <label for="mail" class="col-md col-12">correo electrónico</label>
 
                   <div class="col-md col-12">
@@ -129,6 +153,8 @@
                     form: {
                         nombre: null,
                         institucion: null,
+                        ciudad: null,
+                        especialidad: null,
                         pais: null,
                         email: null,
                         password: null
@@ -152,7 +178,7 @@
                 this.errors = [];
 
 
-                if (!form.nombre || !form.institucion || !form.email || !form.password || !form.pais ) {
+                if (!form.nombre || !form.institucion || !form.email || !form.password || !form.pais || !form.ciudad ) {
                     alert('Todos los campos son obligatorios');
                     return false;
                 }

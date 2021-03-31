@@ -160,46 +160,31 @@
             </main>
         <!--/div-->
         <footer>
-
-            <div class="container">
+          <div class="container">
+            <div class="row ">
+                  <div class="col-md-4 info-content">
+                    <p>VII Curso Internacional de Gastroenterología y Endoscopía Digestiva. <b>CIGEN 2021</b></p>
+                  </div>
         
-                <div class="row ">
-        
-                    <div class="col-md-5 info-content">
-        
-                        <p>VII Curso Internacional de Gastroenterología y Endoscopía Digestiva. <b>CIGEN 2021</b></p>
-        
-                    </div>
-        
-        
-        
-                    <div class="col-md-7 info-logos">
-        
-                        <ul class="content-logos">
-        
-                            <li><img src="img/cigen/fujifilm.png"></li>
-        
-                            <li><img src="img/cigen/griensu.png"></li>
-        
-                            <li><img src="img/cigen/cmic.png"></li>
-        
-                        </ul>
-        
-                    </div>
-        
-                </div>
-        
+                  <div class="col-md-4 info-logos">
+                    <p class="organizan"><b>Organiza: Servicio de Gastroenterología - Clinica Cemic - Neuquén - Patagonia - Argentina</b></p>
+                  </div>
+                  <div class="col-md-4 info-logos">
+                    <p class="auspicia">Auspicia</p>
+                    <ul class="content-logos">
+                      <li><img src="img/cigen/cmic.png"></li>
+                      <li><img src="img/cigen/griensu.png"></li>
+                      <li><img src="img/cigen/fujifilm.png"></li>       		
+                      
+                    </ul>
+                  </div>
             </div>
-        
-            <div class="background-footer">
-        
-                <div class="color-left"></div>
-        
-                <div class="color-right"></div>
-        
-            </div>
-        
-        </footer>        
+          </div>
+          <div class="background-footer">
+            <div class="color-left"></div>
+            <div class="color-right"></div>
+          </div>
+        </footer>   
         <script src="{{ url(mix('/js/cigen.js')) }}"></script>
     </body>
 </html>

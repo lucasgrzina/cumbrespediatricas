@@ -8,6 +8,7 @@
                 <th>Especialidad</th>
                 <th>Institución</th>
                 <th>Pais</th>
+                <th>Ciudad</th>
                 <th>Email</th>
                 <th class="td-actions">{{ trans('admin.table.actions') }}</th>
             </tr>
@@ -20,6 +21,7 @@
                 <td>(% item.especialidad %)</td>
                 <td>(% item.institucion %)</td>
                 <td>(% item.pais %)</td>
+                <td>(% item.ciudad %)</td>
                 <td>(% item.email %)</td>
                 <td class="td-actions">
                     @if(auth()->user()->hasRole('Superadmin') || auth()->user()->can('ver-'.$data['action_perms']))

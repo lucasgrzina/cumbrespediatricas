@@ -21,7 +21,8 @@ class Registrado extends Authenticatable
         'certificado',
         'evento',
         'password',
-        'institucion'
+        'institucion',
+        'ciudad'
     ];
 
     /**

@@ -109,6 +109,7 @@ class RegistradosController extends CrudAdminController
             'especialidad' => 'Especialidad',
             'institucion' => 'Institución',
             'pais' => 'Pais',
+            'ciudad' => 'Ciudad',
             'email' => 'Email',
             'created_at' => 'Fecha Insc.'
         ];
