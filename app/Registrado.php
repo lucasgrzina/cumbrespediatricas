@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Registrado extends Authenticatable
 {
     public $table = 'registrados';
-
+    protected $rememberTokenName = false;
     protected $guard = 'web';
     public $fillable = [
         'nombre',
