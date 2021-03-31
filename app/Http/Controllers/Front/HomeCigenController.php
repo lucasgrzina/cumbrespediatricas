@@ -165,7 +165,7 @@ class HomeCigenController extends EventoBaseController
         if (!\Auth::guard('web')->check()) {
             return redirect()->route($this->key.'.home');
         }        
-        
+        \Auth::guard('web')->logout();
         $data = [
             'headerData' => false,
             'title' => '¡Te has registrado exitosamente!'
