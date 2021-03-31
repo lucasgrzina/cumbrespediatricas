@@ -167,7 +167,7 @@
                   </div>
         
                   <div class="col-md-4 info-logos">
-                    <p class="organizan"><b>Organiza: Servicio de Gastroenterología - Clinica Cemic - Neuquén - Patagonia - Argentina</b></p>
+                    <p class="organizan"><b>Organiza: Servicio de Gastroenterología - Clinica Cmic - Neuquén - Patagonia - Argentina</b></p>
                   </div>
                   <div class="col-md-4 info-logos">
                     <p class="auspicia">Auspicia</p>
