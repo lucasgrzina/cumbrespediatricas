@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Registrado;
+use App\Mail\RawMailable;
 use App\Helpers\CacheHelper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -29,18 +30,17 @@ class IDController extends Controller
 
     public function sendEmail() {
 
-        /*$registrados = Registrado::whereEvento('forosas')->where('created_at','<','2020-10-14')->pluck('nombre','email'); 
+        $registrados = Registrado::whereEvento('cigen')->get(); 
         $salida = [
             'errores' => [],
             'ok' => 0
         ];
         try
         {
-            foreach ($registrados as $email => $nombre) {
-                $contenidoEmail = "Hola {$nombre}<br>".
-                "Muchas gracias por registrarse al 7mo Foro de Salud Sustentable (SaS).<br>".
-                "Ya puede darle un vistazo a la información del evento ingresando al sitio web www.foro-sas.com.ar";
-                Mail::queue(new \App\Mail\RawMailable($email, 'Foro-Sas: Registro', $contenidoEmail));                                    
+            foreach ($registrados as $registrado) {
+                $contenidoEmail = "Hola {$registrado->nombre}<br>".
+                "Tu contraseña es {$registrado->password}<br>";
+                Mail::queue(new RawMailable($registrado->email, 'Cigen: Olvide mi contraseña', $contenidoEmail,['cigen2021@gmail.com','Cigen 2021']));                                    
                 $salida['ok'] = $salida['ok'] + 1;
                 
             }

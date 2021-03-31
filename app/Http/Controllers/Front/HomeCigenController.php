@@ -7,6 +7,7 @@ use App\Preguntas;
 use Carbon\Carbon;
 
 use App\Registrado;
+use App\Mail\RawMailable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -179,6 +180,10 @@ class HomeCigenController extends EventoBaseController
             if (!$data) {
                 throw new \Exception('El email ingresado no se encuentra registrado',404);
             }
+            $contenidoEmail = "Hola {$data->nombre}<br>".
+            "Tu contraseña es {$data->password}<br>";
+            Mail::queue(new RawMailable($data->email, 'Cigen: Olvide mi contraseña', $contenidoEmail,['cigen2021@gmail.com','Cigen 2021']));                                    
+
             //Hago el envio del email
             return $this->sendResponse($data,'La operación finañizó con éxito');                
         } catch (\Exception $e) {

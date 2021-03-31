@@ -2,10 +2,10 @@
 
 namespace App\Mail;
 
-use Dingo\Api\Http\Request;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 class RawMailable extends Mailable
 {
@@ -13,21 +13,21 @@ class RawMailable extends Mailable
 
     private $mailTo;
     private $mailSubject;
-    // the values that shouldnt appear in the mail should be private
+    private $mailFrom;
 
     public $content;
-    // public properties are accessible from the view
 
     /**
      * Create a new message instance.
      *
      * @param LayoutMailRawRequest $request
      */
-    public function __construct($to, $subject, $content)
+    public function __construct($to, $subject, $content,$from=[])
     {
         $this->content = $content;
         $this->mailSubject = $subject;
         $this->mailTo = $to;
+        $this->mailFrom = $from;
     }
 
     /**
@@ -38,10 +38,10 @@ class RawMailable extends Mailable
     public function build()
     {
         $this->view('emails.raw',['contents' => $this->content]);
-        $pathToFile = asset('img/forosas/Confirmacion.jpg');
+        //$pathToFile = asset('img/forosas/Confirmacion.jpg');
         $this->subject($this->mailSubject)
-        ->from('no-reply@foro-sas.com.ar', 'Foro-Sas: Registro')
-        ->attach($pathToFile)
+        ->from($this->mailFrom[0], $this->mailFrom[1])
+        //->attach($pathToFile)
         ->to($this->mailTo);
     }
 }
