@@ -6,6 +6,7 @@
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Especialidad</th>
+                <th>Institución</th>
                 <th>Pais</th>
                 <th>Email</th>
                 <th class="td-actions">{{ trans('admin.table.actions') }}</th>
@@ -17,6 +18,7 @@
                 <td>(% item.nombre %)</td>
                 <td>(% item.apellido %)</td>
                 <td>(% item.especialidad %)</td>
+                <td>(% item.institucion %)</td>
                 <td>(% item.pais %)</td>
                 <td>(% item.email %)</td>
                 <td class="td-actions">
