@@ -12,7 +12,7 @@
 
         <!--link rel="icon" type="image/png" href="public/img/forosas/favicon-32x32.png" sizes="32x32"-->
         
-        <!--link rel="icon" type="image/vnd.microsoft.icon" href="public/img/forosas/favicon.ico"-->
+        <link rel="icon" type="image/vnd.microsoft.icon" href="public/favicon.ico">
         <title>Cigen</title>
 
         <link href="{{ url(mix('/css/cigen.css')) }}" rel="stylesheet" type="text/css">
@@ -24,7 +24,7 @@
             window.App = {!! json_encode([
             ]) !!};
         </script>   
-        <!--link rel="shortcut icon" href="#" /-->
+        <link rel="shortcut icon" href="public/favicon.ico">
         @yield('head')
       
     </head>

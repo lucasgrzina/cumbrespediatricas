@@ -412,6 +412,7 @@
   header .content-title h1 {
 	position: relative;
 	color: #fff;
+	text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.85);
 	font-size: 75.5px;
 	font-weight: bold;
 	z-index: 2;
@@ -574,7 +575,8 @@
   form label {
 	color: #fff;
 	background: #1172b5;
-	font-size: 21px;
+	font-size: 18px;
+	letter-spacing: 0.3px;
 	font-weight: 500 !important;
 	padding: 6px 13px 0;
 	text-transform: uppercase;
