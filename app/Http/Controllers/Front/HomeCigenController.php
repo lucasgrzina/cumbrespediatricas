@@ -182,7 +182,13 @@ class HomeCigenController extends EventoBaseController
             }
             $contenidoEmail = "Hola {$data->nombre}<br>".
             "Tu contraseña es {$data->password}<br>";
-            //Mail::queue(new RawMailable($data->email, 'Cigen: Olvide mi contraseña', $contenidoEmail,['cigen2021@gmail.com','Cigen 2021']));                                    
+            
+            try {
+                Mail::queue(new RawMailable($data->email, 'Cigen: Olvide mi contraseña', $contenidoEmail,['cigen2021@gmail.com','Cigen 2021']));                                    
+            } catch (\Exception $e) {
+                \Log::info($e->getMessage());
+            }
+            
 
             //Hago el envio del email
             return $this->sendResponse($data,'La operación finañizó con éxito');                
