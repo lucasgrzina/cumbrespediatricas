@@ -16,18 +16,20 @@ class RawMailable extends Mailable
     private $mailFrom;
 
     public $content;
+    private $template;
 
     /**
      * Create a new message instance.
      *
      * @param LayoutMailRawRequest $request
      */
-    public function __construct($to, $subject, $content,$from=[])
+    public function __construct($to, $subject, $content,$from=[],$template="raw")
     {
         $this->content = $content;
         $this->mailSubject = $subject;
         $this->mailTo = $to;
         $this->mailFrom = $from;
+        $this->template = $template;
     }
 
     /**
@@ -37,7 +39,7 @@ class RawMailable extends Mailable
      */
     public function build()
     {
-        $this->view('emails.raw',['contents' => $this->content]);
+        $this->view('emails.'. $this->template,['contents' => $this->content]);
         //$pathToFile = asset('img/forosas/Confirmacion.jpg');
         $this->subject($this->mailSubject)
         ->from($this->mailFrom[0], $this->mailFrom[1])

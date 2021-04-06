@@ -172,7 +172,7 @@
                   <div class="col-md-4 info-logos">
                     <p class="auspicia">Auspicia</p>
                     <ul class="content-logos">
-                      <li><img src="img/cigen/cmic.png"></li>
+                      <li><img src="img/cigen/logo-cmic2.jpg"></li>
                       <li><img src="img/cigen/griensu.png"></li>
                       <li><img src="img/cigen/fujifilm.png"></li>       		
                       
