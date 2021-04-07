@@ -19,6 +19,7 @@ window.Vue = require('vue');
 Vue.component('home', require('./components/cigen/Home.vue'));
 Vue.component('registro', require('./components/cigen/Registro.vue'));
 Vue.component('login', require('./components/cigen/Login.vue'));
+Vue.component('vivo', require('./components/cigen/Vivo.vue'));
 
 const app = new Vue({
     el: '#app',

@@ -30,9 +30,9 @@ class HomeCigenController extends EventoBaseController
 
     public function index()
     {
-        if (\Auth::guard('web')->check()) {
+        /*if (\Auth::guard('web')->check()) {
             return redirect()->route($this->key.'.registrado');
-        }        
+        } */       
         
         $data = [
             'props' => [
@@ -165,7 +165,7 @@ class HomeCigenController extends EventoBaseController
         if (!\Auth::guard('web')->check()) {
             return redirect()->route($this->key.'.home');
         }        
-        \Auth::logout();
+        //\Auth::logout();
         $data = [
             'headerData' => false,
             'title' => '¡Te has registrado exitosamente!'
@@ -195,6 +195,165 @@ class HomeCigenController extends EventoBaseController
         } catch (\Exception $e) {
             return $this->sendError($e->getMessage(),$e->getCode());
         }
-    }     
+    }    
+    
+    public function vivo (Request $request) {
+        $registrado = null;
+        try {
+            if (!\Auth::check()) {
+                return redirect()->route($this->key.'.home');
+            }
+    
+            $conf = $this->config('*');
 
+
+            try {
+                $registrado = $this->obtenerRegistrado();
+                if ($registrado) {
+                    $registrado->acciones()->create([
+                        'accion' => 'evento',
+                        'desde' => Carbon::now()
+                    ]);
+                }
+    
+            } catch(\Exception $e) {
+                \Log::info($e->getMessage());
+            }
+
+        } catch(\Exception $e) {
+            //return view('front.'.$this->evento['view'].'.no-habilitado');
+            //return redirect()->to(env('URL_SITIO_PPAL','#'));
+        }
+        
+
+        $data = [
+            'title' => 'Transmisión en VIVO',
+            'props' => [
+                'evento' => $this->evento,
+                'configEvento' => $conf,
+                'registrado' => $registrado,
+                'urlEnviar' => route($this->key.'.enviar-pregunta'),
+                'urlEncuesta' => '',
+                'urlEncuestaDisponible' => route($this->key.'.encuesta-disponible'),
+                'urlEnviarEncuesta' => route($this->key.'.enviar-encuesta'),
+                'urlEnviarSalidaUsuario' => route($this->key.'.enviar-salida-usuario'),
+            ]
+        ];
+        return view('front.'.$this->evento['view'].'.vivo', $data);
+    }    
+
+    public function agendaViernes (Request $request) {
+        if (!\Auth::check()) {
+            return redirect()->route($this->key.'.home');
+        }
+        
+
+        $data = [
+            'title' => 'Agenda de evento',
+            'fechaEventoData' => 'viernes',
+            'props' => [
+
+            ]
+        ];
+        return view('front.'.$this->evento['view'].'.agenda-viernes', $data);
+    }   
+    
+    public function agendaSabado (Request $request) {
+        if (!\Auth::check()) {
+            return redirect()->route($this->key.'.home');
+        }
+        
+
+        $data = [
+            'title' => 'Agenda de evento',
+            'fechaEventoData' => 'sabado',
+            'props' => [
+
+            ]
+        ];
+        return view('front.'.$this->evento['view'].'.agenda-sabado', $data);
+    }        
+
+    public function speakersNacionales (Request $request) {
+        if (!\Auth::check()) {
+            return redirect()->route($this->key.'.home');
+        }
+        
+
+        $data = [
+            'title' => 'Speakers Nacionales',
+            'props' => [
+
+            ]
+        ];
+        return view('front.'.$this->evento['view'].'.speakers-nacionales', $data);
+    } 
+
+    public function speakersInternacionales (Request $request) {
+        if (!\Auth::check()) {
+            return redirect()->route($this->key.'.home');
+        }
+        $data = [
+            'title' => 'Speakers Internacionales',
+            'props' => [
+
+            ]
+        ];
+        return view('front.'.$this->evento['view'].'.speakers-internacionales', $data);
+    } 
+
+    public function eventosPrevios (Request $request) {
+        if (!\Auth::check()) {
+            return redirect()->route($this->key.'.home');
+        }
+        $data = [
+            'title' => 'Eventos Previos',
+            'props' => [
+
+            ]
+        ];
+        return view('front.'.$this->evento['view'].'.eventos-previos', $data);
+    } 
+
+    public function quienesSomos (Request $request) {
+        if (!\Auth::check()) {
+            return redirect()->route($this->key.'.home');
+        }
+        $data = [
+            'title' => 'Quienes Somos?',
+            'props' => [
+
+            ]
+        ];
+        return view('front.'.$this->evento['view'].'.quienes-somos', $data);
+    } 
+
+    public function sponsors (Request $request) {
+        if (!\Auth::check()) {
+            return redirect()->route($this->key.'.home');
+        }
+        $data = [
+            'title' => 'Sponsors',
+            'props' => [
+
+            ]
+        ];
+        return view('front.'.$this->evento['view'].'.sponsors', $data);
+    } 
+
+
+
+
+
+    protected function obtenerRegistrado() {
+        $registrado = null;
+        try {
+            //$registradoGuid = FrontHelper::getCookieRegistrado($this->evento['cookie']);
+            if (\Auth::guard('web')->check()) {
+                $registrado = \Auth::guard('web')->user();     
+            }
+            
+        } catch (\Exception $e) {}
+        return $registrado;
+    }
 }

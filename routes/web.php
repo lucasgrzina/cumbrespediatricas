@@ -149,11 +149,24 @@ $keyCigen = 'cigen';
 $appRoutesCigen = function() use ($keyCigen){
     $data = config('constantes.eventos.cigen',[]); 
     Route::get('/', $data['controller'].'@index')->name('home');
+    Route::get('/vivo', $data['controller'].'@vivo')->name('vivo');
+    Route::get('/agenda-viernes', $data['controller'].'@agendaViernes')->name('agendaViernes');
+    Route::get('/agenda-sabado', $data['controller'].'@agendaSabado')->name('agendaSabado');
+    Route::get('/speakers-nacionales', $data['controller'].'@speakersNacionales')->name('speakersNacionales');
+    Route::get('/speakers-internacionales', $data['controller'].'@speakersInternacionales')->name('speakersInternacionales');
+    Route::get('/eventos-previos', $data['controller'].'@eventosPrevios')->name('eventosPrevios');
+    Route::get('/quienes-somos', $data['controller'].'@quienesSomos')->name('quienesSomos');
+    Route::get('/sponsors', $data['controller'].'@sponsors')->name('sponsors');
     Route::get('/registro', $data['controller'].'@registro')->name('registro');
     Route::post('/registrar', $data['controller'].'@registrar')->name('registrar');
     Route::get('/login', $data['controller'].'@login')->name('login');
     Route::post('/login', $data['controller'].'@loggear')->name('loggear');
     Route::post('/enviar-pregunta', $data['controller'].'@enviarPregunta')->name('enviar-pregunta');
+    Route::get('/encuesta-disponible', $data['controller'].'@encuestaDisponible')->name('encuesta-disponible');        
+    Route::post('/enviar-encuesta', $data['controller'].'@enviarEncuesta')->name('enviar-encuesta');
+    Route::get('/evento-disponible', $data['controller'].'@eventoDisponible')->name('evento-disponible');        
+    Route::any('/enviar-salida-usuario', $data['controller'].'@enviarSalidaUsuario')->name('enviar-salida-usuario');
+
     Route::post('/recuperar', $data['controller'].'@recuperar')->name('recuperar');
     Route::get('/registrado', $data['controller'].'@registrado')->name('registrado');
 };

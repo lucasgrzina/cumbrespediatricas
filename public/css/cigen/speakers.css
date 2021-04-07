@@ -1,0 +1,123 @@
+.speaker{}
+
+.speaker .col:first-child{
+
+	max-width: 150px;
+
+}
+
+.speaker img{
+
+	position: relative;
+
+	float: left;
+
+	width: 100%;
+
+}
+
+.speaker .text-speaker{
+
+	position: relative;
+
+	float: right;
+
+	width: 60%;
+
+	display: inline-flex;
+
+    align-items: center;
+
+
+
+}
+
+.speaker .text-speaker .name{
+
+	position: relative;
+
+	float: left;
+
+	width: 100%;
+
+	color: #949494;
+
+	text-align: left;
+
+	font-size: 18px;
+
+	font-weight: 600;
+
+}
+
+.speaker .text-speaker .country{
+
+	position: relative;
+
+	float: left;
+
+	width: 100%;
+
+	color: #949494;
+
+	text-align: left;
+
+	font-size: 18px;
+
+}
+
+
+
+.image-gallery{
+
+	width: 100%;
+
+	height: 280px;
+
+	background-size: cover;
+
+	background-repeat: no-repeat;
+
+	background-position: center;
+
+}
+
+
+
+.proximamente{
+
+	background-color: #e4e4e4;
+
+}
+
+.proximamente p{
+
+    text-align: center;
+
+    font-weight: 600;
+
+    font-size: 63px;
+
+    color: #666666;
+
+    padding: 40px 10px;
+
+}
+
+
+
+@media(max-width: 640px) {
+
+	.proximamente{
+
+		background-color: #e4e4e4;
+
+	}
+
+	.proximamente p{
+
+	    font-size: 35px;
+
+	}
+
+}

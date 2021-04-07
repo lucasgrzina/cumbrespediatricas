@@ -45332,6 +45332,7 @@ window.Vue = __webpack_require__(36);
 Vue.component('home', __webpack_require__(129));
 Vue.component('registro', __webpack_require__(134));
 Vue.component('login', __webpack_require__(139));
+Vue.component('vivo', __webpack_require__(144));
 
 var app = new Vue({
   el: '#app'
@@ -45423,7 +45424,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45462,11 +45463,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
         ahora: {
             type: String
+        },
+        loggedIn: {
+            type: Boolean
         }
     },
     data: function data() {
@@ -45491,39 +45498,47 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "home" }, [
+    _c("div", { staticClass: "container" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      !_vm.loggedIn ? _c("div", { staticClass: "row" }, [_vm._m(1)]) : _vm._e()
+    ]),
+    _vm._v(" "),
+    !_vm.loggedIn
+      ? _c("div", { staticStyle: { "margin-bottom": "100px" } })
+      : _vm._e()
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12" }, [
-          _c("p", { staticClass: "text-big" }, [
-            _vm._v(
-              "VII Curso Internacional de Gastroenterología y Endoscopía Digestiva. CIGEN 2021"
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12" }, [
-          _c(
-            "a",
-            { staticClass: "btn btn-primary", attrs: { href: "/login" } },
-            [_vm._v("Login")]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            { staticClass: "btn btn-primary", attrs: { href: "/registro" } },
-            [_vm._v("Registro")]
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("p", { staticClass: "text-big home" }, [
+          _vm._v(
+            "VII Curso Internacional de Gastroenterología y Endoscopía Digestiva. CIGEN 2021"
           )
         ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-12" }, [
+      _c("a", { staticClass: "btn btn-primary", attrs: { href: "/login" } }, [
+        _vm._v("Login")
+      ]),
+      _vm._v(" "),
+      _c(
+        "a",
+        { staticClass: "btn btn-primary", attrs: { href: "/registro" } },
+        [_vm._v("Registro")]
+      )
     ])
   }
 ]
@@ -46681,7 +46696,9 @@ var render = function() {
               ])
             ])
           ])
-        ])
+        ]),
+    _vm._v(" "),
+    _c("div", { staticStyle: { "margin-bottom": "80px" } })
   ])
 }
 var staticRenderFns = []
@@ -46691,6 +46708,407 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-104927dd", module.exports)
+  }
+}
+
+/***/ }),
+/* 144 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(145)
+}
+var normalizeComponent = __webpack_require__(5)
+/* script */
+var __vue_script__ = __webpack_require__(147)
+/* template */
+var __vue_template__ = __webpack_require__(148)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-9c20c930"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/cigen/Vivo.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-9c20c930", Component.options)
+  } else {
+    hotAPI.reload("data-v-9c20c930", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 145 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(146);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(4)("7ac3918c", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9c20c930\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Vivo.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9c20c930\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Vivo.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 146 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 147 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        urlEnviar: {
+            type: String,
+            required: true
+        },
+        urlEnviarEncuesta: {
+            type: String,
+            required: true
+        },
+        urlEncuestaDisponible: {
+            type: String,
+            required: true
+        },
+        urlEncuesta: {
+            type: String,
+            required: true
+        },
+        urlEnviarSalidaUsuario: {
+            type: String,
+            required: true
+        },
+        registrado: {
+            type: Object,
+            required: true
+        },
+        evento: {
+            type: Object,
+            required: true
+        },
+        configEvento: {
+            type: Object,
+            required: true
+        }
+
+    },
+    data: function data() {
+        return {
+            videoSeleccionado: 'ingles',
+            form: {
+                pregunta: null
+            },
+            encuesta: {
+                preguntas: [{ key: 1, tit: '¿Habías escuchado hablar de Fundación Kaleidos?', preg: '', tipo: 'C', key_respuesta: 1 }, { key: 2, tit: '¿Cómo evaluarías el contenido del webinario?', preg: '', tipo: 'C', key_respuesta: 2 }, { key: 3, tit: '¿Cómo evaluarías la duración del webinario?', preg: '', tipo: 'C', key_respuesta: 2 }, { key: 4, tit: '¿Cómo evaluarías la dinámica del webinario?', preg: '', tipo: 'C', key_respuesta: 2 }, { key: 5, tit: '¿Sabías antes de comenzar el webinario que Fundación Kaleidos trabaja sobre estos temas?', preg: '', tipo: 'C', key_respuesta: 1 }, { key: 6, tit: '¿Cuán útil es el Manual para tu trabajo?', preg: '', tipo: 'C', key_respuesta: 3 }, { key: 7, tit: '¿Considerás importante que tus colegas conozcan esta problemática y les compartirías el Manual?', preg: '', tipo: 'C', key_respuesta: 1 }, { key: 8, tit: '¿Te serviría un Manual sobre alguno de estos temas?', preg: '', tipo: 'C', key_respuesta: 4 }, { key: 9, tit: 'En caso de haber seleccionado "Otro" en la pregunta anterior, ¿Sobre qué otro tema? ', preg: '', tipo: 'T' }, { key: 10, tit: '¿Hay otros comentarios que nos quieras hacer llegar?', preg: '', tipo: 'T' }],
+                opciones: [{ key: 1,
+                    valores: ['Si', 'No']
+                }, { key: 2,
+                    valores: ['Excelente', 'Bueno', 'Muy bueno', 'Regular', 'Malo']
+                }, { key: 3,
+                    valores: ['Alto', 'Medio', 'Bajo']
+                }, { key: 4,
+                    valores: ['Derechos de niños, niñas y adolescentes', 'Derechos sexuales y (no) reproductivos', 'Violencia de género', 'Educación sexual integral', 'Otro']
+                }],
+                form: {
+                    resp_1: null,
+                    resp_2: null,
+                    resp_3: null,
+                    resp_4: null,
+                    resp_5: null,
+                    resp_6: null,
+                    resp_7: null,
+                    resp_8: null,
+                    resp_9: null,
+                    resp_10: null
+                },
+                enviando: false,
+                errors: []
+            },
+            showModal: false,
+            enviando: false,
+            enviandoEncuesta: false
+        };
+    },
+    mounted: function mounted() {
+        var vm = this;
+        console.debug(vm.evento);
+        var csrfToken = $('[name=csrf-token]').attr('content');
+        var isOnIOS = navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPhone/i);
+        var eventName = isOnIOS ? "pagehide" : "beforeunload";
+        var usarSendBeacon = "sendBeacon" in navigator;
+        var urlSalidaUsuario = vm.urlEnviarSalidaUsuario;
+
+        console.debug(isOnIOS, eventName, usarSendBeacon, urlSalidaUsuario);
+
+        window.addEventListener(eventName, function (e) {
+            var data = new FormData();
+            data.append('_token', csrfToken);
+
+            if (usarSendBeacon) {
+                navigator.sendBeacon(urlSalidaUsuario, data);
+            } else {
+                var request = new XMLHttpRequest();
+
+                request.open('post', urlSalidaUsuario, false);
+                request.send(data);
+
+                if (request.status === 200) {
+                    console.debug('termino');
+                }
+            }
+        }, false);
+    },
+
+    methods: {
+        verVideo: function verVideo(video) {
+            this.videoSeleccionado = video;
+        },
+
+        enviarPregunta: function enviarPregunta() {
+            var vm = this;
+            if (vm.form.pregunta && !vm.enviando) {
+                vm.enviando = true;
+                axios.post(vm.urlEnviar, vm.form).then(function (response) {
+                    vm.enviando = false;
+                    vm.form.pregunta = null;
+                }, function (error) {
+                    vm.enviando = false;
+                    // alert(error.message);
+                });
+            }
+        },
+        encuestaDisponible: function encuestaDisponible() {
+            var vm = this;
+            if (!vm.enviandoEncuesta) {
+                vm.enviandoEncuesta = true;
+                axios.get(vm.urlEncuestaDisponible).then(function (response) {
+                    vm.enviandoEncuesta = false;
+                    //document.location = vm.urlEncuesta;
+                    vm.mostrarModal(true);
+                }, function (error) {
+                    vm.enviandoEncuesta = false;
+                    alert('La encuesta no se encuentra disponible por el momento.');
+                });
+            }
+        },
+        linkGuatemalaDisponible: function linkGuatemalaDisponible() {
+            var vm = this;
+            if (!vm.enviandoEncuesta) {
+                vm.enviandoEncuesta = true;
+                axios.get(vm.urlEncuestaDisponible).then(function (response) {
+                    vm.enviandoEncuesta = false;
+                    window.open('https://forms.gle/CG16pRgLH7uRThg97');
+                }, function (error) {
+                    vm.enviandoEncuesta = false;
+                    alert('El acceso no se encuentra disponible por el momento.');
+                });
+            }
+        },
+        enviarEncuesta: function enviarEncuesta() {
+            var vm = this;
+            var _incompleto = false;
+            _.forEach(vm.encuesta.preguntas, function (item) {
+                if (!vm.encuesta.form['resp_' + item.key]) {
+                    _incompleto = true;
+                }
+            });
+            if (_incompleto) {
+                alert('Debe responder todas las preguntas');
+                return false;
+            }
+
+            if (!vm.encuesta.enviando) {
+                vm.encuesta.enviando = true;
+                axios.post(vm.urlEnviarEncuesta, vm.encuesta.form).then(function (response) {
+                    vm.encuesta.enviando = false;
+                    vm.encuesta.form = {
+                        resp_1: null,
+                        resp_2: null,
+                        resp_3: null,
+                        resp_4: null,
+                        resp_5: null,
+                        resp_6: null,
+                        resp_7: null,
+                        resp_8: null,
+                        resp_9: null,
+                        resp_10: null
+                    };
+                    alert('Gracias por responder la encuesta');
+                    vm.mostrarModal(false);
+                    // vm.form.pregunta = null;
+                }, function (error) {
+                    vm.encuesta.enviando = false;
+                    alert('Gracias por responder la encuesta');
+                    // alert(error.message);
+                });
+            }
+        },
+        mostrarModal: function mostrarModal(valor) {
+            this.showModal = valor;
+        },
+        enviarSalidaUsuario: function enviarSalidaUsuario() {
+            var vm = this;
+            return axios.post(vm.urlEnviarSalidaUsuario, {});
+        },
+        obtenerOpcionesPorKey: function obtenerOpcionesPorKey(key) {
+            var vm = this;
+            var opciones = _.find(vm.encuesta.opciones, { key: key });
+            return opciones.valores;
+        }
+    }
+});
+
+/***/ }),
+/* 148 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "container" }, [
+      _vm.configEvento.etapa === "R"
+        ? _c("div", { staticClass: "row content-video" }, [_vm._m(0)])
+        : _c("div", { staticClass: "row mt-5 mb-5" }, [_vm._m(1)])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-12" }, [
+      _c(
+        "div",
+        { staticStyle: { padding: "52.73% 0 0 0", position: "relative" } },
+        [
+          _c("iframe", {
+            staticStyle: {
+              position: "absolute",
+              top: "0",
+              left: "0",
+              width: "100%",
+              height: "100%"
+            },
+            attrs: {
+              src: "https://player.vimeo.com/video/447264182",
+              frameborder: "0",
+              allow: "autoplay; fullscreen; picture-in-picture",
+              allowfullscreen: ""
+            }
+          })
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-12" }, [
+      _c("div", { staticClass: "proximamente" }, [
+        _c("p", [_vm._v("¡Próximamente!")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-9c20c930", module.exports)
   }
 }
 

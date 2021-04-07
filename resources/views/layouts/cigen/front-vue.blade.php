@@ -16,6 +16,7 @@
         <title>Cigen</title>
 
         <link href="{{ url(mix('/css/cigen.css')) }}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
         <!-- Minified version of `es6-promise-auto` below. -->
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
@@ -73,7 +74,7 @@
       
                   </div>
       
-                  <?php if(isset($headerData) && $headerData): ?>
+                  <?php if((isset($headerData) && $headerData) || isset($fechaEventoData)): ?>
       
                   <div class="col-md col-12">
       
@@ -86,47 +87,48 @@
                         <div class="center-date float-md-right float-left">
       
                           <ul class="list-dates">
-      
+                            @if(!isset($fechaEventoData) || (isset($fechaEventoData) && $fechaEventoData == 'viernes'))
                             <li>
       
                               <div class="date-info ">
       
-                            <div class="icon">
+                                <div class="icon">
+          
+                                  <img src="img/cigen/date.svg">
+          
+                                </div>
+          
+                                <div class="text">
+          
+                                  <p><b>Viernes 16 ABRIL</b><br>14.00 A 19.30hs</p>
+          
+                                </div>
       
-                              <img src="img/cigen/date.svg">
-      
-                            </div>
-      
-                            <div class="text">
-      
-                              <p><b>Viernes 16 ABRIL</b><br>14.00 A 19.30hs</p>
-      
-                            </div>
-      
-                          </div>
+                              </div>
       
                             </li>
-      
+                            @endif
+                            @if(!isset($fechaEventoData) || (isset($fechaEventoData) && $fechaEventoData == 'sabado'))
                             <li>
       
                               <div class="date-info ">
       
-                            <div class="icon">
+                                <div class="icon">
+          
+                                  <img src="img/cigen/date.svg">
+          
+                                </div>
+          
+                                <div class="text">
+          
+                                  <p><b>Sábado 17 ABRIL</b><br>10.00 A 14.30hs</p>
+          
+                                </div>
       
-                              <img src="img/cigen/date.svg">
-      
-                            </div>
-      
-                            <div class="text">
-      
-                              <p><b>Sábado 17 ABRIL</b><br>10.00 A 1430hs</p>
-      
-                            </div>
-      
-                          </div>
+                              </div>
       
                             </li>
-      
+                            @endif
                           </ul>
       
                         </div>
@@ -151,7 +153,23 @@
       
             </div>
       
-          </header>        
+        </header>  
+          @if(\Auth::guard('web')->check())
+          <div class="container">
+            <div class="menu-header">
+              <div class="row ">
+                <div class="col-lg-3 col-md-4 col-6 mb-2"><a class="btn btn-tertiary" href="/vivo">transmisión en vivo</a></div>
+                <div class="col-lg-3 col-md-4 col-6 mb-2"><a class="btn btn-tertiary" href="/quienes-somos">¿Quiénes somos?</a></div>
+                <div class="col-lg-3 col-md-4 col-6 mb-2"><a class="btn btn-tertiary" href="/agenda-viernes">agenda viernes</a></div>
+                <div class="col-lg-3 col-md-4 col-6 mb-2"><a class="btn btn-tertiary" href="/agenda-sabado">agenda sábado</a></div>
+                <div class="col-lg-3 col-md-4 col-6 mb-2"><a class="btn btn-tertiary" href="/speakers-nacionales">speakers nacionales</a></div>
+                <div class="col-lg-3 col-md-4 col-6 mb-2"><a class="btn btn-tertiary" href="/speakers-internacionales">speakers internacionales</a></div>
+                <div class="col-lg-3 col-md-4 col-6 mb-2"><a class="btn btn-tertiary" href="/eventos-previos">eventos previos</a></div>
+                <div class="col-lg-3 col-md-4 col-6 mb-2"><a class="btn btn-tertiary" href="/sponsors">sponsors</a></div>
+              </div>
+            </div>
+          </div>                
+          @endif
         <!--div id="app" v-cloak-->
             <main id="app" v-cloak>
                 <section>
@@ -186,5 +204,8 @@
           </div>
         </footer>   
         <script src="{{ url(mix('/js/cigen.js')) }}"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+        
     </body>
 </html>

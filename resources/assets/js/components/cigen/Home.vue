@@ -1,17 +1,18 @@
 <template>
+<div class="home">
         <div class="container">
 
           <div class="row">
 
             <div class="col-12">
 
-              <p class="text-big">VII Curso Internacional de Gastroenterología y Endoscopía Digestiva. CIGEN 2021</p>
+              <p class="text-big home">VII Curso Internacional de Gastroenterología y Endoscopía Digestiva. CIGEN 2021</p>
 
             </div>
 
           </div>
 
-          <div class="row">
+          <div class="row" v-if="!loggedIn">
 
             <div class="col-12">
 
@@ -24,6 +25,8 @@
           </div>
 
         </div>
+        <div style="margin-bottom:100px;" v-if="!loggedIn"></div>    
+</div>
 </template>
 
 <script>
@@ -31,6 +34,9 @@
         props : {
             ahora: {
                 type: String
+            },
+            loggedIn: {
+              type: Boolean
             }
         },
         data () {
