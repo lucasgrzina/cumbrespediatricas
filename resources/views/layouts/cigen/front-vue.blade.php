@@ -188,11 +188,11 @@
                     <p class="organizan"><b>Organiza: Servicio de Gastroenterología - Clinica Cmic - Neuquén - Patagonia - Argentina</b></p>
                   </div>
                   <div class="col-md-4 info-logos">
-                    <p class="auspicia">Auspicia</p>
+                    <p class="auspicia"><b style="color: #666666;">Auspicia</b></p>
                     <ul class="content-logos">
-                      <li><img src="img/cigen/logo-cmic2.jpg"></li>
-                      <li><img src="img/cigen/griensu.png"></li>
-                      <li><img src="img/cigen/fujifilm.png"></li>       		
+                      <li><img src="img/cigen/cmic.png?1" style="max-height: 80px;"></li>
+                      <li><img src="img/cigen/griensu.png" style="max-height: 50px;margin-top: 15px;"></li>
+                      <li><img src="img/cigen/fujifilm.png" style="max-height: 40px;margin-top: 15px;"></li>       		
                       
                     </ul>
                   </div>
