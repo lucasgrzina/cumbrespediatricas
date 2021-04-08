@@ -4,8 +4,15 @@
 @endsection
 @section('content')
 <div class="container container-agenda mb-5">
-
   <div class="row mb-2">
+
+    <div class="col-lg col-12">
+
+    <img src="img/cigen/agenda-sabado-min.png" style="max-width: 100%;">            
+
+    </div>
+  </div>
+  <!--div class="row mb-2">
 
     <div class="col-md-12 ">
 
@@ -187,7 +194,7 @@
 
     </div>
 
-  </div>    
+  </div-->    
 
 </div>
 @endsection
