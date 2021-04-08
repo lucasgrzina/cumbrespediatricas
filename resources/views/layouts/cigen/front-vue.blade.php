@@ -100,7 +100,7 @@
           
                                 <div class="text">
           
-                                  <p><b>Viernes 16 ABRIL</b><br>14.00 A 19.30hs</p>
+                                  <p><b>Viernes 16 ABRIL</b><br>14.00 A 19.30hs (GMT-3)</p>
           
                                 </div>
       
@@ -121,7 +121,7 @@
           
                                 <div class="text">
           
-                                  <p><b>Sábado 17 ABRIL</b><br>10.00 A 14.30hs</p>
+                                  <p><b>Sábado 17 ABRIL</b><br>10.00 A 14.30hs (GMT-3)</p>
           
                                 </div>
       
