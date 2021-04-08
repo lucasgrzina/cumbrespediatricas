@@ -7,13 +7,51 @@
 
   <div class="row mt-5 mb-5">
 
-    <div class="col-12">
+    <div class="col-12 col-lg-8 offset-lg-2">
 
-      <div class="proximamente">
+      <p>Auspiciante Paltinium: </p>
 
-        <p>¡Próximamente!</p>
+    </div>
 
-      </div>
+    <div class="col-12 col-lg-8 offset-lg-2 mb-4">
+
+      <img src="img/cigen/auspiciantes-03.png" class="w-100">
+
+    </div>
+
+
+
+    <div class="col-12 col-lg-8 offset-lg-2">
+
+      <p>Auspiciante Gold: </p>
+
+    </div>
+
+    <div class="col-12 col-lg-8 offset-lg-2 mb-4">
+
+      <img src="img/cigen/auspiciantes-01.png" class="w-100">
+
+    </div>
+
+
+
+    <div class="col-12 col-lg-8 offset-lg-2">
+
+      <p>Auspiciante Silver: </p>
+
+    </div>
+
+    <div class="col-12 col-lg-8 offset-lg-2 mb-4">
+
+      <img src="img/cigen/auspiciantes-02.png" class="w-100">
+
+    </div>
+
+    
+
+
+
+
 
     </div>
 
