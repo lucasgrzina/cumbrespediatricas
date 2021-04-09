@@ -98,15 +98,7 @@ class HomeCigenController extends EventoBaseController
             $data = Registrado::create($input);
             try
             {
-                
-                
-                    /*$pathToFile = asset('img/forosas/Confirmacion.jpg');
-                    $contenidoEmail = "Hola {$request->nombre}<br>".
-                    "Muchas gracias por registrarse al 7mo Foro de Salud Sustentable (SaS).<br>".
-                    "Ya puede darle un vistazo a la información del evento ingresando al sitio web www.foro-sas.com.ar";
-                    Mail::queue(new \App\Mail\RawMailable($request->email, 'Foro-Sas: Registro', $contenidoEmail));                    
-                    */
-                
+                Mail::queue(new RawMailable($data->email, 'Cigen: Registro', '',['cigen2021@gmail.com','Cigen 2021'],'cigen-registro'));                                                    
             }
             catch(\Exception $ex)
             {

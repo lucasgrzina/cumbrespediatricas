@@ -46143,7 +46143,7 @@ var render = function() {
                   "button",
                   {
                     staticClass: "btn btn-primary",
-                    attrs: { type: "button" },
+                    attrs: { type: "button", disabled: _vm.registro.enviando },
                     on: { click: _vm.registrar }
                   },
                   [_vm._v("inscribirse")]

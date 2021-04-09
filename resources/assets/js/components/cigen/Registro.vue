@@ -99,7 +99,7 @@
 
                 <div class="content-buttons-form">
 
-                  <button type="button" class="btn btn-primary" @click="registrar">inscribirse</button>
+                  <button type="button" class="btn btn-primary" @click="registrar" :disabled="registro.enviando">inscribirse</button>
 
                   <a class="btn btn-light" href="#">Olvidé mi contraseña</a>
 
