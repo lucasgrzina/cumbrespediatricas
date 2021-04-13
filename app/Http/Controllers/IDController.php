@@ -30,7 +30,7 @@ class IDController extends Controller
 
     public function sendEmail() {
 
-        $registrados = Registrado::whereEvento('cigen')->whereEmail('lucasgrzina@gmail.com')->get(); 
+        $registrados = Registrado::whereEvento('cigen')->get(); 
 
         $salida = [
             'errores' => [],
@@ -39,9 +39,10 @@ class IDController extends Controller
         try
         {
             foreach ($registrados as $registrado) {
-                $contenidoEmail = "Hola {$registrado->nombre}<br>".
-                "Tu contraseña es {$registrado->password}<br>";
-                Mail::queue(new RawMailable($registrado->email, 'Cigen: Olvide mi contraseña', $contenidoEmail,['cigen2021@gmail.com','Cigen 2021']));                                    
+                $maileable = new RawMailable($registrado->email, 'VII curso internacional de Gastroenterología y Endoscopía Digestiva - CIGEN 2021', '',['cigen2021@gmail.com','Cigen 2021'],'cigen-envio-1');
+                $maileable->attach('https://quimicavirtualeventss.com/img/cigen/envio1/agenda.jpg');
+                //$maileable->attach('https://quimicavirtualeventss.com/img/cigen/envio1/invitados.jpg');
+                Mail::queue($maileable);                                    
                 $salida['ok'] = $salida['ok'] + 1;
                 
             }
