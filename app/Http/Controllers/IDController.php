@@ -30,7 +30,8 @@ class IDController extends Controller
 
     public function sendEmail() {
 
-        $registrados = Registrado::whereEvento('cigen')->get(); 
+        $registrados = Registrado::whereEvento('cigen')->whereEmail('lucasgrzina@gmail.com')->get(); 
+
         $salida = [
             'errores' => [],
             'ok' => 0

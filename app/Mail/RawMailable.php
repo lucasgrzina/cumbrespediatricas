@@ -17,6 +17,7 @@ class RawMailable extends Mailable
 
     public $content;
     private $template;
+    private $attachments = [];
 
     /**
      * Create a new message instance.
@@ -32,6 +33,10 @@ class RawMailable extends Mailable
         $this->template = $template;
     }
 
+    public function addAttachment($attachment) {
+        $this->attachments[] = $attachment;
+    }
+
     /**
      * Build the message.
      *
@@ -45,5 +50,9 @@ class RawMailable extends Mailable
         ->from($this->mailFrom[0], $this->mailFrom[1])
         //->attach($pathToFile)
         ->to($this->mailTo);
+
+        foreach ($this->attachments as $attachment) {
+            $this->attach($attachment);
+        }
     }
 }
