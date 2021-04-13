@@ -10,11 +10,21 @@
           </div>
         </div-->
         <div class="container">
-          <div class="row content-video" v-if="configEvento.etapa === 'R'">
-            <div class="col-12">
-              <div style="padding:52.73% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/447264182" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
-            </div>
-          </div>
+            <template v-if="configEvento.etapa === 'R'">
+                <div class="row content-video">
+                    <div class="col-12">
+                        <div style="padding:52.73% 0 0 0;position:relative;">
+                            <iframe :src="'https://vimeo.com/event/' + evento.codigoVivo + '/embed'" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="row content-chat">
+                <div class="col-12">
+                    <iframe :src="'https://vimeo.com/event/' + evento.codigoVivo + '/chat/#extern'" width="100%" height="100%" frameborder="0"></iframe>
+                </div>
+
+                </div>
+            </template>
             <div class="row mt-5 mb-5" v-else>
 
                 <div class="col-12">
@@ -278,5 +288,12 @@
     }
 </script>
 <style scoped>
-
+.content-chat {
+    height: 320px;
+    padding: 20px;
+    
+}
+.content-chat iframe {
+border: 1px solid gray;
+}
 </style>

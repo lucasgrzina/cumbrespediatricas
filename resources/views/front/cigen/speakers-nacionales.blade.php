@@ -246,6 +246,28 @@
     </div>
 
 
+    <div class="col-md-6 col-lg-4 mb-4">
+
+      <div class="row speaker">
+
+        <div class="col pr-2"><img src="img/cigen/speakers/analia-pasqua.png"></div>
+
+        <div class="col pl-2 text-speaker">
+
+          <div>
+
+            <span class="name">Dra Analia Pasqua</span>
+
+            <span class="country">C.A.B.A.</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
 
     <div class="col-md-6 col-lg-4 mb-4">
 

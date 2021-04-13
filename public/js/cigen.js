@@ -46797,7 +46797,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.content-chat[data-v-9c20c930] {\r\n    height: 320px;\r\n    padding: 20px;\n}\n.content-chat iframe[data-v-9c20c930] {\r\nborder: 1px solid gray;\n}\r\n", ""]);
 
 // exports
 
@@ -46808,6 +46808,16 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -47056,42 +47066,69 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "container" }, [
-      _vm.configEvento.etapa === "R"
-        ? _c("div", { staticClass: "row content-video" }, [_vm._m(0)])
-        : _c("div", { staticClass: "row mt-5 mb-5" }, [_vm._m(1)])
-    ])
+    _c(
+      "div",
+      { staticClass: "container" },
+      [
+        _vm.configEvento.etapa === "R"
+          ? [
+              _c("div", { staticClass: "row content-video" }, [
+                _c("div", { staticClass: "col-12" }, [
+                  _c(
+                    "div",
+                    {
+                      staticStyle: {
+                        padding: "52.73% 0 0 0",
+                        position: "relative"
+                      }
+                    },
+                    [
+                      _c("iframe", {
+                        staticStyle: {
+                          position: "absolute",
+                          top: "0",
+                          left: "0",
+                          width: "100%",
+                          height: "100%"
+                        },
+                        attrs: {
+                          src:
+                            "https://vimeo.com/event/" +
+                            _vm.evento.codigoVivo +
+                            "/embed",
+                          frameborder: "0",
+                          allow: "autoplay; fullscreen; picture-in-picture",
+                          allowfullscreen: ""
+                        }
+                      })
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row content-chat" }, [
+                _c("div", { staticClass: "col-12" }, [
+                  _c("iframe", {
+                    attrs: {
+                      src:
+                        "https://vimeo.com/event/" +
+                        _vm.evento.codigoVivo +
+                        "/chat/#extern",
+                      width: "100%",
+                      height: "100%",
+                      frameborder: "0"
+                    }
+                  })
+                ])
+              ])
+            ]
+          : _c("div", { staticClass: "row mt-5 mb-5" }, [_vm._m(0)])
+      ],
+      2
+    )
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12" }, [
-      _c(
-        "div",
-        { staticStyle: { padding: "52.73% 0 0 0", position: "relative" } },
-        [
-          _c("iframe", {
-            staticStyle: {
-              position: "absolute",
-              top: "0",
-              left: "0",
-              width: "100%",
-              height: "100%"
-            },
-            attrs: {
-              src: "https://player.vimeo.com/video/447264182",
-              frameborder: "0",
-              allow: "autoplay; fullscreen; picture-in-picture",
-              allowfullscreen: ""
-            }
-          })
-        ]
-      )
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

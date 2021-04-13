@@ -187,7 +187,8 @@ return [
             'view' => 'cigen',
             'cookie' => 'cigen',
             'activo' => true,
-            'evitarRoute' => true 
+            'evitarRoute' => true,
+            'codigoVivo' => '885878' 
         ],                                                          
     ],
     'recaptcha' => [
