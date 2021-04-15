@@ -188,7 +188,8 @@ return [
             'cookie' => 'cigen',
             'activo' => true,
             'evitarRoute' => true,
-            'codigoVivo' => '885878' 
+            'urlVimeoVideo' => 'https://vimeo.com/event/885878/embed/6258b9eb5d',
+            'urlVimeoChat' => 'https://vimeo.com/live-chat/535847772/6258b9eb5d' 
         ],                                                          
     ],
     'recaptcha' => [

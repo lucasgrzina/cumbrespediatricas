@@ -1,6 +1,12 @@
 @extends('layouts.cigen.front-vue')
 @section('head')
 <link href="{{ url('/css/cigen/speakers.css') }}" rel="stylesheet" type="text/css">
+<style>
+  .img-quienes-somos {
+    max-width: 100%;
+    max-height: 200px;
+  }
+</style>
 @endsection
 @section('content')
 <div class="container">
@@ -16,7 +22,7 @@
       <p><b>Staff Servicio de Gastroenterología Clínica CMIC<br>(Neuquén – Patagonia – Argentina)</b></p>
 
       <h4>Jefe de Servicio</h4><p><b>Dr Esteves Sebastián</b> <br>Gastroenterología Clínica – Endoscopia Digestiva Diagnóstica y Terapéutica – Ecoendoscopia – Colangiografia Retrograda Endoscopica.</p>
-
+      <img src="{{asset('img/cigen/quienes-somos/IMG_3.jpg')}}" class="img-quienes-somos">
     </div>
 
 
@@ -32,55 +38,56 @@
     <div class="col-md-4">
 
       <p><b>Alarcón Guillermo</b><br>Gastroenterología Infantil – Endoscopia Digestiva Infantil</p>
+      <img src="{{asset('img/cigen/quienes-somos/IMG_1.jpg')}}" class="img-quienes-somos">
 
     </div>
 
     <div class="col-md-4">
 
       <p><b>Dr Barril Sergio</b><br>Gastroenterología Clínica – Endoscopia Digestiva – Estudios Funcionales</p>
-
+      <img src="{{asset('img/cigen/quienes-somos/IMG_2.jpg')}}" class="img-quienes-somos">
     </div>
 
     <div class="col-md-4">
 
       <p><b>Dra Chiappero Ana Laura</b><br>Gastroenterología Clínica – Endoscopia Digestiva – Videoendoscápsula</p>
-
+      <img src="{{asset('img/cigen/quienes-somos/IMG_6.jpg')}}" class="img-quienes-somos">
     </div>
 
     <div class="col-md-4">
 
       <p><b>Dra Espiñeira Silvina</b><br>Gastroenterología Clínica– Estudios Funcionales</p>
-
+      <img src="{{asset('img/cigen/quienes-somos/IMG_7.jpg')}}" class="img-quienes-somos">
     </div>
 
     <div class="col-md-4">
 
       <p><b>Dr Lamot Juan Manuel</b><br>Cirujano – Endoscopia Digestiva – Intervencionismo Percutáneo</p>
-
+      <img src="{{asset('img/cigen/quienes-somos/IMG_4.jpg')}}" class="img-quienes-somos">
     </div>
 
     <div class="col-md-4">
 
       <p><b>Dra Masci Evelina</b><br>Médica Clínica – Soporte Nutricional y Enfermedades Malabsortivas</p>
-
+      <!--img src="{{asset('img/cigen/quienes-somos/IMG_111.jpg')}}" class="img-quienes-somos"-->
     </div>
 
     <div class="col-md-4">
 
       <p><b>Dra Martínez Emiliana</b><br>Gastroenterología Clínica – Endoscopia Digestiva – Ecoendoscopia</p>
-
+      <img src="{{asset('img/cigen/quienes-somos/IMG_8.jpg')}}" class="img-quienes-somos">
     </div>
 
     <div class="col-md-4">
 
       <p><b>Dra Moretti Norma</b><br>Gastroenterología Clínica – Endoscopia Digestiva</p>
-
+      <img src="{{asset('img/cigen/quienes-somos/IMG_9.jpg')}}" class="img-quienes-somos">
     </div>
 
     <div class="col-md-4">
 
       <p><b>Dr Sánchez Andrés</b><br>Gastroenterología Clínica – Endoscopia Digestiva</p>
-
+      <img src="{{asset('img/cigen/quienes-somos/IMG_5.jpg')}}" class="img-quienes-somos">
     </div>
 
 
@@ -139,6 +146,10 @@
 
     </div>
 
+
+    <div class="col-md-12">
+      <iframe src="https://player.vimeo.com/video/536530206" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>      
+    </div>
   </div>
 
 </div>

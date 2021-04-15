@@ -14,13 +14,13 @@
                 <div class="row content-video">
                     <div class="col-12">
                         <div style="padding:52.73% 0 0 0;position:relative;">
-                            <iframe :src="'https://vimeo.com/event/' + evento.codigoVivo + '/embed'" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                            <iframe :src="evento.urlVimeoVideo" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                         </div>
                     </div>
                 </div>
                 <div class="row content-chat">
                 <div class="col-12">
-                    <iframe :src="'https://vimeo.com/event/' + evento.codigoVivo + '/chat/#extern'" width="100%" height="100%" frameborder="0"></iframe>
+                    <iframe :src="evento.urlVimeoChat" width="100%" height="100%" frameborder="0"></iframe>
                 </div>
 
                 </div>

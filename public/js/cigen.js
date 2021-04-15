@@ -47092,10 +47092,7 @@ var render = function() {
                           height: "100%"
                         },
                         attrs: {
-                          src:
-                            "https://vimeo.com/event/" +
-                            _vm.evento.codigoVivo +
-                            "/embed",
+                          src: _vm.evento.urlVimeoVideo,
                           frameborder: "0",
                           allow: "autoplay; fullscreen; picture-in-picture",
                           allowfullscreen: ""
@@ -47110,10 +47107,7 @@ var render = function() {
                 _c("div", { staticClass: "col-12" }, [
                   _c("iframe", {
                     attrs: {
-                      src:
-                        "https://vimeo.com/event/" +
-                        _vm.evento.codigoVivo +
-                        "/chat/#extern",
+                      src: _vm.evento.urlVimeoChat,
                       width: "100%",
                       height: "100%",
                       frameborder: "0"
