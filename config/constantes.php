@@ -189,7 +189,7 @@ return [
             'activo' => true,
             'evitarRoute' => true,
             'urlVimeoVideo' => 'https://vimeo.com/event/885878/embed/6258b9eb5d',
-            'urlVimeoChat' => 'https://vimeo.com/live-chat/535847772/6258b9eb5d' 
+            'urlVimeoChat' => 'https://vimeo.com/event/885878/chat/6258b9eb5d' 
         ],                                                          
     ],
     'recaptcha' => [
