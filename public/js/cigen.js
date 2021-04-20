@@ -45424,7 +45424,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45435,6 +45435,16 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -45502,7 +45512,11 @@ var render = function() {
     _c("div", { staticClass: "container" }, [
       _vm._m(0),
       _vm._v(" "),
-      !_vm.loggedIn ? _c("div", { staticClass: "row" }, [_vm._m(1)]) : _vm._e()
+      _vm.loggedIn
+        ? _c("div", { staticClass: "row" }, [_vm._m(1), _vm._v(" "), _vm._m(2)])
+        : _vm._e(),
+      _vm._v(" "),
+      !_vm.loggedIn ? _c("div", { staticClass: "row" }, [_vm._m(3)]) : _vm._e()
     ]),
     _vm._v(" "),
     !_vm.loggedIn
@@ -45523,6 +45537,44 @@ var staticRenderFns = [
           )
         ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-12" }, [
+      _c("p", { staticClass: "text-big home" }, [_vm._v("Viernes 16")]),
+      _vm._v(" "),
+      _c("iframe", {
+        attrs: {
+          src: "https://player.vimeo.com/video/538784805",
+          width: "640",
+          height: "360",
+          frameborder: "0",
+          allow: "autoplay; fullscreen; picture-in-picture",
+          allowfullscreen: ""
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-12" }, [
+      _c("p", { staticClass: "text-big home" }, [_vm._v("Sábado 17")]),
+      _vm._v(" "),
+      _c("iframe", {
+        attrs: {
+          src: "https://player.vimeo.com/video/538926311",
+          width: "640",
+          height: "360",
+          frameborder: "0",
+          allow: "autoplay; fullscreen; picture-in-picture",
+          allowfullscreen: ""
+        }
+      })
     ])
   },
   function() {
