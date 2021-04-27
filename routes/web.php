@@ -166,7 +166,7 @@ $appRoutesCigen = function() use ($keyCigen){
     Route::post('/enviar-encuesta', $data['controller'].'@enviarEncuesta')->name('enviar-encuesta');
     Route::get('/evento-disponible', $data['controller'].'@eventoDisponible')->name('evento-disponible');        
     Route::any('/enviar-salida-usuario', $data['controller'].'@enviarSalidaUsuario')->name('enviar-salida-usuario');
-
+    Route::get('/descargar-certificado', $data['controller'].'@descargarCertificado')->name('descargar-certificado');        
     Route::post('/recuperar', $data['controller'].'@recuperar')->name('recuperar');
     Route::get('/registrado', $data['controller'].'@registrado')->name('registrado');
 };

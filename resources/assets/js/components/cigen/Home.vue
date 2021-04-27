@@ -4,10 +4,13 @@
 
           <div class="row">
 
-            <div class="col-12">
+            <div class="col-md-9">
 
               <p class="text-big home">VII Curso Internacional de Gastroenterología y Endoscopía Digestiva. CIGEN 2021</p>
 
+            </div>
+            <div class="col-md-3 pt-5 text-center">
+              <a v-if="puedeDescargarDiploma" :href="urlDescargarCertificado" class="btn btn-primary">Descargar diploma</a>
             </div>
 
           </div>
@@ -47,7 +50,14 @@
             },
             loggedIn: {
               type: Boolean
-            }
+            },
+            puedeDescargarDiploma: {
+              type: Boolean
+            },
+            urlDescargarCertificado : {
+                type: String,
+                required:true                
+            }            
         },
         data () {
             return {

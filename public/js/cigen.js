@@ -45424,7 +45424,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -45476,6 +45476,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
@@ -45484,6 +45487,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         loggedIn: {
             type: Boolean
+        },
+        puedeDescargarDiploma: {
+            type: Boolean
+        },
+        urlDescargarCertificado: {
+            type: String,
+            required: true
         }
     },
     data: function data() {
@@ -45510,7 +45520,22 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "home" }, [
     _c("div", { staticClass: "container" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "row" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-3 pt-5 text-center" }, [
+          _vm.puedeDescargarDiploma
+            ? _c(
+                "a",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { href: _vm.urlDescargarCertificado }
+                },
+                [_vm._v("Descargar diploma")]
+              )
+            : _vm._e()
+        ])
+      ]),
       _vm._v(" "),
       _vm.loggedIn
         ? _c("div", { staticClass: "row" }, [_vm._m(1), _vm._v(" "), _vm._m(2)])
@@ -45529,13 +45554,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12" }, [
-        _c("p", { staticClass: "text-big home" }, [
-          _vm._v(
-            "VII Curso Internacional de Gastroenterología y Endoscopía Digestiva. CIGEN 2021"
-          )
-        ])
+    return _c("div", { staticClass: "col-md-9" }, [
+      _c("p", { staticClass: "text-big home" }, [
+        _vm._v(
+          "VII Curso Internacional de Gastroenterología y Endoscopía Digestiva. CIGEN 2021"
+        )
       ])
     ])
   },

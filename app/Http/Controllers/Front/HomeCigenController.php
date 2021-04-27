@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use App\Registrado;
 use App\Mail\RawMailable;
 use Illuminate\Http\Request;
+use App\Helpers\StorageHelper;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\Front\RegistrarRequest;
@@ -32,11 +33,21 @@ class HomeCigenController extends EventoBaseController
     {
         /*if (\Auth::guard('web')->check()) {
             return redirect()->route($this->key.'.registrado');
-        } */       
+        } */   
+        $loggedIn = false;
+        $puedeDescargarDiploma = false;  
+          
+        if (\Auth::guard('web')->check()) {
+            $loggedIn = true;
+            $registrado = \Auth::guard('web')->user();
+            $puedeDescargarDiploma = $registrado->acciones()->count() > 0;
+        }
         
         $data = [
             'props' => [
-                'loggedIn' => \Auth::guard('web')->check(),
+                'loggedIn' => $loggedIn,
+                'urlDescargarCertificado' => route($this->key.'.descargar-certificado'),
+                'puedeDescargarDiploma' => $puedeDescargarDiploma
             ],
             'headerData' => true,
             'title' => '¡Bienvenidos!'
@@ -333,9 +344,50 @@ class HomeCigenController extends EventoBaseController
         return view('front.'.$this->evento['view'].'.sponsors', $data);
     } 
 
+    public function descargarCertificado() {
+        $registrado = $this->obtenerRegistrado();
+
+        
+        $imgCertificado = $registrado->id . '_certificado.jpg';
 
 
-
+        //if (!StorageHelper::existe($imgCertificado,'uploads')) {
+            $text = $registrado->nombre . ' ' . $registrado->apellido;
+            $img = \Image::make(public_path('img/cigen/certificado/certificado.jpg'));
+        
+            $width = $img->width();
+            $height = $img->height();
+            $center_x = $width / 2;
+            $center_y = 1100;
+            $max_len = 50;
+            $font_size = 150;
+            $font_height = 45;
+        
+            $lines = explode("\n", wordwrap($text, $max_len));
+            $y = $center_y - ((count($lines) - 1) * $font_height);
+            //$img = \Image::canvas($width, $height, '#777');
+        
+            foreach ($lines as $line) {
+                $img->text($line, $center_x, $y, function ($font) use ($font_size) {
+                    $font->file(public_path('fonts/Karbon-Bold.ttf'));
+                    $font->size($font_size);
+                    $font->color('#1172b5');
+                    $font->align('center');
+                    $font->valign('top');
+                });
+        
+                $y += $font_height * 2;
+            }
+        
+            
+            $img->save(public_path('uploads/' . $imgCertificado));
+    
+        //}
+        $customPaper = array(0,0,$height / 2,$width / 2);
+        $pdf = \PDF::loadView('exports.certificado', ['imagen' => StorageHelper::path($imgCertificado,'uploads')])->setPaper($customPaper, 'landscape'); 
+        return $pdf->download('Cigen-Certificado.pdf');
+        
+    }    
 
     protected function obtenerRegistrado() {
         $registrado = null;
