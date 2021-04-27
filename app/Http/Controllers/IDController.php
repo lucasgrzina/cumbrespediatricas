@@ -33,9 +33,8 @@ class IDController extends Controller
         $limit = request()->has('limit') ? request()->get('limit') : 100;
 
         $registrados = Registrado::whereEvento('cigen'); 
-        $registrados->whereHas('acciones');
-        $registrados->offset(($page - 1) * $limit)->limit($limit)->get();
-        
+        $registrados = $registrados->whereHas('acciones');
+        $registrados = $registrados->offset(($page - 1) * $limit)->limit($limit)->get();
         
         //$registrados = Registrado::whereEvento('cigen')->whereEmail('guidoblarasin@gmail.com')->get(); 
         
@@ -44,6 +43,7 @@ class IDController extends Controller
             'ok' => 0,
             'muestra-total' => Registrado::whereEvento('cigen')->whereHas('acciones')->count()
         ];
+        
         try
         {
             foreach ($registrados as $registrado) {
@@ -59,6 +59,7 @@ class IDController extends Controller
         }
         catch(\Exception $ex)
         {
+            dd($ex->getMessage());
             $salida['errores'][] = $ex->getMessage();
             //\Log::error($ex->getMessage());
         }               
