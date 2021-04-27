@@ -29,9 +29,14 @@ class IDController extends Controller
     }
 
     public function sendEmail() {
+        $page = request()->has('page') ? request()->get('page') : 1;
+        $limit = request()->has('limit') ? request()->get('limit') : 100;
 
-        $registrados = Registrado::whereEvento('cigen')->whereHas('acciones')->offset(0)->limit(100)->get(); 
-        dd(Registrado::whereEvento('cigen')->whereHas('acciones')->count());
+        $registrados = Registrado::whereEvento('cigen'); 
+        $registrados->whereHas('acciones');
+        $registrados->offset(($page - 1) * $limit)->limit($limit)->get();
+        
+        
         //$registrados = Registrado::whereEvento('cigen')->whereEmail('guidoblarasin@gmail.com')->get(); 
         
         $salida = [
