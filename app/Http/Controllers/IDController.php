@@ -30,12 +30,14 @@ class IDController extends Controller
 
     public function sendEmail() {
 
-        //$registrados = Registrado::whereEvento('cigen')->offset(200)->limit(100)->get(); 
-        $registrados = Registrado::whereEvento('cigen')->whereEmail('guidoblarasin@gmail.com')->get(); 
+        $registrados = Registrado::whereEvento('cigen')->whereHas('acciones')->offset(0)->limit(100)->get(); 
+        dd(Registrado::whereEvento('cigen')->whereHas('acciones')->count());
+        //$registrados = Registrado::whereEvento('cigen')->whereEmail('guidoblarasin@gmail.com')->get(); 
         
         $salida = [
             'errores' => [],
-            'ok' => 0
+            'ok' => 0,
+            'muestra-total' => Registrado::whereEvento('cigen')->whereHas('acciones')->count()
         ];
         try
         {
