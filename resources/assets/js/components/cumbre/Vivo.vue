@@ -94,9 +94,8 @@
                         <div class="disc-sitio mt-2">
                             Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac).<br>
                             Se recomienda tener actualizado el sistema operativo a la última actualización.<br>
-                            Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor.<br><br>
-
-                            Ante cualquier duda o inconveniente escriba al 011 3429 0838 (Whatsapp)
+                            Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor.<br>
+                            Ante cualquier duda o inconveniente escriba al 0054 9 11  3300-3516 (Whatsapp)
                         </div>
                     </div>
                 </div>

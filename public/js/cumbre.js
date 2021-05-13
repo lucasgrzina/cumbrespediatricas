@@ -46308,7 +46308,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -47251,9 +47250,8 @@ var staticRenderFns = [
               "\n                        Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor."
             ),
             _c("br"),
-            _c("br"),
             _vm._v(
-              "\n\n                        Ante cualquier duda o inconveniente escriba al 011 3429 0838 (Whatsapp)\n                    "
+              "\n                        Ante cualquier duda o inconveniente escriba al 0054 9 11  3300-3516 (Whatsapp)\n                    "
             )
           ])
         ])

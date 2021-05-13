@@ -17,12 +17,13 @@
             .disc-sitio {
                 text-align: center;
                 color: #ccc;
-                font-size: 10px;
-                font-weight: 500; 
+                font-size: 9px;
+                font-weight: 100;
                 position: absolute;
                 bottom: 0;
                 z-index: 3;
-                width: 90%;                               
+                width: 90%;
+                font-family: sans-serif;                              
             }
         </style>
         <!-- Minified version of `es6-promise-auto` below. -->
