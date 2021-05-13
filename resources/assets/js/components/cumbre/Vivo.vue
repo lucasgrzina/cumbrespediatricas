@@ -1,68 +1,107 @@
 <template>
     <div>
-            <div class="row content-title">
-                <div class="col-md-12 text-center">
-                    <!--div class="line line--left"></div-->
-                    <button type="button" class="btn btn-primary" @click="verVideo('ingles')">Audio Original Inglés</button>
-                    <button type="button" class="btn btn-primary" @click="verVideo('esp')">Audio Español</button>                    
+            <header>
 
-                    <!--div class="line line--right"></div-->
-                </div>
-            </div>
-            <div class="row content-encuesta" v-if="videoSeleccionado">
-                <div class="col-sm-12 text-center">
-                    <button type="button" 
-                            class="btn btn-primary" 
-                            @click="encuestaDisponible()"
-                    >
-                        <span>Encuesta</span>
-                    </button>                    
-                </div>
+                <div class="top-background"></div>      
+              
+            </header>           
+            <section>
+                <div class="container center-elements-vertical show-video">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="box-container" style="width: 100%;">
+                                <div class="wrapper--box-container">
+                                    <div class="row hide-video" v-if="paso === 1">
+                                        <div class="col-12">
+                                            <h2>Evento virtual</h2>
+                                        </div>
+                                        <div class="col-12">
+                                            <h1>Bienvenidos<br>a cumbre NASA</h1>	
+                                        </div>					
+                                    </div>					
 
-            </div>
-            <div class="row content-vimeo">
-                <div class="col-md-12" v-if="videoSeleccionado">
-                    <span style="color:#fff;text-align:center;width:100%;margin-top: 20px;display: block;"><i class="fa fa-volume-up" aria-hidden="true"></i>Por favor, activar el sonido del reproductor</span>
-                    <div class="contenedor_vimeo" v-if="videoSeleccionado === 'ingles'">
-                        <iframe src="https://player.vimeo.com/video/475459063" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                    </div>                    
-                    <div class="contenedor_vimeo" v-else>
-                        <iframe src="https://player.vimeo.com/video/475458120" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                    </div>                    
-                </div>
-                <div class="col-md-12" v-else>
-                    <span style="color: rgb(16, 33, 63);
-                        text-align: center;
-                        width: 100%;
-                        margin-top: 20px;
-                        display: block;
-                        padding: 20px;
-                        background: #e09b3f;
-                        border: 2px solid #fff;"
-                    >
-                        <i class="fa fa-arrow-up" aria-hidden="true"></i> 
-                        Para ver el evento, seleccione en los botones de arriba la opción de audio
-                    </span>
-                </div>                
-            </div>
-            <div class="row content-vimeo-chat" v-if="videoSeleccionado">
-                <div class="col-sm-9 form-container">
-                    <input type="text" class="form-control" id="pregunta" name="pregunta" placeholder="Escriba su pregunta aquí" v-model="form.pregunta">
-                </div>
-                <div class="col-sm-3 text-center">
-                    <button type="button" 
-                            class="btn btn-primary" 
-                            @click="enviarPregunta()"
-                            :disabled="!form.pregunta"
-                    >
-                        <i v-if="enviando" class="fa fa-spinner fa-spin fa-fw"></i> 
-                        <span v-if="!enviando">ENVIAR</span>
-                    </button>                    
-                </div>
-            </div>
+                                    <div class="row mt-2 mb-5 hide-video" v-if="paso === 1">
+                                        <div class="col-12">
+                                            <a class="btn btn-play ml-auto mr-auto d-table">TRANSMISIÓN EN VIVO <img width="35" src="img/nasa/play.png"></a>
+                                        </div>
+                                    </div>
 
-            <i class="fa fa-spinner fa-spin fa-fw" style="opacity:0;"></i>
+                                    <div class="row">
+                                        <div class="col-sm-5 offset-sm-1 col-lg-4 offset-lg-2">
+                                            <button class="btn btn-primary ml-auto mr-auto d-table btn-idioma mb-2 mb-md-0" video="266356599" @click="verVideo('esp')">AUDIO ESPAÑOL</button>
+                                        </div>
+                                        <div class="col-sm-5 col-lg-4">
+                                            <button class="btn btn-primary ml-auto mr-auto d-table btn-idioma" video="530943595" @click="verVideo('ingles')">AUDIO INGLÉS</button>
+                                        </div>
+                                    </div>	
+
+                                    <div class="row show-video" v-if="paso === 2">
+                                        <div class="col-12">
+                                            <p class="text-sonido">Recuerde activar el sonido del reproductor</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row show-video reproductor mt-4"  v-if="paso === 2">
+                                        <div class="col-12">
+                                            <div class="load-video" style="padding:56.25% 0 0 0;position:relative;">
+                                                <iframe v-if="videoSeleccionado === 'ingles'" src="https://player.vimeo.com/video/547634490" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                                                <iframe v-else src="https://player.vimeo.com/video/547632700" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>	
+                               
+                                </div>	
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <div class="row" style="margin-bottom:80px;"   v-if="paso === 2">
+                        <div class="col-12 ">
+                            <form class="show-video" onkeydown="return event.keyCode != 13;">
+                                <div class="form-group">
+                                    <label for="pregunta">Escriba su pregunta aquí: </label>
+                                    <input type="text" class="form-control" id="pregunta" name="pregunta" v-model="form.pregunta">
+                                </div>
+                                <div class="form-group buttons-form text-center">
+                                    <button 
+                                        type="button"
+                                        class="btn btn-primary" 
+                                        @click="enviarPregunta()"
+                                        :disabled="!form.pregunta"
+                                    >
+                                        <i v-if="enviando" class="fa fa-spinner fa-spin fa-fw"></i> 
+                                        <span v-if="!enviando">ENVIAR</span>
+                                    </button>
+                                </div>
+                                <div class="form-group buttons-form text-center mb-5">
+                                    <button type="button" class="btn btn-primary" @click="certificadoDisponible()">Certificado</button>
+                                    <button type="button" class="btn btn-primary" @click="encuestaDisponible()">Encuesta</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>	
+                </div>
+            </section>
+            <footer class="">
+
+                <div class="bottom-background"></div>
             
+            </footer>
+            <div class="center-elements-vertical">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="disc-sitio mt-2">
+                            Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac).<br>
+                            Se recomienda tener actualizado el sistema operativo a la última actualización.<br>
+                            Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor.<br><br>
+
+                            Ante cualquier duda o inconveniente escriba al 011 3429 0838 (Whatsapp)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div v-if="showModal">
                 <transition name="modal">
                     <div class="modal-mask">
@@ -76,57 +115,39 @@
                         </div>
 
                         <div class="modal-body">
-                            <!--div class="container-encuesta">
-                                <div class="row" v-for="(item,index) in encuesta.preguntas" :key="index">
-                                    <div class="col-12">
-                                        <h5>{{item.key}}) {{item.tit}}</h5>
-                                        <p>{{item.preg}}</p>
-                                    </div>
-                                    <div class="col-12">
-                                        <template v-if="item.tipo === 'C'">
-                                            <template v-for="subitem in encuesta.opciones">
-                                            <div class="form-check-inline" :key="subitem.key">
-                                                <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" :name="'p_'+item.key+'_r_'+subitem.key" :value="subitem.key" v-model="encuesta.form['resp_' + item.key]"> {{subitem.texto}}
-                                                </label>
-                                            </div>
-                                            <br :key="subitem.key">
-                                            </template>
-                                            
-                                        </template>
-                                        <template v-else>
-                                            <textarea class="form-control" :name="'p_'+item.key" v-model="encuesta.form['resp_' + item.key]"></textarea>
-                                        </template>
-                                    </div>
-                                </div>
-
-                                <div class="text-right">
-
-                                </div>
-                                <i class="fa fa-spinner fa-spin fa-fw" style="opacity:0;"></i>
-                            </div-->
+                            
                             <div class="container-encuesta">
-                                <div class="row" v-for="(item,index) in encuesta.preguntas" :key="index">
-                                    <div class="col-12">
-                                        <h5>{{item.key}}) {{item.tit}}</h5>
-                                        <p>{{item.preg}}</p>
+                                <div class="row" v-for="(itemBloque,indexBloque) in encuesta.bloques" :key="'bloque_' + indexBloque">
+                                    <div class="col-12" v-if="itemBloque.titulo">
+                                        <span class="tit-bloque">{{itemBloque.titulo}}</span>
                                     </div>
-                                    <div class="col-12">
-                                        <template v-if="item.tipo === 'C'">
-                                            <template v-for="(subitem, indexOpt) in obtenerOpcionesPorKey(item.key_respuesta)">
-                                            <div class="form-check-inline" :key="'opt_' + indexOpt">
-                                                <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" :name="'p_'+item.key+'_r_'+ indexOpt" :value="subitem" v-model="encuesta.form['resp_' + item.key]"> {{subitem}}
-                                                </label>
+                                    <template v-for="(itemSeccion,indexSeccion) in itemBloque.secciones">
+                                        <div class="col-12" v-if="itemBloque.titulo" :key="'titSeccion_' + indexSeccion">
+                                            <span class="tit-seccion">{{itemSeccion.titulo}}</span>
+                                        </div>
+                                        <template v-for="(itemPregunta,indexPregunta) in itemSeccion.preguntas">
+                                            <div class="col-12" :key="'titPregunta_' + indexSeccion + '_' + indexPregunta">
+                                                <span class="tit-pregunta">{{itemPregunta.key}}) {{itemPregunta.tit}}</span>
                                             </div>
-                                            <br :key="indexOpt">
-                                            </template>
-                                            
+                                            <div class="col-12 opc-pregunta"  :key="'contPregunta_' + indexSeccion + '_' + indexPregunta">
+                                                <template v-if="itemPregunta.tipo === 'C'">
+                                                    <template v-for="(subitem, indexOpt) in obtenerOpcionesPorKey(itemPregunta.key_respuesta)">
+                                                    <div class="form-check-inline" :key="'opt_' + indexOpt">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input" :name="'p_'+itemPregunta.key+'_r_'+ indexOpt" :value="subitem" v-model="encuesta.form['resp_' + itemPregunta.key]"> {{subitem}}
+                                                        </label>
+                                                    </div>
+                                                    <br :key="indexOpt">
+                                                    </template>
+                                                    
+                                                </template>
+                                                <template v-else>
+                                                    <textarea class="form-control" :name="'p_'+itemPregunta.key" v-model="encuesta.form['resp_' + itemPregunta.key]"></textarea>
+                                                </template>
+                                            </div>
+
                                         </template>
-                                        <template v-else>
-                                            <textarea class="form-control" :name="'p_'+item.key" v-model="encuesta.form['resp_' + item.key]"></textarea>
-                                        </template>
-                                    </div>
+                                    </template>
                                 </div>
 
                                 <div class="text-right">
@@ -153,41 +174,9 @@
                     </div>
                     </div>
                 </transition>
-            </div>   
-
-            <div class="row content-certificado" v-if="videoSeleccionado">
-                <div class="col-12 text-center">
-                    <button 
-                            v-if="registrado && registrado.certificado"
-                            type="button" 
-                            class="btn btn-primary" 
-                            @click="certificadoDisponible()"
-                    >
-                        <span>Certificado</span>
-                    </button>                    
-                    <a :href="urlSitioPpal" 
-                            class="btn btn-primary" 
-                    >
-                        <span>Volver</span>
-                    </a>                    
-
-                </div>
-
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="disc-sitio mt-2">
-                        Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac).<br>
-                        Se recomienda tener actualizado el sistema operativo a la última actualización.<br>
-                        Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor.<br><br>
-
-                        Ante cualquier duda o inconveniente escriba al 0054 9 11 3300 3516 (Whatsapp)
-                    </div>
-                </div>
-            </div>
-
+            </div>            
     </div>
+    
 </template>
 
 <script>
@@ -229,54 +218,68 @@
         },
         data () {
             return {
+                paso: 1,
                 videoSeleccionado: null,
                 form: {
                     pregunta: null
                 },
-                /*encuesta: {
-                    preguntas: [
-                        {key: 1,tit: 'El contenido del programa es relevante para mi consultorio', preg: '', tipo: 'C'},
-                        {key: 2,tit: 'Los oradores y contenido son interesantes', preg: '', tipo: 'C'},
-                        {key: 3,tit: 'Logística y experiencia del evento: calidad audiovisual y de la transmisión son buenas y sin interrupciones', preg: '', tipo: 'C'},
-                        {key: 4,tit: 'Probablemente participaré en las ofertas visuales futuras de Abbott Nutrición', preg: '', tipo: 'C'},
-                        {key: 5,tit: 'Probablemente recomendaré este webinario a mis colegas', preg: '', tipo: 'C'},
-                        {key: 6,tit: '¿Qué temas son de mayor interés para usted relacionados con la nutrición?', preg: '', tipo: 'T'},
-                        {key: 7,tit: '¿Cuál es el aprendizaje más importante en este programa que pudiera traducirse a su consultorio clínico?', preg: '', tipo: 'T'},
-                        {key: 8,tit: '¿Alguna sugerencia para hacer este webinar más efectivo?', preg: '', tipo: 'T'},
-                    ],
-                    opciones: [
-                        {key: 5, texto: 'Totalmente de acuerdo'},
-                        {key: 4, texto: 'De acuerdo'},
-                        {key: 3, texto: 'Ni en desacuerdo ni de acuerdo'},
-                        {key: 2, texto: 'En desacuerdo'},
-                        {key: 1, texto: 'Totalmente en desacuerdo'},
-                    ],
-                    form: {
-                        resp_1: null,
-                        resp_2: null,
-                        resp_3: null,
-                        resp_4: null,
-                        resp_5: null,
-                        resp_6: null,
-                        resp_7: null,
-                        resp_8: null,
-                    },
-                    enviando: false,
-                    errors: [],
-                },*/
-                
                 encuesta: {
-                    preguntas: [
-                        {key: 1,tit: 'El contenido del programa es relevante para mi consultorio', preg: '', tipo: 'C', key_respuesta: 1},
-                        {key: 2,tit: 'Los oradores y contenido son interesantes', preg: '', tipo: 'C', key_respuesta: 1},
-                        {key: 3,tit: 'Logística y experiencia del evento: calidad audiovisual y de la transmisión son buenas y sin interrupciones', preg: '', tipo: 'C', key_respuesta: 1},
-                        {key: 4,tit: 'Probablemente participaré en las ofertas visuales futuras de Abbott Nutrición', preg: '', tipo: 'C', key_respuesta: 1},
-                        {key: 5,tit: 'Probablemente recomendaré este webinario a mis colegas', preg: '', tipo: 'C', key_respuesta: 1},
-                        {key: 6,tit: '¿Qué temas son de mayor interés para usted relacionados con la nutrición?', preg: '', tipo: 'T'},
-                        {key: 7,tit: '¿Cuál es el aprendizaje más importante en este programa que pudiera traducirse a su consultorio clínico?', preg: '', tipo: 'T'},
-                        {key: 8,tit: '¿Alguna sugerencia para hacer este webinar más efectivo?', preg: '', tipo: 'T'},
+                    titulo: '',
+                    subtitulo: '',
+                    bloques: [
+                        {
+                            titulo: 'Después de participar en este Webinar, ¿qué tan de acuerdo está con las siguientes declaraciones?',
+                            secciones: [
+                                {
+                                    titulo: '',
+                                    preguntas: [
+                                        {key: 1,tit: 'El contenido del webinar es relevante para mi práctica', preg: 'pre1', tipo: 'C', key_respuesta: 1},
+                                        {key: 2,tit: 'Los expositores y el contenido son interesantes', preg: 'pre1', tipo: 'C', key_respuesta: 1},
+                                        {key: 3,tit: 'La transmisión audiovisual es fluida y de alta calidad', preg: '', tipo: 'C', key_respuesta: 1},
+                                        {key: 4,tit: 'Es probable que participe en futuros eventos virtuales de Abbott Nutrición', preg: '', tipo: 'C', key_respuesta: 1},
+                                        {key: 5,tit: 'Es probable que recomiende este evento virtual a mis colegas', preg: '', tipo: 'C', key_respuesta: 1},
+                                    ]
+                                }
+                            ]
 
+                        },
+                        {
+                            titulo: '¿Qué tanto más está de acuerdo con las siguientes declaraciones después de participar en el webinario comparado con antes de participar?',
+                            secciones: [
+                                {
+                                    titulo: 'Primera Charla',
+                                    preguntas: [
+                                        {key: 6,tit: 'HMB es un ingrediente comprobado que se enfoca en la recuperar, preservar y aumentar la masa muscular', preg: 'pre1', tipo: 'C', key_respuesta: 2},
+                                        {key: 7,tit: 'La pérdida de masa muscular debería abordarse temprano para impactar de manera positiva los resultados clínicos', preg: 'pre1', tipo: 'C', key_respuesta: 2},
+                                        {key: 8,tit: 'Los suplementos nutricionales orales han demostrado que contribuyen a prevenir la pérdida de masa muscular y mejoran los resultados clínicos', preg: '', tipo: 'C', key_respuesta: 2},
+                                        {key: 9,tit: 'Minimizar la pérdida de masa muscular es importante en el manejo de pacientes con COVID-19 para mantener el estado funcional', preg: '', tipo: 'C', key_respuesta: 2},
+                                        {key: 10,tit: 'La evidencia reciente en las guías ESPEN COVID-19 indica un posible impacto positivo de la actividad física en conjunto con suplementación con aminoácidos o sus metabolitos como el HMB', preg: '', tipo: 'C', key_respuesta: 2},
+                                    ]
+                                },
+                                {
+                                    titulo: 'Segunda Charla',
+                                    preguntas: [
+                                        {key: 11,tit: 'Las fórmulas nutricionales específicas para diabéticos, utilizadas como sustituto de comidas, han demostrado reducir significativamente la respuesta de glucosa en sangre postprandial ', preg: 'pre1', tipo: 'C', key_respuesta: 2},
+                                        {key: 12,tit: 'Se ha demostrado que las fórmulas nutricionales específicas para diabéticos, como parte de un plan de intervención de estilo de vida, reducen significativamente la A1C', preg: 'pre1', tipo: 'C', key_respuesta: 2},
+                                        {key: 13,tit: 'Se ha demostrado que las Fórmulas de nutrición específicas para diabéticos compuestas de carbohidratos de digestión lenta, fibras dietéticas y MUFA estimulan la secreción de GLP-1.', preg: '', tipo: 'C', key_respuesta: 2},
+                                        {key: 14,tit: 'Se ha demostrado que las fórmulas de nutrición específicas para diabéticos pueden ayudar a complementar el objetivo de los medicamentos para la diabetes para ayudar a controlar los niveles de glucosa en sangre', preg: '', tipo: 'C', key_respuesta: 2},
+                                        {key: 15,tit: 'Las fórmulas nutricionales específicas para diabéticos, como parte de una intervención integral de estilo de vida, mejoran múltiples resultados de salud (por ejemplo, control glucémico, peso corporal, presión arterial)', preg: '', tipo: 'C', key_respuesta: 2},
+                                        {key: 16,tit: 'La terapia de nutrición médica se ha asociado con una mejor calidad de vida', preg: '', tipo: 'C', key_respuesta: 2},
+                                    ]
+                                },
+                                {
+                                    titulo: 'Proporcione su retroalimentación acerca de lo siguiente:',
+                                    preguntas: [
+                                        {key: 17,tit: 'Qué temas son de mayor interés para usted, relacionados con la nutrición y el impacto de COVID-19', preg: '', tipo: 'T'},
+                                        {key: 18,tit: 'A medida que las restricciones relacionadas con COVID-19 comienzan a disminuir, ¿le interesaría algún tema adicional sobre el manejo nutricional de pacientes diabéticos?', preg: '', tipo: 'T'},
+                                        {key: 19,tit: 'Comparta con nosotros sus conocimientos sobre el tratamiento de pacientes diabéticos durante COVID-19.', preg: '', tipo: 'T'},
+                                        {key: 20,tit: '¿Cuál es el aprendizaje más importante en este evento que podría traducirse en su práctica clínica?', preg: '', tipo: 'T'},
+                                        {key: 21,tit: '¿Alguna sugerencia para que el webinar sea más efectivo?', preg: '', tipo: 'T'},
+                                    ]
+                                }
+                            ]
 
+                        }
                     ],
                     opciones: [
                         {key: 1, 
@@ -360,6 +363,7 @@
         methods: {
             verVideo (video) {
                 this.videoSeleccionado = video;
+                this.paso = 2;
             },
             enviarPregunta: function () {
                 let vm = this
@@ -494,6 +498,7 @@
   padding: 0;
   max-height: 500px;
   overflow-y: auto;
+  background: #ccc;
 }
 
 .modal-default-button {
@@ -527,6 +532,28 @@
     padding: 0;
     background: #061422;
     border-top-color: #061422;    
+}
+.modal-body {
+    padding: 10px;
+}
+.modal-body .tit-bloque {
+    font-size: 20px;
+    margin: 15px 0;
+    display: block;
+}
+.modal-body .tit-seccion {
+    font-size: 16px;    
+    margin: 10px 0;
+    display: block;    
+    text-decoration: underline;
+}
+.modal-body .tit-pregunta {
+    font-size: 14px;
+    display: block;
+    margin: 10px 0;    
+}
+.modal-body .opc-pregunta {
+    font-size: 12px;    
 }
 
 </style>

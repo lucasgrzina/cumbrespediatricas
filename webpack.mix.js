@@ -15,7 +15,6 @@ mix.js('resources/assets/js/cumbre.js', 'public/js')
    .styles([
       'public/css/bootstrap.min.css',
       'public/css/styles.css',
-      'public/css/utils.css',
    ], 'public/css/cumbre.css');
 
    mix.js('resources/assets/js/similacmama.js', 'public/js')

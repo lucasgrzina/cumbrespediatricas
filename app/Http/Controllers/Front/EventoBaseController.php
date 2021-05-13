@@ -198,6 +198,7 @@ class EventoBaseController extends AppBaseController
         } catch (\Exception $e) {
             return $this->sendError($e->getMessage(),$e->getCode());
         }
-    }    
+    }
+        
 
 }

@@ -89,16 +89,16 @@ return [
             'controller' => 'HomeForoSasController',
             'view' => 'forosas',
             'cookie' => 'forosas',
-            'activo' => true,
+            'activo' => false,
             'evitarRoute' => true 
         ],     
-        'nasa' => [
+        'nasa1905' => [
             'nombre' => 'Abbott Cumbre Nasa',
             'prefix' => 'cumbrenasa',
             'controller' => 'HomeCumbreNasaController',
             'view' => 'nasa',
             'cookie' => 'cumbrenasa',
-            'activo' => false,
+            'activo' => true,
             'registroExterno' => true,
             'urlWebServiceRegistrado' => 'https://quimicavirtualevents.com/cumbrenasa/app/webservice.php',
             'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbrenasa',
@@ -130,7 +130,7 @@ return [
             'controller' => 'HomeAbbottNightController',
             'view' => 'abbottnight',
             'cookie' => 'abbottnight310',
-            'activo' => true,
+            'activo' => false,
         ],   
         'similacmama1711' => [
             'nombre' => 'Similac Mama - 17/11',
@@ -158,7 +158,7 @@ return [
             'controller' => 'HomeDermaTalksController',
             'view' => 'dermatalks',
             'cookie' => 'dermatalks',
-            'activo' => true,
+            'activo' => false,
             'registroExterno' => true,
             'urlWebServiceRegistrado' => 'https://dermatalks.com.ar/evento/app/webservice.php',
             'urlSitioPrincipal' => 'https://dermatalks.com.ar',
@@ -170,7 +170,7 @@ return [
             'controller' => 'HomeKaleidosController',
             'view' => 'fundacionkaleidos',
             'cookie' => 'fundacionkaleidos',
-            'activo' => true
+            'activo' => false
         ],      
         'similacmamac' => [
             'nombre' => 'Similac Mama - 02/12',
@@ -178,7 +178,7 @@ return [
             'controller' => 'HomeSimilaCMamaController',
             'view' => 'similacmama',
             'cookie' => 'similacmama_02_12',
-            'activo' => true
+            'activo' => false
         ],           
         'cigen' => [
             'nombre' => 'Cigen',
@@ -186,7 +186,7 @@ return [
             'controller' => 'HomeCigenController',
             'view' => 'cigen',
             'cookie' => 'cigen',
-            'activo' => true,
+            'activo' => false,
             'evitarRoute' => true,
             'urlVimeoVideo' => 'https://vimeo.com/event/885878/embed/6258b9eb5d',
             'urlVimeoChat' => 'https://vimeo.com/event/885878/chat/6258b9eb5d' 

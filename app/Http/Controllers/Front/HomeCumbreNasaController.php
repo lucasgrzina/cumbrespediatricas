@@ -10,7 +10,8 @@ use Illuminate\Http\Request;
 
 use App\Exceptions\NoHabilitadoException;
 use App\Http\Requests\Front\RegistrarRequest;
-use App\Http\Front\Controllers\EventoBaseController;
+use App\Http\Controllers\Front\EventoBaseController;
+
 
 class HomeCumbreNasaController extends EventoBaseController
 {
@@ -107,11 +108,20 @@ class HomeCumbreNasaController extends EventoBaseController
 
     protected function obtenerRegistradoExterno(Request $request) {
         
-        $keyCacheRegistrado = 'registrado_ext_'.$this->key.'_'.$request->token;
+        if ($request->has('test') && $request->get('test', false)) {
+            $keyCacheRegistrado = 'registrado_ext_test_'.$this->key.'_'.$request->token;
+        } else {
+            $keyCacheRegistrado = 'registrado_ext_'.$this->key.'_'.$request->token;
+        }
 
         $dbRegistrado = \Cache::remember($keyCacheRegistrado, Carbon::now()->addMinutes($this->segundosCache / 60), function () use($request){
             //Puede estar el mismo registrado externo pero para distinto evento
-            return Registrado::whereIdExterno($request->id)->whereEvento($this->key)->first();
+            if ($request->has('test') && $request->get('test',false)) {
+                return Registrado::whereIdExterno(1)->first();
+            } else {
+                return Registrado::whereIdExterno($request->id)->whereEvento($this->key)->first();
+            }
+            
         }); 
 
         if (!$dbRegistrado) {
