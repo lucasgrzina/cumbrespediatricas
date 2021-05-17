@@ -47252,7 +47252,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("footer", {}, [_c("div", { staticClass: "bottom-background" })])
+    return _c("footer", {}, [
+      _c("a", { staticClass: "logo-footer" }, [
+        _c("img", { attrs: { src: "img/nasa/abbott-logo.png" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "bottom-background" })
+    ])
   },
   function() {
     var _vm = this
@@ -47275,8 +47281,25 @@ var staticRenderFns = [
             ),
             _c("br"),
             _vm._v(
-              "\n                        Ante cualquier duda o inconveniente escriba al 0054 9 11  3300-3516 (Whatsapp)\n                    "
-            )
+              "\n                        Ante cualquier duda o inconveniente escriba al "
+            ),
+            _c(
+              "a",
+              {
+                attrs: {
+                  href:
+                    "https://api.whatsapp.com/send?phone=5491133003516&text=Hola",
+                  target: "_blank"
+                }
+              },
+              [
+                _c("img", {
+                  staticStyle: { width: "25px" },
+                  attrs: { src: "img/nasa/whatsapp.png" }
+                })
+              ]
+            ),
+            _vm._v(" 0054 9 11  3300-3516\n                    ")
           ])
         ])
       ])

@@ -87,7 +87,7 @@
                 </div>
             </section>
             <footer class="">
-
+                <a class="logo-footer"><img src="img/nasa/abbott-logo.png"></a>
                 <div class="bottom-background"></div>
             
             </footer>
@@ -98,7 +98,7 @@
                             Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac).<br>
                             Se recomienda tener actualizado el sistema operativo a la última actualización.<br>
                             Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor.<br>
-                            Ante cualquier duda o inconveniente escriba al 0054 9 11  3300-3516 (Whatsapp)
+                            Ante cualquier duda o inconveniente escriba al <a href="https://api.whatsapp.com/send?phone=5491133003516&text=Hola" target="_blank"><img style="width:25px;" src="img/nasa/whatsapp.png"/></a> 0054 9 11  3300-3516
                         </div>
                     </div>
                 </div>

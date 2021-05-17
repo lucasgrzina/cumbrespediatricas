@@ -56,10 +56,10 @@ body {
   top: 0;
   width: 100%;
   max-width: 1920px;
-  height: 50vh;
-  max-height: 538px;
+  height: 30vh;
+  max-height: 325px;
   z-index: 3;
-  background-image: url(../public/img/nasa/top-background.png);
+  background-image: url(../public/img/nasa/top-background-2.png);
   background-repeat: no-repeat;
   background-size: contain;
   pointer-events: none;
@@ -265,6 +265,16 @@ footer {
   position: relative;
 }
 
+footer .logo-footer {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  z-index: 12;
+}
+footer .logo-footer img {
+  height: 18vh;
+}
+
 section {
   overflow: hidden;
 }
@@ -325,6 +335,15 @@ form .buttons-form {
   .bottom-background {
     height: 30vh;
   }
+  footer .logo-footer {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    z-index: 12;
+  }
+  footer .logo-footer img {
+    height: 11vh;
+  }  
 }
 @media (max-width: 769px) {
   h1 {
@@ -350,6 +369,21 @@ form .buttons-form {
   .load-video {
     min-height: 250px;
   }
+
+  footer .logo-footer {
+    position: relative;
+    right: auto;
+    bottom: 0;
+    z-index: 12;
+    margin: 5px auto 0;
+    display: table;
+    max-width: 100px;
+    padding-bottom: 20px;
+  }
+  footer .logo-footer img {
+    height: auto;
+    width: 100%;
+  }  
 }
 
 /*# sourceMappingURL=styles.css.map */

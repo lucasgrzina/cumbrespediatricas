@@ -16,8 +16,8 @@
         <style>
             .disc-sitio {
                 text-align: center;
-                color: #ccc;
-                font-size: 9px;
+                color: #ffffff;
+                font-size: 12px;
                 font-weight: 100;
                 position: absolute;
                 bottom: 0;
