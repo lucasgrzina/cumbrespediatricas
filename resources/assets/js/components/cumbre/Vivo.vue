@@ -78,6 +78,9 @@
                                     <button type="button" class="btn btn-primary" @click="certificadoDisponible()">Certificado</button>
                                     <button type="button" class="btn btn-primary" @click="encuestaDisponible()">Encuesta</button>
                                 </div>
+                                <div class="form-group buttons-form text-center mb-5">
+                                    <a href="https://www.quimicavirtualevents.com/cumbrenasa" class="btn btn-primary">Volver</a>
+                                </div>                                
                             </form>
                         </div>
                     </div>	

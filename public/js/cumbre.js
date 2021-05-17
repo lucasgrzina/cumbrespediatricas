@@ -46308,6 +46308,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -46810,7 +46813,9 @@ var render = function() {
                               [_vm._v("Encuesta")]
                             )
                           ]
-                        )
+                        ),
+                        _vm._v(" "),
+                        _vm._m(5)
                       ]
                     )
                   ])
@@ -46821,9 +46826,9 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _vm._m(5),
-    _vm._v(" "),
     _vm._m(6),
+    _vm._v(" "),
+    _vm._m(7),
     _vm._v(" "),
     _vm.showModal
       ? _c(
@@ -47223,6 +47228,25 @@ var staticRenderFns = [
         _vm._v("Recuerde activar el sonido del reproductor")
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "form-group buttons-form text-center mb-5" },
+      [
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-primary",
+            attrs: { href: "https://www.quimicavirtualevents.com/cumbrenasa" }
+          },
+          [_vm._v("Volver")]
+        )
+      ]
+    )
   },
   function() {
     var _vm = this
