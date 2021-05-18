@@ -14,17 +14,7 @@
         <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
         <link href="{{ url(mix('/css/cumbre.css')) }}" rel="stylesheet" type="text/css">
         <style>
-            .disc-sitio {
-                text-align: center;
-                color: #ffffff;
-                font-size: 12px;
-                font-weight: 100;
-                position: absolute;
-                bottom: 0;
-                z-index: 3;
-                width: 90%;
-                font-family: sans-serif;                              
-            }
+
         </style>
         <!-- Minified version of `es6-promise-auto` below. -->
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>

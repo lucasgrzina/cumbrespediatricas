@@ -46311,6 +46311,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -46521,7 +46522,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 vm.enviandoEncuesta = true;
                 axios.get(vm.urlEncuestaDisponible).then(function (response) {
                     vm.enviandoEncuesta = false;
-                    document.location = vm.evento.urlCertificado.replace('_ID_', vm.registrado.id_externo).replace('_TOKEN_', vm.registrado.token);
+                    window.open(vm.evento.urlCertificado.replace('_ID_', vm.registrado.id_externo).replace('_TOKEN_', vm.registrado.token));
                     //vm.mostrarModal(true);
                 }, function (error) {
                     vm.enviandoEncuesta = false;
@@ -46549,7 +46550,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticStyle: { position: "relative" } }, [
     _vm._m(0),
     _vm._v(" "),
     _c("section", [
@@ -47253,7 +47254,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("footer", {}, [
-      _c("a", { staticClass: "logo-footer" }, [
+      _c("a", { staticClass: "logo-footer logo-footer-desktop" }, [
         _c("img", { attrs: { src: "img/nasa/abbott-logo.png" } })
       ]),
       _vm._v(" "),
@@ -47264,10 +47265,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "center-elements-vertical" }, [
+    return _c("div", { staticClass: "center-elements-vertical disc-sitio" }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-12" }, [
-          _c("div", { staticClass: "disc-sitio mt-2" }, [
+          _c("div", { staticClass: "mt-2" }, [
+            _c("a", { staticClass: "logo-footer logo-footer-mobile" }, [
+              _c("img", { attrs: { src: "img/nasa/abbott-logo.png" } })
+            ]),
             _vm._v(
               "\n                        Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac)."
             ),

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="position:relative;">
             <header>
 
                 <div class="top-background"></div>      
@@ -87,14 +87,15 @@
                 </div>
             </section>
             <footer class="">
-                <a class="logo-footer"><img src="img/nasa/abbott-logo.png"></a>
+                <a class="logo-footer logo-footer-desktop"><img src="img/nasa/abbott-logo.png"></a>
                 <div class="bottom-background"></div>
             
             </footer>
-            <div class="center-elements-vertical">
+            <div class="center-elements-vertical disc-sitio">
                 <div class="row">
                     <div class="col-12">
-                        <div class="disc-sitio mt-2">
+                        <div class="mt-2">
+                            <a class="logo-footer logo-footer-mobile"><img src="img/nasa/abbott-logo.png"></a>
                             Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac).<br>
                             Se recomienda tener actualizado el sistema operativo a la última actualización.<br>
                             Para una correcta visualización del evento en vivo,  usar el modo pantalla completa y activar el sonido en el reproductor.<br>
@@ -440,7 +441,7 @@
                     axios.get(vm.urlEncuestaDisponible)
                         .then(response => {
                             vm.enviandoEncuesta = false;
-                            document.location = vm.evento.urlCertificado.replace('_ID_',vm.registrado.id_externo).replace('_TOKEN_',vm.registrado.token);
+                            window.open(vm.evento.urlCertificado.replace('_ID_',vm.registrado.id_externo).replace('_TOKEN_',vm.registrado.token));
                             //vm.mostrarModal(true);
                         }, error => {
                             vm.enviandoEncuesta = false;

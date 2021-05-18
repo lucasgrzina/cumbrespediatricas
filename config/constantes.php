@@ -102,7 +102,8 @@ return [
             'registroExterno' => true,
             'urlWebServiceRegistrado' => 'https://quimicavirtualevents.com/cumbrenasa/app/webservice.php',
             'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbrenasa',
-            'urlCertificado' => 'https://quimicavirtualevents.com/cumbrenasa/app/certificado.php?id=_ID_&token=_TOKEN_'
+            'urlCertificado' => 'https://quimicavirtualevents.com/cumbrenasa/app/certificado.php?id=_ID_&token=_TOKEN_',
+            'evitarRoute' => true 
         ],  
         'cumbre4' => [
             'nombre' => 'Abbott Cumbre pediatrica - 4/5',
