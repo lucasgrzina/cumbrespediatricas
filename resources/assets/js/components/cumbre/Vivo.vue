@@ -79,7 +79,7 @@
                                     <button type="button" class="btn btn-primary" @click="encuestaDisponible()">Encuesta</button>
                                 </div>
                                 <div class="form-group buttons-form text-center mb-5">
-                                    <a href="https://www.quimicavirtualevents.com/cumbrenasa" class="btn btn-primary">Volver</a>
+                                    <a href="https://www.quimicavirtualevents.com/cumbrenasa" class="btn btn-primary">Volver al recorrido</a>
                                 </div>                                
                             </form>
                         </div>
@@ -441,7 +441,7 @@
                     axios.get(vm.urlEncuestaDisponible)
                         .then(response => {
                             vm.enviandoEncuesta = false;
-                            window.open(vm.evento.urlCertificado.replace('_ID_',vm.registrado.id_externo).replace('_TOKEN_',vm.registrado.token));
+                            document.location = vm.evento.urlCertificado.replace('_ID_',vm.registrado.id_externo).replace('_TOKEN_',vm.registrado.token);
                             //vm.mostrarModal(true);
                         }, error => {
                             vm.enviandoEncuesta = false;

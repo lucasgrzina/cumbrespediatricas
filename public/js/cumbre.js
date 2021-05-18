@@ -46522,7 +46522,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 vm.enviandoEncuesta = true;
                 axios.get(vm.urlEncuestaDisponible).then(function (response) {
                     vm.enviandoEncuesta = false;
-                    window.open(vm.evento.urlCertificado.replace('_ID_', vm.registrado.id_externo).replace('_TOKEN_', vm.registrado.token));
+                    document.location = vm.evento.urlCertificado.replace('_ID_', vm.registrado.id_externo).replace('_TOKEN_', vm.registrado.token);
                     //vm.mostrarModal(true);
                 }, function (error) {
                     vm.enviandoEncuesta = false;
@@ -47244,7 +47244,7 @@ var staticRenderFns = [
             staticClass: "btn btn-primary",
             attrs: { href: "https://www.quimicavirtualevents.com/cumbrenasa" }
           },
-          [_vm._v("Volver")]
+          [_vm._v("Volver al recorrido")]
         )
       ]
     )
