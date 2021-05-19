@@ -46482,8 +46482,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         enviarEncuesta: function enviarEncuesta() {
             var vm = this;
+            var faltanContestar = false;
 
-            if (!vm.encuesta.form.resp_1 || !vm.encuesta.form.resp_2 || !vm.encuesta.form.resp_3 || !vm.encuesta.form.resp_4 || !vm.encuesta.form.resp_5 || !vm.encuesta.form.resp_6 || !vm.encuesta.form.resp_7 || !vm.encuesta.form.resp_8) {
+            for (var i = 1; i <= 21; i++) {
+                if (!vm.encuesta.form['resp_' + i]) {
+                    faltanContestar = true;
+                }
+            }
+
+            if (faltanContestar) {
                 alert('Debe responder todas las preguntas');
                 return false;
             }
