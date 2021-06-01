@@ -1,0 +1,675 @@
+/* 
+	sass --watch resources/sass/styles.scss assets/css/styles.css
+*/
+@font-face {
+  font-family: "evogria italic";
+  src: url("../fonts/Evogria_Italic.eot?") format("eot"), url("../fonts/Evogria_Italic.woff") format("woff"), url("../fonts/Evogria_Italic.ttf") format("truetype"), url("../fonts/Evogria_Italic.svg#Evogria-Italic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "evogria";
+  src: url("../fonts/evogria-webfont.woff2") format("woff2"), url("../fonts/evogria-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "sugo_pro_classic_trialitalic";
+  src: url("../fonts/sugo-pro-classic-italic-trial-webfont.woff2") format("woff2"), url("../fonts/sugo-pro-classic-italic-trial-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "sugo_pro_classic_trialLtIt";
+  src: url("../fonts/sugo-pro-classic-light-italic-trial-webfont.woff2") format("woff2"), url("../fonts/sugo-pro-classic-light-italic-trial-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "sugo_pro_classic_triallight";
+  src: url("../fonts/sugo-pro-classic-light-trial-webfont.woff2") format("woff2"), url("../fonts/sugo-pro-classic-light-trial-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "sugo_pro_classic_trialregular";
+  src: url("../fonts/sugo-pro-classic-regular-trial-webfont.woff2") format("woff2"), url("../fonts/sugo-pro-classic-regular-trial-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "sugo_pro_display_trialLtIt";
+  src: url("../fonts/sugo-pro-display-light-italic-trial-webfont.woff2") format("woff2"), url("../fonts/sugo-pro-display-light-italic-trial-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "sugo_pro_display_triallight";
+  src: url("../fonts/sugo-pro-display-light-trial-webfont.woff2") format("woff2"), url("../fonts/sugo-pro-display-light-trial-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "sugo_pro_extralight";
+  src: url("../fonts/sugo-pro-classic-extralight-italic-trial-webfont.woff2") format("woff2"), url("../fonts/sugo-pro-classic-extralight-italic-trial-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "sugo_pro_extralight";
+  src: url("../fonts/sugo-pro-classic-extralight-trial-webfont.woff2") format("woff2"), url("../fonts/sugo-pro-classic-extralight-trial-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+*, body, h1, p, input, label, p {
+  font-family: "Open Sans", sans-serif;
+}
+
+h2 {
+  font-family: "evogria italic", sans-serif;
+  color: #fff;
+  font-size: 45px;
+  letter-spacing: 1.4px;
+  font-weight: normal;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-bottom: 11px;
+}
+
+.color-celeste {
+  color: #95c4e4;
+}
+
+.btn-primary {
+  text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.7);
+  font-size: 30px;
+  outline: none !important;
+  font-family: "evogria italic", sans-serif;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-width: 0;
+  padding: 5px 20px;
+  border-radius: 35px;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3) !important;
+  background: #1b5d88;
+  background: linear-gradient(180deg, #1b5d88 0%, #0e0e56 92%);
+  min-width: 274px;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background-color: #67194e !important;
+  border-color: #67194e !important;
+}
+.btn-primary .arrow {
+  width: 20px;
+  margin: 0 0 0 6px;
+  transform: rotate(180deg);
+}
+.btn-primary.collapsed .arrow {
+  transform: rotate(0);
+}
+
+i {
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  position: relative;
+  float: left;
+  background-size: cover;
+}
+i.icon-love {
+  background-image: url(../icons/love.svg);
+}
+i.icon-struck {
+  background-image: url(../icons/struck.svg);
+}
+i.icon-muack {
+  background-image: url(../icons/muack.svg);
+}
+
+.animate i {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  opacity: 1;
+  animation-duration: 4s;
+}
+
+.card {
+  background: #1c638b;
+  background: linear-gradient(180deg, #1c638b 0%, #0c0550 100%);
+  border-width: 0px;
+  padding: 24px 10px 10px 192px;
+  max-width: 735px;
+  margin: 0 auto;
+  border-radius: 22px;
+}
+.card h5 {
+  color: #fff;
+  font-family: "evogria italic", sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.3px;
+  margin-bottom: 18px;
+}
+.card p {
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  border-radius: 15px;
+  color: #fff;
+  font-style: italic;
+}
+.card p span {
+  font-family: "evogria italic", sans-serif;
+  font-size: 16px;
+  width: 100%;
+  position: relative;
+  float: left;
+  letter-spacing: 0.3px;
+}
+.card .card-img {
+  position: absolute;
+  max-width: 221px;
+  left: -54px;
+  top: -67px;
+}
+
+.card-links {
+  background-color: #cbcbcb;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 0 auto 0;
+}
+
+.content-selector-pais .content-button {
+  position: relative;
+  z-index: 10;
+}
+.content-selector-pais .content-button button {
+  margin-bottom: -30px;
+}
+.content-selector-pais .collapse {
+  position: relative;
+  z-index: 9;
+}
+
+.row-selector-pais {
+  margin-bottom: 60px;
+}
+
+.list-group .list-group-item-action {
+  background-color: transparent;
+  border-width: 0;
+  padding: 3px 2px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 20px auto 50px;
+  display: table;
+  color: #fff;
+  font-size: 26px;
+  font-style: italic;
+}
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkbox-container .checkmark {
+  position: absolute;
+  top: 0;
+  left: -25px;
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  border-width: 3px;
+  border-color: #fff;
+  border-style: solid;
+}
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.checkbox-container input:checked ~ .checkmark {
+  background-color: transparent;
+}
+.checkbox-container input:checked ~ .checkmark:after {
+  content: " ";
+  position: absolute;
+  left: 18px;
+  top: -13px;
+  width: 18px;
+  height: 39px;
+  border: solid white;
+  border-width: 0 5px 5px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+.checkbox-container:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+@keyframes animate_1 {
+  0% {
+    right: 0px;
+    bottom: 0px;
+    opacity: 0.3;
+  }
+  25% {
+    right: 20px;
+    opacity: 1;
+  }
+  50% {
+    right: -20px;
+  }
+  75% {
+    right: 0px;
+    bottom: 200px;
+  }
+  100% {
+    right: 0px;
+    bottom: 200px;
+    opacity: 0;
+  }
+}
+@keyframes animate_2 {
+  0% {
+    right: 0px;
+    bottom: 0px;
+    opacity: 0.3;
+  }
+  25% {
+    right: -20px;
+    opacity: 1;
+  }
+  50% {
+    right: 20px;
+  }
+  75% {
+    right: 0px;
+    bottom: 200px;
+  }
+  100% {
+    right: 0px;
+    bottom: 200px;
+    opacity: 0;
+  }
+}
+@media (max-width: 768px) {
+  .card {
+    padding: 10px 34px;
+    margin-top: 60px;
+  }
+  .card .card-img {
+    position: relative;
+    max-width: 221px;
+    left: auto;
+    top: -44px;
+    margin: 0 auto;
+  }
+
+  .checkbox-container {
+    padding-left: 40px;
+    margin: 10px 55px 30px;
+    height: 78px;
+    align-items: center;
+    display: flex;
+  }
+  .checkbox-container .checkmark {
+    top: 20px;
+  }
+}
+form {
+  margin-bottom: 80px;
+}
+form .margin-row-bottom {
+  margin-bottom: 6px;
+}
+form.max-w-form {
+  max-width: 541px;
+}
+
+input.form-control, input.custom-select, select.form-control, select.custom-select {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  background-color: transparent;
+  border-color: #fff;
+  border-radius: 15px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 15px;
+  color: #fff;
+  height: 42px;
+  padding: 0 24px;
+  border-radius: 25px;
+  font-style: italic;
+}
+input.form-control option, input.custom-select option, select.form-control option, select.custom-select option {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 15px;
+  color: #95c4e4;
+  background-color: #fff;
+}
+input.form-control:focus, input.custom-select:focus, select.form-control:focus, select.custom-select:focus {
+  color: #fff;
+  background-color: rgba(149, 196, 228, 0.5);
+  box-shadow: none;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff !important;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #fff !important;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #fff !important;
+}
+
+body {
+  background-image: url(../img/background-01.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+body.home {
+  background-image: url(../img/background-02.jpg) !important;
+}
+
+.logo-home {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  display: table;
+}
+
+.container {
+  max-width: 1320px;
+}
+
+.logo-registro {
+  max-width: 481px;
+  width: 100%;
+  position: relative;
+  margin: 139px auto 0;
+  display: flex;
+}
+
+.logo-text {
+  max-width: 581px;
+  width: 100%;
+  position: relative;
+  margin: 26px auto 0;
+  display: flex;
+}
+.logo-text p {
+  text-align: center;
+  font-family: "sugo_pro_classic_trialLtIt";
+  font-size: 47px;
+  width: 100%;
+  line-height: 47px;
+  letter-spacing: 0;
+}
+
+.margin-top-registro {
+  margin-top: 54px;
+}
+
+p {
+  font-size: 15px;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+}
+
+.footer-registro {
+  margin-top: 20px;
+}
+.footer-registro p {
+  font-weight: 600;
+}
+.footer-registro .text-02 {
+  font-style: italic;
+}
+
+.titulo-gracias {
+  width: 100%;
+  margin: 67px auto 19px;
+  max-width: 1008px;
+  display: flex;
+}
+.titulo-gracias .texto p {
+  color: #fff;
+  font-family: "evogria italic", sans-serif;
+  font-size: 44px;
+  letter-spacing: -0.1px;
+  line-height: 47px;
+  left: -5px;
+  position: relative;
+}
+.titulo-gracias .logo-gracias img {
+  max-width: 307px;
+  position: relative;
+  left: -146px;
+  top: 3px;
+}
+
+.calendario {
+  width: 100%;
+  display: flex;
+  max-width: 732px;
+  margin: 25px auto;
+  padding: 0 0 0 172px;
+}
+.calendario .divider {
+  width: 1px;
+  position: relative;
+  height: 70px;
+  /* top: -4px; */
+  background-color: #fff;
+  margin: -4px 12px 4px;
+}
+.calendario .fecha {
+  max-width: 186px;
+}
+.calendario .fecha .media-left img {
+  width: 65px;
+}
+.calendario .fecha .media-body {
+  color: #fff;
+}
+.calendario .fecha .dia {
+  color: #fff;
+  font-family: "evogria italic", sans-serif;
+  width: 100%;
+  position: relative;
+  float: left;
+  font-size: 50px;
+  text-align: center;
+  line-height: 46px;
+}
+.calendario .fecha .mes {
+  color: #fff;
+  font-family: "evogria italic", sans-serif;
+  width: 100%;
+  position: relative;
+  float: left;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+.calendario .divider-col {
+  max-width: 57px;
+}
+.calendario .horario .media .media-left img {
+  width: 65px;
+  margin: 0 7px 0;
+  position: relative;
+}
+.calendario .horario .media .media-body {
+  color: #fff;
+  padding: 3px 0px 3px 15px;
+}
+.calendario .horario .media .media-body .hora {
+  margin-bottom: -4px;
+}
+.calendario .horario .media .media-body .hora .numero {
+  color: #fff;
+  font-family: "evogria italic", sans-serif;
+  line-height: 14px;
+  font-size: 16px;
+}
+.calendario .horario .media .media-body .hora .texto {
+  color: #fff;
+  font-style: italic;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  line-height: 14px;
+  padding: 0 0 0 3px;
+}
+
+.header-condiciones {
+  max-width: 1280px;
+  margin: 26px auto;
+}
+.header-condiciones .texto {
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.header-condiciones .texto p {
+  color: #fff;
+  font-family: "evogria italic", sans-serif;
+  font-size: 43px;
+  margin: 0 0 18px 0;
+  line-height: 47px;
+}
+.header-condiciones .texto p .small {
+  color: #fff;
+  font-family: "evogria italic", sans-serif;
+  font-size: 35px;
+}
+.header-condiciones .logo img {
+  float: right;
+  max-width: 200px;
+  margin: 9px 159px 9px 0;
+}
+
+.texto-condiciones {
+  max-width: 1262px;
+  margin: 85px auto 25px;
+}
+.texto-condiciones h2 {
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: italic;
+  margin: 0 0 23px;
+}
+.texto-condiciones p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .content-logo-home {
+    min-height: calc(100vh - 385px);
+  }
+
+  .logo-text p {
+    font-size: 35px;
+    line-height: 36px;
+  }
+
+  .titulo-gracias {
+    margin: 67px auto 19px;
+    display: block;
+  }
+  .titulo-gracias .texto p {
+    font-size: 44px;
+    letter-spacing: -0.1px;
+    line-height: 47px;
+    left: 0;
+    text-align: center;
+  }
+  .titulo-gracias .logo-gracias img {
+    max-width: 300px;
+    position: relative;
+    left: auto;
+    top: 3px;
+    margin: 0 auto;
+    display: table;
+  }
+
+  .calendario {
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  .calendario .fecha {
+    max-width: 100%;
+  }
+  .calendario .fecha .media {
+    max-width: 189px;
+    margin: 0 auto;
+  }
+  .calendario .horario .media {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .calendario .horario .media .media-body {
+    padding: 3px 0px 3px 5px;
+  }
+  .calendario .divider-col {
+    max-width: 100%;
+  }
+  .calendario .divider-col .divider {
+    width: 80%;
+    height: 1px;
+    margin: 15px 10%;
+  }
+
+  .header-condiciones .texto p {
+    text-align: center;
+    line-height: 47px;
+  }
+  .header-condiciones .logo img {
+    float: none;
+    max-width: 200px;
+    margin: 25px auto 0;
+    display: table;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

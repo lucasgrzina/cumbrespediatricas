@@ -1,7 +1,7 @@
 <?php
 return [
     'cookieRegistrado' => 'registrado_v4',
-    'eventos' => [
+    'eventos_old' => [
         'cumbre' => [
             'nombre' => 'Abbott Cumbre pediatrica - 3/5',
             'prefix' => 'cumbrepediatrica',
@@ -191,8 +191,56 @@ return [
             'evitarRoute' => true,
             'urlVimeoVideo' => 'https://vimeo.com/event/885878/embed/6258b9eb5d',
             'urlVimeoChat' => 'https://vimeo.com/event/885878/chat/6258b9eb5d' 
-        ],                                                          
+        ], 
+        'cigen' => [
+            'nombre' => 'Cigen',
+            'prefix' => 'cigen',
+            'controller' => 'HomeCigenController',
+            'view' => 'cigen',
+            'cookie' => 'cigen',
+            'activo' => false,
+            'evitarRoute' => true,
+            'urlVimeoVideo' => 'https://vimeo.com/event/885878/embed/6258b9eb5d',
+            'urlVimeoChat' => 'https://vimeo.com/event/885878/chat/6258b9eb5d' 
+        ],                                                                  
     ],
+    'eventos' => [
+        'nasa1905' => [
+            'nombre' => 'Abbott Cumbre Nasa',
+            'prefix' => 'cumbrenasa',
+            'controller' => 'HomeCumbreNasaController',
+            'view' => 'nasa',
+            'cookie' => 'cumbrenasa',
+            'activo' => true,
+            'registroExterno' => true,
+            'urlWebServiceRegistrado' => 'https://quimicavirtualevents.com/cumbrenasa/app/webservice.php',
+            'urlSitioPrincipal' => 'https://www.quimicavirtualevents.com/cumbrenasa',
+            'urlCertificado' => 'https://quimicavirtualevents.com/cumbrenasa/app/certificado.php?id=_ID_&token=_TOKEN_',
+            'evitarRoute' => true 
+        ],  
+      'cigen' => [
+            'nombre' => 'Cigen',
+            'prefix' => 'cigen',
+            'controller' => 'HomeCigenController',
+            'view' => 'cigen',
+            'cookie' => 'cigen',
+            'activo' => true,
+            'evitarRoute' => true,
+            'urlVimeoVideo' => 'https://vimeo.com/event/885878/embed/6258b9eb5d',
+            'urlVimeoChat' => 'https://vimeo.com/event/885878/chat/6258b9eb5d' 
+        ], 
+        'trainsmart' => [
+            'nombre' => 'Train Smart',
+            'prefix' => 'trainsmart',
+            'controller' => 'HomeTrainSmartController',
+            'view' => 'trainsmart',
+            'cookie' => 'trainsmart',
+            'activo' => false,
+            'evitarRoute' => true,
+            'urlVimeoVideo' => 'https://vimeo.com/event/885878/embed/6258b9eb5d',
+            'urlVimeoChat' => 'https://vimeo.com/event/885878/chat/6258b9eb5d' 
+        ],                                                                  
+    ],    
     'recaptcha' => [
         'key' => '6LcNPcYZAAAAAI5sgO4CAlZxlGHgADMXtUCbARnh',
         'secret' => '6LcNPcYZAAAAADlvzKcu1uIRHw7HVprluNr1WxTf'

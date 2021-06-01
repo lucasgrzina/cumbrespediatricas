@@ -2,11 +2,12 @@
 
 namespace App;
 
-use App\Traits\UploadableTrait;
+use App\Registrado;
 use Eloquent as Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Traits\UploadableTrait;
 
 use Yajra\Auditable\AuditableTrait;
+use Illuminate\Database\Eloquent\SoftDeletes;
 //use Dimsav\Translatable\Translatable;
 
 /**
@@ -139,7 +140,10 @@ class Encuestas extends Model
         
     }
 
-
+    public function registrado()
+    {
+        return $this->belongsTo(Registrado::class, 'registrado_id');
+    }
     
 
     protected static function boot()

@@ -22,7 +22,8 @@ class Registrado extends Authenticatable
         'evento',
         'password',
         'institucion',
-        'ciudad'
+        'ciudad',
+        'adicional'
     ];
 
     /**
@@ -36,6 +37,10 @@ class Registrado extends Authenticatable
         //'especialidad' => 'required',
         //'pais' => 'required',
         'email' => 'required'
+    ];
+
+    protected $casts = [
+        'adicional' => 'array'
     ];
 
     public function acciones()

@@ -101,18 +101,50 @@ class EncuestasController extends CrudAdminController
         $this->repository->pushCriteria(new RequestCriteria($request));
         $this->repository->pushCriteria(new EventoCriteria($request));
         
-        $data = $this->repository->all()->toArray();        
+        $data = $this->repository->with('registrado')->all()->toArray();        
         $name = 'Encuestas';
         $header = [
             'id' => 'ID',
+            'nombre' => 'Nombre'
         ];
-        
+        $format = [
+            'nombre' => function($valor,$row) {
+                return $row['registrado']['nombre'];
+            }
+        ];        
         for($i=1;$i<=30;$i++) {
             $header['resp_'.$i] = 'Preg. '.$i;
+            $format['resp_'.$i] = function ($value) {
+                $valor = $value;
+                \Log::info($valor);
+                switch ($value) {
+                    case 'Totalmente en desacuerdo':
+                    case 'Igual que antes':
+                        $valor = 1;
+                        break;
+                    case 'En desacuerdo':
+                    case 'Ligeramente más que antes':
+                        $valor = 2;
+                        break;         
+                    case 'Ni en desacuerdo ni de acuerdo':
+                    case 'Moderadamente más que antes':
+                        $valor = 3;
+                        break;    
+                    case 'De acuerdo':
+                    case 'Mucho más que antes':
+                        $valor = 4;
+                        break;    
+                    case 'Totalmente de acuerdo':
+                    case 'Significativamente más que antes':
+                        $valor = 5;
+                        break;    						
+                }
+                return $valor;
+            };
         }
+        $header['created_at'] = 'Fecha';
 
-        $format = [
-        ];
+
         return $this->_exportXls($data,$header,$format,$name);
     }     
 }

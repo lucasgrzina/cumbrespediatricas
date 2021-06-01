@@ -111,7 +111,7 @@ Route::prefix('/admin')->group(function () {
     Route::get('/', 'Front\HomeTestController@index')->name('test.home');
 }); */
 
-$key = 'danoneday';
+/*$key = 'danoneday';
 $appRoutes = function() use ($key){
     $data = config('constantes.eventos.danoneday',[]); 
     Route::post('/registrar', $data['controller'].'@registrar')->name('registrar');
@@ -144,7 +144,7 @@ if (env('APP_ENV','production') === 'local') {
 } else {
     Route::namespace('Front')->name($keyForoSas.'.')->domain('www.foro-sas.com.ar')->group($appRoutesForoSas);
 }
-
+*/
 $keyCigen = 'cigen';
 $appRoutesCigen = function() use ($keyCigen){
     $data = config('constantes.eventos.cigen',[]); 
@@ -192,6 +192,30 @@ if (env('APP_ENV','production') === 'local') {
 } else {
     Route::namespace('Front')->name($keyNasa.'.')->domain('www.transmisioncumbrenasa.com')->group($appRoutesNasa);
 }
+
+$keyTrainSmart = 'trainsmart';
+$appRoutesTrainSmart = function() use ($keyTrainSmart){
+    $data = config('constantes.eventos.trainsmart',[]); 
+    Route::get('/', $data['controller'].'@index')->name('home');
+    Route::get('/vivo', $data['controller'].'@vivo')->name('vivo');
+    Route::get('/registro', $data['controller'].'@registro')->name('registro');
+    Route::post('/registrar', $data['controller'].'@registrar')->name('registrar');
+    Route::get('/gracias', $data['controller'].'@gracias')->name('gracias');
+    Route::post('/enviar-pregunta', $data['controller'].'@enviarPregunta')->name('enviar-pregunta');
+    Route::get('/encuesta-disponible', $data['controller'].'@encuestaDisponible')->name('encuesta-disponible');        
+    Route::post('/enviar-encuesta', $data['controller'].'@enviarEncuesta')->name('enviar-encuesta');
+    Route::get('/evento-disponible', $data['controller'].'@eventoDisponible')->name('evento-disponible');        
+    Route::any('/enviar-salida-usuario', $data['controller'].'@enviarSalidaUsuario')->name('enviar-salida-usuario');
+    Route::get('/descargar-certificado', $data['controller'].'@descargarCertificado')->name('descargar-certificado');        
+    Route::post('/recuperar', $data['controller'].'@recuperar')->name('recuperar');
+    Route::get('/registrado', $data['controller'].'@registrado')->name('registrado');
+};
+if (env('APP_ENV','production') === 'local') {
+    Route::namespace('Front')->name($keyTrainSmart.'.')->domain('dev.trainsmart30.com')->group($appRoutesTrainSmart);
+} else {
+    Route::namespace('Front')->name($keyTrainSmart.'.')->domain('www.trainsmart30.com')->group($appRoutesTrainSmart);
+}
+
 /*$keyAbbottNight = 'abbottnight';
 $appRoutesAbbottNight = function() use ($keyAbbottNight){
     $data = config('constantes.eventos.abbottnight',[]); 
