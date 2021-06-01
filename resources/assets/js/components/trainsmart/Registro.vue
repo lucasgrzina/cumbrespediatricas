@@ -685,14 +685,37 @@ export default {
             checkForm: function () {
                 let vm = this;
                 let form = vm.registro.form;
-                this.errors = [];
+                let errors = [];
+                let camposSimples = {
+                  nombre: 'nombre',
+                  apellido: 'apellido',
+                  email: 'email',
+                  email_confirmation: 'confirmación de email',
+                  pais: 'país'
+                };
+                let camposAdicionales = {
+                    gimnasio: 'gimnasio',
+                    titular_grupo: 'titular del grupo',
+                    nro_integrantes: 'número de integrantes',
+                    telefono: 'teléfono'                  
+                };
 
+                _.forEach(camposSimples, function(campo,key) {
+                  if (!form[key]) {
+                    errors.push('El campo ' + campo + ' es obligatorio.');
+                  }
+                });
 
-                if (!form.nombre || !form.apellido || !form.email || !form.email_confirmation || !form.pais ) {
-                    alert('Todos los campos son obligatorios');
-                    return false;
+                _.forEach(camposAdicionales, function(campo,key) {
+                  if (!form.adicional[key]) {
+                    errors.push('El campo ' + campo + ' es obligatorio.');
+                  }
+                });
+
+                if (errors.length > 0) {
+                  alert(errors[0]);
+                  return false;
                 }
-
 
                 var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                                 
