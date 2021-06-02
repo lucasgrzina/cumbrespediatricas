@@ -507,6 +507,22 @@
 
 					  </div>
 
+					  <div class="form-row margin-row-bottom">
+
+					  	<div class="col-md-12">	
+
+					    	<input type="number" class="form-control" id="telefono" name="telefono" placeholder="Número telefónico" required v-model="registro.form.adicional.telefono">
+
+					        <div class="invalid-feedback">
+
+					          Ingrese número telefónico.
+
+					        </div>
+
+					    </div>
+
+					  </div>
+
 
 					  <div class="form-row margin-row-bottom">
 
@@ -550,23 +566,6 @@
 
 					  </div>
 
-
-
-					  <div class="form-row margin-row-bottom">
-
-					  	<div class="col-md-12">	
-
-					    	<input type="number" class="form-control" id="telefono" name="telefono" placeholder="Número telefónico" required v-model="registro.form.adicional.telefono">
-
-					        <div class="invalid-feedback">
-
-					          Ingrese número telefónico.
-
-					        </div>
-
-					    </div>
-
-					  </div>				  
 
 
 
