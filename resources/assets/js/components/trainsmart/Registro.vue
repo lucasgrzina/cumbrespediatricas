@@ -237,7 +237,7 @@
 
                 
 
-                <a class="list-group-item list-group-item-action" @click="mostrarAvisoPais('repdominicana')">Répulica Dominicana</a>
+                <a class="list-group-item list-group-item-action" @click="mostrarAvisoPais('repdominicana')">República Dominicana</a>
 
                 <a class="list-group-item list-group-item-action" @click="mostrarAvisoPais('elsalvador')">El Salvador</a>
 
