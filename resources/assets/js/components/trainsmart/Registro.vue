@@ -463,7 +463,7 @@
 
 							    <div class="invalid-feedback">
 
-							      Ingrese gimnasio o grupoo de deportistas.
+							      Indique su Gimnasio/Equipo Deportivo.
 
 							    </div>
 
