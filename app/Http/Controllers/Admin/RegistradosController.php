@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Response;
+use App\Registrado;
 use Illuminate\Http\Request;
 use App\Helpers\EventosHelper;
 use App\Repositories\RegistradosRepository;
@@ -98,6 +99,8 @@ class RegistradosController extends CrudAdminController
 
     public function exportXls(Request $request)
     {
+        $ejemploCampos = Registrado::whereEvento($request->evento)->first();
+
         $this->repository->pushCriteria(new RequestCriteria($request));
         $this->repository->pushCriteria(new EventoCriteria($request));
         $data = $this->repository->all()->toArray();        
@@ -113,8 +116,21 @@ class RegistradosController extends CrudAdminController
             'email' => 'Email',
             'created_at' => 'Fecha Insc.'
         ];
+
         $format = [
+
         ];
+
+
+        if ($ejemploCampos && is_array($ejemploCampos->adicional)) {
+            foreach ($ejemploCampos->adicional as $key => $value) {
+                $header[$key] = ucfirst($key);
+                $format[$key] = function($value,$row) use ($key){
+                    return $row['adicional'][$key];
+                };
+            }
+        }
+
         return $this->_exportXls($data,$header,$format,$name);
     }        
 }
