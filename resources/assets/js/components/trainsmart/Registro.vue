@@ -410,7 +410,7 @@
 
 						    <div class="col-md-12">	
 
-						    	<input type="email" class="form-control" id="mail" placeholder="Correo Electrónico" required v-model="registro.form.email">
+						    	<input type="text" class="form-control" id="mail" placeholder="Correo Electrónico" required v-model="registro.form.email">
 
 						        <div class="invalid-feedback">
 
@@ -426,7 +426,7 @@
 
 						    <div class="col-md-12">	
 
-						    	<input type="email" class="form-control" id="mail_confirm" placeholder="Confirmación de correo Electrónico" required v-model="registro.form.email_confirmation">
+						    	<input type="text" class="form-control" id="mail_confirm" placeholder="Confirmación de correo Electrónico" required v-model="registro.form.email_confirmation">
 
 						        <div class="invalid-feedback">
 
@@ -508,6 +508,13 @@
 					  </div>
 
 
+					  <div class="form-row margin-row-bottom">
+
+					  	<div class="col-md-12 mt-4">	
+                <p>Si te gustaría recibir producto sin cargo para tu equipo de deportistas, completa los siguientes campos:</p>
+					    </div>
+
+					  </div>
 
 					  <div class="form-row margin-row-bottom">
 
