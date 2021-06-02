@@ -459,7 +459,7 @@
 
 							<div class="col-md-12">	
 
-								<input type="text" class="form-control" placeholder="Gimnasio o grupo de deportistas al que pertenece" required v-model="registro.form.adicional.gimnasio">
+								<input type="text" class="form-control" placeholder="Indique su Gimnasio/Equipo Deportivo" required v-model="registro.form.adicional.gimnasio">
 
 							    <div class="invalid-feedback">
 
