@@ -680,3 +680,72 @@ p {
 }
 
 /*# sourceMappingURL=styles.css.map */
+
+.footer-registro p {
+    font-size: 11px;
+}
+.header-condiciones, .texto-condiciones {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.texto-condiciones p {
+    font-size: 15px;
+}
+.checkbox-container {
+    font-size: 20px;
+}
+.checkbox-container .checkmark {
+    height: 30px;
+    width: 30px;
+}
+.btn-primary {
+    font-size: 20px;
+}
+.card-links {
+    max-width: 550px;
+}
+
+.margin-top-registro {
+    margin-top: 30px;
+}
+
+input.form-control, input.custom-select, select.form-control, select.custom-select {
+    height: 35px;
+}
+form.max-w-form {
+    max-width: 490px;
+}
+
+input.form-control option, input.custom-select option, select.form-control option, select.custom-select option {
+    color: #607d8b;
+}
+
+@media (max-width: 768px) {
+    .header-condiciones, .texto-condiciones {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .container.ppal {
+        background: #07193d6b;
+    }
+
+    .checkbox-container {
+        font-size: 18px;
+        line-height: 18px;
+    }
+    
+    .checkbox-container input:checked ~ .checkmark:after {
+        left: 15px;
+        top: -14px;
+        width: 14px;
+        height: 34px;        
+    }    
+    .checkbox-container {
+        padding-left: 25px;
+        height: 70px;
+    }
+
+    .col-registro {
+        text-align: center;
+    }
+}

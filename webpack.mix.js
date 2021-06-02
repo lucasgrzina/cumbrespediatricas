@@ -79,7 +79,8 @@ mix.js('resources/assets/js/cumbre.js', 'public/js')
    ], 'public/assets/trainsmart/js/app.min.js')
    .styles([
       'public/assets/trainsmart/libraries/bootstrap/css/bootstrap.min.css',
-      'public/assets/trainsmart/css/styles.css'      
+      'public/assets/trainsmart/css/styles.css',
+      'public/assets/trainsmart/css/adic.css'      
    ], 'public/assets/trainsmart/css/styles.min.css');       
 
 if (mix.inProduction()) {

@@ -250,8 +250,6 @@
                 <a class="list-group-item list-group-item-action" @click="mostrarAvisoPais('panama')">Panamá</a>
 
                 <a class="list-group-item list-group-item-action" @click="mostrarAvisoPais('guatemala')">Guatemala</a>
-                
-                <a class="list-group-item list-group-item-action" @click="mostrarAvisoPais('puertorico')">Puerto Rico</a>
 
               </div>
 
@@ -289,7 +287,7 @@
 
             </div>
 
-            <div class="row mb-3 texto-condiciones">
+            <div class="row mb-3 texto-condiciones px-0">
                   <component
                     v-bind:is="avisoPaisSeleccionado.componente"
                   >
@@ -366,7 +364,7 @@
 
 				</div>
 
-				<div class="col-md-6">
+				<div class="col-md-6 col-registro">
 
 					<div class="row margin-top-registro">
 
@@ -679,6 +677,7 @@ export default {
         },
         mounted () {
             console.debug('Registro mounted');
+            $('body').addClass('home');
         },
         methods: {
 
@@ -760,6 +759,7 @@ export default {
             },
             irAlPaso: function (paso) {
               window.scrollTo(0, 0);
+              $('body').removeClass('home');
               if (paso === 2) {
                 this.aviso = 'general';
               }

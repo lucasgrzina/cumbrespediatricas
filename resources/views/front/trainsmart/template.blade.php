@@ -29,14 +29,14 @@
     
       </head>
 
-    <body class="home">
+    <body>
     
     
         <div id="app" v-cloak>
 
             <section>
 
-                <div class="container">
+                <div class="container ppal">
 
                     @yield('content')
 
@@ -44,7 +44,7 @@
 
                         <div class="col-md-12">
 
-                            <p class="text-center mb-1 text-01">Evento dirigido exclusivamente a entrenadores deportivos.</p>
+                            <p class="text-center mb-3 text-01">Evento dirigido exclusivamente a entrenadores deportivos.</p>
 
                             <p class="text-center color-celeste text-02">
                                 Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac).<br>
