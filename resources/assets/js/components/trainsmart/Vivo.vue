@@ -1,44 +1,151 @@
 <template>
-<div>
-        <!--div class="information-bar">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <p class="w-100 text-center"><b>Transmisión en VIVO</b></p>
-              </div>
+<div style="position:relative;" class="header-condiciones">
+
+    <template v-if="configEvento.etapa === 'R'">
+
+        <div class="row ">
+
+                <div class="col-12">
+
+                    <h2 class="titulo-seccion">Evento en vivo:</h2>
+
+                    <p class="mensaje-video">Recuerde activar el sonido de su dispositivo <img style="max-width: 20px;" src="public/assets/trainsmart/img/sonido.svg" /> y el modo de pantalla completa<img style="max-width: 20px;" src="public/assets/trainsmart/img/fullscreen.svg" /></p>
+
+                </div>					
+
+        </div>
+
+        <div class="row mb-3 mb-2 content-video">
+            <div class="col-12">
+                <div style="padding:52.73% 0 0 0;position:relative;">
+                    <iframe :src="evento.urlVimeoVideo" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                </div>
+            </div>					
+        </div>
+
+        <div class="row mb-3 ">
+
+            <div class="col-md-9">
+
+                <form class="form-pregunta">
+
+                    <label class="w-100">Escriba su pregunta aquí:</label>
+
+                    <input class="w-100 input-pregunta" type="text" id="pregunta" name="pregunta" v-model="form.pregunta">
+
+                </form>
+
+            </div>	
+
+            <div class="col-md-3  text-center">
+
+                <button class="btn btn-secondary btn-encuesta" @click="enviarPregunta()" :disabled="!form.pregunta">
+                    Enviar
+                </button>
+
+            </div>				
+
+            <div class="col-md-12 text-center">
+
+                <button class="btn btn-secondary"  @click="encuestaDisponible()">
+                    Encuesta de satisfacción
+                </button>
+
             </div>
-          </div>
-        </div-->
-        <div class="container">
-            <template v-if="configEvento.etapa === 'R'">
-                <div class="row content-video">
-                    <div class="col-12">
-                        <div style="padding:52.73% 0 0 0;position:relative;">
-                            <iframe :src="evento.urlVimeoVideo" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+
+        </div>
+
+    </template>
+    
+    <template v-else>
+        <div class="row ">
+            <div class="col-12">
+                <h2 class="titulo-seccion">Evento en vivo:</h2>
+            </div>					
+        </div>      
+
+        <div class="row mb-3 mb-2">
+            <div class="col-12">
+                <div class="video w-100" style="background-color: green; height: 200px;">
+                    <p>El evento aún no ha comenzado.</p>
+                </div>
+            </div>					
+        </div>                  
+    </template>
+
+    <div v-if="showModal">
+        <transition name="modal">
+            <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container">
+
+                <div class="modal-header" style="color: #fff;padding: 0px 0px 10px;">
+                    <slot name="header">
+                    Encuesta de satisfacción
+                    </slot>
+                </div>
+
+                <div class="modal-body">
+                    
+                    <div class="container-encuesta">
+                        <div class="row" v-for="(itemBloque,indexBloque) in encuesta.bloques" :key="'bloque_' + indexBloque">
+                            <div class="col-12" v-if="itemBloque.titulo">
+                                <span class="tit-bloque">{{itemBloque.titulo}}</span>
+                            </div>
+                            <template v-for="(itemSeccion,indexSeccion) in itemBloque.secciones">
+                                <div class="col-12" v-if="itemBloque.titulo" :key="'titSeccion_' + indexSeccion">
+                                    <span class="tit-seccion">{{itemSeccion.titulo}}</span>
+                                </div>
+                                <template v-for="(itemPregunta,indexPregunta) in itemSeccion.preguntas">
+                                    <div class="col-12" :key="'titPregunta_' + indexSeccion + '_' + indexPregunta">
+                                        <span class="tit-pregunta">{{itemPregunta.key}}) {{itemPregunta.tit}}</span>
+                                    </div>
+                                    <div class="col-12 opc-pregunta"  :key="'contPregunta_' + indexSeccion + '_' + indexPregunta">
+                                        <template v-if="itemPregunta.tipo === 'C'">
+                                            <template v-for="(subitem, indexOpt) in obtenerOpcionesPorKey(itemPregunta.key_respuesta)">
+                                            <div class="form-check-inline" :key="'opt_' + indexOpt">
+                                                <label class="form-check-label">
+                                                    <input type="radio" class="form-check-input" :name="'p_'+itemPregunta.key+'_r_'+ indexOpt" :value="subitem" v-model="encuesta.form['resp_' + itemPregunta.key]"> {{subitem}}
+                                                </label>
+                                            </div>
+                                            <br :key="indexOpt">
+                                            </template>
+                                            
+                                        </template>
+                                        <template v-else>
+                                            <textarea class="form-control" :name="'p_'+itemPregunta.key" v-model="encuesta.form['resp_' + itemPregunta.key]"></textarea>
+                                        </template>
+                                    </div>
+
+                                </template>
+                            </template>
                         </div>
-                    </div>
-                </div>
-                <div class="row content-chat">
-                <div class="col-12">
-                    <iframe :src="evento.urlVimeoChat" width="100%" height="100%" frameborder="0"></iframe>
-                </div>
 
-                </div>
-            </template>
-            <div class="row mt-5 mb-5" v-else>
+                        <div class="text-right">
 
-                <div class="col-12">
-
-                <div class="proximamente">
-
-                    <p>¡Próximamente!</p>
-
+                        </div>
+                        <i class="fa fa-spinner fa-spin fa-fw" style="opacity:0;"></i>
+                    </div>                        
                 </div>
 
+                <div class="modal-footer">
+                    <slot name="footer">
+                    <button type="button" 
+                            class="btn btn-primary" 
+                            :disabled="encuesta.enviando"
+                            @click="enviarEncuesta()">
+                            Enviar
+                    </button>                            
+                    <button type="button" class="btn btn-primary" @click="mostrarModal(false)">
+                        Cerrar
+                    </button>
+                    </slot>
                 </div>
-
-            </div>          
-        </div>     
+                </div>
+            </div>
+            </div>
+        </transition>
+    </div>      
 </div>
 
 </template>
@@ -88,47 +195,74 @@
                     pregunta: null
                 },
                 encuesta: {
-                    preguntas: [
-                        {key: 1,tit: '¿Habías escuchado hablar de Fundación Kaleidos?', preg: '', tipo: 'C', key_respuesta: 1},
-                        {key: 2,tit: '¿Cómo evaluarías el contenido del webinario?', preg: '', tipo: 'C', key_respuesta: 2},
-                        {key: 3,tit: '¿Cómo evaluarías la duración del webinario?', preg: '', tipo: 'C', key_respuesta: 2},
-                        {key: 4,tit: '¿Cómo evaluarías la dinámica del webinario?', preg: '', tipo: 'C', key_respuesta: 2},
-                        {key: 5,tit: '¿Sabías antes de comenzar el webinario que Fundación Kaleidos trabaja sobre estos temas?', preg: '', tipo: 'C', key_respuesta: 1},
-                        {key: 6,tit: '¿Cuán útil es el Manual para tu trabajo?', preg: '', tipo: 'C', key_respuesta: 3},
-                        {key: 7,tit: '¿Considerás importante que tus colegas conozcan esta problemática y les compartirías el Manual?', preg: '', tipo: 'C', key_respuesta: 1},
-                        {key: 8,tit: '¿Te serviría un Manual sobre alguno de estos temas?', preg: '', tipo: 'C', key_respuesta: 4},
+                    titulo: '',
+                    subtitulo: '',
+                    bloques: [
+                        {
+                            titulo: 'Después de participar en este Webinar, ¿qué tan de acuerdo está con las siguientes declaraciones?',
+                            secciones: [
+                                {
+                                    titulo: '',
+                                    preguntas: [
+                                        {key: 1,tit: 'El contenido del webinar es relevante para mi práctica', preg: 'pre1', tipo: 'C', key_respuesta: 1},
+                                        {key: 2,tit: 'Los expositores y el contenido son interesantes', preg: 'pre1', tipo: 'C', key_respuesta: 1},
+                                        {key: 3,tit: 'La transmisión audiovisual es fluida y de alta calidad', preg: '', tipo: 'C', key_respuesta: 1},
+                                        {key: 4,tit: 'Es probable que participe en futuros eventos virtuales de Abbott Nutrición', preg: '', tipo: 'C', key_respuesta: 1},
+                                        {key: 5,tit: 'Es probable que recomiende este evento virtual a mis colegas', preg: '', tipo: 'C', key_respuesta: 1},
+                                    ]
+                                }
+                            ]
 
+                        },
+                        {
+                            titulo: '¿Qué tanto más está de acuerdo con las siguientes declaraciones después de participar en el webinario comparado con antes de participar?',
+                            secciones: [
+                                {
+                                    titulo: 'Primera Charla',
+                                    preguntas: [
+                                        {key: 6,tit: 'HMB es un ingrediente comprobado que se enfoca en la recuperar, preservar y aumentar la masa muscular', preg: 'pre1', tipo: 'C', key_respuesta: 2},
+                                        {key: 7,tit: 'La pérdida de masa muscular debería abordarse temprano para impactar de manera positiva los resultados clínicos', preg: 'pre1', tipo: 'C', key_respuesta: 2},
+                                        {key: 8,tit: 'Los suplementos nutricionales orales han demostrado que contribuyen a prevenir la pérdida de masa muscular y mejoran los resultados clínicos', preg: '', tipo: 'C', key_respuesta: 2},
+                                        {key: 9,tit: 'Minimizar la pérdida de masa muscular es importante en el manejo de pacientes con COVID-19 para mantener el estado funcional', preg: '', tipo: 'C', key_respuesta: 2},
+                                        {key: 10,tit: 'La evidencia reciente en las guías ESPEN COVID-19 indica un posible impacto positivo de la actividad física en conjunto con suplementación con aminoácidos o sus metabolitos como el HMB', preg: '', tipo: 'C', key_respuesta: 2},
+                                    ]
+                                },
+                                {
+                                    titulo: 'Segunda Charla',
+                                    preguntas: [
+                                        {key: 11,tit: 'Las fórmulas nutricionales específicas para diabéticos, utilizadas como sustituto de comidas, han demostrado reducir significativamente la respuesta de glucosa en sangre postprandial ', preg: 'pre1', tipo: 'C', key_respuesta: 2},
+                                        {key: 12,tit: 'Se ha demostrado que las fórmulas nutricionales específicas para diabéticos, como parte de un plan de intervención de estilo de vida, reducen significativamente la A1C', preg: 'pre1', tipo: 'C', key_respuesta: 2},
+                                        {key: 13,tit: 'Se ha demostrado que las Fórmulas de nutrición específicas para diabéticos compuestas de carbohidratos de digestión lenta, fibras dietéticas y MUFA estimulan la secreción de GLP-1.', preg: '', tipo: 'C', key_respuesta: 2},
+                                        {key: 14,tit: 'Se ha demostrado que las fórmulas de nutrición específicas para diabéticos pueden ayudar a complementar el objetivo de los medicamentos para la diabetes para ayudar a controlar los niveles de glucosa en sangre', preg: '', tipo: 'C', key_respuesta: 2},
+                                        {key: 15,tit: 'Las fórmulas nutricionales específicas para diabéticos, como parte de una intervención integral de estilo de vida, mejoran múltiples resultados de salud (por ejemplo, control glucémico, peso corporal, presión arterial)', preg: '', tipo: 'C', key_respuesta: 2},
+                                        {key: 16,tit: 'La terapia de nutrición médica se ha asociado con una mejor calidad de vida', preg: '', tipo: 'C', key_respuesta: 2},
+                                    ]
+                                },
+                                {
+                                    titulo: 'Proporcione su retroalimentación acerca de lo siguiente:',
+                                    preguntas: [
+                                        {key: 17,tit: 'Qué temas son de mayor interés para usted, relacionados con la nutrición y el impacto de COVID-19', preg: '', tipo: 'T'},
+                                        {key: 18,tit: 'A medida que las restricciones relacionadas con COVID-19 comienzan a disminuir, ¿le interesaría algún tema adicional sobre el manejo nutricional de pacientes diabéticos?', preg: '', tipo: 'T'},
+                                        {key: 19,tit: 'Comparta con nosotros sus conocimientos sobre el tratamiento de pacientes diabéticos durante COVID-19.', preg: '', tipo: 'T'},
+                                        {key: 20,tit: '¿Cuál es el aprendizaje más importante en este evento que podría traducirse en su práctica clínica?', preg: '', tipo: 'T'},
+                                        {key: 21,tit: '¿Alguna sugerencia para que el webinar sea más efectivo?', preg: '', tipo: 'T'},
+                                    ]
+                                }
+                            ]
 
-                        {key: 9,tit: 'En caso de haber seleccionado "Otro" en la pregunta anterior, ¿Sobre qué otro tema? ', preg: '', tipo: 'T'},
-                        {key: 10,tit: '¿Hay otros comentarios que nos quieras hacer llegar?', preg: '', tipo: 'T'},
-
-
+                        }
                     ],
                     opciones: [
                         {key: 1, 
                             valores: [
-                                'Si', 'No'
+                                'Totalmente en desacuerdo', 'En desacuerdo', 'Ni en desacuerdo ni de acuerdo', 'De acuerdo','Totalmente de acuerdo'
                             ] 
                         },
                         {key: 2, 
                             valores: [
-                                'Excelente', 'Bueno', 'Muy bueno', 'Regular','Malo'
+                                'Igual que antes', 'Ligeramente más que antes', 'Moderadamente más que antes', 'Mucho más que antes','Significativamente más que antes'
                             ]
-                        },
-                        {key: 3, 
-                            valores: [
-                                'Alto', 'Medio', 'Bajo'
-                            ]
-                        },
-                        {key: 4, 
-                            valores: [
-                                'Derechos de niños, niñas y adolescentes', 
-                                'Derechos sexuales y (no) reproductivos', 
-                                'Violencia de género',
-                                'Educación sexual integral',
-                                'Otro'
-                            ]
-                        }                          
+                        }
                     ],
                     form: {
                         resp_1: null,
@@ -141,10 +275,21 @@
                         resp_8: null,
                         resp_9: null,
                         resp_10: null,
+                        resp_11: null,
+                        resp_12: null,
+                        resp_13: null,
+                        resp_14: null,
+                        resp_15: null,
+                        resp_16: null,
+                        resp_17: null,
+                        resp_18: null,
+                        resp_19: null,
+                        resp_20: null,
+                        resp_21: null,
                     },
                     enviando: false,
                     errors: [],
-                },
+                },  
                 showModal: false,
                 enviando: false,
                 enviandoEncuesta: false
@@ -288,12 +433,100 @@
     }
 </script>
 <style scoped>
-.content-chat {
-    height: 320px;
-    padding: 20px;
-    
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
 }
-.content-chat iframe {
-border: 1px solid gray;
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+    width: 90%;
+    max-width: 630px;
+    margin: 0px auto;
+    padding: 10px;
+    background-color: #061422;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px #e7a249;
+    transition: all 0.3s ease;
+    border: 1px solid #9E9E9E;
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+.modal-body {
+  margin: 0;
+  padding: 0;
+  max-height: 500px;
+  overflow-y: auto;
+  background: #ccc;
+}
+
+.modal-default-button {
+  float: right;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.modal-footer {
+    justify-content: center;
+    padding: 0;
+    background: #061422;
+    border-top-color: #061422;    
+}
+.modal-body {
+    padding: 10px;
+}
+.modal-body .tit-bloque {
+    font-size: 20px;
+    margin: 15px 0;
+    display: block;
+}
+.modal-body .tit-seccion {
+    font-size: 16px;    
+    margin: 10px 0;
+    display: block;    
+    text-decoration: underline;
+}
+.modal-body .tit-pregunta {
+    font-size: 14px;
+    display: block;
+    margin: 10px 0;    
+}
+.modal-body .opc-pregunta {
+    font-size: 12px;    
 }
 </style>

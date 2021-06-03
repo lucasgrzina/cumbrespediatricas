@@ -197,6 +197,8 @@ $keyTrainSmart = 'trainsmart';
 $appRoutesTrainSmart = function() use ($keyTrainSmart){
     $data = config('constantes.eventos.trainsmart',[]); 
     Route::get('/', $data['controller'].'@index')->name('home');
+    Route::get('/home-prueba', $data['controller'].'@homePrueba')->name('home-prueba');
+    Route::get('/agenda', $data['controller'].'@agenda')->name('agenda');
     Route::get('/vivo', $data['controller'].'@vivo')->name('vivo');
     Route::get('/registro', $data['controller'].'@registro')->name('registro');
     Route::post('/registrar', $data['controller'].'@registrar')->name('registrar');

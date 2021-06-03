@@ -38,27 +38,26 @@ class HomeTrainSmartController extends EventoBaseController
             return redirect()->route($this->key.'.gracias');
         }
 
-        /*$loggedIn = false;
-        $puedeDescargarDiploma = false;  
-          
-        if (\Auth::guard('web')->check()) {
-            $loggedIn = true;
-            $registrado = \Auth::guard('web')->user();
-            $puedeDescargarDiploma = $registrado->acciones()->count() > 0;
-        }
-        
-        $data = [
-            'props' => [
-                'loggedIn' => $loggedIn,
-                'urlDescargarCertificado' => route($this->key.'.descargar-certificado'),
-                'puedeDescargarDiploma' => $puedeDescargarDiploma
-            ],
-            'headerData' => true,
-            'title' => '¡Bienvenidos!'
-        ];
-        return view('front.'.$this->evento['view'].'.home-vue', $data);
-        */
+        return view('front.'.$this->evento['view'].'.home', []);
     }
+
+    public function homePrueba()
+    {
+        if (!$this->obtenerRegistrado()) {
+            return redirect()->route($this->key.'.registro');
+        }
+
+        return view('front.'.$this->evento['view'].'.home', []);
+    }    
+
+    public function agenda()
+    {
+        if (!$this->obtenerRegistrado()) {
+            return redirect()->route($this->key.'.registro');
+        }
+
+        return view('front.'.$this->evento['view'].'.agenda', []);
+    }    
 
     public function registro()
     {
@@ -116,11 +115,11 @@ class HomeTrainSmartController extends EventoBaseController
             $data = $request->all();
             $data['evento'] = $this->key;
             try {
-                $registrado = \Auth::user();
+                $registrado = $this->obtenerRegistrado();
                 $data['registrado_id'] = $registrado->id;
 
             } catch (\Exception $e) {}
-            $data['destinatario'] = $data['speaker'];
+            //$data['destinatario'] = $data['speaker'];
             $data = Preguntas::create($data);
             
             
@@ -141,16 +140,17 @@ class HomeTrainSmartController extends EventoBaseController
 
     public function vivo (Request $request) {
         $registrado = null;
+        $conf = $this->config('*');
         try {
-            if (!\Auth::check()) {
-                return redirect()->route($this->key.'.home');
-            }
-    
-            $conf = $this->config('*');
 
+            $registrado = $this->obtenerRegistrado();
+
+            if (!$registrado) {
+                return redirect()->route($this->key.'.registro');
+            }
 
             try {
-                $registrado = $this->obtenerRegistrado();
+                //$registrado = $this->obtenerRegistrado();
                 if ($registrado) {
                     $registrado->acciones()->create([
                         'accion' => 'evento',

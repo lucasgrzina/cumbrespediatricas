@@ -37,6 +37,10 @@ input.form-control option, input.custom-select option, select.form-control optio
     color: #607d8b;
 }
 
+.pagina-home .titulo-gracias {
+    margin: 0 auto 19px;
+}
+
 @media (max-width: 768px) {
     .header-condiciones, .texto-condiciones {
         padding-left: 15px;

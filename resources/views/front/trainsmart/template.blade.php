@@ -33,7 +33,7 @@
     
     
         <div id="app" v-cloak>
-
+            @yield('menu')
             <section>
 
                 <div class="container ppal">
@@ -61,6 +61,7 @@
 
         </div>
         <footer></footer>
+        <!-- Código de instalación Cliengo para ivan@quimicaeventos.com --> <script type="text/javascript">(function () { var ldk = document.createElement('script'); ldk.type = 'text/javascript'; ldk.async = true; ldk.src = 'https://s.cliengo.com/weboptimizer/60b7bf0c48995c002a4c7e89/60b7bf0e48995c002a4c7e91.js?platform=registration'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ldk, s); })();</script>        
         <script src="{{asset('public/assets/trainsmart/libraries/jquery-1.12.4.js')}}" crossorigin="anonymous"></script>
         <script src="{{asset('public/assets/trainsmart/libraries/bootstrap/js/bootstrap.bundle.min.js')}}" crossorigin="anonymous"></script>
         <script src="{{ url(mix('public/assets/trainsmart/js/app.min.js')) }}"></script>

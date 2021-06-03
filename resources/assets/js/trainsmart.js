@@ -19,7 +19,7 @@ window.Vue = require('vue');
 //Vue.component('home', require('./components/trainsmart/Home.vue'));
 Vue.component('registro', require('./components/trainsmart/Registro.vue'));
 //Vue.component('login', require('./components/cigen/Login.vue'));
-//Vue.component('vivo', require('./components/cigen/Vivo.vue'));
+Vue.component('vivo', require('./components/trainsmart/Vivo.vue'));
 
 const app = new Vue({
     el: '#app',

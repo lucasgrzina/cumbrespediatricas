@@ -108,6 +108,48 @@ h2 {
   transform: rotate(0);
 }
 
+.btn-secondary {
+  text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  outline: none !important;
+  font-family: "evogria italic", sans-serif;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-width: 0;
+  padding: 5px 50px;
+  color: #0c0550;
+  border-radius: 35px;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3) !important;
+  background: #f1f1f1;
+  background: linear-gradient(180deg, #f1f1f1 0%, #9c9c9c 92%);
+  
+}
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
+  background-color: #67194e !important;
+  border-color: #67194e !important;
+  color: inherit;
+}
+.btn-secondary .arrow {
+  width: 20px;
+  margin: 0 0 0 6px;
+  transform: rotate(180deg);
+}
+.btn-secondary.collapsed .arrow {
+  transform: rotate(0);
+}
+
+.btn-encuesta {
+  
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .btn-encuesta {
+    float: none;
+    margin: 20px auto;
+    display: table;
+  }
+}
 i {
   width: 30px;
   height: 30px;
@@ -268,6 +310,48 @@ i.icon-muack {
   display: none;
 }
 
+.navbar {
+  margin: 51px 0 74px;
+}
+.navbar .btn-primary {
+  margin: 0 10px;
+  min-width: auto !important;
+  padding: 8px 45px;
+}
+
+.list-agenda {
+  padding: 0;
+  margin: 34px 0 0;
+  position: relative;
+  float: left;
+}
+.list-agenda li {
+  list-style: none;
+  font-family: "evogria italic", sans-serif;
+  color: #fff;
+  font-size: 27px;
+  width: 100%;
+  position: relative;
+  float: left;
+}
+.list-agenda li .horario {
+  font-family: "evogria italic", sans-serif;
+  height: 94px;
+  width: 133px;
+  position: relative;
+  float: left;
+  font-size: 27px;
+  color: #95c4e4;
+}
+.list-agenda li .nombre {
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+  font-size: 22px;
+  position: relative;
+  float: left;
+  line-height: 26px;
+}
+
 @keyframes animate_1 {
   0% {
     right: 0px;
@@ -337,6 +421,52 @@ i.icon-muack {
   .checkbox-container .checkmark {
     top: 20px;
   }
+
+  .list-agenda {
+    padding: 0;
+    margin: 34px 0 0;
+    position: relative;
+    float: left;
+  }
+  .list-agenda li {
+    list-style: none;
+    font-family: "evogria italic", sans-serif;
+    color: #fff;
+    font-size: 23px;
+    width: 100%;
+    position: relative;
+    float: left;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .list-agenda li .horario {
+    font-family: "evogria italic", sans-serif;
+    height: auto;
+    width: 100%;
+    font-size: 23px;
+    text-align: center;
+  }
+  .list-agenda li .nombre {
+    font-family: "Open Sans", sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    position: relative;
+    float: left;
+    line-height: 26px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar {
+    margin: 51px 0 74px;
+  }
+  .navbar .btn-primary {
+    margin: 5px 0px 5px;
+    min-width: auto !important;
+    padding: 8px 45px;
+    width: 100%;
+    font-size: 20px;
+  }
 }
 form {
   margin-bottom: 80px;
@@ -394,6 +524,67 @@ input.form-control:focus, input.custom-select:focus, select.form-control:focus, 
   color: #fff !important;
 }
 
+.mensaje-video {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: #fff;
+  font-style: italic;
+  font-size: 20px;
+}
+.mensaje-video img {
+  margin: 0 5px;
+}
+
+.form-pregunta label {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: #fff;
+  font-style: italic;
+  font-size: 20px;
+}
+.form-pregunta input {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  background-color: #fff;
+  border-color: #fff;
+  height: 42px;
+  padding: 0 24px;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 0px;
+  font-style: italic;
+  box-shadow: none;
+  outline: none;
+}
+.form-pregunta input:focus {
+  
+  box-shadow: none;
+  outline: none;
+  border-style: solid;
+  border-width: 0px;
+}
+.titulo-seccion {
+  font-size: 35px;
+}
+
+@media (max-width: 990px) {
+  .navbar .btn-primary {
+      margin: 5px 0px 5px;
+      min-width: auto !important;
+      padding: 8px 45px;
+      width: 100%;
+      font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .titulo-seccion {
+    text-align: center;
+  }  
+  .form-pregunta {
+    margin-bottom: 0px;
+  }
+}
 body {
   background-image: url(../img/background-01.jpg);
   background-repeat: no-repeat;
@@ -479,6 +670,22 @@ p {
   position: relative;
   left: -146px;
   top: 3px;
+}
+
+.logo-agenda .logo-img {
+  max-width: 394px;
+  width: 100%;
+  position: relative;
+  margin: 52px auto 0;
+  display: flex;
+}
+.logo-agenda .logo-text {
+  max-width: 581px;
+  margin: 20px auto 0;
+}
+.logo-agenda .logo-text p {
+  font-size: 37px;
+  line-height: 38px;
 }
 
 .calendario {
@@ -613,6 +820,25 @@ p {
     line-height: 36px;
   }
 
+  .logo-agenda {
+    margin-bottom: 50px;
+  }
+  .logo-agenda .logo-img {
+    max-width: 394px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto 0;
+    display: flex;
+  }
+  .logo-agenda .logo-text {
+    max-width: 581px;
+    margin: 20px auto 0;
+  }
+  .logo-agenda .logo-text p {
+    font-size: 27px;
+    line-height: 27px;
+  }
+
   .titulo-gracias {
     margin: 67px auto 19px;
     display: block;
@@ -669,6 +895,10 @@ p {
     max-width: 200px;
     margin: 25px auto 0;
     display: table;
+  }
+
+  .evento-vivo h2 {
+    font-size: 39px;
   }
 }
 

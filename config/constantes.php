@@ -237,7 +237,7 @@ return [
             'cookie' => 'trainsmart',
             'activo' => false,
             'evitarRoute' => true,
-            'urlVimeoVideo' => 'https://vimeo.com/event/885878/embed/6258b9eb5d',
+            'urlVimeoVideo' => 'https://player.vimeo.com/video/557334075',
             'urlVimeoChat' => 'https://vimeo.com/event/885878/chat/6258b9eb5d',
         ],                                                                  
     ],    
