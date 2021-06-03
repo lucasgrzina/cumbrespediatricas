@@ -537,7 +537,7 @@ input.form-control:focus, input.custom-select:focus, select.form-control:focus, 
   font-weight: 300;
   color: #fff;
   font-style: italic;
-  font-size: 20px;
+  font-size: 18px;
 }
 .mensaje-video img {
   margin: 0 5px;
@@ -592,6 +592,7 @@ input.form-control:focus, input.custom-select:focus, select.form-control:focus, 
   .form-pregunta {
     margin-bottom: 0px;
   }
+
 }
 body {
   background-image: url(../img/background-01.jpg);
@@ -907,6 +908,15 @@ p {
 
   .evento-vivo h2 {
     font-size: 39px;
+  }
+
+  .calendario .horario .media .media-body .hora {
+    margin-bottom: 5px;
+  }   
+  
+  .btn-secondary { 
+    padding: 5px 45px;
+    font-size: 18px;
   }
 }
 

@@ -1,7 +1,7 @@
 <template>
-<div style="position:relative;" class="header-condiciones">
-
-    <template v-if="configEvento.etapa === 'R'">
+<div style="position:relative;" class="pagina-home">
+    <div class="header-condiciones" v-if="configEvento.etapa === 'R'">
+    <template >
 
         <div class="row ">
 
@@ -15,7 +15,7 @@
 
         </div>
 
-        <div class="row mb-3 mb-2 content-video">
+        <div class="row mb-3 content-video ">
             <div class="col-12">
                 <div style="padding:52.73% 0 0 0;position:relative;">
                     <iframe :src="evento.urlVimeoVideo" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
@@ -23,7 +23,7 @@
             </div>					
         </div>
 
-        <div class="row mb-3 ">
+        <div class="row mb-3">
 
             <div class="col-md-9">
 
@@ -37,7 +37,7 @@
 
             </div>	
 
-            <div class="col-md-3  text-center">
+            <div class="col-md-3 text-right">
 
                 <button class="btn btn-secondary btn-encuesta" @click="enviarPregunta()" :disabled="!form.pregunta">
                     Enviar
@@ -56,6 +56,7 @@
         </div>
 
     </template>
+    </div>
     
     <template v-else>
         <div class="row ">
