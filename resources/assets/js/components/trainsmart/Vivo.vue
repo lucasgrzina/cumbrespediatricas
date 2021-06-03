@@ -66,7 +66,7 @@
 
         <div class="row mb-3 mb-2">
             <div class="col-12">
-                <div class="video w-100" style="background-color: green; height: 200px;">
+                <div class="video w-100 no-disponible">
                     <p>El evento aún no ha comenzado.</p>
                 </div>
             </div>					
@@ -528,5 +528,13 @@
 }
 .modal-body .opc-pregunta {
     font-size: 12px;    
+}
+
+.no-disponible {
+    background-color: #07193d;
+    /* height: 131px; */
+    padding: 63px 0;
+    text-align: center;
+    border: 2px solid #0f3177;
 }
 </style>
