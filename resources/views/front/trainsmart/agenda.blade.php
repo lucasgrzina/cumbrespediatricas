@@ -13,15 +13,29 @@
 
         <ul class="list-agenda">
 
-            <li><span class="horario">10:00 hs</span> Ingreso participantes</li>
+            <li>
+                <span class="horario">10:00 hs</span> Ingreso participantes
+            </li>
 
-            <li><span class="horario">10:05 hs</span> Bienvenida e introducción<br><span  class="nombre">Dra. Yumaira Chacón</span></li>
+            <li>
+                <span class="horario">10:05 hs</span> Bienvenida e introducción
+                <span  class="nombre">Dra. Yumaira Chacón</span>
+            </li>
 
-            <li><span class="horario">10:10 hs</span> Conferencia<br><span  class="nombre">Dr. Julio Motta Pensabene</span></li>
+            <li>
+                <span class="horario">10:10 hs</span> Conferencia
+                <span  class="nombre">Dr. Julio Motta Pensabene</span>
+            </li>
 
-            <li><span class="horario">10:50 hs</span> Preguntas y respuestas<br><span  class="nombre">Dr. Julio Motta Pensabene - Dra. Yumaira Chacón</span></li>
+            <li>
+                <span class="horario">10:50 hs</span> Preguntas y respuestas
+                <span  class="nombre">Dr. Julio Motta Pensabene - Dra. Yumaira Chacón</span>
+            </li>
 
-            <li><span class="horario">11:10 hs</span> Cierre<br><span  class="nombre">Dra. Yumaira Chacón</span></li>
+            <li>
+                <span class="horario">11:10 hs</span> Cierre
+                <span class="nombre">Dra. Yumaira Chacón</span>
+            </li>
 
         </ul>
 

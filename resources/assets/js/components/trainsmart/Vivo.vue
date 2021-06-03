@@ -59,18 +59,63 @@
     
     <template v-else>
         <div class="row ">
-            <div class="col-12">
-                <h2 class="titulo-seccion">Evento en vivo:</h2>
+            <div class="col-12 text-center">
+                <h2 class="titulo-seccion">Te esperamos el</h2>
             </div>					
         </div>      
 
-        <div class="row mb-3 mb-2">
-            <div class="col-12">
-                <div class="video w-100 no-disponible">
-                    <p>El evento aún no ha comenzado.</p>
+        <div class="row mb-3">
+
+            <div class="calendario">
+
+                <div class="col-md col-12 fecha">
+
+                    <div class="media ">
+
+                        <div class="media-left"><img src="public/assets/trainsmart/img/calendario.svg"></div>
+
+                        <div class="media-body">
+
+                            <span class="dia">10</span>
+
+                            <span class="mes">de junio</span>
+
+                        </div>
+
+                    </div>
+
                 </div>
-            </div>					
-        </div>                  
+
+                <div class="col-md col-12 divider-col">
+
+                    <div class="divider"></div>
+
+                </div>
+
+                <div class="col horario pr-md-0">
+
+                    <div class="media ">
+
+                        <div class="media-left"><img src="public/assets/trainsmart/img/reloj.svg"></div>
+
+                        <div class="media-body">
+
+                            <div class="hora"><span class="numero">10:00 hs - </span><span class="texto">CENTROAMÉRICA</span></div>
+
+                            <div class="hora"><span class="numero">11:00 hs - </span><span class="texto">PANAMÁ</span></div>
+
+                            <div class="hora"><span class="numero">12:00 hs - </span><span class="texto">REP. DOMINICANA</span></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </template>
 
     <div v-if="showModal">

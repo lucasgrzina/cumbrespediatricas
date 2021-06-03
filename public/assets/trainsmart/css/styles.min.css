@@ -336,26 +336,27 @@ i.icon-muack {
   list-style: none;
   font-family: "evogria italic", sans-serif;
   color: #fff;
-  font-size: 27px;
+  font-size: 20px;
   width: 100%;
   position: relative;
   float: left;
 }
 .list-agenda li .horario {
   font-family: "evogria italic", sans-serif;
-  height: 94px;
+  height: 75px;
   width: 133px;
   position: relative;
   float: left;
-  font-size: 27px;
+  font-size: 20px;
   color: #95c4e4;
 }
 .list-agenda li .nombre {
   font-family: "Open Sans", sans-serif;
   font-style: italic;
-  font-size: 22px;
+  font-size: 18px;
   position: relative;
-  float: left;
+  /*float: left;*/
+  display: block;
   line-height: 26px;
 }
 
@@ -680,7 +681,7 @@ p {
 }
 
 .logo-agenda .logo-img {
-  max-width: 394px;
+  max-width: 300px;
   width: 100%;
   position: relative;
   margin: 52px auto 0;

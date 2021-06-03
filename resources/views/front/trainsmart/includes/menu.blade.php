@@ -22,7 +22,7 @@
 
               <li class="nav-item">
 
-                <a href="{{route('trainsmart.vivo')}}" class="btn btn-primary">Evento deportivo</a>
+                <a href="{{route('trainsmart.vivo')}}" class="btn btn-primary">Evento en vivo</a>
 
               </li>
 
