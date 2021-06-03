@@ -328,7 +328,7 @@ i.icon-muack {
 
 .list-agenda {
   padding: 0;
-  margin: 34px 0 0;
+  margin: 15px 0 0;
   position: relative;
   float: left;
 }
@@ -572,7 +572,7 @@ input.form-control:focus, input.custom-select:focus, select.form-control:focus, 
   border-width: 0px;
 }
 .titulo-seccion {
-  font-size: 35px;
+  font-size: 30px;
 }
 
 @media (max-width: 990px) {
