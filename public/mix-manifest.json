@@ -1,21 +1,8 @@
 {
     "/assets/trainsmart/js/app.min.js": "/assets/trainsmart/js/app.min.js",
     "/js/cigen.js": "/js/cigen.js",
-    "/js/abbottnight.js": "/js/abbottnight.js",
-    "/js/similacmama.js": "/js/similacmama.js",
-    "/js/fundacionkaleidos.js": "/js/fundacionkaleidos.js",
-    "/js/forosas.js": "/js/forosas.js",
-    "/js/danoneday.js": "/js/danoneday.js",
-    "/js/cumbre.js": "/js/cumbre.js",
-    "/js/dermatalks.js": "/js/dermatalks.js",
-    "/css/cumbre.css": "/css/cumbre.css",
-    "/css/similacmama.css": "/css/similacmama.css",
-    "/css/danoneday.css": "/css/danoneday.css",
-    "/css/forosas.css": "/css/forosas.css",
-    "/css/abbottnight.css": "/css/abbottnight.css",
-    "/css/abbottnight_inicio.css": "/css/abbottnight_inicio.css",
-    "/css/dermatalks.css": "/css/dermatalks.css",
-    "/css/fundacionkaleidos.css": "/css/fundacionkaleidos.css",
+    "/assets/abbottrenal/js/app.min.js": "/assets/abbottrenal/js/app.min.js",
     "/css/cigen.css": "/css/cigen.css",
-    "/assets/trainsmart/css/styles.min.css": "/assets/trainsmart/css/styles.min.css"
+    "/assets/trainsmart/css/styles.min.css": "/assets/trainsmart/css/styles.min.css",
+    "/assets/abbottrenal/css/styles.min.css": "/assets/abbottrenal/css/styles.min.css"
 }

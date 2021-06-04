@@ -11,7 +11,7 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/cumbre.js', 'public/js')
+/*mix.js('resources/assets/js/cumbre.js', 'public/js')
    .styles([
       'public/css/bootstrap.min.css',
       'public/css/styles.css',
@@ -64,7 +64,7 @@ mix.js('resources/assets/js/cumbre.js', 'public/js')
       'public/css/styles_fundacionkaleidos.css',
       'public/css/utils.css',
    ], 'public/css/fundacionkaleidos.css');     
-
+*/
    mix.js('resources/assets/js/cigen.js', 'public/js')
    .styles([
       'public/css/bootstrap.4.5.3.min.css',
@@ -81,7 +81,16 @@ mix.js('resources/assets/js/cumbre.js', 'public/js')
       'public/assets/trainsmart/libraries/bootstrap/css/bootstrap.min.css',
       'public/assets/trainsmart/css/styles.css',
       'public/assets/trainsmart/css/adic.css'      
-   ], 'public/assets/trainsmart/css/styles.min.css');       
+   ], 'public/assets/trainsmart/css/styles.min.css');   
+   
+   mix.js([
+      'public/assets/abbottrenal/bootstrap/js/bootstrap.bundle.min.js',
+      'resources/assets/js/abbottrenal.js'
+   ], 'public/assets/abbottrenal/js/app.min.js')
+   .styles([
+      'public/assets/abbottrenal/bootstrap/css/bootstrap.min.css',
+      'public/assets/abbottrenal/css/styles.css'   
+   ], 'public/assets/abbottrenal/css/styles.min.css');      
 
 if (mix.inProduction()) {
    mix.version();

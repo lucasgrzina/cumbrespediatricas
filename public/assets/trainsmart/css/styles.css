@@ -536,6 +536,10 @@ input.form-control:focus, input.custom-select:focus, select.form-control:focus, 
   margin: 0 5px;
 }
 
+.form-pregunta {
+  margin-bottom: 20px;
+}
+
 .form-pregunta label {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;

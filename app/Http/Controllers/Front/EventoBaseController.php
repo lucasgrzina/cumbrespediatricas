@@ -200,5 +200,7 @@ class EventoBaseController extends AppBaseController
         }
     }
         
-
+    public function registro()
+    {
+    }
 }

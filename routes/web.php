@@ -235,6 +235,7 @@ if (env('APP_ENV','production') === 'local') {
 
 $eventos = config('constantes.eventos',[]);
 foreach ($eventos as $key => $data) {
+    $key = strtolower($key);
     if ($data['activo'] && !config('constantes.eventos.'.$key.'.evitarRoute',false)) {
         Route::namespace('Front')->name($key.'.')->prefix($data['prefix'])->group(function() use($key,$data){
             Route::post('/registrar', $data['controller'].'@registrar')->name('registrar');
@@ -250,6 +251,7 @@ foreach ($eventos as $key => $data) {
                 Route::get('/descargar-certificado', $data['controller'].'@descargarCertificado')->name('descargar-certificado');        
                 Route::post('/enviar-mensaje-chat', $data['controller'].'@enviarMensajeChat')->name('enviar-mensaje-chat');
             });
+            Route::get('/registro', $data['controller'].'@registro')->name('registro');
             Route::get('/', $data['controller'].'@index')->name('home');
         }); 
     

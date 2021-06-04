@@ -3,57 +3,50 @@
     <div class="header-condiciones" v-if="configEvento.etapa === 'R'">
     <template >
 
-        <div class="row ">
+                <div class="row ">
+					<div class="col-12 margin-top-home">
+						<h1>Evento en VIVO</h1>
+						<p class="mensaje-video">Recuerde activar el sonido de su dispositivo <img style="max-width: 20px;" src="/public/assets/abbottrenal/img/sonido.svg" /> y el modo de pantalla completa<img style="max-width: 20px;" src="/public/assets/abbottrenal/img/fullscreen.svg" /></p>
+					</div>
+				</div>
 
-                <div class="col-12">
-
-                    <h2 class="titulo-seccion">Evento en vivo:</h2>
-
-                    <p class="mensaje-video">Recuerde activar el sonido de su dispositivo <img style="max-width: 20px;" src="public/assets/trainsmart/img/sonido.svg" /> y el modo de pantalla completa<img style="max-width: 20px;" src="public/assets/trainsmart/img/fullscreen.svg" /></p>
-
-                </div>					
-
-        </div>
-
-        <div class="row mb-3 content-video ">
-            <div class="col-12">
-                <div style="padding:52.73% 0 0 0;position:relative;">
-                    <iframe :src="evento.urlVimeoVideo" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                <div class="row mb-3 content-video ">
+                    <div class="col-12">
+                        <div style="padding:52.73% 0 0 0;position:relative;">
+                            <iframe :src="evento.urlVimeoVideo" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                        </div>
+                    </div>					
                 </div>
-            </div>					
-        </div>
 
-        <div class="row mb-3 px-3">
+				<div class="row mb-3 ">
+					<div class="col-md-9">
+						<form style="max-width: 100%;">
+							<p class="mensaje-video">Escriba su pregunta aqui</p>
+							<div class="form-row margin-row-bottom">
+							    <div class="col-md-12">	
+							    	<input type="text" class="form-control" id="mail" placeholder="" v-model="form.pregunta">
+							        
+							    </div>
+					    	</div>
+						</form>
+					</div>			
+                    <div class="col-md-3 text-center">
 
-            <div class="col-md-10">
+                        <button class="btn btn-primary btn-pregunta" @click="enviarPregunta()" :disabled="!form.pregunta">
+                            Enviar
+                        </button>
 
-                <form class="form-pregunta">
+                    </div>				
 
-                    <label class="w-100">Escriba su pregunta aquí:</label>
+                    <div class="col-md-12 text-center mt-3">
 
-                    <input class="w-100 input-pregunta" type="text" id="pregunta" name="pregunta" v-model="form.pregunta">
+                        <button class="btn btn-primary btn-encuesta"  @click="encuestaDisponible()">
+                            Encuesta de satisfacción
+                        </button>
 
-                </form>
+                    </div>
 
-            </div>	
-
-            <div class="col-md-2 text-left">
-
-                <button class="btn btn-secondary btn-encuesta" @click="enviarPregunta()" :disabled="!form.pregunta">
-                    Enviar
-                </button>
-
-            </div>				
-
-            <div class="col-md-12 text-center">
-
-                <button class="btn btn-secondary"  @click="encuestaDisponible()">
-                    Encuesta de satisfacción
-                </button>
-
-            </div>
-
-        </div>
+				</div>
 
     </template>
     </div>
