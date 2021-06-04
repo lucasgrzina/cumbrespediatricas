@@ -100,7 +100,11 @@ class HomeTrainSmartController extends EventoBaseController
             $input = $request->all();
             $input['evento'] = $this->key;
 
-            if (strtolower($request->email) !== strtolower($request->email_confirmation)) {
+            $email = strtolower(trim($request->email));
+            $email_confirmation = strtolower(trim($request->email_confirmation));
+
+
+            if ($email !== $email_confirmation) {
                 throw new \Exception('El email ingresado y el de confirmación no coinciden',422);
             }
 
