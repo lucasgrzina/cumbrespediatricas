@@ -689,6 +689,13 @@ p {
   font-size: 37px;
   line-height: 38px;
 }
+.logo-pedi-img {
+  display: block;
+  text-align: center;
+}
+.logo-pedi-img img{
+  max-width: 220px;
+}
 
 .calendario {
   width: 100%;

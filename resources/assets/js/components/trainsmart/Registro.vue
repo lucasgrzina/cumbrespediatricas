@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <template v-if="paso === 1">
-			<div class="row mt-5 mb-5 content-logo-home">
+			<div class="row mt-5 mb-1 content-logo-home">
 
 				<div class="col-12">
 
@@ -11,7 +11,13 @@
 
 			</div>
 
-
+      <div class="row  content-logo-home">
+        <div class="col-12">
+        <span class="logo-pedi-img">
+            <img src="public/assets/trainsmart/img/logo.png">
+        </span>
+        </div>
+      </div>
 
 			<div class="row mt-5 mb-5">
 
@@ -360,7 +366,9 @@
 
 					</span>
 
-
+          <span class="logo-pedi-img">
+              <img src="public/assets/trainsmart/img/logo.png">
+          </span>
 
 				</div>
 

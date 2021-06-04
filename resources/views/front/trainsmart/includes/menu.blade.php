@@ -10,7 +10,7 @@
 
               <li class="nav-item">
 
-                <a href="{{route('trainsmart.home-prueba')}}" class="btn btn-primary">Home</a>
+                <a href="{{route('trainsmart.home')}}" class="btn btn-primary">Home</a>
 
               </li>
 

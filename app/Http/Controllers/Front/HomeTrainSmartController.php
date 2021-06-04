@@ -34,9 +34,13 @@ class HomeTrainSmartController extends EventoBaseController
     {
         if (!$this->obtenerRegistrado()) {
             return redirect()->route($this->key.'.registro');
-        } else {
-            return redirect()->route($this->key.'.gracias');
         }
+
+        $conf = $this->config('*');
+
+        if ($conf['etapa'] === 'R') {
+            return redirect()->route($this->key.'.vivo');
+        }        
 
         return view('front.'.$this->evento['view'].'.home', []);
     }
@@ -47,6 +51,13 @@ class HomeTrainSmartController extends EventoBaseController
             return redirect()->route($this->key.'.registro');
         }
 
+        $conf = $this->config('*');
+
+        if ($conf['etapa'] === 'R') {
+            return redirect()->route($this->key.'.vivo');
+        }
+
+
         return view('front.'.$this->evento['view'].'.home', []);
     }    
 
@@ -54,6 +65,12 @@ class HomeTrainSmartController extends EventoBaseController
     {
         if (!$this->obtenerRegistrado()) {
             return redirect()->route($this->key.'.registro');
+        }
+
+        $conf = $this->config('*');
+
+        if ($conf['etapa'] === 'R') {
+            return redirect()->route($this->key.'.vivo');
         }
 
         return view('front.'.$this->evento['view'].'.agenda', []);
@@ -70,7 +87,7 @@ class HomeTrainSmartController extends EventoBaseController
             'props' => [
                 'keyRecaptcha' => config('constantes.recaptcha.key',''),
                 'urlRegistrar' => route($this->key.'.registrar'),
-                'urlRedirect' => route($this->key.'.gracias'),
+                'urlRedirect' => route($this->key.'.home'),
             ],
             'title' => 'Registro'
         ];

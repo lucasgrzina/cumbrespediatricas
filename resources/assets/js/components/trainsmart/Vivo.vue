@@ -245,53 +245,20 @@
                     subtitulo: '',
                     bloques: [
                         {
-                            titulo: 'Después de participar en este Webinar, ¿qué tan de acuerdo está con las siguientes declaraciones?',
+                            titulo: '',
                             secciones: [
                                 {
                                     titulo: '',
                                     preguntas: [
-                                        {key: 1,tit: 'El contenido del webinar es relevante para mi práctica', preg: 'pre1', tipo: 'C', key_respuesta: 1},
-                                        {key: 2,tit: 'Los expositores y el contenido son interesantes', preg: 'pre1', tipo: 'C', key_respuesta: 1},
-                                        {key: 3,tit: 'La transmisión audiovisual es fluida y de alta calidad', preg: '', tipo: 'C', key_respuesta: 1},
-                                        {key: 4,tit: 'Es probable que participe en futuros eventos virtuales de Abbott Nutrición', preg: '', tipo: 'C', key_respuesta: 1},
-                                        {key: 5,tit: 'Es probable que recomiende este evento virtual a mis colegas', preg: '', tipo: 'C', key_respuesta: 1},
-                                    ]
-                                }
-                            ]
+                                        {key: 1,tit: 'El contenido del programa es relevante para mi grupo de entrenamiento.', preg: 'pre1', tipo: 'C', key_respuesta: 1},
+                                        {key: 2,tit: 'Los oradores y contenido son interesantes.', preg: 'pre1', tipo: 'C', key_respuesta: 1},
+                                        {key: 3,tit: 'La logística y experiencia del evento, la calidad audiovisual y de la transmisión son buenas y sin interrupciones.', preg: '', tipo: 'C', key_respuesta: 1},
+                                        {key: 4,tit: 'Probablemente participaré en las ofertas visuales futuras de Abbott Nutrición.', preg: '', tipo: 'C', key_respuesta: 1},
+                                        {key: 5,tit: 'Probablemente recomendaré este webinar a mis colegas.', preg: '', tipo: 'C', key_respuesta: 1},
+                                        {key: 6,tit: '¿Qué temas son de mayor interés para usted relacionados con la rehidratación?', preg: '', tipo: 'T'},
+                                        {key: 7,tit: '¿Cuál es el aprendizaje más importante en este programa que pudiera traducirse a su lugar de entrenamiento?', preg: '', tipo: 'T'},
+                                        {key: 8,tit: '3.	¿Qué nos sugiere para hacer este webinar más efectivo?', preg: '', tipo: 'T'},
 
-                        },
-                        {
-                            titulo: '¿Qué tanto más está de acuerdo con las siguientes declaraciones después de participar en el webinario comparado con antes de participar?',
-                            secciones: [
-                                {
-                                    titulo: 'Primera Charla',
-                                    preguntas: [
-                                        {key: 6,tit: 'HMB es un ingrediente comprobado que se enfoca en la recuperar, preservar y aumentar la masa muscular', preg: 'pre1', tipo: 'C', key_respuesta: 2},
-                                        {key: 7,tit: 'La pérdida de masa muscular debería abordarse temprano para impactar de manera positiva los resultados clínicos', preg: 'pre1', tipo: 'C', key_respuesta: 2},
-                                        {key: 8,tit: 'Los suplementos nutricionales orales han demostrado que contribuyen a prevenir la pérdida de masa muscular y mejoran los resultados clínicos', preg: '', tipo: 'C', key_respuesta: 2},
-                                        {key: 9,tit: 'Minimizar la pérdida de masa muscular es importante en el manejo de pacientes con COVID-19 para mantener el estado funcional', preg: '', tipo: 'C', key_respuesta: 2},
-                                        {key: 10,tit: 'La evidencia reciente en las guías ESPEN COVID-19 indica un posible impacto positivo de la actividad física en conjunto con suplementación con aminoácidos o sus metabolitos como el HMB', preg: '', tipo: 'C', key_respuesta: 2},
-                                    ]
-                                },
-                                {
-                                    titulo: 'Segunda Charla',
-                                    preguntas: [
-                                        {key: 11,tit: 'Las fórmulas nutricionales específicas para diabéticos, utilizadas como sustituto de comidas, han demostrado reducir significativamente la respuesta de glucosa en sangre postprandial ', preg: 'pre1', tipo: 'C', key_respuesta: 2},
-                                        {key: 12,tit: 'Se ha demostrado que las fórmulas nutricionales específicas para diabéticos, como parte de un plan de intervención de estilo de vida, reducen significativamente la A1C', preg: 'pre1', tipo: 'C', key_respuesta: 2},
-                                        {key: 13,tit: 'Se ha demostrado que las Fórmulas de nutrición específicas para diabéticos compuestas de carbohidratos de digestión lenta, fibras dietéticas y MUFA estimulan la secreción de GLP-1.', preg: '', tipo: 'C', key_respuesta: 2},
-                                        {key: 14,tit: 'Se ha demostrado que las fórmulas de nutrición específicas para diabéticos pueden ayudar a complementar el objetivo de los medicamentos para la diabetes para ayudar a controlar los niveles de glucosa en sangre', preg: '', tipo: 'C', key_respuesta: 2},
-                                        {key: 15,tit: 'Las fórmulas nutricionales específicas para diabéticos, como parte de una intervención integral de estilo de vida, mejoran múltiples resultados de salud (por ejemplo, control glucémico, peso corporal, presión arterial)', preg: '', tipo: 'C', key_respuesta: 2},
-                                        {key: 16,tit: 'La terapia de nutrición médica se ha asociado con una mejor calidad de vida', preg: '', tipo: 'C', key_respuesta: 2},
-                                    ]
-                                },
-                                {
-                                    titulo: 'Proporcione su retroalimentación acerca de lo siguiente:',
-                                    preguntas: [
-                                        {key: 17,tit: 'Qué temas son de mayor interés para usted, relacionados con la nutrición y el impacto de COVID-19', preg: '', tipo: 'T'},
-                                        {key: 18,tit: 'A medida que las restricciones relacionadas con COVID-19 comienzan a disminuir, ¿le interesaría algún tema adicional sobre el manejo nutricional de pacientes diabéticos?', preg: '', tipo: 'T'},
-                                        {key: 19,tit: 'Comparta con nosotros sus conocimientos sobre el tratamiento de pacientes diabéticos durante COVID-19.', preg: '', tipo: 'T'},
-                                        {key: 20,tit: '¿Cuál es el aprendizaje más importante en este evento que podría traducirse en su práctica clínica?', preg: '', tipo: 'T'},
-                                        {key: 21,tit: '¿Alguna sugerencia para que el webinar sea más efectivo?', preg: '', tipo: 'T'},
                                     ]
                                 }
                             ]
@@ -301,13 +268,8 @@
                     opciones: [
                         {key: 1, 
                             valores: [
-                                'Totalmente en desacuerdo', 'En desacuerdo', 'Ni en desacuerdo ni de acuerdo', 'De acuerdo','Totalmente de acuerdo'
+                                '1', '2', '3', '4','5'
                             ] 
-                        },
-                        {key: 2, 
-                            valores: [
-                                'Igual que antes', 'Ligeramente más que antes', 'Moderadamente más que antes', 'Mucho más que antes','Significativamente más que antes'
-                            ]
                         }
                     ],
                     form: {

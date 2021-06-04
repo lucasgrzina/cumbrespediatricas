@@ -52,7 +52,11 @@
         <span class="logo-text">
 
             <p>Importancia de la Hidratación<br>en el Rendimiento del Deportista</p>						
+            
+        </span>
 
+        <span class="logo-pedi-img">
+            <img src="{{asset('public/assets/trainsmart/img/logo.png')}}">
         </span>
 
     </div>
