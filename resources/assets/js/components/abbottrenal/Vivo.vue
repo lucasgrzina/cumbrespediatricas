@@ -10,21 +10,30 @@
 					</div>
 				</div>
 
-                <div class="row mb-3 content-video ">
+                <div class="row mb-1 content-video ">
                     <div class="col-12">
                         <div style="padding:52.73% 0 0 0;position:relative;">
                             <iframe :src="evento.urlVimeoVideo" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                         </div>
                     </div>					
                 </div>
-
+				<div class="row mb-3 ">
+					<div class="col-md-12 botonera-audio">
+                        <button class="btn btn-primary btn-audio" @click="verVideo('I')">
+                            Audio Inglés
+                        </button>
+                        <button class="btn btn-primary btn-audio" @click="verVideo('E')">
+                            Audio Español
+                        </button>                                                
+                    </div>
+                </div>
 				<div class="row mb-3 ">
 					<div class="col-md-9">
 						<form style="max-width: 100%;">
 							<p class="mensaje-video">Escriba su pregunta aqui</p>
 							<div class="form-row margin-row-bottom">
 							    <div class="col-md-12">	
-							    	<input type="text" class="form-control" id="mail" placeholder="" v-model="form.pregunta">
+							    	<input type="text" class="form-control txt-pregunta" id="mail" placeholder="" v-model="form.pregunta">
 							        
 							    </div>
 					    	</div>
@@ -52,63 +61,12 @@
     </div>
     
     <template v-else>
-        <div class="row ">
-            <div class="col-12 text-center">
-                <h2 class="titulo-seccion">Te esperamos el</h2>
-            </div>					
-        </div>      
-
-        <div class="row mb-3">
-
-            <div class="calendario">
-
-                <div class="col-md col-12 fecha">
-
-                    <div class="media ">
-
-                        <div class="media-left"><img src="public/assets/trainsmart/img/calendario.svg"></div>
-
-                        <div class="media-body">
-
-                            <span class="dia">10</span>
-
-                            <span class="mes">de junio</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="col-md col-12 divider-col">
-
-                    <div class="divider"></div>
-
-                </div>
-
-                <div class="col horario pr-md-0">
-
-                    <div class="media ">
-
-                        <div class="media-left"><img src="public/assets/trainsmart/img/reloj.svg"></div>
-
-                        <div class="media-body">
-
-                            <div class="hora"><span class="numero">10:00 hs - </span><span class="texto">CENTROAMÉRICA</span></div>
-
-                            <div class="hora"><span class="numero">11:00 hs - </span><span class="texto">PANAMÁ</span></div>
-
-                            <div class="hora"><span class="numero">12:00 hs - </span><span class="texto">REP. DOMINICANA</span></div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
+                <div class="row ">
+					<div class="col-12 margin-top-home">
+						<h1>Evento en VIVO</h1>
+						<p class="mensaje-video">El evento aún no ha comenzado.</p>
+					</div>
+				</div>
 
     </template>
 

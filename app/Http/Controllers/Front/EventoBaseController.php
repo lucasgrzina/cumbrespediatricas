@@ -203,4 +203,8 @@ class EventoBaseController extends AppBaseController
     public function registro()
     {
     }
+
+    public function avisoPrivacidad() {
+        
+    }
 }

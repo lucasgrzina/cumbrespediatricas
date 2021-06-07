@@ -252,6 +252,7 @@ foreach ($eventos as $key => $data) {
                 Route::post('/enviar-mensaje-chat', $data['controller'].'@enviarMensajeChat')->name('enviar-mensaje-chat');
             });
             Route::get('/registro', $data['controller'].'@registro')->name('registro');
+            Route::get('/aviso-privacidad', $data['controller'].'@avisoPrivacidad')->name('avisoPrivacidad');
             Route::get('/', $data['controller'].'@index')->name('home');
         }); 
     

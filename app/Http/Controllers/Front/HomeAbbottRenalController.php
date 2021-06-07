@@ -54,6 +54,7 @@ class HomeAbbottRenalController extends EventoBaseController
                 'keyRecaptcha' => config('constantes.recaptcha.key',''),
                 'urlRegistrar' => route($this->key.'.registrar'),
                 'urlRedirect' => route($this->key.'.home'),
+                'urlAvisoPrivacidad' => route($this->key.'.avisoPrivacidad'),
             ],
             'title' => 'Registro'
         ];        
@@ -148,6 +149,9 @@ class HomeAbbottRenalController extends EventoBaseController
         return view('front.'.$this->evento['view'].'.vivo', $data);
     }    
 
+    public function avisoPrivacidad() {
+        return view('front.'.$this->evento['view'].'.aviso-privacidad');
+    }
 
 
     public function descargarCertificado() {
