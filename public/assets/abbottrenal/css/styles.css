@@ -53,7 +53,7 @@ input.form-control, input.custom-select, select.form-control, select.custom-sele
   border-width: 1px;
   border-style: solid;
   font-size: 20px !important;
-  color: #b3b3b3 !important;
+  color: #5a5757 !important;
   height: 40px;
   padding: 5px 40px;
 }
@@ -62,7 +62,7 @@ input.form-control option, input.custom-select option, select.form-control optio
   font-weight: 300;
   font-style: italic;
   font-size: 15px;
-  color: #0098c6;
+  color: #5a5757 !important;
   background-color: #fff;
 }
 /*input.form-control:focus, input.custom-select:focus, select.form-control:focus, select.custom-select:focus {
@@ -142,6 +142,9 @@ input.form-control option, input.custom-select option, select.form-control optio
   font-size: 12px;
   margin-bottom: 10px;
 }
+.footer-registro {
+  font-size: 10px;
+}
 
 @media (max-width: 768px) {
   .form-pregunta {
@@ -150,7 +153,9 @@ input.form-control option, input.custom-select option, select.form-control optio
   .btn-pregunta {
     margin-top: 0px;
   }
-    
+  .footer-registro {
+    font-size: 9px;
+  }   
 }
 body {
   font-family: "Dubai", sans-serif;

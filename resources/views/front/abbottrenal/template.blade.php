@@ -38,7 +38,20 @@
                 <div class="container ppal">
 
                     @yield('content')
+                    <div class="row footer-registro">
 
+                        <div class="col-md-12">
+
+                            <p class="text-center mb-3 text-01">Evento dirigido exclusivamente a entrenadores deportivos.</p>
+
+                            <p class="text-center color-celeste text-02">
+                                Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac).<br>
+                                Se recomienda tener actualizado el sistema operativo a la última actualización.<br>
+                                Para una correcta visualización del evento en vivo, usar el modo pantalla completa y activar el sonido en el reproductor.
+                            </p>
+                        </div>
+
+                    </div>
                 </div>
 
             </section>

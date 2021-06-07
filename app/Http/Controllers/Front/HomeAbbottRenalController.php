@@ -32,7 +32,13 @@ class HomeAbbottRenalController extends EventoBaseController
 
     public function index()
     {
-        return view('front.'.$this->evento['view'].'.proximamente', []);
+        $registrado = $this->obtenerRegistrado();
+
+        if ($registrado) {
+            return redirect()->route($this->key.'.vivo');
+        } else {
+            return redirect()->route($this->key.'.registro');
+        }
     }
 
     public function registro()

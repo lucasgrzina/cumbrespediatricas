@@ -38,13 +38,13 @@
 
                     </div>				
 
-                    <div class="col-md-12 text-center mt-3">
+                    <!--div class="col-md-12 text-center mt-3">
 
                         <button class="btn btn-primary btn-encuesta"  @click="encuestaDisponible()">
                             Encuesta de satisfacción
                         </button>
 
-                    </div>
+                    </div-->
 
 				</div>
 
