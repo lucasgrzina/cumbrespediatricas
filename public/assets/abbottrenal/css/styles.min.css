@@ -175,6 +175,10 @@ input.form-control option, input.custom-select option, select.form-control optio
   font-size: 23px!important;
   line-height: 23px!important;  
 }
+.img-agenda {
+  width: 100%;
+  max-width: 930px;
+}
 @media (max-width: 768px) {
   .botonera-audio {
     text-align: center;

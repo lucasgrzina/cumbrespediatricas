@@ -246,7 +246,7 @@ return [
             'controller' => 'HomeAbbottRenalController',
             'view' => 'abbottrenal',
             'cookie' => 'abbottrenal',
-            'activo' => false,
+            'activo' => true,
             'evitarRoute' => false,
             'urlVimeoVideo' => 'https://player.vimeo.com/video/557334075',
             'urlVimeoChat' => 'https://vimeo.com/event/885878/chat/6258b9eb5d',

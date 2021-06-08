@@ -62,9 +62,8 @@
     
     <template v-else>
                 <div class="row ">
-					<div class="col-12 margin-top-home">
-						<h1>Evento en VIVO</h1>
-						<p class="mensaje-video">El evento aún no ha comenzado.</p>
+					<div class="col-12 margin-top-home center-text">
+                        <img src="/public/assets/abbottrenal/img/fondo-agenda-min.png" class="img-agenda">
 					</div>
 				</div>
 
