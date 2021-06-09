@@ -13,7 +13,7 @@
                 <div class="row mb-1 content-video ">
                     <div class="col-12">
                         <div style="padding:52.73% 0 0 0;position:relative;">
-                            <iframe :src="evento.urlVimeoVideo" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                            <iframe :src="videoSeleccionado" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                         </div>
                     </div>					
                 </div>
@@ -189,7 +189,8 @@
         },
         data () {
             return {
-                videoSeleccionado: 'ingles',
+                
+                videoSeleccionado: this.evento.urlVimeoVideoEng,
                 form: {
                     pregunta: null
                 },
@@ -258,7 +259,9 @@
         },
         mounted () {
             var vm = this;
-            console.debug(vm.evento);
+            vm.videoSeleccionado = vm.evento.urlVimeoVideoEng;
+
+            console.debug(vm.videoSeleccionado);
             var csrfToken = $('[name=csrf-token]').attr('content');
             var isOnIOS = navigator.userAgent.match(/iPad/i)|| navigator.userAgent.match(/iPhone/i);
             var eventName = isOnIOS ? "pagehide" : "beforeunload";    
@@ -293,7 +296,13 @@
         },
         methods: {
             verVideo (video) {
-                this.videoSeleccionado = video;
+                if (video === 'I') {
+                    this.videoSeleccionado = this.evento.urlVimeoVideoEng;
+                } else {
+                    this.videoSeleccionado = this.evento.urlVimeoVideoEsp;
+                }
+                console.debug(this.videoSeleccionado)
+                
             },
             enviarPregunta: function () {
                 let vm = this

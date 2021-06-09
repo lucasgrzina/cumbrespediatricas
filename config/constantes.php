@@ -248,8 +248,8 @@ return [
             'cookie' => 'abbottrenal',
             'activo' => true,
             'evitarRoute' => false,
-            'urlVimeoVideo' => 'https://player.vimeo.com/video/557334075',
-            'urlVimeoChat' => 'https://vimeo.com/event/885878/chat/6258b9eb5d',
+            'urlVimeoVideoEsp' => 'https://player.vimeo.com/video/561037011',
+            'urlVimeoVideoEng' => 'https://player.vimeo.com/video/561039201',
         ],                                                                           
     ],    
     'recaptcha' => [
