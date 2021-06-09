@@ -47,13 +47,13 @@
 
                     </div>				
 
-                    <!--div class="col-md-12 text-center mt-3">
+                    <div class="col-md-12 text-center mt-3">
 
                         <button class="btn btn-primary btn-encuesta"  @click="encuestaDisponible()">
                             Encuesta de satisfacción
                         </button>
 
-                    </div-->
+                    </div>
 
 				</div>
 
@@ -61,6 +61,9 @@
     </div>
     
     <template v-else>
+                <div class="registro-exitoso">
+                   <span>¡REGISTRO EXITOSO!</span>
+                </div>
                 <div class="row ">
 					<div class="col-12 margin-top-home center-text">
                         <img src="/public/assets/abbottrenal/img/fondo-agenda-min.png" class="img-agenda">
@@ -200,14 +203,14 @@
                                 {
                                     titulo: '',
                                     preguntas: [
-                                        {key: 1,tit: 'El contenido del programa es relevante para mi grupo de entrenamiento.', preg: 'pre1', tipo: 'C', key_respuesta: 1},
-                                        {key: 2,tit: 'Los oradores y contenido son interesantes.', preg: 'pre1', tipo: 'C', key_respuesta: 1},
-                                        {key: 3,tit: 'La logística y experiencia del evento, la calidad audiovisual y de la transmisión son buenas y sin interrupciones.', preg: '', tipo: 'C', key_respuesta: 1},
-                                        {key: 4,tit: 'Probablemente participaré en las ofertas visuales futuras de Abbott Nutrición.', preg: '', tipo: 'C', key_respuesta: 1},
-                                        {key: 5,tit: 'Probablemente recomendaré este webinar a mis colegas.', preg: '', tipo: 'C', key_respuesta: 1},
-                                        {key: 6,tit: '¿Qué temas son de mayor interés para usted relacionados con la rehidratación?', preg: '', tipo: 'T'},
-                                        {key: 7,tit: '¿Cuál es el aprendizaje más importante en este programa que pudiera traducirse a su lugar de entrenamiento?', preg: '', tipo: 'T'},
-                                        {key: 8,tit: '3.	¿Qué nos sugiere para hacer este webinar más efectivo?', preg: '', tipo: 'T'},
+                                        {key: 1,tit: 'El contenido del evento es relevante para mi práctica profesional', preg: 'pre1', tipo: 'C', key_respuesta: 1},
+                                        {key: 2,tit: 'Considera que los conferencistas invitados cuentan con un alto nivel.', preg: 'pre1', tipo: 'C', key_respuesta: 1},
+                                        {key: 3,tit: 'Logística y experiencia del evento: El proceso de registro e ingreso fue sencillo y rápido, la calidad audiovisual y de la transmisión fue buena y sin interrupciones.', preg: '', tipo: 'C', key_respuesta: 1},
+                                        {key: 4,tit: 'Es probable que participe en futuros eventos virtuales de este tipo.', preg: '', tipo: 'C', key_respuesta: 1},
+                                        {key: 5,tit: 'Es probable que recomiende este tipo de evento virtual a mis colegas.', preg: '', tipo: 'C', key_respuesta: 1},
+                                        {key: 6,tit: '¿Qué temas relacionados con la nutrición, son de mayor interés para Usted?', preg: '', tipo: 'T'},
+                                        {key: 7,tit: '¿Qué información presentada durante el evento, podría ser de utilidad en su práctica clínica?', preg: '', tipo: 'T'},
+                                        {key: 8,tit: '¿Alguna sugerencia para que este tipo de eventos sea más efectivo?', preg: '', tipo: 'T'},
 
                                     ]
                                 }
@@ -218,7 +221,7 @@
                     opciones: [
                         {key: 1, 
                             valores: [
-                                '1', '2', '3', '4','5'
+                                'Totalmente en desacuerdo', 'En desacuerdo', 'Ni en desacuerdo ni de acuerdo', 'De acuerdo','Totalmente de acuerdo'
                             ] 
                         }
                     ],

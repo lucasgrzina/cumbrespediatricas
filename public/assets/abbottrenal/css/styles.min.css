@@ -36,6 +36,10 @@ h1, h2, p {
   font-family: "Dubai", sans-serif;
 }
 
+#app {
+  min-height: 75vh;
+}
+
 form {
   margin: 5px auto;
   width: 100%;
@@ -183,7 +187,47 @@ input.form-control option, input.custom-select option, select.form-control optio
     height: 246px;
     overflow-x: auto;
 }
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active {
+  outline: 0px !important;
+  -webkit-appearance: auto !important;
+  box-shadow: none !important;
+}
+
+.registro-exitoso {
+  text-align: center;
+  padding-top: 15px;
+}
+.registro-exitoso span{
+  padding: 10px 50px;
+    background: #5faf63;
+    border-radius: 0 0 10px 10px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 700;
+
+}
 @media (max-width: 768px) {
+  .registro-exitoso {
+    padding-top: 5px;
+  }  
+  .registro-exitoso span{
+      font-size: 15px;
+      line-height: 15px;
+      padding: 5px 30px;
+  }
+ 
   .container-bases {
     height: auto;
     overflow-x: hidden;
@@ -496,6 +540,7 @@ form .buttons-form {
 .logo-mobile {
   display: none;
 }
+
 
 @media (max-width: 769px) {
   body.byc {
