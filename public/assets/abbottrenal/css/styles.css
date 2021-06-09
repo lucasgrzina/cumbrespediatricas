@@ -180,7 +180,9 @@ input.form-control option, input.custom-select option, select.form-control optio
   .container-bases {
     height: auto;
     overflow-x: hidden;
-}
+  }
+
+
   .botonera-audio {
     text-align: center;
   }
@@ -489,6 +491,12 @@ form .buttons-form {
 }
 
 @media (max-width: 769px) {
+  body.byc {
+    background-color: #faf1e3;
+    background-size: 250%;
+    background-position: bottom center;
+  }
+
   .btn-encuesta {
     margin-top: 10px;
     font-size: 20px;

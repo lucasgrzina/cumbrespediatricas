@@ -260,7 +260,7 @@ export default {
         },
         mounted () {
             console.debug('Registro mounted');
-            $('body').addClass('home');
+            
         },
         methods: {
 
@@ -330,9 +330,10 @@ export default {
             },
             irAlPaso: function (paso) {
               window.scrollTo(0, 0);
-              $('body').removeClass('home');
+              $('body').removeClass('byc');
               if (paso === 2) {
                 this.aviso = 'general';
+                $('body').addClass('byc');
               }
               this.paso = paso;
             },
