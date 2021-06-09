@@ -45,7 +45,8 @@
                             <p class="text-center color-celeste text-02">
                                 Sitio web optimizado para Navegadores Google Chrome y Firefox (PC/Mac).<br>
                                 Se recomienda tener actualizado el sistema operativo a la última versión.<br>
-                                Para una correcta visualización del evento en vivo, usar el modo pantalla completa y activar el sonido en el reproductor.
+                                Para una correcta visualización del evento en vivo, usar el modo pantalla completa y activar el sonido en el reproductor.<br>
+                                Ante cualquier duda o inconveniente escriba al <a href="https://api.whatsapp.com/send?phone=5491133003516&text=Hola" target="_blank"><img style="width:25px;" src="/public/img/whatsapp.png"/></a> +54 11 6854-8111
                             </p>
                         </div>
 

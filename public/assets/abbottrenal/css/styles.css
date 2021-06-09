@@ -172,7 +172,15 @@ input.form-control option, input.custom-select option, select.form-control optio
   width: 100%;
   max-width: 930px;
 }
+.container-bases {
+    height: 246px;
+    overflow-x: auto;
+}
 @media (max-width: 768px) {
+  .container-bases {
+    height: auto;
+    overflow-x: hidden;
+}
   .botonera-audio {
     text-align: center;
   }

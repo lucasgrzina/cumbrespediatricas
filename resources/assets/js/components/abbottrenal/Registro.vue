@@ -26,7 +26,7 @@
 
         </div>
 				<div class="row mt-4 justify-content-center txt-bases">
-					<div class="col-sm-12 mt-3">
+					<div class="col-sm-12 mt-3 container-bases">
             <p>Este sitio web (en adelante, el “Sitio Web”) es operado por Quimica International Services LLC (en adelante, “Química”) y se sujeta a los presentes términos y condiciones (en adelante, los “Términos y Condiciones del
             Sitio Web”).</p>
             <p>El Sitio Web está destinado a eventos virtuales, con presencia de stand y charlas de forma pregrabada y en vivo, conferencias, cursos, entre otros.</p>
@@ -146,17 +146,18 @@
             una autoridad competente considera que alguna disposición de estos Términos y Condiciones del Sitio Web es inválida o no aplicable, usted acepta que las demás disposiciones de estos Términos y Condiciones del
             Sitio Web permanecerán en plena vigencia y efecto.</p>
 
-            <p class="text-center mt-4"><a :href="urlAvisoPrivacidad" target="_blank"  style="font-size: 18px;
-    color: #092df1;
-    font-weight: 500;">Conozca nuestro Aviso de Privacidad</a></p>
+            
 
 
 					</div>
 				</div>
 				<div class="row mt-4 mb-3 justify-content-center" style="margin-bottom:50px;">
 					<div class="col-sm-8 text-center">
+            <p class="text-center mt-4"><a :href="urlAvisoPrivacidad" target="_blank"  style="font-size: 18px;
+    color: #092df1;
+    font-weight: 500;">Conozca nuestro Aviso de Privacidad</a></p>
             <!--p class="texto-acepto">Acepto las bases y condiciones para proceder con el registro</p-->
-						<button class="btn btn-primary btn-acepto ml-auto mr-auto d-table" @click="irAlPaso(3)">Acepto las bases y condiciones para proceder con el registro</button>
+						<button class="btn btn-primary btn-acepto ml-auto mr-auto d-table" @click="irAlPaso(3)">Acepto términos y condiciones para proceder con el registro</button>
 					</div>
 				</div> 
     </template>    
