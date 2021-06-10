@@ -200,7 +200,8 @@ class HomeTrainSmartController extends EventoBaseController
                 'urlEncuestaDisponible' => route($this->key.'.encuesta-disponible'),
                 'urlEnviarEncuesta' => route($this->key.'.enviar-encuesta'),
                 'urlEnviarSalidaUsuario' => route($this->key.'.enviar-salida-usuario'),
-            ]
+            ],
+            'evitarChat' => true
         ];
         return view('front.'.$this->evento['view'].'.vivo', $data);
     }    
