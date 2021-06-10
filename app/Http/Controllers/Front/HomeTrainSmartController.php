@@ -108,10 +108,11 @@ class HomeTrainSmartController extends EventoBaseController
                 throw new \Exception('El email ingresado y el de confirmación no coinciden',422);
             }
 
+            /*
             if (Registrado::whereEmail($request->email)->whereEvento($this->key)->count() > 0) {
                 throw new \Exception('El email ingresado ya se encuentra registrado',422);
             }
-
+            */
             
             DB::beginTransaction();
             $data = Registrado::create($input);
