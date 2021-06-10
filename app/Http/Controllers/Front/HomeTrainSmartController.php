@@ -79,7 +79,7 @@ class HomeTrainSmartController extends EventoBaseController
     public function registro()
     {
         if ($this->obtenerRegistrado()) {
-            return redirect()->route($this->key.'.gracias');
+            return redirect()->route($this->key.'.vivo');
         }
 
 
@@ -155,6 +155,8 @@ class HomeTrainSmartController extends EventoBaseController
     {
         if (!$this->obtenerRegistrado()) {
             return redirect()->route($this->key.'.registro');
+        } else {
+            return redirect()->route($this->key.'.vivo');
         }        
         return view('front.'.$this->evento['view'].'.gracias');
         
