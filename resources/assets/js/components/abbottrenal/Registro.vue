@@ -196,6 +196,14 @@
 						    </div>
 						    <div class="form-row margin-row-bottom">
 							    <div class="col-md-12">	
+							    	<input type="text" class="form-control" id="mail" placeholder="Email" v-model="registro.form.email">
+							        <div class="invalid-feedback">
+							          Ingrese email.
+							        </div>
+							    </div>
+						    </div>                
+						    <div class="form-row margin-row-bottom">
+							    <div class="col-md-12">	
 							    	<button class="btn btn-primary ml-auto mr-auto d-table" type="button" @click="registrar()" :disabled="registro.enviando">Ingresar</button>
 							    </div>
 						    </div>
@@ -240,7 +248,7 @@ export default {
                     form: {
                         nombre: null,
                         apellido: null,
-                        email: 'noemail@email.com',
+                        email: null,
                         pais: null,
                         institucion: null,
                         ciudad: null,
@@ -271,7 +279,8 @@ export default {
                 let camposSimples = {
                   nombre: 'nombre',
                   especialidad: 'especialidad',
-                  pais: 'nacionalidad'
+                  pais: 'nacionalidad',
+                  email: 'email'
                 };
                 let camposAdicionales = {
                 };
