@@ -192,7 +192,7 @@ if (env('APP_ENV','production') === 'local') {
 } else {
     Route::namespace('Front')->name($keyNasa.'.')->domain('www.transmisioncumbrenasa.com')->group($appRoutesNasa);
 }
-
+/*
 $keyTrainSmart = 'trainsmart';
 $appRoutesTrainSmart = function() use ($keyTrainSmart){
     $data = config('constantes.eventos.trainsmart',[]); 
@@ -217,7 +217,7 @@ if (env('APP_ENV','production') === 'local') {
 } else {
     Route::namespace('Front')->name($keyTrainSmart.'.')->domain('www.trainsmart30.com')->group($appRoutesTrainSmart);
 }
-
+*/
 /*$keyAbbottNight = 'abbottnight';
 $appRoutesAbbottNight = function() use ($keyAbbottNight){
     $data = config('constantes.eventos.abbottnight',[]); 
