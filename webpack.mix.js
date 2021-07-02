@@ -90,7 +90,16 @@ let mix = require('laravel-mix');
    .styles([
       'public/assets/abbottrenal/bootstrap/css/bootstrap.min.css',
       'public/assets/abbottrenal/css/styles.css'   
-   ], 'public/assets/abbottrenal/css/styles.min.css');      
+   ], 'public/assets/abbottrenal/css/styles.min.css');   
+   
+   mix.js([
+      'public/assets/mentesinlimites/bootstrap/js/bootstrap.bundle.min.js',
+      'resources/assets/js/mentesinlimites.js'
+   ], 'public/assets/mentesinlimites/js/app.min.js')
+   .styles([
+      'public/assets/mentesinlimites/bootstrap/css/bootstrap.min.css',
+      'public/assets/mentesinlimites/css/styles.css'   
+   ], 'public/assets/mentesinlimites/css/styles.min.css');      
 
 if (mix.inProduction()) {
    mix.version();

@@ -175,7 +175,7 @@ if (env('APP_ENV','production') === 'local') {
 } else {
     Route::namespace('Front')->name($keyCigen.'.')->domain('www.cigen.com.ar')->group($appRoutesCigen);
 }
-
+/*
 $keyNasa = 'nasa1905';
 $appRoutesNasa = function() use ($keyNasa){
     $data = config('constantes.eventos.nasa1905',[]); 
@@ -232,6 +232,23 @@ if (env('APP_ENV','production') === 'local') {
 } else {
     //Route::namespace('Front')->name($keyAbbottNight.'.')->domain('www.foro-sas.com.ar')->group($appRoutesForoSas);
 }*/
+
+$keyNasa = 'porunamentesinlimites';
+$appRoutesNasa = function() use ($keyNasa){
+    $data = config('constantes.eventos.porunamentesinlimites',[]); 
+    Route::get('/', $data['controller'].'@index')->name('home');
+    Route::post('/enviar-pregunta', $data['controller'].'@enviarPregunta')->name('enviar-pregunta');
+    Route::get('/encuesta-disponible', $data['controller'].'@encuestaDisponible')->name('encuesta-disponible');        
+    Route::post('/enviar-encuesta', $data['controller'].'@enviarEncuesta')->name('enviar-encuesta');
+    Route::get('/evento-disponible', $data['controller'].'@eventoDisponible')->name('evento-disponible');        
+    Route::any('/enviar-salida-usuario', $data['controller'].'@enviarSalidaUsuario')->name('enviar-salida-usuario');
+    Route::get('/registrado', $data['controller'].'@registrado')->name('registrado');
+};
+if (env('APP_ENV','production') === 'local') {
+    Route::namespace('Front')->name($keyNasa.'.')->domain('dev.porunamentesinlimites.com')->group($appRoutesNasa);
+} else {
+    Route::namespace('Front')->name($keyNasa.'.')->domain('www.porunamentesinlimites.com')->group($appRoutesNasa);
+}
 
 $eventos = config('constantes.eventos',[]);
 foreach ($eventos as $key => $data) {
