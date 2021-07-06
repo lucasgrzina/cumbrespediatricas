@@ -388,7 +388,7 @@
 
 							    <div class="col-md-12">	
 
-                    <input type="text" class="form-control" id="nombre" placeholder="Nombre completo" v-model="registro.form.nombre">
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre completo" v-model="registro.form.nombre" autocomplete="false">
 
 							        <div class="invalid-feedback">
 
@@ -404,7 +404,7 @@
 
 							    <div class="col-md-12">	
 
-							    	<input type="text" class="form-control" id="mail" placeholder="Correo electrónico"  v-model="registro.form.email">
+							    	<input type="text" class="form-control" id="mail" placeholder="Correo electrónico"  v-model="registro.form.email" autocomplete="false">
 
 							        <div class="invalid-feedback">
 
@@ -420,7 +420,7 @@
 
 							    <div class="col-md-12">	
 
-							    	<input type="text" class="form-control" id="mail" placeholder="Especialidad"  v-model="registro.form.especialidad">
+							    	<input type="text" class="form-control" id="mail" placeholder="Especialidad"  v-model="registro.form.especialidad" autocomplete="false">
 
 							        <div class="invalid-feedback">
 
@@ -438,7 +438,7 @@
 
 							    <div class="col-md-12">	
 
-							    	<input type="text" class="form-control" id="mail" placeholder="País"  v-model="registro.form.pais">
+							    	<input type="text" class="form-control" id="mail" placeholder="País"  v-model="registro.form.pais" autocomplete="false">
 
 							        <div class="invalid-feedback">
 
@@ -456,7 +456,7 @@
 
 							    <div class="col-md-12">	
 
-							    	<button class="btn btn-primary ml-auto mr-auto d-table" type="button" @click="registrar()" :disabled="registro.enviando">Ingresar</button>
+							    	<button class="btn btn-primary ml-auto mr-auto d-table  mt-2" type="button" @click="registrar()" :disabled="registro.enviando">Ingresar</button>
 
 							    </div>
 

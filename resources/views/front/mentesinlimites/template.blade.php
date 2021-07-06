@@ -44,7 +44,7 @@
             
             </footer>
         <script src="{{ url(mix('public/assets/mentesinlimites/js/app.min.js')) }}"></script>
-
+<!-- Código de instalación Cliengo para ivan.schwindt@gmail.com --> <script type="text/javascript">(function () { var ldk = document.createElement('script'); ldk.type = 'text/javascript'; ldk.async = true; ldk.src = 'https://s.cliengo.com/weboptimizer/60e4b7e07fdced002ad68ddb/60e4b7e27fdced002ad68de2.js?platform=view_installation_code'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ldk, s); })();</script>
 	</body>
 
 </html>
