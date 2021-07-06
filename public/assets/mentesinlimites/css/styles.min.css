@@ -495,7 +495,7 @@ input.form-control:focus, input.custom-select:focus, select.form-control:focus, 
   }
 }
 body {
-  font-family: "Gotham", sans-serif;
+  /*font-family: "Gotham", sans-serif;*/
   min-height: 100vh;
   overflow-x: hidden;
   background-repeat: no-repeat;
@@ -745,7 +745,7 @@ label:focus,
 .btn-primary {
   padding: 0 42px;
   color: #fff !important;
-  font-family: "Gotham", sans-serif;
+  /*font-family: "Gotham", sans-serif;*/
   text-transform: uppercase;
   font-size: 25px;
   line-height: 51px;
