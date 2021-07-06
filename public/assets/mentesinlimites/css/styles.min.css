@@ -983,8 +983,11 @@ form .buttons-form {
   font-size: 80px;
 }
 
+.btn-primary {
+  font-size: 20px;
+}
 .btn-primary.btn-big {
-
+  font-size: 22px;
 }
 
 @media (min-width:990px) {
@@ -997,7 +1000,9 @@ form .buttons-form {
     min-height: calc(100vh - 215px);
   }
 
-
+  .btn-primary.btn-big {
+    font-size: 22px;
+  }
   
   .home .text-top {
     margin: 40px 0 -10px;
