@@ -777,10 +777,16 @@ label:focus,
   border-color: #f6c34b !important;
 }
 .btn-primary.btn-big {
-  font-size: 32px;
+  /*font-size: 32px;
   height: 89px !important;
   padding: 10px 53px;
   border-radius: 50px;
+*/
+  font-size: 28px;
+  /*height: 72px !important;*/
+  padding: 10px 53px;
+  border-radius: 50px;
+  line-height: 28px; 
 }
 
 .btn-play {
@@ -859,7 +865,7 @@ form .buttons-form {
     font-size: 25px;
   }
   .btn-primary.btn-big {
-    font-size: 25px;
+    font-size: 20px;
     line-height: 32px;
   }
 
@@ -977,6 +983,9 @@ form .buttons-form {
   font-size: 80px;
 }
 
+.btn-primary.btn-big {
+
+}
 
 @media (min-width:990px) {
   .home .title h2 {
@@ -988,13 +997,7 @@ form .buttons-form {
     min-height: calc(100vh - 215px);
   }
 
-  .btn-primary.btn-big {
-    font-size: 28px;
-    height: 72px !important;
-    padding: 10px 53px;
-    border-radius: 50px;
-    line-height: 30px;
-  }
+
   
   .home .text-top {
     margin: 40px 0 -10px;
