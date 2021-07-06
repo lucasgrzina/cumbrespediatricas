@@ -1025,6 +1025,10 @@ form .buttons-form {
   .general.registro .margin-top-section {
     margin-top: 0;
 }
+footer {
+  position: absolute;
+  bottom: 0;
+}
 }
 
 @media(max-width:776px) {

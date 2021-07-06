@@ -34,6 +34,7 @@
     
             <section id="app" v-cloak>
                 @yield('content')
+                
             </section>
             <footer class="">
 
