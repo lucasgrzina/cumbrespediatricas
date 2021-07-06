@@ -93,13 +93,16 @@ let mix = require('laravel-mix');
    ], 'public/assets/abbottrenal/css/styles.min.css');   
    
    mix.js([
-      'public/assets/mentesinlimites/bootstrap/js/bootstrap.bundle.min.js',
+      'materiales/abbot-julio/assets/bootstrap/js/bootstrap.bundle.min.js',
       'resources/assets/js/mentesinlimites.js'
    ], 'public/assets/mentesinlimites/js/app.min.js')
    .styles([
-      'public/assets/mentesinlimites/bootstrap/css/bootstrap.min.css',
+      'materiales/abbot-julio/assets/bootstrap/css/bootstrap.min.css',
+      'materiales/abbot-julio/assets/css/styles.css',
       'public/assets/mentesinlimites/css/styles.css'   
-   ], 'public/assets/mentesinlimites/css/styles.min.css');      
+   ], 'public/assets/mentesinlimites/css/styles.min.css')
+   .copy( 'materiales/abbot-julio/assets/img/', 'public/assets/mentesinlimites/img/', false )
+   .copy( 'materiales/abbot-julio/assets/fonts/', 'public/assets/mentesinlimites/fonts/', false );      
 
 if (mix.inProduction()) {
    mix.version();

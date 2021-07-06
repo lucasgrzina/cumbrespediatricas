@@ -32,14 +32,13 @@ class HomeAbbottRenalController extends EventoBaseController
 
     public function index()
     {
-        /*$registrado = $this->obtenerRegistrado();
-
+        $registrado = $this->obtenerRegistrado();
         if ($registrado) {
             return redirect()->route($this->key.'.vivo');
-        } else {
+        } else {            
             return redirect()->route($this->key.'.registro');
-        }*/
-        $data = [
+        }
+        /*$data = [
             'props' => [
                 'keyRecaptcha' => config('constantes.recaptcha.key',''),
                 //'urlRegistrar' => route($this->key.'.registrar'),
@@ -48,23 +47,22 @@ class HomeAbbottRenalController extends EventoBaseController
             ],
             'title' => 'Próximamente'
         ];        
-        return view('front.'.$this->evento['view'].'.home', $data);
+        return view('front.'.$this->evento['view'].'.home', $data);*/
     }
 
     public function registro()
     {
         $registrado = $this->obtenerRegistrado();
-
         if ($registrado) {
             return redirect()->route($this->key.'.vivo');
         }
-
+        
         $data = [
             'props' => [
                 'keyRecaptcha' => config('constantes.recaptcha.key',''),
                 'urlRegistrar' => route($this->key.'.registrar'),
                 'urlRedirect' => route($this->key.'.home'),
-                'urlAvisoPrivacidad' => route($this->key.'.avisoPrivacidad'),
+                'urlAvisoPrivacidad' => '#',
             ],
             'title' => 'Registro'
         ];        
@@ -116,6 +114,7 @@ class HomeAbbottRenalController extends EventoBaseController
     public function vivo (Request $request) {
         $registrado = null;
         $conf = $this->config('*');
+        
         try {
 
             $registrado = $this->obtenerRegistrado();
@@ -124,9 +123,11 @@ class HomeAbbottRenalController extends EventoBaseController
                 return redirect()->route($this->key.'.registro');
             }
 
+
             try {
                 //$registrado = $this->obtenerRegistrado();
-                if ($registrado) {
+                
+                if ($registrado && $conf['etapa'] === 'R') {
                     $registrado->acciones()->create([
                         'accion' => 'evento',
                         'desde' => Carbon::now()

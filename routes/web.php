@@ -237,6 +237,9 @@ $keyNasa = 'porunamentesinlimites';
 $appRoutesNasa = function() use ($keyNasa){
     $data = config('constantes.eventos.porunamentesinlimites',[]); 
     Route::get('/', $data['controller'].'@index')->name('home');
+    Route::get('/registro', $data['controller'].'@registro')->name('registro');
+    Route::post('/registrar', $data['controller'].'@registrar')->name('registrar');
+    Route::get('/vivo', $data['controller'].'@vivo')->name('vivo');
     Route::post('/enviar-pregunta', $data['controller'].'@enviarPregunta')->name('enviar-pregunta');
     Route::get('/encuesta-disponible', $data['controller'].'@encuestaDisponible')->name('encuesta-disponible');        
     Route::post('/enviar-encuesta', $data['controller'].'@enviarEncuesta')->name('enviar-encuesta');

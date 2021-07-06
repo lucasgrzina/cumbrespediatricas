@@ -17,9 +17,9 @@ window.Vue = require('vue');
 
 //Vue.component('contenedor', require('./components/Contenedor.vue'));
 //Vue.component('home', require('./components/trainsmart/Home.vue'));
-Vue.component('registro', require('./components/abbottrenal/Registro.vue'));
+Vue.component('registro', require('./components/mentesinlimites/Registro.vue'));
 //Vue.component('login', require('./components/cigen/Login.vue'));
-Vue.component('vivo', require('./components/abbottrenal/Vivo.vue'));
+Vue.component('vivo', require('./components/mentesinlimites/Vivo.vue'));
 
 const app = new Vue({
     el: '#app',

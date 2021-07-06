@@ -1,5 +1,5 @@
 <template>
-<div style="position:relative;" class="pagina-home">
+<div style="position:relative;">
     <div class="header-condiciones" v-if="configEvento.etapa === 'R'">
     <template >
 
@@ -61,14 +61,57 @@
     </div>
     
     <template v-else>
-                <div class="registro-exitoso">
-                   <span>¡REGISTRO EXITOSO!</span>
-                </div>
-                <div class="row ">
-					<div class="col-12 margin-top-home center-text">
-                        <img src="/public/assets/abbottrenal/img/fondo-agenda-min.png" class="img-agenda">
+			<div class="container container-general">
+
+				<div class="row ">
+
+					
+
+					<div class="col-md-8 title order-2 order-md-1">
+
+						<p class="text-top"><span class="text-02">LANZAMIENTO VIRTUAL</span></p>
+
+						<h1>Por una mente sin límites</h1>
+
+						<h2>La correcta nutrición desde el inicio, marca la diferencia</h2>
+
 					</div>
+
+
+
+					<div class="col-md-4 order-1 order-md-2">
+
+						<a class="logo"><img src="public/assets/mentesinlimites/img/logo.png"></a>
+
+					</div>
+
 				</div>
+
+			</div>
+
+			<div class="container container-general">
+
+				<div class="row ">
+
+					<div class="col-12 mensaje-full">
+
+						<div class="inner">
+
+							<h2 class="title-section">MUCHAS GRACIAS POR INSCRIBIRTE</h2>
+
+							<h3 class="subtitle-section">TE ESPERAMOS EL <span>14 DE JULIO</span> A LAS <span>7:00 PM</span></h3>
+
+								<div class="line-separate"></div>
+
+						</div>
+
+						
+
+					</div>
+
+				</div>
+
+			</div>
 
     </template>
 
@@ -259,39 +302,44 @@
         },
         mounted () {
             var vm = this;
+            console.debug(this.configEvento.etapa)
             vm.videoSeleccionado = vm.evento.urlVimeoVideoEng;
 
-            console.debug(vm.videoSeleccionado);
+            //console.debug(vm.videoSeleccionado);
             var csrfToken = $('[name=csrf-token]').attr('content');
             var isOnIOS = navigator.userAgent.match(/iPad/i)|| navigator.userAgent.match(/iPhone/i);
             var eventName = isOnIOS ? "pagehide" : "beforeunload";    
             var usarSendBeacon = "sendBeacon" in navigator;
             var urlSalidaUsuario = vm.urlEnviarSalidaUsuario;
             
-            console.debug(isOnIOS,eventName,usarSendBeacon,urlSalidaUsuario);
-                   
-            window.addEventListener(eventName, function(e){
-                var data = new FormData();
-                data.append('_token', csrfToken);                
-
-                if(usarSendBeacon)
-                {
-                    navigator.sendBeacon(urlSalidaUsuario, data);
-                }
-                else
-                {
-                    var request = new XMLHttpRequest();
-                    
-                    request.open('post', urlSalidaUsuario, false);
-                    request.send(data);
-
-                    if (request.status === 200) {
-                        console.debug('termino');
-                    }
-
-                }                
+            //console.debug(isOnIOS,eventName,usarSendBeacon,urlSalidaUsuario);
+            if (this.configEvento.etapa === 'R') {
                 
-            }, false);                   
+                window.addEventListener(eventName, function(e){
+                    var data = new FormData();
+                    data.append('_token', csrfToken);                
+
+                    if(usarSendBeacon)
+                    {
+                        navigator.sendBeacon(urlSalidaUsuario, data);
+                    }
+                    else
+                    {
+                        var request = new XMLHttpRequest();
+                        
+                        request.open('post', urlSalidaUsuario, false);
+                        request.send(data);
+
+                        if (request.status === 200) {
+                            console.debug('termino');
+                        }
+
+                    }                
+                    
+                }, false);  
+            } else {
+                $('body').addClass('general').addClass('registro');
+            }
         
         },
         methods: {

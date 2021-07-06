@@ -1,15 +1,49 @@
-
-body {
-  font-family: "Dubai", sans-serif;
-  min-height: 100vh;
-  overflow-x: hidden;
-  background-repeat: no-repeat;
-  background-color: #ccc;
-  background-size: cover;
-  background-position: bottom center;
+.home .logo {
+  max-width: 165px;
 }
 
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
+.home .title h1 {
+  line-height: 75px;
+  font-size: 70px;
+}
+
+.home .title h1 .big {
+  font-size: 80px;
+}
+
+
+@media (min-width:990px) {
+  .home .title h2 {
+    line-height: 30px;
+    font-size: 30px;
+    padding: 0 36px;
+  }
+  .general .mensaje-full {
+    min-height: calc(100vh - 215px);
+  }
+
+  .btn-primary.btn-big {
+    font-size: 28px;
+    height: 72px !important;
+    padding: 10px 53px;
+    border-radius: 50px;
+    line-height: 30px;
+  }
+  
+  .home .text-top {
+    margin: 40px 0 -10px;
+  }  
+
+  .home .fecha {
+    margin: 20px 0 0;
+  }
+  .general .text-top {
+    margin: 40px 0 0px;
+  }  
+}
+
+@media(max-width:776px) {
+  .container-general {
+    margin-bottom: 20px;
+  }
 }
