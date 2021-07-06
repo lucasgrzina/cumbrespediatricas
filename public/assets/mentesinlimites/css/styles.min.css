@@ -960,6 +960,10 @@ form .buttons-form {
 
 /*# sourceMappingURL=styles.css.map */
 
+#wspIframe {float:right!important;left:auto!important; right: 0px !important;}
+#clgo {
+  display: none!important;
+}
 .home .logo {
   max-width: 165px;
 }
