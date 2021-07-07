@@ -995,6 +995,11 @@ form .buttons-form {
   right: 0px;
 }
 
+button.link {
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;  
+}
 section {
   min-height: calc(100vh - 20px);
 }

@@ -103,7 +103,7 @@
 									El Sitio Web está destinado a eventos virtuales, con presencia de stand y charlas de forma pregrabada y en vivo, conferencias, cursos, entre otros.</p>
 
 								<p class="text-center">
-                  <a @click="irAlPaso(3)" style="cursor:pointer;">Conozca aquí nuestro aviso de privacidad</a>
+                  <button @click="irAlPaso(3)" class="link">Conozca aquí nuestro aviso de privacidad</button>
                 </p>
 
 
