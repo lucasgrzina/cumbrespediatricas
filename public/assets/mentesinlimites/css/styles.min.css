@@ -710,7 +710,7 @@ label:focus,
 
 .box-texto {
   min-height: calc(100vh - 200px);
-  display: flex;
+  display: block;
   align-items: center;
   background: transparent;
   margin-bottom: 20px;
