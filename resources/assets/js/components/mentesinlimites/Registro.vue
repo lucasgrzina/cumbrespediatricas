@@ -327,7 +327,7 @@
 
 
 
-								<button  @click="irAlPaso(4)" class="btn btn-primary ml-auto mr-auto d-table mt-4 mb-3">Proceder al registro</button>
+								<button  @click="irAlPaso(2)" class="btn btn-primary ml-auto mr-auto d-table mt-4 mb-3">Proceder al registro</button>
 
 							</div>
 
