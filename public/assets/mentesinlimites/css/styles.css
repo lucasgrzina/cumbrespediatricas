@@ -22,6 +22,10 @@
   font-size: 22px;
 }
 
+.grecaptcha-badge {
+  width: 0px !important;
+  right: 0px;
+}
 
 section {
   min-height: calc(100vh - 20px);
