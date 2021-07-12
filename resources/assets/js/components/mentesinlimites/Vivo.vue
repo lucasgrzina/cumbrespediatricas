@@ -1,63 +1,325 @@
 <template>
 <div style="position:relative;">
-    <div class="header-condiciones" v-if="configEvento.etapa === 'R'">
-    <template >
+    <div v-if="configEvento.etapa === 'R'">
 
-                <div class="row ">
-					<div class="col-12 margin-top-home">
-						<h1>Evento en VIVO</h1>
-						<p class="mensaje-video">Recuerde activar el sonido de su dispositivo <img style="max-width: 20px;" src="/public/assets/abbottrenal/img/sonido.svg" /> y el modo de pantalla completa<img style="max-width: 20px;" src="/public/assets/abbottrenal/img/fullscreen.svg" /></p>
+	  		<div class="step" id="step-1" v-if="paso === 1">
+
+				<div class="container">
+
+					<a class="logo"><img src="public/assets/mentesinlimites/img/logo.png"></a>
+
+					<div class="row ">
+
+						<div class="col-12 text-top">
+
+							<p><span class="text-01">BIENVENIDOS</span><span class="text-02">AL LANZAMIENTO VIRTUAL</span></p>
+
+						</div>
+
+						<div class="col-12 title">
+
+							<h1>Por una mente<br><span class="big">sin límites</span></h1>
+
+							<h2>La correcta nutrición desde el inicio, marca la diferencia</h2>
+
+						</div>
+
+						<div class="col-12 transion-vivo-msg">
+
+							<div class="divider"></div>
+
+							<p>TRANSMISIÓN EN VIVO</p>
+
+						</div>
+
 					</div>
-				</div>
 
-                <div class="row mb-1 content-video ">
-                    <div class="col-12">
-                        <div style="padding:52.73% 0 0 0;position:relative;">
-                            <iframe :src="videoSeleccionado" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                        </div>
-                    </div>					
-                </div>
-				<div class="row mb-3 ">
-					<div class="col-md-12 botonera-audio">
-                        <button class="btn btn-primary btn-audio" @click="verVideo('I')">
-                            Audio Inglés
-                        </button>
-                        <button class="btn btn-primary btn-audio" @click="verVideo('E')">
-                            Audio Español
-                        </button>                                                
-                    </div>
-                </div>
-				<div class="row mb-3 ">
-					<div class="col-md-9">
-						<form style="max-width: 100%;">
-							<p class="mensaje-video">Escriba su pregunta aqui</p>
-							<div class="form-row margin-row-bottom">
-							    <div class="col-md-12">	
-							    	<input type="text" class="form-control txt-pregunta" id="mail" placeholder="" v-model="form.pregunta">
-							        
-							    </div>
-					    	</div>
-						</form>
-					</div>			
-                    <div class="col-md-3 text-center">
+					<div class="row mb-5 mt-1">
 
-                        <button class="btn btn-primary btn-pregunta" @click="enviarPregunta()" :disabled="!form.pregunta">
-                            Enviar
-                        </button>
+						<div class="col-12">
 
-                    </div>				
+							<div class="content-buttons">
 
-                    <div class="col-md-12 text-center mt-3">
+								<button class="btn btn-primary ml-auto mr-auto d-table go-to-consejos" @click="verVideo('E')">Audio en español</button>
 
-                        <button class="btn btn-primary btn-encuesta"  @click="encuestaDisponible()">
-                            Encuesta de satisfacción
-                        </button>
+								<button class="btn btn-primary ml-auto mr-auto d-table go-to-consejos" @click="verVideo('I')">Audio en inglés</button>
 
-                    </div>
+							</div>
+
+						</div>
+
+					</div>
 
 				</div>
 
-    </template>
+			</div>
+
+			<div class="step" id="step-2" v-if="paso === 2">
+
+				<div class="container container-general " >
+
+					<div class="row ">					
+
+						<div class="col-md-8 title order-2 order-md-1">
+
+							<p class="text-top"><span class="text-02">LANZAMIENTO VIRTUAL</span></p>
+
+							<h1>Por una mente sin límites</h1>
+
+							<h2>La correcta nutrición desde el inicio, marca la diferencia</h2>
+
+						</div>
+
+
+
+						<div class="col-md-4 order-1 order-md-2">
+
+							<a class="logo"><img src="public/assets/mentesinlimites/img/logo.png"></a>
+
+						</div>
+
+					</div>
+
+
+
+					<div class="row">
+
+						<div class="col-12 subtitule">
+
+							<h1>CONSEJOS ÚTILES</h1>
+
+							<h2>Sigue estas recomendaciones para una mejor visualización del contenido</h2>
+
+						</div>
+
+					</div>
+
+
+
+					
+
+
+
+
+
+				</div>
+
+
+
+				<div class="container consejos">
+
+					<div class="row mt-5">
+
+						<div class="col-md-4 col-consejo">
+
+							
+
+							<p>Si desea ver la presentación únicamente, puede agrandar la pantalla haciendo click en el ícono</p>
+
+							<img src="public/assets/mentesinlimites/img/fullscreen-2.svg" class="icon">
+
+							<div class="divider"></div>
+
+						</div>
+
+						<div class="col-md-4 col-consejo">
+
+							
+
+							<p>Utilice auriculares/audífonos para reducir sonido ambiente.</p>
+
+							<img src="public/assets/mentesinlimites/img/headphones.svg" class="icon">
+
+							<div class="divider"></div>
+
+						</div>
+
+						<div class="col-md-4 col-consejo">
+
+							
+
+							<p>Evite utilizar otras plataformas como Netflix, Amazon Prime o Youtube, que pueden ocupar ancho de banda durante la transmisión.</p>
+
+							<img src="public/assets/mentesinlimites/img/devices.svg" class="icon">	
+
+							<div class="divider"></div>						
+
+						</div>
+
+					</div>
+
+					<div class="row">
+
+						<div class="col-md-4 col-consejo">
+
+							
+
+							<p>Si la transmisión es lenta debido a Internet, baje la calidad del video desde la pantalla, en este ícono</p>
+
+							<img src="public/assets/mentesinlimites/img/settings.svg" class="icon">
+
+							<div class="divider"></div>
+
+							
+
+						</div>
+
+						<div class="col-md-4 col-consejo">
+
+							
+
+							<p>Conecte el dispositivo directo al modem si posee un cable de red, esto asegurará un mejor envío de datos. Es suficiente con tener una conexión de al menos 5 Mbps descargados para ver el contenido en HD.</p>
+
+							<div class="divider"></div>
+
+						</div>
+
+						<div class="col-md-4 col-consejo">
+
+							
+
+							<p>Si su problema persiste, por favor contáctese mediante el botón de whatsapp que se encuentra abajo a la derecha.</p>
+
+							<img src="public/assets/mentesinlimites/img/whatsapp.svg" class="icon">
+
+							<div class="divider last"></div>
+
+						</div>
+
+					</div>
+
+
+
+					<div class="row">
+
+						<div class="col-12">
+
+							<h3 class="gracias go-to-video" @click="irAlPaso(3)">¡MUCHAS GRACIAS!</h3>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+			<div class="step" id="step-3" v-if="paso === 3">
+
+
+
+				<div class="container ">
+
+					<div class="row mt-3 mb-3">
+
+							
+
+
+
+						<div class="col-md-12">
+
+							<div class="content-top-video">
+
+								<div class="d-block d-sm-flex">
+
+									<button class="btn btn-primary btn-sm" @click="verVideo('E')">
+
+									audio español
+
+									</button>
+
+									<button class="btn btn-primary btn-sm" @click="verVideo('I')">
+
+										audio inglés
+
+									</button>
+
+
+
+									<div class="mensaje">
+
+										<span>Recuerde activar el <br>sonido del reproductor</span>
+
+									</div>
+
+								</div>
+
+								
+
+							</div>
+
+						</div>				
+
+					</div>
+
+				</div>
+
+
+
+				<div class="container">
+
+					<div class="row mb-3 mb-2">
+
+						<div class="col-12">
+
+							<div class="video w-100" style="padding:56.25% 0 0 0;position:relative; max-height: 500px;">
+                                <iframe v-if="videoSeleccionado" :src="videoSeleccionado" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                            </div>
+
+						</div>					
+
+					</div>
+
+				</div>
+
+
+
+				<div class="container ">
+
+					<div class="row mb-3">
+
+						<div class="col-md-7">
+
+							<div class="form-pregunta">						
+
+								<input class="w-100" type="text" name="pregunta" placeholder="Escriba su pregunta aquí:" v-model="form.pregunta">
+
+								<input class="btn-submit" type="image" name="submit" src="public/assets/mentesinlimites/img/play-2.svg" @click="enviarPregunta()" :disabled="!form.pregunta">
+
+							</div>
+
+						</div>	
+
+
+
+						<div class="col-md-5">
+
+							<div class="content-buttons video">
+
+								<button class="btn btn-primary btn-sm"  @click="certificadoDisponible()">
+
+									certificado
+
+								</button>
+
+								<button class="btn btn-primary btn-sm"  @click="encuestaDisponible()">
+
+									Encuesta
+
+								</button>
+
+							</div>
+
+						</div>				
+
+					</div>
+
+				</div>
+
+			</div>
+
     </div>
     
     <template v-else>
@@ -245,16 +507,16 @@
                             titulo: '',
                             secciones: [
                                 {
-                                    titulo: '',
+                                    titulo: 'Después de participar en este lanzamiento, ¿qué tan de acuerdo está con las siguientes declaraciones?',
                                     preguntas: [
-                                        {key: 1,tit: 'El contenido del evento es relevante para mi práctica profesional', preg: 'pre1', tipo: 'C', key_respuesta: 1},
-                                        {key: 2,tit: 'Considera que los conferencistas invitados cuentan con un alto nivel.', preg: 'pre1', tipo: 'C', key_respuesta: 1},
-                                        {key: 3,tit: 'Logística y experiencia del evento: El proceso de registro e ingreso fue sencillo y rápido, la calidad audiovisual y de la transmisión fue buena y sin interrupciones.', preg: '', tipo: 'C', key_respuesta: 1},
-                                        {key: 4,tit: 'Es probable que participe en futuros eventos virtuales de este tipo.', preg: '', tipo: 'C', key_respuesta: 1},
-                                        {key: 5,tit: 'Es probable que recomiende este tipo de evento virtual a mis colegas.', preg: '', tipo: 'C', key_respuesta: 1},
-                                        {key: 6,tit: '¿Qué temas relacionados con la nutrición, son de mayor interés para Usted?', preg: '', tipo: 'T'},
-                                        {key: 7,tit: '¿Qué información presentada durante el evento, podría ser de utilidad en su práctica clínica?', preg: '', tipo: 'T'},
-                                        {key: 8,tit: '¿Alguna sugerencia para que este tipo de eventos sea más efectivo?', preg: '', tipo: 'T'},
+                                        {key: 1,tit: 'El contenido del programa es relevante para mi consultorio', preg: 'pre1', tipo: 'C', key_respuesta: 1},
+                                        {key: 2,tit: 'Los expositores y el contenido son interesantes', preg: 'pre1', tipo: 'C', key_respuesta: 1},
+                                        {key: 3,tit: 'Logística y experiencia del evento: calidad audiovisual y de la transmisión son buenas y sin interrupciones', preg: '', tipo: 'C', key_respuesta: 1},
+                                        {key: 4,tit: 'Probablemente participaré en las ofertas visuales futuras de Abbott Nutrición', preg: '', tipo: 'C', key_respuesta: 1},
+                                        {key: 5,tit: 'Probablemente recomendaré este webinar a mis colegas ', preg: '', tipo: 'C', key_respuesta: 1},
+                                        {key: 6,tit: '¿Qué temas son de mayor interés para usted relacionados con la nutrición?', preg: '', tipo: 'T'},
+                                        {key: 7,tit: '¿Cuál es el aprendizaje más importante en este programa que pudiera traducirse a su consultorio clínico?', preg: '', tipo: 'T'},
+                                        {key: 8,tit: '¿Alguna sugerencia para hacer este webinar más efectivo?', preg: '', tipo: 'T'},
 
                                     ]
                                 }
@@ -297,12 +559,12 @@
                 },  
                 showModal: false,
                 enviando: false,
-                enviandoEncuesta: false
+                enviandoEncuesta: false,
+                paso: 1,
             }
         },
         mounted () {
             var vm = this;
-            console.debug(this.configEvento.etapa)
             vm.videoSeleccionado = vm.evento.urlVimeoVideoEng;
 
             //console.debug(vm.videoSeleccionado);
@@ -314,7 +576,7 @@
             
             //console.debug(isOnIOS,eventName,usarSendBeacon,urlSalidaUsuario);
             if (this.configEvento.etapa === 'R') {
-                
+                $('body').addClass('home');
                 window.addEventListener(eventName, function(e){
                     var data = new FormData();
                     data.append('_token', csrfToken);                
@@ -343,11 +605,24 @@
         
         },
         methods: {
+            irAlPaso: function (paso) {
+              window.scrollTo(0, 0);
+              
+              if (paso === 2) {
+                $('body').removeClass('home');  
+                $('body').addClass('general');
+                //$('#container-gral').addClass('container-general');
+              }
+              this.paso = paso;
+            },            
             verVideo (video) {
                 if (video === 'I') {
                     this.videoSeleccionado = this.evento.urlVimeoVideoEng;
                 } else {
                     this.videoSeleccionado = this.evento.urlVimeoVideoEsp;
+                }
+                if (this.paso < 3) {
+                    this.irAlPaso(2);
                 }
                 console.debug(this.videoSeleccionado)
                 
@@ -446,7 +721,22 @@
                 let vm = this
                 let opciones = _.find(vm.encuesta.opciones,{key:key})
                 return opciones.valores
-            }          
+            },
+            certificadoDisponible: function() {
+                let vm = this
+                if (!vm.enviandoEncuesta) {
+                    vm.enviandoEncuesta = true;
+                    axios.get(vm.urlEncuestaDisponible)
+                        .then(response => {
+                            vm.enviandoEncuesta = false;
+                            document.location = vm.evento.urlCertificado.replace('_ID_',vm.registrado.id_externo).replace('_TOKEN_',vm.registrado.token);
+                            //vm.mostrarModal(true);
+                        }, error => {
+                            vm.enviandoEncuesta = false;
+                            alert('El certificado no se encuentra disponible por el momento.');
+                        });                    
+                }
+            },         
         }
     }
 </script>
@@ -554,5 +844,10 @@
     padding: 63px 0;
     text-align: center;
     border: 2px solid #0f3177;
+}
+
+.go-to-video {
+    cursor: pointer;
+    display: block;
 }
 </style>

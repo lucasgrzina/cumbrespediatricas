@@ -28,6 +28,7 @@
                           <i class="icon date"></i>
 
                           <span class="date">14 JULIO</span>
+						  <div class="separate"></div>
 
                       </div>
 
@@ -51,7 +52,7 @@
 
           <div class="col-12">
 
-              <button class="btn btn-primary btn-big ml-auto mr-auto d-table" @click="irAlPaso(2)">Ingresar al evento</button>
+              <button class="btn btn-primary btn-sm ml-auto mr-auto d-table" @click="irAlPaso(2)">Ingresar al evento</button>
 
           </div>
 
@@ -456,7 +457,7 @@
 
 							    <div class="col-md-12">	
 
-							    	<button class="btn btn-primary ml-auto mr-auto d-table  mt-2" type="button" @click="registrar()" :disabled="registro.enviando">Ingresar</button>
+							    	<button class="btn btn-primary ml-auto mr-auto d-table  mt-2 btn-sm" type="button" @click="registrar()" :disabled="registro.enviando">Ingresar</button>
 
 							    </div>
 

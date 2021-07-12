@@ -259,8 +259,9 @@ return [
             'cookie' => 'mentesinlimites',
             'activo' => true,
             'evitarRoute' => true,
-            'urlVimeoVideoEsp' => 'https://player.vimeo.com/video/561037011',
-            'urlVimeoVideoEng' => 'https://player.vimeo.com/video/561039201',
+            'urlVimeoVideoEsp' => 'https://player.vimeo.com/video/572154824',
+            'urlVimeoVideoEng' => 'https://player.vimeo.com/video/572153036',
+            'urlCertificado' => ''
         ],                                                                                   
     ],    
     'recaptcha' => [

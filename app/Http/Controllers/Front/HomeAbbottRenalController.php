@@ -84,7 +84,7 @@ class HomeAbbottRenalController extends EventoBaseController
             DB::rollback();
             \Log::info($e->getMessage());
             $code = $e->getCode();
-            if ($e->getCode() != 404 || $e->getCode() != 422 || $e->getCode() != 500) {
+            if ($e->getCode() != 404 || $e->getCode() != 422 || $e->getCode() != 400) {
                 $code = 500;
             }
             return $this->sendError($e->getMessage(),$code);
@@ -116,7 +116,7 @@ class HomeAbbottRenalController extends EventoBaseController
         $conf = $this->config('*');
         
         try {
-
+            
             $registrado = $this->obtenerRegistrado();
 
             if (!$registrado) {
@@ -143,7 +143,7 @@ class HomeAbbottRenalController extends EventoBaseController
             //return redirect()->to(env('URL_SITIO_PPAL','#'));
         }
         
-
+        $this->evento['urlCertificado'] = route($this->key.'.descargar-certificado');
         $data = [
             'title' => 'Transmisión en VIVO',
             'props' => [
@@ -173,15 +173,15 @@ class HomeAbbottRenalController extends EventoBaseController
 
 
         //if (!StorageHelper::existe($imgCertificado,'uploads')) {
-            $text = $registrado->nombre . ' ' . $registrado->apellido;
-            $img = \Image::make(public_path('img/cigen/certificado/certificado.jpg'));
+            $text = $registrado->nombre;
+            $img = \Image::make(public_path('assets/mentesinlimites/img/certificado.jpg'));
         
             $width = $img->width();
             $height = $img->height();
             $center_x = $width / 2;
-            $center_y = 1100;
+            $center_y = 450;
             $max_len = 50;
-            $font_size = 150;
+            $font_size = 100;
             $font_height = 45;
         
             $lines = explode("\n", wordwrap($text, $max_len));
@@ -190,9 +190,9 @@ class HomeAbbottRenalController extends EventoBaseController
         
             foreach ($lines as $line) {
                 $img->text($line, $center_x, $y, function ($font) use ($font_size) {
-                    $font->file(public_path('fonts/Karbon-Bold.ttf'));
+                    $font->file(public_path('assets/mentesinlimites/fonts/Gotham-Thin.ttf'));
                     $font->size($font_size);
-                    $font->color('#1172b5');
+                    $font->color('#824d33');
                     $font->align('center');
                     $font->valign('top');
                 });
@@ -206,7 +206,7 @@ class HomeAbbottRenalController extends EventoBaseController
         //}
         $customPaper = array(0,0,$height / 2,$width / 2);
         $pdf = \PDF::loadView('exports.certificado', ['imagen' => StorageHelper::path($imgCertificado,'uploads')])->setPaper($customPaper, 'landscape'); 
-        return $pdf->download('Cigen-Certificado.pdf');
+        return $pdf->download('Certificado.pdf');
         
     }    
 

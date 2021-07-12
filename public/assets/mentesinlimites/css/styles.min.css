@@ -118,32 +118,32 @@ form.max-w-form {
   max-width: 541px;
 }
 form button {
-  margin: 57px 0 0;
+  margin: 15px 0 0;
 }
 
-input.form-control, input.custom-select, select.form-control, select.custom-select {
-  /*font-family: "Gotham", sans-serif;*/
+input[type=text].form-control, input[type=text].custom-select, select.form-control, select.custom-select {
+  font-family: "Gotham", sans-serif;
   font-weight: 300;
   background-color: #fff;
   border-color: #bf9148;
   border-radius: 35px !important;
   border-width: 1px;
   border-style: solid;
-  font-size: 25px !important;
+  font-size: 19px !important;
   color: #000 !important;
   padding: 0px 40px 0;
-  border-width: 5px;
-  height: 61px;
+  border-width: 4px;
+  height: 51px;
 }
-input.form-control option, input.custom-select option, select.form-control option, select.custom-select option {
-  /*font-family: "Gotham", sans-serif;*/
+input[type=text].form-control option, input[type=text].custom-select option, select.form-control option, select.custom-select option {
+  font-family: "Gotham", sans-serif;
   font-weight: 300;
   font-style: italic;
   font-size: 15px;
   color: #0098c6;
   background-color: #fff;
 }
-input.form-control:focus, input.custom-select:focus, select.form-control:focus, select.custom-select:focus {
+input[type=text].form-control:focus, input[type=text].custom-select:focus, select.form-control:focus, select.custom-select:focus {
   color: #fff;
   background-color: rgba(209, 175, 101, 0.2);
   box-shadow: none;
@@ -179,6 +179,9 @@ input.form-control:focus, input.custom-select:focus, select.form-control:focus, 
   margin: 0 5px;
 }
 
+.form-pregunta {
+  display: flex;
+}
 .form-pregunta label {
   font-family: "Gotham", sans-serif;
   font-weight: 300;
@@ -186,27 +189,32 @@ input.form-control:focus, input.custom-select:focus, select.form-control:focus, 
   font-style: italic;
   font-size: 20px;
 }
-.form-pregunta input {
-  font-family: "Gotham", sans-serif;
-  font-weight: 300;
+.form-pregunta input[type=text] {
+  font-family: "Gotham", sans-serif !important;
+  font-weight: normal !important;
   background-color: #fff;
   border-color: #fff;
   height: 42px;
   padding: 0 24px;
   border-radius: 0;
   border-style: solid;
-  border-width: 0px;
-  font-style: italic;
+  border-width: 4px;
+  font-style: normal;
   box-shadow: none;
   outline: none;
+  border-radius: 30px !important;
+  border-style: solid;
+  border-color: #f6c34b;
+  padding: 21px 10px;
+  margin: 0 20px 0 0;
+  color:#824d33!important;
 }
-.form-pregunta input:focus {
+.form-pregunta input[type=text]:focus {
   color: #fff;
   background-color: rgba(149, 196, 228, 0.5);
   box-shadow: none;
   outline: none;
   border-style: solid;
-  border-width: 0px;
 }
 
 @media (max-width: 768px) {
@@ -216,7 +224,7 @@ input.form-control:focus, input.custom-select:focus, select.form-control:focus, 
 }
 .home .logo {
   width: 100%;
-  max-width: 215px;
+  max-width: 160px;
   position: absolute;
   right: 0;
   margin: 28px 28px 0 0;
@@ -225,10 +233,10 @@ input.form-control:focus, input.custom-select:focus, select.form-control:focus, 
   width: 100%;
 }
 .home .title h1 {
-  line-height: 91px;
+  line-height: 81px;
 }
 .home .title h1 .big {
-  font-size: 91px;
+  font-size: 80px;
 }
 .home .title h2 {
   color: #784716;
@@ -236,8 +244,8 @@ input.form-control:focus, input.custom-select:focus, select.form-control:focus, 
   font-weight: normal;
   max-width: 706px;
   margin: 11px auto;
-  line-height: 40px;
-  font-size: 38px;
+  line-height: 30px;
+  font-size: 30px;
 }
 .home .text-top {
   margin: 68px 0 -10px;
@@ -299,6 +307,20 @@ input.form-control:focus, input.custom-select:focus, select.form-control:focus, 
   color: #482a1c;
 }
 
+@media (max-width: 1100px) and (min-width: 769px) {
+  .home .title h1 {
+    line-height: 72px;
+  }
+  .home .title h1 .big {
+    font-size: 72px;
+  }
+  .home .title h2 {
+    font-size: 32px;
+  }
+  .home .logo {
+    max-width: 130px;
+  }
+}
 @media (max-width: 769px) {
   .home .title h1 {
     line-height: 41px;
@@ -375,16 +397,16 @@ input.form-control:focus, input.custom-select:focus, select.form-control:focus, 
 }
 .general .logo {
   width: 100%;
-  max-width: 166px;
+  max-width: 130px;
   position: relative;
   float: right;
-  margin: 28px 28px 0 0;
+  margin: 10px 28px 0 0;
 }
 .general .logo img {
   width: 100%;
 }
 .general .text-top {
-  margin: 68px 0 0px;
+  margin: 30px 0 0px;
   width: 100%;
   text-align: center;
   font-weight: 700;
@@ -495,7 +517,7 @@ input.form-control:focus, input.custom-select:focus, select.form-control:focus, 
   }
 }
 body {
-  /*font-family: "Gotham", sans-serif;*/
+  font-family: "Gotham", sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
   background-repeat: no-repeat;
@@ -596,7 +618,7 @@ footer .col-footer.color-3 {
 
 h1 {
   font-family: "Gotham-Black";
-  font-size: 79px;
+  font-size: 70px;
   line-height: 68px;
   color: #e4b245;
   font-weight: bolder;
@@ -665,7 +687,7 @@ h3 {
   margin-bottom: 100px;
 }
 
-textarea:hover,
+/*textarea:hover,
 input:hover,
 textarea:active,
 input:active,
@@ -680,7 +702,7 @@ label:focus,
   outline: 0px !important;
   -webkit-appearance: none;
   box-shadow: none !important;
-}
+}*/
 
 .content-big-title {
   margin-top: -132px;
@@ -714,6 +736,7 @@ label:focus,
   align-items: center;
   background: transparent;
   margin-bottom: 20px;
+  margin-top: 40px;
 }
 .box-texto .inner {
   border-width: 6px;
@@ -745,11 +768,11 @@ label:focus,
 .btn-primary {
   padding: 0 42px;
   color: #fff !important;
-  /*font-family: "Gotham", sans-serif;*/
+  font-family: "Gotham", sans-serif;
+  font-weight: 500;
   text-transform: uppercase;
   font-size: 25px;
   line-height: 51px;
-  font-weight: 500;
   border-width: 6px;
   border-radius: 30px;
   border-style: solid;
@@ -761,6 +784,12 @@ label:focus,
   -webkit-transition: all 0.5s linear;
   -ms-transition: all 0.5s linear;
   transition: all 0.5s linear;
+}
+.btn-primary.btn-sm {
+  font-size: 18px;
+  line-height: 39px;
+  padding: 0 25px;
+  border-width: 4px;
 }
 .btn-primary:hover, .btn-primary:focus {
   background: linear-gradient(0deg, #472a1c 0%, #e4b245 100%);
@@ -777,16 +806,24 @@ label:focus,
   border-color: #f6c34b !important;
 }
 .btn-primary.btn-big {
-  /*font-size: 32px;
+  font-size: 32px;
   height: 89px !important;
   padding: 10px 53px;
   border-radius: 50px;
-*/
-  font-size: 28px;
-  /*height: 72px !important;*/
-  padding: 10px 53px;
-  border-radius: 50px;
-  line-height: 28px; 
+}
+
+.btn-submit {
+  text-indent: -99999px;
+  border-width: 4px;
+  border-radius: 50% !important;
+  border-style: solid;
+  border-color: #f6c34b;
+  background: #472a1c;
+  background: linear-gradient(0deg, #472a1c 0%, #8d5337 100%);
+  box-shadow: 0 0 20px -4px rgba(0, 0, 0, 0.3);
+  width: 50px;
+  height: 50px;
+  padding: 8px;
 }
 
 .btn-play {
@@ -796,6 +833,104 @@ label:focus,
 .btn-play img {
   top: -2px;
   position: relative;
+}
+
+.content-buttons {
+  display: flex;
+  max-width: 700px;
+  margin: 0 auto;
+}
+@media (max-width: 769px) {
+  .content-buttons {
+    display: block;
+  }
+  .content-buttons .btn-primary {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+.content-buttons.video {
+  float: right;
+}
+.content-buttons.video .btn-primary {
+  margin: 0 10px;
+}
+@media (max-width: 769px) {
+  .content-buttons.video {
+    width: 100%;
+    margin-top: 15px;
+  }
+  .content-buttons.video .btn-primary {
+    display: table;
+    margin: 5px auto;
+  }
+}
+
+.content-top-video {
+  position: relative;
+  float: right;
+}
+.content-top-video .btn-primary {
+  margin: 0 10px;
+}
+.content-top-video .mensaje {
+  text-align: left;
+  font-size: 15px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 15px;
+  position: relative;
+}
+.content-top-video .mensaje span {
+  color: #784716;
+}
+.content-top-video .mensaje:before {
+  content: " ";
+  height: 100%;
+  width: 1px;
+  position: absolute;
+  background-color: #784716;
+  left: 0;
+}
+@media (max-width: 769px) {
+  .content-top-video {
+    width: 100%;
+  }
+  .content-top-video .btn-primary {
+    margin: 5px auto;
+    display: table;
+  }
+  .content-top-video .mensaje {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .content-top-video .mensaje:before {
+    width: 0;
+    height: 0;
+  }
+  .content-top-video .mensaje span {
+    width: 100%;
+    float: left;
+  }
+}
+
+.transion-vivo-msg .divider {
+  height: 1px;
+  width: 100px;
+  background-color: #482a1c;
+  margin: 30px auto;
+}
+.transion-vivo-msg p {
+  color: #482a1c;
+  text-align: center;
+  font-size: 35px;
+}
+@media (max-width: 769px) {
+  .transion-vivo-msg p {
+    font-size: 25px;
+  }
 }
 
 .show-video .text-sonido {
@@ -828,6 +963,89 @@ form .buttons-form {
   margin: 30px 0 30px;
 }
 
+.subtitule {
+  margin: 20px auto 0;
+}
+.subtitule h1 {
+  line-height: 51px;
+  font-size: 51px;
+  text-shadow: none;
+  color: #a87b25;
+  font-family: "Gotham", sans-serif;
+}
+.subtitule h2 {
+  font-size: 20px;
+  color: #482a1c;
+  font-family: "Gotham", sans-serif;
+}
+@media (max-width: 769px) {
+  .subtitule {
+    margin: 40px auto 0;
+  }
+  .subtitule h1 {
+    font-size: 30px;
+  }
+}
+
+.consejos {
+  max-width: 1180px;
+}
+@media (max-width: 1100px) {
+  .consejos {
+    max-width: 992px;
+  }
+}
+.consejos .col-consejo {
+  margin-bottom: 20px;
+}
+@media (max-width: 769px) {
+  .consejos .col-consejo {
+    margin-bottom: 30px;
+  }
+}
+.consejos .col-consejo .divider {
+  height: 100%;
+  width: 1px;
+  position: absolute;
+  left: 0px;
+  top: 0;
+  background-color: #a87a24;
+}
+@media (max-width: 769px) {
+  .consejos .col-consejo .divider {
+    position: relative;
+    height: 1px;
+    width: 100%;
+    bottom: 0;
+    margin: 20px 0;
+  }
+  .consejos .col-consejo .divider.last {
+    display: none;
+  }
+}
+.consejos p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #482a1c;
+  font-weight: normal;
+}
+.consejos .icon {
+  width: 100%;
+  max-width: 60px;
+}
+@media (max-width: 769px) {
+  .consejos .icon {
+    margin: 0 auto;
+    display: block;
+  }
+}
+.consejos .gracias {
+  text-align: center;
+  color: #a87a24;
+  font-size: 40px;
+  margin: 30px auto 27px;
+}
+
 @media (min-width: 1100px) {
   .show-video.reproductor {
     width: calc(100% + 200px);
@@ -839,6 +1057,11 @@ form .buttons-form {
     border-style: solid;
     border-color: #ffd463;
     padding: 0;
+  }
+}
+@media (max-width: 1100px) and (min-width: 769px) {
+  h1 {
+    font-size: 65px;
   }
 }
 @media (min-width: 992px) and (max-height: 650px) {
@@ -865,7 +1088,7 @@ form .buttons-form {
     font-size: 25px;
   }
   .btn-primary.btn-big {
-    font-size: 20px;
+    font-size: 25px;
     line-height: 32px;
   }
 

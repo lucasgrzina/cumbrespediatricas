@@ -246,6 +246,7 @@ $appRoutesNasa = function() use ($keyNasa){
     Route::get('/evento-disponible', $data['controller'].'@eventoDisponible')->name('evento-disponible');        
     Route::any('/enviar-salida-usuario', $data['controller'].'@enviarSalidaUsuario')->name('enviar-salida-usuario');
     Route::get('/registrado', $data['controller'].'@registrado')->name('registrado');
+    Route::get('/descargar-certificado', $data['controller'].'@descargarCertificado')->name('descargar-certificado');        
 };
 if (env('APP_ENV','production') === 'local') {
     Route::namespace('Front')->name($keyNasa.'.')->domain('dev.porunamentesinlimites.com')->group($appRoutesNasa);
