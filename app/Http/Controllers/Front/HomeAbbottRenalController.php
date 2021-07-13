@@ -205,7 +205,7 @@ class HomeAbbottRenalController extends EventoBaseController
     
         //}
         $customPaper = array(0,0,$height / 2,$width / 2);
-        $pdf = \PDF::loadView('exports.certificado', ['imagen' => StorageHelper::path($imgCertificado,'uploads')])->setPaper($customPaper, 'landscape'); 
+        $pdf = \PDF::loadView('exports.certificado', ['imagen' => StorageHelper::path('mentesinlimites/'.$imgCertificado,'uploads')])->setPaper($customPaper, 'landscape'); 
         return $pdf->download('Certificado.pdf');
         
     }    
