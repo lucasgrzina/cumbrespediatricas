@@ -194,7 +194,7 @@
 
 						<div class="col-12">
 
-                            <button class="btn btn-primary ml-auto mr-auto d-table  mt-2 btn-sm" type="button" @click="irAlPaso(3)">Continuar</button>
+                            <button class="btn btn-primary ml-auto mr-auto d-table  mt-2 mb-2 btn-sm" type="button" @click="irAlPaso(3)">Continuar</button>
 							<!--h3 class="gracias go-to-video" @click="irAlPaso(3)">¡MUCHAS GRACIAS!</h3-->
 
 						</div>

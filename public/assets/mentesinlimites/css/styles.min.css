@@ -1000,7 +1000,7 @@ form .buttons-form {
 }
 @media (max-width: 769px) {
   .consejos .col-consejo {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 }
 .consejos .col-consejo .divider {
@@ -1017,7 +1017,7 @@ form .buttons-form {
     height: 1px;
     width: 100%;
     bottom: 0;
-    margin: 20px 0;
+    margin: 20px 0 0;
   }
   .consejos .col-consejo .divider.last {
     display: none;
