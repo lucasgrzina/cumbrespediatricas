@@ -201,7 +201,7 @@ class HomeAbbottRenalController extends EventoBaseController
             }
         
             
-            $img->save(public_path('uploads/' . $imgCertificado));
+            $img->save(public_path('uploads/mentesinlimites/' . $imgCertificado));
     
         //}
         $customPaper = array(0,0,$height / 2,$width / 2);
