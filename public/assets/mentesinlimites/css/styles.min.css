@@ -967,14 +967,14 @@ form .buttons-form {
   margin: 20px auto 0;
 }
 .subtitule h1 {
-  line-height: 51px;
-  font-size: 51px;
+  line-height: 35px;
+  font-size: 35px;
   text-shadow: none;
   color: #a87b25;
   font-family: "Gotham", sans-serif;
 }
 .subtitule h2 {
-  font-size: 20px;
+  font-size: 15px;
   color: #482a1c;
   font-family: "Gotham", sans-serif;
 }
@@ -1024,14 +1024,14 @@ form .buttons-form {
   }
 }
 .consejos p {
-  font-size: 16px;
+  font-size: 13px;
   margin-bottom: 20px;
   color: #482a1c;
   font-weight: normal;
 }
 .consejos .icon {
   width: 100%;
-  max-width: 60px;
+  max-width: 40px;
 }
 @media (max-width: 769px) {
   .consejos .icon {

@@ -108,7 +108,7 @@
 
 				<div class="container consejos">
 
-					<div class="row mt-5">
+					<div class="row mt-2">
 
 						<div class="col-md-4 col-consejo">
 
@@ -194,7 +194,8 @@
 
 						<div class="col-12">
 
-							<h3 class="gracias go-to-video" @click="irAlPaso(3)">¡MUCHAS GRACIAS!</h3>
+                            <button class="btn btn-primary ml-auto mr-auto d-table  mt-2 btn-sm" type="button" @click="irAlPaso(3)">Continuar</button>
+							<!--h3 class="gracias go-to-video" @click="irAlPaso(3)">¡MUCHAS GRACIAS!</h3-->
 
 						</div>
 
@@ -264,7 +265,7 @@
 
 						<div class="col-12">
 
-							<div class="video w-100" style="padding:56.25% 0 0 0;position:relative; max-height: 500px;">
+							<div class="video" style="margin:0 auto;padding:45% 0 0 0;position:relative;">
                                 <iframe v-if="videoSeleccionado" :src="videoSeleccionado" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                             </div>
 

@@ -169,7 +169,7 @@ class HomeAbbottRenalController extends EventoBaseController
         $registrado = $this->obtenerRegistrado();
 
         
-        $imgCertificado = $registrado->id . '_certificado.jpg';
+        $imgCertificado = $registrado->id . '_msl_certificado.jpg';
 
 
         //if (!StorageHelper::existe($imgCertificado,'uploads')) {
